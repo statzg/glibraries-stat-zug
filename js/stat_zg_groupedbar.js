@@ -6,13 +6,11 @@ if (typeof popup !== 'undefined' & popup==true) {
 	$.colorbox({html:'<div id="default'+(number)+'"><div id="title" class="title"></div><div id="subtitle" class="subtitle"></div><div id="chart'+(number)+'"></div><div id="description" class="description"></div><div id="source" class="source"></div></div>', width:"100%", height:"100%"});
 }
 
-Atts[number]={};
-
-Atts[number].maincontainer="default"+number
-Atts[number].chartcontainer="chart"+number
+var maincontainer="default"+number
+var chartcontainer="chart"+number
 
 //Breite des Containers ermitteln
-var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
+var totalWidth = document.getElementById(maincontainer).offsetWidth;
 var totalHeight = 360;
 
 if (typeof popup !== 'undefined' & popup==true) {
@@ -23,7 +21,7 @@ if (typeof showAnteil === 'undefined') {showAnteil=true;};
 if (typeof showTotal === 'undefined') {showTotal=true;};
 
 //Charttyp dem Container zuweisen
-Charts[number] = dc.compositeChart("#"+Atts[number].chartcontainer);
+Charts[number] = dc.compositeChart("#"+chartcontainer);
 
 //Daten einlesen
 var daten = d3.csv(csv_path, function(error, data) {
@@ -31,35 +29,35 @@ var daten = d3.csv(csv_path, function(error, data) {
 		x[group] = +x[group];
 	});
 
-Atts[number].meta = data.filter(function(el) {
+meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 	
-Atts[number].data = data.filter(function(el) {
+data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
-Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
-if (Atts[number].title.length == 1) {
-$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
+title = meta.filter(function( el ) { return el.Type == "title";});
+if (title.length == 1) {
+$("#"+maincontainer+" #title").html(title[0].Content);
 }
 
-Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
-if (Atts[number].subtitle.length == 1) {
-$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
+subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
+if (subtitle.length == 1) {
+$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
 }
 
-Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
-if (Atts[number].description.length == 1) {
-$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
+description = meta.filter(function( el ) { return el.Type == "description";});
+if (description.length == 1) {
+$("#"+maincontainer+" #description").html(description[0].Content);
 }
 
-Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
-if (Atts[number].source.length == 1) {
-	$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
+source = meta.filter(function( el ) { return el.Type == "source";});
+if (source.length == 1) {
+	$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
 }
 	
-Datasets[number]= crossfilter(Atts[number].data),
+Datasets[number]= crossfilter(data),
 	MainDimensions[number] = Datasets[number].dimension(function(d) {return d[stack];}),
 	MainGroups[number] = MainDimensions[number].group().reduce(function(p, v) {
 		++p.count;
@@ -123,12 +121,12 @@ for (var i=0; i < characteristicsLength; i++) {
 }
 
 function getLegendWidth(number) {
-	var legendLength = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().childElementCount;
+	var legendLength = d3.select("#"+chartcontainer+" g.dc-legend").node().childElementCount;
 	var legendWidthArray = [];
 	legendHeightArray = [];
 	for (i=0; i < legendLength; i++) {
 		var j=i+1;
-		var item = "#"+Atts[number].chartcontainer+" g.dc-legend-item:nth-of-type("+j+")";
+		var item = "#"+chartcontainer+" g.dc-legend-item:nth-of-type("+j+")";
 		legendWidthArray[i]=d3.select(item).node().getBBox().width;
 		legendHeightArray[i]=d3.select(item).node().getBBox().height;
 	};
@@ -137,8 +135,8 @@ function getLegendWidth(number) {
 	
 function rotateX(){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
-	var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
+	var tickwidth=d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+	var totalWidth = document.getElementById(maincontainer).offsetWidth;
 	
 	//Zeilen umbrechen, wenn breiter als Zwischenstrich
 	Charts[number].selectAll(".x .tick text")
@@ -147,7 +145,7 @@ function rotateX(){
 	//Maximale Breite und Höhe der Skalenbezeichner	
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
+	Charts[number].selectAll("#"+chartcontainer+" g.axis.x > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -162,22 +160,22 @@ function rotateX(){
 	
 	//Legende nach unten verschieben
 	var legendy=totalHeight-30+maxheight
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
-	var legendHeight = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().getBBox().height;
+	d3.selectAll("#"+chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+	var legendHeight = d3.select("#"+chartcontainer+" g.dc-legend").node().getBBox().height;
 	//Höhe der Grafik den neuen Begebenheiten anpassen
 	Charts[number].width(totalWidth)
 	Charts[number].height(totalHeight+maxheight+legendHeight-20)
 		.margins({left: YWidth, top: 10, right: 10, bottom: 40 + maxheight + legendHeight});
 	Charts[number].render()
 	//Zeilen nach rerender wieder umbrechen
-	Charts[number].selectAll("#"+Atts[number].chartcontainer+" .x .tick text")
+	Charts[number].selectAll("#"+chartcontainer+" .x .tick text")
 		.call(wrap, tickwidth);
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+	d3.selectAll("#"+chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 	
 	//Maximale Breite und Höhe der Skalenbezeichner
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
+	Charts[number].selectAll("#"+chartcontainer+" g.axis.x > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -194,13 +192,13 @@ function rotateX(){
 	Charts[number].height(totalHeight+Math.min(150, maxwidth)+legendHeight-20)
 		.margins({left: YWidth, top: 10, right: 10, bottom: 40 + +Math.min(150, maxwidth) + legendHeight});
 	Charts[number].render()
-	Charts[number].selectAll("#"+Atts[number].chartcontainer+" .x .tick text")
+	Charts[number].selectAll("#"+chartcontainer+" .x .tick text")
 		.call(wrap, Math.min(150, maxwidth));
 	var legendy=totalHeight-30+Math.min(150, maxwidth)
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
+	d3.selectAll("#"+chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+	d3.selectAll("#"+chartcontainer+" g.axis.x > g > text")
 		.style("text-anchor", "start")
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text").attr("transform", function (d) {
+	d3.selectAll("#"+chartcontainer+" g.axis.x > g > text").attr("transform", function (d) {
 		var moveleft = (-(this.getBBox().height)/2)-5;
 		return ("rotate(90), translate(10,"+moveleft+")")
 	});
@@ -208,9 +206,9 @@ function rotateX(){
 	//Wenn nötig Legende umbrechen, funktioniert nur bis 2 Zeilen.
 	getLegendWidth(number);
 	if (legendMaxWidth > totalWidth-30){
-		Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.dc-legend text")
+		Charts[number].selectAll("#"+chartcontainer+" g.dc-legend text")
 			.call(wrap, totalWidth-30);
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend text").attr("transform", function (d) {
+	d3.selectAll("#"+chartcontainer+" g.dc-legend text").attr("transform", function (d) {
 		var height = (this.getBBox().height);
 		if(height == 14) {
 		return ("translate(0,0)")
@@ -221,11 +219,11 @@ function rotateX(){
 	});
 	}
 	//Click-Event ausschalten
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on('click',null);
-    d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on("click", function() { 
+	d3.selectAll("#"+chartcontainer+" g.stack > rect").on('click',null);
+    d3.selectAll("#"+chartcontainer+" g.stack > rect").on("click", function() { 
     });
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend-item").on('click',null);
-    d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend-item").on("click", function() { 
+	d3.selectAll("#"+chartcontainer+" g.dc-legend-item").on('click',null);
+    d3.selectAll("#"+chartcontainer+" g.dc-legend-item").on("click", function() { 
 	});
 	$("title").html("")
 }
@@ -241,7 +239,7 @@ function initTip(){
 }
 
 function callTip(){
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect")
+	d3.selectAll("#"+chartcontainer+" g.stack > rect")
 		.call(Tips[number])
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
@@ -305,22 +303,22 @@ Charts[number].legend(dc.legend().x(10).y(totalHeight-40).itemHeight(13).gap(10)
 //Breite der Balken so anpassen, dass sie nicht überschneiden.
 Charts[number].on('renderlet', function(chart){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];
+	var tickwidth=d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];
 	var groupwidth=tickwidth*0.9;
 	var yAxis=d3.svg.axis().scale(d3.scale.ordinal()).orient("bottom").ticks(4);
 		
 	for (var j=2; j <= characteristicsLength+1; j++) {
 		for (var i=1; i <= MainGroups[number].all().length; i++) {
 
-			var bbox = chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
+			var bbox = chart.selectAll("#"+chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
 			var barwidth=groupwidth/characteristicsLength;
 			var newx=bbox.x + 0.05*tickwidth + (barwidth*(j-2))
-			chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("width", ""+barwidth+"");
-			chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("x", ""+newx+"");
+			chart.selectAll("#"+chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("width", ""+barwidth+"");
+			chart.selectAll("#"+chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("x", ""+newx+"");
 
 		}
 	}
-	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
+	$("#"+maincontainer+" .dc-legend-item text").attr("x", 17);
 });
 
 if (typeof relative !== 'undefined' && relative==true) {
@@ -345,7 +343,7 @@ Charts[number].render();
 
 function adaptY(){
 	maxwidth=0
-	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.y > g > text")
+	Charts[number].selectAll("#"+chartcontainer+" g.axis.y > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -366,7 +364,7 @@ rotateX();
 initTip();
 callTip();
 
-$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
+$("#"+maincontainer+" .dc-legend-item text").attr("x", 17);
 
 //window.onresize = function(event) {
 window.addEventListener('resize', function(){
@@ -384,17 +382,17 @@ window.addEventListener('resize', function(){
 
 	Charts[number].on('renderlet', function(chart){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+	var tickwidth=d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
 	var groupwidth=tickwidth*0.9;
 
 		for (var j=2; j <= characteristicsLength+1; j++) {
 			for (var i=1; i <= MainGroups[number].all().length; i++) {
 
-				var bbox = chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
+				var bbox = chart.selectAll("#"+chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
 				var barwidth=groupwidth/characteristicsLength;
 				var newx=bbox.x + 0.05*tickwidth + (barwidth*(j-2))
-				chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("width", ""+barwidth+"");
-				chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("x", ""+newx+"");
+				chart.selectAll("#"+chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("width", ""+barwidth+"");
+				chart.selectAll("#"+chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("x", ""+newx+"");
 			}
 		}
 	});
@@ -403,14 +401,14 @@ window.addEventListener('resize', function(){
 	
 	rotateX();
 	callTip();
-	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
+	$("#"+maincontainer+" .dc-legend-item text").attr("x", 17);
 	});
 
 if (typeof newWidth !== 'undefined') oldWidth=newWidth;	
 
 });
 
-addDownloadButton(Atts[number].maincontainer, Atts[number].chartcontainer, number);
-addDownloadButtonPng(Atts[number].maincontainer, Atts[number].chartcontainer, number);
+addDownloadButton(maincontainer, chartcontainer, number);
+addDownloadButtonPng(maincontainer, chartcontainer, number);
 
 }
