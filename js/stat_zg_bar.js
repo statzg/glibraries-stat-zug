@@ -279,8 +279,8 @@ window.onresize = function(event) {
 
 });
 
-addDownloadButton(Atts[number].maincontainer, Atts[number].chartcontainer, number);
-addDownloadButtonPng(Atts[number].maincontainer, Atts[number].chartcontainer, number)
+addDownloadButton(number);
+addDownloadButtonPng(number)
 
 }
 
