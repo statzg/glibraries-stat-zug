@@ -286,7 +286,7 @@ function addDownloadButtonPng(number) {
 }
 
 function addDataTablesButton(number, columns) {
-	
+
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
 		.attr('id', 'download-png');
@@ -450,9 +450,14 @@ function tabulate(columns, number) {
 		.append('td')
 		.attr('style', 'display:none')
 		.text(Atts[number].description[0].Content);
-	tfoot.selectAll('tr').append('td')
-		.attr('style', 'display:none')
-		.text("");
+	console.log(columns.length);
+	var i=columns.length;
+	while (i>1) {
+		tfoot.selectAll('tr').append('td')
+			.attr('style', 'display:none')
+			.text("");
+		i--;
+		}
 	}
 			
   //return table;
