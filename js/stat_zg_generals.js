@@ -9,8 +9,8 @@
 	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/crossfilter.js/download",
 	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/dc.js/download",
 	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/d3-tip.js/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/filesaver.js/download"/*,
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/datatables.js/download"*/];
+	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/filesaver.js/download",
+	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/datatables.js/download"];
 	var $head = $("head");
 	for (var i = 0; i < basics.length; i++) {
 		$head.append("<script src=\"" + basics[i] + "\"></scr" + "ipt>");
