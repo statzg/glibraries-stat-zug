@@ -410,7 +410,9 @@ if (typeof newWidth !== 'undefined') oldWidth=newWidth;
 
 });
 
+var columns=[dimension, stack, group];
 addDownloadButton(number);
 addDownloadButtonPng(number);
+addDataTablesButton(number, columns);
 
 }
