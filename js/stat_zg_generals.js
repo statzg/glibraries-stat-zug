@@ -387,17 +387,17 @@ function tabulate(columns, number) {
 	if (Atts[number].title[0].Content != "") {
 		container.append('div')
 			.attr('class', 'title')
-			.text("Datentabelle: " + Atts[number].title[0].Content);
+			.html("Datentabelle: " + Atts[number].title[0].Content);
 	} else {
 		container.append('div')
 			.attr('class', 'title')
-			.text("Datentabelle");
+			.html("Datentabelle");
 	}
 
 	if (Atts[number].subtitle[0].Content != "") {
 		container.append('div')
 			.attr('class', 'subtitle')
-			.text(Atts[number].subtitle[0].Content);
+			.html(Atts[number].subtitle[0].Content);
 	}	
 
 	var table = d3.select('#datatablecontainer'+number).append('table')
@@ -435,22 +435,23 @@ function tabulate(columns, number) {
 	if (Atts[number].description[0].Content != "") {
 		container.append('div')
 			.attr('class', 'description')
-			.text(Atts[number].description[0].Content);
+			.html(Atts[number].description[0].Content);
 	}
 
 	if (Atts[number].source[0].Content != "") {
 		container.append('div')
 			.attr('class', 'source')
-			.text("Quelle: " + Atts[number].source[0].Content);
+			.html("Quelle: " + Atts[number].source[0].Content);
 	}
 
+	//create hidden footer for export
 	if (Atts[number].description[0].Content != "") {
 	tfoot.append('tr')
 		.attr('style', 'display:none')
 		.append('td')
 		.attr('style', 'display:none')
-		.text(Atts[number].description[0].Content);
-	console.log(columns.length);
+		.html(Atts[number].description[0].Content);
+	//add empty cell for each additional column
 	var i=columns.length;
 	while (i>1) {
 		tfoot.selectAll('tr').append('td')
