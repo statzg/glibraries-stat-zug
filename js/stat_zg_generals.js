@@ -295,7 +295,6 @@ function addDataTablesButton(number, columns) {
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
-			console.log(this);
 			if ($(this).text()=="Daten anzeigen/herunterladen"){
 				tabulate(columns, number);
 				$(this).text("Daten verbergen");
@@ -347,16 +346,14 @@ function tabulate(columns, number) {
 				//'buttons': ['csv', 'excel'],
 				"fnDrawCallback": function() {
 					if (Math.ceil((this.fnSettings().fnRecordsDisplay()) / this.fnSettings()._iDisplayLength) > 1) {
-						//$('#datatable'+number+'_paginate.dataTables_paginate').css("display", "block"); 
-						//$('#datatable'+number+'_length.dataTables_length').css("display", "block");
+						$('#datatable'+number+'_paginate.dataTables_paginate').css("display", "block"); 
 					} else {
-						//$('#datatable'+number+'_paginate.dataTables_paginate').css("display", "none");
-						//$('#datatable'+number+'_length.dataTables_length').css("display", "none");
+						$('#datatable'+number+'_paginate.dataTables_paginate').css("display", "none");
 					}
 					if (this.fnSettings().fnRecordsDisplay() > 10) {
-
+						$('#datatable'+number+'_length.dataTables_length').css("display", "block");
 					} else {
-
+						$('#datatable'+number+'_length.dataTables_length').css("display", "none");
 					}
 					},
 				"stateSave": true,
@@ -373,7 +370,6 @@ function tabulate(columns, number) {
 						messageTop: Atts[number].subtitle[0].Content, 
 						messageBottom: "Quelle: " + Atts[number].source[0].Content}],
 				"colReorder": true,
-				"responsive": true,
 			});
 		}, 200);
 	});
