@@ -4,59 +4,61 @@ function loadBar(number, csv_path, dimension, group, characteristics, scale, rel
 order = typeof order !== 'undefined' ? order : "alpha";
 last = typeof last !== 'undefined' ? last : "";
 
-var maincontainer="default"+number
-var chartcontainer="chart"+number
+Atts[number]={};
+
+Atts[number].maincontainer="default"+number
+Atts[number].chartcontainer="chart"+number
 
 //Breite des Containers ermitteln
-var totalWidth = document.getElementById(maincontainer).offsetWidth;
+var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 var totalHeight = 320
 
 //Charttyp dem Container zuweisen
-Charts[number] = dc.barChart("#"+chartcontainer);
+Charts[number] = dc.barChart("#"+Atts[number].chartcontainer);
 
 //Daten einlesen
 var daten = d3.csv(csv_path, function(error, data) {
 	data.forEach(function(x) {
 		x[group] = +x[group];
 	});
-	
-meta = data.filter(function(el) {
+
+Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
-	
+
 data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
-title = meta.filter(function( el ) { return el.Type == "title";});
-if (title.length == 1) {
-$("#"+maincontainer+" #title").html(title[0].Content);
+Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+if (Atts[number].title.length == 1) {
+$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
 }
 
-subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
-if (subtitle.length == 1) {
-$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
+Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+if (Atts[number].subtitle.length == 1) {
+$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
 }
 
-description = meta.filter(function( el ) { return el.Type == "description";});
-if (description.length == 1) {
-$("#"+maincontainer+" #description").html(description[0].Content);
+Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+if (Atts[number].description.length == 1) {
+$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
 }
 
-source = meta.filter(function( el ) { return el.Type == "source";});
-if (source.length == 1) {
-$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
+Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+if (Atts[number].source.length == 1) {
+$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
-	
-Datasets[number] = crossfilter(data),
-	MainDimensions[number] = Datasets[number].dimension(function (d) {
+
+Atts[number].dataset = crossfilter(data),
+	Atts[number].maindimension = Atts[number].dataset.dimension(function (d) {
 		return d[dimension];
 	}),
-	MainGroups[number] = MainDimensions[number].group().reduceSum(function (d) {
+	Atts[number].maingroup = Atts[number].maindimension.group().reduceSum(function (d) {
 		return d[group];
-	});	
-	SecondaryGroups[number]={};
-	SecondaryGroups[number]["Total"] = Datasets[number].groupAll().reduceSum(function (d) {
+	});
+	Atts[number].secondgroup={};
+	Atts[number].secondgroup["Total"] = Atts[number].dataset.groupAll().reduceSum(function (d) {
         return d[group];
     });
 
@@ -64,17 +66,17 @@ Datasets[number] = crossfilter(data),
 if (typeof characteristics === 'undefined' || characteristics.length==0) {
 	characteristics = [];
 	if (order=="desc"){
-	MainGroups[number].all().sort(function(a,b) {return (a.value > b.value) ? -1 : ((b.value > a.value) ? 1 : 0);} ).forEach(function (x) {
+	Atts[number].maingroup.all().sort(function(a,b) {return (a.value > b.value) ? -1 : ((b.value > a.value) ? 1 : 0);} ).forEach(function (x) {
 			characteristics.push(x["key"]);
 		});
 	}
 	else if (order=="asc"){
-	MainGroups[number].all().sort(function(a,b) {return (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0);} ).forEach(function (x) {
+	Atts[number].maingroup.all().sort(function(a,b) {return (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0);} ).forEach(function (x) {
 			characteristics.push(x["key"]);
 		});
 	}
 	else {
-		MainGroups[number].all().forEach(function (x) {
+		Atts[number].maingroup.all().forEach(function (x) {
 			characteristics.push(x["key"]);
 		});
 	}
@@ -105,8 +107,8 @@ Charts[number]
 	.title(function(d) {
 		return ""; //d.key + '[' + this.layer + ']: ' + d.value[this.layer] + " " + d.value["total"];
 	})
-	.dimension(MainDimensions[number])
-	.group(MainGroups[number])
+	.dimension(Atts[number].maindimension)
+	.group(Atts[number].maingroup)
 	.renderLabel(true)
 	.ordinalColors(colorscheme[scale][characteristicsLength])
 	.transitionDuration(0)
@@ -122,7 +124,7 @@ Charts[number].render()
 
 function adaptY(){
 	maxwidth=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis.y > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.y > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -140,16 +142,16 @@ adaptY();
 
 function rotateX(){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
 
 	//Zeilen umbrechen, wenn breiter als Zwischenstrich
 	Charts[number].selectAll(".x .tick text")
 		.call(wrap, tickwidth);
 
-	//Maximale Breite der Skalenbezeichner	
+	//Maximale Breite der Skalenbezeichner
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis.x > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -168,7 +170,7 @@ function rotateX(){
 		.call(wrap, tickwidth);
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis.x > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -186,17 +188,17 @@ function rotateX(){
 	Charts[number].render()
 	Charts[number].selectAll(".x .tick text")
 		.call(wrap, Math.min(150, maxwidth));
-	d3.selectAll("#"+chartcontainer+" g.axis.x > g > text")
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
 		.style("text-anchor", "start")
 	//var moveleft = (-maxheight)/2-3
-	d3.selectAll("#"+chartcontainer+" g.axis.x > g > text").attr("transform", function (d) {
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text").attr("transform", function (d) {
 		var moveleft = (-(this.getBBox().height)/2)-5;
 		return ("rotate(90), translate(10,"+moveleft+")")
 	});
 	}
 	//Click-Event ausschalten
-	d3.selectAll("#"+chartcontainer+" g.stack > rect").on('click',null);
-    d3.selectAll("#"+chartcontainer+" g.stack > rect").on("click", function() { 
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on('click',null);
+    d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on("click", function() {
     });
 }
 
@@ -204,7 +206,7 @@ rotateX();
 
 function initTip(number){
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
@@ -213,30 +215,30 @@ function initTip(number){
 }
 
 function callTip(number){
-	d3.selectAll("#"+chartcontainer+" g.stack > rect")
-		.call(Tips[number])
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect")
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d);
+				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
 			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 			if (showTotal==true & showAnteil==true) {
-				tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/SecondaryGroups[number]["Total"].value()) + "</span><br/><span>"+group+": " +wert+  "</span>";
+				tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span><br/><span>"+group+": " +wert+  "</span>";
 			}
 			else if (showTotal==true) {
 				tiptext= "<span>" + d.data.key + "</span><br/><span>"+group+": " +wert+  "</span>";
 			}
 			else if (showAnteil==true) {
-				tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/SecondaryGroups[number]["Total"].value()) + "</span>";
+				tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span>";
 			}
 			else {
 				tiptext= "<span>" + d.data.key + "</span>";
 			};
 
 			$("#d3-tip"+number).html(tiptext)
-			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/MainGroups[number].all().length)] +" solid 5px");
+			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
 			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 20 - ($("#d3-tip"+number).width()/2));
 			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) -18 - ($("#d3-tip"+number).height()/2));
 			$("#d3-tip"+number).css( 'left', offsetx);
@@ -244,12 +246,12 @@ function callTip(number){
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		});
 }
 
 function formatBarLabels(){
-	d3.selectAll("#"+chartcontainer+" text.barLabel").each(function(d, i) {
+	d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
 		if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 		else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 		d3.select(this).text(wert);
@@ -269,16 +271,16 @@ window.onresize = function(event) {
 		.transitionDuration(0);
 	Charts[number].render()
 
-	rotateX();	
+	rotateX();
 	callTip(number);
 	formatBarLabels();
-	
+
 };
-	
+
 });
 
-addDownloadButton(maincontainer, chartcontainer, number);
-addDownloadButtonPng(maincontainer, chartcontainer, number)
+addDownloadButton(Atts[number].maincontainer, Atts[number].chartcontainer, number);
+addDownloadButtonPng(Atts[number].maincontainer, Atts[number].chartcontainer, number)
 
 }
 
@@ -291,7 +293,7 @@ addDownloadButtonPng(maincontainer, chartcontainer, number)
 
 	//Remove old values (if found)
 	d3.select(bars[0][0].parentNode).select('#inline-labels').remove();
-	//Create group for labels 
+	//Create group for labels
 	var gLabels = d3.select(bars[0][0].parentNode).append('g').attr('id', 'inline-labels');
 	for (var i = bars[0].length - 1; i >= 0; i--) {
 		var b = bars[0][i];
@@ -304,4 +306,3 @@ addDownloadButtonPng(maincontainer, chartcontainer, number)
 			.attr('text-anchor', 'middle');
 	}
 });*/
-
