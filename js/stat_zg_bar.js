@@ -26,7 +26,7 @@ Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 
-data = data.filter(function(el) {
+Atts[number].data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
@@ -50,7 +50,7 @@ if (Atts[number].source.length == 1) {
 $("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
 
-Atts[number].dataset = crossfilter(data),
+Atts[number].dataset = crossfilter(Atts[number].data),
 	Atts[number].maindimension = Atts[number].dataset.dimension(function (d) {
 		return d[dimension];
 	}),
