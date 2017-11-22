@@ -279,8 +279,10 @@ window.onresize = function(event) {
 
 });
 
+var columns=[dimension, group];
 addDownloadButton(number);
-addDownloadButtonPng(number)
+addDownloadButtonPng(number);
+addDataTablesButton(number, columns);
 
 }
 
