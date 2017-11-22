@@ -1,0 +1,654 @@
+div.dc-chart {
+    float: left;
+	font-family:Arial, sans-serif;
+	-webkit-user-select: none;  /* Chrome 49+ */
+	-moz-user-select: none;     /* Firefox 43+ */
+	-ms-user-select: none;      /* No support yet */
+	user-select: none;          /* Likely future */ 
+}
+
+.dc-chart rect.bar {
+	stroke-width: 1;
+	stroke: #fff;
+    cursor: pointer;
+	-webkit-user-select: none;  /* Chrome 49+ */
+	-moz-user-select: none;     /* Firefox 43+ */
+	-ms-user-select: none;      /* No support yet */
+	user-select: none;          /* Likely future */ 
+}
+
+.dc-chart rect.bar:hover {
+    fill-opacity: .5;
+}
+
+.dc-chart rect.stack1 {
+    stroke: none;
+    fill: red;
+}
+
+.dc-chart rect.stack2 {
+    stroke: none;
+    fill: green;
+}
+
+.dc-chart rect.deselected {
+    stroke: none;
+    fill: #ccc;
+}
+
+text.barLabel {
+    fill: #32444a;
+	stroke-width: 0;
+	stroke: #fff;
+    font-size: 10px;
+    cursor: pointer;
+	fill-opacity:1;
+}
+
+text.label {
+    fill: #32444a;
+	stroke-width: 0;
+	stroke: #fff;
+    font-size: 12px;
+    cursor: pointer;
+	fill-opacity:1;
+}
+
+.dc-chart .empty-chart .pie-slice path {
+    fill: #FFEEEE;
+    cursor: default;
+}
+
+.dc-chart .empty-chart .pie-slice {
+    cursor: default;
+}
+
+.dc-chart .pie-slice {
+    fill: #32444a;
+	stroke-width: 1;
+	stroke: #fff;
+    font-size: 12px;
+    cursor: pointer;
+	fill-opacity:1;
+	-webkit-user-select: none;  /* Chrome 49+ */
+	-moz-user-select: none;     /* Firefox 43+ */
+	-ms-user-select: none;      /* No support yet */
+	user-select: none;          /* Likely future */ 
+}
+
+.dc-chart .pie-slice.pie-label {
+    fill: #32444a;
+	stroke-width: 0;
+	stroke: #fff;
+    font-size: 12px;
+    cursor: pointer;
+	fill-opacity:1;
+}
+
+.dc-chart .pie-slice.external{
+    fill: black;
+}
+
+.dc-chart .pie-slice :hover {
+    fill-opacity: .5;
+}
+
+.dc-chart .pie-slice.highlight {
+    fill-opacity: .8;
+}
+
+.dc-chart .selected path {
+    stroke-width: 1;
+    stroke: #fff;
+    fill-opacity: 1;
+}
+
+.dc-chart .deselected path {
+    stroke: none;
+    fill-opacity: .5;
+    fill: #ccc;
+}
+
+.dc-chart .axis path,
+.dc-chart .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dc-chart .axis text, .axis text  {
+	fill: #32444a;
+	stroke-width: 0;
+	stroke: #fff;
+    font-size: 10px;
+    cursor: pointer;
+	fill-opacity:1;
+    /*font: 10px sans-serif;*/
+}
+
+.dc-chart .grid-line {
+    fill: none;
+    stroke: #ccc;
+    opacity: .5;
+    shape-rendering: crispEdges;
+}
+
+.dc-chart .grid-line line {
+    fill: none;
+    stroke: #ccc;
+    opacity: .5;
+    shape-rendering: crispEdges;
+}
+
+.dc-chart .brush rect.background {
+    z-index: -999;
+}
+
+.dc-chart .brush rect.extent {
+    fill: steelblue;
+    fill-opacity: .125;
+}
+
+.dc-chart .brush .resize path {
+    fill: #eee;
+    stroke: #666;
+}
+
+.dc-chart path.line {
+    fill: none;
+    stroke-width: 1.5px;
+	-webkit-user-select: none;  /* Chrome 49+ */
+	-moz-user-select: none;     /* Firefox 43+ */
+	-ms-user-select: none;      /* No support yet */
+	user-select: none;          /* Likely future */ 
+	}
+
+.dc-chart circle.dot {
+    stroke: none;
+	-webkit-user-select: none;  /* Chrome 49+ */
+	-moz-user-select: none;     /* Firefox 43+ */
+	-ms-user-select: none;      /* No support yet */
+	user-select: none;          /* Likely future */ 
+	}
+
+.dc-chart g.dc-tooltip path {
+    fill: none;
+    stroke: grey;
+    stroke-opacity: .8;
+}
+
+.dc-chart path.area {
+    fill-opacity: .3;
+    stroke: none;
+}
+
+.dc-chart .node {
+    font-size: 0.7em;
+    cursor: pointer;
+}
+
+.dc-chart .node :hover {
+    fill-opacity: .8;
+}
+
+.dc-chart .selected circle {
+    stroke-width: 3;
+    stroke: #ccc;
+    fill-opacity: 1;
+}
+
+.dc-chart .deselected circle {
+    stroke: none;
+    fill-opacity: .5;
+    fill: #ccc;
+}
+
+.dc-chart .bubble {
+    stroke: none;
+    fill-opacity: 0.6;
+}
+
+.dc-data-count {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.dc-data-count .filter-count {
+    color: #3182bd;
+    font-weight: bold;
+}
+
+.dc-data-count .total-count {
+    color: #3182bd;
+    font-weight: bold;
+}
+
+.dc-data-table {
+}
+
+.dc-chart g.state {
+    cursor: pointer;
+}
+
+.dc-chart g.state :hover {
+    fill-opacity: .8;
+}
+
+.dc-chart g.state path {
+    stroke: white;
+}
+
+.dc-chart g.selected path {
+}
+
+.dc-chart g.deselected path {
+    fill: grey;
+}
+
+.dc-chart g.selected text {
+}
+
+.dc-chart g.deselected text {
+    display: none;
+}
+
+.dc-chart g.county path {
+    stroke: white;
+    fill: none;
+}
+
+.dc-chart g.debug rect {
+    fill: blue;
+    fill-opacity: .2;
+}
+
+.dc-chart g.row rect {
+	stroke-width: 1;
+	stroke: #fff;
+    fill-opacity: 1;
+    cursor: pointer;
+}
+
+.dc-chart g.row rect:hover {
+    fill-opacity: 0.5;
+}
+
+.dc-chart g.row text {
+    fill: #000;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.dc-legend {
+    font-size: 12px;
+}
+
+.dc-legend-item {
+    cursor: pointer;
+}
+
+.dc-chart g.axis text {
+    /* Makes it so the user can't accidentally click and select text that is meant as a label only */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10 */
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.dc-chart path.highlight {
+    stroke-width: 3;
+    fill-opacity: 1;
+    stroke-opacity: 1;
+}
+
+.dc-chart .highlight {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+}
+
+.dc-chart .fadeout {
+    fill-opacity: 0.2;
+    stroke-opacity: 0.2;
+}
+
+.dc-chart path.dc-symbol,
+g.dc-legend-item.fadeout {
+    fill-opacity: 0.5;
+    stroke-opacity: 0.5;
+}
+
+.dc-hard .number-display {
+    float: none;
+}
+
+.dc-chart .box text {
+    font: 10px sans-serif;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10 */
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.dc-chart .box line,
+.dc-chart .box circle {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.dc-chart .box rect {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.dc-chart .box .center {
+    stroke-dasharray: 3,3;
+}
+
+.dc-chart .box .outlier {
+    fill: none;
+    stroke: #ccc;
+}
+
+.dc-chart .box.deselected .box {
+    fill: #ccc;
+}
+
+.dc-chart .box.deselected {
+    opacity: .5;
+}
+
+.dc-chart .symbol{
+    stroke: none;
+}
+
+.dc-chart .heatmap .box-group.deselected rect {
+    stroke: none;
+    fill-opacity: .5;
+    fill: #ccc;
+}
+
+.dc-chart .heatmap g.axis text {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.y-axis-label {
+    font-size: 13px;
+	font-family:Arial, sans-serif;
+	color: #32444a;
+	fill: #32444a;
+	stroke-width: 0;
+	stroke: #fff;
+    cursor: pointer;
+	fill-opacity:1;
+}
+
+.axis line, .axis path {
+				fill: none;
+				stroke: #000;
+				shape-rendering: crispEdges;
+}
+
+/*Sankey-Chart*/
+
+.sankey-node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.sankey-node text {
+    font: 13px sans-serif;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10 */
+    -o-user-select: none;
+    user-select: none;
+	pointer-events: none;
+	/*text-shadow: 0 1px 0 #fff;*/
+}
+
+.sankey-link {
+	fill: none;
+	/*stroke: #000;*/
+	stroke-opacity: .2;
+}
+
+.sankey-link:hover {
+	stroke-opacity: .5;
+}
+
+/*Migrations Map Chart*/
+
+.goinglinetext, .cominglinetext {
+    fill: #32444a;
+	stroke-width: 0;
+	stroke: #fff;
+    font-size: 12px;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10 */
+    -o-user-select: none;
+    user-select: none;
+	pointer-events: none;
+	fill-opacity:1;
+}
+
+/*D3-tip specific CSS*/
+
+.d3-tip {
+  line-height: 1;
+  font-size: 12px;
+  font-family:Arial, sans-serif;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #32444a;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #32444a;
+  border-radius: 0px;
+  pointer-events: none;
+  max-width: 200px;
+  z-index: 10000;
+}
+
+.d3-tip.ne {
+  margin-left: 25px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+  content: "\00A0";
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,0 5,10 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,0 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat center;
+  /*"\25BC";*/
+  margin: 0px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+/* NorthEastward tooltips */
+.d3-tip.ne:after {
+  content: "\00A0";
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,0 5,10 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,0 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat left;
+  /*"\25BC";*/
+  margin: 0px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+/* NorthWestward tooltips */
+.d3-tip.nw:after {
+  content: "\00A0";
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,0 5,10 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,0 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat right;
+  /*"\25BC";*/
+  margin: 0px 0 0 0;
+  top: 100%;
+  left: 0;
+  text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+  content: "\00A0";
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,0 5,10 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,0 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat center;
+  /*"\25BC";*/
+  margin: 0px 0 0 0;
+  top: 100%;
+  left: 0px;
+  text-align: center;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+  content: "\25B2";
+  margin: 0 0 1px 0;
+  top: -8px;
+  left: 0;
+  text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+  content: "\25B6";
+  margin: -4px 0 0 -1px;
+  top: 50%;
+  left: 100%;
+}
+
+.title {
+font-weight: bold;
+}
+
+.subtitle {
+font-size: 13px;
+}
+
+.source,  .description{
+font-size: 12px;
+line-height: 1.2em
+}
+
+.source {
+margin-top: 10px;
+margin-bottom: 20px;
+}
+
+.slinky-menu {
+	margin: 0 0 1em 0;
+}
+
+.slinky-menu {
+	overflow:hidden;
+	-webkit-transform:translateZ(0);
+	transform:translateZ(0);
+	-webkit-transition:all .3s ease;
+	transition:all .3s ease;
+	background:#f4f4f1
+}
+.slinky-menu>ul{
+	left:0;
+	position:relative;
+	-webkit-transform:translateZ(0);
+	transform:translateZ(0);
+	-webkit-transition:all .3s ease;
+	transition:all .3s ease
+}
+.slinky-menu li,.slinky-menu ul{
+	list-style:none;
+	margin:0
+}
+.slinky-menu ul{
+	width:100%
+}
+.slinky-menu a{
+	display:block;
+	border:none;
+	color:#00538c;
+	padding:0.5em
+}
+.slinky-menu li ul{
+	display:none;
+	left:100%;
+	position:absolute;
+	top:0
+}
+.slinky-menu .header{
+	position:relative
+}
+.slinky-menu h2~a.back{
+	left:0;
+	position:absolute;
+	top:0}
+.slinky-menu h2{
+	font-size:1em;
+	margin:0;
+	text-align:center;
+	color:#32444a;
+	padding:0.5em
+}
+.slinky-menu li{
+	line-height:1
+}
+.slinky-menu a:hover{
+	background:#fff;
+	outline: 1px #32444a dotted;
+}
+.slinky-menu a.next:after{
+	font-family: "icomoon";
+	content:'m';
+	margin-left:1em;
+	float:right
+}
+.slinky-menu a.back:before{
+	font-family: "icomoon";
+	content:'q';
+	margin-right:1em;
+	float:left
+}
+
+.slinky-menu ul,
+.slinky-menu ul:before,
+.slinky-menu ul:after {
+	border-radius: 0;
+	box-sizing: border-box;
+	font-weight: normal;
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+.dropdown-container {
+	position: absolute;
+	right: 0px;
+	margin-top: -10px;
+	line-height: 2em;
+}
+
+.dropdown-button {
+	border: 1px solid #e5e5e0;
+	padding: 0 .25em 0 .25em;
+}
+
+.dropdown-container li a {
+	padding: 0 5px;
+}
