@@ -363,8 +363,10 @@ $(window).resize(function(event) {
 	formatBarLabels();
 });
 
+var columns=[dimension, stack, group]									 
 addDownloadButton(number);
 addDownloadButtonPng(number)
+addDataTablesButton(number, columns)									
 	
 });
 
