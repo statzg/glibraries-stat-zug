@@ -1,9 +1,14 @@
 /* stat_zg_choropleth.js (version 0.1 (2017.10.01)*/
 
 function loadChoroplethMap(number, csv_path) {
+	
+var group="";
+var dimension="";
 
-var maincontainer="default"+number
-var chartcontainer="chart"+number
+Atts[number]={};
+
+Atts[number].maincontainer="default"+number
+Atts[number].chartcontainer="chart"+number
 
 function redraw() {
 
@@ -14,7 +19,7 @@ function redraw() {
 	var cantoncolors=[coloring(-1),coloring(-0.8),coloring(-0.6),coloring(-0.4),coloring(-0.2),coloring(0),coloring(0.5),coloring(1)]
 
 	//Width and height
-	var w = document.getElementById(maincontainer).offsetWidth;
+	var w = document.getElementById(Atts[number].maincontainer).offsetWidth;
 	
 	var scalemax = 7900
 	var scalemin = 3000
@@ -47,7 +52,7 @@ function redraw() {
 	var lineSize = d3.scale.linear().range([2,75]).domain([0, 35000]);
 
 	//Create SVG element
-	var svg = d3.select("#" + chartcontainer)
+	var svg = d3.select("#" + Atts[number].chartcontainer)
 		.append("svg")
 		.attr("width", w)
 		.attr("height", h);
@@ -62,52 +67,50 @@ function redraw() {
 	
 	d3.csv(csv_path, function (data) {
 		
-meta = data.filter(function(el) {
+Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 
 var dataValues = d3.values(data)[0];
-if (group == undefined | group=="") {var group = Object.keys(dataValues)[1];	};
-if (dimension == undefined | dimension=="") {var dimension = Object.keys(dataValues)[0];	};
+if (group == undefined | group=="") {group = Object.keys(dataValues)[1];};
+if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[0];};
 	
-data = data.filter(function(el) {
+Atts[number].data = data.filter(function(el) {
 	return (el["Meta"] == "NA" | el["Meta"] == undefined) & el[dimension]!= "Schweiz";
 });
 
-data.forEach(function(d) {
+Atts[number].data.forEach(function(d) {
 	d[dimension] = d[dimension];
 	d[group] = parseFloat(d[group]);
 });
 
-title = meta.filter(function( el ) { return el.Type == "title";});
-if (title.length == 1) {
-$("#"+maincontainer+" #title").html(title[0].Content);
+Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+if (Atts[number].title.length == 1) {
+$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
 }
 
-subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
-if (subtitle.length == 1) {
-$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
+Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+if (Atts[number].subtitle.length == 1) {
+$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
 }
 
-description = meta.filter(function( el ) { return el.Type == "description";});
-if (description.length == 1) {
-$("#"+maincontainer+" #description").html(description[0].Content);
+Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+if (Atts[number].description.length == 1) {
+$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
 }
 
-source = meta.filter(function( el ) { return el.Type == "source";});
-if (source.length == 1) {
-$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
+Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+if (Atts[number].source.length == 1) {
+$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
-
-	Attributes[number]={};
 
 if (group.indexOf(" (%)") !== -1) {
-	Attributes[number]["percent"]=true
-	Attributes[number]["grouplabel"]=group.replace(" (%)","")
+	Atts[number].percent=true
+	Atts[number].grouplabel=group.replace(" (%)","")
 }
 else {
-	Attributes[number]["percent"]=false
-	Attributes[number]["grouplabel"]=group
+	Atts[number].percent=false
+	Atts[number].grouplabel=group
 }
 	
 	realjson='{"type":"FeatureCollection","features":[ \
@@ -163,8 +166,8 @@ else {
 		
 		json=JSON.parse(realjson);
 		
-		var maxquote=Number(d3.max(data, function(d) { return d[group]; }));
-		var minquote=Number(d3.min(data, function(d) { return d[group]; }));
+		var maxquote=Number(d3.max(Atts[number].data, function(d) { return d[group]; }));
+		var minquote=Number(d3.min(Atts[number].data, function(d) { return d[group]; }));
 
 		function calibrate(num) {
 			return ((num-minquote)/(maxquote-minquote)*2)-1
@@ -208,7 +211,7 @@ else {
 		.orient("right")
 		.tickValues([minquote, (maxquote-minquote)/4+minquote, (maxquote-minquote)/2+minquote, (maxquote-minquote)/4*3+minquote, maxquote]);
 		
-	if (Attributes[number]["percent"]==true) {
+	if (Atts[number].percent==true) {
 		axis.tickFormat(formatPercent);
 	}
 	else {
@@ -221,12 +224,12 @@ else {
 		.attr('transform', 'translate(10,10)')
 		.call(axis)
 				
-		for (var i = 0; i < data.length; i++) {
-			var dataName = data[i][dimension];
+		for (var i = 0; i < Atts[number].data.length; i++) {
+			var dataName = Atts[number].data[i][dimension];
 
 			var tempObj = {};
-			for (var propt in data[i]) {
-				var valz = parseFloat(data[i][propt]);
+			for (var propt in Atts[number].data[i]) {
+				var valz = parseFloat(Atts[number].data[i][propt]);
 				tempObj[propt] = valz;
 			}
 			
@@ -237,9 +240,9 @@ else {
 					matched = true;
 					json.features[j].properties[dimension] = dataName;
 					json.features[j].id = dataName;
-					json.features[j].value = data[i][group];
+					json.features[j].value = Atts[number].data[i][group];
 					json.features[j].ind = i;
-					json.features[j].color = coloring(calibrate(data[i][group]));
+					json.features[j].color = coloring(calibrate(Atts[number].data[i][group]));
 					for (var propt in tempObj) {
 						if(!isNaN(tempObj[propt])) {
 							json.features[j].properties[propt] = tempObj[propt];
@@ -312,8 +315,13 @@ else {
 			initTip(number);
 			callTip(number);
 
+	var columns=[dimension, group]									 
+	addDownloadButton(number);
+	addDownloadButtonPng(number)
+	addDataTablesButton(number, columns)
+			
 	});
-	
+
 }
 
 redraw();
@@ -322,7 +330,7 @@ resizeMap();
 function initTip(number){
 	d3.selectAll("#d3-tip"+number).remove();
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
@@ -333,21 +341,21 @@ function initTip(number){
 function callTip(number){
 	
 	//Nur für Kantone, nicht für Seen, deshalb Zwischenschritt
-	var cantons = d3.selectAll("#"+ chartcontainer + " svg g circle, #" + chartcontainer +" svg g path").filter(function(d,i) {return d.ind != undefined});
+	var cantons = d3.selectAll("#"+ Atts[number].chartcontainer + " svg g circle, #" + Atts[number].chartcontainer +" svg g path").filter(function(d,i) {return d.ind != undefined});
 	
 	cantons.each(function(d, i){
 		d3.select(this)
-		.call(Tips[number])
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d, d3.select("circle#"+d.id.replace(" ","").replace(".","")).node());
+				Atts[number].tips.show(d, d3.select("circle#"+d.id.replace(" ","").replace(".","")).node());
 				last_tip = d.key;
 			}
-			console.log(d);
-			if (Attributes[number]["percent"]==true) {wert=germanFormatters.numberFormat(",.1%")(d.value)}
+			//console.log(d);
+			if (Atts[number].percent==true) {wert=germanFormatters.numberFormat(",.1%")(d.value)}
 			else if (d.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.value)}
-			tiptext= "<span><b>" + d.id + "</b></span><br/><span>"+Attributes[number]["grouplabel"]+": <b>" + wert + "</b></span>";
+			tiptext= "<span><b>" + d.id + "</b></span><br/><span>"+Atts[number].grouplabel+": <b>" + wert + "</b></span>";
 			$("#d3-tip"+number).html(tiptext);
 			$("#d3-tip"+number).css("border-left", d.color +" solid 5px");
 			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).width()/2));
@@ -357,20 +365,17 @@ function callTip(number){
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		})
 	})
 }
 
-function resizeMap(number) {
+function resizeMap() {
 	d3.selectAll("#d3-tip"+number).remove();
-	d3.selectAll("#"+chartcontainer+" svg").remove()
+	d3.selectAll("#"+Atts[number].chartcontainer+" svg").remove()
 	redraw();
 }
 
 $(window).resize(function(){resizeMap(number)});	
-
-addDownloadButton(maincontainer, chartcontainer, number);
-addDownloadButtonPng(maincontainer, chartcontainer, number)
 
 };
