@@ -1,18 +1,20 @@
-/* stat_zg_sankey.js (version 0.1 (2017.10.01)*/
+/* stat_zg_migrationmap.js (version 0.3 (2017.11.27)*/
 
 /*Angepasst von http://bl.ocks.org/cingraham/7663357 */
 
 function loadMigrationMap(number, csv_path) {
 
-var maincontainer="default"+number
-var chartcontainer="chart"+number
+Atts[number]={};
+
+Atts[number].maincontainer="default"+number
+Atts[number].chartcontainer="chart"+number
 
 function redraw() {
 
 	var cantoncolors=['#fff','#76aa7c','#a0bd6d','#cece63','#ffdd5e','#007ac4','#A7D5F1','#A7D5F1']
 
 	//Width and height
-	var w = document.getElementById(maincontainer).offsetWidth;
+	var w = document.getElementById(Atts[number].maincontainer).offsetWidth;
 	var h = 350;
 	var scalemax = 23000
 	var scalemin = 13000
@@ -41,7 +43,7 @@ function redraw() {
 	var lineSize = d3.scale.linear().range([2,75]).domain([0, 35000]);
 
 	//Create SVG element
-	var svg = d3.select("#" + chartcontainer)
+	var svg = d3.select("#" + Atts[number].chartcontainer)
 		.append("svg")
 		.attr("width", w)
 		.attr("height", h)
@@ -81,35 +83,39 @@ function redraw() {
 					
 	d3.csv(csv_path, function (data) {
 		
-meta = data.filter(function(el) {
+Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 	
-data = data.filter(function(el) {
+Atts[number].data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
-title = meta.filter(function( el ) { return el.Type == "title";});
-if (title.length == 1) {
-$("#"+maincontainer+" #title").html(title[0].Content);
+Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+if (Atts[number].title.length == 1) {
+$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
 }
 
-subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
-if (subtitle.length == 1) {
-$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
+Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+if (Atts[number].subtitle.length == 1) {
+$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
 }
 
-description = meta.filter(function( el ) { return el.Type == "description";});
-if (description.length == 1) {
-$("#"+maincontainer+" #description").html(description[0].Content);
+Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+if (Atts[number].description.length == 1) {
+$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
 }
 
-source = meta.filter(function( el ) { return el.Type == "source";});
-if (source.length == 1) {
-$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
+Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+if (Atts[number].source.length == 1) {
+$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
 
-	going = data;
+	going = Atts[number].data;
+
+	Atts[number].data = Atts[number].data.filter(function(el) {
+		return el["Zielkanton"] != "Aegerisee" & el["Zielkanton"] != "Zugersee" & el["Zielkanton"] != "Zürichsee"
+	});
 	
 	realjson='{"type":"FeatureCollection","features":[ \
 		{"type":"Feature","id":"101","properties":{"name":"Restliche Schweiz"},"geometry": { "type": "Polygon", "coordinates": [ [ [ 7.506312364202002, 47.821374963700386 ], [ 10.432347700279628, 47.825896217798011 ], [ 10.451908927813527, 46.6554694073467 ], [ 7.508570299674735, 46.652911120901869 ], [ 7.506312364202002, 47.821374963700386 ] ] ] } }, \
@@ -126,11 +132,11 @@ $("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
 		
 		//d3.json("states.json", function (json) {
 
-		for (var i = 0; i < data.length; i++) {
-			var dataName = data[i].state;
+		for (var i = 0; i < going.length; i++) {
+			var dataName = going[i].Zielkanton;
 			var tempObj = {};
-			for (var propt in data[i]) {
-				var valz = parseFloat(data[i][propt]);
+			for (var propt in going[i]) {
+				var valz = parseFloat(going[i][propt]);
 				tempObj[propt] = valz;
 			}
 			
@@ -139,9 +145,9 @@ $("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
 				var jsonState = json.features[j].properties.name;
 				if (dataName == jsonState) {
 					matched = true;
-					json.features[j].properties.state = dataName;
+					json.features[j].properties.Zielkanton = dataName;
 					json.features[j].id = dataName;
-					json.features[j].abbrev = data[i].abbrev;
+					json.features[j].abbrev = going[i].abbrev;
 					json.features[j].ind = i;
 					for (var propt in tempObj) {
 						if(!isNaN(tempObj[propt])) {
@@ -161,7 +167,7 @@ $("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
 			.append("path")
 			.attr("class", "state")
 			.attr("id", function(d) {
-				return d.properties.state;
+				return d.properties.Zielkanton;
 				})
 			.attr("d", path)
 			.attr("stroke-width", 1)
@@ -248,8 +254,8 @@ function clicked(selected) {
 		.attr("class", "totalline")
   
 		.attr("d", function(d,i) {
-			//console.log(coming[i][selname], coming[i].state);
-			//console.log(going[i][selname], going[i].state);
+			//console.log(coming[i][selname], coming[i].Zielkanton);
+			//console.log(going[i][selname], going[i].Zielkanton);
 			var abb = d.abbrev;
 			var finalval = coming[i][selname] - going[i][selname];
 			
@@ -310,8 +316,8 @@ function clicked(selected) {
 		})
   
 		.attr("d", function(d,i) {
-			//console.log(coming[i][selname], coming[i].state);
-			//console.log(going[i][selname], going[i].state);
+			//console.log(coming[i][selname], coming[i].Zielkanton);
+			//console.log(going[i][selname], going[i].Zielkanton);
 			var abb = d.abbrev;
 			var theSelectedState = d3.select("#" + selected.abbrev);
 			var theState = d3.select("#" + abb);
@@ -396,9 +402,9 @@ function clicked(selected) {
 			var theSelectedState = d3.select("#" + selected.abbrev);
 			Tips[number].show(d, $("circle")[i]);
 			last_tip = d.key;
-			var ziel=d.state
+			var ziel=d.Zielkanton
 			var target=theSelectedState[0][0].__data__.id;
-			tiptext= "<span>Pendler von <b>" + d.state + "</b> nach <b>" + theSelectedState[0][0].__data__.id + "</b>:</span><br/><span>" + germanFormatters.numberFormat(",")(theSelectedState[0][0].__data__.properties[ziel]) + "</span>";
+			tiptext= "<span>Pendler von <b>" + d.Zielkanton + "</b> nach <b>" + theSelectedState[0][0].__data__.id + "</b>:</span><br/><span>" + germanFormatters.numberFormat(",")(theSelectedState[0][0].__data__.properties[ziel]) + "</span>";
 			$("#d3-tip"+number).html(tiptext)
 			var bordercolor=colors[0]
 			$("#d3-tip"+number).css("border-left", bordercolor +" solid 5px");
@@ -435,8 +441,8 @@ function clicked(selected) {
 
   
 		.attr("d", function(d,i) {
-			//console.log(coming[i][selname], coming[i].state);
-			//console.log(going[i][selname], going[i].state);
+			//console.log(coming[i][selname], coming[i].Zielkanton);
+			//console.log(going[i][selname], going[i].Zielkanton);
 			var abb = d.abbrev;
 			var finalval = going[i][selname];
 			
@@ -513,7 +519,7 @@ function clicked(selected) {
 			last_tip = d.key;
 			target=theSelectedState[0][0].__data__.id;
 			id=theSelectedState[0][0].__data__.ind
-			tiptext= "<span>Pendler von <b>" + target + "</b> nach <b>" + d.state + "</b>:</span><br/><span>" + germanFormatters.numberFormat(",")(d[target]) + "</span>";
+			tiptext= "<span>Pendler von <b>" + target + "</b> nach <b>" + d.Zielkanton + "</b>:</span><br/><span>" + germanFormatters.numberFormat(",")(d[target]) + "</span>";
 			$("#d3-tip"+number).html(tiptext)
 			var bordercolor=colors[1]
 			$("#d3-tip"+number).css("border-left", bordercolor +" solid 5px");
@@ -546,7 +552,7 @@ function clicked(selected) {
 					"class":"goingline",
 					"marker-end":"url(#arrowred)"
 				});
-			g.selectAll('#' + chartcontainer + ' .cominglinetext')
+			g.selectAll('#' + Atts[number].chartcontainer + ' .cominglinetext')
 				.data(going)
 				.enter()
 				.append("text")
@@ -575,10 +581,10 @@ function clicked(selected) {
 				.text(function (d) {
 					var theSelectedState = d3.select("#" + selected.abbrev);
 					var target=theSelectedState[0][0].__data__.id;
-					var ziel=d.state
+					var ziel=d.Zielkanton
 					return germanFormatters.numberFormat(",")(theSelectedState[0][0].__data__.properties[ziel]);
 				});
-			g.selectAll('#' + chartcontainer + ' .goinglinetext')
+			g.selectAll('#' + Atts[number].chartcontainer + ' .goinglinetext')
 				.data(going)
 				.enter()
 				.append("text")
@@ -612,7 +618,7 @@ function clicked(selected) {
 			g.selectAll('.cominglinetext').filter(function(d){ return d3.select(this).text() == 'NaN'}).remove();
 			g.selectAll('.goinglinetext').filter(function(d){ return d3.select(this).text() == '0'}).remove();
 			g.selectAll('.goinglinetext').filter(function(d){ return d3.select(this).text() == 'NaN'}).remove();
-			g.selectAll('#' + chartcontainer + ' .cominglinetext')
+			g.selectAll('#' + Atts[number].chartcontainer + ' .cominglinetext')
 				.attr("transform", function(d,i) {
 					var abb = d.abbrev;
 					var theState = d3.select("#" + abb);
@@ -626,7 +632,7 @@ function clicked(selected) {
 					var addx=ausrichter*laenge*steig/Math.sqrt(steig*steig+1);
 					return "translate("+(((homex+startx)/2)+addx)+","+(((homey+starty)/2)+addy)+")"
 				});
-			g.selectAll('#' + chartcontainer + ' .goinglinetext')
+			g.selectAll('#' + Atts[number].chartcontainer + ' .goinglinetext')
 				.attr("transform", function(d,i) {
 					var abb = d.abbrev;
 					var theState = d3.select("#" + abb);
@@ -671,7 +677,7 @@ function initTip(number){
 function callTip(number){
 	
 	//Nur für Kantone, nicht für Seen, deshalb Zwischenschritt
-	var cantons = d3.selectAll("#"+ chartcontainer + " svg g circle, #" + chartcontainer +" svg g path").filter(function(d,i) {return d.ind < 6});
+	var cantons = d3.selectAll("#"+ Atts[number].chartcontainer + " svg g circle, #" + Atts[number].chartcontainer +" svg g path").filter(function(d,i) {return d.ind < 6});
 	
 	cantons.each(function(d, i){
 		d3.select(this)
@@ -740,7 +746,9 @@ function resizeMap(number) {
 
 $(window).resize(function(){resizeMap(1)});	
 
-addDownloadButton(maincontainer, chartcontainer, number);
-addDownloadButtonPng(maincontainer, chartcontainer, number)
+var columns=["Zielkanton", "Restliche Schweiz", "Zürich", "Aargau", "Luzern", "Schwyz", "Zug"]									 
+addDownloadButton(number);
+addDownloadButtonPng(number)
+addDataTablesButton(number, columns)
 
 };
