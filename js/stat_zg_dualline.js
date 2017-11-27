@@ -1,4 +1,4 @@
-﻿/* stat_zg_line.js (version 0.2 (2017.07.19)*/
+﻿/* stat_zg_dualline.js (version 0.3 (2017.11.27)*/
 
 function loadDualLine(number, csv_path, dimension, group, stack, characteristics, characteristicsStack, scale, showTotal, showAnteil, showArea, asDate, dateUnit) {
 dateUnit = typeof dateUnit !== 'undefined' ? dateUnit : "month";
@@ -455,7 +455,7 @@ window.addEventListener('resize', function(){
 
 var columns=[dimension, stack, group]									 
 addDownloadButton(number);
-addDownloadButtonPng(number)
-addDataTablesButton(number, columns)	
+addDownloadButtonPng(number);
+addDataTablesButton(number, columns);
 
 }
