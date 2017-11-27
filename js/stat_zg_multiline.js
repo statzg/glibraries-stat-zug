@@ -1,17 +1,19 @@
-﻿/* stat_zg_line.js (version 0.2 (2017.07.19)*/
+﻿/* stat_zg_multiline.js (version 0.3 (2017.11.27)*/
 
 function loadMultiLine(number, csv_path, dimension, group, stack, characteristics, characteristicsStack, scale, showTotal, showAnteil, showArea, asDate, dateUnit) {
 dateUnit = typeof dateUnit !== 'undefined' ? dateUnit : "month";
 
-var maincontainer="default"+number
-var chartcontainer="chart"+number
+Atts[number]={};
+
+Atts[number].maincontainer="default"+number
+Atts[number].chartcontainer="chart"+number
 
 //Breite des Containers ermitteln
-var totalWidth = document.getElementById(maincontainer).offsetWidth;
+var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 var totalHeight = 360
 
 //Charttyp dem Container zuweisen
-Charts[number] = dc.compositeChart("#"+chartcontainer);
+Charts[number] = dc.compositeChart("#"+Atts[number].chartcontainer);
 
 //Daten einlesen
 
@@ -28,47 +30,47 @@ var daten = d3.csv(csv_path, function(error, data) {
 		});
 	}
 
-meta = data.filter(function(el) {
+Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 	
-data = data.filter(function(el) {
+Atts[number].data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
-title = meta.filter(function( el ) { return el.Type == "title";});
-if (title.length == 1) {
-$("#"+maincontainer+" #title").html(title[0].Content);
+Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+if (Atts[number].title.length == 1) {
+$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
 }
 
-subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
-if (subtitle.length == 1) {
-$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
+Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+if (Atts[number].subtitle.length == 1) {
+$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
 }
 
-description = meta.filter(function( el ) { return el.Type == "description";});
-if (description.length == 1) {
-$("#"+maincontainer+" #description").html(description[0].Content);
+Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+if (Atts[number].description.length == 1) {
+$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
 }
 
-source = meta.filter(function( el ) { return el.Type == "source";});
-if (source.length == 1) {
-$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
+Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+if (Atts[number].source.length == 1) {
+$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
 
 //Daten an Crossfilter übergeben
-Datasets[number] = crossfilter(data),
-	MainDimensions[number] = Datasets[number].dimension(function (d) {
+Atts[number].dataset = crossfilter(Atts[number].data),
+	Atts[number].maindimension = Atts[number].dataset.dimension(function (d) {
 		return d[dimension];
 	}),
-	MainGroups[number] = MainDimensions[number].group().reduceSum(function (d) {
+	Atts[number].maingroup = Atts[number].maindimension.group().reduceSum(function (d) {
 		return d[group];
 	});	
 
 //Ausprägungen in Array abfüllen, wenn nicht manuell definiert (für Farbzuweisung)
 if (typeof characteristics === 'undefined' || characteristics.length==0) {
 	characteristics = [];
-	MainGroups[number].all().forEach(function (x) {
+	Atts[number].maingroup.all().forEach(function (x) {
 			characteristics.push(x["key"]);
 		});
 	}
@@ -79,18 +81,18 @@ colorScale = d3.scale.ordinal()
             .range(colorscheme[scale][characteristicsStack.length]);
 			
 var createPropertyGroup = function(i) {
-    return MainDimensions[number].group().reduceSum(function (d) {if (d[stack]===characteristicsStack[i]) {return d[group];}else{return 0;}});
+    return Atts[number].maindimension.group().reduceSum(function (d) {if (d[stack]===characteristicsStack[i]) {return d[group];}else{return 0;}});
 }
 
-SecondaryGroups[number]={};
+Atts[number].secondgroup={};
 for (var i = 0; i < characteristicsStack.length; i++) {
-	SecondaryGroups[number][characteristicsStack[i]]=createPropertyGroup(i)
+	Atts[number].secondgroup[characteristicsStack[i]]=createPropertyGroup(i)
 }
 
 Charts[number+100]=[]
 for (var i = 0; i < characteristicsStack.length; i++) {
 	Charts[number+100][i]= dc.lineChart(Charts[number])
-			.group(SecondaryGroups[number][characteristicsStack[i]], characteristicsStack[i])
+			.group(Atts[number].secondgroup[characteristicsStack[i]], characteristicsStack[i])
 			.ordinalColors([colorscheme[scale][characteristicsStack.length][i]])
 			.yAxisPadding("5%")
 			.dotRadius(10)
@@ -105,7 +107,7 @@ Charts[number]
 	.height(totalHeight)
 	.transitionDuration(1500)
 	.margins({left: 20, top: 10, right: 10, bottom: 40})
-	.dimension(MainDimensions[number])
+	.dimension(Atts[number].maindimension)
 	.elasticY(true)
 	.legend(dc.legend().x(70).y(10).itemHeight(13).gap(5))
 	.brushOn(false)
@@ -147,7 +149,7 @@ var YWidth=0
 
 function adaptY(){
 	var maxwidth=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis.y > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.y > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -165,12 +167,12 @@ function adaptY(){
 adaptY();
 
 function getLegendWidth(number) {
-	var legendLength = d3.select("#"+chartcontainer+" g.dc-legend").node().childElementCount;
+	var legendLength = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().childElementCount;
 	var legendWidthArray = [];
 	legendHeightArray = [];
 	for (i=0; i < legendLength; i++) {
 		var j=i+1;
-		var item = "#"+chartcontainer+" g.dc-legend-item:nth-of-type("+j+")";
+		var item = "#"+Atts[number].chartcontainer+" g.dc-legend-item:nth-of-type("+j+")";
 		legendWidthArray[i]=d3.select(item).node().getBBox().width;
 		legendHeightArray[i]=d3.select(item).node().getBBox().height;
 	};
@@ -179,8 +181,8 @@ function getLegendWidth(number) {
 
 function rotateX(){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
-	totalWidth = document.getElementById(maincontainer).offsetWidth;
+	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+	totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 
 	//Zeilen umbrechen, wenn breiter als Zwischenstrich
 	Charts[number].selectAll(".x .tick text")
@@ -189,7 +191,7 @@ function rotateX(){
 	//Maximale Breite der Skalenbezeichner	
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis.x > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -202,18 +204,18 @@ function rotateX(){
 		});
 
 	var legendy=330+maxheight
-	d3.selectAll("#"+chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
-	var legendHeight = d3.select("#"+chartcontainer+" g.dc-legend").node().getBBox().height;
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+	var legendHeight = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().getBBox().height;
 	Charts[number].width(totalWidth)
 	Charts[number].height(totalHeight+maxheight+legendHeight-20)
 		.margins({left: YWidth, top: 10, right: 10, bottom: 40 + maxheight + legendHeight});
 	Charts[number].render()
 	Charts[number].selectAll(".x .tick text")
 		.call(wrap, tickwidth);
-	d3.selectAll("#"+chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis.x > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -232,11 +234,11 @@ function rotateX(){
 	Charts[number].selectAll(".x .tick text")
 		.call(wrap, Math.min(150, maxwidth));
 	var legendy=330+Math.min(150, maxwidth)
-	d3.selectAll("#"+chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
-	d3.selectAll("#"+chartcontainer+" g.axis.x > g > text")
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
 		.style("text-anchor", "start")
 	//var moveleft = (-maxheight)/2-3
-	d3.selectAll("#"+chartcontainer+" g.axis.x > g > text").attr("transform", function (d) {
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text").attr("transform", function (d) {
 		var moveleft = (-(this.getBBox().height)/2)-5;
 		return ("rotate(90), translate(10,"+moveleft+")")
 	});
@@ -244,9 +246,9 @@ function rotateX(){
 	//Wenn nötig Legende umbrechen, funktioniert nur bis 2 Zeilen.
 	getLegendWidth(number);
 	if (legendMaxWidth > totalWidth-30){
-		Charts[number].selectAll("#"+chartcontainer+" g.dc-legend text")
+		Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.dc-legend text")
 			.call(wrap, totalWidth-30);
-	d3.selectAll("#"+chartcontainer+" g.dc-legend text").attr("transform", function (d) {
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend text").attr("transform", function (d) {
 		var height = (this.getBBox().height);
 		if(height == 14) {
 		return ("translate(0,0)")
@@ -262,7 +264,7 @@ rotateX();
 
 function initTip(){
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
@@ -272,10 +274,10 @@ function initTip(){
 
 function callTip(){		
 	d3.selectAll("circle.dot")
-		.call(Tips[number])
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d);
+				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
 			//console.log($(this).parent().parent().parent().parent())
@@ -295,13 +297,13 @@ function callTip(){
 			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 
 			if (showTotal==true & showAnteil==true) {
-				tiptext= "<span>"+characteristicsStack[$(this).parent().parent().parent().parent().index()-2]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/MainGroups[number].all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
+				tiptext= "<span>"+characteristicsStack[$(this).parent().parent().parent().parent().index()-2]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
 			}
 			else if (showTotal==true) {
 				tiptext= "<span>"+characteristicsStack[$(this).parent().parent().parent().parent().index()-2]+ "</span><br/><span>"+ label + "</span><br/><span>"+group+": " + wert +  "</span>";
 			}
 			else if (showAnteil==true) {
-				tiptext= "<span>"+characteristicsStack[$(this).parent().parent().parent().parent().index()-2]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/MainGroups[number].all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
+				tiptext= "<span>"+characteristicsStack[$(this).parent().parent().parent().parent().index()-2]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
 			}
 			else {
 				tiptext= "<span>"+characteristicsStack[$(this).parent().parent().parent().parent().index()-2]+"</span><br/><span>" + label + "</span>";
@@ -315,7 +317,7 @@ function callTip(){
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 			d3.selectAll("circle.dot").attr('style', "fill-opacity:0.000001");
 			d3.selectAll("path.yRef").attr('style', "display:none");
 			d3.selectAll("path.xRef").attr('style', "display:none");
@@ -324,12 +326,12 @@ function callTip(){
 
 initTip();
 callTip();
-$("#"+maincontainer+" .dc-legend-item text").attr("x", 17);
+$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 
 //window.onresize = function(event) {
 window.addEventListener('resize', function(){
   //Breite des Hauptcontainers einlesen
-	var newWidth = document.getElementById(maincontainer).offsetWidth;
+	var newWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 	Charts[number].width(newWidth)
 		.transitionDuration(0);
 	Charts[number].legend(dc.legend().x(10).y(330).itemHeight(13).gap(10)
@@ -343,11 +345,13 @@ window.addEventListener('resize', function(){
 	rotateX();
 	
 	Charts[number].transitionDuration(1500);
-	$("#"+maincontainer+" .dc-legend-item text").attr("x", 17);
+	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 	});
 });
 
-addDownloadButton(maincontainer, chartcontainer, number);
-addDownloadButtonPng(maincontainer, chartcontainer, number)
+var columns=[dimension, stack, group]									 
+addDownloadButton(number);
+addDownloadButtonPng(number)
+addDataTablesButton(number, columns)
 
 }
