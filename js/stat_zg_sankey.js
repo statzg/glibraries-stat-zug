@@ -4,15 +4,17 @@
 
 function loadSankey(number, csv_path, characteristics, scale) {
 
-var maincontainer="default"+number
-var chartcontainer="chart"+number
+Atts[number]={};
+
+Atts[number].maincontainer="default"+number
+Atts[number].chartcontainer="chart"+number
 
 // load the data (using the timelyportfolio csv method)
 d3.csv(csv_path, function(error, data) {
 
 function redraw() {
 
-var totalWidth = document.getElementById(maincontainer).offsetWidth;
+var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 var totalHeight = 400;
 
 var units = "Mio Franken";
@@ -24,36 +26,36 @@ var margin = {top: 10, right: 0, bottom: 10, left: 0};
 var formatNumber = d3.format(",.0f"),    // zero decimal places
     format = function(d) { return formatNumber(d) + " " + units; };
 
-meta = data.filter(function(el) {
+Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 	
-data = data.filter(function(el) {
+Atts[number].data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
-title = meta.filter(function( el ) { return el.Type == "title";});
-if (title.length == 1) {
-$("#"+maincontainer+" #title").html(title[0].Content);
+Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+if (Atts[number].title.length == 1) {
+$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
 }
 
-subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
-if (subtitle.length == 1) {
-$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
+Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+if (Atts[number].subtitle.length == 1) {
+$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
 }
 
-description = meta.filter(function( el ) { return el.Type == "description";});
-if (description.length == 1) {
-$("#"+maincontainer+" #description").html(description[0].Content);
+Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+if (Atts[number].description.length == 1) {
+$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
 }
 
-source = meta.filter(function( el ) { return el.Type == "source";});
-if (source.length == 1) {
-$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
+Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+if (Atts[number].source.length == 1) {
+$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
 
 // append the svg canvas to the page
-svg = d3.select("#"+chartcontainer).append("svg")
+svg = d3.select("#"+Atts[number].chartcontainer).append("svg")
 	//.attr("preserveAspectRatio", "xMinYMin meet")
 	//.attr("viewBox", "0 0 "+width+" "+height)
 	//class to make it responsive
@@ -75,7 +77,7 @@ var path = sankey.link();
 	//set up graph in same style as original example but empty
 	graph = {"nodes" : [], "links" : []};
 
-    data.forEach(function (d) {
+    Atts[number].data.forEach(function (d) {
       graph.nodes.push({ "name": d.source });
       graph.nodes.push({ "name": d.target });
       graph.links.push({ "source": d.source,
@@ -180,7 +182,7 @@ colorScale = d3.scale.ordinal()
 	  //Dreizeilige Texte Links von Hand zentrieren (unschön aber einfach)
 	  .attr("y", function(d) { return (d.dy / 2) - 16; });
 	  
-	d3.selectAll("#"+chartcontainer+" g.sankey-node > text")
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > text")
 		.call(wrap, 105);
 
 		
@@ -198,7 +200,7 @@ function dragmove(d) {
 
 function initTip(number){
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction(function(d) {
@@ -219,11 +221,11 @@ function callTip(number){
 	//Total der Einnahmen und Ausgaben ermitteln
 	result = $.grep(graph.nodes, function(e){ return e.name == "Steuerverwaltung"; });
 	//console.log(result[0].value)
-	d3.selectAll("#"+chartcontainer+" g.sankey-node > rect")
-		.call(Tips[number])
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > rect")
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d);
+				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
 			if (d.name=="Steuerverwaltung") {
@@ -240,13 +242,13 @@ function callTip(number){
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		});
-	d3.selectAll("#"+chartcontainer+" path.sankey-link")
-		.call(Tips[number])
+	d3.selectAll("#"+Atts[number].chartcontainer+" path.sankey-link")
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d);
+				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
 			tiptext= "<span>" + d.source.name + " -> " + d.target.name + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.value/result[0].value) + "</span><br/><span>Betrag: " +germanFormatters.numberFormat(",")(d.value)+  " Mio CHF</span>";
@@ -275,7 +277,7 @@ function callTip(number){
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		});
 
 }
@@ -297,7 +299,9 @@ $(window).resize(function(){resizeSankey(number)});
   
 }); 
 
-addDownloadButton(maincontainer, chartcontainer, number);
-addDownloadButtonPng(maincontainer, chartcontainer, number)
+var columns=["source", "target", "value"]									 
+addDownloadButton(number);
+addDownloadButtonPng(number)
+addDataTablesButton(number, columns)
 
 };
