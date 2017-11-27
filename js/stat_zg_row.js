@@ -4,14 +4,16 @@ function loadRow(number, csv_path, dimension, group, characteristics, scale, hig
 showAnteil = typeof showAnteil !== 'undefined' ? showAnteil : false;
 characteristics = characteristics || undefined;
 
-var maincontainer="default"+number
-var chartcontainer="chart"+number
+Atts[number]={};
+
+Atts[number].maincontainer="default"+number
+Atts[number].chartcontainer="chart"+number
 
 //Breite des Containers ermitteln
-var totalWidth = document.getElementById(maincontainer).offsetWidth;
+var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 
 //Charttyp dem Container zuweisen
-Charts[number] = dc.rowChart("#"+chartcontainer);
+Charts[number] = dc.rowChart("#"+Atts[number].chartcontainer);
 
 //Daten einlesen
 var daten = d3.csv(csv_path, function(error, data) {
@@ -33,51 +35,51 @@ else {
 	Attributes[number]["grouplabel"]=group
 }
 
-meta = data.filter(function(el) {
+Atts[number].meta = data.filter(function(el) {
 	return el["Meta"] == 1
 });
 	
-data = data.filter(function(el) {
+Atts[number].data = data.filter(function(el) {
 	return el["Meta"] == "NA" | el["Meta"] == undefined
 });
 
-title = meta.filter(function( el ) { return el.Type == "title";});
-if (title.length == 1) {
-$("#"+maincontainer+" #title").html(title[0].Content);
+Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+if (Atts[number].title.length == 1) {
+$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
 }
 
-subtitle = meta.filter(function( el ) { return el.Type == "subtitle";});
-if (subtitle.length == 1) {
-$("#"+maincontainer+" #subtitle").html(subtitle[0].Content);
+Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+if (Atts[number].subtitle.length == 1) {
+$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
 }
 
-description = meta.filter(function( el ) { return el.Type == "description";});
-if (description.length == 1) {
-$("#"+maincontainer+" #description").html(description[0].Content);
+Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+if (Atts[number].description.length == 1) {
+$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
 }
 
-source = meta.filter(function( el ) { return el.Type == "source";});
-if (source.length == 1) {
-$("#"+maincontainer+" #source").html("Quelle: "+source[0].Content);
+Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+if (Atts[number].source.length == 1) {
+$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 }
 	
 //Daten an Crossfilter übergeben
-Datasets[number] = crossfilter(data),
-    MainDimensions[number] = Datasets[number].dimension(function (d) {
+Atts[number].dataset = crossfilter(Atts[number].data),
+    Atts[number].maindimension = Atts[number].dataset.dimension(function (d) {
 		return d[dimension];
     }),
-    MainGroups[number] = MainDimensions[number].group().reduceSum(function (d) {
+    Atts[number].maingroup = Atts[number].maindimension.group().reduceSum(function (d) {
         return d[group];
     });
-	SecondaryGroups[number]={};
-	SecondaryGroups[number]["Total"] = Datasets[number].groupAll().reduceSum(function (d) {
+	Atts[number].secondgroup={};
+	Atts[number].secondgroup["Total"] = Atts[number].dataset.groupAll().reduceSum(function (d) {
         return d[group];
     });
 
 //Ausprägungen in Array abfüllen, wenn nicht manuell definiert (für Farbzuweisung)
 if (typeof characteristics === 'undefined' || characteristics.length==0) {
 	characteristics = [];
-	MainGroups[number].all().forEach(function (x) {
+	Atts[number].maingroup.all().forEach(function (x) {
 			characteristics.push(x["key"]);
 		});
 	}
@@ -91,8 +93,8 @@ Charts[number]
     .width(totalWidth)
     .height(Math.max(characteristicsLength*24+20,300))
     .elasticX(true)
-    .dimension(MainDimensions[number])
-    .group(MainGroups[number])
+    .dimension(Atts[number].maindimension)
+    .group(Atts[number].maingroup)
 	.title(function(d) {
 		return ""; 
 	})
@@ -165,7 +167,7 @@ Charts[number].filter = function() {};
 function initTip(number) {
 	d3.selectAll("#d3-tip"+number).remove();
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
@@ -175,7 +177,7 @@ function initTip(number) {
 			else if (d.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.value)}
 			if (showAnteil==true){
-				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>Anteil:" + (Math.round((d.value/SecondaryGroups[number]["Total"].value())*1000)/10).toFixed(2) + '%' + "</span><br/><span>"+Attributes[number]["grouplabel"]+": " + wert + "</span>";
+				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>Anteil:" + (Math.round((d.value/Atts[number].secondgroup["Total"].value())*1000)/10).toFixed(2) + '%' + "</span><br/><span>"+Attributes[number]["grouplabel"]+": " + wert + "</span>";
 			}
 			else {
 				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>"+Attributes[number]["grouplabel"]+": " + wert + "</span>";
@@ -197,11 +199,11 @@ function getColorId(d) {
 }
 
 function callTip(number) {
-	d3.selectAll("#"+chartcontainer+" g.row > rect, #"+chartcontainer+" text.row")
-		.call(Tips[number])
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.row > rect, #"+Atts[number].chartcontainer+" text.row")
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d, $("#"+chartcontainer+" g.row > rect")[Math.floor(i/2)]);
+				Atts[number].tips.show(d, $("#"+Atts[number].chartcontainer+" g.row > rect")[Math.floor(i/2)]);
 				last_tip = d.key;
 			}
 			$("#d3-tip"+number).css("border-left", colorScale.range()[getColorId(d)] +" solid 5px");
@@ -211,13 +213,13 @@ function callTip(number) {
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		}); 
 }
 
 function rotateX(){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+chartcontainer+" g.axis > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+chartcontainer+" g.axis > g.tick:nth-child(1)").attr("transform")).translate[0];
+	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis > g.tick:nth-child(1)").attr("transform")).translate[0];
 
 	//Zeilen umbrechen, wenn breiter als Zwischenstrich
 	Charts[number].selectAll(".x .tick text")
@@ -226,7 +228,7 @@ function rotateX(){
 	//Maximale Breite der Skalenbezeichner	
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -245,7 +247,7 @@ function rotateX(){
 		.call(wrap, tickwidth);
 	var maxwidth=0
 	var maxheight=0
-	Charts[number].selectAll("#"+chartcontainer+" g.axis > g > text")
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis > g > text")
 		.attr('transform', function (d) {
 			var coordx = this.getBBox().width;
 			if (maxwidth < coordx) {
@@ -263,17 +265,17 @@ function rotateX(){
 	Charts[number].render()
 	Charts[number].selectAll(".axis .tick text")
 		.call(wrap, Math.min(150, maxwidth));
-	d3.selectAll("#"+chartcontainer+" g.axis > g > text")
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis > g > text")
 		.style("text-anchor", "start")
 	//var moveleft = (-maxheight)/2-3
-	d3.selectAll("#"+chartcontainer+" g.axis > g > text").attr("transform", function (d) {
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.axis > g > text").attr("transform", function (d) {
 		var moveleft = (-(this.getBBox().height)/2)-5;
 		return ("rotate(90), translate(10,"+moveleft+")")
 	});
 	}
 	//Click-Event ausschalten
-	d3.selectAll("#"+chartcontainer+" g.stack > rect").on('click',null);
-    d3.selectAll("#"+chartcontainer+" g.stack > rect").on("click", function() { 
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on('click',null);
+    d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on("click", function() { 
     });
 }
 
@@ -296,9 +298,12 @@ window.addEventListener('resize', function(){
 	Charts[number].transitionDuration(1500);
 	
 	});
+	
+	var columns=[dimension, group]									 
+	addDownloadButton(number);
+	addDownloadButtonPng(number)
+	addDataTablesButton(number, columns)
+	
 });
-
-addDownloadButton(maincontainer, chartcontainer, number);
-addDownloadButtonPng(maincontainer, chartcontainer, number)
 
 }
