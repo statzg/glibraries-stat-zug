@@ -33,9 +33,9 @@ var daten = d3.csv(csv_path, function(error, data) {
 
 treatmetadata(number, data);
 	
-Datasets[number]= crossfilter(Atts[number].data),
-	MainDimensions[number] = Datasets[number].dimension(function(d) {return d[stack];}),
-	MainGroups[number] = MainDimensions[number].group().reduce(function(p, v) {
+Atts[number].dataset= crossfilter(Atts[number].data),
+	Atts[number].maindimension = Atts[number].dataset.dimension(function(d) {return d[stack];}),
+	Atts[number].maingroup = Atts[number].maindimension.group().reduce(function(p, v) {
 		++p.count;
 		p[v[dimension]] = (p[v[dimension]] || 0) + v[group];
 		p.total += +v[group];
@@ -48,7 +48,7 @@ Datasets[number]= crossfilter(Atts[number].data),
 	}, function() {
 		return { total:0, count:0};
 	});
-	SecondDimension = Datasets[number].dimension(function (d) {
+	SecondDimension = Atts[number].dataset.dimension(function (d) {
 		return d[dimension];
 	});
 	SecondGroup = SecondDimension.group().reduceSum(function (d) {
@@ -87,7 +87,7 @@ columns = [];
 for (var i=0; i < characteristicsLength; i++) {
 	columns[i] = dc.barChart(Charts[number])
 	//.gap(160)
-	.group(MainGroups[number], characteristics[i] + "", sel_stack(characteristics[i]))
+	.group(Atts[number].maingroup, characteristics[i] + "", sel_stack(characteristics[i]))
 	.centerBar(false)
 	.colors(colorscheme[scale][characteristicsLength][i])
 	.title(function(d) {
@@ -206,7 +206,7 @@ function rotateX(){
 
 function initTip(){
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
@@ -216,36 +216,36 @@ function initTip(){
 
 function callTip(){
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect")
-		.call(Tips[number])
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d);
+				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
 			
-			if (d.data.value[characteristics[Math.floor(i/MainGroups[number].all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/MainGroups[number].all().length)]])}
-			else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/MainGroups[number].all().length)]])}
+			if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
+			else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 			
 			if (showTotal==true & showAnteil==true) {
-				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/MainGroups[number].all().length)]+ "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/MainGroups[number].all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
+				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
 			}
 			else if (showTotal==true) {
-				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/MainGroups[number].all().length)]+ "</span><br/><span>"+group+": " + wert +  "</span>";
+				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>"+group+": " + wert +  "</span>";
 			}
 			else if (showAnteil==true) {
-				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/MainGroups[number].all().length)]+ "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/MainGroups[number].all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span>";
+				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span>";
 			}
 			else {
-				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/MainGroups[number].all().length)]+ "</span>";
+				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>";
 			};
 			$("#d3-tip"+number).html(tiptext)
-			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/MainGroups[number].all().length)] +" solid 5px");
+			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
 			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).width()/2));
 			$("#d3-tip"+number).css( 'left', offsetx);
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		});
 }
 
@@ -253,8 +253,8 @@ function callTip(){
 Charts[number]
 	.width(totalWidth)
 	.height(totalHeight)
-	.dimension(MainDimensions[number])
-	.group(MainGroups[number], characteristics[0] + "", sel_stack(characteristics[0]))
+	.dimension(Atts[number].maindimension)
+	.group(Atts[number].maingroup, characteristics[0] + "", sel_stack(characteristics[0]))
 	.margins({left: 20, top: 10, right: 10, bottom: 40})
 	//.elasticY(true)
 	.x(d3.scale.ordinal())
@@ -284,7 +284,7 @@ Charts[number].on('renderlet', function(chart){
 	var yAxis=d3.svg.axis().scale(d3.scale.ordinal()).orient("bottom").ticks(4);
 		
 	for (var j=2; j <= characteristicsLength+1; j++) {
-		for (var i=1; i <= MainGroups[number].all().length; i++) {
+		for (var i=1; i <= Atts[number].maingroup.all().length; i++) {
 
 			var bbox = chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
 			var barwidth=groupwidth/characteristicsLength;
@@ -362,7 +362,7 @@ window.addEventListener('resize', function(){
 	var groupwidth=tickwidth*0.9;
 
 		for (var j=2; j <= characteristicsLength+1; j++) {
-			for (var i=1; i <= MainGroups[number].all().length; i++) {
+			for (var i=1; i <= Atts[number].maingroup.all().length; i++) {
 
 				var bbox = chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
 				var barwidth=groupwidth/characteristicsLength;

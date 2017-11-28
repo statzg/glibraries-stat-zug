@@ -24,15 +24,13 @@ var daten = d3.csv(csv_path, function(error, data) {
 var dataValues = d3.values(data)[0];
 if (group=="") {group = Object.keys(dataValues)[1];	};
 
-Attributes[number]={};
-
 if (group.indexOf(" (%)") !== -1) {
-	Attributes[number]["percent"]=true
-	Attributes[number]["grouplabel"]=group.replace(" (%)","")
+	Atts[number].percent=true
+	Atts[number].grouplabel=group.replace(" (%)","")
 }
 else {
-	Attributes[number]["percent"]=false
-	Attributes[number]["grouplabel"]=group
+	Atts[number].percent=false
+	Atts[number].grouplabel=group
 }
 
 treatmetadata(number, data);
@@ -87,7 +85,7 @@ Charts[number]
 		}
 	});
 
-if (Attributes[number]["percent"]==true) {
+if (Atts[number].percent==true) {
 	var formatPercent = d3.format(".0%");
 	Charts[number].x(d3.scale.linear())
 	.xAxis().tickFormat(formatPercent);
@@ -147,14 +145,14 @@ function initTip(number) {
 		.direction('n')
 		.offset([-2, 0])
 		.html(function(d, i) {
-			if (Attributes[number]["percent"]==true) {wert=germanFormatters.numberFormat(",.1%")(d.value)}
+			if (Atts[number].percent==true) {wert=germanFormatters.numberFormat(",.1%")(d.value)}
 			else if (d.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.value)}
 			if (showAnteil==true){
-				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>Anteil:" + (Math.round((d.value/Atts[number].secondgroup["Total"].value())*1000)/10).toFixed(2) + '%' + "</span><br/><span>"+Attributes[number]["grouplabel"]+": " + wert + "</span>";
+				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>Anteil:" + (Math.round((d.value/Atts[number].secondgroup["Total"].value())*1000)/10).toFixed(2) + '%' + "</span><br/><span>"+Atts[number].grouplabel+": " + wert + "</span>";
 			}
 			else {
-				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>"+Attributes[number]["grouplabel"]+": " + wert + "</span>";
+				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>"+Atts[number].grouplabel+": " + wert + "</span>";
 			}
 		});
 	$("text.row").css( 'pointer-events', 'none' );

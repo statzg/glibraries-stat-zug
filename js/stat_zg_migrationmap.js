@@ -371,10 +371,10 @@ function clicked(selected) {
 		.attr("fill", "none")
 		.attr("opacity", 0.8)
 		.attr("stroke-linecap", "round")
-		.call(Tips[number])
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			var theSelectedState = d3.select("#" + selected.abbrev);
-			Tips[number].show(d, $("circle")[i]);
+			Atts[number].tips.show(d, $("circle")[i]);
 			last_tip = d.key;
 			var ziel=d.Zielkanton
 			var target=theSelectedState[0][0].__data__.id;
@@ -389,7 +389,7 @@ function clicked(selected) {
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		})
 		;
 		
@@ -486,10 +486,10 @@ function clicked(selected) {
 		.attr("fill", "none")
 		.attr("opacity", 0.8)
 		.attr("stroke-linecap", "round")
-		.call(Tips[number])
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			var theSelectedState = d3.select("#" + selected.abbrev);
-			Tips[number].show(d, $("circle")[theSelectedState[0][0].__data__.ind]);
+			Atts[number].tips.show(d, $("circle")[theSelectedState[0][0].__data__.ind]);
 			last_tip = d.key;
 			target=theSelectedState[0][0].__data__.id;
 			id=theSelectedState[0][0].__data__.ind
@@ -504,7 +504,7 @@ function clicked(selected) {
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		});
 		
 		;
@@ -640,7 +640,7 @@ function tweenDash() {
 
 function initTip(number){
 	last_tip = null;
-	Tips[number] = d3.tip()
+	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
@@ -655,10 +655,10 @@ function callTip(number){
 	
 	cantons.each(function(d, i){
 		d3.select(this)
-		.call(Tips[number])
+		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
-				Tips[number].show(d, $("circle")[d.ind]);
+				Atts[number].tips.show(d, $("circle")[d.ind]);
 				last_tip = d.key;
 			}
 			if (d.name=="Steuerverwaltung") {
@@ -675,7 +675,7 @@ function callTip(number){
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
-			Tips[number].hide(d);
+			Atts[number].tips.hide(d);
 		})
 	})
 }

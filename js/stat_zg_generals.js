@@ -22,13 +22,6 @@ function loadbasics() {
 loadbasics();
 
 Charts = {};
-Datasets = {};
-Tips = {};
-Counters = {};
-MainDimensions = {};
-MainGroups = {};
-SecondaryGroups = {};
-Attributes = {};
 Atts = {};
 
 //Farben definieren
