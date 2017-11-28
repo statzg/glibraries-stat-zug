@@ -33,33 +33,7 @@ var daten = d3.csv(csv_path, function (error, data) {
 		d[group] = +d[group];
 	});
 
-Atts[number].meta = data.filter(function(el) {
-	return el["Meta"] == 1
-});
-	
-Atts[number].data = data.filter(function(el) {
-	return el["Meta"] == "NA" | el["Meta"] == undefined
-});
-
-Atts[number].title=Atts[number].meta.filter(function( el ) { return el.Type == "title";});
-if (Atts[number].title.length == 1) {
-$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
-}
-
-Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
-if (Atts[number].subtitle.length == 1) {
-$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
-}
-
-Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
-if (Atts[number].description.length == 1) {
-$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
-}
-
-Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
-if (Atts[number].source.length == 1) {
-$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
-}
+treatmetadata(number, data);
 	
 //Daten an Crossfilter übergeben
 Atts[number].dataset = crossfilter(Atts[number].data),

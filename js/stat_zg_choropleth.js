@@ -1,4 +1,4 @@
-/* stat_zg_choropleth.js (version 0.1 (2017.10.01)*/
+/* stat_zg_choropleth.js (version 0.3 (2017.11.28)*/
 
 function loadChoroplethMap(number, csv_path) {
 	
@@ -67,42 +67,20 @@ function redraw() {
 	
 	d3.csv(csv_path, function (data) {
 		
-Atts[number].meta = data.filter(function(el) {
-	return el["Meta"] == 1
-});
-
 var dataValues = d3.values(data)[0];
 if (group == undefined | group=="") {group = Object.keys(dataValues)[1];};
 if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[0];};
-	
-Atts[number].data = data.filter(function(el) {
-	return (el["Meta"] == "NA" | el["Meta"] == undefined) & el[dimension]!= "Schweiz";
+
+treatmetadata(number, data);
+
+Atts[number].data = Atts[number].data.filter(function(el) {
+	return el[dimension]!= "Schweiz";
 });
 
 Atts[number].data.forEach(function(d) {
 	d[dimension] = d[dimension];
 	d[group] = parseFloat(d[group]);
 });
-
-Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
-if (Atts[number].title.length == 1) {
-$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
-}
-
-Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
-if (Atts[number].subtitle.length == 1) {
-$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
-}
-
-Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
-if (Atts[number].description.length == 1) {
-$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
-}
-
-Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
-if (Atts[number].source.length == 1) {
-$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
-}
 
 if (group.indexOf(" (%)") !== -1) {
 	Atts[number].percent=true
