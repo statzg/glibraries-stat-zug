@@ -1,9 +1,22 @@
 ﻿/* stat_zg_bar.js (version 0.3 (2017.11.28)*/
 
-function loadBar(number, csv_path, dimension, group, characteristics, scale, relative, showTotal, showAnteil, order, last) {
-order = typeof order !== 'undefined' ? order : "alpha";
-last = typeof last !== 'undefined' ? last : "";
+function loadBar(args) {
+var number = (args.number== undefined | args.number == "") ? 1 : args.number;
+var csv_path = (args.csv_path== undefined | args.csv_path == "") ? "error" : args.csv_path;
+var dimension = (args.dimension== undefined | args.dimension == "") ? "error" : args.dimension;
+var group = (args.group== undefined | args.group == "") ? "error" : args.group;
+var characteristics = (typeof args.characteristics == 'undefined') ? "error" : args.characteristics;
+var scale = (args.scale== undefined | args.scale == "") ? 1 : args.scale;
+var relative = (args.relative== undefined | args.relative == "") ? false : args.relative;
+var showTotal = (args.showTotal== undefined | args.showTotal == "") ? true : args.showTotal;
+var showAnteil = (args.showAnteil== undefined | args.showAnteil == "") ? true : args.showAnteil;
+var order = (args.order== undefined | args.order == "") ? "alpha" : args.order;
+var last = (args.last== undefined | args.last == "") ? "" : args.last;
 
+//order = typeof order !== 'undefined' ? order : "alpha";
+//last = typeof last !== 'undefined' ? last : "";
+
+//Attributeobjekt initialisieren
 Atts[number]={};
 
 Atts[number].maincontainer="default"+number
