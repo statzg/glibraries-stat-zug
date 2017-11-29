@@ -21,8 +21,8 @@ function loadbasics() {
 
 loadbasics();
 
-Charts = {};
-Atts = {};
+if (typeof Charts == 'undefined') { Charts = {} };
+if (typeof Atts == 'undefined') { Atts = {} };
 
 //Farben definieren
 //generiert mit http://gka.github.io/palettes/#diverging|c0=007AC4,00A763,FFDD5E|c1=FFDD5E,FF8A26,FF403A|steps=19|bez0=1|bez1=1|coL0=1|coL1=1
