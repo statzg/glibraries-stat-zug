@@ -1,7 +1,26 @@
-﻿/* stat_zg_line.js (version 0.3 (2017.11.27)*/
+﻿/* stat_zg_line.js (version 0.3 (2017.11.28)*/
 
-function loadLine(number, csv_path, dimension, group, characteristics, scale, showTotal, showAnteil, showArea, asDate) {
+function loadLine(args) {
+var number = (typeof args.number == 'undefined') ? 1 : args.number;
+var csv_path = (typeof args.csv_path == 'undefined') ? "error" : args.csv_path;
+var dimension = (typeof args.dimension == 'undefined') ? "" : args.dimension;
+var group = (typeof args.group == 'undefined') ? "" : args.group;
+var characteristics = (typeof args.characteristics == 'undefined') ? [] : args.characteristics;
+//var stack = (typeof args.stack == 'undefined') ? "" : args.stack
+//var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
+//var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
+//var relative = (typeof args.relative == 'undefined') ? false : args.relative;
+var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
+var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
+var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
+var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
+//var dateUnit = (typeof args.dateUnit == 'undefined') ? true : args.dateUnit;
+//var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
+//var last = (typeof args.last == 'undefined') ? "" : args.last;
+//var partei = (typeof args.partei == 'undefined') ? false : args.partei;
+//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 
+//Attributeobjekt initialisieren
 Atts[number]={};
 
 Atts[number].maincontainer="default"+number
@@ -18,6 +37,11 @@ Charts[number] = dc.lineChart("#"+Atts[number].chartcontainer);
 
 
 var daten = d3.csv(csv_path, function(error, data) {
+
+var dataValues = d3.values(data)[0];
+if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[1];};
+if (group == undefined | group=="") {group = Object.keys(dataValues)[2];};
+	
 	if (asDate==true) {
 		data.forEach(function(x) {
 			x[dimension] = new Date(x[dimension]);
@@ -57,7 +81,7 @@ var characteristicsLength= characteristics.length;
 
 colorScale = d3.scale.ordinal()
             .domain(characteristics)
-            .range(colorscheme[scale][1]);
+            .range(colorscheme[1][1]);
 
 var order = characteristics;
 			
@@ -95,7 +119,7 @@ Charts[number]
 	.dotRadius(10)
 	.renderArea(showArea)
 	.interpolate("linear")
-	.colors(colorscheme[scale][1])
+	.colors(colorscheme[1][1])
 	.transitionDuration(1500);
 			
 if (asDate==true) {
