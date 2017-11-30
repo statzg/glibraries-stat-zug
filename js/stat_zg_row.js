@@ -1,9 +1,29 @@
-﻿/* stat_zg_line.js (version 0.1 (2017.06.12)*/
+﻿/* stat_zg_row.js (version 0.3 (2017.11.28)*/
 
-function loadRow(number, csv_path, dimension, group, characteristics, scale, highlight, canton, order, showAnteil) {
+function loadRow(args) {
+var number = (typeof args.number == 'undefined') ? 1 : args.number;
+var csv_path = (typeof args.csv_path == 'undefined') ? "error" : args.csv_path;
+var dimension = (typeof args.dimension == 'undefined') ? "" : args.dimension;
+var group = (typeof args.group == 'undefined') ? "" : args.group;
+var characteristics = (typeof args.characteristics == 'undefined') ? [] : args.characteristics;
+//var stack = (typeof args.stack == 'undefined') ? "" : args.stack
+//var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
+//var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
+//var relative = (typeof args.relative == 'undefined') ? false : args.relative;
+var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
+var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
+//var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
+//var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
+//var dateUnit = (typeof args.dateUnit == 'undefined') ? true : args.dateUnit;
+var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
+//var last = (typeof args.last == 'undefined') ? "" : args.last;
+//var partei = (typeof args.partei == 'undefined') ? false : args.partei;
+var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
+
 showAnteil = typeof showAnteil !== 'undefined' ? showAnteil : false;
 characteristics = characteristics || undefined;
 
+//Attributeobjekt initialisieren
 Atts[number]={};
 
 Atts[number].maincontainer="default"+number
@@ -20,6 +40,10 @@ var daten = d3.csv(csv_path, function(error, data) {
 	data.forEach(function(x) {
 		x[group] = +x[group];
 	});
+
+var dataValues = d3.values(data)[0];
+if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[0];};
+if (group == undefined | group=="") {group = Object.keys(dataValues)[1];};
 	
 var dataValues = d3.values(data)[0];
 if (group=="") {group = Object.keys(dataValues)[1];	};
@@ -148,11 +172,17 @@ function initTip(number) {
 			if (Atts[number].percent==true) {wert=germanFormatters.numberFormat(",.1%")(d.value)}
 			else if (d.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.value)}
-			if (showAnteil==true){
-				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>Anteil:" + (Math.round((d.value/Atts[number].secondgroup["Total"].value())*1000)/10).toFixed(2) + '%' + "</span><br/><span>"+Atts[number].grouplabel+": " + wert + "</span>";
+			if (showTotal==true && showAnteil==true){
+				return "<span>" + d.key + "</span><br/><span>Anteil:" + (Math.round((d.value/Atts[number].secondgroup["Total"].value())*1000)/10).toFixed(2) + '%' + "</span><br/><span>"+Atts[number].grouplabel+": " + wert + "</span>";
+			}
+			else if (showTotal==true){
+				return "<span>" + d.key + "</span><br/><span>"+Atts[number].grouplabel+": " + wert + "</span>";
+			}
+			else if (showAnteil==true){
+				return "<span>" + d.key + "</span><br/><span>Anteil:" + (Math.round((d.value/Atts[number].secondgroup["Total"].value())*1000)/10).toFixed(2) + '%' + "</span>";
 			}
 			else {
-				return "<span>" + ((canton==true) ? cantondic[d.key] : d.key) + "</span><br/><span>"+Atts[number].grouplabel+": " + wert + "</span>";
+				return "<span>" + d.key + "</span>";
 			}
 		});
 	$("text.row").css( 'pointer-events', 'none' );
