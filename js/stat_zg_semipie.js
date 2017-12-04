@@ -1,4 +1,4 @@
-/* stat_zg_semipie.js (version 0.3 (2017.11.27)*/
+/* stat_zg_semipie.js (version 0.3 (2017.11.28)*/
 
 function getLegendWidth(number) {
 	var legendLength = d3.select("#chart"+number+" g.dc-legend").node().childElementCount;
@@ -11,11 +11,27 @@ function getLegendWidth(number) {
 	legendMaxWidth = Math.max.apply(null, legendWidthArray);
 }
 
-function loadSemiPie(number, csv_path, dimension, group, characteristics, scale, showTotal, order, last, partei) {
-order = typeof order !== 'undefined' ? order : "alpha";
-last = typeof last !== 'undefined' ? last : "";
-partei = typeof partei !== 'undefined' ? partei : false;
+function loadSemiPie(args) {
+var number = (typeof args.number == 'undefined') ? 1 : args.number;
+var csv_path = (typeof args.csv_path == 'undefined') ? "error" : args.csv_path;
+var dimension = (typeof args.dimension == 'undefined') ? "" : args.dimension;
+var group = (typeof args.group == 'undefined') ? "" : args.group;
+var characteristics = (typeof args.characteristics == 'undefined') ? [] : args.characteristics;
+//var stack = (typeof args.stack == 'undefined') ? "" : args.stack
+//var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
+var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
+//var relative = (typeof args.relative == 'undefined') ? false : args.relative;
+var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
+var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
+//var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
+//var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
+//var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
+var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
+var last = (typeof args.last == 'undefined') ? "" : args.last;
+var partei = (typeof args.partei == 'undefined') ? false : args.partei;
+//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 
+//Attributeobjekt initialisieren
 Atts[number]={};
 
 Atts[number].maincontainer="default"+number
@@ -30,6 +46,11 @@ Charts[number] = dc.pieChart("#"+Atts[number].chartcontainer);
 
 //Daten einlesen
 var daten = d3.csv(csv_path, function (error, data) {
+	
+var dataValues = d3.values(data)[0];
+if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[0];};
+if (group == undefined | group=="") {group = Object.keys(dataValues)[1];};
+	
 	data.forEach(function(d) {
 		d[group] = +d[group];
 	});
@@ -99,8 +120,8 @@ characteristics.splice(characteristics.length,0,"ZTotal")
 var characteristicsLength= characteristics.length;
 
 if (partei==true) {
-	parteien=["SVP", "FDP","CVP", "GLP", "CSP", "SP", "ALG", "Parteilos"]
-	var farben=['#4c9596','#007ac4','#ff8e39','#a0bd6d','#ffdd5e','#ff403a','#76aa7c','#ff6d36']
+	parteien=["Parteilos","ALG", "SP", "CSP", "GLP", "CVP", "FDP", "SVP"]
+	var farben=['#ff6d36','#76aa7c','#ff403a','#ffdd5e','#a0bd6d','#ff8e39','#007ac4','#4c9596']
 	colorScale = d3.scale.ordinal()
 				.domain(parteien)
 				.range(farben);
