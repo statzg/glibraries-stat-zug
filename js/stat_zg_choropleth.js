@@ -26,6 +26,9 @@ Atts[number]={};
 Atts[number].maincontainer="default"+number
 Atts[number].chartcontainer="chart"+number
 
+//Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
+createcontainers(number);
+
 function redraw() {
 
 	var coloring = d3.scale.linear()

@@ -98,6 +98,24 @@ germanFormatters = d3.locale({
 
 d3.time.format = germanFormatters.timeFormat;
 
+function createcontainers(number) {
+	if ( $( "#default" + number + " > div.title" ).length === 0) {
+		$("#default" + number).prepend( "<div id='title' class='title'></div>" );
+	}
+	if ( $( "#default" + number + " > div.subtitle" ).length === 0) {
+		$("#default" + number + " > div.title").after( "<div id='subtitle' class='subtitle'></div>" );
+	}
+	if ( $( "#default" + number + " > div.chart" ).length === 0) {
+		$("#default" + number + " > div.subtitle").after( "<div id='chart"+number+"' class='subtitle'></div>" );
+	}
+	if ( $( "#default" + number + " > div.description" ).length === 0) {
+		$("#default" + number + " > div.chart" + number +"").after( "<div id='description' class='description'></div>" );
+	}
+	if ( $( "#default" + number + " > div.subtitle" ).length === 0) {
+		$("#default" + number + " > div.description").after( "<div id='description' class='description'></div>" );
+	}
+}
+
 function treatmetadata(number, data) {
 	
 	Atts[number].meta = data.filter(function(el) {

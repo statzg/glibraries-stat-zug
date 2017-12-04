@@ -26,6 +26,9 @@ Atts[number]={};
 Atts[number].maincontainer="default"+number
 Atts[number].chartcontainer="chart"+number
 
+//Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
+createcontainers(number);
+
 //Breite des Containers ermitteln
 var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 var totalHeight = 360
