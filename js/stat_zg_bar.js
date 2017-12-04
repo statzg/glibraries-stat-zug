@@ -6,8 +6,8 @@ var csv_path = (typeof args.csv_path == 'undefined') ? "error" : args.csv_path;
 var dimension = (typeof args.dimension == 'undefined') ? "" : args.dimension;
 var group = (typeof args.group == 'undefined') ? "" : args.group;
 var characteristics = (typeof args.characteristics == 'undefined') ? [] : args.characteristics;
-//var stack = (typeof args.stack == 'undefined') ? "error" : args.stack
-//var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? "error" : args.characteristicsStack;
+//var stack = (typeof args.stack == 'undefined') ? "" : args.stack
+//var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
 var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
 //var relative = (typeof args.relative == 'undefined') ? false : args.relative;
 var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
@@ -17,8 +17,8 @@ var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAntei
 //var dateUnit = (typeof args.dateUnit == 'undefined') ? true : args.dateUnit;
 var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
 var last = (typeof args.last == 'undefined') ? "" : args.last;
-//var canton = (typeof args.canton == 'undefined') ? false : args.canton;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
+//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
