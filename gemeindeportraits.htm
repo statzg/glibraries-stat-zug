@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Gemeindeportraits</title>
+
+    <meta charset="UTF-8">
+
+    <link href="gemeindeportraits/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/statistik.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Gemeindeportraits</h2>
+
+    <div id="karte" class="dc-chart">
+        <strong>Gemeinden</strong> (bitte wählen)
+        <a class="reset" href="javascript:karte.filterAll();dc.redrawAll();" style="display: none;">zurücksetzen</a>
+        <span class="reset" style="display: none;"> | Aktuell ausgewählt: <span class="filter"></span></span>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="clearfix"></div>
+	
+	<h3>Kennzahlen</h3>
+	
+	<div id="kennzahlen-chart" class="dc-chart">
+	<table>
+		<col width="60%">
+		<col width="40%">
+		<tr>
+			<td>Ständige Wohnbevölkerung <span class="bevölkerungyear"></span></td>
+			<td align="right"><span id="bevölkerung"></span></td>
+		</tr>
+		<tr>
+			<td>Anteil Ausländer/innen in % <span class="bevölkerungyear"></span></td>
+			<td align="right"><span id="ausländeranteil"></span></td>
+		</tr>
+		<tr>
+			<td>Haushalte <span class="haushalteyear"></span></td>
+			<td align="right"><span id="haushalte"></span></td>
+		</tr>
+		<tr>
+			<td>Anteil Einpersonenhaushalte in % <span class="haushalteyear"></span></td>
+			<td align="right"><span id="anteileinpersonenhaushalte"></span></td>
+		</tr>
+		<tr>
+			<td>Wohnungen <span class="wohnungenyear"></span></td>
+			<td align="right"><span id="wohnungen"></span></td>
+		</tr>
+		<tr>
+			<td>Neuerstellte Wohnungen <span class="wohnungenyear"></span></td>
+			<td align="right"><span id="neuwohnungen"></span></td>
+		</tr>
+		<tr>
+			<td>Volksschüler/innen <span class="volksschüleryear"></span></td>
+			<td align="right"><span id="volksschüler"></span></td>
+		</tr>
+		<tr>
+			<td>Betriebe <span class="wirtschaftyear"></span></td>
+			<td align="right"><span id="betriebe"></span></td>
+		</tr>
+		<tr>
+			<td>Beschäftigte <span class="wirtschaftyear"></span></td>
+			<td align="right"><span id="beschäftigte"></span></td>
+		</tr>
+		<tr>
+			<td>Steuerfuss Einwohnergemeinde</td>
+			<td align="right"><span id="steuerfuss"></span></td>
+		</tr>
+	</table>
+	</div>
+	
+	<h3>Bevölkerungsentwicklung</h3>
+	
+	<div id="entwicklung-chart" class="dc-chart">
+	        <div class="clearfix"></div>
+	</div>
+	<h3>Altersstruktur <span class="altersstrukturyear"></span></h3>
+	
+	<div id="altersstruktur-chart" class="dc-chart">
+	        <div class="clearfix"></div>
+	</div>
+
+    <div>
+        <a href="javascript:dc.filterAll();%20dc.renderAll();">Reset All</a>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/libraries/queue.js"></script>
+<script type="text/javascript" src="js/libraries/d3.js"></script>
+<script type="text/javascript" src="js/libraries/crossfilter.js"></script>
+<script type="text/javascript" src="js/libraries/dc.js"></script>
+<script type="text/javascript">
+    var numberFormat = d3.format(".2f");
+
+    var karte = dc.geoChoroplethChart("#karte");
+	var bevölkerung = dc.numberDisplay("#bevölkerung");
+	var ausländeranteil = dc.numberDisplay("#ausländeranteil");
+	var haushalte = dc.numberDisplay("#haushalte");
+	var anteileinpersonenhaushalte = dc.numberDisplay("#anteileinpersonenhaushalte");
+	var bestandwohnungen = dc.numberDisplay("#wohnungen");
+	var neuwohnungen = dc.numberDisplay("#neuwohnungen");
+	var volksschüler = dc.numberDisplay("#volksschüler");
+	var betriebe = dc.numberDisplay("#betriebe");
+	var beschäftigte = dc.numberDisplay("#beschäftigte");
+	/*var steuerfuss = dc.numberDisplay("#steuerfuss");*/
+	
+	var entwicklungsChart = dc.compositeChart("#entwicklung-chart");
+	//var entwicklungsChart = dc.barChart("#entwicklung-chart");
+	//var entwicklungsChart = dc.bubbleChart("#entwicklung-chart");
+	
+	//var altersstrukturChart = dc.rowChart("#altersstruktur-chart");
+	
+    var industryChart = dc.bubbleChart("#industry-chart");
+    var roundChart = dc.bubbleChart("#round-chart");
+	
+	var q = queue()
+		.defer(d3.csv, "data/data1.csv")
+		.defer(d3.csv, "data/data2.csv")
+		.defer(d3.csv, "data/data3.csv")
+		.defer(d3.csv, "data/data4.csv")
+		.defer(d3.csv, "data/data5.csv")
+		.defer(d3.csv, "data/data7.csv")
+		.defer(d3.csv, "data/data8.csv");
+		
+	q.await(function(error, data1, data2, data3, data4, data5, data7, data8) {
+	
+	meta2 = data2.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year2 = meta2.filter(function( el ) { return el.Type == "year";});
+	if (year2.length == 1) {
+		$(".haushalteyear").html("("+year2[0].Content+")");
+	}
+
+	meta3 = data3.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year3 = meta3.filter(function( el ) { return el.Type == "year";});
+	if (year3.length == 1) {
+		$(".wohnungenyear").html("("+year3[0].Content+")");
+	}
+	
+	meta4 = data4.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year4 = meta4.filter(function( el ) { return el.Type == "year";});
+	if (year4.length == 1) {
+		$(".volksschüleryear").html("("+year4[0].Content+")");
+	}
+	
+	meta5 = data5.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year5 = meta5.filter(function( el ) { return el.Type == "year";});
+	if (year5.length == 1) {
+		$(".wirtschaftyear").html("("+year5[0].Content+")");
+	}
+	
+	//console.log(data4);
+	
+	var data = crossfilter();
+	
+	data.add(data1.map(function(d) {
+        return {State: d["State"], Raised:d["Raised"] , "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0 };
+	}));
+	data.add(data2.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+    }));
+	data.add(data3.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+    }));
+	data.add(data4.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+    }));
+	data.add(data5.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+    }));
+	
+	data.add(data7.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"]};
+    }));
+	data.add(data8.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+    }));
+
+    /*d3.csv("gemeindeportraits/data.csv", function (csv) {
+        var data = crossfilter(csv);*/
+
+        var states = data.dimension(function (d) {
+            return d["State"];
+        });
+		var jahr = data.dimension(function (d) {
+            return +d["Jahr"];
+        });
+        var stateRaisedSum = states.group().reduceSum(function (d) {
+            return d["Raised"];
+        });
+        var einwohner = states.group().reduceSum(function (d) {
+            return +d["Ständige Wohnbevölkerung"];
+        });
+		var einwohnerprojahr = jahr.group().reduceSum(function (d) {
+            return +d["Bevölkerung"];
+        });
+		var auländeranteilprojahr = jahr.group().reduceSum(function (d) {
+            return d["Ausländer"]/d["Bevölkerung"];
+        });
+		
+		var einwohnerTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Ständige Wohnbevölkerung"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Ständige Wohnbevölkerung"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+		var ausländer = states.group().reduceSum(function (d) {
+            return d["Ausländer/innen"];
+        });
+		
+		var ausländerTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Ausländer/innen"];
+			  p.pop += +v["Ständige Wohnbevölkerung"];
+			  p.ant = p.tot/p.pop;
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Ausländer/innen"];
+			  p.pop -= +v["Ständige Wohnbevölkerung"];
+			  p.ant = p.tot/p.pop;
+              return p;
+          },
+          function () { return {n:0,tot:0,pop:0,ant:0}; }
+		);
+		
+		/*var haushalte = states.group().reduceSum(function (d) {
+            return +d["Haushalte"];
+        });*/
+		
+		var haushalteTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Haushalte"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Haushalte"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+		var einpersonenhaushalteTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Haushalte"];
+			  p.pop += +v["Einpersonenhaushalte"];
+			  p.ant = p.tot/p.pop;
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Haushalte"];
+			  p.pop -= +v["Einpersonenhaushalte"];
+			  p.ant = p.tot/p.pop;
+              return p;
+          },
+          function () { return {n:0,tot:0,pop:0,ant:0}; }
+		);
+		
+		var wohnungen = states.group().reduceSum(function (d) {
+            return +d["Wohnungen"];
+        });
+		
+		var wohnungenTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Wohnungen"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Wohnungen"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+		var neuewohnungen = states.group().reduceSum(function (d) {
+            return +d["Neuerstellte Wohnungen"];
+        });
+		
+		var neuewohnungenTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Neuerstellte Wohnungen"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Neuerstellte Wohnungen"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+		var volksschülerInnen = states.group().reduceSum(function (d) {
+            return +d["Volksschüler"];
+        });
+		
+		var volksschülerTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Volksschüler"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Volksschüler"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+		var betriebegroup = states.group().reduceSum(function (d) {
+            return +d["Betriebe"];
+        });
+		
+		var betriebeTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Betriebe"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Betriebe"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+		var beschäftigtegroup = states.group().reduceSum(function (d) {
+            return +d["Beschäftigte"];
+        });
+		
+		var beschäftigteTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Beschäftigte"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Beschäftigte"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
+        var industries = data.dimension(function (d) {
+            return d["Industry Group"];
+        });
+        var statsByIndustries = industries.group().reduce(
+                function (p, v) {
+                    p.amountRaised += +v["Raised"];
+                    p.deals += +v["Deals"];
+                    return p;
+                },
+                function (p, v) {
+                    p.amountRaised -= +v["Raised"];
+                    if (p.amountRaised < 0.001) p.amountRaised = 0; // do some clean up
+                    p.deals -= +v["Deals"];
+                    return p;
+                },
+                function () {
+                    return {amountRaised: 0, deals: 0}
+                }
+        );
+
+        var rounds = data.dimension(function (d) {
+            return d["RoundClassDescr"];
+        });
+        var statsByRounds = rounds.group().reduce(
+                function (p, v) {
+                    p.amountRaised += +v["Raised"];
+                    p.deals += +v["Deals"];
+                    return p;
+                },
+                function (p, v) {
+                    p.amountRaised -= +v["Raised"];
+                    if (p.amountRaised < 0.001) p.amountRaised = 0; // do some clean up
+                    p.deals -= +v["Deals"];
+                    return p;
+                },
+                function () {
+                    return {amountRaised: 0, deals: 0}
+                }
+        );
+		
+		var average = function(d) {
+			return d.n ? d.tot / d.n : 0;
+		};
+		
+		var total = function(d) {
+			return d.tot;
+		};
+		
+		var anteil = function(d) {
+			return d.ant;
+		};
+		
+		var rowCount = function(d) {
+			return d.n;
+		};
+
+		//Karte
+		
+		var totalWidth = document.getElementById('karte').offsetWidth;
+		var height = 350
+		var scale = 81500
+		var lat = 8.548589899
+		var lon = 47.16479567
+		
+		var projection = d3.geo.mercator()
+			.center([lat,lon])
+			.scale(scale);
+			//.translate([totalWidth/2,height/2]);
+
+        d3.json("data/gemeinden.json", function (statesJson) {
+            karte.width(990)
+                    .height(500)
+                    .dimension(states)
+                    .group(einwohner)
+                    .colors(d3.scale.quantize().range(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"]))
+                    .colorDomain([0, 200])
+                    .colorCalculator(function (d) { return d ? karte.colors()(d) : '#ccc'; })
+					.projection(projection)
+                    .overlayGeoJson(statesJson.features, "state", function (d) {
+                        return d.properties.name;
+                    })
+                .valueAccessor(function(kv) {
+                    //console.log(kv);
+                    return kv.value;
+                })
+                    .title(function (d) {
+                        return "State: " + d.key + "\nTotal Amount Raised: " + numberFormat(d.value ? d.value : 0) + "M";
+                    });
+					
+			bevölkerung
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				/*.html({
+					one:"<span style=\"color:steelblue; font-size: 26px;\">%number</span> Monkey",
+					some:"<span style=\"color:steelblue; font-size: 26px;\">%number</span> Total Monkeys",
+					none:"<span style=\"color:steelblue; font-size: 26px;\">No</span> Monkeys"
+				})*/
+				.group(einwohnerTotal);
+				
+			ausländeranteil
+				.valueAccessor(anteil).formatNumber(d3.format(".2f"))
+				.group(ausländerTotal);
+				
+			haushalte
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(haushalteTotal);
+				
+			anteileinpersonenhaushalte
+				.valueAccessor(anteil).formatNumber(d3.format(".2f"))
+				.group(einpersonenhaushalteTotal);
+				
+			bestandwohnungen
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(wohnungenTotal);
+			
+			neuwohnungen
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(neuewohnungenTotal);
+				
+			volksschüler
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(volksschülerTotal);
+				
+			betriebe
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(betriebeTotal);
+
+			beschäftigte
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(beschäftigteTotal);
+	
+			/*entwicklungsChart
+				.width(768)
+				.height(480)
+				.transitionDuration(1500)
+				.x(d3.scale.ordinal())
+				.xUnits(dc.units.ordinal)
+				.brushOn(false)
+                .dimension(jahr)
+                .group(einwohnerprojahr)
+				.margins({left: 100, top: 10, right: 10, bottom: 20})
+				.elasticY(true)
+				.brushOn(false)
+				.renderHorizontalGridLines(true);
+				//.ordering(function(d) { return characteristics.indexOf(d.key); });*/
+					
+			entwicklungsChart
+				.width(990)
+				.height(500)
+				.transitionDuration(1500)
+				.margins({left: 80, top: 10, right: 40, bottom: 40})
+				.dimension(jahr)
+				.group(einwohnerprojahr)
+				.x(d3.scale.linear().domain([2010,2017]))
+				//.x(d3.scale.ordinal().domain([2011, 2012, 2013, 2014, 2015, 2016]))
+				//.xUnits(dc.units.ordinal)
+				.elasticY(true)
+				.brushOn(false)
+				._rangeBandPadding(1)
+				.yAxisLabel("The Y Axis")
+				.compose([
+					dc.barChart(entwicklungsChart)
+						.group(einwohnerprojahr, "Bevölkerung")
+						.ordinalColors(["#007ac4"])
+						.yAxisPadding("10%")
+						.gap(40)
+						.centerBar(true),
+						
+						/*.title(function(d) {
+							return ""; 
+						}),*/
+					dc.lineChart(entwicklungsChart)
+						.group(auländeranteilprojahr, "Anteil Ausländer/innen in %")
+						.yAxisPadding("10%")
+						.ordinalColors(["#ff403a"])
+						.useRightYAxis(true)
+						.interpolate("linear")
+						/*.title(function(d) {
+							return ""; 
+						})*/
+				])
+				//.yAxisLabel(characteristicsStack[0])
+				//.rightYAxisLabel(characteristicsStack[1])
+				.renderHorizontalGridLines(true)
+				.legend(dc.legend().x(100).y(20).itemHeight(13).gap(10)
+				.horizontal(true)
+				.legendWidth(400)
+				.autoItemWidth(true))
+
+            industryChart.width(990)
+                    .height(200)
+                    .margins({top: 10, right: 50, bottom: 30, left: 60})
+                    .dimension(industries)
+                    .group(statsByIndustries)
+                    .colors(d3.scale.category10())
+                    .keyAccessor(function (p) {
+                        return p.value.amountRaised;
+                    })
+                    .valueAccessor(function (p) {
+                        return p.value.deals;
+                    })
+                    .radiusValueAccessor(function (p) {
+                        return p.value.amountRaised;
+                    })
+                    .x(d3.scale.linear().domain([0, 5000]))
+                    .r(d3.scale.linear().domain([0, 4000]))
+                    .minRadiusWithLabel(15)
+                    .elasticY(true)
+                    .yAxisPadding(100)
+                    .elasticX(true)
+                    .xAxisPadding(200)
+                    .maxBubbleRelativeSize(0.07)
+                    .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+                    .renderLabel(true)
+                    .renderTitle(true)
+                    .title(function (p) {
+                        return p.key
+                                + "\n"
+                                + "Amount Raised: " + numberFormat(p.value.amountRaised) + "M\n"
+                                + "Number of Deals: " + numberFormat(p.value.deals);
+                    });
+            industryChart.yAxis().tickFormat(function (s) {
+                return s + " deals";
+            });
+            industryChart.xAxis().tickFormat(function (s) {
+                return s + "M";
+            });
+
+            roundChart.width(990)
+                    .height(200)
+                    .margins({top: 10, right: 50, bottom: 30, left: 60})
+                    .dimension(rounds)
+                    .group(statsByRounds)
+                    .colors(d3.scale.category10())
+                    .keyAccessor(function (p) {
+                        return p.value.amountRaised;
+                    })
+                    .valueAccessor(function (p) {
+                        return p.value.deals;
+                    })
+                    .radiusValueAccessor(function (p) {
+                        return p.value.amountRaised;
+                    })
+                    .x(d3.scale.linear().domain([0, 5000]))
+                    .r(d3.scale.linear().domain([0, 9000]))
+                    .minRadiusWithLabel(15)
+                    .elasticY(true)
+                    .yAxisPadding(150)
+                    .elasticX(true)
+                    .xAxisPadding(300)
+                    .maxBubbleRelativeSize(0.07)
+                    .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+                    .renderLabel(true)
+                    .renderTitle(true)
+                    .title(function (p) {
+                        return p.key
+                                + "\n"
+                                + "Amount Raised: " + numberFormat(p.value.amountRaised) + "M\n"
+                                + "Number of Deals: " + numberFormat(p.value.deals);
+                    });
+            roundChart.yAxis().tickFormat(function (s) {
+                return s + " deals";
+            });
+            roundChart.xAxis().tickFormat(function (s) {
+                return s + "M";
+            });
+			
+            dc.renderAll();
+        });
+    });
+</script>
+
+</body></html>
