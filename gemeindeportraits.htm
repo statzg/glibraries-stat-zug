@@ -116,9 +116,6 @@
 	
 	//var altersstrukturChart = dc.rowChart("#altersstruktur-chart");
 	
-    var industryChart = dc.bubbleChart("#industry-chart");
-    var roundChart = dc.bubbleChart("#round-chart");
-	
 	var q = queue()
 		.defer(d3.csv, "data/data1.csv")
 		.defer(d3.csv, "data/data2.csv")
@@ -171,26 +168,26 @@
 	var data = crossfilter();
 	
 	data.add(data1.map(function(d) {
-        return {State: d["State"], Raised:d["Raised"] , "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0 };
+        return {State: d["State"], Raised:d["Raised"] , "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":0, "GeschlechtNation":0, "AnzahlPersonen":0 };
 	}));
 	data.add(data2.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":0, "GeschlechtNation":0, "AnzahlPersonen":0};
     }));
 	data.add(data3.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":0, "GeschlechtNation":0, "AnzahlPersonen":0};
     }));
 	data.add(data4.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":0, "GeschlechtNation":0, "AnzahlPersonen":0};
     }));
 	data.add(data5.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":0, "GeschlechtNation":0, "AnzahlPersonen":0};
     }));
 	
 	data.add(data7.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"]};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":0, "GeschlechtNation":0, "AnzahlPersonen":0};
     }));
 	data.add(data8.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Jahr":0, "Bevölkerung":0, "Ausländer":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"]};
     }));
 
     /*d3.csv("gemeindeportraits/data.csv", function (csv) {
@@ -377,45 +374,9 @@
           function () { return {n:0,tot:0}; }
 		);
 		
-        var industries = data.dimension(function (d) {
-            return d["Industry Group"];
+		var altersstrukturStack=data.dimension(function (d) {
+            return d["GeschlechtNation"];
         });
-        var statsByIndustries = industries.group().reduce(
-                function (p, v) {
-                    p.amountRaised += +v["Raised"];
-                    p.deals += +v["Deals"];
-                    return p;
-                },
-                function (p, v) {
-                    p.amountRaised -= +v["Raised"];
-                    if (p.amountRaised < 0.001) p.amountRaised = 0; // do some clean up
-                    p.deals -= +v["Deals"];
-                    return p;
-                },
-                function () {
-                    return {amountRaised: 0, deals: 0}
-                }
-        );
-
-        var rounds = data.dimension(function (d) {
-            return d["RoundClassDescr"];
-        });
-        var statsByRounds = rounds.group().reduce(
-                function (p, v) {
-                    p.amountRaised += +v["Raised"];
-                    p.deals += +v["Deals"];
-                    return p;
-                },
-                function (p, v) {
-                    p.amountRaised -= +v["Raised"];
-                    if (p.amountRaised < 0.001) p.amountRaised = 0; // do some clean up
-                    p.deals -= +v["Deals"];
-                    return p;
-                },
-                function () {
-                    return {amountRaised: 0, deals: 0}
-                }
-        );
 		
 		var average = function(d) {
 			return d.n ? d.tot / d.n : 0;
@@ -564,86 +525,6 @@
 				.horizontal(true)
 				.legendWidth(400)
 				.autoItemWidth(true))
-
-            industryChart.width(990)
-                    .height(200)
-                    .margins({top: 10, right: 50, bottom: 30, left: 60})
-                    .dimension(industries)
-                    .group(statsByIndustries)
-                    .colors(d3.scale.category10())
-                    .keyAccessor(function (p) {
-                        return p.value.amountRaised;
-                    })
-                    .valueAccessor(function (p) {
-                        return p.value.deals;
-                    })
-                    .radiusValueAccessor(function (p) {
-                        return p.value.amountRaised;
-                    })
-                    .x(d3.scale.linear().domain([0, 5000]))
-                    .r(d3.scale.linear().domain([0, 4000]))
-                    .minRadiusWithLabel(15)
-                    .elasticY(true)
-                    .yAxisPadding(100)
-                    .elasticX(true)
-                    .xAxisPadding(200)
-                    .maxBubbleRelativeSize(0.07)
-                    .renderHorizontalGridLines(true)
-                    .renderVerticalGridLines(true)
-                    .renderLabel(true)
-                    .renderTitle(true)
-                    .title(function (p) {
-                        return p.key
-                                + "\n"
-                                + "Amount Raised: " + numberFormat(p.value.amountRaised) + "M\n"
-                                + "Number of Deals: " + numberFormat(p.value.deals);
-                    });
-            industryChart.yAxis().tickFormat(function (s) {
-                return s + " deals";
-            });
-            industryChart.xAxis().tickFormat(function (s) {
-                return s + "M";
-            });
-
-            roundChart.width(990)
-                    .height(200)
-                    .margins({top: 10, right: 50, bottom: 30, left: 60})
-                    .dimension(rounds)
-                    .group(statsByRounds)
-                    .colors(d3.scale.category10())
-                    .keyAccessor(function (p) {
-                        return p.value.amountRaised;
-                    })
-                    .valueAccessor(function (p) {
-                        return p.value.deals;
-                    })
-                    .radiusValueAccessor(function (p) {
-                        return p.value.amountRaised;
-                    })
-                    .x(d3.scale.linear().domain([0, 5000]))
-                    .r(d3.scale.linear().domain([0, 9000]))
-                    .minRadiusWithLabel(15)
-                    .elasticY(true)
-                    .yAxisPadding(150)
-                    .elasticX(true)
-                    .xAxisPadding(300)
-                    .maxBubbleRelativeSize(0.07)
-                    .renderHorizontalGridLines(true)
-                    .renderVerticalGridLines(true)
-                    .renderLabel(true)
-                    .renderTitle(true)
-                    .title(function (p) {
-                        return p.key
-                                + "\n"
-                                + "Amount Raised: " + numberFormat(p.value.amountRaised) + "M\n"
-                                + "Number of Deals: " + numberFormat(p.value.deals);
-                    });
-            roundChart.yAxis().tickFormat(function (s) {
-                return s + " deals";
-            });
-            roundChart.xAxis().tickFormat(function (s) {
-                return s + "M";
-            });
 			
             dc.renderAll();
         });
