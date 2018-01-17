@@ -27,8 +27,7 @@ if (typeof Atts == 'undefined') { Atts = {} };
 //Farben definieren
 //generiert mit http://gka.github.io/palettes/#diverging|c0=007AC4,00A763,FFDD5E|c1=FFDD5E,FF8A26,FF403A|steps=19|bez0=1|bez1=1|coL0=1|coL1=1
 colorscheme={
-	//Bipolare Skala
-	1:{
+	1:{ //Bipolare Skala
 		1:['#007ac4'],
 		2:['#007ac4','#ff403a'],
 		3:['#007ac4','#ffdd5e','#ff403a'],
@@ -50,8 +49,7 @@ colorscheme={
 		19:['#007ac4','#3789a7','#529892','#68a484','#7eaf78','#96ba70','#afc369','#c8cd64','#e4d560','#ffdd5e','#ffcf55','#ffc24d','#ffb245','#ffa43f','#ff933a','#ff8337','#ff7136','#ff5b37','#ff403a'],
 		20:['#007ac4','#3789a7','#509693','#64a286','#7aad7a','#8fb772','#a7c06b','#bfc965','#d7d262','#f2da5f','#ffd65a','#ffca51','#ffbc4a','#ffae43','#ffa03e','#ff913a','#ff8037','#ff6f36','#ff5937','#ff403a']
 		},
-	//Sequenzielle Skala
-	2:{
+	2:{ //Sequenzielle Skala
 		1:['#007ac4'],
 		2:['#007ac4','#ffdd5e'],
 		3:['#007ac4','#8bb574','#ffdd5e'],

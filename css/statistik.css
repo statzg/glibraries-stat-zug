@@ -7,6 +7,10 @@ div.dc-chart {
 	user-select: none;          /* Likely future */ 
 }
 
+div.non-float {
+	float: none !important;
+}
+
 .dc-chart rect.bar {
 	stroke-width: 1;
 	stroke: #fff;

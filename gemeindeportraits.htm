@@ -5,7 +5,6 @@
 
     <meta charset="UTF-8">
 
-    <link href="gemeindeportraits/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/statistik.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -15,82 +14,86 @@
 
     <h2>Gemeindeportraits</h2>
 
-    <div id="karte" class="dc-chart">
-        <strong>Gemeinden</strong> (bitte wählen)
-        <a class="reset" href="javascript:karte.filterAll();dc.redrawAll();" style="display: none;">zurücksetzen</a>
-        <span class="reset" style="display: none;"> | Aktuell ausgewählt: <span class="filter"></span></span>
-
-        <div class="clearfix"></div>
+    <div id="karte" class="non-float">
+	<div> <strong>Gemeinden</strong> (bitte wählen)
+	<a class="reset" href="javascript:karte.filterAll();dc.redrawAll();" style="display: none;">zurücksetzen</a>
+	<span class="reset" style="display: none;"> | Aktuell ausgewählt: <span class="filter"></span></span>
+	</div>
     </div>
 
-    <div class="clearfix"></div>
-	
 	<h3>Kennzahlen</h3>
 	
-	<div id="kennzahlen-chart" class="dc-chart">
-	<table>
-		<col width="60%">
-		<col width="40%">
-		<tr>
-			<td>Ständige Wohnbevölkerung <span class="bevölkerungyear"></span></td>
-			<td align="right"><span id="bevölkerung"></span></td>
-		</tr>
-		<tr>
-			<td>Anteil Ausländer/innen in % <span class="bevölkerungyear"></span></td>
-			<td align="right"><span id="ausländeranteil"></span></td>
-		</tr>
-		<tr>
-			<td>Haushalte <span class="haushalteyear"></span></td>
-			<td align="right"><span id="haushalte"></span></td>
-		</tr>
-		<tr>
-			<td>Anteil Einpersonenhaushalte in % <span class="haushalteyear"></span></td>
-			<td align="right"><span id="anteileinpersonenhaushalte"></span></td>
-		</tr>
-		<tr>
-			<td>Wohnungen <span class="wohnungenyear"></span></td>
-			<td align="right"><span id="wohnungen"></span></td>
-		</tr>
-		<tr>
-			<td>Neuerstellte Wohnungen <span class="wohnungenyear"></span></td>
-			<td align="right"><span id="neuwohnungen"></span></td>
-		</tr>
-		<tr>
-			<td>Volksschüler/innen <span class="volksschüleryear"></span></td>
-			<td align="right"><span id="volksschüler"></span></td>
-		</tr>
-		<tr>
-			<td>Betriebe <span class="wirtschaftyear"></span></td>
-			<td align="right"><span id="betriebe"></span></td>
-		</tr>
-		<tr>
-			<td>Beschäftigte <span class="wirtschaftyear"></span></td>
-			<td align="right"><span id="beschäftigte"></span></td>
-		</tr>
-		<tr>
-			<td>Steuerfuss Einwohnergemeinde</td>
-			<td align="right"><span id="steuerfuss"></span></td>
-		</tr>
-	</table>
+	<div id="kennzahlen-chart" class="non-float">
+		<table>
+			<col width="200%">
+			<col width="40%">
+			<tr>
+				<td>Ständige Wohnbevölkerung <span class="bevölkerungyear"></span></td>
+				<td align="right"><span id="bevölkerung"></span></td>
+			</tr>
+			<tr>
+				<td>Anteil Ausländer/innen in % <span class="bevölkerungyear"></span></td>
+				<td align="right"><span id="ausländeranteil"></span></td>
+			</tr>
+			<tr>
+				<td>Haushalte <span class="haushalteyear"></span></td>
+				<td align="right"><span id="haushalte"></span></td>
+			</tr>
+			<tr>
+				<td>Anteil Einpersonenhaushalte in % <span class="haushalteyear"></span></td>
+				<td align="right"><span id="anteileinpersonenhaushalte"></span></td>
+			</tr>
+			<tr>
+				<td>Wohnungen <span class="wohnungenyear"></span></td>
+				<td align="right"><span id="wohnungen"></span></td>
+			</tr>
+			<tr>
+				<td>Neuerstellte Wohnungen <span class="wohnungenyear"></span></td>
+				<td align="right"><span id="neuwohnungen"></span></td>
+			</tr>
+			<tr>
+				<td>Volksschüler/innen <span class="volksschüleryear"></span></td>
+				<td align="right"><span id="volksschüler"></span></td>
+			</tr>
+			<tr>
+				<td>Betriebe <span class="wirtschaftyear"></span></td>
+				<td align="right"><span id="betriebe"></span></td>
+			</tr>
+			<tr>
+				<td>Beschäftigte <span class="wirtschaftyear"></span></td>
+				<td align="right"><span id="beschäftigte"></span></td>
+			</tr>
+			<tr>
+				<td>Steuerfuss Einwohnergemeinde <span class="wirtschaftyear"></span></td>
+				<td align="right"><span id="steuerfuss"></span></td>
+			</tr>
+		</table>
 	</div>
 	
 	<h3>Bevölkerungsentwicklung</h3>
 	
-	<div id="entwicklung-chart" class="dc-chart">
-	        <div class="clearfix"></div>
+	<div id="entwicklung-chart" class="non-float">
 	</div>
+
 	<h3>Altersstruktur <span class="altersstrukturyear"></span></h3>
 	
-	<div id="altersstruktur-chart" class="dc-chart">
-	        <div class="clearfix"></div>
+	<div id="altersstruktur-chart" class="non-float">
 	</div>
 	
 	<h3>Wirtschaftsstruktur <span class="wirtschaftsstrukturyear"></span></h3>
 	
-	<div id="wirtschaftsstruktur-chart" class="dc-chart">
-	        <div class="clearfix"></div>
+	<div id="wirtschaftsstruktur" class="overlaycontainer" style="position: relative; width: 500px; height: 500px;">
+		<div id="wirtschaftsstruktur1-chart" class="non-float" style="position: relative; z-index: 100;">
+		</div>
+		<div id="wirtschaftsstruktur2-chart" class="non-float" style="position: absolute; top: 0; left: 0; z-index: 99;">
+	    </div>
 	</div>
 
+	<h3>Bodennutzung <span class="bodennutzungyear"></span></h3>
+	
+	<div id="bodennutzung-chart" class="non-float">
+	</div>
+	
     <div>
         <a href="javascript:dc.filterAll();%20dc.renderAll();">Reset All</a>
     </div>
@@ -101,6 +104,7 @@
 <script type="text/javascript" src="js/libraries/d3.js"></script>
 <script type="text/javascript" src="js/libraries/crossfilter.js"></script>
 <script type="text/javascript" src="js/libraries/dc.js"></script>
+<script type="text/javascript" src="js/stat_zg_generals.js"></script>
 <script type="text/javascript">
     var numberFormat = d3.format(".2f");
 
@@ -114,15 +118,16 @@
 	var volksschüler = dc.numberDisplay("#volksschüler");
 	var betriebe = dc.numberDisplay("#betriebe");
 	var beschäftigte = dc.numberDisplay("#beschäftigte");
-	/*var steuerfuss = dc.numberDisplay("#steuerfuss");*/
+	var steuerfuss = dc.numberDisplay("#steuerfuss");
 	
 	var entwicklungsChart = dc.compositeChart("#entwicklung-chart");
-	//var entwicklungsChart = dc.barChart("#entwicklung-chart");
-	//var entwicklungsChart = dc.bubbleChart("#entwicklung-chart");
 	
 	var altersstrukturChart = dc.barChart("#altersstruktur-chart");
 	
-	var wirtschaftsstrukturChart = dc.pieChart("#wirtschaftsstruktur-chart");
+	var wirtschaftsstrukturChart1 = dc.pieChart("#wirtschaftsstruktur1-chart");
+	var wirtschaftsstrukturChart2 = dc.pieChart("#wirtschaftsstruktur2-chart");
+	
+	var bodennutzungChart = dc.barChart("#bodennutzung-chart");
 	
 	var q = queue()
 		.defer(d3.csv, "data/data1.csv")
@@ -130,11 +135,13 @@
 		.defer(d3.csv, "data/data3.csv")
 		.defer(d3.csv, "data/data4.csv")
 		.defer(d3.csv, "data/data5.csv")
+		.defer(d3.csv, "data/data6.csv")
 		.defer(d3.csv, "data/data7.csv")
 		.defer(d3.csv, "data/data8.csv")
-		.defer(d3.csv, "data/data9.csv");
+		.defer(d3.csv, "data/data9.csv")
+		.defer(d3.csv, "data/data10.csv");
 		
-	q.await(function(error, data1, data2, data3, data4, data5, data7, data8, data9) {
+	q.await(function(error, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10) {
 	
 	meta2 = data2.filter(function(el) {
 		return el["Meta"] == 1
@@ -172,6 +179,15 @@
 		$(".wirtschaftyear").html("("+year5[0].Content+")");
 	}
 	
+	meta6 = data6.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year6 = meta6.filter(function( el ) { return el.Type == "year";});
+	if (year6.length == 1) {
+		$(".steuerfussyear").html("("+year6[0].Content+")");
+	}
+	
 	meta8 = data8.filter(function(el) {
 		return el["Meta"] == 1
 	});
@@ -190,34 +206,48 @@
 		$(".wirtschaftsstrukturyear").html("("+year9[0].Content+")");
 	}
 	
+	meta10 = data10.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year10 = meta10.filter(function( el ) { return el.Type == "year";});
+	if (year10.length == 1) {
+		$(".bodennutzungyear").html("("+year10[0].Content+")");
+	}
+	
 	//console.log(data8);
 	
 	var data = crossfilter();
 	
 	data.add(data1.map(function(d) {
-        return {State: d["State"], Raised:d["Raised"] , "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raised:d["Raised"] , "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
 	}));
 	data.add(data2.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
     }));
 	data.add(data3.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
     }));
 	data.add(data4.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
     }));
 	data.add(data5.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
     }));
-	
+	data.add(data6.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":d["Steuerfuss"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
+    }));	
 	data.add(data7.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
     }));
 	data.add(data8.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"], "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"], "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":"NaN", "Fläche":0};
     }));
 	data.add(data9.map(function(d) {
-        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":d["Sektor"], "BetriebenachSektor":d["Betriebe"], "BeschäftigtenachSektor":d["Beschäftigte"]};
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":d["Sektor"], "BetriebenachSektor":d["Betriebe"], "BeschäftigtenachSektor":d["Beschäftigte"], "Bodentyp":"NaN", "Fläche":0};
+    }));
+	data.add(data10.map(function(d) {
+        return {State: d["State"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Bodentyp":d["Bodentyp"], "Fläche":d["Fläche"]};
     }));
 
 		var states = data.dimension(function (d) {
@@ -235,9 +265,11 @@
 		var einwohnerprojahr = jahr.group().reduceSum(function (d) {
             return +d["Bevölkerung"];
         });
+		var Realeinwohnerprojahr = remove_bins(einwohnerprojahr);
 		var auländeranteilprojahr = jahr.group().reduceSum(function (d) {
             return d["Ausländer"]/d["Bevölkerung"];
         });
+		var Realauländeranteilprojahr = remove_bins(auländeranteilprojahr);
 		
 		var einwohnerTotal = data.groupAll().reduce(
           function (p, v) {
@@ -401,11 +433,29 @@
           function () { return {n:0,tot:0}; }
 		);
 		
+		var steuerfussgroup = states.group().reduceSum(function (d) {
+			return +d["Steuerfuss"];
+        });
+		
+		var SteuerfussTotal = data.groupAll().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Steuerfuss"];
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Steuerfuss"];
+              return p;
+          },
+          function () { return {n:0,tot:0}; }
+		);
+		
 		var altersstrukturStack=data.dimension(function (d) {
 			return d["Alterskategorie"];
 		});
 				
-		var altersstrukturGroup= altersstrukturStack.group().reduce(function(p, v) {
+		var AltersstrukturGroup= altersstrukturStack.group().reduce(function(p, v) {
 			++p.count;
 			if (v["GeschlechtNation"]=="Schweizerinnen" | v["GeschlechtNation"]=="Ausländerinnen") {
 				p["Negativ"] = (p["Negativ"] || 0) + +v["AnzahlPersonen"];
@@ -432,9 +482,7 @@
 		}, function() {
 			return { total:0, count:0};
 		});
-		var altersstrukturGroup3 = altersstrukturStack.group().reduceSum(function (d) {
-			return +d["AnzahlPersonen"];
-		});
+		var RealAltersstrukturGroup = remove_bins(AltersstrukturGroup)
 		
 		var altersstrukturkategorien = data.dimension(function (d) {
 			return d["GeschlechtNation"];
@@ -449,9 +497,30 @@
 		var BetriebenachSektorGroup = SektorDimension.group().reduceSum(function (d) {
 			return d["BetriebenachSektor"];
 		});
+		var RealBetriebenachSektorGroup = remove_bins(BetriebenachSektorGroup);
 		var BeschäftigtenachSektorGroup = SektorDimension.group().reduceSum(function (d) {
 			return d["BeschäftigtenachSektor"];
 		});
+		var RealBeschäftigtenachSektorGroup = remove_bins(BeschäftigtenachSektorGroup);
+		
+		function remove_bins(source_group) { // (source_group, bins...}
+			var bins = ["", "NaN"];
+			return {
+				all:function () {
+					return source_group.all().filter(function(d) {
+						return bins.indexOf(d.key) === -1;
+					});
+				}
+			};
+		}		
+		
+		var BodentypDimension = data.dimension(function (d) {
+			return d["Bodentyp"];
+		});
+		var FlächenachBodentypGroup = BodentypDimension.group().reduceSum(function (d) {
+			return d["Fläche"];
+		});
+		var RealFlächenachBodentypGroup = remove_bins(FlächenachBodentypGroup)
 		
 		function sel_stack(i) {
 			return function(d) {
@@ -474,7 +543,7 @@
 		var rowCount = function(d) {
 			return d.n;
 		};
-
+		
 		//Karte
 		
 		var totalWidth = document.getElementById('karte').offsetWidth;
@@ -488,33 +557,45 @@
 			.scale(scale);
 			//.translate([totalWidth/2,height/2]);
 
-        d3.json("data/gemeinden.json", function (statesJson) {
-            karte.width(990)
+		d3.json("data/gemeinden.json", function (statesJson) {
+            
+			var gemeinden=["Baar", "Cham", "Hünenberg", "Menzingen", "Neuheim", "Oberägeri", "Risch", "Steinhausen", "Unterägeri", "Walchwil" ,"Zug", "See"]
+			
+			karte.width(990)
                     .height(500)
                     .dimension(states)
                     .group(einwohner)
-                    .colors(d3.scale.quantize().range(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"]))
-                    .colorDomain([0, 200])
-                    .colorCalculator(function (d) { return d ? karte.colors()(d) : '#ccc'; })
+					.colors(d3.scale.ordinal().domain(gemeinden)
+						.range([colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], colorscheme[1][1][0], "#ccc"]))
+					.colorAccessor(function(d) { 
+						return d ? d.key : "See";
+					})
+                    //.colors(d3.scale.quantize().range(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"]))
+                    //.colorDomain([0, 200])
+                    //.colorCalculator(function (d) { return d ? karte.colors()(d) : '#ccc'; })
 					.projection(projection)
                     .overlayGeoJson(statesJson.features, "state", function (d) {
                         return d.properties.name;
                     })
-                .valueAccessor(function(kv) {
-                    //console.log(kv);
-                    return kv.value;
-                })
+					.valueAccessor(function(kv) {
+						//console.log(kv);
+						return kv.value;
+					})
                     .title(function (d) {
                         return "State: " + d.key + "\nTotal Amount Raised: " + numberFormat(d.value ? d.value : 0) + "M";
-                    });
+                    })
+					.addFilterHandler(function (filters, filter) {
+						if (filter != "Zugersee" && filter != "Aegerisee") {
+							filters.length = 0; // empty the array
+							filters.push(filter);
+						}
+						return filters;
+						
+					})
+					;
 					
 			bevölkerung
 				.valueAccessor(total).formatNumber(d3.format(".0f"))
-				/*.html({
-					one:"<span style=\"color:steelblue; font-size: 26px;\">%number</span> Monkey",
-					some:"<span style=\"color:steelblue; font-size: 26px;\">%number</span> Total Monkeys",
-					none:"<span style=\"color:steelblue; font-size: 26px;\">No</span> Monkeys"
-				})*/
 				.group(einwohnerTotal);
 				
 			ausländeranteil
@@ -548,29 +629,18 @@
 			beschäftigte
 				.valueAccessor(total).formatNumber(d3.format(".0f"))
 				.group(beschäftigteTotal);
+			
+			steuerfuss
+				.valueAccessor(total).formatNumber(d3.format(".0f"))
+				.group(SteuerfussTotal);
 	
-			/*entwicklungsChart
-				.width(768)
-				.height(480)
-				.transitionDuration(1500)
-				.x(d3.scale.ordinal())
-				.xUnits(dc.units.ordinal)
-				.brushOn(false)
-                .dimension(jahr)
-                .group(einwohnerprojahr)
-				.margins({left: 100, top: 10, right: 10, bottom: 20})
-				.elasticY(true)
-				.brushOn(false)
-				.renderHorizontalGridLines(true);
-				//.ordering(function(d) { return characteristics.indexOf(d.key); });*/
-					
 			entwicklungsChart
 				.width(500)
 				.height(500)
 				.transitionDuration(1500)
 				.margins({left: 80, top: 10, right: 40, bottom: 40})
 				.dimension(jahr)
-				.group(einwohnerprojahr)
+				.group(Realeinwohnerprojahr)
 				.x(d3.scale.linear().domain([2010,2017]))
 				//.x(d3.scale.ordinal().domain([2011, 2012, 2013, 2014, 2015, 2016]))
 				//.xUnits(dc.units.ordinal)
@@ -580,8 +650,8 @@
 				.yAxisLabel("The Y Axis")
 				.compose([
 					dc.barChart(entwicklungsChart)
-						.group(einwohnerprojahr, "Bevölkerung")
-						.ordinalColors(["#007ac4"])
+						.group(Realeinwohnerprojahr, "Bevölkerung")
+						.ordinalColors([colorscheme[1][2][0]])
 						.yAxisPadding("10%")
 						.gap(40)
 						.centerBar(true),
@@ -590,9 +660,9 @@
 							return ""; 
 						}),*/
 					dc.lineChart(entwicklungsChart)
-						.group(auländeranteilprojahr, "Anteil Ausländer/innen in %")
+						.group(Realauländeranteilprojahr, "Anteil Ausländer/innen in %")
 						.yAxisPadding("10%")
-						.ordinalColors(["#ff403a"])
+						.ordinalColors([colorscheme[1][2][1]])
 						.useRightYAxis(true)
 						.interpolate("linear")
 						/*.title(function(d) {
@@ -606,6 +676,8 @@
 				.horizontal(true)
 				.legendWidth(400)
 				.autoItemWidth(true))
+				.filter = function() {}
+				;
 			
 			var characteristics=["Schweizerinnen", "Ausländerinnen", "Negativ", "Schweizer", "Ausländer"]
 			var characteristicsStack=["0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90-94", "95-99", "100+"]
@@ -626,12 +698,13 @@
 					return ""; //d.key + '[' + this.layer + ']: ' + d.value[this.layer] + " " + d.value["total"];
 				})
 				.dimension(altersstrukturStack)
-				.group(altersstrukturGroup, characteristics[0] + "", sel_stack(characteristics[0]))
+				.group(RealAltersstrukturGroup, characteristics[0] + "", sel_stack(characteristics[0]))
 				//.renderLabel(true)
-				//.ordinalColors(colorscheme[scale][characteristicsLength])
+				.ordinalColors([colorscheme[1][4][2], colorscheme[1][4][3],  ,colorscheme[1][4][1], colorscheme[1][4][0]])
 				.transitionDuration(1500)
 				.yAxisPadding("5%")
 				.elasticY(true)
+				.filter = function() {}
 				;
 
 			if (typeof relative !== 'undefined' && relative==true) {
@@ -661,8 +734,6 @@
 				});}
 				})*/
 
-			altersstrukturChart.filter = function() {};
-
 			altersstrukturChart.legend(dc.legend().x(10).y(10).itemHeight(13).gap(10)
 						.horizontal(false)
 						//.legendWidth(500-10)
@@ -675,40 +746,127 @@
 			});
 
 			for(var i = 1; i < 5; ++i){
-				altersstrukturChart.stack(altersstrukturGroup, characteristics[i], sel_stack(characteristics[i]));
+				altersstrukturChart.stack(RealAltersstrukturGroup, characteristics[i], sel_stack(characteristics[i]));
 			}
 			
 			altersstrukturChart.on('pretransition', function(c) {
 				c.svg().select('g').attr("transform","rotate(270 250,250)");
 				c.svg().selectAll('g.axis:nth-child(2) > g > text').attr("transform","translate(12,25) rotate(90 0,0)");
+				c.svg().select('g:nth-child(3) > g:nth-child(3)').attr("transform","translate(12,25) rotate(90 0,0)");
+				$("g.dc-legend-item:nth-child(3)").hide();
 				//c.svg().selectAll('g.axis:nth-child(3) > g > text').attr("transform","translate(-12,15) rotate(90 0,0)");
 				//c.svg().selectAll('g.axis:nth-child(2) > g > text').attr("transform","");
 				//g.axis:nth-child(2) > g:nth-child(1) > text:nth-child(2)
 			});
 			
-			wirtschaftsstrukturChart.width(500)
+			var characteristicsWirtschaftsstruktur=["Land- und Forstwirtschaft", "Industrie und Gewerbe", "Dienstleistung"]
+			
+			var colorScaleWirtschaftstruktur = d3.scale.ordinal()
+            .domain(characteristicsWirtschaftsstruktur)
+            .range([colorscheme[1][3][2],colorscheme[1][3][1],colorscheme[1][3][0]]);
+			
+			wirtschaftsstrukturChart1.width(500)
 				.cx(250)
 				.cy(250)
 				.height(500)
 				.slicesCap(15)
 				.dimension(SektorDimension)
-				.group(BetriebenachSektorGroup)
+				.group(RealBetriebenachSektorGroup)
 				.controlsUseVisibility(true)
-				.externalRadiusPadding(10)
+				.externalRadiusPadding(50)
 				.emptyTitle("Keine Daten vorhanden")
-				.innerRadius(40)
-				//.colors(colorScale)
+				.innerRadius(150)
+				.colors(colorScaleWirtschaftstruktur)
 				.transitionDuration(1500)
 				.title(function(d) {
 					return ""; 
 				})
-				//.ordering(function(d) { return characteristics.indexOf(d.key); })
+				.ordering(function(d) { return characteristicsWirtschaftsstruktur.indexOf(d.key); })
+				.legend(dc.legend().x(10).y(10).itemHeight(13).gap(10)
+					.horizontal(false))
+				.on('renderlet', function(chart){
+					//Labels mit Prozentzahlen ersetzen
+					chart.selectAll('text.pie-slice').text( function(d) {
+						if (dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) > 4) {
+							return d3.format(".1%")(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI)*100)/100);
+						};
+					});
+				})
+				.filter = function() {}
+				;
+				
+			wirtschaftsstrukturChart2.width(500)
+				.cx(250)
+				.cy(250)
+				.height(500)
+				.slicesCap(15)
+				.dimension(SektorDimension)
+				.group(RealBeschäftigtenachSektorGroup)
+				.controlsUseVisibility(true)
+				.externalRadiusPadding(100)
+				.emptyTitle("Keine Daten vorhanden")
+				.innerRadius(100)
+				.colors(colorScaleWirtschaftstruktur)
+				.transitionDuration(1500)
+				.title(function(d) {
+					return ""; 
+				})
+				.ordering(function(d) { return characteristicsWirtschaftsstruktur.indexOf(d.key); })
+				.on('renderlet', function(chart){
+					//Labels mit Prozentzahlen ersetzen
+					chart.selectAll('text.pie-slice').text( function(d) {
+						if (dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) > 4) {
+							return d3.format(".1%")(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI)*100)/100);
+						};
+					});
+				})
+				.filter = function() {}
+				;
+			
+			characteristicsBodennutzung=["Siedlungsfläche", "Landwirtschaftsfläche", "Bestockte Fläche", "Gewässer", "Vegetationslose Fläche"]
+			
+			bodennutzungChart
+				.width(500)
+				.height(500)
+				.x(d3.scale.ordinal())
+				.xUnits(dc.units.ordinal)
+				.margins({left: 50, top: 10, right: 10, bottom: 20})
+				.brushOn(false)
+				.barPadding(0.2)
+				.outerPadding(0.2)
+				.centerBar(false)
+				//.clipPadding(1)
+				.controlsUseVisibility(true)
+				.title(function(d) {
+					return ""; //d.key + '[' + this.layer + ']: ' + d.value[this.layer] + " " + d.value["total"];
+				})
+				.dimension(BodentypDimension)
+				.group(RealFlächenachBodentypGroup)
+				.renderLabel(true)
+				.colors(d3.scale.ordinal().domain(characteristicsBodennutzung)
+                                .range([colorscheme[1][12][11], colorscheme[1][12][3], colorscheme[1][12][2], colorscheme[1][12][0], colorscheme[1][12][8]]))
+				.colorAccessor(function(d) { 
+					return d.key
+				})
+				//.ordinalColors([colorscheme[1][12][11], colorscheme[1][12][3], colorscheme[1][12][2], colorscheme[1][12][0], colorscheme[1][12][0]])
+				.transitionDuration(1500)
+				.yAxisPadding("5%")
+				.ordering(function(d) { return characteristicsBodennutzung.indexOf(d.key); })
+				.filter = function() {}
 				;
 			
             dc.renderAll();
 			
 			$("g.stack:nth-child(3)").hide();
-			$("g.dc-legend-item:nth-child(3)").hide();
+			$('#wirtschaftsstruktur2-chart > svg').css( 'pointer-events', 'none' );
+			//$('g.aegerisee').css( 'pointer-events', 'none' );
+			$( document ).ready(function() {
+			setTimeout(
+				function() 
+				{
+
+				}, 1000);
+			});
         });
     });
 </script>
