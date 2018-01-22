@@ -109,25 +109,82 @@ var createPropertyGroup = function(i) {
 
 Atts[number].secondgroup={};
 for (var i = 0; i < characteristicsStack.length; i++) {
-	Atts[number].secondgroup[characteristicsStack[i]]=createPropertyGroup(i)
+	Atts[number].secondgroup[characteristicsStack[i]]=createPropertyGroup(i);
+}
+
+//Breite der Skalen wird anhand der Anzahl Zeichen ermittelt. Nachträgliches Anpassen funktioniert hier nicht.
+var YWidth=25+(parseInt(Atts[number].secondgroup[characteristicsStack[0]].top(Infinity)[0].value).toString().length*7)
+var YRWidth=40+(parseInt(Atts[number].secondgroup[characteristicsStack[1]].top(Infinity)[0].value).toString().length*7)
+
+function initTip(){
+	last_tip = null;
+	Atts[number].tips = d3.tip()
+		.attr('class', 'd3-tip')
+		.attr('id', 'd3-tip'+number)
+		.direction('n')
+		.offset([-30, 0])
+		.html("no data");
+}
+
+function callTip(){		
+	d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot")
+		.call(Atts[number].tips)
+		.on('mouseover', function(d, i) {
+			if(d.key !== last_tip) {
+				Atts[number].tips.show(d);
+				last_tip = d.key;
+			}
+			if (asDate==true){
+				var monthNameFormat = d3.time.format("%B %Y");
+				label=monthNameFormat(d.data.key)}
+			else {label=d.data.key}
+			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+			if (showTotal==true & showAnteil==true) {
+				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span><br/><span>Anzahl: " + wert +  "</span>";
+			}
+			else if (showTotal==true) {
+				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anzahl: " + wert +  "</span>";
+			}
+			else if (showAnteil==true) {
+				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span>";
+			}
+			else {
+				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span>";
+			};
+			$("#d3-tip"+number).html(tiptext)
+			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
+			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).width()/2));
+			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).height()/2));
+			$("#d3-tip"+number).css( 'left', offsetx);
+			$("#d3-tip"+number).css( 'top', offsety);
+		})
+		.on('mouseout', function(d) {
+			last_tip = null;
+			Atts[number].tips.hide(d);
+			//document.getElementsByClassName("dot")
+			d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot").attr('style', "fill-opacity:0.000001");
+			d3.selectAll("path.yRef").attr('style', "display:none");
+			d3.selectAll("path.xRef").attr('style', "display:none");
+		});
 }
 
 Charts[number]
 	.width(totalWidth)
 	.height(totalHeight)
 	.transitionDuration(1500)
-	.margins({left: 20, top: 10, right: 20, bottom: 40})
+	.margins({left: YWidth, top: 10, right: YRWidth, bottom: 40})
 	.dimension(Atts[number].maindimension)
 	//.x(d3.time.scale().domain([new Date(2012, 0, 1), new Date(2015, 11, 31)]))
     //.round(d3.time.month.round)
     //.xUnits(d3.time.months)
 	.x(d3.scale.ordinal().domain(characteristics))
 	.xUnits(dc.units.ordinal)
-	//.x(d3.scale.linear().domain([2012,2015]))
+	//.x(d3.scale.linear())
 	.elasticY(true)
 	.legend(dc.legend().x(70).y(10).itemHeight(13).gap(5))
 	.brushOn(false)
-     //._rangeBandPadding(1)
+	._rangeBandPadding(1)
 	.compose([
 		dc.lineChart(Charts[number])
 			.group(Atts[number].secondgroup[characteristicsStack[0]], characteristicsStack[0])
@@ -205,7 +262,8 @@ Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
 			
 Charts[number].render();
 
-function adaptY(){
+//Nachträgliches Anpassen funktioniert nicht.
+/*function adaptY(){
 	maxwidth=0
 	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.y > g > text")
 		.attr('transform', function (d) {
@@ -239,7 +297,7 @@ function adaptYR(){
 	}
 }
 
-adaptYR();
+adaptYR();*/
 
 function wrap (text, width) {
   text.each(function() {
@@ -321,7 +379,7 @@ function rotateX(){
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 	var legendHeight = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().getBBox().height;
 	Charts[number].height(totalHeight+maxheight+legendHeight-20)
-		.margins({left: YWidth, top: 10, right: YRWidth, bottom: 40 + maxheight + legendHeight});
+		.margins({left: YWidth, top: 10, right: YRWidth, bottom: (40 + maxheight + legendHeight)});
 	Charts[number].render()
 	Charts[number].selectAll(".x .tick text")
 		.call(wrap, tickwidth);
@@ -372,67 +430,16 @@ function rotateX(){
 	});
 	}
 	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
+	
+	var transx=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.chart-body:nth-child(2)").attr("transform")).translate[0];
+	var transy=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.chart-body:nth-child(2)").attr("transform")).translate[1];
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.chart-body").attr("transform", "translate("+transx+","+transy+")")
 }
 
 rotateX();
 
-function initTip(){
-	last_tip = null;
-	Atts[number].tips = d3.tip()
-		.attr('class', 'd3-tip')
-		.attr('id', 'd3-tip'+number)
-		.direction('n')
-		.offset([-30, 0])
-		.html("no data");
-}
-
-function callTip(){		
-	d3.selectAll("circle.dot")
-		.call(Atts[number].tips)
-		.on('mouseover', function(d, i) {
-			if(d.key !== last_tip) {
-				Atts[number].tips.show(d);
-				last_tip = d.key;
-			}
-			//console.log($(this).parent().parent().parent().parent().parent().index())
-			if (asDate==true){
-				var monthNameFormat = d3.time.format("%B %Y");
-				label=monthNameFormat(d.data.key)}
-			else {label=d.data.key}
-			//console.log(characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)])
-			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
-			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
-			if (showTotal==true & showAnteil==true) {
-				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
-			}
-			else if (showTotal==true) {
-				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><span>: " + wert +  "</span>";
-			}
-			else if (showAnteil==true) {
-				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span>";
-			}
-			else {
-				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span>";
-			};
-			$("#d3-tip"+number).html(tiptext)
-			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
-			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).width()/2));
-			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).height()/2));
-			$("#d3-tip"+number).css( 'left', offsetx);
-			$("#d3-tip"+number).css( 'top', offsety);
-		})
-		.on('mouseout', function(d) {
-			last_tip = null;
-			Atts[number].tips.hide(d);
-			//document.getElementsByClassName("dot")
-			d3.selectAll("circle.dot").attr('style', "fill-opacity:0.000001");
-			d3.selectAll("path.yRef").attr('style', "display:none");
-			d3.selectAll("path.xRef").attr('style', "display:none");
-		});
-}
-
-initTip();
-callTip();
+initTip(number);
+callTip(number);
 
 $("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 
