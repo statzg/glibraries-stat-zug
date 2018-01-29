@@ -82,7 +82,7 @@
 	
 	<h3>Wirtschaftsstruktur <span class="wirtschaftsstrukturyear"></span></h3>
 	
-	<div id="wirtschaftsstruktur" class="overlaycontainer" style="position: relative; width: 500px; height: 500px;">
+	<div id="wirtschaftsstruktur" class="overlaycontainer" style="position: relative;">
 		<div id="wirtschaftsstruktur1-chart" class="non-float" style="position: relative; z-index: 100;">
 		</div>
 		<div id="wirtschaftsstruktur2-chart" class="non-float" style="position: absolute; top: 0; left: 0; z-index: 99;">
@@ -131,18 +131,27 @@
 	var bodennutzungChart = dc.barChart("#bodennutzung-chart");
 	
 	var q = queue()
-		.defer(d3.csv, "data/data1.csv")
+		.defer(d3.csv, "data/result-data1.csv")
 		.defer(d3.csv, "data/data2.csv")
 		.defer(d3.csv, "data/data3.csv")
 		.defer(d3.csv, "data/data4.csv")
 		.defer(d3.csv, "data/data5.csv")
 		.defer(d3.csv, "data/data6.csv")
-		.defer(d3.csv, "data/data7.csv")
+		.defer(d3.csv, "data/result-data7.csv")
 		.defer(d3.csv, "data/data8.csv")
 		.defer(d3.csv, "data/data9.csv")
 		.defer(d3.csv, "data/data10.csv");
 		
 	q.await(function(error, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10) {
+
+	meta1 = data1.filter(function(el) {
+		return el["Meta"] == 1
+	});
+	
+	year1 = meta1.filter(function( el ) { return el.Type == "year";});
+	if (year1.length == 1) {
+		$(".bevölkerungyear").html("("+year1[0].Content+")");
+	}
 	
 	meta2 = data2.filter(function(el) {
 		return el["Meta"] == 1
@@ -278,10 +287,30 @@
             return +d["Bevölkerung"];
         });
 		var Realeinwohnerprojahr = remove_bins(einwohnerprojahr);
-		var auländeranteilprojahr = jahr.group().reduceSum(function (d) {
+		
+		var ausländeranteilprojahr = jahr.group().reduceSum(function (d) {
             return d["Ausländer"]/d["Bevölkerung"];
         });
-		var Realauländeranteilprojahr = remove_bins(auländeranteilprojahr);
+		
+		/*var ausländeranteilprojahr = jahr.group().reduce(
+          function (p, v) {
+              ++p.n;
+              p.tot += +v["Ausländer"];
+			  p.pop += +v["Bevölkerung"];
+			  p = p.tot/p.pop;
+              return p;
+          },
+          function (p, v) {
+              --p.n;
+              p.tot -= +v["Ausländer"];
+			  p.pop -= +v["bevölkerung"];
+			  p = p.tot/p.pop;
+              return p;
+          },
+          function () { return {n:0,tot:0,pop:0,p:0}; }
+		);*/
+		
+		var Realauländeranteilprojahr = remove_bins(ausländeranteilprojahr);
 		
 		var einwohnerTotal = data.groupAll().reduce(
           function (p, v) {
@@ -551,26 +580,39 @@
 		var rowCount = function(d) {
 			return d.n;
 		};
+
+var redrawx=0;
 		
+function redraw() {
+
 		//Karte
 		
 		var totalWidth = document.getElementById('karte').offsetWidth;
-		var height = 350
-		var scale = 81500
+		var mapheight = 400
+		var heightmax = 400
+		var heightmin = 240
+		var mapheight = Math.min( heightmin + (totalWidth - 286)*1, heightmax);
+		var scale = 82000
+		var scalemax = 82000
+		var scalemin = 50000
+		var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
 		var lat = 8.548589899
-		var lon = 47.16479567
+		var lon = 47.15309567
+		
+
 		
 		var projection = d3.geo.mercator()
 			.center([lat,lon])
-			.scale(scale);
+			.scale(scale)
+			.translate([totalWidth / 2 , mapheight / 2 ]);
 			//.translate([totalWidth/2,height/2]);
 
 		d3.json("data/gemeinden.json", function (statesJson) {
             
 			var gemeinden=["Baar", "Cham", "Hünenberg", "Menzingen", "Neuheim", "Oberägeri", "Risch", "Steinhausen", "Unterägeri", "Walchwil" ,"Zug", "See"]
 			
-			karte.width(990)
-                    .height(500)
+			karte.width(totalWidth)
+                    .height(mapheight)
                     .dimension(states)
                     .group(einwohner)
 					.colors(d3.scale.ordinal().domain(gemeinden)
@@ -649,11 +691,13 @@
 				if (typeof max == 'undefined' || max < Realeinwohnerprojahr.all()[i].key) {var max = Realeinwohnerprojahr.all()[i].key};
 			}
 			
+			var height=Math.min(500, (1.2*totalWidth));
+			
 			entwicklungsChart
-				.width(500)
-				.height(500)
+				.width(totalWidth)
+				.height(height)
 				.transitionDuration(1500)
-				.margins({left: 55, top: 10, right: 50, bottom: 40})
+				.margins({left: 65, top: 10, right: 50, bottom: 30})
 				.dimension(jahr)
 				.group(Realeinwohnerprojahr)
 				.x(d3.scale.linear().domain([min-1,max+1]))
@@ -666,8 +710,8 @@
 					dc.barChart(entwicklungsChart)
 						.group(Realeinwohnerprojahr, "Bevölkerung")
 						.ordinalColors([colorscheme[1][2][0]])
-						.yAxisPadding("10%")
-						.gap(40)
+						.yAxisPadding("15%")
+						.gap(totalWidth/100)
 						.centerBar(true)
 						.title(function(d) {
 							return ""; 
@@ -686,9 +730,9 @@
 				.yAxisLabel("Bevölkerung")
 				.rightYAxisLabel("Anteil Ausländer/innen in %")
 				.renderHorizontalGridLines(true)
-				.legend(dc.legend().x(100).y(20).itemHeight(13).gap(10)
+				.legend(dc.legend().x(20).y(height-15).itemHeight(13).gap(10)
 				.horizontal(true)
-				.legendWidth(400)
+				.legendWidth(totalWidth-10)
 				.autoItemWidth(true))
 				.filter = function() {}
 				;
@@ -697,13 +741,111 @@
 			entwicklungsChart.xAxis().tickFormat(germanFormatters.numberFormat(""));
 			entwicklungsChart.rightYAxis().tickFormat(d3.format('.0%'));
 			
+			function getLegendWidth() {
+				var legendLength = d3.select("#entwicklung-chart g.dc-legend").node().childElementCount;
+				var legendWidthArray = [];
+				legendHeightArray = [];
+				for (i=0; i < legendLength; i++) {
+					var j=i+1;
+					var item = "#entwicklung-chart g.dc-legend-item:nth-of-type("+j+")";
+					legendWidthArray[i]=d3.select(item).node().getBBox().width;
+					legendHeightArray[i]=d3.select(item).node().getBBox().height;
+				};
+				legendMaxWidth = Math.max.apply(null, legendWidthArray);
+			}
+			
+			function rotateXentwicklung(){
+				//Breite eines Zwischenstrichs
+				var tickwidth=d3.transform(d3.selectAll("#entwicklung-chart g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#entwicklung-chart g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+
+				//Zeilen umbrechen, wenn breiter als Zwischenstrich
+				entwicklungsChart.selectAll(".x .tick text")
+					.call(wrap, tickwidth);
+
+				//Maximale Breite der Skalenbezeichner	
+				maxwidth=0
+				maxheight=0
+				entwicklungsChart.selectAll("#entwicklung-chart g.axis.x > g > text")
+					.attr('transform', function (d) {
+						var coordx = this.getBBox().width;
+						if (maxwidth < coordx) {
+							maxwidth = coordx;
+						}
+						var coordy = this.getBBox().height;
+						if (maxheight < coordy) {
+							maxheight = coordy;
+						}
+					});
+
+				legendy=height-40+maxheight
+				d3.selectAll("#entwicklung-chart g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+				var legendHeight = d3.select("#entwicklung-chart g.dc-legend").node().getBBox().height;
+				console.log(height+maxheight+legendHeight-20);
+				entwicklungsChart.height(height+maxheight+legendHeight-30)
+					.margins({left: 65, top: 10, right: 50, bottom: (30 + maxheight + legendHeight)});
+				entwicklungsChart.render()
+				entwicklungsChart.selectAll(".x .tick text")
+					.call(wrap, tickwidth);
+				d3.selectAll("#entwicklung-chart g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+				maxwidth=0
+				maxheight=0
+				entwicklungsChart.selectAll("#entwicklung-chart g.axis.x > g > text")
+					.attr('transform', function (d) {
+						var coordx = this.getBBox().width;
+						if (maxwidth < coordx) {
+							maxwidth = coordx;
+						}
+						var coordy = this.getBBox().height;
+						if (maxheight < coordy) {
+							maxheight = coordy;
+						}
+					});
+				//Wenn immer noch zu breit dann rotieren
+				if (maxwidth-6>tickwidth*0.75) {
+				entwicklungsChart.height(height+Math.min(150, maxwidth)+legendHeight-30)
+					.margins({left: 65, top: 10, right: 50, bottom: 30 +Math.min(150, maxwidth) + legendHeight});
+				entwicklungsChart.render()
+				entwicklungsChart.selectAll(".x .tick text")
+					.call(wrap, Math.min(150, maxwidth));
+				legendy=height-40+Math.min(150, maxwidth)
+				d3.selectAll("#entwicklung-chart g.dc-legend").attr("transform", "translate(10,"+legendy+")")
+				d3.selectAll("#entwicklung-chart g.axis.x > g > text")
+					.style("text-anchor", "start")
+				//var moveleft = (-maxheight)/2-3
+				d3.selectAll("#entwicklung-chart g.axis.x > g > text").attr("transform", function (d) {
+					var moveleft = (-(this.getBBox().height)/2)-5;
+					return ("rotate(90), translate(10,"+moveleft+")")
+				});
+				}
+				//Wenn nötig Legende umbrechen, funktioniert nur bis 2 Zeilen.
+				getLegendWidth();
+				if (legendMaxWidth > totalWidth-30){
+					entwicklungsChart.selectAll("#entwicklung-chart g.dc-legend text")
+						.call(wrap, totalWidth-30);
+				d3.selectAll("#entwicklung-chart g.dc-legend text").attr("transform", function (d) {
+					var height = (this.getBBox().height);
+					if(height == 14) {
+					return ("translate(0,0)")
+					}
+					if(height > 15) {
+					return ("translate(0,-6)")
+					}
+				});
+				}
+				$("#entwicklung-chart .dc-legend-item text").attr("x", 17);
+				
+				var transx=d3.transform(d3.selectAll("#entwicklung-chart g.chart-body:nth-child(2)").attr("transform")).translate[0];
+				var transy=d3.transform(d3.selectAll("#entwicklung-chart g.chart-body:nth-child(2)").attr("transform")).translate[1];
+				d3.selectAll("#entwicklung-chart g.chart-body").attr("transform", "translate("+transx+","+transy+")")
+			}
+
 			var characteristics=["Schweizerinnen", "Ausländerinnen", "Negativ", "Schweizer", "Ausländer"]
 			var characteristicsStack=["0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90-94", "95-99", "100+"]
 			var colorsAltersstruktur=[colorscheme[1][4][2], colorscheme[1][4][3],  ,colorscheme[1][4][1], colorscheme[1][4][0]];
 			
 			altersstrukturChart
-				.width(500)
-				.height(500)
+				.width(Math.min(500, totalWidth))
+				.height(Math.min(500, totalWidth))
 				.x(d3.scale.ordinal())
 				.xUnits(dc.units.ordinal)
 				.margins({left: 50, top: 10, right: 10, bottom: 40})
@@ -758,6 +900,8 @@
 						//.legendWidth(500-10)
 						.autoItemWidth(true));
 
+			if (redrawx==0) {
+			
 			//Legende Anders ordnen
 			dc.override(altersstrukturChart, 'legendables', function() {
 				var items = altersstrukturChart._legendables();
@@ -767,13 +911,17 @@
 				items.splice(3, 1, items.splice(0, 1)[0])
 				return items;
 			});
+			
+			}
+			
+			redrawx=redrawx+1;
 
 			for(var i = 1; i < 5; ++i){
 				altersstrukturChart.stack(RealAltersstrukturGroup, characteristics[i], sel_stack(characteristics[i]));
 			}
 			
 			altersstrukturChart.on('pretransition', function(c) {
-				c.svg().select('g').attr("transform","rotate(270 250,250)");
+				c.svg().select('g').attr("transform","rotate(270 "+(Math.min(500, totalWidth)/2)+", "+(Math.min(500, totalWidth)/2)+")");
 				c.svg().selectAll('g.axis:nth-child(2) > g > text').attr("transform","translate(12,25) rotate(90 0,0)");
 				c.svg().select('g:nth-child(3) > g:nth-child(3)').attr("transform","translate(12,25) rotate(90 0,0)");
 				c.svg().selectAll('g.axis:nth-child(3) > g > text').each(function(d, i) {
@@ -789,17 +937,19 @@
             .domain(characteristicsWirtschaftsstruktur)
             .range([colorscheme[1][3][2],colorscheme[1][3][1],colorscheme[1][3][0]]);
 			
-			wirtschaftsstrukturChart1.width(500)
-				.cx(250)
-				.cy(250)
-				.height(500)
+			var wirtschaftsHeight=Math.min(500, totalWidth);
+			
+			wirtschaftsstrukturChart1.width(totalWidth)
+				.cx(totalWidth/2)
+				.cy(Math.min(500, totalWidth)/2)
+				.height(wirtschaftsHeight)
 				.slicesCap(15)
 				.dimension(SektorDimension)
 				.group(RealBetriebenachSektorGroup)
 				.controlsUseVisibility(true)
-				.externalRadiusPadding(50)
+				.externalRadiusPadding(0.1*wirtschaftsHeight)
 				.emptyTitle("Keine Daten vorhanden")
-				.innerRadius(150)
+				.innerRadius(0.3*wirtschaftsHeight)
 				.colors(colorScaleWirtschaftstruktur)
 				.transitionDuration(1500)
 				.title(function(d) {
@@ -819,17 +969,17 @@
 				.filter = function() {}
 				;
 				
-			wirtschaftsstrukturChart2.width(500)
-				.cx(250)
-				.cy(250)
-				.height(500)
+			wirtschaftsstrukturChart2.width(totalWidth)
+				.cx(totalWidth/2)
+				.cy(Math.min(500, totalWidth)/2)
+				.height(wirtschaftsHeight)
 				.slicesCap(15)
 				.dimension(SektorDimension)
 				.group(RealBeschäftigtenachSektorGroup)
 				.controlsUseVisibility(true)
-				.externalRadiusPadding(100)
+				.externalRadiusPadding(0.2*wirtschaftsHeight)
 				.emptyTitle("Keine Daten vorhanden")
-				.innerRadius(100)
+				.innerRadius(0.2*wirtschaftsHeight)
 				.colors(colorScaleWirtschaftstruktur)
 				.transitionDuration(1500)
 				.title(function(d) {
@@ -853,9 +1003,11 @@
 				.domain(characteristicsBodennutzung)
 				.range([colorscheme[1][12][11], colorscheme[1][12][3], colorscheme[1][12][2], colorscheme[1][12][0], colorscheme[1][12][8]]);
 			
+			var bodennutzungHeight=Math.min(500, (1.2*totalWidth));
+			
 			bodennutzungChart
-				.width(500)
-				.height(500)
+				.width(totalWidth)
+				.height(bodennutzungHeight)
 				.x(d3.scale.ordinal())
 				.xUnits(dc.units.ordinal)
 				.margins({left: 50, top: 10, right: 10, bottom: 20})
@@ -881,21 +1033,73 @@
 				.ordering(function(d) { return characteristicsBodennutzung.indexOf(d.key); })
 				.filter = function() {}
 				;
+				
+			function rotateXbodennutzung(){
+				//Breite eines Zwischenstrichs
+				var tickwidth=d3.transform(d3.selectAll("#bodennutzung-chart g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#bodennutzung-chart g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+
+				//Zeilen umbrechen, wenn breiter als Zwischenstrich
+				bodennutzungChart.selectAll(".x .tick text")
+					.call(wrap, tickwidth);
+
+				//Maximale Breite der Skalenbezeichner
+				var maxwidth=0
+				var maxheight=0
+				bodennutzungChart.selectAll("#bodennutzung-chart g.axis.x > g > text")
+					.attr('transform', function (d) {
+						var coordx = this.getBBox().width;
+						if (maxwidth < coordx) {
+							maxwidth = coordx;
+						}
+						var coordy = this.getBBox().height;
+						if (maxheight < coordy) {
+							maxheight = coordy;
+						}
+					});
+
+				bodennutzungChart.height(bodennutzungHeight+maxheight-20)
+					.margins({left: 50, top: 10, right: 10, bottom: 10 + maxheight});
+				bodennutzungChart.render()
+				bodennutzungChart.selectAll(".x .tick text")
+					.call(wrap, tickwidth);
+				var maxwidth=0
+				var maxheight=0
+				bodennutzungChart.selectAll("#bodennutzung-chart g.axis.x > g > text")
+					.attr('transform', function (d) {
+						var coordx = this.getBBox().width;
+						if (maxwidth < coordx) {
+							maxwidth = coordx;
+						}
+						var coordy = this.getBBox().height;
+						if (maxheight < coordy) {
+							maxheight = coordy;
+						}
+					});
+				//Wenn immer noch zu breit dann rotieren
+				if (maxwidth-6>tickwidth*0.75) {
+				bodennutzungChart.height(bodennutzungHeight+Math.min(150, maxwidth)-20)
+					.margins({left: 50, top: 10, right: 10, bottom: 10 + +Math.min(150, maxwidth)});
+				bodennutzungChart.render()
+				bodennutzungChart.selectAll(".x .tick text")
+					.call(wrap, Math.min(150, maxwidth));
+				d3.selectAll("#bodennutzung-chart g.axis.x > g > text")
+					.style("text-anchor", "start")
+				//var moveleft = (-maxheight)/2-3
+				d3.selectAll("#bodennutzung-chart g.axis.x > g > text").attr("transform", function (d) {
+					var moveleft = (-(this.getBBox().height)/2)-5;
+					return ("rotate(90), translate(10,"+moveleft+")")
+				});
+				}
+				//Click-Event ausschalten
+				d3.selectAll("#bodennutzung-chart g.stack > rect").on('click',null);
+				d3.selectAll("#bodennutzung-chart g.stack > rect").on("click", function() {
+				});
+			}
 
             dc.renderAll();
 			
-			if (typeof Tips == 'undefined') { Tips = {} };
-			
-			function initTip(number){
-				last_tip = null;
-				Tips[number] = d3.tip()
-					.attr('class', 'd3-tip')
-					.attr('id', 'd3-tip'+number)
-					.direction('n')
-					.offset([0, 0])
-					.html("no data");
-				$(".pie-label").css( 'pointer-events', 'none' );
-			}
+			rotateXentwicklung();
+			rotateXbodennutzung();
 			
 			function callTipKarte(number){
 	
@@ -1050,17 +1254,12 @@
 			}
 			
 			
-			initTip("karte");
+			
 			callTipKarte("karte");
-			initTip("bevölkerungsentwicklung");
 			callTipBevölkerungsentwicklung("bevölkerungsentwicklung");
-			initTip("altersstruktur");
 			callTipAltersstruktur("altersstruktur");
-			initTip(1);
 			callTipWirtschaftsstruktur(1);
-			initTip(2);
 			callTipWirtschaftsstruktur(2);
-			initTip("bodennutzung");
 			callTipBodennutzung("bodennutzung");
 			
 $(".dc-legend-item text").attr("x", 17);
@@ -1088,6 +1287,14 @@ $( document ).ready(function() {
 		
 		svg = d3.selectAll("#wirtschaftsstruktur1-chart svg")
 		
+		min=269
+		max=500
+		
+		svg.selectAll("marker").remove();
+		svg.selectAll(".arrow").remove();
+		svg.selectAll(".arrowtext").remove();
+		
+		
 		svg.append("marker")
 			.attr(markerblack)
 			.append("path")
@@ -1097,62 +1304,58 @@ $( document ).ready(function() {
 				//.attr("fill-opacity", "0.5");
 						
 		svg.append("path")
-			.attr("class", "line")
-				.attr("id", "line1")
-				.attr("stroke-width", 5)
-				.attr("stroke", "#32444a")
-				.attr("fill", "none")
-				.attr("stroke-linecap", "round")
-				//.attr("stroke-opacity", "0.5")
-				.attr({
-					"class":"comingline",
-					"marker-end":"url(#arrowblack)"
-				})
-				.attr("d", function(d) {
-					/*var scalewidth=1*d3.transform(svg.select("g.axis.y").attr("transform")).translate[0];
-					var rectwidth=svg.select("g.sub._0 rect:nth-child(1)").attr("width");
-					var y1=svg.select("g.sub._0 rect:nth-child(1)").attr("y")-5;
-					var x1=(1*svg.select("g.sub._0 rect:nth-child(1)").attr("x"))+scalewidth+rectwidth/2;
-					var y2=svg.select("g.sub._0 rect:nth-child(2)").attr("y")-5;
-					var x2=(1*svg.select("g.sub._0 rect:nth-child(2)").attr("x"))+scalewidth+rectwidth/2-20;*/
-					return "M"+210+","+230+" "+410+" "+230;
-				});
+			.attr("class", "arrow")
+			.attr("id", "line1")
+			.attr("stroke-width", (0.01*wirtschaftsHeight))
+			.attr("stroke", "#32444a")
+			.attr("fill", "none")
+			.attr("stroke-linecap", "round")
+			//.attr("stroke-opacity", "0.5")
+			.attr("marker-end", "url(#arrowblack)")
+			.attr("d", function(d) {
+				/*var scalewidth=1*d3.transform(svg.select("g.axis.y").attr("transform")).translate[0];
+				var rectwidth=svg.select("g.sub._0 rect:nth-child(1)").attr("width");
+				var y1=svg.select("g.sub._0 rect:nth-child(1)").attr("y")-5;
+				var x1=(1*svg.select("g.sub._0 rect:nth-child(1)").attr("x"))+scalewidth+rectwidth/2;
+				var y2=svg.select("g.sub._0 rect:nth-child(2)").attr("y")-5;
+				var x2=(1*svg.select("g.sub._0 rect:nth-child(2)").attr("x"))+scalewidth+rectwidth/2-20;*/
+				return "M"+((totalWidth/2)-(0.08*wirtschaftsHeight))+","+((wirtschaftsHeight/2)-(0.04*wirtschaftsHeight))+" "+((totalWidth/2)+(0.32*wirtschaftsHeight))+" "+((wirtschaftsHeight/2)-(0.04*wirtschaftsHeight));
+			});
 				
 		svg.append("text")
- 		      	.attr("x", "210")
-				.attr("y","220")
-				.attr("font-size", "20")
-				.attr("fill", "#32444a")
-				.text("Betriebe");	
+			.attr("class", "arrowtext")
+			.attr("x", ((totalWidth/2)-(0.08*wirtschaftsHeight)))
+			.attr("y", ((wirtschaftsHeight/2)-(0.06*wirtschaftsHeight)))
+			.attr("font-size", (10+(0.02*wirtschaftsHeight)))
+			.attr("fill", "#32444a")
+			.text("Betriebe");	
 				
 		svg.append("path")
-			.attr("class", "line")
-				.attr("id", "line1")
-				.attr("stroke-width", 5)
-				.attr("stroke", "#32444a")
-				.attr("fill", "none")
-				.attr("stroke-linecap", "round")
-				//.attr("stroke-opacity", "0.5")
-				.attr({
-					"class":"comingline",
-					"marker-end":"url(#arrowblack)"
-				})
-				.attr("d", function(d) {
-					/*var scalewidth=1*d3.transform(svg.select("g.axis.y").attr("transform")).translate[0];
-					var rectwidth=svg.select("g.sub._0 rect:nth-child(1)").attr("width");
-					var y1=svg.select("g.sub._0 rect:nth-child(1)").attr("y")-5;
-					var x1=(1*svg.select("g.sub._0 rect:nth-child(1)").attr("x"))+scalewidth+rectwidth/2;
-					var y2=svg.select("g.sub._0 rect:nth-child(2)").attr("y")-5;
-					var x2=(1*svg.select("g.sub._0 rect:nth-child(2)").attr("x"))+scalewidth+rectwidth/2-20;*/
-					return "M"+210+","+280+" "+355+" "+280;
-				});
+			.attr("class", "arrow")
+			.attr("id", "line2")
+			.attr("stroke-width", (0.01*wirtschaftsHeight))
+			.attr("stroke", "#32444a")
+			.attr("fill", "none")
+			.attr("stroke-linecap", "round")
+			//.attr("stroke-opacity", "0.5")
+			.attr("marker-end", "url(#arrowblack)")
+			.attr("d", function(d) {
+				/*var scalewidth=1*d3.transform(svg.select("g.axis.y").attr("transform")).translate[0];
+				var rectwidth=svg.select("g.sub._0 rect:nth-child(1)").attr("width");
+				var y1=svg.select("g.sub._0 rect:nth-child(1)").attr("y")-5;
+				var x1=(1*svg.select("g.sub._0 rect:nth-child(1)").attr("x"))+scalewidth+rectwidth/2;
+				var y2=svg.select("g.sub._0 rect:nth-child(2)").attr("y")-5;
+				var x2=(1*svg.select("g.sub._0 rect:nth-child(2)").attr("x"))+scalewidth+rectwidth/2-20;*/
+				return "M"+((totalWidth/2)-(0.08*wirtschaftsHeight))+","+((wirtschaftsHeight/2)+(0.06*wirtschaftsHeight))+" "+((totalWidth/2)+(0.21*wirtschaftsHeight))+" "+((wirtschaftsHeight/2)+(0.06*wirtschaftsHeight));
+			});
 			
 		svg.append("text")
- 		      	.attr("x", "210")
-				.attr("y","270")
-				.attr("font-size", "20")
-				.attr("fill", "#32444a")
-				.text("Beschäftigte");	
+			.attr("class", "arrowtext")
+			.attr("x", ((totalWidth/2)-(0.08*wirtschaftsHeight)))
+			.attr("y", ((wirtschaftsHeight/2)+(0.04*wirtschaftsHeight)))
+			.attr("font-size", (10+(0.02*wirtschaftsHeight)))
+			.attr("fill", "#32444a")
+			.text("Beschäftigte");	
 				
     }, 1000);
 	
@@ -1170,6 +1373,40 @@ $( document ).ready(function() {
 				}, 1000);
 			});
         });
+	}
+
+	if (typeof Tips == 'undefined') { Tips = {} };
+			
+	function initTip(number){
+		last_tip = null;
+		Tips[number] = d3.tip()
+			.attr('class', 'd3-tip')
+			.attr('id', 'd3-tip'+number)
+			.direction('n')
+			.offset([0, 0])
+			.html("no data");
+		$(".pie-label").css( 'pointer-events', 'none' );
+	}
+
+	initTip("karte");
+	initTip("bevölkerungsentwicklung");
+	initTip("altersstruktur");
+	initTip(1);
+	initTip(2);
+	initTip("bodennutzung");
+	
+	redraw();
+
+function resizePortrait() {
+	d3.selectAll(".d3-tip").remove();
+	d3.selectAll("svg").remove()
+	redraw()
+}
+
+$(window).resize(function(){
+		resizePortrait()
+});	
+
 });
 </script>
 
