@@ -292,23 +292,23 @@
             return d["Ausländer"]/d["Bevölkerung"];
         });
 		
-		/*var ausländeranteilprojahr = jahr.group().reduce(
+		var ausländeranteilprojahr = jahr.group().reduce(
           function (p, v) {
               ++p.n;
               p.tot += +v["Ausländer"];
 			  p.pop += +v["Bevölkerung"];
-			  p = p.tot/p.pop;
+			  p.ant = p.tot/p.pop;
               return p;
           },
           function (p, v) {
               --p.n;
               p.tot -= +v["Ausländer"];
 			  p.pop -= +v["bevölkerung"];
-			  p = p.tot/p.pop;
+			  p.ant = p.tot/p.pop;
               return p;
           },
-          function () { return {n:0,tot:0,pop:0,p:0}; }
-		);*/
+          function () { return {n:0,tot:0,pop:0,ant:0}; }
+		);
 		
 		var Realauländeranteilprojahr = remove_bins(ausländeranteilprojahr);
 		
@@ -718,6 +718,9 @@ function redraw() {
 						}),
 					dc.lineChart(entwicklungsChart)
 						.group(Realauländeranteilprojahr, "Anteil Ausländer/innen in %")
+						.valueAccessor(function (d) {
+							return d.value.ant;
+						})
 						.yAxisPadding("10%")
 						.ordinalColors([colorscheme[1][2][1]])
 						.useRightYAxis(true)
@@ -1160,7 +1163,7 @@ function redraw() {
 							Tips[number].show(d);
 							last_tip = d.data.key;
 						}
-						tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + d3.format('.1%')(d.data.value) + "</span>";
+						tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + d3.format('.1%')(d.data.value.ant) + "</span>";
 						$("#d3-tip"+number).html(tiptext)
 						$("#d3-tip"+number).css("border-left", colorscheme[1][2][1] +" solid 5px");
 						offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 33 - (($("#d3-tip"+number).width()+30)/2));
