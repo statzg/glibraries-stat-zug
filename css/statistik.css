@@ -250,6 +250,14 @@ text.label {
     fill: grey;
 }
 
+.dc-chart g.zugersee.deselected path {
+	fill: #ebf4fa;
+}
+
+.dc-chart g.aegerisee.deselected path {
+	fill: #ebf4fa;
+}
+
 .dc-chart g.selected text {
 }
 

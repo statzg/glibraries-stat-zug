@@ -36,6 +36,9 @@ createcontainers(number);
 var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 
 //Charttyp dem Container zuweisen
+
+d3.selectAll("#"+Atts[number].chartcontainer+" svg").remove()
+
 Charts[number] = dc.rowChart("#"+Atts[number].chartcontainer);
 
 //Daten einlesen
@@ -292,6 +295,7 @@ callTip(number);
 //window.onresize = function(event) {
 window.addEventListener('resize', function(){
   //Breite des Hauptcontainers einlesen
+	d3.selectAll("#"+Atts[number].chartcontainer+" svg").remove()
 	var newWidth = document.getElementById('default').offsetWidth;
 	Charts[number].width(newWidth)
 		.transitionDuration(0);
