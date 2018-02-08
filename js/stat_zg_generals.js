@@ -351,9 +351,19 @@ function addDataTablesButton(number, columns) {
 
 function tabulate(columns, number) {
 	
-	var titel=$('title').text();
-	if (Atts[number].title[0].Content != "") {
+	var titel=$('#'+Atts[number].maincontainer+' #title').text();
+	if (typeof Atts[number].title != 'undefined' && Atts[number].title[0].Content != "") {
 		titel=Atts[number].title[0].Content
+	};
+	console.log("test");
+	console.log(titel);
+	var subtitle="";
+	if (typeof Atts[number].subtitle != 'undefined' && Atts[number].subtitle[0].Content != "") {
+		subtitle=Atts[number].subtitle[0].Content
+	};
+	var source="";
+	if (typeof Atts[number].source != 'undefined' && Atts[number].source[0].Content != "") {
+		source="Quelle: " + Atts[number].source[0].Content
 	};
 		
 	
@@ -405,13 +415,16 @@ function tabulate(columns, number) {
 					[ '10 rows', '25 rows', '50 rows', 'Show all' ]
 				],
 				"buttons": ['pageLength', 'csv', 'excel'],*/
-				"buttons": ['csv', 
+				"buttons": [{
+						extend: 'csv', 
+						filename: titel},
+				//'csv', 
 					{
 						extend: 'excel', 
 						footer: true,
 						title: titel,
-						messageTop: Atts[number].subtitle[0].Content, 
-						messageBottom: "Quelle: " + Atts[number].source[0].Content}],
+						messageTop: subtitle, 
+						messageBottom: source}],
 				"colReorder": true,
 			});
 		}, 200);
@@ -423,7 +436,7 @@ function tabulate(columns, number) {
 	var container = d3.select("#"+Atts[number].maincontainer).append('div')
 		.attr('id', 'datatablecontainer'+number)
 
-	if (Atts[number].title[0].Content != "") {
+	if (typeof Atts[number].title != 'undefined' && Atts[number].title[0].Content != "") {
 		container.append('div')
 			.attr('class', 'title')
 			.html("Datentabelle: " + Atts[number].title[0].Content);
@@ -433,7 +446,7 @@ function tabulate(columns, number) {
 			.html("Datentabelle");
 	}
 
-	if (Atts[number].subtitle[0].Content != "") {
+	if (typeof Atts[number].subtitle != 'undefined' && Atts[number].subtitle[0].Content != "") {
 		container.append('div')
 			.attr('class', 'subtitle')
 			.html(Atts[number].subtitle[0].Content);
@@ -471,20 +484,20 @@ function tabulate(columns, number) {
 	  .append('td')
 		.text(function (d) { return d.value; });
 
-	if (Atts[number].description[0].Content != "") {
+	if (typeof Atts[number].description != 'undefined' && Atts[number].description[0].Content != "") {
 		container.append('div')
 			.attr('class', 'description')
 			.html(Atts[number].description[0].Content);
 	}
 
-	if (Atts[number].source[0].Content != "") {
+	if (typeof Atts[number].source != 'undefined' && Atts[number].source[0].Content != "") {
 		container.append('div')
 			.attr('class', 'source')
 			.html("Quelle: " + Atts[number].source[0].Content);
 	}
 
 	//create hidden footer for export
-	if (Atts[number].description[0].Content != "") {
+	if (typeof Atts[number].description != 'undefined' && Atts[number].description[0].Content != "") {
 	tfoot.append('tr')
 		.attr('style', 'display:none')
 		.append('td')

@@ -243,6 +243,19 @@ text.label {
     stroke: white;
 }
 
+.dc-chart g.gemeinde {
+    cursor: pointer;
+}
+
+.dc-chart g.gemeinde :hover {
+    fill-opacity: .8;
+}
+
+.dc-chart g.gemeinde path {
+    stroke: white;
+}
+
+
 .dc-chart g.selected path {
 }
 

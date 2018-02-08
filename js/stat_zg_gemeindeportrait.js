@@ -1,171 +1,23 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Gemeindeportraits</title>
+function loadGemeindeportrait() {
+Atts[2]={};
+Atts[3]={};
+Atts[4]={};
+Atts[5]={};
+Atts[6]={};
 
-    <meta charset="UTF-8">
+Atts[2].maincontainer="kennzahlen-container"
+Atts[3].maincontainer="entwicklung-container"
+Atts[4].maincontainer="altersstruktur-container"
+Atts[5].maincontainer="wirtschaftsstruktur-container"
+Atts[6].maincontainer="bauzonen-container"
+Atts[2].chartcontainer="kennzahlen-chart"
+Atts[3].chartcontainer="entwicklung-chart"
+Atts[4].chartcontainer="altersstruktur-chart"
+Atts[5].chartcontainer="wirtschaftsstruktur-chart"
+Atts[6].chartcontainer="bauzonen-chart"
 
-    <link rel="stylesheet" type="text/css" href="css/statistik.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
-<style>
-@font-face { 
-  font-family: 'CorporateS-Demi';
-  src: url('font/CorporateS-Demi.eot?#iefix') format('embedded-opentype'),  url('font/CorporateS-Demi.otf')  format('opentype'),
-	     url('font/CorporateS-Demi.woff') format('woff'), url('font/CorporateS-Demi.ttf')  format('truetype'), url('font/CorporateS-Demi.svg#CorporateS-Demi') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face { 
-  font-family: 'CorporateS-Light';
-  src: url('font/CorporateS-Light.eot?#iefix') format('embedded-opentype'),  url('font/CorporateS-Light.otf')  format('opentype'),
-	     url('font/CorporateS-Light.woff') format('woff'), url('font/CorporateS-Light.ttf')  format('truetype'), url('font/CorporateS-Light.svg#CorporateS-Light') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-body { font-family: 'CorporateS-Demi' !important; }
+$('h1.documentFirstHeading').html("Kantonsporträt");
 
-div.dc-chart { font-family: 'CorporateS-Light' !important; }
-
-.dc-chart .axis text, .axis text {
-    fill: #000;
-    font-size: 14px;
-}
-
-.dc-legend {
-	font-size:16px;
-}
-
-.dc-chart .pie-slice.pie-label {
-    fill: #000;
-    font-size: 14px;
-}
-
-text.barLabel {
-    fill: #000;
-    font-size: 14px;
-}
-
-.y-axis-label {
-    font-size: 14px;
-    font-family: 'CorporateS-Demi' !important;
-    color: #000;
-    fill: #000;
-}
-</style>
-
-<div id="print">
-
-<div class="container" style="width:1200px;">
-
-    <h1 style="display: block; width:1200px; overflow: auto;">
-		<span id="maintitle">Kantonsportrait</span>
-		<img id="mainflag" src="" width=75px style="margin: 0 30px; vertical-align: middle">
-		<img src="logos/logo-kanton.png" height="100px" align="right" style="vertical-align: middle;"></h1>
-
-	<table style="width:1200px">
-		<tr>
-			<td valign="top" style="width:50%; padding:10px 20px;">
-				<h3>Kennzahlen</h3>
-				<div id="kennzahlen-chart" class="non-float">
-					<table>
-						<col width="70%">
-						<col width="30%">
-						<tr>
-							<td>Ständige Wohnbevölkerung <span class="bevölkerungyear"></span></td>
-							<td align="right"><span id="bevölkerung"></span></td>
-						</tr>
-						<tr>
-							<td>Anteil Ausländer/innen in % <span class="bevölkerungyear"></span></td>
-							<td align="right"><span id="ausländeranteil"></span></td>
-						</tr>
-						<tr>
-							<td>Haushalte <span class="haushalteyear"></span></td>
-							<td align="right"><span id="haushalte"></span></td>
-						</tr>
-						<tr>
-							<td>Anteil Einpersonenhaushalte in % <span class="haushalteyear"></span></td>
-							<td align="right"><span id="anteileinpersonenhaushalte"></span></td>
-						</tr>
-						<tr>
-							<td>Wohnungen <span class="wohnungenyear"></span></td>
-							<td align="right"><span id="wohnungen"></span></td>
-						</tr>
-						<tr>
-							<td>Neuerstellte Wohnungen <span class="neubauwohnungenyear"></span></td>
-							<td align="right"><span id="neuwohnungen"></span></td>
-						</tr>
-						<tr>
-							<td>Volksschüler/innen <span class="volksschüleryear"></span></td>
-							<td align="right"><span id="volksschüler"></span></td>
-						</tr>
-						<tr>
-							<td>Betriebe <span class="wirtschaftyear"></span></td>
-							<td align="right"><span id="betriebe"></span></td>
-						</tr>
-						<tr>
-							<td>Beschäftigte <span class="wirtschaftyear"></span></td>
-							<td align="right"><span id="beschäftigte"></span></td>
-						</tr>
-						<tr>
-							<td>Steuerfuss Einwohnergemeinde <span class="wirtschaftyear"></span></td>
-							<td align="right"><span id="steuerfuss"></span></td>
-						</tr>
-					</table>
-				</div>
-			</td>
-			<td valign="top" style="width:50%; padding:10px 20px;">
-				<div id="karte" class="non-float" >
-				<!--<div> <strong>Gemeinden</strong> (bitte wählen)
-				<a class="reset" href="javascript:karte.filterAll();dc.redrawAll();" style="display: none;">zurücksetzen</a>
-				<span class="reset" style="display: none;"> | Aktuell ausgewählt: <span class="filter"></span></span>
-				</div>-->
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top" style="width:50%; padding:10px 20px;">
-				<h3>Bevölkerungsentwicklung</h3>
-				<div id="entwicklung-chart" class="non-float">
-				</div>
-			</td>
-			<td valign="top" style="width:50%; padding:10px 20px;">
-				<h3>Altersstruktur <span class="altersstrukturyear"></span></h3>
-				<div id="altersstruktur-chart" class="non-float" style="text-align:center; display:block;">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top" style="width:50%; padding:10px 20px;">
-				<h3>Wirtschaftsstruktur <span class="wirtschaftsstrukturyear"></span></h3>
-				<div id="wirtschaftsstruktur" class="overlaycontainer" style="position: relative;">
-					<div id="wirtschaftsstruktur1-chart" class="non-float" style="position: relative; z-index: 100;">
-					</div>
-					<div id="wirtschaftsstruktur2-chart" class="non-float" style="position: absolute; top: 0; left: 0; z-index: 99;">
-					</div>
-				</div>
-			</td>
-			<td valign="top" style="width:50%; padding:10px 20px;">
-				<h3>Raumstruktur (Bauzonen) <span class="bauzonenyear"></span></h3>
-				<div id="bauzonen-chart" class="non-float">
-				</div>
-			</td>
-		</tr>
-	</table>
-</div>
-<div>Herausgeberin: Amt für Raumplanung des Kantons Zug, Fachstelle für Statistik. Datenquellen: Bundesamt für Statistik.</div>
-<div>Stand Februar 2018. Interessiert an weiteren statistischen Informationen? Besuchen Sie uns im Internet: <a href="http://www.zg.ch/statistik" target="_blank">www.zg.ch/statistik</a></div>
-
-</div>
-
-<script type="text/javascript" src="js/libraries/queue.js"></script>
-<script type="text/javascript" src="js/libraries/d3.js"></script>
-<script type="text/javascript" src="js/libraries/crossfilter.js"></script>
-<script type="text/javascript" src="js/libraries/dc.js"></script>
-<script type="text/javascript" src="js/libraries/d3-tip.js"></script>
-<script type="text/javascript" src="js/stat_zg_generals.js"></script>
-<script type="text/javascript">
     var numberFormat = d3.format(".2f");
 
     var karte = dc.geoChoroplethChart("#karte");
@@ -190,17 +42,17 @@ text.barLabel {
 	var bauzonenChart = dc.barChart("#bauzonen-chart");
 	
 	var q = queue()
-		.defer(d3.csv, "data/result-data1.csv")
-		.defer(d3.csv, "data/result-data2.csv")
-		.defer(d3.csv, "data/result-data3.csv")
-		.defer(d3.csv, "data/result-data4.csv")
-		.defer(d3.csv, "data/result-data5.csv")
-		.defer(d3.csv, "data/result-data6.csv")
-		.defer(d3.csv, "data/result-data7.csv")
-		.defer(d3.csv, "data/result-data8.csv")
-		.defer(d3.csv, "data/result-data9.csv")
-		.defer(d3.csv, "data/result-data10.csv")
-		.defer(d3.csv, "data/result-data11.csv");
+		.defer(d3.csv, "daten/result-data1.csv/download")
+		.defer(d3.csv, "daten/result-data2.csv/download")
+		.defer(d3.csv, "daten/result-data3.csv/download")
+		.defer(d3.csv, "daten/result-data4.csv/download")
+		.defer(d3.csv, "daten/result-data5.csv/download")
+		.defer(d3.csv, "daten/result-data6.csv/download")
+		.defer(d3.csv, "daten/result-data7.csv/download")
+		.defer(d3.csv, "daten/result-data8.csv/download")
+		.defer(d3.csv, "daten/result-data9.csv/download")
+		.defer(d3.csv, "daten/result-data10.csv/download")
+		.defer(d3.csv, "daten/result-data11.csv/download");
 		
 	q.await(function(error, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
 
@@ -267,8 +119,16 @@ text.barLabel {
 		$(".steuerfussyear").html("("+year7[0].Content+")");
 	}
 	
+	Atts[3].data = data8.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+	});
+	
 	meta9 = data9.filter(function(el) {
 		return el["Meta"] == 1
+	});
+	
+	Atts[4].data = data9.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
 	});
 	
 	year9 = meta9.filter(function( el ) { return el.Type == "year";});
@@ -280,6 +140,10 @@ text.barLabel {
 		return el["Meta"] == 1
 	});
 	
+	Atts[5].data = data10.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+	});
+	
 	year10 = meta10.filter(function( el ) { return el.Type == "year";});
 	if (year10.length == 1) {
 		$(".wirtschaftsstrukturyear").html("("+year10[0].Content+")");
@@ -287,6 +151,10 @@ text.barLabel {
 	
 	meta11 = data11.filter(function(el) {
 		return el["Meta"] == 1
+	});
+	
+	Atts[6].data = data11.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
 	});
 	
 	year11 = meta11.filter(function( el ) { return el.Type == "year";});
@@ -648,13 +516,13 @@ function redraw() {
 
 		//Karte
 		
-		var totalWidth = document.getElementById('karte').offsetWidth;
-		var mapheight = 350
-		var heightmax = 350
+		var totalWidth = document.getElementById('default').offsetWidth;
+		var mapheight = 400
+		var heightmax = 400
 		var heightmin = 240
 		var mapheight = Math.min( heightmin + (totalWidth - 286)*1, heightmax);
-		var scale = 75000
-		var scalemax = 75000
+		var scale = 82000
+		var scalemax = 82000
 		var scalemin = 50000
 		var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
 		var lat = 8.548589899
@@ -668,7 +536,7 @@ function redraw() {
 			.translate([totalWidth / 2 , mapheight / 2 ]);
 			//.translate([totalWidth/2,height/2]);
 
-		d3.json("data/gemeinden.json", function (statesJson) {
+		d3.json("daten/gemeinden.json/download", function (statesJson) {
             
 			var namenGemeinden=["Baar", "Cham", "Hünenberg", "Menzingen", "Neuheim", "Oberägeri", "Risch", "Steinhausen", "Unterägeri", "Walchwil" ,"Zug", "See"]
 			
@@ -695,9 +563,10 @@ function redraw() {
                         return "Gemeinde: " + d.key + "";
                     })
 					.addFilterHandler(function (filters, filter) {
+						showall();
 						if (filter != "Zugersee" && filter != "Aegerisee") {
-							$('#mainflag').attr("src", "logos/Gross/"+ filter.toLowerCase().replace("ü", "ü").replace("ä", "ä")+ ".png")
-							$('#maintitle').html("Gemeindeporträt "+filter);
+							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
+							$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
 							$('.gemeindename').html("Gemeinde "+filter);
 							filters.length = 0; // empty the array
 							filters.push(filter);
@@ -705,19 +574,20 @@ function redraw() {
 						return filters;
 					})
 					.removeFilterHandler(function (filters, filter) {
-						$('#mainflag').attr("src", "")
-						$('#maintitle').html("Kantonsporträt");
+						showall();
+						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+						$('h1.documentFirstHeading').html("Kantonsporträt");
 						$('.gemeindename').html("Kanton Zug");
 						filters.length = 0;
 						return filters;
 					});
-					;
 			
 			var number=1;
 			
-			dc.override(karte, "filterAll", function () {
-				$('#mainflag').attr("src", "")
-				$('#maintitle').html("Kantonsporträt");
+		    dc.override(karte, "filterAll", function () {
+				showall();
+				$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+				$('h1.documentFirstHeading').html("Kantonsporträt");
 				$('.gemeindename').html("Kanton Zug");
 				var g = this._filterAll();
 				return g;
@@ -777,8 +647,8 @@ function redraw() {
 			entwicklungsChart
 				.width(totalWidth)
 				.height(height)
-				.transitionDuration(1500)
-				.margins({left: 75, top: 10, right: 60, bottom: 30})
+				.transitionDuration(1000)
+				.margins({left: 65, top: 10, right: 65, bottom: 30})
 				.dimension(jahr)
 				.group(Realeinwohnerprojahr)
 				.x(d3.scale.linear().domain([min-1,max+1]))
@@ -865,7 +735,7 @@ function redraw() {
 				d3.selectAll("#entwicklung-chart g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 				var legendHeight = d3.select("#entwicklung-chart g.dc-legend").node().getBBox().height;
 				entwicklungsChart.height(height+maxheight+legendHeight-30)
-					.margins({left: 75, top: 10, right: 60, bottom: (30 + maxheight + legendHeight)});
+					.margins({left: 65, top: 10, right: 65, bottom: (30 + maxheight + legendHeight)});
 				entwicklungsChart.render()
 				entwicklungsChart.selectAll(".x .tick text")
 					.call(wrap, tickwidth);
@@ -886,7 +756,7 @@ function redraw() {
 				//Wenn immer noch zu breit dann rotieren
 				if (maxwidth-6>tickwidth*0.75) {
 				entwicklungsChart.height(height+Math.min(150, maxwidth)+legendHeight-30)
-					.margins({left: 75, top: 10, right: 60, bottom: 30 +Math.min(150, maxwidth) + legendHeight});
+					.margins({left: 65, top: 10, right: 65, bottom: 30 +Math.min(150, maxwidth) + legendHeight});
 				entwicklungsChart.render()
 				entwicklungsChart.selectAll(".x .tick text")
 					.call(wrap, Math.min(150, maxwidth));
@@ -945,7 +815,7 @@ function redraw() {
 				.group(RealAltersstrukturGroup, characteristics[0] + "", sel_stack(characteristics[0]))
 				//.renderLabel(true)
 				.ordinalColors(colorsAltersstruktur)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.yAxisPadding("5%")
 				.elasticY(true)
 				.filter = function() {}
@@ -1034,7 +904,7 @@ function redraw() {
 				.emptyTitle("Keine Daten vorhanden")
 				.innerRadius(0.3*wirtschaftsHeight)
 				.colors(colorScaleWirtschaftstruktur)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.title(function(d) {
 					return ""; 
 				})
@@ -1064,7 +934,7 @@ function redraw() {
 				.emptyTitle("Keine Daten vorhanden")
 				.innerRadius(0.2*wirtschaftsHeight)
 				.colors(colorScaleWirtschaftstruktur)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.title(function(d) {
 					return ""; 
 				})
@@ -1086,7 +956,7 @@ function redraw() {
 				.domain(characteristicsBauzonen)
 				.range(colorscheme[1][6]);
 			
-			var bauzonenHeight=Math.min(400, (1*totalWidth));
+			var bauzonenHeight=Math.min(500, (1.2*totalWidth));
 			
 			bauzonenChart
 				.width(totalWidth)
@@ -1112,11 +982,10 @@ function redraw() {
 					return d.key
 				})
 				//.ordinalColors([colorscheme[1][12][11], colorscheme[1][12][3], colorscheme[1][12][2], colorscheme[1][12][0], colorscheme[1][12][0]])
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.yAxisPadding("5%")
 				.ordering(function(d) { return characteristicsBauzonen.indexOf(d.key); })
-				.filter = function() {}
-				;
+				.filter = function() {};
 				
 			bauzonenChart.on('renderlet', function(c) {
 				d3.selectAll("#bauzonen-chart text.barLabel").each(function(d, i) {
@@ -1196,9 +1065,9 @@ function redraw() {
 			function callTipKarte(number){
 	
 				//Nur für Gemeinden, nicht für Seen, deshalb Zwischenschritt
-				var communes = d3.selectAll("#karte svg g path").filter(function(d,i) {return d.id < 2000});
+				var comunes = d3.selectAll("#karte svg g path").filter(function(d,i) {return d.id < 2000});
 				
-				communes.each(function(d, i){
+				comunes.each(function(d, i){
 					d3.select(this)
 					.call(Tips[number])
 					.on('mouseover', function(d, i) {
@@ -1206,7 +1075,7 @@ function redraw() {
 							Tips[number].show(d, $("circle")[d.ind]);
 							last_tip = d.key;
 						}
-						tiptext= "<span><b>" + d.properties.name + "</b></span><br/><br/><span><img src='logos/"+ d.properties.name+ ".png' alt=''></span>";
+						tiptext= "<span><b>" + d.properties.name + "</b></span><br/><!--<br/><span><img src='/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ d.properties.name.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download' alt='' width='75' ></span>-->";
 						$("#d3-tip"+number).html(tiptext);
 						$("#d3-tip"+number).css("background", "#fff");
 						$("#d3-tip"+number).css("border-left", colorscheme[1][2][0]+" solid 5px");
@@ -1450,7 +1319,7 @@ $( document ).ready(function() {
 				function() 
 				{
 
-				}, 5000);
+				}, 1000);
 			});
         });
 	}
@@ -1478,6 +1347,7 @@ $( document ).ready(function() {
 	redraw();
 
 function resizePortrait() {
+	showall()
 	d3.selectAll(".d3-tip").remove();
 	d3.selectAll("svg").remove()
 	redraw()
@@ -1489,7 +1359,56 @@ $(window).resize(function(){
 
 });
 
-</script>
+var hide=["kennzahlen", "entwicklung", "altersstruktur", "wirtschaftsstruktur", "bauzonen"]
 
+function showall() {
+	for (i = 0; i < hide.length; i++) {
+		$('#'+hide[i]+'-container').show(0);
+	}
+	setTimeout(	
+		function() {
+			for (i = 0; i < hide.length; i++) {
+				if (i!=shown) {
+					$('#'+hide[i]+'-container').hide(0);
+				}
+			}	
+		}, 1000);
+}
 
-</body></html>
+$( document ).ready(function() {
+	setTimeout(	
+		function() {
+			shown=0;
+			for (i = 1; i < hide.length; i++) {
+				$('#'+hide[i]+'-container').hide()
+			}
+		}, 2000);
+});
+
+$(".hiderow").click(function(){
+	for (i = 0; i < hide.length; i++) {
+		if (this.id==hide[i]) {
+			shown=i;
+			$('#'+hide[i]+'-container').show(500);
+		}
+		else {
+			$('#'+hide[i]+'-container').hide(500);
+		}
+	}	
+});
+
+var columns=["Gemeinde", "Jahr", "Bevölkerung", "Ausländer"];
+addDownloadButton(3);
+addDownloadButtonPng(3);
+addDataTablesButton(3, columns);
+
+var columns=["Gemeinde", "Alterskategorie", "Typ", "Anzahl"];
+addDownloadButton(4);
+addDownloadButtonPng(4);
+addDataTablesButton(4, columns);
+
+var columns=["Gemeinde", "Zone", "Fläche"];
+addDownloadButton(6);
+addDownloadButtonPng(6);
+addDataTablesButton(6, columns);
+}
