@@ -166,6 +166,23 @@ text.barLabel {
 <script type="text/javascript" src="js/libraries/d3-tip.js"></script>
 <script type="text/javascript" src="js/stat_zg_generals.js"></script>
 <script type="text/javascript">
+Atts[2]={};
+Atts[3]={};
+Atts[4]={};
+Atts[5]={};
+Atts[6]={};
+
+Atts[2].maincontainer="kennzahlen-container"
+Atts[3].maincontainer="entwicklung-container"
+Atts[4].maincontainer="altersstruktur-container"
+Atts[5].maincontainer="wirtschaftsstruktur-container"
+Atts[6].maincontainer="bauzonen-container"
+Atts[2].chartcontainer="kennzahlen-chart"
+Atts[3].chartcontainer="entwicklung-chart"
+Atts[4].chartcontainer="altersstruktur-chart"
+Atts[5].chartcontainer="wirtschaftsstruktur-chart"
+Atts[6].chartcontainer="bauzonen-chart"
+
     var numberFormat = d3.format(".2f");
 
     var karte = dc.geoChoroplethChart("#karte");
@@ -267,10 +284,16 @@ text.barLabel {
 		$(".steuerfussyear").html("("+year7[0].Content+")");
 	}
 	
+	Atts[3].data = data8.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+	});
 	meta9 = data9.filter(function(el) {
 		return el["Meta"] == 1
 	});
 	
+	Atts[4].data = data9.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+	});
 	year9 = meta9.filter(function( el ) { return el.Type == "year";});
 	if (year9.length == 1) {
 		$(".altersstrukturyear").html("("+year9[0].Content+")");
@@ -280,6 +303,9 @@ text.barLabel {
 		return el["Meta"] == 1
 	});
 	
+	Atts[5].data = data10.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+	});
 	year10 = meta10.filter(function( el ) { return el.Type == "year";});
 	if (year10.length == 1) {
 		$(".wirtschaftsstrukturyear").html("("+year10[0].Content+")");
@@ -289,6 +315,9 @@ text.barLabel {
 		return el["Meta"] == 1
 	});
 	
+	Atts[6].data = data11.filter(function(el) {
+		return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+	});
 	year11 = meta11.filter(function( el ) { return el.Type == "year";});
 	if (year11.length == 1) {
 		$(".bauzonenyear").html("("+year11[0].Content+")");
@@ -777,7 +806,7 @@ function redraw() {
 			entwicklungsChart
 				.width(totalWidth)
 				.height(height)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.margins({left: 75, top: 10, right: 60, bottom: 30})
 				.dimension(jahr)
 				.group(Realeinwohnerprojahr)
@@ -945,7 +974,7 @@ function redraw() {
 				.group(RealAltersstrukturGroup, characteristics[0] + "", sel_stack(characteristics[0]))
 				//.renderLabel(true)
 				.ordinalColors(colorsAltersstruktur)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.yAxisPadding("5%")
 				.elasticY(true)
 				.filter = function() {}
@@ -1034,7 +1063,7 @@ function redraw() {
 				.emptyTitle("Keine Daten vorhanden")
 				.innerRadius(0.3*wirtschaftsHeight)
 				.colors(colorScaleWirtschaftstruktur)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.title(function(d) {
 					return ""; 
 				})
@@ -1064,7 +1093,7 @@ function redraw() {
 				.emptyTitle("Keine Daten vorhanden")
 				.innerRadius(0.2*wirtschaftsHeight)
 				.colors(colorScaleWirtschaftstruktur)
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.title(function(d) {
 					return ""; 
 				})
@@ -1112,7 +1141,7 @@ function redraw() {
 					return d.key
 				})
 				//.ordinalColors([colorscheme[1][12][11], colorscheme[1][12][3], colorscheme[1][12][2], colorscheme[1][12][0], colorscheme[1][12][0]])
-				.transitionDuration(1500)
+				.transitionDuration(1000)
 				.yAxisPadding("5%")
 				.ordering(function(d) { return characteristicsBauzonen.indexOf(d.key); })
 				.filter = function() {}
@@ -1206,7 +1235,7 @@ function redraw() {
 							Tips[number].show(d, $("circle")[d.ind]);
 							last_tip = d.key;
 						}
-						tiptext= "<span><b>" + d.properties.name + "</b></span><br/><br/><span><img src='logos/"+ d.properties.name+ ".png' alt=''></span>";
+						tiptext= "<span><b>" + d.properties.name + "</b></span><!--<br/><br/><span><img src='logos/"+ d.properties.name+ ".png' alt=''></span>-->";
 						$("#d3-tip"+number).html(tiptext);
 						$("#d3-tip"+number).css("background", "#fff");
 						$("#d3-tip"+number).css("border-left", colorscheme[1][2][0]+" solid 5px");
@@ -1450,7 +1479,7 @@ $( document ).ready(function() {
 				function() 
 				{
 
-				}, 5000);
+				}, 1000);
 			});
         });
 	}

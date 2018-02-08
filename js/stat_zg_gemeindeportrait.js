@@ -1065,9 +1065,9 @@ function redraw() {
 			function callTipKarte(number){
 	
 				//Nur für Gemeinden, nicht für Seen, deshalb Zwischenschritt
-				var comunes = d3.selectAll("#karte svg g path").filter(function(d,i) {return d.id < 2000});
+				var communes = d3.selectAll("#karte svg g path").filter(function(d,i) {return d.id < 2000});
 				
-				comunes.each(function(d, i){
+				communes.each(function(d, i){
 					d3.select(this)
 					.call(Tips[number])
 					.on('mouseover', function(d, i) {
@@ -1075,7 +1075,7 @@ function redraw() {
 							Tips[number].show(d, $("circle")[d.ind]);
 							last_tip = d.key;
 						}
-						tiptext= "<span><b>" + d.properties.name + "</b></span><br/><!--<br/><span><img src='/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ d.properties.name.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download' alt='' width='75' ></span>-->";
+						tiptext= "<span><b>" + d.properties.name + "</b></span><!--<br/><br/><span><img src='/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ d.properties.name.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download' alt='' width='75' ></span>-->";
 						$("#d3-tip"+number).html(tiptext);
 						$("#d3-tip"+number).css("background", "#fff");
 						$("#d3-tip"+number).css("border-left", colorscheme[1][2][0]+" solid 5px");
