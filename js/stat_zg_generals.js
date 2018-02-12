@@ -355,8 +355,6 @@ function tabulate(columns, number) {
 	if (typeof Atts[number].title != 'undefined' && Atts[number].title[0].Content != "") {
 		titel=Atts[number].title[0].Content
 	};
-	console.log("test");
-	console.log(titel);
 	var subtitle="";
 	if (typeof Atts[number].subtitle != 'undefined' && Atts[number].subtitle[0].Content != "") {
 		subtitle=Atts[number].subtitle[0].Content
