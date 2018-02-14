@@ -10,6 +10,7 @@ var stack = (typeof args.stack == 'undefined') ? "" : args.stack
 var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
 var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
 var relative = (typeof args.relative == 'undefined') ? false : args.relative;
+var percent = (typeof args.percent == 'undefined') ? false : args.percent;
 var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
 var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
 //var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
@@ -240,7 +241,8 @@ function callTip(){
 				last_tip = d.key;
 			}
 			
-			if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
+			if (percent==true) {wert=germanFormatters.numberFormat(",.1%")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
+			else if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 			
 			if (showTotal==true & showAnteil==true) {
@@ -314,7 +316,7 @@ Charts[number].on('renderlet', function(chart){
 	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 });
 
-if (typeof relative !== 'undefined' && relative==true) {
+if ((typeof relative !== 'undefined' && relative==true) || (typeof percent !== 'undefined' && percent==true)) {
 Charts[number].yAxis().tickFormat(d3.format('.0%'));
 Charts[number].renderLabel(false);
 }
