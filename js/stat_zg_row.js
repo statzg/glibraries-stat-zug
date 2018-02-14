@@ -292,26 +292,30 @@ rotateX();
 initTip(number);
 callTip(number);
 
+var doit;
+
 //window.onresize = function(event) {
 window.addEventListener('resize', function(){
-  //Breite des Hauptcontainers einlesen
-	d3.selectAll("#"+Atts[number].chartcontainer+" svg").remove()
-	var newWidth = document.getElementById('default').offsetWidth;
-	Charts[number].width(newWidth)
-		.transitionDuration(0);
+	clearTimeout(doit);
+	doit = setTimeout(function() {
+		//Breite des Hauptcontainers einlesen
+		d3.selectAll("#"+Atts[number].chartcontainer+" svg").remove()
+		var newWidth = document.getElementById('default').offsetWidth;
+		Charts[number].width(newWidth)
+			.transitionDuration(0);
 
-	Charts[number].render();
-	rotateX();
-	callTip(number);
+		Charts[number].render();
+		rotateX();
+		callTip(number);
+		
+		Charts[number].transitionDuration(1500);
+	}, 200);
+});
 	
-	Charts[number].transitionDuration(1500);
-	
-	});
-	
-	var columns=[dimension, group]									 
-	addDownloadButton(number);
-	addDownloadButtonPng(number)
-	addDataTablesButton(number, columns)
+var columns=[dimension, group]									 
+addDownloadButton(number);
+addDownloadButtonPng(number)
+addDataTablesButton(number, columns)
 	
 });
 

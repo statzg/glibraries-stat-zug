@@ -263,17 +263,21 @@ callTip(number);
 
 formatBarLabels();
 
+var doit;
+
 window.onresize = function(event) {
-  //Breite des Hauptcontainers einlesen
-	totalWidth = document.getElementById('default'+number).offsetWidth;
-	Charts[number].width(totalWidth)
-		.transitionDuration(0);
-	Charts[number].render()
+	clearTimeout(doit);
+	doit = setTimeout(function() {
+		//Breite des Hauptcontainers einlesen
+		totalWidth = document.getElementById('default'+number).offsetWidth;
+		Charts[number].width(totalWidth)
+			.transitionDuration(0);
+		Charts[number].render()
 
-	rotateX();
-	callTip(number);
-	formatBarLabels();
-
+		rotateX();
+		callTip(number);
+		formatBarLabels();
+	}, 200);
 };
 
 });

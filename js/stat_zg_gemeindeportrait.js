@@ -1424,7 +1424,7 @@ function loadGemeindeportrait(version) {
 		redraw();
 
 		//Funktion für die Änderung der Fensterbreite
-		function resizePortrait() {
+		function resizeWindow() {
 			if (version=="online") {
 				showall()
 			}
@@ -1432,9 +1432,14 @@ function loadGemeindeportrait(version) {
 			d3.selectAll("svg").remove()
 			redraw()
 		}
-
+		
+		var doit;
+		
 		$(window).resize(function(){
-				resizePortrait()
+			clearTimeout(doit);
+			doit = setTimeout(function() {
+				resizeWindow()
+			}, 200);
 		});	
 
 	});

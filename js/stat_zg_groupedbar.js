@@ -361,46 +361,52 @@ callTip();
 
 $("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 
+var doit;
+
 //window.onresize = function(event) {
 window.addEventListener('resize', function(){
-  //Breite des Hauptcontainers einlesen
-	if (typeof oldWidth === 'undefined') {
-		oldWidth=totalWidth
-	}
-	newWidth = document.getElementById('default'+number).offsetWidth;
-	Charts[number].width(newWidth);
-	Charts[number].legend(dc.legend().x(10).y(totalHeight-40).itemHeight(13).gap(10)
-			.legendWidth(newWidth-10)
-			.autoItemWidth(true)
-			.horizontal(true)
-	)
-
-	Charts[number].on('renderlet', function(chart){
-	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
-	var groupwidth=tickwidth*0.9;
-
-		for (var j=2; j <= characteristicsLength+1; j++) {
-			for (var i=1; i <= Atts[number].maingroup.all().length; i++) {
-
-				var bbox = chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
-				var barwidth=groupwidth/characteristicsLength;
-				var newx=bbox.x + 0.05*tickwidth + (barwidth*(j-2))
-				chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("width", ""+barwidth+"");
-				chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("x", ""+newx+"");
-			}
+	clearTimeout(doit);
+	doit = setTimeout(function() {
+		//Breite des Hauptcontainers einlesen
+		if (typeof oldWidth === 'undefined') {
+			oldWidth=totalWidth
 		}
-	});
-	
-	Charts[number].render();
-	
-	rotateX();
-	callTip();
-	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
-	});
+		newWidth = document.getElementById('default'+number).offsetWidth;
+		Charts[number].width(newWidth);
+		Charts[number].legend(dc.legend().x(10).y(totalHeight-40).itemHeight(13).gap(10)
+				.legendWidth(newWidth-10)
+				.autoItemWidth(true)
+				.horizontal(true)
+		)
+
+		Charts[number].on('renderlet', function(chart){
+		//Breite eines Zwischenstrichs
+		var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+		var groupwidth=tickwidth*0.9;
+
+			for (var j=2; j <= characteristicsLength+1; j++) {
+				for (var i=1; i <= Atts[number].maingroup.all().length; i++) {
+
+					var bbox = chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").node().getBBox();
+					var barwidth=groupwidth/characteristicsLength;
+					var newx=bbox.x + 0.05*tickwidth + (barwidth*(j-2))
+					chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("width", ""+barwidth+"");
+					chart.selectAll("#"+Atts[number].chartcontainer+" g.sub:nth-child("+j+") > g > g > rect:nth-child("+i+")").attr("x", ""+newx+"");
+				}
+			}
+		});
+		
+		Charts[number].render();
+		
+		rotateX();
+		callTip();
+		$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
+	}, 200);
+		
+});
 
 if (typeof newWidth !== 'undefined') oldWidth=newWidth;	
-
+	
 });
 
 var columns=[dimension, stack, group];
