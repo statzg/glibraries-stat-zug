@@ -47,6 +47,7 @@ if (stack == undefined | stack=="") {stack = Object.keys(dataValues)[1];};
 
 	if (asDate==true) {
 		data.forEach(function(x) {
+			x["Datum"] = x[dimension];
 			x[dimension] = new Date(x[dimension]);
 			x[group] = +x[group];
 		});
@@ -350,7 +351,11 @@ window.addEventListener('resize', function(){
 	});
 });
 
-var columns=[dimension, stack, group]									 
+if (asDate==true) {
+	var columns=["Datum", stack, group]									 
+} else {
+	var columns=[dimension, stack, group]
+}
 addDownloadButton(number);
 addDownloadButtonPng(number)
 addDataTablesButton(number, columns)
