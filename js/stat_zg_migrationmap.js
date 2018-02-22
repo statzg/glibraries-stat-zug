@@ -31,18 +31,18 @@ Atts[number].chartcontainer="chart"+number
 //Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
 createcontainers(number);
 
-function redraw() {
+function redraw(number) {
 
 	var cantoncolors=['#fff','#76aa7c','#a0bd6d','#cece63','#ffdd5e','#007ac4','#A7D5F1','#A7D5F1']
 
 	//Width and height
-	var w = document.getElementById(Atts[number].maincontainer).offsetWidth;
-	var h = 350;
-	var scalemax = 23000
-	var scalemin = 13000
-	var scale = Math.min( scalemin + (w - 275)*45, scalemax);
-	var lat = 8.508589899
-	var lon = 47.20479567
+	Atts[number].w = document.getElementById(Atts[number].maincontainer).offsetWidth;
+	Atts[number].h = 350;
+	Atts[number].scalemax = 23000
+	Atts[number].scalemin = 13000
+	Atts[number].scale = Math.min( Atts[number].scalemin + (Atts[number].w - 275)*45, Atts[number].scalemax);
+	Atts[number].lat = 8.508589899
+	Atts[number].lon = 47.20479567
 	  
 	var formatC = d3.format(",.0f");
 	var formatD = d3.format("+,.0f");
@@ -50,9 +50,9 @@ function redraw() {
 	var immin, immax, exmin, exmax;
  
 	var projection = d3.geo.mercator()
-		.center([lat,lon])
-		.scale(scale)
-		.translate([w / 2 , h / 2 ]);
+		.center([Atts[number].lat,Atts[number].lon])
+		.scale(Atts[number].scale)
+		.translate([Atts[number].w / 2 , Atts[number].h / 2 ]);
 
 	//Define path generator
 	var path = d3.geo.path()
@@ -65,10 +65,10 @@ function redraw() {
 	var lineSize = d3.scale.linear().range([2,75]).domain([0, 35000]);
 
 	//Create SVG element
-	var svg = d3.select("#" + Atts[number].chartcontainer)
+	Atts[number].svg = d3.select("#" + Atts[number].chartcontainer)
 		.append("svg")
-		.attr("width", w)
-		.attr("height", h)
+		.attr("width", Atts[number].w)
+		.attr("height", Atts[number].h)
 		.style("background", "#fff");
 	
 	var arrowhead="M374.203,1150c-25.391,0-50.818-9.721-70.199-29.044c-38.789-38.834-38.789-101.685,0-140.376L685.37,599.14L305.74,219.451c-38.716-38.741-38.716-101.614,0-140.379c38.799-38.763,101.663-38.763,140.389,0l449.857,449.915 c18.58,18.629,29.103,43.84,29.103,70.153c0,26.339-10.523,51.551-29.103,70.226l-451.592,451.59 C425.012,1140.279,399.621,1150,374.203,1150z"
@@ -76,27 +76,27 @@ function redraw() {
 	var markerred={"id":"arrowred", "viewBox":"0 -5 1200 1200", "refX":-200, "refY":600, "markerWidth":1, "markerHeight":1, "orient":"auto"};
 	
 	
-	svg.append("marker")
+	Atts[number].svg.append("marker")
 		.attr(markerblue)
 		.append("path")
 			.attr("d", arrowhead)
 			.attr("class","arrowHead")
 			.attr("fill", colors[0]);
 					
-	svg.append("marker")
+	Atts[number].svg.append("marker")
 		.attr(markerred)
 		.append("path")
 			.attr("d", arrowhead)
 			.attr("class","arrowHead")
 			.attr("fill", colors[1]);
 			
-	svg.append("defs").append("clipPath")
-		.attr("id", "clip")
+	Atts[number].svg.append("defs").append("clipPath")
+		.attr("id", "clip" + number)
 		.append("rect")
-		.attr("width", w)
-		.attr("height", h);
+		.attr("width", Atts[number].w)
+		.attr("height", Atts[number].h);
 	
-	var g = svg.append("g");
+	Atts[number].g = Atts[number].svg.append("g");
 
 	//var coming, going;
 	/*d3.csv("coming.csv", function (data) {
@@ -107,7 +107,7 @@ function redraw() {
 		
 treatmetadata(number, data);
 
-	going = Atts[number].data;
+	Atts[number].going = Atts[number].data;
 
 	Atts[number].data = Atts[number].data.filter(function(el) {
 		return el["Zielkanton"] != "Aegerisee" & el["Zielkanton"] != "Zugersee" & el["Zielkanton"] != "Zürichsee"
@@ -128,11 +128,11 @@ treatmetadata(number, data);
 		
 		//d3.json("states.json", function (json) {
 
-		for (var i = 0; i < going.length; i++) {
-			var dataName = going[i].Zielkanton;
+		for (var i = 0; i < Atts[number].going.length; i++) {
+			var dataName = Atts[number].going[i].Zielkanton;
 			var tempObj = {};
-			for (var propt in going[i]) {
-				var valz = parseFloat(going[i][propt]);
+			for (var propt in Atts[number].going[i]) {
+				var valz = parseFloat(Atts[number].going[i][propt]);
 				tempObj[propt] = valz;
 			}
 			
@@ -143,7 +143,7 @@ treatmetadata(number, data);
 					matched = true;
 					json.features[j].properties.Zielkanton = dataName;
 					json.features[j].id = dataName;
-					json.features[j].abbrev = going[i].abbrev;
+					json.features[j].abbrev = Atts[number].going[i].abbrev;
 					json.features[j].ind = i;
 					for (var propt in tempObj) {
 						if(!isNaN(tempObj[propt])) {
@@ -157,7 +157,7 @@ treatmetadata(number, data);
 
 		
 		//Bind data and create one path per GeoJSON feature
-		g.selectAll("path")
+		Atts[number].g.selectAll("path")
 			.data(json.features)
 			.enter()
 			.append("path")
@@ -178,9 +178,9 @@ treatmetadata(number, data);
 				})
 				
 			.on("click", function(d) {clicked(d)})
-			.attr("clip-path", "url(#clip)");
+			.attr("clip-path", "url(#clip"+number+")");
 
-		g.selectAll("circle")
+		Atts[number].g.selectAll("circle")
 			.data(json.features)
 			.enter().append("circle")
 			.attr("cx", function(d) {
@@ -296,15 +296,15 @@ function clicked(selected) {
 		.attr("stroke-linecap", "round");*/
 
 	/*Linie vom Objekt*/
-	g.selectAll(".comingline")
+	Atts[number].g.selectAll(".comingline")
 		.attr("stroke-dasharray", 0)
 		.attr("stroke-width", 0)
 		.remove()
 		
-	g.selectAll('.cominglinetext').remove()
+	Atts[number].g.selectAll('.cominglinetext').remove()
 		
-	g.selectAll(".comingline")
-		.data(going)
+	Atts[number].g.selectAll(".comingline")
+		.data(Atts[number].going)
 		.enter().append("path")
 		.attr("class", "comingline")
     	.attr("id", function(d,i) {
@@ -315,9 +315,9 @@ function clicked(selected) {
 			//console.log(coming[i][selname], coming[i].Zielkanton);
 			//console.log(going[i][selname], going[i].Zielkanton);
 			var abb = d.abbrev;
-			var theSelectedState = d3.select("#" + selected.abbrev);
-			var theState = d3.select("#" + abb);
-			var finalval = going[theSelectedState[0][0].__data__.ind][theState[0][0].__data__.id];
+			var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
+			var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
+			var finalval = Atts[number].going[theSelectedState[0][0].__data__.ind][theState[0][0].__data__.id];
 			//console.log(coming[i][selname])
 			//console.log(going[i][selname])
 			//console.log(coming[5][theState[0][0].__data__.id]) 
@@ -342,9 +342,9 @@ function clicked(selected) {
 
 		.attr("stroke-width", function(d,i) {
 			var abb = d.abbrev;
-			var theSelectedState = d3.select("#" + selected.abbrev);
-			var theState = d3.select("#" + abb);
-			var finalval = going[theSelectedState[0][0].__data__.ind][theState[0][0].__data__.id];
+			var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
+			var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
+			var finalval = Atts[number].going[theSelectedState[0][0].__data__.ind][theState[0][0].__data__.id];
 		
 			//console.log(coming[i]);
 			//console.log(finalval);
@@ -360,9 +360,9 @@ function clicked(selected) {
 
 			var abb = d.abbrev;
 						
-			var theSelectedState = d3.select("#" + selected.abbrev);
-			var theState = d3.select("#" + abb);
-			var finalval = going[theSelectedState[0][0].__data__.ind][theState[0][0].__data__.id];
+			var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
+			var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
+			var finalval = Atts[number].going[theSelectedState[0][0].__data__.ind][theState[0][0].__data__.id];
 			
 			if(!isNaN(finalval)) {
 				var startx = path.centroid(theState[0][0].__data__)[0];
@@ -395,7 +395,7 @@ function clicked(selected) {
 		.attr("stroke-linecap", "round")
 		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
-			var theSelectedState = d3.select("#" + selected.abbrev);
+			var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
 			Atts[number].tips.show(d, $("circle")[i]);
 			last_tip = d.key;
 			var ziel=d.Zielkanton
@@ -415,20 +415,20 @@ function clicked(selected) {
 		})
 		;
 		
-	g.selectAll('.comingline').filter(function(d){ return d3.select(this).style('stroke-width') == '0' }).remove();
+	Atts[number].g.selectAll('.comingline').filter(function(d){ return d3.select(this).style('stroke-width') == '0' }).remove();
 
-	g.selectAll(".comingline").call(transition);
+	Atts[number].g.selectAll(".comingline").call(transition);
 
 	/*Linie zum Objekt*/
-	g.selectAll(".goingline")
+	Atts[number].g.selectAll(".goingline")
 		.attr("stroke-dasharray", 0)
 		.attr("stroke-width", 0)
 		.remove()
 		
-	g.selectAll('.goinglinetext').remove()
+	Atts[number].g.selectAll('.goinglinetext').remove()
   
-	g.selectAll(".goingline")
-		.data(going)
+	Atts[number].g.selectAll(".goingline")
+		.data(Atts[number].going)
 		.enter().append("path")
 		.attr("class", "goingline")
     	.attr("id", function(d,i) {
@@ -440,9 +440,9 @@ function clicked(selected) {
 			//console.log(coming[i][selname], coming[i].Zielkanton);
 			//console.log(going[i][selname], going[i].Zielkanton);
 			var abb = d.abbrev;
-			var finalval = going[i][selname];
+			var finalval = Atts[number].going[i][selname];
 			
-			var theState = d3.select("#" + abb);
+			var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
   	
 			if(!isNaN(finalval)) {
 				var startx = path.centroid(theState[0][0].__data__)[0];
@@ -460,7 +460,7 @@ function clicked(selected) {
 		//.call(transition)
 		
 		.attr("stroke-width", function(d,i) {
-			var finalval = going[i][selname];
+			var finalval = Atts[number].going[i][selname];
 	
 			//console.log(coming[i]);
 			//console.log(finalval);
@@ -475,10 +475,10 @@ function clicked(selected) {
 		.attr("d", function (d, i) {  
 
 			var abb = d.abbrev;
-			var finalval = going[i][selname];
+			var finalval = Atts[number].going[i][selname];
 			
-			var theSelectedState = d3.select("#" + selected.abbrev);
-			var theState = d3.select("#" + abb);
+			var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
+			var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
 			
 			if(!isNaN(finalval)) {
 				var startx = path.centroid(theState[0][0].__data__)[0];
@@ -510,7 +510,7 @@ function clicked(selected) {
 		.attr("stroke-linecap", "round")
 		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
-			var theSelectedState = d3.select("#" + selected.abbrev);
+			var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
 			Atts[number].tips.show(d, $("circle")[theSelectedState[0][0].__data__.ind]);
 			last_tip = d.key;
 			target=theSelectedState[0][0].__data__.id;
@@ -531,25 +531,25 @@ function clicked(selected) {
 		
 		;
 		
-		g.selectAll('.goingline').filter(function(d){ return d3.select(this).style('stroke-width') == '0' }).remove();
+		Atts[number].g.selectAll('.goingline').filter(function(d){ return d3.select(this).style('stroke-width') == '0' }).remove();
 
-		g.selectAll(".goingline").call(transition);
+		Atts[number].g.selectAll(".goingline").call(transition);
 		
 		var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
 		if ( IE ){ var timeout=0 } else { var timeout=1500 };
 		setTimeout(function() {
-			g.selectAll(".comingline")
+			Atts[number].g.selectAll(".comingline")
 				.attr({
 					"class":"comingline",
 					"marker-end":"url(#arrowblue)"
 				});
-			g.selectAll(".goingline")
+			Atts[number].g.selectAll(".goingline")
 				.attr({
 					"class":"goingline",
 					"marker-end":"url(#arrowred)"
 				});
-			g.selectAll('#' + Atts[number].chartcontainer + ' .cominglinetext')
-				.data(going)
+			Atts[number].g.selectAll('#' + Atts[number].chartcontainer + ' .cominglinetext')
+				.data(Atts[number].going)
 				.enter()
 				.append("text")
 				.attr("text-anchor", "middle")
@@ -575,13 +575,13 @@ function clicked(selected) {
 				.attr("startOffset", "50%")*/	
 				.attr("class", "cominglinetext")
 				.text(function (d) {
-					var theSelectedState = d3.select("#" + selected.abbrev);
+					var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
 					var target=theSelectedState[0][0].__data__.id;
 					var ziel=d.Zielkanton
 					return germanFormatters.numberFormat(",")(theSelectedState[0][0].__data__.properties[ziel]);
 				});
-			g.selectAll('#' + Atts[number].chartcontainer + ' .goinglinetext')
-				.data(going)
+			Atts[number].g.selectAll('#' + Atts[number].chartcontainer + ' .goinglinetext')
+				.data(Atts[number].going)
 				.enter()
 				.append("text")
 				.attr("text-anchor", "middle")
@@ -606,18 +606,18 @@ function clicked(selected) {
 				.attr("startOffset", "50%")*/
 				.attr("class", "goinglinetext")
 				.text(function (d) {
-					var theSelectedState = d3.select("#" + selected.abbrev);
+					var theSelectedState = d3.select("#" + Atts[number].chartcontainer + " #" + selected.abbrev);
 					var target=theSelectedState[0][0].__data__.id;
 					return germanFormatters.numberFormat(",")(d[target]);
 				});
-			g.selectAll('.cominglinetext').filter(function(d){ return d3.select(this).text() == '0'}).remove();
-			g.selectAll('.cominglinetext').filter(function(d){ return d3.select(this).text() == 'NaN'}).remove();
-			g.selectAll('.goinglinetext').filter(function(d){ return d3.select(this).text() == '0'}).remove();
-			g.selectAll('.goinglinetext').filter(function(d){ return d3.select(this).text() == 'NaN'}).remove();
-			g.selectAll('#' + Atts[number].chartcontainer + ' .cominglinetext')
+			Atts[number].g.selectAll('.cominglinetext').filter(function(d){ return d3.select(this).text() == '0'}).remove();
+			Atts[number].g.selectAll('.cominglinetext').filter(function(d){ return d3.select(this).text() == 'NaN'}).remove();
+			Atts[number].g.selectAll('.goinglinetext').filter(function(d){ return d3.select(this).text() == '0'}).remove();
+			Atts[number].g.selectAll('.goinglinetext').filter(function(d){ return d3.select(this).text() == 'NaN'}).remove();
+			Atts[number].g.selectAll('#' + Atts[number].chartcontainer + ' .cominglinetext')
 				.attr("transform", function(d,i) {
 					var abb = d.abbrev;
-					var theState = d3.select("#" + abb);
+					var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
 			
 					var startx = path.centroid(theState[0][0].__data__)[0];
 					var starty = path.centroid(theState[0][0].__data__)[1];
@@ -628,10 +628,10 @@ function clicked(selected) {
 					var addx=ausrichter*laenge*steig/Math.sqrt(steig*steig+1);
 					return "translate("+(((homex+startx)/2)+addx)+","+(((homey+starty)/2)+addy)+")"
 				});
-			g.selectAll('#' + Atts[number].chartcontainer + ' .goinglinetext')
+			Atts[number].g.selectAll('#' + Atts[number].chartcontainer + ' .goinglinetext')
 				.attr("transform", function(d,i) {
 					var abb = d.abbrev;
-					var theState = d3.select("#" + abb);
+					var theState = d3.select("#" + Atts[number].chartcontainer + " #" + abb);
 			
 					var startx = path.centroid(theState[0][0].__data__)[0];
 					var starty = path.centroid(theState[0][0].__data__)[1];
@@ -725,22 +725,22 @@ function simulateClick(elem /* Must be the element, not d3 selection */) {
 
 $( document ).ready(function() {
 	setTimeout(function() {
-		simulateClick(document.getElementById("ZG"));
+		simulateClick(d3.select("#"+ Atts[number].chartcontainer+" #ZG").node());
     }, 1500);
 	
 });
 
 }
 
-redraw();
+redraw(number);
 
 function resizeMap(number) {
 	d3.select("#d3-tip"+number).remove();
-	d3.selectAll("svg").remove()
-	redraw();
+	d3.selectAll("#"+ Atts[number].chartcontainer + " svg").remove()
+	redraw(number);
 }
 
-$(window).resize(function(){resizeMap(1)});	
+$(window).resize(function(){resizeMap(number)});	
 
 var columns=["Zielkanton", "Restliche Schweiz", "Zürich", "Aargau", "Luzern", "Schwyz", "Zug"]									 
 addDownloadButton(number);

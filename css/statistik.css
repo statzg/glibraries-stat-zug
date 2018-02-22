@@ -678,3 +678,8 @@ margin-bottom: 20px;
 .dropdown-container li a {
 	padding: 0 5px;
 }
+
+.subelements-listing li a.selected {
+	background: #00538c !important;
+	color: #ebf4fa;
+}

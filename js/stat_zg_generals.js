@@ -103,8 +103,8 @@ function createcontainers(number) {
 	if ( $( "#default" + number + " > div.subtitle" ).length === 0) {
 		$("#default" + number + " > div.title").after( "<div id='subtitle' class='subtitle'></div>" );
 	}
-	if ( $( "#default" + number + " > div.chart" ).length === 0) {
-		$("#default" + number + " > div.subtitle").after( "<div id='chart"+number+"' class='subtitle'></div>" );
+	if ( $( "#default" + number + " > div#chart" + number ).length === 0) {
+		$("#default" + number + " > div.subtitle").after( "<div id='chart"+number+"'></div>" );
 	}
 	if ( $( "#default" + number + " > div.description" ).length === 0) {
 		$("#default" + number + " > div.chart" + number +"").after( "<div id='description' class='description'></div>" );
@@ -309,7 +309,9 @@ function addDownloadButton(number) {
 	});
 }
 
-function addDownloadButtonPng(number) {
+function addDownloadButtonPng(number, patience) {
+	
+	var patience = (typeof patience == 'undefined') ? false : patience;
 	
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
@@ -319,6 +321,9 @@ function addDownloadButtonPng(number) {
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
+			if (patience==true) {
+				alert("Haben Sie etwas Geduld, die Produktion der Grafik dauer eine Weile.");
+			}
 			var width=$("#"+Atts[number].maincontainer+" svg").width()
 			var height=$("#"+Atts[number].maincontainer+" svg").height()
 			var svg=d3.select("#"+Atts[number].maincontainer+" svg")

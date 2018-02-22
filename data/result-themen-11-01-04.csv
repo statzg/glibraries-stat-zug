@@ -1,0 +1,2365 @@
+Wohnkanton,Wohnkanton Kürzel,Wohngemeindenummer,Wohngemeinde,Arbeitskanton,Arbeitskanton Kürzel,Arbeitsgemeindenummer,Arbeitsgemeinde,Erwerbstätige
+9,ZG,1701,Baar,1,ZH,1,Aeugst am Albis,5
+9,ZG,1701,Baar,1,ZH,2,Affoltern am Albis,79
+9,ZG,1701,Baar,1,ZH,4,Hausen am Albis,26
+9,ZG,1701,Baar,1,ZH,5,Hedingen,8
+9,ZG,1701,Baar,1,ZH,6,Kappel am Albis,8
+9,ZG,1701,Baar,1,ZH,7,Knonau,9
+9,ZG,1701,Baar,1,ZH,9,Mettmenstetten,26
+9,ZG,1701,Baar,1,ZH,10,Obfelden,5
+9,ZG,1701,Baar,1,ZH,12,Rifferswil,5
+9,ZG,1701,Baar,1,ZH,62,Kloten,61
+9,ZG,1701,Baar,1,ZH,66,Opfikon,24
+9,ZG,1701,Baar,1,ZH,69,Wallisellen,37
+9,ZG,1701,Baar,1,ZH,94,Otelfingen,5
+9,ZG,1701,Baar,1,ZH,96,Regensdorf,8
+9,ZG,1701,Baar,1,ZH,121,Wetzikon (ZH),5
+9,ZG,1701,Baar,1,ZH,131,Adliswil,37
+9,ZG,1701,Baar,1,ZH,132,Hirzel,11
+9,ZG,1701,Baar,1,ZH,133,Horgen,217
+9,ZG,1701,Baar,1,ZH,135,Kilchberg (ZH),18
+9,ZG,1701,Baar,1,ZH,136,Langnau am Albis,8
+9,ZG,1701,Baar,1,ZH,138,Richterswil,6
+9,ZG,1701,Baar,1,ZH,139,Rüschlikon,6
+9,ZG,1701,Baar,1,ZH,141,Thalwil,40
+9,ZG,1701,Baar,1,ZH,142,Wädenswil,30
+9,ZG,1701,Baar,1,ZH,154,Küsnacht (ZH),7
+9,ZG,1701,Baar,1,ZH,158,Stäfa,9
+9,ZG,1701,Baar,1,ZH,161,Zollikon,7
+9,ZG,1701,Baar,1,ZH,174,Illnau-Effretikon,5
+9,ZG,1701,Baar,1,ZH,191,Dübendorf,26
+9,ZG,1701,Baar,1,ZH,199,Volketswil,8
+9,ZG,1701,Baar,1,ZH,200,Wangen-Brüttisellen,12
+9,ZG,1701,Baar,1,ZH,230,Winterthur,13
+9,ZG,1701,Baar,1,ZH,242,Birmensdorf (ZH),14
+9,ZG,1701,Baar,1,ZH,243,Dietikon,28
+9,ZG,1701,Baar,1,ZH,244,Geroldswil,5
+9,ZG,1701,Baar,1,ZH,247,Schlieren,38
+9,ZG,1701,Baar,1,ZH,250,Urdorf,19
+9,ZG,1701,Baar,1,ZH,261,Zürich,1160
+9,ZG,1701,Baar,1,ZH,7777,Andere Gemeinden,69
+9,ZG,1701,Baar,2,BE,351,Bern,22
+9,ZG,1701,Baar,2,BE,7777,Andere Gemeinden,37
+9,ZG,1701,Baar,3,LU,1024,Emmen,61
+9,ZG,1701,Baar,3,LU,1031,Hochdorf,11
+9,ZG,1701,Baar,3,LU,1040,Rothenburg,13
+9,ZG,1701,Baar,3,LU,1052,Buchrain,6
+9,ZG,1701,Baar,3,LU,1053,Dierikon,11
+9,ZG,1701,Baar,3,LU,1054,Ebikon,52
+9,ZG,1701,Baar,3,LU,1055,Gisikon,9
+9,ZG,1701,Baar,3,LU,1058,Horw,9
+9,ZG,1701,Baar,3,LU,1059,Kriens,35
+9,ZG,1701,Baar,3,LU,1061,Luzern,302
+9,ZG,1701,Baar,3,LU,1065,Root,47
+9,ZG,1701,Baar,3,LU,7777,Andere Gemeinden,79
+9,ZG,1701,Baar,4,UR,7777,Andere Gemeinden,9
+9,ZG,1701,Baar,5,SZ,1301,Einsiedeln,8
+9,ZG,1701,Baar,5,SZ,1321,Feusisberg,6
+9,ZG,1701,Baar,5,SZ,1322,Freienbach,26
+9,ZG,1701,Baar,5,SZ,1323,Wollerau,14
+9,ZG,1701,Baar,5,SZ,1331,Küssnacht (SZ),74
+9,ZG,1701,Baar,5,SZ,1341,Altendorf,14
+9,ZG,1701,Baar,5,SZ,1344,Lachen,8
+9,ZG,1701,Baar,5,SZ,1362,Arth,13
+9,ZG,1701,Baar,5,SZ,1364,Ingenbohl,12
+9,ZG,1701,Baar,5,SZ,1372,Schwyz,48
+9,ZG,1701,Baar,5,SZ,1373,Steinen,5
+9,ZG,1701,Baar,5,SZ,7777,Andere Gemeinden,10
+9,ZG,1701,Baar,6,OW,1406,Sachseln,6
+9,ZG,1701,Baar,6,OW,1407,Sarnen,11
+9,ZG,1701,Baar,6,OW,7777,Andere Gemeinden,6
+9,ZG,1701,Baar,7,NW,1509,Stans,15
+9,ZG,1701,Baar,7,NW,7777,Andere Gemeinden,10
+9,ZG,1701,Baar,8,GL,1632,Glarus,5
+9,ZG,1701,Baar,9,ZG,1701,Baar,4323
+9,ZG,1701,Baar,9,ZG,1702,Cham,367
+9,ZG,1701,Baar,9,ZG,1703,Hünenberg,236
+9,ZG,1701,Baar,9,ZG,1704,Menzingen,104
+9,ZG,1701,Baar,9,ZG,1705,Neuheim,83
+9,ZG,1701,Baar,9,ZG,1706,Oberägeri,51
+9,ZG,1701,Baar,9,ZG,1707,Risch,301
+9,ZG,1701,Baar,9,ZG,1708,Steinhausen,488
+9,ZG,1701,Baar,9,ZG,1709,Unterägeri,168
+9,ZG,1701,Baar,9,ZG,1710,Walchwil,28
+9,ZG,1701,Baar,9,ZG,1711,Zug,2927
+9,ZG,1701,Baar,10,FR,7777,Andere Gemeinden,5
+9,ZG,1701,Baar,11,SO,7777,Andere Gemeinden,17
+9,ZG,1701,Baar,12,BS,2701,Basel,24
+9,ZG,1701,Baar,13,BL,2829,Liestal,5
+9,ZG,1701,Baar,13,BL,7777,Andere Gemeinden,18
+9,ZG,1701,Baar,14,SH,7777,Andere Gemeinden,5
+9,ZG,1701,Baar,15,AR,7777,Andere Gemeinden,6
+9,ZG,1701,Baar,17,SG,3340,Rapperswil-Jona,16
+9,ZG,1701,Baar,17,SG,7777,Andere Gemeinden,26
+9,ZG,1701,Baar,19,AG,4001,Aarau,6
+9,ZG,1701,Baar,19,AG,4021,Baden,22
+9,ZG,1701,Baar,19,AG,4034,Neuenhof,5
+9,ZG,1701,Baar,19,AG,4040,Spreitenbach,10
+9,ZG,1701,Baar,19,AG,4063,Bremgarten (AG),5
+9,ZG,1701,Baar,19,AG,4201,Lenzburg,6
+9,ZG,1701,Baar,19,AG,4234,Merenschwand,22
+9,ZG,1701,Baar,19,AG,4236,Muri (AG),21
+9,ZG,1701,Baar,19,AG,4239,Sins,36
+9,ZG,1701,Baar,19,AG,7777,Andere Gemeinden,92
+9,ZG,1701,Baar,20,TG,7777,Andere Gemeinden,11
+9,ZG,1701,Baar,21,TI,7777,Andere Gemeinden,5
+9,ZG,1701,Baar,77,ZZ,7777,Andere Gemeinden,13
+9,ZG,1702,Cham,1,ZH,2,Affoltern am Albis,62
+9,ZG,1702,Cham,1,ZH,5,Hedingen,10
+9,ZG,1702,Cham,1,ZH,6,Kappel am Albis,5
+9,ZG,1702,Cham,1,ZH,7,Knonau,14
+9,ZG,1702,Cham,1,ZH,9,Mettmenstetten,26
+9,ZG,1702,Cham,1,ZH,62,Kloten,38
+9,ZG,1702,Cham,1,ZH,66,Opfikon,14
+9,ZG,1702,Cham,1,ZH,69,Wallisellen,28
+9,ZG,1702,Cham,1,ZH,96,Regensdorf,12
+9,ZG,1702,Cham,1,ZH,131,Adliswil,28
+9,ZG,1702,Cham,1,ZH,133,Horgen,25
+9,ZG,1702,Cham,1,ZH,135,Kilchberg (ZH),11
+9,ZG,1702,Cham,1,ZH,136,Langnau am Albis,6
+9,ZG,1702,Cham,1,ZH,138,Richterswil,6
+9,ZG,1702,Cham,1,ZH,141,Thalwil,10
+9,ZG,1702,Cham,1,ZH,142,Wädenswil,13
+9,ZG,1702,Cham,1,ZH,191,Dübendorf,11
+9,ZG,1702,Cham,1,ZH,198,Uster,5
+9,ZG,1702,Cham,1,ZH,200,Wangen-Brüttisellen,6
+9,ZG,1702,Cham,1,ZH,242,Birmensdorf (ZH),6
+9,ZG,1702,Cham,1,ZH,243,Dietikon,25
+9,ZG,1702,Cham,1,ZH,247,Schlieren,26
+9,ZG,1702,Cham,1,ZH,250,Urdorf,7
+9,ZG,1702,Cham,1,ZH,261,Zürich,719
+9,ZG,1702,Cham,1,ZH,7777,Andere Gemeinden,81
+9,ZG,1702,Cham,2,BE,329,Langenthal,5
+9,ZG,1702,Cham,2,BE,351,Bern,14
+9,ZG,1702,Cham,2,BE,7777,Andere Gemeinden,19
+9,ZG,1702,Cham,3,LU,1024,Emmen,102
+9,ZG,1702,Cham,3,LU,1031,Hochdorf,14
+9,ZG,1702,Cham,3,LU,1040,Rothenburg,8
+9,ZG,1702,Cham,3,LU,1052,Buchrain,12
+9,ZG,1702,Cham,3,LU,1053,Dierikon,16
+9,ZG,1702,Cham,3,LU,1054,Ebikon,54
+9,ZG,1702,Cham,3,LU,1058,Horw,10
+9,ZG,1702,Cham,3,LU,1059,Kriens,37
+9,ZG,1702,Cham,3,LU,1061,Luzern,301
+9,ZG,1702,Cham,3,LU,1063,Meggen,8
+9,ZG,1702,Cham,3,LU,1064,Meierskappel,5
+9,ZG,1702,Cham,3,LU,1065,Root,61
+9,ZG,1702,Cham,3,LU,1093,Neuenkirch,5
+9,ZG,1702,Cham,3,LU,1094,Nottwil,7
+9,ZG,1702,Cham,3,LU,1103,Sursee,14
+9,ZG,1702,Cham,3,LU,7777,Andere Gemeinden,57
+9,ZG,1702,Cham,4,UR,7777,Andere Gemeinden,7
+9,ZG,1702,Cham,5,SZ,1322,Freienbach,18
+9,ZG,1702,Cham,5,SZ,1323,Wollerau,8
+9,ZG,1702,Cham,5,SZ,1331,Küssnacht (SZ),67
+9,ZG,1702,Cham,5,SZ,1362,Arth,16
+9,ZG,1702,Cham,5,SZ,1364,Ingenbohl,7
+9,ZG,1702,Cham,5,SZ,1372,Schwyz,40
+9,ZG,1702,Cham,5,SZ,7777,Andere Gemeinden,29
+9,ZG,1702,Cham,6,OW,1406,Sachseln,5
+9,ZG,1702,Cham,6,OW,1407,Sarnen,7
+9,ZG,1702,Cham,6,OW,7777,Andere Gemeinden,7
+9,ZG,1702,Cham,7,NW,1507,Hergiswil (NW),5
+9,ZG,1702,Cham,7,NW,1509,Stans,16
+9,ZG,1702,Cham,7,NW,7777,Andere Gemeinden,8
+9,ZG,1702,Cham,9,ZG,1701,Baar,761
+9,ZG,1702,Cham,9,ZG,1702,Cham,1951
+9,ZG,1702,Cham,9,ZG,1703,Hünenberg,384
+9,ZG,1702,Cham,9,ZG,1704,Menzingen,28
+9,ZG,1702,Cham,9,ZG,1705,Neuheim,37
+9,ZG,1702,Cham,9,ZG,1706,Oberägeri,15
+9,ZG,1702,Cham,9,ZG,1707,Risch,450
+9,ZG,1702,Cham,9,ZG,1708,Steinhausen,414
+9,ZG,1702,Cham,9,ZG,1709,Unterägeri,38
+9,ZG,1702,Cham,9,ZG,1710,Walchwil,22
+9,ZG,1702,Cham,9,ZG,1711,Zug,1715
+9,ZG,1702,Cham,10,FR,7777,Andere Gemeinden,7
+9,ZG,1702,Cham,11,SO,2581,Olten,5
+9,ZG,1702,Cham,11,SO,7777,Andere Gemeinden,6
+9,ZG,1702,Cham,12,BS,2701,Basel,13
+9,ZG,1702,Cham,13,BL,7777,Andere Gemeinden,17
+9,ZG,1702,Cham,14,SH,7777,Andere Gemeinden,7
+9,ZG,1702,Cham,17,SG,3203,St. Gallen,7
+9,ZG,1702,Cham,17,SG,3340,Rapperswil-Jona,11
+9,ZG,1702,Cham,17,SG,7777,Andere Gemeinden,14
+9,ZG,1702,Cham,19,AG,4001,Aarau,7
+9,ZG,1702,Cham,19,AG,4021,Baden,20
+9,ZG,1702,Cham,19,AG,4040,Spreitenbach,8
+9,ZG,1702,Cham,19,AG,4080,Villmergen,6
+9,ZG,1702,Cham,19,AG,4082,Wohlen (AG),13
+9,ZG,1702,Cham,19,AG,4201,Lenzburg,7
+9,ZG,1702,Cham,19,AG,4223,Auw,5
+9,ZG,1702,Cham,19,AG,4234,Merenschwand,9
+9,ZG,1702,Cham,19,AG,4235,Mühlau,6
+9,ZG,1702,Cham,19,AG,4236,Muri (AG),26
+9,ZG,1702,Cham,19,AG,4239,Sins,71
+9,ZG,1702,Cham,19,AG,4289,Zofingen,7
+9,ZG,1702,Cham,19,AG,7777,Andere Gemeinden,72
+9,ZG,1702,Cham,20,TG,7777,Andere Gemeinden,11
+9,ZG,1702,Cham,21,TI,7777,Andere Gemeinden,7
+9,ZG,1702,Cham,77,ZZ,7777,Andere Gemeinden,12
+9,ZG,1703,Hünenberg,1,ZH,2,Affoltern am Albis,42
+9,ZG,1703,Hünenberg,1,ZH,7,Knonau,10
+9,ZG,1703,Hünenberg,1,ZH,9,Mettmenstetten,9
+9,ZG,1703,Hünenberg,1,ZH,62,Kloten,19
+9,ZG,1703,Hünenberg,1,ZH,66,Opfikon,5
+9,ZG,1703,Hünenberg,1,ZH,69,Wallisellen,6
+9,ZG,1703,Hünenberg,1,ZH,90,Niederhasli,5
+9,ZG,1703,Hünenberg,1,ZH,96,Regensdorf,8
+9,ZG,1703,Hünenberg,1,ZH,131,Adliswil,15
+9,ZG,1703,Hünenberg,1,ZH,133,Horgen,11
+9,ZG,1703,Hünenberg,1,ZH,135,Kilchberg (ZH),5
+9,ZG,1703,Hünenberg,1,ZH,142,Wädenswil,6
+9,ZG,1703,Hünenberg,1,ZH,191,Dübendorf,8
+9,ZG,1703,Hünenberg,1,ZH,230,Winterthur,7
+9,ZG,1703,Hünenberg,1,ZH,243,Dietikon,8
+9,ZG,1703,Hünenberg,1,ZH,247,Schlieren,10
+9,ZG,1703,Hünenberg,1,ZH,250,Urdorf,11
+9,ZG,1703,Hünenberg,1,ZH,261,Zürich,423
+9,ZG,1703,Hünenberg,1,ZH,7777,Andere Gemeinden,58
+9,ZG,1703,Hünenberg,2,BE,351,Bern,15
+9,ZG,1703,Hünenberg,2,BE,7777,Andere Gemeinden,11
+9,ZG,1703,Hünenberg,3,LU,1024,Emmen,37
+9,ZG,1703,Hünenberg,3,LU,1026,Eschenbach (LU),5
+9,ZG,1703,Hünenberg,3,LU,1031,Hochdorf,17
+9,ZG,1703,Hünenberg,3,LU,1040,Rothenburg,9
+9,ZG,1703,Hünenberg,3,LU,1053,Dierikon,13
+9,ZG,1703,Hünenberg,3,LU,1054,Ebikon,30
+9,ZG,1703,Hünenberg,3,LU,1058,Horw,6
+9,ZG,1703,Hünenberg,3,LU,1059,Kriens,32
+9,ZG,1703,Hünenberg,3,LU,1061,Luzern,200
+9,ZG,1703,Hünenberg,3,LU,1064,Meierskappel,7
+9,ZG,1703,Hünenberg,3,LU,1065,Root,36
+9,ZG,1703,Hünenberg,3,LU,1094,Nottwil,6
+9,ZG,1703,Hünenberg,3,LU,1095,Oberkirch,9
+9,ZG,1703,Hünenberg,3,LU,7777,Andere Gemeinden,59
+9,ZG,1703,Hünenberg,4,UR,7777,Andere Gemeinden,7
+9,ZG,1703,Hünenberg,5,SZ,1331,Küssnacht (SZ),31
+9,ZG,1703,Hünenberg,5,SZ,1362,Arth,7
+9,ZG,1703,Hünenberg,5,SZ,1364,Ingenbohl,5
+9,ZG,1703,Hünenberg,5,SZ,1372,Schwyz,24
+9,ZG,1703,Hünenberg,5,SZ,7777,Andere Gemeinden,13
+9,ZG,1703,Hünenberg,6,OW,1407,Sarnen,8
+9,ZG,1703,Hünenberg,6,OW,7777,Andere Gemeinden,9
+9,ZG,1703,Hünenberg,7,NW,1509,Stans,9
+9,ZG,1703,Hünenberg,7,NW,7777,Andere Gemeinden,9
+9,ZG,1703,Hünenberg,9,ZG,1701,Baar,348
+9,ZG,1703,Hünenberg,9,ZG,1702,Cham,449
+9,ZG,1703,Hünenberg,9,ZG,1703,Hünenberg,996
+9,ZG,1703,Hünenberg,9,ZG,1704,Menzingen,6
+9,ZG,1703,Hünenberg,9,ZG,1705,Neuheim,12
+9,ZG,1703,Hünenberg,9,ZG,1707,Risch,262
+9,ZG,1703,Hünenberg,9,ZG,1708,Steinhausen,185
+9,ZG,1703,Hünenberg,9,ZG,1709,Unterägeri,18
+9,ZG,1703,Hünenberg,9,ZG,1710,Walchwil,9
+9,ZG,1703,Hünenberg,9,ZG,1711,Zug,880
+9,ZG,1703,Hünenberg,11,SO,7777,Andere Gemeinden,9
+9,ZG,1703,Hünenberg,12,BS,2701,Basel,6
+9,ZG,1703,Hünenberg,13,BL,7777,Andere Gemeinden,8
+9,ZG,1703,Hünenberg,17,SG,3340,Rapperswil-Jona,9
+9,ZG,1703,Hünenberg,17,SG,7777,Andere Gemeinden,5
+9,ZG,1703,Hünenberg,18,GR,7777,Andere Gemeinden,5
+9,ZG,1703,Hünenberg,19,AG,4021,Baden,6
+9,ZG,1703,Hünenberg,19,AG,4082,Wohlen (AG),10
+9,ZG,1703,Hünenberg,19,AG,4223,Auw,5
+9,ZG,1703,Hünenberg,19,AG,4236,Muri (AG),10
+9,ZG,1703,Hünenberg,19,AG,4237,Oberrüti,6
+9,ZG,1703,Hünenberg,19,AG,4239,Sins,46
+9,ZG,1703,Hünenberg,19,AG,7777,Andere Gemeinden,59
+9,ZG,1703,Hünenberg,21,TI,5192,Lugano,9
+9,ZG,1703,Hünenberg,77,ZZ,7777,Andere Gemeinden,25
+9,ZG,1704,Menzingen,1,ZH,2,Affoltern am Albis,9
+9,ZG,1704,Menzingen,1,ZH,4,Hausen am Albis,12
+9,ZG,1704,Menzingen,1,ZH,9,Mettmenstetten,7
+9,ZG,1704,Menzingen,1,ZH,62,Kloten,6
+9,ZG,1704,Menzingen,1,ZH,133,Horgen,15
+9,ZG,1704,Menzingen,1,ZH,136,Langnau am Albis,5
+9,ZG,1704,Menzingen,1,ZH,138,Richterswil,15
+9,ZG,1704,Menzingen,1,ZH,140,Schönenberg (ZH),5
+9,ZG,1704,Menzingen,1,ZH,141,Thalwil,9
+9,ZG,1704,Menzingen,1,ZH,142,Wädenswil,15
+9,ZG,1704,Menzingen,1,ZH,247,Schlieren,7
+9,ZG,1704,Menzingen,1,ZH,261,Zürich,150
+9,ZG,1704,Menzingen,1,ZH,7777,Andere Gemeinden,52
+9,ZG,1704,Menzingen,2,BE,351,Bern,9
+9,ZG,1704,Menzingen,2,BE,7777,Andere Gemeinden,5
+9,ZG,1704,Menzingen,3,LU,1054,Ebikon,5
+9,ZG,1704,Menzingen,3,LU,1061,Luzern,28
+9,ZG,1704,Menzingen,3,LU,1065,Root,6
+9,ZG,1704,Menzingen,3,LU,7777,Andere Gemeinden,21
+9,ZG,1704,Menzingen,5,SZ,1301,Einsiedeln,7
+9,ZG,1704,Menzingen,5,SZ,1321,Feusisberg,8
+9,ZG,1704,Menzingen,5,SZ,1322,Freienbach,11
+9,ZG,1704,Menzingen,5,SZ,1323,Wollerau,8
+9,ZG,1704,Menzingen,5,SZ,1331,Küssnacht (SZ),15
+9,ZG,1704,Menzingen,5,SZ,1346,Schübelbach,5
+9,ZG,1704,Menzingen,5,SZ,1372,Schwyz,8
+9,ZG,1704,Menzingen,5,SZ,7777,Andere Gemeinden,13
+9,ZG,1704,Menzingen,9,ZG,1701,Baar,267
+9,ZG,1704,Menzingen,9,ZG,1702,Cham,57
+9,ZG,1704,Menzingen,9,ZG,1703,Hünenberg,35
+9,ZG,1704,Menzingen,9,ZG,1704,Menzingen,691
+9,ZG,1704,Menzingen,9,ZG,1705,Neuheim,35
+9,ZG,1704,Menzingen,9,ZG,1706,Oberägeri,24
+9,ZG,1704,Menzingen,9,ZG,1707,Risch,44
+9,ZG,1704,Menzingen,9,ZG,1708,Steinhausen,48
+9,ZG,1704,Menzingen,9,ZG,1709,Unterägeri,72
+9,ZG,1704,Menzingen,9,ZG,1710,Walchwil,11
+9,ZG,1704,Menzingen,9,ZG,1711,Zug,425
+9,ZG,1704,Menzingen,12,BS,2701,Basel,17
+9,ZG,1704,Menzingen,13,BL,7777,Andere Gemeinden,5
+9,ZG,1704,Menzingen,17,SG,3340,Rapperswil-Jona,6
+9,ZG,1704,Menzingen,17,SG,7777,Andere Gemeinden,5
+9,ZG,1704,Menzingen,19,AG,4239,Sins,8
+9,ZG,1704,Menzingen,19,AG,7777,Andere Gemeinden,23
+9,ZG,1704,Menzingen,77,ZZ,7777,Andere Gemeinden,11
+9,ZG,1705,Neuheim,1,ZH,62,Kloten,5
+9,ZG,1705,Neuheim,1,ZH,66,Opfikon,7
+9,ZG,1705,Neuheim,1,ZH,131,Adliswil,9
+9,ZG,1705,Neuheim,1,ZH,132,Hirzel,5
+9,ZG,1705,Neuheim,1,ZH,133,Horgen,5
+9,ZG,1705,Neuheim,1,ZH,142,Wädenswil,7
+9,ZG,1705,Neuheim,1,ZH,261,Zürich,90
+9,ZG,1705,Neuheim,1,ZH,7777,Andere Gemeinden,41
+9,ZG,1705,Neuheim,2,BE,7777,Andere Gemeinden,6
+9,ZG,1705,Neuheim,3,LU,1061,Luzern,14
+9,ZG,1705,Neuheim,3,LU,7777,Andere Gemeinden,18
+9,ZG,1705,Neuheim,5,SZ,1331,Küssnacht (SZ),7
+9,ZG,1705,Neuheim,5,SZ,1372,Schwyz,5
+9,ZG,1705,Neuheim,5,SZ,7777,Andere Gemeinden,14
+9,ZG,1705,Neuheim,9,ZG,1701,Baar,213
+9,ZG,1705,Neuheim,9,ZG,1702,Cham,25
+9,ZG,1705,Neuheim,9,ZG,1703,Hünenberg,22
+9,ZG,1705,Neuheim,9,ZG,1704,Menzingen,22
+9,ZG,1705,Neuheim,9,ZG,1705,Neuheim,242
+9,ZG,1705,Neuheim,9,ZG,1706,Oberägeri,8
+9,ZG,1705,Neuheim,9,ZG,1707,Risch,17
+9,ZG,1705,Neuheim,9,ZG,1708,Steinhausen,36
+9,ZG,1705,Neuheim,9,ZG,1709,Unterägeri,27
+9,ZG,1705,Neuheim,9,ZG,1711,Zug,202
+9,ZG,1705,Neuheim,19,AG,7777,Andere Gemeinden,15
+9,ZG,1705,Neuheim,77,ZZ,7777,Andere Gemeinden,20
+9,ZG,1706,Oberägeri,1,ZH,2,Affoltern am Albis,10
+9,ZG,1706,Oberägeri,1,ZH,62,Kloten,6
+9,ZG,1706,Oberägeri,1,ZH,66,Opfikon,5
+9,ZG,1706,Oberägeri,1,ZH,69,Wallisellen,7
+9,ZG,1706,Oberägeri,1,ZH,131,Adliswil,6
+9,ZG,1706,Oberägeri,1,ZH,132,Hirzel,6
+9,ZG,1706,Oberägeri,1,ZH,133,Horgen,9
+9,ZG,1706,Oberägeri,1,ZH,138,Richterswil,15
+9,ZG,1706,Oberägeri,1,ZH,141,Thalwil,5
+9,ZG,1706,Oberägeri,1,ZH,142,Wädenswil,7
+9,ZG,1706,Oberägeri,1,ZH,247,Schlieren,10
+9,ZG,1706,Oberägeri,1,ZH,261,Zürich,191
+9,ZG,1706,Oberägeri,1,ZH,7777,Andere Gemeinden,53
+9,ZG,1706,Oberägeri,2,BE,7777,Andere Gemeinden,20
+9,ZG,1706,Oberägeri,3,LU,1024,Emmen,14
+9,ZG,1706,Oberägeri,3,LU,1054,Ebikon,6
+9,ZG,1706,Oberägeri,3,LU,1059,Kriens,8
+9,ZG,1706,Oberägeri,3,LU,1061,Luzern,33
+9,ZG,1706,Oberägeri,3,LU,1065,Root,7
+9,ZG,1706,Oberägeri,3,LU,7777,Andere Gemeinden,22
+9,ZG,1706,Oberägeri,4,UR,7777,Andere Gemeinden,8
+9,ZG,1706,Oberägeri,5,SZ,1301,Einsiedeln,16
+9,ZG,1706,Oberägeri,5,SZ,1321,Feusisberg,8
+9,ZG,1706,Oberägeri,5,SZ,1322,Freienbach,21
+9,ZG,1706,Oberägeri,5,SZ,1331,Küssnacht (SZ),9
+9,ZG,1706,Oberägeri,5,SZ,1362,Arth,12
+9,ZG,1706,Oberägeri,5,SZ,1370,Rothenthurm,16
+9,ZG,1706,Oberägeri,5,SZ,1371,Sattel,7
+9,ZG,1706,Oberägeri,5,SZ,1372,Schwyz,40
+9,ZG,1706,Oberägeri,5,SZ,7777,Andere Gemeinden,28
+9,ZG,1706,Oberägeri,7,NW,7777,Andere Gemeinden,5
+9,ZG,1706,Oberägeri,9,ZG,1701,Baar,311
+9,ZG,1706,Oberägeri,9,ZG,1702,Cham,60
+9,ZG,1706,Oberägeri,9,ZG,1703,Hünenberg,26
+9,ZG,1706,Oberägeri,9,ZG,1704,Menzingen,37
+9,ZG,1706,Oberägeri,9,ZG,1705,Neuheim,27
+9,ZG,1706,Oberägeri,9,ZG,1706,Oberägeri,813
+9,ZG,1706,Oberägeri,9,ZG,1707,Risch,30
+9,ZG,1706,Oberägeri,9,ZG,1708,Steinhausen,82
+9,ZG,1706,Oberägeri,9,ZG,1709,Unterägeri,279
+9,ZG,1706,Oberägeri,9,ZG,1710,Walchwil,8
+9,ZG,1706,Oberägeri,9,ZG,1711,Zug,608
+9,ZG,1706,Oberägeri,12,BS,2701,Basel,12
+9,ZG,1706,Oberägeri,13,BL,7777,Andere Gemeinden,5
+9,ZG,1706,Oberägeri,17,SG,3203,St. Gallen,5
+9,ZG,1706,Oberägeri,17,SG,3340,Rapperswil-Jona,6
+9,ZG,1706,Oberägeri,17,SG,7777,Andere Gemeinden,9
+9,ZG,1706,Oberägeri,19,AG,7777,Andere Gemeinden,37
+9,ZG,1706,Oberägeri,77,ZZ,7777,Andere Gemeinden,22
+9,ZG,1707,Risch,1,ZH,2,Affoltern am Albis,21
+9,ZG,1707,Risch,1,ZH,5,Hedingen,6
+9,ZG,1707,Risch,1,ZH,9,Mettmenstetten,15
+9,ZG,1707,Risch,1,ZH,62,Kloten,20
+9,ZG,1707,Risch,1,ZH,66,Opfikon,14
+9,ZG,1707,Risch,1,ZH,69,Wallisellen,16
+9,ZG,1707,Risch,1,ZH,96,Regensdorf,11
+9,ZG,1707,Risch,1,ZH,131,Adliswil,13
+9,ZG,1707,Risch,1,ZH,133,Horgen,14
+9,ZG,1707,Risch,1,ZH,141,Thalwil,5
+9,ZG,1707,Risch,1,ZH,142,Wädenswil,11
+9,ZG,1707,Risch,1,ZH,191,Dübendorf,9
+9,ZG,1707,Risch,1,ZH,200,Wangen-Brüttisellen,6
+9,ZG,1707,Risch,1,ZH,230,Winterthur,9
+9,ZG,1707,Risch,1,ZH,243,Dietikon,12
+9,ZG,1707,Risch,1,ZH,247,Schlieren,14
+9,ZG,1707,Risch,1,ZH,261,Zürich,425
+9,ZG,1707,Risch,1,ZH,7777,Andere Gemeinden,78
+9,ZG,1707,Risch,2,BE,351,Bern,17
+9,ZG,1707,Risch,2,BE,7777,Andere Gemeinden,16
+9,ZG,1707,Risch,3,LU,1009,Werthenstein,7
+9,ZG,1707,Risch,3,LU,1021,Aesch (LU),5
+9,ZG,1707,Risch,3,LU,1024,Emmen,96
+9,ZG,1707,Risch,3,LU,1026,Eschenbach (LU),7
+9,ZG,1707,Risch,3,LU,1031,Hochdorf,13
+9,ZG,1707,Risch,3,LU,1033,Inwil,15
+9,ZG,1707,Risch,3,LU,1040,Rothenburg,16
+9,ZG,1707,Risch,3,LU,1051,Adligenswil,11
+9,ZG,1707,Risch,3,LU,1052,Buchrain,23
+9,ZG,1707,Risch,3,LU,1053,Dierikon,32
+9,ZG,1707,Risch,3,LU,1054,Ebikon,60
+9,ZG,1707,Risch,3,LU,1055,Gisikon,15
+9,ZG,1707,Risch,3,LU,1057,Honau,6
+9,ZG,1707,Risch,3,LU,1058,Horw,13
+9,ZG,1707,Risch,3,LU,1059,Kriens,46
+9,ZG,1707,Risch,3,LU,1061,Luzern,292
+9,ZG,1707,Risch,3,LU,1062,Malters,9
+9,ZG,1707,Risch,3,LU,1063,Meggen,10
+9,ZG,1707,Risch,3,LU,1064,Meierskappel,14
+9,ZG,1707,Risch,3,LU,1065,Root,137
+9,ZG,1707,Risch,3,LU,1069,Weggis,9
+9,ZG,1707,Risch,3,LU,1093,Neuenkirch,6
+9,ZG,1707,Risch,3,LU,1094,Nottwil,5
+9,ZG,1707,Risch,3,LU,1095,Oberkirch,8
+9,ZG,1707,Risch,3,LU,1102,Sempach,6
+9,ZG,1707,Risch,3,LU,1103,Sursee,8
+9,ZG,1707,Risch,3,LU,7777,Andere Gemeinden,35
+9,ZG,1707,Risch,4,UR,7777,Andere Gemeinden,10
+9,ZG,1707,Risch,5,SZ,1322,Freienbach,8
+9,ZG,1707,Risch,5,SZ,1331,Küssnacht (SZ),110
+9,ZG,1707,Risch,5,SZ,1362,Arth,17
+9,ZG,1707,Risch,5,SZ,1364,Ingenbohl,9
+9,ZG,1707,Risch,5,SZ,1372,Schwyz,34
+9,ZG,1707,Risch,5,SZ,7777,Andere Gemeinden,14
+9,ZG,1707,Risch,6,OW,1401,Alpnach,5
+9,ZG,1707,Risch,6,OW,1407,Sarnen,5
+9,ZG,1707,Risch,6,OW,7777,Andere Gemeinden,7
+9,ZG,1707,Risch,7,NW,1507,Hergiswil (NW),5
+9,ZG,1707,Risch,7,NW,1509,Stans,11
+9,ZG,1707,Risch,7,NW,7777,Andere Gemeinden,8
+9,ZG,1707,Risch,9,ZG,1701,Baar,422
+9,ZG,1707,Risch,9,ZG,1702,Cham,332
+9,ZG,1707,Risch,9,ZG,1703,Hünenberg,239
+9,ZG,1707,Risch,9,ZG,1704,Menzingen,6
+9,ZG,1707,Risch,9,ZG,1705,Neuheim,15
+9,ZG,1707,Risch,9,ZG,1706,Oberägeri,5
+9,ZG,1707,Risch,9,ZG,1707,Risch,1538
+9,ZG,1707,Risch,9,ZG,1708,Steinhausen,174
+9,ZG,1707,Risch,9,ZG,1709,Unterägeri,21
+9,ZG,1707,Risch,9,ZG,1710,Walchwil,9
+9,ZG,1707,Risch,9,ZG,1711,Zug,999
+9,ZG,1707,Risch,10,FR,7777,Andere Gemeinden,5
+9,ZG,1707,Risch,11,SO,2532,Subingen,5
+9,ZG,1707,Risch,11,SO,7777,Andere Gemeinden,11
+9,ZG,1707,Risch,12,BS,2701,Basel,13
+9,ZG,1707,Risch,13,BL,7777,Andere Gemeinden,10
+9,ZG,1707,Risch,17,SG,3340,Rapperswil-Jona,8
+9,ZG,1707,Risch,17,SG,7777,Andere Gemeinden,16
+9,ZG,1707,Risch,18,GR,7777,Andere Gemeinden,9
+9,ZG,1707,Risch,19,AG,4021,Baden,15
+9,ZG,1707,Risch,19,AG,4080,Villmergen,8
+9,ZG,1707,Risch,19,AG,4082,Wohlen (AG),7
+9,ZG,1707,Risch,19,AG,4236,Muri (AG),17
+9,ZG,1707,Risch,19,AG,4237,Oberrüti,6
+9,ZG,1707,Risch,19,AG,4239,Sins,60
+9,ZG,1707,Risch,19,AG,7777,Andere Gemeinden,61
+9,ZG,1707,Risch,20,TG,7777,Andere Gemeinden,5
+9,ZG,1707,Risch,77,ZZ,7777,Andere Gemeinden,10
+9,ZG,1708,Steinhausen,1,ZH,2,Affoltern am Albis,39
+9,ZG,1708,Steinhausen,1,ZH,4,Hausen am Albis,7
+9,ZG,1708,Steinhausen,1,ZH,5,Hedingen,6
+9,ZG,1708,Steinhausen,1,ZH,7,Knonau,16
+9,ZG,1708,Steinhausen,1,ZH,9,Mettmenstetten,16
+9,ZG,1708,Steinhausen,1,ZH,62,Kloten,24
+9,ZG,1708,Steinhausen,1,ZH,66,Opfikon,9
+9,ZG,1708,Steinhausen,1,ZH,69,Wallisellen,10
+9,ZG,1708,Steinhausen,1,ZH,96,Regensdorf,5
+9,ZG,1708,Steinhausen,1,ZH,97,Rümlang,8
+9,ZG,1708,Steinhausen,1,ZH,131,Adliswil,15
+9,ZG,1708,Steinhausen,1,ZH,133,Horgen,10
+9,ZG,1708,Steinhausen,1,ZH,138,Richterswil,5
+9,ZG,1708,Steinhausen,1,ZH,141,Thalwil,8
+9,ZG,1708,Steinhausen,1,ZH,142,Wädenswil,17
+9,ZG,1708,Steinhausen,1,ZH,155,Männedorf,5
+9,ZG,1708,Steinhausen,1,ZH,191,Dübendorf,6
+9,ZG,1708,Steinhausen,1,ZH,230,Winterthur,5
+9,ZG,1708,Steinhausen,1,ZH,242,Birmensdorf (ZH),6
+9,ZG,1708,Steinhausen,1,ZH,243,Dietikon,16
+9,ZG,1708,Steinhausen,1,ZH,247,Schlieren,11
+9,ZG,1708,Steinhausen,1,ZH,250,Urdorf,8
+9,ZG,1708,Steinhausen,1,ZH,261,Zürich,385
+9,ZG,1708,Steinhausen,1,ZH,7777,Andere Gemeinden,62
+9,ZG,1708,Steinhausen,2,BE,351,Bern,9
+9,ZG,1708,Steinhausen,2,BE,7777,Andere Gemeinden,12
+9,ZG,1708,Steinhausen,3,LU,1024,Emmen,38
+9,ZG,1708,Steinhausen,3,LU,1031,Hochdorf,8
+9,ZG,1708,Steinhausen,3,LU,1052,Buchrain,7
+9,ZG,1708,Steinhausen,3,LU,1053,Dierikon,6
+9,ZG,1708,Steinhausen,3,LU,1054,Ebikon,15
+9,ZG,1708,Steinhausen,3,LU,1058,Horw,7
+9,ZG,1708,Steinhausen,3,LU,1059,Kriens,22
+9,ZG,1708,Steinhausen,3,LU,1061,Luzern,122
+9,ZG,1708,Steinhausen,3,LU,1065,Root,22
+9,ZG,1708,Steinhausen,3,LU,1069,Weggis,6
+9,ZG,1708,Steinhausen,3,LU,1103,Sursee,9
+9,ZG,1708,Steinhausen,3,LU,7777,Andere Gemeinden,40
+9,ZG,1708,Steinhausen,5,SZ,1322,Freienbach,5
+9,ZG,1708,Steinhausen,5,SZ,1331,Küssnacht (SZ),35
+9,ZG,1708,Steinhausen,5,SZ,1362,Arth,7
+9,ZG,1708,Steinhausen,5,SZ,1372,Schwyz,16
+9,ZG,1708,Steinhausen,5,SZ,7777,Andere Gemeinden,17
+9,ZG,1708,Steinhausen,6,OW,7777,Andere Gemeinden,13
+9,ZG,1708,Steinhausen,7,NW,1509,Stans,8
+9,ZG,1708,Steinhausen,9,ZG,1701,Baar,717
+9,ZG,1708,Steinhausen,9,ZG,1702,Cham,310
+9,ZG,1708,Steinhausen,9,ZG,1703,Hünenberg,109
+9,ZG,1708,Steinhausen,9,ZG,1704,Menzingen,21
+9,ZG,1708,Steinhausen,9,ZG,1705,Neuheim,22
+9,ZG,1708,Steinhausen,9,ZG,1706,Oberägeri,15
+9,ZG,1708,Steinhausen,9,ZG,1707,Risch,163
+9,ZG,1708,Steinhausen,9,ZG,1708,Steinhausen,1307
+9,ZG,1708,Steinhausen,9,ZG,1709,Unterägeri,39
+9,ZG,1708,Steinhausen,9,ZG,1710,Walchwil,15
+9,ZG,1708,Steinhausen,9,ZG,1711,Zug,1050
+9,ZG,1708,Steinhausen,11,SO,7777,Andere Gemeinden,10
+9,ZG,1708,Steinhausen,13,BL,7777,Andere Gemeinden,11
+9,ZG,1708,Steinhausen,17,SG,7777,Andere Gemeinden,13
+9,ZG,1708,Steinhausen,19,AG,4021,Baden,11
+9,ZG,1708,Steinhausen,19,AG,4063,Bremgarten (AG),6
+9,ZG,1708,Steinhausen,19,AG,4095,Brugg,5
+9,ZG,1708,Steinhausen,19,AG,4234,Merenschwand,14
+9,ZG,1708,Steinhausen,19,AG,4236,Muri (AG),9
+9,ZG,1708,Steinhausen,19,AG,4239,Sins,12
+9,ZG,1708,Steinhausen,19,AG,4289,Zofingen,5
+9,ZG,1708,Steinhausen,19,AG,7777,Andere Gemeinden,45
+9,ZG,1708,Steinhausen,20,TG,7777,Andere Gemeinden,6
+9,ZG,1708,Steinhausen,77,ZZ,7777,Andere Gemeinden,27
+9,ZG,1709,Unterägeri,1,ZH,2,Affoltern am Albis,13
+9,ZG,1709,Unterägeri,1,ZH,4,Hausen am Albis,13
+9,ZG,1709,Unterägeri,1,ZH,5,Hedingen,5
+9,ZG,1709,Unterägeri,1,ZH,62,Kloten,10
+9,ZG,1709,Unterägeri,1,ZH,66,Opfikon,7
+9,ZG,1709,Unterägeri,1,ZH,69,Wallisellen,5
+9,ZG,1709,Unterägeri,1,ZH,131,Adliswil,12
+9,ZG,1709,Unterägeri,1,ZH,133,Horgen,11
+9,ZG,1709,Unterägeri,1,ZH,139,Rüschlikon,7
+9,ZG,1709,Unterägeri,1,ZH,141,Thalwil,20
+9,ZG,1709,Unterägeri,1,ZH,142,Wädenswil,8
+9,ZG,1709,Unterägeri,1,ZH,191,Dübendorf,6
+9,ZG,1709,Unterägeri,1,ZH,230,Winterthur,5
+9,ZG,1709,Unterägeri,1,ZH,243,Dietikon,6
+9,ZG,1709,Unterägeri,1,ZH,247,Schlieren,5
+9,ZG,1709,Unterägeri,1,ZH,250,Urdorf,7
+9,ZG,1709,Unterägeri,1,ZH,261,Zürich,240
+9,ZG,1709,Unterägeri,1,ZH,7777,Andere Gemeinden,54
+9,ZG,1709,Unterägeri,2,BE,351,Bern,12
+9,ZG,1709,Unterägeri,2,BE,7777,Andere Gemeinden,10
+9,ZG,1709,Unterägeri,3,LU,1024,Emmen,15
+9,ZG,1709,Unterägeri,3,LU,1054,Ebikon,5
+9,ZG,1709,Unterägeri,3,LU,1059,Kriens,11
+9,ZG,1709,Unterägeri,3,LU,1061,Luzern,49
+9,ZG,1709,Unterägeri,3,LU,7777,Andere Gemeinden,43
+9,ZG,1709,Unterägeri,4,UR,7777,Andere Gemeinden,6
+9,ZG,1709,Unterägeri,5,SZ,1301,Einsiedeln,10
+9,ZG,1709,Unterägeri,5,SZ,1321,Feusisberg,6
+9,ZG,1709,Unterägeri,5,SZ,1322,Freienbach,10
+9,ZG,1709,Unterägeri,5,SZ,1323,Wollerau,5
+9,ZG,1709,Unterägeri,5,SZ,1331,Küssnacht (SZ),16
+9,ZG,1709,Unterägeri,5,SZ,1362,Arth,13
+9,ZG,1709,Unterägeri,5,SZ,1364,Ingenbohl,8
+9,ZG,1709,Unterägeri,5,SZ,1371,Sattel,5
+9,ZG,1709,Unterägeri,5,SZ,1372,Schwyz,39
+9,ZG,1709,Unterägeri,5,SZ,7777,Andere Gemeinden,16
+9,ZG,1709,Unterägeri,6,OW,7777,Andere Gemeinden,5
+9,ZG,1709,Unterägeri,7,NW,7777,Andere Gemeinden,6
+9,ZG,1709,Unterägeri,9,ZG,1701,Baar,487
+9,ZG,1709,Unterägeri,9,ZG,1702,Cham,119
+9,ZG,1709,Unterägeri,9,ZG,1703,Hünenberg,44
+9,ZG,1709,Unterägeri,9,ZG,1704,Menzingen,52
+9,ZG,1709,Unterägeri,9,ZG,1705,Neuheim,39
+9,ZG,1709,Unterägeri,9,ZG,1706,Oberägeri,171
+9,ZG,1709,Unterägeri,9,ZG,1707,Risch,60
+9,ZG,1709,Unterägeri,9,ZG,1708,Steinhausen,110
+9,ZG,1709,Unterägeri,9,ZG,1709,Unterägeri,1397
+9,ZG,1709,Unterägeri,9,ZG,1710,Walchwil,19
+9,ZG,1709,Unterägeri,9,ZG,1711,Zug,995
+9,ZG,1709,Unterägeri,12,BS,2701,Basel,9
+9,ZG,1709,Unterägeri,13,BL,2773,Reinach (BL),5
+9,ZG,1709,Unterägeri,13,BL,7777,Andere Gemeinden,7
+9,ZG,1709,Unterägeri,17,SG,3340,Rapperswil-Jona,8
+9,ZG,1709,Unterägeri,17,SG,7777,Andere Gemeinden,12
+9,ZG,1709,Unterägeri,19,AG,4239,Sins,8
+9,ZG,1709,Unterägeri,19,AG,7777,Andere Gemeinden,27
+9,ZG,1709,Unterägeri,77,ZZ,7777,Andere Gemeinden,14
+9,ZG,1710,Walchwil,1,ZH,2,Affoltern am Albis,5
+9,ZG,1710,Walchwil,1,ZH,62,Kloten,11
+9,ZG,1710,Walchwil,1,ZH,66,Opfikon,6
+9,ZG,1710,Walchwil,1,ZH,69,Wallisellen,5
+9,ZG,1710,Walchwil,1,ZH,261,Zürich,143
+9,ZG,1710,Walchwil,1,ZH,7777,Andere Gemeinden,40
+9,ZG,1710,Walchwil,2,BE,7777,Andere Gemeinden,10
+9,ZG,1710,Walchwil,3,LU,1024,Emmen,12
+9,ZG,1710,Walchwil,3,LU,1054,Ebikon,5
+9,ZG,1710,Walchwil,3,LU,1059,Kriens,7
+9,ZG,1710,Walchwil,3,LU,1061,Luzern,42
+9,ZG,1710,Walchwil,3,LU,1065,Root,5
+9,ZG,1710,Walchwil,3,LU,7777,Andere Gemeinden,20
+9,ZG,1710,Walchwil,4,UR,7777,Andere Gemeinden,5
+9,ZG,1710,Walchwil,5,SZ,1331,Küssnacht (SZ),18
+9,ZG,1710,Walchwil,5,SZ,1362,Arth,31
+9,ZG,1710,Walchwil,5,SZ,1364,Ingenbohl,8
+9,ZG,1710,Walchwil,5,SZ,1372,Schwyz,24
+9,ZG,1710,Walchwil,5,SZ,7777,Andere Gemeinden,13
+9,ZG,1710,Walchwil,7,NW,7777,Andere Gemeinden,6
+9,ZG,1710,Walchwil,9,ZG,1701,Baar,151
+9,ZG,1710,Walchwil,9,ZG,1702,Cham,49
+9,ZG,1710,Walchwil,9,ZG,1703,Hünenberg,32
+9,ZG,1710,Walchwil,9,ZG,1704,Menzingen,14
+9,ZG,1710,Walchwil,9,ZG,1706,Oberägeri,9
+9,ZG,1710,Walchwil,9,ZG,1707,Risch,37
+9,ZG,1710,Walchwil,9,ZG,1708,Steinhausen,59
+9,ZG,1710,Walchwil,9,ZG,1709,Unterägeri,7
+9,ZG,1710,Walchwil,9,ZG,1710,Walchwil,416
+9,ZG,1710,Walchwil,9,ZG,1711,Zug,463
+9,ZG,1710,Walchwil,11,SO,7777,Andere Gemeinden,7
+9,ZG,1710,Walchwil,12,BS,2701,Basel,5
+9,ZG,1710,Walchwil,13,BL,7777,Andere Gemeinden,6
+9,ZG,1710,Walchwil,17,SG,7777,Andere Gemeinden,5
+9,ZG,1710,Walchwil,19,AG,4021,Baden,5
+9,ZG,1710,Walchwil,19,AG,7777,Andere Gemeinden,23
+9,ZG,1710,Walchwil,77,ZZ,7777,Andere Gemeinden,20
+9,ZG,1711,Zug,1,ZH,2,Affoltern am Albis,67
+9,ZG,1711,Zug,1,ZH,4,Hausen am Albis,11
+9,ZG,1711,Zug,1,ZH,5,Hedingen,16
+9,ZG,1711,Zug,1,ZH,6,Kappel am Albis,8
+9,ZG,1711,Zug,1,ZH,7,Knonau,16
+9,ZG,1711,Zug,1,ZH,9,Mettmenstetten,16
+9,ZG,1711,Zug,1,ZH,12,Rifferswil,7
+9,ZG,1711,Zug,1,ZH,62,Kloten,60
+9,ZG,1711,Zug,1,ZH,66,Opfikon,44
+9,ZG,1711,Zug,1,ZH,69,Wallisellen,41
+9,ZG,1711,Zug,1,ZH,96,Regensdorf,24
+9,ZG,1711,Zug,1,ZH,97,Rümlang,5
+9,ZG,1711,Zug,1,ZH,131,Adliswil,63
+9,ZG,1711,Zug,1,ZH,133,Horgen,55
+9,ZG,1711,Zug,1,ZH,135,Kilchberg (ZH),23
+9,ZG,1711,Zug,1,ZH,136,Langnau am Albis,9
+9,ZG,1711,Zug,1,ZH,138,Richterswil,10
+9,ZG,1711,Zug,1,ZH,139,Rüschlikon,12
+9,ZG,1711,Zug,1,ZH,141,Thalwil,45
+9,ZG,1711,Zug,1,ZH,142,Wädenswil,27
+9,ZG,1711,Zug,1,ZH,154,Küsnacht (ZH),6
+9,ZG,1711,Zug,1,ZH,155,Männedorf,6
+9,ZG,1711,Zug,1,ZH,161,Zollikon,11
+9,ZG,1711,Zug,1,ZH,177,Pfäffikon,5
+9,ZG,1711,Zug,1,ZH,191,Dübendorf,20
+9,ZG,1711,Zug,1,ZH,198,Uster,8
+9,ZG,1711,Zug,1,ZH,199,Volketswil,12
+9,ZG,1711,Zug,1,ZH,200,Wangen-Brüttisellen,8
+9,ZG,1711,Zug,1,ZH,230,Winterthur,26
+9,ZG,1711,Zug,1,ZH,242,Birmensdorf (ZH),6
+9,ZG,1711,Zug,1,ZH,243,Dietikon,28
+9,ZG,1711,Zug,1,ZH,247,Schlieren,46
+9,ZG,1711,Zug,1,ZH,250,Urdorf,23
+9,ZG,1711,Zug,1,ZH,261,Zürich,1558
+9,ZG,1711,Zug,1,ZH,7777,Andere Gemeinden,79
+9,ZG,1711,Zug,2,BE,351,Bern,59
+9,ZG,1711,Zug,2,BE,7777,Andere Gemeinden,34
+9,ZG,1711,Zug,3,LU,1024,Emmen,56
+9,ZG,1711,Zug,3,LU,1031,Hochdorf,8
+9,ZG,1711,Zug,3,LU,1040,Rothenburg,8
+9,ZG,1711,Zug,3,LU,1051,Adligenswil,5
+9,ZG,1711,Zug,3,LU,1052,Buchrain,5
+9,ZG,1711,Zug,3,LU,1054,Ebikon,40
+9,ZG,1711,Zug,3,LU,1058,Horw,11
+9,ZG,1711,Zug,3,LU,1059,Kriens,38
+9,ZG,1711,Zug,3,LU,1061,Luzern,385
+9,ZG,1711,Zug,3,LU,1063,Meggen,5
+9,ZG,1711,Zug,3,LU,1065,Root,65
+9,ZG,1711,Zug,3,LU,1068,Vitznau,5
+9,ZG,1711,Zug,3,LU,1094,Nottwil,5
+9,ZG,1711,Zug,3,LU,1103,Sursee,18
+9,ZG,1711,Zug,3,LU,7777,Andere Gemeinden,66
+9,ZG,1711,Zug,4,UR,1201,Altdorf (UR),10
+9,ZG,1711,Zug,4,UR,7777,Andere Gemeinden,10
+9,ZG,1711,Zug,5,SZ,1301,Einsiedeln,8
+9,ZG,1711,Zug,5,SZ,1322,Freienbach,39
+9,ZG,1711,Zug,5,SZ,1323,Wollerau,15
+9,ZG,1711,Zug,5,SZ,1331,Küssnacht (SZ),61
+9,ZG,1711,Zug,5,SZ,1344,Lachen,12
+9,ZG,1711,Zug,5,SZ,1362,Arth,36
+9,ZG,1711,Zug,5,SZ,1364,Ingenbohl,11
+9,ZG,1711,Zug,5,SZ,1372,Schwyz,70
+9,ZG,1711,Zug,5,SZ,7777,Andere Gemeinden,14
+9,ZG,1711,Zug,6,OW,1401,Alpnach,6
+9,ZG,1711,Zug,6,OW,1407,Sarnen,7
+9,ZG,1711,Zug,6,OW,7777,Andere Gemeinden,7
+9,ZG,1711,Zug,7,NW,1507,Hergiswil (NW),12
+9,ZG,1711,Zug,7,NW,1509,Stans,18
+9,ZG,1711,Zug,8,GL,7777,Andere Gemeinden,7
+9,ZG,1711,Zug,9,ZG,1701,Baar,1950
+9,ZG,1711,Zug,9,ZG,1702,Cham,487
+9,ZG,1711,Zug,9,ZG,1703,Hünenberg,268
+9,ZG,1711,Zug,9,ZG,1704,Menzingen,83
+9,ZG,1711,Zug,9,ZG,1705,Neuheim,46
+9,ZG,1711,Zug,9,ZG,1706,Oberägeri,47
+9,ZG,1711,Zug,9,ZG,1707,Risch,340
+9,ZG,1711,Zug,9,ZG,1708,Steinhausen,480
+9,ZG,1711,Zug,9,ZG,1709,Unterägeri,112
+9,ZG,1711,Zug,9,ZG,1710,Walchwil,60
+9,ZG,1711,Zug,9,ZG,1711,Zug,7194
+9,ZG,1711,Zug,10,FR,2196,Fribourg,6
+9,ZG,1711,Zug,11,SO,2546,Grenchen,7
+9,ZG,1711,Zug,11,SO,2581,Olten,6
+9,ZG,1711,Zug,11,SO,7777,Andere Gemeinden,10
+9,ZG,1711,Zug,12,BS,2701,Basel,37
+9,ZG,1711,Zug,13,BL,2773,Reinach (BL),8
+9,ZG,1711,Zug,13,BL,7777,Andere Gemeinden,22
+9,ZG,1711,Zug,14,SH,2937,Neuhausen am Rheinfall,6
+9,ZG,1711,Zug,14,SH,2939,Schaffhausen,11
+9,ZG,1711,Zug,17,SG,3203,St. Gallen,8
+9,ZG,1711,Zug,17,SG,3338,Schmerikon,5
+9,ZG,1711,Zug,17,SG,3340,Rapperswil-Jona,14
+9,ZG,1711,Zug,17,SG,7777,Andere Gemeinden,26
+9,ZG,1711,Zug,18,GR,7777,Andere Gemeinden,7
+9,ZG,1711,Zug,19,AG,4001,Aarau,17
+9,ZG,1711,Zug,19,AG,4012,Suhr,5
+9,ZG,1711,Zug,19,AG,4021,Baden,40
+9,ZG,1711,Zug,19,AG,4040,Spreitenbach,7
+9,ZG,1711,Zug,19,AG,4045,Wettingen,10
+9,ZG,1711,Zug,19,AG,4071,Jonen,11
+9,ZG,1711,Zug,19,AG,4080,Villmergen,7
+9,ZG,1711,Zug,19,AG,4082,Wohlen (AG),5
+9,ZG,1711,Zug,19,AG,4123,Windisch,6
+9,ZG,1711,Zug,19,AG,4234,Merenschwand,6
+9,ZG,1711,Zug,19,AG,4236,Muri (AG),35
+9,ZG,1711,Zug,19,AG,4239,Sins,20
+9,ZG,1711,Zug,19,AG,4252,Kaiseraugst,14
+9,ZG,1711,Zug,19,AG,7777,Andere Gemeinden,110
+9,ZG,1711,Zug,20,TG,4566,Frauenfeld,5
+9,ZG,1711,Zug,20,TG,7777,Andere Gemeinden,14
+9,ZG,1711,Zug,21,TI,7777,Andere Gemeinden,13
+9,ZG,1711,Zug,24,NE,7777,Andere Gemeinden,6
+9,ZG,1711,Zug,77,ZZ,7777,Andere Gemeinden,13
+1,ZH,1,Aeugst am Albis,9,ZG,1701,Baar,46
+1,ZH,2,Affoltern am Albis,9,ZG,1701,Baar,152
+1,ZH,3,Bonstetten,9,ZG,1701,Baar,24
+1,ZH,4,Hausen am Albis,9,ZG,1701,Baar,166
+1,ZH,5,Hedingen,9,ZG,1701,Baar,26
+1,ZH,6,Kappel am Albis,9,ZG,1701,Baar,64
+1,ZH,7,Knonau,9,ZG,1701,Baar,72
+1,ZH,8,Maschwanden,9,ZG,1701,Baar,18
+1,ZH,9,Mettmenstetten,9,ZG,1701,Baar,122
+1,ZH,10,Obfelden,9,ZG,1701,Baar,64
+1,ZH,11,Ottenbach,9,ZG,1701,Baar,39
+1,ZH,12,Rifferswil,9,ZG,1701,Baar,20
+1,ZH,13,Stallikon,9,ZG,1701,Baar,15
+1,ZH,14,Wettswil am Albis,9,ZG,1701,Baar,32
+1,ZH,52,Bassersdorf,9,ZG,1701,Baar,9
+1,ZH,53,Bülach,9,ZG,1701,Baar,15
+1,ZH,54,Dietlikon,9,ZG,1701,Baar,7
+1,ZH,56,Embrach,9,ZG,1701,Baar,5
+1,ZH,62,Kloten,9,ZG,1701,Baar,20
+1,ZH,64,Nürensdorf,9,ZG,1701,Baar,6
+1,ZH,66,Opfikon,9,ZG,1701,Baar,16
+1,ZH,67,Rafz,9,ZG,1701,Baar,5
+1,ZH,69,Wallisellen,9,ZG,1701,Baar,17
+1,ZH,72,Winkel,9,ZG,1701,Baar,6
+1,ZH,94,Otelfingen,9,ZG,1701,Baar,6
+1,ZH,96,Regensdorf,9,ZG,1701,Baar,28
+1,ZH,97,Rümlang,9,ZG,1701,Baar,11
+1,ZH,112,Bubikon,9,ZG,1701,Baar,7
+1,ZH,115,Gossau (ZH),9,ZG,1701,Baar,7
+1,ZH,117,Hinwil,9,ZG,1701,Baar,5
+1,ZH,118,Rüti (ZH),9,ZG,1701,Baar,8
+1,ZH,120,Wald (ZH),9,ZG,1701,Baar,9
+1,ZH,121,Wetzikon (ZH),9,ZG,1701,Baar,18
+1,ZH,131,Adliswil,9,ZG,1701,Baar,68
+1,ZH,132,Hirzel,9,ZG,1701,Baar,37
+1,ZH,133,Horgen,9,ZG,1701,Baar,170
+1,ZH,134,Hütten,9,ZG,1701,Baar,10
+1,ZH,135,Kilchberg (ZH),9,ZG,1701,Baar,42
+1,ZH,136,Langnau am Albis,9,ZG,1701,Baar,38
+1,ZH,137,Oberrieden,9,ZG,1701,Baar,43
+1,ZH,138,Richterswil,9,ZG,1701,Baar,76
+1,ZH,139,Rüschlikon,9,ZG,1701,Baar,27
+1,ZH,140,Schönenberg (ZH),9,ZG,1701,Baar,14
+1,ZH,141,Thalwil,9,ZG,1701,Baar,183
+1,ZH,142,Wädenswil,9,ZG,1701,Baar,111
+1,ZH,151,Erlenbach (ZH),9,ZG,1701,Baar,14
+1,ZH,152,Herrliberg,9,ZG,1701,Baar,12
+1,ZH,153,Hombrechtikon,9,ZG,1701,Baar,8
+1,ZH,154,Küsnacht (ZH),9,ZG,1701,Baar,23
+1,ZH,155,Männedorf,9,ZG,1701,Baar,13
+1,ZH,156,Meilen,9,ZG,1701,Baar,26
+1,ZH,158,Stäfa,9,ZG,1701,Baar,19
+1,ZH,159,Uetikon am See,9,ZG,1701,Baar,7
+1,ZH,160,Zumikon,9,ZG,1701,Baar,6
+1,ZH,161,Zollikon,9,ZG,1701,Baar,16
+1,ZH,172,Fehraltorf,9,ZG,1701,Baar,7
+1,ZH,174,Illnau-Effretikon,9,ZG,1701,Baar,12
+1,ZH,191,Dübendorf,9,ZG,1701,Baar,30
+1,ZH,192,Egg,9,ZG,1701,Baar,8
+1,ZH,195,Maur,9,ZG,1701,Baar,5
+1,ZH,197,Schwerzenbach,9,ZG,1701,Baar,6
+1,ZH,198,Uster,9,ZG,1701,Baar,24
+1,ZH,199,Volketswil,9,ZG,1701,Baar,11
+1,ZH,200,Wangen-Brüttisellen,9,ZG,1701,Baar,11
+1,ZH,223,Neftenbach,9,ZG,1701,Baar,5
+1,ZH,230,Winterthur,9,ZG,1701,Baar,48
+1,ZH,241,Aesch (ZH),9,ZG,1701,Baar,7
+1,ZH,242,Birmensdorf (ZH),9,ZG,1701,Baar,21
+1,ZH,243,Dietikon,9,ZG,1701,Baar,41
+1,ZH,244,Geroldswil,9,ZG,1701,Baar,7
+1,ZH,245,Oberengstringen,9,ZG,1701,Baar,9
+1,ZH,247,Schlieren,9,ZG,1701,Baar,18
+1,ZH,248,Uitikon,9,ZG,1701,Baar,10
+1,ZH,249,Unterengstringen,9,ZG,1701,Baar,11
+1,ZH,250,Urdorf,9,ZG,1701,Baar,23
+1,ZH,261,Zürich,9,ZG,1701,Baar,799
+1,ZH,7777,Andere Gemeinden,9,ZG,1701,Baar,125
+2,BE,306,Lyss,9,ZG,1701,Baar,6
+2,BE,329,Langenthal,9,ZG,1701,Baar,8
+2,BE,351,Bern,9,ZG,1701,Baar,42
+2,BE,355,Köniz,9,ZG,1701,Baar,22
+2,BE,356,Muri bei Bern,9,ZG,1701,Baar,6
+2,BE,362,Ittigen,9,ZG,1701,Baar,8
+2,BE,371,Biel/Bienne,9,ZG,1701,Baar,14
+2,BE,404,Burgdorf,9,ZG,1701,Baar,8
+2,BE,670,Neuenegg,9,ZG,1701,Baar,6
+2,BE,942,Thun,9,ZG,1701,Baar,14
+2,BE,7777,Andere Gemeinden,9,ZG,1701,Baar,160
+3,LU,1023,Ballwil,9,ZG,1701,Baar,28
+3,LU,1024,Emmen,9,ZG,1701,Baar,179
+3,LU,1026,Eschenbach (LU),9,ZG,1701,Baar,46
+3,LU,1030,Hitzkirch,9,ZG,1701,Baar,29
+3,LU,1031,Hochdorf,9,ZG,1701,Baar,66
+3,LU,1032,Hohenrain,9,ZG,1701,Baar,13
+3,LU,1033,Inwil,9,ZG,1701,Baar,35
+3,LU,1037,Rain,9,ZG,1701,Baar,15
+3,LU,1039,Römerswil,9,ZG,1701,Baar,9
+3,LU,1040,Rothenburg,9,ZG,1701,Baar,54
+3,LU,1051,Adligenswil,9,ZG,1701,Baar,56
+3,LU,1052,Buchrain,9,ZG,1701,Baar,73
+3,LU,1053,Dierikon,9,ZG,1701,Baar,22
+3,LU,1054,Ebikon,9,ZG,1701,Baar,133
+3,LU,1055,Gisikon,9,ZG,1701,Baar,40
+3,LU,1056,Greppen,9,ZG,1701,Baar,19
+3,LU,1057,Honau,9,ZG,1701,Baar,10
+3,LU,1058,Horw,9,ZG,1701,Baar,81
+3,LU,1059,Kriens,9,ZG,1701,Baar,155
+3,LU,1061,Luzern,9,ZG,1701,Baar,662
+3,LU,1062,Malters,9,ZG,1701,Baar,32
+3,LU,1063,Meggen,9,ZG,1701,Baar,72
+3,LU,1064,Meierskappel,9,ZG,1701,Baar,57
+3,LU,1065,Root,9,ZG,1701,Baar,96
+3,LU,1066,Schwarzenberg,9,ZG,1701,Baar,9
+3,LU,1067,Udligenswil,9,ZG,1701,Baar,38
+3,LU,1068,Vitznau,9,ZG,1701,Baar,10
+3,LU,1069,Weggis,9,ZG,1701,Baar,57
+3,LU,1081,Beromünster,9,ZG,1701,Baar,15
+3,LU,1083,Buttisholz,9,ZG,1701,Baar,9
+3,LU,1085,Geuensee,9,ZG,1701,Baar,10
+3,LU,1088,Hildisrieden,9,ZG,1701,Baar,18
+3,LU,1089,Knutwil,9,ZG,1701,Baar,5
+3,LU,1093,Neuenkirch,9,ZG,1701,Baar,29
+3,LU,1094,Nottwil,9,ZG,1701,Baar,12
+3,LU,1095,Oberkirch,9,ZG,1701,Baar,15
+3,LU,1097,Rickenbach (LU),9,ZG,1701,Baar,6
+3,LU,1098,Ruswil,9,ZG,1701,Baar,19
+3,LU,1099,Schenkon,9,ZG,1701,Baar,15
+3,LU,1102,Sempach,9,ZG,1701,Baar,22
+3,LU,1103,Sursee,9,ZG,1701,Baar,25
+3,LU,1107,Wolhusen,9,ZG,1701,Baar,7
+3,LU,1125,Dagmersellen,9,ZG,1701,Baar,12
+3,LU,1128,Ettiswil,9,ZG,1701,Baar,7
+3,LU,1136,Menznau,9,ZG,1701,Baar,5
+3,LU,1140,Reiden,9,ZG,1701,Baar,7
+3,LU,1151,Willisau,9,ZG,1701,Baar,6
+3,LU,7777,Andere Gemeinden,9,ZG,1701,Baar,72
+4,UR,1201,Altdorf (UR),9,ZG,1701,Baar,16
+4,UR,1202,Andermatt,9,ZG,1701,Baar,5
+4,UR,1205,Bürglen (UR),9,ZG,1701,Baar,7
+4,UR,1206,Erstfeld,9,ZG,1701,Baar,10
+4,UR,1207,Flüelen,9,ZG,1701,Baar,5
+4,UR,1213,Schattdorf,9,ZG,1701,Baar,10
+4,UR,1214,Seedorf (UR),9,ZG,1701,Baar,8
+4,UR,1216,Silenen,9,ZG,1701,Baar,5
+4,UR,7777,Andere Gemeinden,9,ZG,1701,Baar,14
+5,SZ,1301,Einsiedeln,9,ZG,1701,Baar,75
+5,SZ,1311,Gersau,9,ZG,1701,Baar,20
+5,SZ,1321,Feusisberg,9,ZG,1701,Baar,24
+5,SZ,1322,Freienbach,9,ZG,1701,Baar,72
+5,SZ,1323,Wollerau,9,ZG,1701,Baar,48
+5,SZ,1331,Küssnacht (SZ),9,ZG,1701,Baar,229
+5,SZ,1341,Altendorf,9,ZG,1701,Baar,25
+5,SZ,1342,Galgenen,9,ZG,1701,Baar,17
+5,SZ,1344,Lachen,9,ZG,1701,Baar,32
+5,SZ,1345,Reichenburg,9,ZG,1701,Baar,8
+5,SZ,1346,Schübelbach,9,ZG,1701,Baar,24
+5,SZ,1347,Tuggen,9,ZG,1701,Baar,9
+5,SZ,1349,Wangen (SZ),9,ZG,1701,Baar,13
+5,SZ,1362,Arth,9,ZG,1701,Baar,254
+5,SZ,1363,Illgau,9,ZG,1701,Baar,6
+5,SZ,1364,Ingenbohl,9,ZG,1701,Baar,80
+5,SZ,1365,Lauerz,9,ZG,1701,Baar,20
+5,SZ,1367,Muotathal,9,ZG,1701,Baar,10
+5,SZ,1370,Rothenthurm,9,ZG,1701,Baar,15
+5,SZ,1371,Sattel,9,ZG,1701,Baar,60
+5,SZ,1372,Schwyz,9,ZG,1701,Baar,109
+5,SZ,1373,Steinen,9,ZG,1701,Baar,41
+5,SZ,1374,Steinerberg,9,ZG,1701,Baar,12
+5,SZ,7777,Andere Gemeinden,9,ZG,1701,Baar,14
+6,OW,1401,Alpnach,9,ZG,1701,Baar,15
+6,OW,1402,Engelberg,9,ZG,1701,Baar,10
+6,OW,1403,Giswil,9,ZG,1701,Baar,6
+6,OW,1404,Kerns,9,ZG,1701,Baar,7
+6,OW,1406,Sachseln,9,ZG,1701,Baar,14
+6,OW,1407,Sarnen,9,ZG,1701,Baar,20
+7,NW,1501,Beckenried,9,ZG,1701,Baar,14
+7,NW,1502,Buochs,9,ZG,1701,Baar,10
+7,NW,1503,Dallenwil,9,ZG,1701,Baar,9
+7,NW,1505,Ennetbürgen,9,ZG,1701,Baar,19
+7,NW,1506,Ennetmoos,9,ZG,1701,Baar,5
+7,NW,1507,Hergiswil (NW),9,ZG,1701,Baar,27
+7,NW,1508,Oberdorf (NW),9,ZG,1701,Baar,7
+7,NW,1509,Stans,9,ZG,1701,Baar,18
+7,NW,1510,Stansstad,9,ZG,1701,Baar,24
+7,NW,1511,Wolfenschiessen,9,ZG,1701,Baar,5
+8,GL,1630,Glarus Nord,9,ZG,1701,Baar,11
+8,GL,1632,Glarus,9,ZG,1701,Baar,7
+9,ZG,1701,Baar,9,ZG,1701,Baar,4323
+9,ZG,1702,Cham,9,ZG,1701,Baar,761
+9,ZG,1703,Hünenberg,9,ZG,1701,Baar,348
+9,ZG,1704,Menzingen,9,ZG,1701,Baar,267
+9,ZG,1705,Neuheim,9,ZG,1701,Baar,213
+9,ZG,1706,Oberägeri,9,ZG,1701,Baar,311
+9,ZG,1707,Risch,9,ZG,1701,Baar,422
+9,ZG,1708,Steinhausen,9,ZG,1701,Baar,717
+9,ZG,1709,Unterägeri,9,ZG,1701,Baar,487
+9,ZG,1710,Walchwil,9,ZG,1701,Baar,151
+9,ZG,1711,Zug,9,ZG,1701,Baar,1950
+10,FR,2183,Corminboeuf,9,ZG,1701,Baar,5
+10,FR,2196,Fribourg,9,ZG,1701,Baar,6
+10,FR,7777,Andere Gemeinden,9,ZG,1701,Baar,44
+11,SO,2543,Bettlach,9,ZG,1701,Baar,5
+11,SO,2553,Oberdorf (SO),9,ZG,1701,Baar,5
+11,SO,2573,Dulliken,9,ZG,1701,Baar,5
+11,SO,2581,Olten,9,ZG,1701,Baar,10
+11,SO,2601,Solothurn,9,ZG,1701,Baar,5
+11,SO,7777,Andere Gemeinden,9,ZG,1701,Baar,75
+12,BS,2701,Basel,9,ZG,1701,Baar,67
+12,BS,2703,Riehen,9,ZG,1701,Baar,7
+13,BL,2762,Allschwil,9,ZG,1701,Baar,5
+13,BL,2766,Birsfelden,9,ZG,1701,Baar,5
+13,BL,2770,Muttenz,9,ZG,1701,Baar,7
+13,BL,2771,Oberwil (BL),9,ZG,1701,Baar,6
+13,BL,2829,Liestal,9,ZG,1701,Baar,5
+13,BL,2831,Pratteln,9,ZG,1701,Baar,6
+13,BL,7777,Andere Gemeinden,9,ZG,1701,Baar,44
+14,SH,2937,Neuhausen am Rheinfall,9,ZG,1701,Baar,6
+14,SH,2939,Schaffhausen,9,ZG,1701,Baar,16
+14,SH,7777,Andere Gemeinden,9,ZG,1701,Baar,14
+15,AR,3001,Herisau,9,ZG,1701,Baar,5
+15,AR,7777,Andere Gemeinden,9,ZG,1701,Baar,10
+17,SG,3203,St. Gallen,9,ZG,1701,Baar,21
+17,SG,3293,Mels,9,ZG,1701,Baar,9
+17,SG,3295,Quarten,9,ZG,1701,Baar,8
+17,SG,3312,Benken (SG),9,ZG,1701,Baar,7
+17,SG,3315,Schänis,9,ZG,1701,Baar,9
+17,SG,3339,Uznach,9,ZG,1701,Baar,12
+17,SG,3340,Rapperswil-Jona,9,ZG,1701,Baar,33
+17,SG,3341,Gommiswald,9,ZG,1701,Baar,7
+17,SG,3342,Eschenbach (SG),9,ZG,1701,Baar,7
+17,SG,3426,Zuzwil (SG),9,ZG,1701,Baar,5
+17,SG,3427,Wil (SG),9,ZG,1701,Baar,14
+17,SG,7777,Andere Gemeinden,9,ZG,1701,Baar,55
+18,GR,3851,Davos,9,ZG,1701,Baar,9
+18,GR,3901,Chur,9,ZG,1701,Baar,7
+18,GR,7777,Andere Gemeinden,9,ZG,1701,Baar,34
+19,AG,4001,Aarau,9,ZG,1701,Baar,10
+19,AG,4005,Erlinsbach (AG),9,ZG,1701,Baar,5
+19,AG,4006,Gränichen,9,ZG,1701,Baar,5
+19,AG,4021,Baden,9,ZG,1701,Baar,21
+19,AG,4023,Bergdietikon,9,ZG,1701,Baar,9
+19,AG,4030,Killwangen,9,ZG,1701,Baar,5
+19,AG,4033,Mellingen,9,ZG,1701,Baar,10
+19,AG,4034,Neuenhof,9,ZG,1701,Baar,8
+19,AG,4037,Oberrohrdorf,9,ZG,1701,Baar,9
+19,AG,4038,Obersiggenthal,9,ZG,1701,Baar,5
+19,AG,4040,Spreitenbach,9,ZG,1701,Baar,11
+19,AG,4041,Stetten (AG),9,ZG,1701,Baar,6
+19,AG,4045,Wettingen,9,ZG,1701,Baar,23
+19,AG,4047,Würenlingen,9,ZG,1701,Baar,9
+19,AG,4048,Würenlos,9,ZG,1701,Baar,9
+19,AG,4061,Arni (AG),9,ZG,1701,Baar,10
+19,AG,4062,Berikon,9,ZG,1701,Baar,15
+19,AG,4063,Bremgarten (AG),9,ZG,1701,Baar,26
+19,AG,4064,Büttikon,9,ZG,1701,Baar,5
+19,AG,4065,Dottikon,9,ZG,1701,Baar,7
+19,AG,4071,Jonen,9,ZG,1701,Baar,17
+19,AG,4072,Niederwil (AG),9,ZG,1701,Baar,5
+19,AG,4073,Oberlunkhofen,9,ZG,1701,Baar,20
+19,AG,4074,Oberwil-Lieli,9,ZG,1701,Baar,5
+19,AG,4075,Rudolfstetten-Friedlisberg,9,ZG,1701,Baar,11
+19,AG,4079,Unterlunkhofen,9,ZG,1701,Baar,10
+19,AG,4080,Villmergen,9,ZG,1701,Baar,17
+19,AG,4081,Widen,9,ZG,1701,Baar,8
+19,AG,4082,Wohlen (AG),9,ZG,1701,Baar,38
+19,AG,4083,Zufikon,9,ZG,1701,Baar,12
+19,AG,4084,Islisberg,9,ZG,1701,Baar,5
+19,AG,4131,Beinwil am See,9,ZG,1701,Baar,5
+19,AG,4139,Menziken,9,ZG,1701,Baar,7
+19,AG,4141,Reinach (AG),9,ZG,1701,Baar,9
+19,AG,4163,Frick,9,ZG,1701,Baar,5
+19,AG,4165,Gipf-Oberfrick,9,ZG,1701,Baar,5
+19,AG,4170,Laufenburg,9,ZG,1701,Baar,6
+19,AG,4196,Fahrwangen,9,ZG,1701,Baar,9
+19,AG,4201,Lenzburg,9,ZG,1701,Baar,10
+19,AG,4208,Seengen,9,ZG,1701,Baar,11
+19,AG,4221,Abtwil,9,ZG,1701,Baar,33
+19,AG,4222,Aristau,9,ZG,1701,Baar,27
+19,AG,4223,Auw,9,ZG,1701,Baar,49
+19,AG,4224,Beinwil (Freiamt),9,ZG,1701,Baar,27
+19,AG,4228,Boswil,9,ZG,1701,Baar,13
+19,AG,4229,Bünzen,9,ZG,1701,Baar,11
+19,AG,4230,Buttwil,9,ZG,1701,Baar,11
+19,AG,4231,Dietwil,9,ZG,1701,Baar,39
+19,AG,4234,Merenschwand,9,ZG,1701,Baar,45
+19,AG,4235,Mühlau,9,ZG,1701,Baar,31
+19,AG,4236,Muri (AG),9,ZG,1701,Baar,71
+19,AG,4237,Oberrüti,9,ZG,1701,Baar,53
+19,AG,4238,Rottenschwil,9,ZG,1701,Baar,6
+19,AG,4239,Sins,9,ZG,1701,Baar,143
+19,AG,4240,Waltenschwil,9,ZG,1701,Baar,14
+19,AG,4258,Rheinfelden,9,ZG,1701,Baar,10
+19,AG,4274,Brittnau,9,ZG,1701,Baar,9
+19,AG,4280,Oftringen,9,ZG,1701,Baar,15
+19,AG,4282,Rothrist,9,ZG,1701,Baar,6
+19,AG,4289,Zofingen,9,ZG,1701,Baar,16
+19,AG,7777,Andere Gemeinden,9,ZG,1701,Baar,177
+20,TG,4401,Arbon,9,ZG,1701,Baar,5
+20,TG,4551,Aadorf,9,ZG,1701,Baar,5
+20,TG,4566,Frauenfeld,9,ZG,1701,Baar,10
+20,TG,4746,Münchwilen (TG),9,ZG,1701,Baar,6
+20,TG,7777,Andere Gemeinden,9,ZG,1701,Baar,57
+21,TI,7777,Andere Gemeinden,9,ZG,1701,Baar,41
+24,NE,6416,Milvignes,9,ZG,1701,Baar,5
+24,NE,7777,Andere Gemeinden,9,ZG,1701,Baar,18
+26,JU,7777,Andere Gemeinden,9,ZG,1701,Baar,10
+77,ZZ,7777,Andere Gemeinden,9,ZG,1701,Baar,12
+1,ZH,1,Aeugst am Albis,9,ZG,1702,Cham,7
+1,ZH,2,Affoltern am Albis,9,ZG,1702,Cham,83
+1,ZH,3,Bonstetten,9,ZG,1702,Cham,15
+1,ZH,4,Hausen am Albis,9,ZG,1702,Cham,38
+1,ZH,5,Hedingen,9,ZG,1702,Cham,15
+1,ZH,6,Kappel am Albis,9,ZG,1702,Cham,10
+1,ZH,7,Knonau,9,ZG,1702,Cham,52
+1,ZH,8,Maschwanden,9,ZG,1702,Cham,9
+1,ZH,9,Mettmenstetten,9,ZG,1702,Cham,65
+1,ZH,10,Obfelden,9,ZG,1702,Cham,44
+1,ZH,11,Ottenbach,9,ZG,1702,Cham,17
+1,ZH,14,Wettswil am Albis,9,ZG,1702,Cham,6
+1,ZH,66,Opfikon,9,ZG,1702,Cham,10
+1,ZH,69,Wallisellen,9,ZG,1702,Cham,7
+1,ZH,96,Regensdorf,9,ZG,1702,Cham,7
+1,ZH,131,Adliswil,9,ZG,1702,Cham,23
+1,ZH,132,Hirzel,9,ZG,1702,Cham,9
+1,ZH,133,Horgen,9,ZG,1702,Cham,21
+1,ZH,135,Kilchberg (ZH),9,ZG,1702,Cham,6
+1,ZH,136,Langnau am Albis,9,ZG,1702,Cham,7
+1,ZH,137,Oberrieden,9,ZG,1702,Cham,7
+1,ZH,138,Richterswil,9,ZG,1702,Cham,12
+1,ZH,141,Thalwil,9,ZG,1702,Cham,21
+1,ZH,142,Wädenswil,9,ZG,1702,Cham,17
+1,ZH,152,Herrliberg,9,ZG,1702,Cham,6
+1,ZH,154,Küsnacht (ZH),9,ZG,1702,Cham,8
+1,ZH,161,Zollikon,9,ZG,1702,Cham,8
+1,ZH,174,Illnau-Effretikon,9,ZG,1702,Cham,5
+1,ZH,176,Lindau,9,ZG,1702,Cham,6
+1,ZH,191,Dübendorf,9,ZG,1702,Cham,13
+1,ZH,198,Uster,9,ZG,1702,Cham,7
+1,ZH,199,Volketswil,9,ZG,1702,Cham,7
+1,ZH,230,Winterthur,9,ZG,1702,Cham,23
+1,ZH,242,Birmensdorf (ZH),9,ZG,1702,Cham,8
+1,ZH,243,Dietikon,9,ZG,1702,Cham,16
+1,ZH,247,Schlieren,9,ZG,1702,Cham,19
+1,ZH,250,Urdorf,9,ZG,1702,Cham,10
+1,ZH,261,Zürich,9,ZG,1702,Cham,199
+1,ZH,7777,Andere Gemeinden,9,ZG,1702,Cham,158
+2,BE,329,Langenthal,9,ZG,1702,Cham,5
+2,BE,351,Bern,9,ZG,1702,Cham,14
+2,BE,7777,Andere Gemeinden,9,ZG,1702,Cham,75
+3,LU,1023,Ballwil,9,ZG,1702,Cham,22
+3,LU,1024,Emmen,9,ZG,1702,Cham,94
+3,LU,1026,Eschenbach (LU),9,ZG,1702,Cham,15
+3,LU,1030,Hitzkirch,9,ZG,1702,Cham,22
+3,LU,1031,Hochdorf,9,ZG,1702,Cham,49
+3,LU,1032,Hohenrain,9,ZG,1702,Cham,21
+3,LU,1033,Inwil,9,ZG,1702,Cham,37
+3,LU,1037,Rain,9,ZG,1702,Cham,11
+3,LU,1039,Römerswil,9,ZG,1702,Cham,13
+3,LU,1040,Rothenburg,9,ZG,1702,Cham,15
+3,LU,1041,Schongau,9,ZG,1702,Cham,5
+3,LU,1051,Adligenswil,9,ZG,1702,Cham,34
+3,LU,1052,Buchrain,9,ZG,1702,Cham,40
+3,LU,1053,Dierikon,9,ZG,1702,Cham,7
+3,LU,1054,Ebikon,9,ZG,1702,Cham,67
+3,LU,1055,Gisikon,9,ZG,1702,Cham,21
+3,LU,1056,Greppen,9,ZG,1702,Cham,10
+3,LU,1057,Honau,9,ZG,1702,Cham,7
+3,LU,1058,Horw,9,ZG,1702,Cham,42
+3,LU,1059,Kriens,9,ZG,1702,Cham,67
+3,LU,1061,Luzern,9,ZG,1702,Cham,268
+3,LU,1062,Malters,9,ZG,1702,Cham,15
+3,LU,1063,Meggen,9,ZG,1702,Cham,32
+3,LU,1064,Meierskappel,9,ZG,1702,Cham,30
+3,LU,1065,Root,9,ZG,1702,Cham,72
+3,LU,1067,Udligenswil,9,ZG,1702,Cham,14
+3,LU,1068,Vitznau,9,ZG,1702,Cham,6
+3,LU,1069,Weggis,9,ZG,1702,Cham,25
+3,LU,1081,Beromünster,9,ZG,1702,Cham,17
+3,LU,1084,Eich,9,ZG,1702,Cham,8
+3,LU,1093,Neuenkirch,9,ZG,1702,Cham,19
+3,LU,1094,Nottwil,9,ZG,1702,Cham,5
+3,LU,1098,Ruswil,9,ZG,1702,Cham,8
+3,LU,1099,Schenkon,9,ZG,1702,Cham,7
+3,LU,1102,Sempach,9,ZG,1702,Cham,11
+3,LU,1103,Sursee,9,ZG,1702,Cham,20
+3,LU,1104,Triengen,9,ZG,1702,Cham,6
+3,LU,1107,Wolhusen,9,ZG,1702,Cham,5
+3,LU,1125,Dagmersellen,9,ZG,1702,Cham,6
+3,LU,7777,Andere Gemeinden,9,ZG,1702,Cham,59
+4,UR,1201,Altdorf (UR),9,ZG,1702,Cham,15
+4,UR,1205,Bürglen (UR),9,ZG,1702,Cham,5
+4,UR,1206,Erstfeld,9,ZG,1702,Cham,7
+4,UR,1207,Flüelen,9,ZG,1702,Cham,9
+4,UR,1213,Schattdorf,9,ZG,1702,Cham,7
+5,SZ,1301,Einsiedeln,9,ZG,1702,Cham,25
+5,SZ,1311,Gersau,9,ZG,1702,Cham,8
+5,SZ,1321,Feusisberg,9,ZG,1702,Cham,10
+5,SZ,1322,Freienbach,9,ZG,1702,Cham,13
+5,SZ,1323,Wollerau,9,ZG,1702,Cham,14
+5,SZ,1331,Küssnacht (SZ),9,ZG,1702,Cham,148
+5,SZ,1341,Altendorf,9,ZG,1702,Cham,5
+5,SZ,1362,Arth,9,ZG,1702,Cham,129
+5,SZ,1364,Ingenbohl,9,ZG,1702,Cham,36
+5,SZ,1365,Lauerz,9,ZG,1702,Cham,12
+5,SZ,1366,Morschach,9,ZG,1702,Cham,5
+5,SZ,1367,Muotathal,9,ZG,1702,Cham,6
+5,SZ,1370,Rothenthurm,9,ZG,1702,Cham,12
+5,SZ,1371,Sattel,9,ZG,1702,Cham,10
+5,SZ,1372,Schwyz,9,ZG,1702,Cham,69
+5,SZ,1373,Steinen,9,ZG,1702,Cham,22
+5,SZ,7777,Andere Gemeinden,9,ZG,1702,Cham,24
+6,OW,1401,Alpnach,9,ZG,1702,Cham,12
+6,OW,1403,Giswil,9,ZG,1702,Cham,5
+6,OW,1404,Kerns,9,ZG,1702,Cham,11
+6,OW,1406,Sachseln,9,ZG,1702,Cham,10
+6,OW,1407,Sarnen,9,ZG,1702,Cham,16
+6,OW,7777,Andere Gemeinden,9,ZG,1702,Cham,5
+7,NW,1501,Beckenried,9,ZG,1702,Cham,8
+7,NW,1502,Buochs,9,ZG,1702,Cham,11
+7,NW,1503,Dallenwil,9,ZG,1702,Cham,8
+7,NW,1505,Ennetbürgen,9,ZG,1702,Cham,11
+7,NW,1506,Ennetmoos,9,ZG,1702,Cham,12
+7,NW,1507,Hergiswil (NW),9,ZG,1702,Cham,24
+7,NW,1508,Oberdorf (NW),9,ZG,1702,Cham,5
+7,NW,1509,Stans,9,ZG,1702,Cham,19
+7,NW,1510,Stansstad,9,ZG,1702,Cham,14
+7,NW,7777,Andere Gemeinden,9,ZG,1702,Cham,6
+8,GL,7777,Andere Gemeinden,9,ZG,1702,Cham,6
+9,ZG,1701,Baar,9,ZG,1702,Cham,367
+9,ZG,1702,Cham,9,ZG,1702,Cham,1951
+9,ZG,1703,Hünenberg,9,ZG,1702,Cham,449
+9,ZG,1704,Menzingen,9,ZG,1702,Cham,57
+9,ZG,1705,Neuheim,9,ZG,1702,Cham,25
+9,ZG,1706,Oberägeri,9,ZG,1702,Cham,60
+9,ZG,1707,Risch,9,ZG,1702,Cham,332
+9,ZG,1708,Steinhausen,9,ZG,1702,Cham,310
+9,ZG,1709,Unterägeri,9,ZG,1702,Cham,119
+9,ZG,1710,Walchwil,9,ZG,1702,Cham,49
+9,ZG,1711,Zug,9,ZG,1702,Cham,487
+10,FR,2196,Fribourg,9,ZG,1702,Cham,5
+10,FR,7777,Andere Gemeinden,9,ZG,1702,Cham,34
+11,SO,2581,Olten,9,ZG,1702,Cham,7
+11,SO,7777,Andere Gemeinden,9,ZG,1702,Cham,35
+12,BS,2701,Basel,9,ZG,1702,Cham,16
+12,BS,2703,Riehen,9,ZG,1702,Cham,5
+13,BL,7777,Andere Gemeinden,9,ZG,1702,Cham,32
+14,SH,7777,Andere Gemeinden,9,ZG,1702,Cham,14
+17,SG,3340,Rapperswil-Jona,9,ZG,1702,Cham,11
+17,SG,7777,Andere Gemeinden,9,ZG,1702,Cham,59
+18,GR,7777,Andere Gemeinden,9,ZG,1702,Cham,18
+19,AG,4001,Aarau,9,ZG,1702,Cham,7
+19,AG,4021,Baden,9,ZG,1702,Cham,5
+19,AG,4033,Mellingen,9,ZG,1702,Cham,6
+19,AG,4040,Spreitenbach,9,ZG,1702,Cham,5
+19,AG,4045,Wettingen,9,ZG,1702,Cham,12
+19,AG,4048,Würenlos,9,ZG,1702,Cham,5
+19,AG,4061,Arni (AG),9,ZG,1702,Cham,6
+19,AG,4062,Berikon,9,ZG,1702,Cham,6
+19,AG,4063,Bremgarten (AG),9,ZG,1702,Cham,7
+19,AG,4071,Jonen,9,ZG,1702,Cham,11
+19,AG,4073,Oberlunkhofen,9,ZG,1702,Cham,7
+19,AG,4076,Sarmenstorf,9,ZG,1702,Cham,9
+19,AG,4079,Unterlunkhofen,9,ZG,1702,Cham,5
+19,AG,4080,Villmergen,9,ZG,1702,Cham,11
+19,AG,4081,Widen,9,ZG,1702,Cham,6
+19,AG,4082,Wohlen (AG),9,ZG,1702,Cham,19
+19,AG,4083,Zufikon,9,ZG,1702,Cham,8
+19,AG,4084,Islisberg,9,ZG,1702,Cham,6
+19,AG,4139,Menziken,9,ZG,1702,Cham,7
+19,AG,4141,Reinach (AG),9,ZG,1702,Cham,8
+19,AG,4209,Seon,9,ZG,1702,Cham,5
+19,AG,4221,Abtwil,9,ZG,1702,Cham,34
+19,AG,4222,Aristau,9,ZG,1702,Cham,16
+19,AG,4223,Auw,9,ZG,1702,Cham,52
+19,AG,4224,Beinwil (Freiamt),9,ZG,1702,Cham,10
+19,AG,4228,Boswil,9,ZG,1702,Cham,16
+19,AG,4230,Buttwil,9,ZG,1702,Cham,7
+19,AG,4231,Dietwil,9,ZG,1702,Cham,36
+19,AG,4234,Merenschwand,9,ZG,1702,Cham,33
+19,AG,4235,Mühlau,9,ZG,1702,Cham,31
+19,AG,4236,Muri (AG),9,ZG,1702,Cham,41
+19,AG,4237,Oberrüti,9,ZG,1702,Cham,59
+19,AG,4239,Sins,9,ZG,1702,Cham,110
+19,AG,4240,Waltenschwil,9,ZG,1702,Cham,5
+19,AG,7777,Andere Gemeinden,9,ZG,1702,Cham,168
+20,TG,7777,Andere Gemeinden,9,ZG,1702,Cham,31
+21,TI,5192,Lugano,9,ZG,1702,Cham,8
+21,TI,7777,Andere Gemeinden,9,ZG,1702,Cham,20
+22,VD,7777,Andere Gemeinden,9,ZG,1702,Cham,11
+24,NE,7777,Andere Gemeinden,9,ZG,1702,Cham,8
+77,ZZ,7777,Andere Gemeinden,9,ZG,1702,Cham,12
+1,ZH,2,Affoltern am Albis,9,ZG,1703,Hünenberg,30
+1,ZH,4,Hausen am Albis,9,ZG,1703,Hünenberg,8
+1,ZH,6,Kappel am Albis,9,ZG,1703,Hünenberg,6
+1,ZH,7,Knonau,9,ZG,1703,Hünenberg,21
+1,ZH,9,Mettmenstetten,9,ZG,1703,Hünenberg,23
+1,ZH,10,Obfelden,9,ZG,1703,Hünenberg,27
+1,ZH,11,Ottenbach,9,ZG,1703,Hünenberg,8
+1,ZH,12,Rifferswil,9,ZG,1703,Hünenberg,8
+1,ZH,14,Wettswil am Albis,9,ZG,1703,Hünenberg,5
+1,ZH,56,Embrach,9,ZG,1703,Hünenberg,5
+1,ZH,62,Kloten,9,ZG,1703,Hünenberg,6
+1,ZH,66,Opfikon,9,ZG,1703,Hünenberg,10
+1,ZH,90,Niederhasli,9,ZG,1703,Hünenberg,6
+1,ZH,96,Regensdorf,9,ZG,1703,Hünenberg,5
+1,ZH,131,Adliswil,9,ZG,1703,Hünenberg,8
+1,ZH,133,Horgen,9,ZG,1703,Hünenberg,20
+1,ZH,136,Langnau am Albis,9,ZG,1703,Hünenberg,6
+1,ZH,137,Oberrieden,9,ZG,1703,Hünenberg,6
+1,ZH,138,Richterswil,9,ZG,1703,Hünenberg,6
+1,ZH,141,Thalwil,9,ZG,1703,Hünenberg,14
+1,ZH,142,Wädenswil,9,ZG,1703,Hünenberg,15
+1,ZH,154,Küsnacht (ZH),9,ZG,1703,Hünenberg,5
+1,ZH,198,Uster,9,ZG,1703,Hünenberg,6
+1,ZH,230,Winterthur,9,ZG,1703,Hünenberg,10
+1,ZH,242,Birmensdorf (ZH),9,ZG,1703,Hünenberg,6
+1,ZH,243,Dietikon,9,ZG,1703,Hünenberg,12
+1,ZH,247,Schlieren,9,ZG,1703,Hünenberg,6
+1,ZH,261,Zürich,9,ZG,1703,Hünenberg,201
+1,ZH,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,144
+2,BE,329,Langenthal,9,ZG,1703,Hünenberg,5
+2,BE,351,Bern,9,ZG,1703,Hünenberg,19
+2,BE,371,Biel/Bienne,9,ZG,1703,Hünenberg,10
+2,BE,404,Burgdorf,9,ZG,1703,Hünenberg,8
+2,BE,942,Thun,9,ZG,1703,Hünenberg,6
+2,BE,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,81
+3,LU,1023,Ballwil,9,ZG,1703,Hünenberg,12
+3,LU,1024,Emmen,9,ZG,1703,Hünenberg,115
+3,LU,1026,Eschenbach (LU),9,ZG,1703,Hünenberg,22
+3,LU,1030,Hitzkirch,9,ZG,1703,Hünenberg,26
+3,LU,1031,Hochdorf,9,ZG,1703,Hünenberg,39
+3,LU,1032,Hohenrain,9,ZG,1703,Hünenberg,7
+3,LU,1033,Inwil,9,ZG,1703,Hünenberg,13
+3,LU,1037,Rain,9,ZG,1703,Hünenberg,12
+3,LU,1040,Rothenburg,9,ZG,1703,Hünenberg,19
+3,LU,1041,Schongau,9,ZG,1703,Hünenberg,7
+3,LU,1051,Adligenswil,9,ZG,1703,Hünenberg,16
+3,LU,1052,Buchrain,9,ZG,1703,Hünenberg,29
+3,LU,1053,Dierikon,9,ZG,1703,Hünenberg,13
+3,LU,1054,Ebikon,9,ZG,1703,Hünenberg,63
+3,LU,1055,Gisikon,9,ZG,1703,Hünenberg,22
+3,LU,1056,Greppen,9,ZG,1703,Hünenberg,15
+3,LU,1057,Honau,9,ZG,1703,Hünenberg,9
+3,LU,1058,Horw,9,ZG,1703,Hünenberg,29
+3,LU,1059,Kriens,9,ZG,1703,Hünenberg,55
+3,LU,1061,Luzern,9,ZG,1703,Hünenberg,249
+3,LU,1062,Malters,9,ZG,1703,Hünenberg,11
+3,LU,1063,Meggen,9,ZG,1703,Hünenberg,19
+3,LU,1064,Meierskappel,9,ZG,1703,Hünenberg,36
+3,LU,1065,Root,9,ZG,1703,Hünenberg,46
+3,LU,1067,Udligenswil,9,ZG,1703,Hünenberg,21
+3,LU,1069,Weggis,9,ZG,1703,Hünenberg,29
+3,LU,1081,Beromünster,9,ZG,1703,Hünenberg,12
+3,LU,1088,Hildisrieden,9,ZG,1703,Hünenberg,5
+3,LU,1089,Knutwil,9,ZG,1703,Hünenberg,5
+3,LU,1093,Neuenkirch,9,ZG,1703,Hünenberg,8
+3,LU,1094,Nottwil,9,ZG,1703,Hünenberg,5
+3,LU,1098,Ruswil,9,ZG,1703,Hünenberg,12
+3,LU,1099,Schenkon,9,ZG,1703,Hünenberg,5
+3,LU,1102,Sempach,9,ZG,1703,Hünenberg,6
+3,LU,1103,Sursee,9,ZG,1703,Hünenberg,12
+3,LU,1104,Triengen,9,ZG,1703,Hünenberg,9
+3,LU,1140,Reiden,9,ZG,1703,Hünenberg,5
+3,LU,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,70
+4,UR,1201,Altdorf (UR),9,ZG,1703,Hünenberg,12
+4,UR,1207,Flüelen,9,ZG,1703,Hünenberg,5
+4,UR,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,17
+5,SZ,1301,Einsiedeln,9,ZG,1703,Hünenberg,5
+5,SZ,1311,Gersau,9,ZG,1703,Hünenberg,6
+5,SZ,1321,Feusisberg,9,ZG,1703,Hünenberg,5
+5,SZ,1322,Freienbach,9,ZG,1703,Hünenberg,7
+5,SZ,1331,Küssnacht (SZ),9,ZG,1703,Hünenberg,99
+5,SZ,1362,Arth,9,ZG,1703,Hünenberg,105
+5,SZ,1364,Ingenbohl,9,ZG,1703,Hünenberg,26
+5,SZ,1366,Morschach,9,ZG,1703,Hünenberg,9
+5,SZ,1370,Rothenthurm,9,ZG,1703,Hünenberg,5
+5,SZ,1371,Sattel,9,ZG,1703,Hünenberg,6
+5,SZ,1372,Schwyz,9,ZG,1703,Hünenberg,45
+5,SZ,1373,Steinen,9,ZG,1703,Hünenberg,10
+5,SZ,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,30
+6,OW,1401,Alpnach,9,ZG,1703,Hünenberg,9
+6,OW,1404,Kerns,9,ZG,1703,Hünenberg,6
+6,OW,1407,Sarnen,9,ZG,1703,Hünenberg,6
+6,OW,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,10
+7,NW,1507,Hergiswil (NW),9,ZG,1703,Hünenberg,12
+7,NW,1508,Oberdorf (NW),9,ZG,1703,Hünenberg,7
+7,NW,1509,Stans,9,ZG,1703,Hünenberg,9
+7,NW,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,16
+8,GL,1630,Glarus Nord,9,ZG,1703,Hünenberg,7
+9,ZG,1701,Baar,9,ZG,1703,Hünenberg,236
+9,ZG,1702,Cham,9,ZG,1703,Hünenberg,384
+9,ZG,1703,Hünenberg,9,ZG,1703,Hünenberg,996
+9,ZG,1704,Menzingen,9,ZG,1703,Hünenberg,35
+9,ZG,1705,Neuheim,9,ZG,1703,Hünenberg,22
+9,ZG,1706,Oberägeri,9,ZG,1703,Hünenberg,26
+9,ZG,1707,Risch,9,ZG,1703,Hünenberg,239
+9,ZG,1708,Steinhausen,9,ZG,1703,Hünenberg,109
+9,ZG,1709,Unterägeri,9,ZG,1703,Hünenberg,44
+9,ZG,1710,Walchwil,9,ZG,1703,Hünenberg,32
+9,ZG,1711,Zug,9,ZG,1703,Hünenberg,268
+10,FR,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,21
+11,SO,2407,Oensingen,9,ZG,1703,Hünenberg,7
+11,SO,2500,Trimbach,9,ZG,1703,Hünenberg,5
+11,SO,2581,Olten,9,ZG,1703,Hünenberg,6
+11,SO,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,39
+12,BS,2701,Basel,9,ZG,1703,Hünenberg,10
+13,BL,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,26
+14,SH,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,5
+15,AR,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,7
+17,SG,3340,Rapperswil-Jona,9,ZG,1703,Hünenberg,5
+17,SG,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,37
+18,GR,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,22
+19,AG,4001,Aarau,9,ZG,1703,Hünenberg,5
+19,AG,4012,Suhr,9,ZG,1703,Hünenberg,8
+19,AG,4038,Obersiggenthal,9,ZG,1703,Hünenberg,5
+19,AG,4045,Wettingen,9,ZG,1703,Hünenberg,7
+19,AG,4061,Arni (AG),9,ZG,1703,Hünenberg,5
+19,AG,4062,Berikon,9,ZG,1703,Hünenberg,5
+19,AG,4063,Bremgarten (AG),9,ZG,1703,Hünenberg,7
+19,AG,4074,Oberwil-Lieli,9,ZG,1703,Hünenberg,6
+19,AG,4075,Rudolfstetten-Friedlisberg,9,ZG,1703,Hünenberg,9
+19,AG,4080,Villmergen,9,ZG,1703,Hünenberg,6
+19,AG,4082,Wohlen (AG),9,ZG,1703,Hünenberg,8
+19,AG,4095,Brugg,9,ZG,1703,Hünenberg,5
+19,AG,4131,Beinwil am See,9,ZG,1703,Hünenberg,6
+19,AG,4141,Reinach (AG),9,ZG,1703,Hünenberg,12
+19,AG,4144,Schöftland,9,ZG,1703,Hünenberg,5
+19,AG,4196,Fahrwangen,9,ZG,1703,Hünenberg,7
+19,AG,4209,Seon,9,ZG,1703,Hünenberg,6
+19,AG,4221,Abtwil,9,ZG,1703,Hünenberg,24
+19,AG,4222,Aristau,9,ZG,1703,Hünenberg,8
+19,AG,4223,Auw,9,ZG,1703,Hünenberg,35
+19,AG,4224,Beinwil (Freiamt),9,ZG,1703,Hünenberg,10
+19,AG,4228,Boswil,9,ZG,1703,Hünenberg,10
+19,AG,4229,Bünzen,9,ZG,1703,Hünenberg,5
+19,AG,4231,Dietwil,9,ZG,1703,Hünenberg,26
+19,AG,4234,Merenschwand,9,ZG,1703,Hünenberg,26
+19,AG,4235,Mühlau,9,ZG,1703,Hünenberg,17
+19,AG,4236,Muri (AG),9,ZG,1703,Hünenberg,46
+19,AG,4237,Oberrüti,9,ZG,1703,Hünenberg,42
+19,AG,4238,Rottenschwil,9,ZG,1703,Hünenberg,6
+19,AG,4239,Sins,9,ZG,1703,Hünenberg,103
+19,AG,4289,Zofingen,9,ZG,1703,Hünenberg,5
+19,AG,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,163
+20,TG,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,28
+21,TI,5002,Bellinzona,9,ZG,1703,Hünenberg,5
+21,TI,5192,Lugano,9,ZG,1703,Hünenberg,14
+21,TI,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,46
+22,VD,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,7
+77,ZZ,7777,Andere Gemeinden,9,ZG,1703,Hünenberg,9
+1,ZH,2,Affoltern am Albis,9,ZG,1704,Menzingen,8
+1,ZH,4,Hausen am Albis,9,ZG,1704,Menzingen,6
+1,ZH,6,Kappel am Albis,9,ZG,1704,Menzingen,5
+1,ZH,132,Hirzel,9,ZG,1704,Menzingen,6
+1,ZH,134,Hütten,9,ZG,1704,Menzingen,7
+1,ZH,138,Richterswil,9,ZG,1704,Menzingen,7
+1,ZH,140,Schönenberg (ZH),9,ZG,1704,Menzingen,8
+1,ZH,261,Zürich,9,ZG,1704,Menzingen,9
+1,ZH,7777,Andere Gemeinden,9,ZG,1704,Menzingen,41
+2,BE,7777,Andere Gemeinden,9,ZG,1704,Menzingen,5
+3,LU,1024,Emmen,9,ZG,1704,Menzingen,5
+3,LU,1061,Luzern,9,ZG,1704,Menzingen,18
+3,LU,7777,Andere Gemeinden,9,ZG,1704,Menzingen,20
+5,SZ,1301,Einsiedeln,9,ZG,1704,Menzingen,14
+5,SZ,1321,Feusisberg,9,ZG,1704,Menzingen,6
+5,SZ,1362,Arth,9,ZG,1704,Menzingen,6
+5,SZ,1371,Sattel,9,ZG,1704,Menzingen,6
+5,SZ,1372,Schwyz,9,ZG,1704,Menzingen,5
+5,SZ,7777,Andere Gemeinden,9,ZG,1704,Menzingen,27
+6,OW,7777,Andere Gemeinden,9,ZG,1704,Menzingen,8
+9,ZG,1701,Baar,9,ZG,1704,Menzingen,104
+9,ZG,1702,Cham,9,ZG,1704,Menzingen,28
+9,ZG,1703,Hünenberg,9,ZG,1704,Menzingen,6
+9,ZG,1704,Menzingen,9,ZG,1704,Menzingen,691
+9,ZG,1705,Neuheim,9,ZG,1704,Menzingen,22
+9,ZG,1706,Oberägeri,9,ZG,1704,Menzingen,37
+9,ZG,1707,Risch,9,ZG,1704,Menzingen,6
+9,ZG,1708,Steinhausen,9,ZG,1704,Menzingen,21
+9,ZG,1709,Unterägeri,9,ZG,1704,Menzingen,52
+9,ZG,1710,Walchwil,9,ZG,1704,Menzingen,14
+9,ZG,1711,Zug,9,ZG,1704,Menzingen,83
+17,SG,7777,Andere Gemeinden,9,ZG,1704,Menzingen,13
+19,AG,4239,Sins,9,ZG,1704,Menzingen,7
+19,AG,7777,Andere Gemeinden,9,ZG,1704,Menzingen,31
+77,ZZ,7777,Andere Gemeinden,9,ZG,1704,Menzingen,11
+1,ZH,2,Affoltern am Albis,9,ZG,1705,Neuheim,5
+1,ZH,4,Hausen am Albis,9,ZG,1705,Neuheim,7
+1,ZH,7,Knonau,9,ZG,1705,Neuheim,5
+1,ZH,141,Thalwil,9,ZG,1705,Neuheim,5
+1,ZH,261,Zürich,9,ZG,1705,Neuheim,15
+1,ZH,7777,Andere Gemeinden,9,ZG,1705,Neuheim,52
+2,BE,7777,Andere Gemeinden,9,ZG,1705,Neuheim,6
+3,LU,1031,Hochdorf,9,ZG,1705,Neuheim,5
+3,LU,1051,Adligenswil,9,ZG,1705,Neuheim,5
+3,LU,1061,Luzern,9,ZG,1705,Neuheim,8
+3,LU,7777,Andere Gemeinden,9,ZG,1705,Neuheim,30
+5,SZ,1301,Einsiedeln,9,ZG,1705,Neuheim,9
+5,SZ,1362,Arth,9,ZG,1705,Neuheim,13
+5,SZ,1372,Schwyz,9,ZG,1705,Neuheim,5
+5,SZ,7777,Andere Gemeinden,9,ZG,1705,Neuheim,22
+9,ZG,1701,Baar,9,ZG,1705,Neuheim,83
+9,ZG,1702,Cham,9,ZG,1705,Neuheim,37
+9,ZG,1703,Hünenberg,9,ZG,1705,Neuheim,12
+9,ZG,1704,Menzingen,9,ZG,1705,Neuheim,35
+9,ZG,1705,Neuheim,9,ZG,1705,Neuheim,242
+9,ZG,1706,Oberägeri,9,ZG,1705,Neuheim,27
+9,ZG,1707,Risch,9,ZG,1705,Neuheim,15
+9,ZG,1708,Steinhausen,9,ZG,1705,Neuheim,22
+9,ZG,1709,Unterägeri,9,ZG,1705,Neuheim,39
+9,ZG,1711,Zug,9,ZG,1705,Neuheim,46
+17,SG,7777,Andere Gemeinden,9,ZG,1705,Neuheim,9
+19,AG,4239,Sins,9,ZG,1705,Neuheim,7
+19,AG,7777,Andere Gemeinden,9,ZG,1705,Neuheim,30
+77,ZZ,7777,Andere Gemeinden,9,ZG,1705,Neuheim,19
+1,ZH,261,Zürich,9,ZG,1706,Oberägeri,13
+1,ZH,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,33
+2,BE,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,18
+3,LU,1061,Luzern,9,ZG,1706,Oberägeri,6
+3,LU,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,19
+5,SZ,1301,Einsiedeln,9,ZG,1706,Oberägeri,12
+5,SZ,1362,Arth,9,ZG,1706,Oberägeri,16
+5,SZ,1364,Ingenbohl,9,ZG,1706,Oberägeri,10
+5,SZ,1370,Rothenthurm,9,ZG,1706,Oberägeri,25
+5,SZ,1371,Sattel,9,ZG,1706,Oberägeri,33
+5,SZ,1372,Schwyz,9,ZG,1706,Oberägeri,25
+5,SZ,1373,Steinen,9,ZG,1706,Oberägeri,10
+5,SZ,1374,Steinerberg,9,ZG,1706,Oberägeri,7
+5,SZ,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,33
+9,ZG,1701,Baar,9,ZG,1706,Oberägeri,51
+9,ZG,1702,Cham,9,ZG,1706,Oberägeri,15
+9,ZG,1704,Menzingen,9,ZG,1706,Oberägeri,24
+9,ZG,1705,Neuheim,9,ZG,1706,Oberägeri,8
+9,ZG,1706,Oberägeri,9,ZG,1706,Oberägeri,813
+9,ZG,1707,Risch,9,ZG,1706,Oberägeri,5
+9,ZG,1708,Steinhausen,9,ZG,1706,Oberägeri,15
+9,ZG,1709,Unterägeri,9,ZG,1706,Oberägeri,171
+9,ZG,1710,Walchwil,9,ZG,1706,Oberägeri,9
+9,ZG,1711,Zug,9,ZG,1706,Oberägeri,47
+11,SO,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,6
+17,SG,3340,Rapperswil-Jona,9,ZG,1706,Oberägeri,5
+17,SG,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,10
+19,AG,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,30
+77,ZZ,7777,Andere Gemeinden,9,ZG,1706,Oberägeri,26
+1,ZH,1,Aeugst am Albis,9,ZG,1707,Risch,7
+1,ZH,2,Affoltern am Albis,9,ZG,1707,Risch,43
+1,ZH,3,Bonstetten,9,ZG,1707,Risch,14
+1,ZH,4,Hausen am Albis,9,ZG,1707,Risch,16
+1,ZH,5,Hedingen,9,ZG,1707,Risch,15
+1,ZH,6,Kappel am Albis,9,ZG,1707,Risch,14
+1,ZH,7,Knonau,9,ZG,1707,Risch,18
+1,ZH,9,Mettmenstetten,9,ZG,1707,Risch,17
+1,ZH,10,Obfelden,9,ZG,1707,Risch,17
+1,ZH,11,Ottenbach,9,ZG,1707,Risch,11
+1,ZH,12,Rifferswil,9,ZG,1707,Risch,5
+1,ZH,14,Wettswil am Albis,9,ZG,1707,Risch,7
+1,ZH,53,Bülach,9,ZG,1707,Risch,7
+1,ZH,66,Opfikon,9,ZG,1707,Risch,8
+1,ZH,69,Wallisellen,9,ZG,1707,Risch,9
+1,ZH,96,Regensdorf,9,ZG,1707,Risch,7
+1,ZH,131,Adliswil,9,ZG,1707,Risch,10
+1,ZH,133,Horgen,9,ZG,1707,Risch,33
+1,ZH,135,Kilchberg (ZH),9,ZG,1707,Risch,10
+1,ZH,136,Langnau am Albis,9,ZG,1707,Risch,8
+1,ZH,137,Oberrieden,9,ZG,1707,Risch,5
+1,ZH,138,Richterswil,9,ZG,1707,Risch,8
+1,ZH,139,Rüschlikon,9,ZG,1707,Risch,11
+1,ZH,141,Thalwil,9,ZG,1707,Risch,56
+1,ZH,142,Wädenswil,9,ZG,1707,Risch,28
+1,ZH,154,Küsnacht (ZH),9,ZG,1707,Risch,7
+1,ZH,155,Männedorf,9,ZG,1707,Risch,7
+1,ZH,158,Stäfa,9,ZG,1707,Risch,6
+1,ZH,174,Illnau-Effretikon,9,ZG,1707,Risch,7
+1,ZH,191,Dübendorf,9,ZG,1707,Risch,6
+1,ZH,198,Uster,9,ZG,1707,Risch,6
+1,ZH,200,Wangen-Brüttisellen,9,ZG,1707,Risch,8
+1,ZH,230,Winterthur,9,ZG,1707,Risch,17
+1,ZH,242,Birmensdorf (ZH),9,ZG,1707,Risch,9
+1,ZH,243,Dietikon,9,ZG,1707,Risch,16
+1,ZH,244,Geroldswil,9,ZG,1707,Risch,5
+1,ZH,245,Oberengstringen,9,ZG,1707,Risch,6
+1,ZH,247,Schlieren,9,ZG,1707,Risch,11
+1,ZH,250,Urdorf,9,ZG,1707,Risch,6
+1,ZH,261,Zürich,9,ZG,1707,Risch,328
+1,ZH,7777,Andere Gemeinden,9,ZG,1707,Risch,106
+2,BE,351,Bern,9,ZG,1707,Risch,5
+2,BE,404,Burgdorf,9,ZG,1707,Risch,5
+2,BE,768,Spiez,9,ZG,1707,Risch,6
+2,BE,7777,Andere Gemeinden,9,ZG,1707,Risch,81
+3,LU,1009,Werthenstein,9,ZG,1707,Risch,5
+3,LU,1021,Aesch (LU),9,ZG,1707,Risch,8
+3,LU,1023,Ballwil,9,ZG,1707,Risch,33
+3,LU,1024,Emmen,9,ZG,1707,Risch,188
+3,LU,1026,Eschenbach (LU),9,ZG,1707,Risch,40
+3,LU,1030,Hitzkirch,9,ZG,1707,Risch,23
+3,LU,1031,Hochdorf,9,ZG,1707,Risch,81
+3,LU,1032,Hohenrain,9,ZG,1707,Risch,21
+3,LU,1033,Inwil,9,ZG,1707,Risch,52
+3,LU,1037,Rain,9,ZG,1707,Risch,15
+3,LU,1039,Römerswil,9,ZG,1707,Risch,16
+3,LU,1040,Rothenburg,9,ZG,1707,Risch,42
+3,LU,1051,Adligenswil,9,ZG,1707,Risch,48
+3,LU,1052,Buchrain,9,ZG,1707,Risch,99
+3,LU,1053,Dierikon,9,ZG,1707,Risch,23
+3,LU,1054,Ebikon,9,ZG,1707,Risch,171
+3,LU,1055,Gisikon,9,ZG,1707,Risch,49
+3,LU,1056,Greppen,9,ZG,1707,Risch,15
+3,LU,1057,Honau,9,ZG,1707,Risch,15
+3,LU,1058,Horw,9,ZG,1707,Risch,72
+3,LU,1059,Kriens,9,ZG,1707,Risch,148
+3,LU,1061,Luzern,9,ZG,1707,Risch,611
+3,LU,1062,Malters,9,ZG,1707,Risch,20
+3,LU,1063,Meggen,9,ZG,1707,Risch,54
+3,LU,1064,Meierskappel,9,ZG,1707,Risch,84
+3,LU,1065,Root,9,ZG,1707,Risch,150
+3,LU,1067,Udligenswil,9,ZG,1707,Risch,50
+3,LU,1068,Vitznau,9,ZG,1707,Risch,18
+3,LU,1069,Weggis,9,ZG,1707,Risch,57
+3,LU,1081,Beromünster,9,ZG,1707,Risch,16
+3,LU,1082,Büron,9,ZG,1707,Risch,8
+3,LU,1083,Buttisholz,9,ZG,1707,Risch,6
+3,LU,1084,Eich,9,ZG,1707,Risch,15
+3,LU,1085,Geuensee,9,ZG,1707,Risch,8
+3,LU,1088,Hildisrieden,9,ZG,1707,Risch,16
+3,LU,1089,Knutwil,9,ZG,1707,Risch,5
+3,LU,1093,Neuenkirch,9,ZG,1707,Risch,34
+3,LU,1094,Nottwil,9,ZG,1707,Risch,13
+3,LU,1095,Oberkirch,9,ZG,1707,Risch,8
+3,LU,1098,Ruswil,9,ZG,1707,Risch,19
+3,LU,1099,Schenkon,9,ZG,1707,Risch,16
+3,LU,1102,Sempach,9,ZG,1707,Risch,22
+3,LU,1103,Sursee,9,ZG,1707,Risch,38
+3,LU,1107,Wolhusen,9,ZG,1707,Risch,6
+3,LU,1125,Dagmersellen,9,ZG,1707,Risch,9
+3,LU,1127,Egolzwil,9,ZG,1707,Risch,7
+3,LU,1140,Reiden,9,ZG,1707,Risch,9
+3,LU,7777,Andere Gemeinden,9,ZG,1707,Risch,63
+4,UR,1201,Altdorf (UR),9,ZG,1707,Risch,17
+4,UR,1202,Andermatt,9,ZG,1707,Risch,5
+4,UR,1213,Schattdorf,9,ZG,1707,Risch,14
+4,UR,1214,Seedorf (UR),9,ZG,1707,Risch,5
+4,UR,7777,Andere Gemeinden,9,ZG,1707,Risch,14
+5,SZ,1301,Einsiedeln,9,ZG,1707,Risch,9
+5,SZ,1311,Gersau,9,ZG,1707,Risch,18
+5,SZ,1321,Feusisberg,9,ZG,1707,Risch,11
+5,SZ,1322,Freienbach,9,ZG,1707,Risch,17
+5,SZ,1323,Wollerau,9,ZG,1707,Risch,5
+5,SZ,1331,Küssnacht (SZ),9,ZG,1707,Risch,269
+5,SZ,1344,Lachen,9,ZG,1707,Risch,6
+5,SZ,1346,Schübelbach,9,ZG,1707,Risch,6
+5,SZ,1362,Arth,9,ZG,1707,Risch,183
+5,SZ,1364,Ingenbohl,9,ZG,1707,Risch,75
+5,SZ,1365,Lauerz,9,ZG,1707,Risch,15
+5,SZ,1366,Morschach,9,ZG,1707,Risch,5
+5,SZ,1370,Rothenthurm,9,ZG,1707,Risch,9
+5,SZ,1371,Sattel,9,ZG,1707,Risch,17
+5,SZ,1372,Schwyz,9,ZG,1707,Risch,86
+5,SZ,1373,Steinen,9,ZG,1707,Risch,28
+5,SZ,1374,Steinerberg,9,ZG,1707,Risch,11
+5,SZ,7777,Andere Gemeinden,9,ZG,1707,Risch,15
+6,OW,1401,Alpnach,9,ZG,1707,Risch,17
+6,OW,1404,Kerns,9,ZG,1707,Risch,11
+6,OW,1406,Sachseln,9,ZG,1707,Risch,8
+6,OW,1407,Sarnen,9,ZG,1707,Risch,20
+6,OW,7777,Andere Gemeinden,9,ZG,1707,Risch,5
+7,NW,1501,Beckenried,9,ZG,1707,Risch,14
+7,NW,1502,Buochs,9,ZG,1707,Risch,7
+7,NW,1505,Ennetbürgen,9,ZG,1707,Risch,21
+7,NW,1507,Hergiswil (NW),9,ZG,1707,Risch,35
+7,NW,1508,Oberdorf (NW),9,ZG,1707,Risch,6
+7,NW,1509,Stans,9,ZG,1707,Risch,27
+7,NW,1510,Stansstad,9,ZG,1707,Risch,21
+7,NW,7777,Andere Gemeinden,9,ZG,1707,Risch,11
+8,GL,7777,Andere Gemeinden,9,ZG,1707,Risch,6
+9,ZG,1701,Baar,9,ZG,1707,Risch,301
+9,ZG,1702,Cham,9,ZG,1707,Risch,450
+9,ZG,1703,Hünenberg,9,ZG,1707,Risch,262
+9,ZG,1704,Menzingen,9,ZG,1707,Risch,44
+9,ZG,1705,Neuheim,9,ZG,1707,Risch,17
+9,ZG,1706,Oberägeri,9,ZG,1707,Risch,30
+9,ZG,1707,Risch,9,ZG,1707,Risch,1538
+9,ZG,1708,Steinhausen,9,ZG,1707,Risch,163
+9,ZG,1709,Unterägeri,9,ZG,1707,Risch,60
+9,ZG,1710,Walchwil,9,ZG,1707,Risch,37
+9,ZG,1711,Zug,9,ZG,1707,Risch,340
+10,FR,7777,Andere Gemeinden,9,ZG,1707,Risch,12
+11,SO,2581,Olten,9,ZG,1707,Risch,5
+11,SO,7777,Andere Gemeinden,9,ZG,1707,Risch,32
+12,BS,2701,Basel,9,ZG,1707,Risch,49
+13,BL,2765,Binningen,9,ZG,1707,Risch,6
+13,BL,2767,Bottmingen,9,ZG,1707,Risch,6
+13,BL,7777,Andere Gemeinden,9,ZG,1707,Risch,52
+14,SH,7777,Andere Gemeinden,9,ZG,1707,Risch,5
+17,SG,3340,Rapperswil-Jona,9,ZG,1707,Risch,7
+17,SG,7777,Andere Gemeinden,9,ZG,1707,Risch,32
+18,GR,3901,Chur,9,ZG,1707,Risch,7
+18,GR,7777,Andere Gemeinden,9,ZG,1707,Risch,15
+19,AG,4001,Aarau,9,ZG,1707,Risch,15
+19,AG,4003,Buchs (AG),9,ZG,1707,Risch,6
+19,AG,4010,Oberentfelden,9,ZG,1707,Risch,5
+19,AG,4012,Suhr,9,ZG,1707,Risch,8
+19,AG,4021,Baden,9,ZG,1707,Risch,11
+19,AG,4024,Birmenstorf (AG),9,ZG,1707,Risch,5
+19,AG,4033,Mellingen,9,ZG,1707,Risch,6
+19,AG,4034,Neuenhof,9,ZG,1707,Risch,5
+19,AG,4039,Remetschwil,9,ZG,1707,Risch,7
+19,AG,4040,Spreitenbach,9,ZG,1707,Risch,8
+19,AG,4045,Wettingen,9,ZG,1707,Risch,7
+19,AG,4063,Bremgarten (AG),9,ZG,1707,Risch,11
+19,AG,4064,Büttikon,9,ZG,1707,Risch,5
+19,AG,4065,Dottikon,9,ZG,1707,Risch,6
+19,AG,4066,Eggenwil,9,ZG,1707,Risch,5
+19,AG,4067,Fischbach-Göslikon,9,ZG,1707,Risch,5
+19,AG,4071,Jonen,9,ZG,1707,Risch,8
+19,AG,4074,Oberwil-Lieli,9,ZG,1707,Risch,5
+19,AG,4076,Sarmenstorf,9,ZG,1707,Risch,7
+19,AG,4080,Villmergen,9,ZG,1707,Risch,13
+19,AG,4081,Widen,9,ZG,1707,Risch,5
+19,AG,4082,Wohlen (AG),9,ZG,1707,Risch,31
+19,AG,4083,Zufikon,9,ZG,1707,Risch,7
+19,AG,4131,Beinwil am See,9,ZG,1707,Risch,8
+19,AG,4139,Menziken,9,ZG,1707,Risch,9
+19,AG,4141,Reinach (AG),9,ZG,1707,Risch,11
+19,AG,4194,Dintikon,9,ZG,1707,Risch,6
+19,AG,4196,Fahrwangen,9,ZG,1707,Risch,6
+19,AG,4201,Lenzburg,9,ZG,1707,Risch,14
+19,AG,4202,Meisterschwanden,9,ZG,1707,Risch,7
+19,AG,4204,Niederlenz,9,ZG,1707,Risch,5
+19,AG,4221,Abtwil,9,ZG,1707,Risch,27
+19,AG,4222,Aristau,9,ZG,1707,Risch,7
+19,AG,4223,Auw,9,ZG,1707,Risch,27
+19,AG,4224,Beinwil (Freiamt),9,ZG,1707,Risch,16
+19,AG,4228,Boswil,9,ZG,1707,Risch,23
+19,AG,4229,Bünzen,9,ZG,1707,Risch,5
+19,AG,4230,Buttwil,9,ZG,1707,Risch,9
+19,AG,4231,Dietwil,9,ZG,1707,Risch,32
+19,AG,4234,Merenschwand,9,ZG,1707,Risch,38
+19,AG,4235,Mühlau,9,ZG,1707,Risch,26
+19,AG,4236,Muri (AG),9,ZG,1707,Risch,34
+19,AG,4237,Oberrüti,9,ZG,1707,Risch,57
+19,AG,4239,Sins,9,ZG,1707,Risch,104
+19,AG,4240,Waltenschwil,9,ZG,1707,Risch,7
+19,AG,4280,Oftringen,9,ZG,1707,Risch,7
+19,AG,4289,Zofingen,9,ZG,1707,Risch,10
+19,AG,7777,Andere Gemeinden,9,ZG,1707,Risch,152
+20,TG,7777,Andere Gemeinden,9,ZG,1707,Risch,28
+21,TI,5192,Lugano,9,ZG,1707,Risch,5
+21,TI,7777,Andere Gemeinden,9,ZG,1707,Risch,17
+22,VD,7777,Andere Gemeinden,9,ZG,1707,Risch,11
+24,NE,7777,Andere Gemeinden,9,ZG,1707,Risch,7
+77,ZZ,7777,Andere Gemeinden,9,ZG,1707,Risch,9
+1,ZH,1,Aeugst am Albis,9,ZG,1708,Steinhausen,22
+1,ZH,2,Affoltern am Albis,9,ZG,1708,Steinhausen,74
+1,ZH,3,Bonstetten,9,ZG,1708,Steinhausen,15
+1,ZH,4,Hausen am Albis,9,ZG,1708,Steinhausen,60
+1,ZH,5,Hedingen,9,ZG,1708,Steinhausen,14
+1,ZH,6,Kappel am Albis,9,ZG,1708,Steinhausen,30
+1,ZH,7,Knonau,9,ZG,1708,Steinhausen,65
+1,ZH,8,Maschwanden,9,ZG,1708,Steinhausen,14
+1,ZH,9,Mettmenstetten,9,ZG,1708,Steinhausen,80
+1,ZH,10,Obfelden,9,ZG,1708,Steinhausen,34
+1,ZH,11,Ottenbach,9,ZG,1708,Steinhausen,10
+1,ZH,12,Rifferswil,9,ZG,1708,Steinhausen,19
+1,ZH,13,Stallikon,9,ZG,1708,Steinhausen,8
+1,ZH,14,Wettswil am Albis,9,ZG,1708,Steinhausen,21
+1,ZH,53,Bülach,9,ZG,1708,Steinhausen,7
+1,ZH,54,Dietlikon,9,ZG,1708,Steinhausen,7
+1,ZH,62,Kloten,9,ZG,1708,Steinhausen,13
+1,ZH,66,Opfikon,9,ZG,1708,Steinhausen,7
+1,ZH,69,Wallisellen,9,ZG,1708,Steinhausen,8
+1,ZH,90,Niederhasli,9,ZG,1708,Steinhausen,6
+1,ZH,96,Regensdorf,9,ZG,1708,Steinhausen,10
+1,ZH,121,Wetzikon (ZH),9,ZG,1708,Steinhausen,6
+1,ZH,131,Adliswil,9,ZG,1708,Steinhausen,20
+1,ZH,132,Hirzel,9,ZG,1708,Steinhausen,11
+1,ZH,133,Horgen,9,ZG,1708,Steinhausen,31
+1,ZH,135,Kilchberg (ZH),9,ZG,1708,Steinhausen,13
+1,ZH,136,Langnau am Albis,9,ZG,1708,Steinhausen,11
+1,ZH,137,Oberrieden,9,ZG,1708,Steinhausen,6
+1,ZH,138,Richterswil,9,ZG,1708,Steinhausen,16
+1,ZH,139,Rüschlikon,9,ZG,1708,Steinhausen,9
+1,ZH,140,Schönenberg (ZH),9,ZG,1708,Steinhausen,5
+1,ZH,141,Thalwil,9,ZG,1708,Steinhausen,30
+1,ZH,142,Wädenswil,9,ZG,1708,Steinhausen,25
+1,ZH,152,Herrliberg,9,ZG,1708,Steinhausen,8
+1,ZH,153,Hombrechtikon,9,ZG,1708,Steinhausen,8
+1,ZH,154,Küsnacht (ZH),9,ZG,1708,Steinhausen,7
+1,ZH,155,Männedorf,9,ZG,1708,Steinhausen,5
+1,ZH,156,Meilen,9,ZG,1708,Steinhausen,11
+1,ZH,159,Uetikon am See,9,ZG,1708,Steinhausen,6
+1,ZH,161,Zollikon,9,ZG,1708,Steinhausen,10
+1,ZH,177,Pfäffikon,9,ZG,1708,Steinhausen,5
+1,ZH,191,Dübendorf,9,ZG,1708,Steinhausen,18
+1,ZH,195,Maur,9,ZG,1708,Steinhausen,5
+1,ZH,197,Schwerzenbach,9,ZG,1708,Steinhausen,5
+1,ZH,198,Uster,9,ZG,1708,Steinhausen,12
+1,ZH,199,Volketswil,9,ZG,1708,Steinhausen,12
+1,ZH,230,Winterthur,9,ZG,1708,Steinhausen,19
+1,ZH,231,Zell (ZH),9,ZG,1708,Steinhausen,5
+1,ZH,242,Birmensdorf (ZH),9,ZG,1708,Steinhausen,7
+1,ZH,243,Dietikon,9,ZG,1708,Steinhausen,8
+1,ZH,247,Schlieren,9,ZG,1708,Steinhausen,12
+1,ZH,261,Zürich,9,ZG,1708,Steinhausen,304
+1,ZH,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,123
+2,BE,351,Bern,9,ZG,1708,Steinhausen,19
+2,BE,371,Biel/Bienne,9,ZG,1708,Steinhausen,10
+2,BE,619,Oberdiessbach,9,ZG,1708,Steinhausen,5
+2,BE,939,Steffisburg,9,ZG,1708,Steinhausen,7
+2,BE,942,Thun,9,ZG,1708,Steinhausen,5
+2,BE,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,126
+3,LU,1023,Ballwil,9,ZG,1708,Steinhausen,11
+3,LU,1024,Emmen,9,ZG,1708,Steinhausen,76
+3,LU,1026,Eschenbach (LU),9,ZG,1708,Steinhausen,16
+3,LU,1030,Hitzkirch,9,ZG,1708,Steinhausen,28
+3,LU,1031,Hochdorf,9,ZG,1708,Steinhausen,41
+3,LU,1032,Hohenrain,9,ZG,1708,Steinhausen,5
+3,LU,1033,Inwil,9,ZG,1708,Steinhausen,17
+3,LU,1040,Rothenburg,9,ZG,1708,Steinhausen,13
+3,LU,1051,Adligenswil,9,ZG,1708,Steinhausen,19
+3,LU,1052,Buchrain,9,ZG,1708,Steinhausen,28
+3,LU,1053,Dierikon,9,ZG,1708,Steinhausen,9
+3,LU,1054,Ebikon,9,ZG,1708,Steinhausen,44
+3,LU,1055,Gisikon,9,ZG,1708,Steinhausen,8
+3,LU,1056,Greppen,9,ZG,1708,Steinhausen,10
+3,LU,1057,Honau,9,ZG,1708,Steinhausen,11
+3,LU,1058,Horw,9,ZG,1708,Steinhausen,33
+3,LU,1059,Kriens,9,ZG,1708,Steinhausen,42
+3,LU,1061,Luzern,9,ZG,1708,Steinhausen,256
+3,LU,1062,Malters,9,ZG,1708,Steinhausen,14
+3,LU,1063,Meggen,9,ZG,1708,Steinhausen,21
+3,LU,1064,Meierskappel,9,ZG,1708,Steinhausen,27
+3,LU,1065,Root,9,ZG,1708,Steinhausen,34
+3,LU,1067,Udligenswil,9,ZG,1708,Steinhausen,15
+3,LU,1068,Vitznau,9,ZG,1708,Steinhausen,5
+3,LU,1069,Weggis,9,ZG,1708,Steinhausen,26
+3,LU,1081,Beromünster,9,ZG,1708,Steinhausen,5
+3,LU,1084,Eich,9,ZG,1708,Steinhausen,8
+3,LU,1085,Geuensee,9,ZG,1708,Steinhausen,5
+3,LU,1088,Hildisrieden,9,ZG,1708,Steinhausen,5
+3,LU,1093,Neuenkirch,9,ZG,1708,Steinhausen,12
+3,LU,1097,Rickenbach (LU),9,ZG,1708,Steinhausen,7
+3,LU,1098,Ruswil,9,ZG,1708,Steinhausen,13
+3,LU,1102,Sempach,9,ZG,1708,Steinhausen,9
+3,LU,1103,Sursee,9,ZG,1708,Steinhausen,9
+3,LU,1104,Triengen,9,ZG,1708,Steinhausen,6
+3,LU,1107,Wolhusen,9,ZG,1708,Steinhausen,5
+3,LU,1125,Dagmersellen,9,ZG,1708,Steinhausen,7
+3,LU,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,61
+4,UR,1213,Schattdorf,9,ZG,1708,Steinhausen,6
+4,UR,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,17
+5,SZ,1301,Einsiedeln,9,ZG,1708,Steinhausen,16
+5,SZ,1311,Gersau,9,ZG,1708,Steinhausen,5
+5,SZ,1321,Feusisberg,9,ZG,1708,Steinhausen,5
+5,SZ,1322,Freienbach,9,ZG,1708,Steinhausen,29
+5,SZ,1323,Wollerau,9,ZG,1708,Steinhausen,11
+5,SZ,1331,Küssnacht (SZ),9,ZG,1708,Steinhausen,83
+5,SZ,1341,Altendorf,9,ZG,1708,Steinhausen,10
+5,SZ,1342,Galgenen,9,ZG,1708,Steinhausen,6
+5,SZ,1344,Lachen,9,ZG,1708,Steinhausen,9
+5,SZ,1345,Reichenburg,9,ZG,1708,Steinhausen,6
+5,SZ,1346,Schübelbach,9,ZG,1708,Steinhausen,10
+5,SZ,1362,Arth,9,ZG,1708,Steinhausen,91
+5,SZ,1364,Ingenbohl,9,ZG,1708,Steinhausen,38
+5,SZ,1365,Lauerz,9,ZG,1708,Steinhausen,10
+5,SZ,1370,Rothenthurm,9,ZG,1708,Steinhausen,5
+5,SZ,1371,Sattel,9,ZG,1708,Steinhausen,7
+5,SZ,1372,Schwyz,9,ZG,1708,Steinhausen,57
+5,SZ,1373,Steinen,9,ZG,1708,Steinhausen,12
+5,SZ,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,12
+6,OW,1401,Alpnach,9,ZG,1708,Steinhausen,8
+6,OW,1407,Sarnen,9,ZG,1708,Steinhausen,10
+6,OW,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,13
+7,NW,1505,Ennetbürgen,9,ZG,1708,Steinhausen,8
+7,NW,1506,Ennetmoos,9,ZG,1708,Steinhausen,5
+7,NW,1507,Hergiswil (NW),9,ZG,1708,Steinhausen,14
+7,NW,1509,Stans,9,ZG,1708,Steinhausen,15
+7,NW,1510,Stansstad,9,ZG,1708,Steinhausen,7
+7,NW,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,17
+8,GL,1630,Glarus Nord,9,ZG,1708,Steinhausen,16
+9,ZG,1701,Baar,9,ZG,1708,Steinhausen,488
+9,ZG,1702,Cham,9,ZG,1708,Steinhausen,414
+9,ZG,1703,Hünenberg,9,ZG,1708,Steinhausen,185
+9,ZG,1704,Menzingen,9,ZG,1708,Steinhausen,48
+9,ZG,1705,Neuheim,9,ZG,1708,Steinhausen,36
+9,ZG,1706,Oberägeri,9,ZG,1708,Steinhausen,82
+9,ZG,1707,Risch,9,ZG,1708,Steinhausen,174
+9,ZG,1708,Steinhausen,9,ZG,1708,Steinhausen,1307
+9,ZG,1709,Unterägeri,9,ZG,1708,Steinhausen,110
+9,ZG,1710,Walchwil,9,ZG,1708,Steinhausen,59
+9,ZG,1711,Zug,9,ZG,1708,Steinhausen,480
+10,FR,2196,Fribourg,9,ZG,1708,Steinhausen,5
+10,FR,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,45
+11,SO,2546,Grenchen,9,ZG,1708,Steinhausen,5
+11,SO,2581,Olten,9,ZG,1708,Steinhausen,5
+11,SO,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,41
+12,BS,2701,Basel,9,ZG,1708,Steinhausen,32
+13,BL,2762,Allschwil,9,ZG,1708,Steinhausen,9
+13,BL,2765,Binningen,9,ZG,1708,Steinhausen,5
+13,BL,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,39
+14,SH,2939,Schaffhausen,9,ZG,1708,Steinhausen,8
+15,AR,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,5
+17,SG,3203,St. Gallen,9,ZG,1708,Steinhausen,5
+17,SG,3215,Rorschach,9,ZG,1708,Steinhausen,6
+17,SG,3315,Schänis,9,ZG,1708,Steinhausen,5
+17,SG,3339,Uznach,9,ZG,1708,Steinhausen,5
+17,SG,3340,Rapperswil-Jona,9,ZG,1708,Steinhausen,12
+17,SG,3341,Gommiswald,9,ZG,1708,Steinhausen,5
+17,SG,3342,Eschenbach (SG),9,ZG,1708,Steinhausen,6
+17,SG,3427,Wil (SG),9,ZG,1708,Steinhausen,5
+17,SG,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,58
+18,GR,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,27
+19,AG,4001,Aarau,9,ZG,1708,Steinhausen,5
+19,AG,4021,Baden,9,ZG,1708,Steinhausen,13
+19,AG,4023,Bergdietikon,9,ZG,1708,Steinhausen,5
+19,AG,4033,Mellingen,9,ZG,1708,Steinhausen,5
+19,AG,4040,Spreitenbach,9,ZG,1708,Steinhausen,6
+19,AG,4045,Wettingen,9,ZG,1708,Steinhausen,9
+19,AG,4048,Würenlos,9,ZG,1708,Steinhausen,9
+19,AG,4061,Arni (AG),9,ZG,1708,Steinhausen,7
+19,AG,4062,Berikon,9,ZG,1708,Steinhausen,8
+19,AG,4063,Bremgarten (AG),9,ZG,1708,Steinhausen,15
+19,AG,4071,Jonen,9,ZG,1708,Steinhausen,11
+19,AG,4073,Oberlunkhofen,9,ZG,1708,Steinhausen,5
+19,AG,4075,Rudolfstetten-Friedlisberg,9,ZG,1708,Steinhausen,6
+19,AG,4079,Unterlunkhofen,9,ZG,1708,Steinhausen,7
+19,AG,4080,Villmergen,9,ZG,1708,Steinhausen,6
+19,AG,4081,Widen,9,ZG,1708,Steinhausen,5
+19,AG,4082,Wohlen (AG),9,ZG,1708,Steinhausen,15
+19,AG,4083,Zufikon,9,ZG,1708,Steinhausen,10
+19,AG,4221,Abtwil,9,ZG,1708,Steinhausen,18
+19,AG,4222,Aristau,9,ZG,1708,Steinhausen,10
+19,AG,4223,Auw,9,ZG,1708,Steinhausen,22
+19,AG,4224,Beinwil (Freiamt),9,ZG,1708,Steinhausen,11
+19,AG,4228,Boswil,9,ZG,1708,Steinhausen,11
+19,AG,4230,Buttwil,9,ZG,1708,Steinhausen,8
+19,AG,4231,Dietwil,9,ZG,1708,Steinhausen,18
+19,AG,4234,Merenschwand,9,ZG,1708,Steinhausen,47
+19,AG,4235,Mühlau,9,ZG,1708,Steinhausen,25
+19,AG,4236,Muri (AG),9,ZG,1708,Steinhausen,37
+19,AG,4237,Oberrüti,9,ZG,1708,Steinhausen,14
+19,AG,4239,Sins,9,ZG,1708,Steinhausen,50
+19,AG,4240,Waltenschwil,9,ZG,1708,Steinhausen,10
+19,AG,4282,Rothrist,9,ZG,1708,Steinhausen,5
+19,AG,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,188
+20,TG,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,47
+21,TI,5398,Gambarogno,9,ZG,1708,Steinhausen,5
+21,TI,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,41
+22,VD,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,17
+24,NE,6421,La Chaux-de-Fonds,9,ZG,1708,Steinhausen,5
+24,NE,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,19
+26,JU,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,14
+77,ZZ,7777,Andere Gemeinden,9,ZG,1708,Steinhausen,13
+1,ZH,4,Hausen am Albis,9,ZG,1709,Unterägeri,5
+1,ZH,10,Obfelden,9,ZG,1709,Unterägeri,5
+1,ZH,131,Adliswil,9,ZG,1709,Unterägeri,5
+1,ZH,134,Hütten,9,ZG,1709,Unterägeri,5
+1,ZH,138,Richterswil,9,ZG,1709,Unterägeri,9
+1,ZH,142,Wädenswil,9,ZG,1709,Unterägeri,5
+1,ZH,230,Winterthur,9,ZG,1709,Unterägeri,11
+1,ZH,261,Zürich,9,ZG,1709,Unterägeri,19
+1,ZH,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,57
+3,LU,1024,Emmen,9,ZG,1709,Unterägeri,9
+3,LU,1031,Hochdorf,9,ZG,1709,Unterägeri,6
+3,LU,1052,Buchrain,9,ZG,1709,Unterägeri,8
+3,LU,1054,Ebikon,9,ZG,1709,Unterägeri,5
+3,LU,1061,Luzern,9,ZG,1709,Unterägeri,36
+3,LU,1069,Weggis,9,ZG,1709,Unterägeri,5
+3,LU,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,37
+4,UR,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,12
+5,SZ,1301,Einsiedeln,9,ZG,1709,Unterägeri,23
+5,SZ,1331,Küssnacht (SZ),9,ZG,1709,Unterägeri,11
+5,SZ,1362,Arth,9,ZG,1709,Unterägeri,22
+5,SZ,1364,Ingenbohl,9,ZG,1709,Unterägeri,22
+5,SZ,1366,Morschach,9,ZG,1709,Unterägeri,5
+5,SZ,1367,Muotathal,9,ZG,1709,Unterägeri,11
+5,SZ,1370,Rothenthurm,9,ZG,1709,Unterägeri,23
+5,SZ,1371,Sattel,9,ZG,1709,Unterägeri,46
+5,SZ,1372,Schwyz,9,ZG,1709,Unterägeri,43
+5,SZ,1373,Steinen,9,ZG,1709,Unterägeri,16
+5,SZ,1374,Steinerberg,9,ZG,1709,Unterägeri,8
+5,SZ,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,30
+6,OW,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,8
+8,GL,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,8
+9,ZG,1701,Baar,9,ZG,1709,Unterägeri,168
+9,ZG,1702,Cham,9,ZG,1709,Unterägeri,38
+9,ZG,1703,Hünenberg,9,ZG,1709,Unterägeri,18
+9,ZG,1704,Menzingen,9,ZG,1709,Unterägeri,72
+9,ZG,1705,Neuheim,9,ZG,1709,Unterägeri,27
+9,ZG,1706,Oberägeri,9,ZG,1709,Unterägeri,279
+9,ZG,1707,Risch,9,ZG,1709,Unterägeri,21
+9,ZG,1708,Steinhausen,9,ZG,1709,Unterägeri,39
+9,ZG,1709,Unterägeri,9,ZG,1709,Unterägeri,1397
+9,ZG,1710,Walchwil,9,ZG,1709,Unterägeri,7
+9,ZG,1711,Zug,9,ZG,1709,Unterägeri,112
+13,BL,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,5
+17,SG,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,11
+19,AG,4236,Muri (AG),9,ZG,1709,Unterägeri,5
+19,AG,4237,Oberrüti,9,ZG,1709,Unterägeri,5
+19,AG,4239,Sins,9,ZG,1709,Unterägeri,6
+19,AG,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,33
+20,TG,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,5
+77,ZZ,7777,Andere Gemeinden,9,ZG,1709,Unterägeri,18
+1,ZH,261,Zürich,9,ZG,1710,Walchwil,17
+1,ZH,7777,Andere Gemeinden,9,ZG,1710,Walchwil,24
+3,LU,1024,Emmen,9,ZG,1710,Walchwil,5
+3,LU,1059,Kriens,9,ZG,1710,Walchwil,5
+3,LU,1061,Luzern,9,ZG,1710,Walchwil,12
+3,LU,7777,Andere Gemeinden,9,ZG,1710,Walchwil,21
+4,UR,7777,Andere Gemeinden,9,ZG,1710,Walchwil,5
+5,SZ,1331,Küssnacht (SZ),9,ZG,1710,Walchwil,15
+5,SZ,1362,Arth,9,ZG,1710,Walchwil,104
+5,SZ,1364,Ingenbohl,9,ZG,1710,Walchwil,5
+5,SZ,1371,Sattel,9,ZG,1710,Walchwil,8
+5,SZ,1372,Schwyz,9,ZG,1710,Walchwil,13
+5,SZ,1373,Steinen,9,ZG,1710,Walchwil,11
+5,SZ,7777,Andere Gemeinden,9,ZG,1710,Walchwil,15
+9,ZG,1701,Baar,9,ZG,1710,Walchwil,28
+9,ZG,1702,Cham,9,ZG,1710,Walchwil,22
+9,ZG,1703,Hünenberg,9,ZG,1710,Walchwil,9
+9,ZG,1704,Menzingen,9,ZG,1710,Walchwil,11
+9,ZG,1706,Oberägeri,9,ZG,1710,Walchwil,8
+9,ZG,1707,Risch,9,ZG,1710,Walchwil,9
+9,ZG,1708,Steinhausen,9,ZG,1710,Walchwil,15
+9,ZG,1709,Unterägeri,9,ZG,1710,Walchwil,19
+9,ZG,1710,Walchwil,9,ZG,1710,Walchwil,416
+9,ZG,1711,Zug,9,ZG,1710,Walchwil,60
+19,AG,7777,Andere Gemeinden,9,ZG,1710,Walchwil,20
+20,TG,7777,Andere Gemeinden,9,ZG,1710,Walchwil,5
+77,ZZ,7777,Andere Gemeinden,9,ZG,1710,Walchwil,13
+1,ZH,1,Aeugst am Albis,9,ZG,1711,Zug,48
+1,ZH,2,Affoltern am Albis,9,ZG,1711,Zug,267
+1,ZH,3,Bonstetten,9,ZG,1711,Zug,51
+1,ZH,4,Hausen am Albis,9,ZG,1711,Zug,110
+1,ZH,5,Hedingen,9,ZG,1711,Zug,53
+1,ZH,6,Kappel am Albis,9,ZG,1711,Zug,53
+1,ZH,7,Knonau,9,ZG,1711,Zug,155
+1,ZH,8,Maschwanden,9,ZG,1711,Zug,27
+1,ZH,9,Mettmenstetten,9,ZG,1711,Zug,157
+1,ZH,10,Obfelden,9,ZG,1711,Zug,135
+1,ZH,11,Ottenbach,9,ZG,1711,Zug,42
+1,ZH,12,Rifferswil,9,ZG,1711,Zug,28
+1,ZH,13,Stallikon,9,ZG,1711,Zug,21
+1,ZH,14,Wettswil am Albis,9,ZG,1711,Zug,36
+1,ZH,51,Bachenbülach,9,ZG,1711,Zug,6
+1,ZH,52,Bassersdorf,9,ZG,1711,Zug,11
+1,ZH,53,Bülach,9,ZG,1711,Zug,19
+1,ZH,54,Dietlikon,9,ZG,1711,Zug,12
+1,ZH,55,Eglisau,9,ZG,1711,Zug,8
+1,ZH,56,Embrach,9,ZG,1711,Zug,11
+1,ZH,58,Glattfelden,9,ZG,1711,Zug,5
+1,ZH,62,Kloten,9,ZG,1711,Zug,27
+1,ZH,63,Lufingen,9,ZG,1711,Zug,7
+1,ZH,64,Nürensdorf,9,ZG,1711,Zug,8
+1,ZH,66,Opfikon,9,ZG,1711,Zug,27
+1,ZH,69,Wallisellen,9,ZG,1711,Zug,35
+1,ZH,72,Winkel,9,ZG,1711,Zug,5
+1,ZH,83,Buchs (ZH),9,ZG,1711,Zug,16
+1,ZH,84,Dällikon,9,ZG,1711,Zug,7
+1,ZH,86,Dielsdorf,9,ZG,1711,Zug,5
+1,ZH,88,Neerach,9,ZG,1711,Zug,6
+1,ZH,90,Niederhasli,9,ZG,1711,Zug,15
+1,ZH,92,Oberglatt,9,ZG,1711,Zug,9
+1,ZH,96,Regensdorf,9,ZG,1711,Zug,25
+1,ZH,97,Rümlang,9,ZG,1711,Zug,10
+1,ZH,111,Bäretswil,9,ZG,1711,Zug,6
+1,ZH,112,Bubikon,9,ZG,1711,Zug,10
+1,ZH,113,Dürnten,9,ZG,1711,Zug,5
+1,ZH,115,Gossau (ZH),9,ZG,1711,Zug,11
+1,ZH,116,Grüningen,9,ZG,1711,Zug,6
+1,ZH,117,Hinwil,9,ZG,1711,Zug,11
+1,ZH,118,Rüti (ZH),9,ZG,1711,Zug,15
+1,ZH,120,Wald (ZH),9,ZG,1711,Zug,8
+1,ZH,121,Wetzikon (ZH),9,ZG,1711,Zug,36
+1,ZH,131,Adliswil,9,ZG,1711,Zug,64
+1,ZH,132,Hirzel,9,ZG,1711,Zug,25
+1,ZH,133,Horgen,9,ZG,1711,Zug,312
+1,ZH,134,Hütten,9,ZG,1711,Zug,13
+1,ZH,135,Kilchberg (ZH),9,ZG,1711,Zug,72
+1,ZH,136,Langnau am Albis,9,ZG,1711,Zug,62
+1,ZH,137,Oberrieden,9,ZG,1711,Zug,57
+1,ZH,138,Richterswil,9,ZG,1711,Zug,120
+1,ZH,139,Rüschlikon,9,ZG,1711,Zug,55
+1,ZH,140,Schönenberg (ZH),9,ZG,1711,Zug,18
+1,ZH,141,Thalwil,9,ZG,1711,Zug,283
+1,ZH,142,Wädenswil,9,ZG,1711,Zug,135
+1,ZH,151,Erlenbach (ZH),9,ZG,1711,Zug,26
+1,ZH,152,Herrliberg,9,ZG,1711,Zug,30
+1,ZH,153,Hombrechtikon,9,ZG,1711,Zug,13
+1,ZH,154,Küsnacht (ZH),9,ZG,1711,Zug,53
+1,ZH,155,Männedorf,9,ZG,1711,Zug,28
+1,ZH,156,Meilen,9,ZG,1711,Zug,42
+1,ZH,157,Oetwil am See,9,ZG,1711,Zug,6
+1,ZH,158,Stäfa,9,ZG,1711,Zug,27
+1,ZH,159,Uetikon am See,9,ZG,1711,Zug,22
+1,ZH,160,Zumikon,9,ZG,1711,Zug,19
+1,ZH,161,Zollikon,9,ZG,1711,Zug,53
+1,ZH,173,Hittnau,9,ZG,1711,Zug,14
+1,ZH,174,Illnau-Effretikon,9,ZG,1711,Zug,13
+1,ZH,176,Lindau,9,ZG,1711,Zug,6
+1,ZH,177,Pfäffikon,9,ZG,1711,Zug,11
+1,ZH,178,Russikon,9,ZG,1711,Zug,6
+1,ZH,191,Dübendorf,9,ZG,1711,Zug,44
+1,ZH,192,Egg,9,ZG,1711,Zug,15
+1,ZH,193,Fällanden,9,ZG,1711,Zug,11
+1,ZH,194,Greifensee,9,ZG,1711,Zug,5
+1,ZH,195,Maur,9,ZG,1711,Zug,22
+1,ZH,197,Schwerzenbach,9,ZG,1711,Zug,13
+1,ZH,198,Uster,9,ZG,1711,Zug,45
+1,ZH,199,Volketswil,9,ZG,1711,Zug,27
+1,ZH,200,Wangen-Brüttisellen,9,ZG,1711,Zug,11
+1,ZH,213,Brütten,9,ZG,1711,Zug,6
+1,ZH,223,Neftenbach,9,ZG,1711,Zug,5
+1,ZH,227,Seuzach,9,ZG,1711,Zug,6
+1,ZH,230,Winterthur,9,ZG,1711,Zug,102
+1,ZH,241,Aesch (ZH),9,ZG,1711,Zug,6
+1,ZH,242,Birmensdorf (ZH),9,ZG,1711,Zug,34
+1,ZH,243,Dietikon,9,ZG,1711,Zug,46
+1,ZH,244,Geroldswil,9,ZG,1711,Zug,10
+1,ZH,245,Oberengstringen,9,ZG,1711,Zug,16
+1,ZH,246,Oetwil an der Limmat,9,ZG,1711,Zug,6
+1,ZH,247,Schlieren,9,ZG,1711,Zug,35
+1,ZH,248,Uitikon,9,ZG,1711,Zug,27
+1,ZH,249,Unterengstringen,9,ZG,1711,Zug,7
+1,ZH,250,Urdorf,9,ZG,1711,Zug,33
+1,ZH,251,Weiningen (ZH),9,ZG,1711,Zug,7
+1,ZH,261,Zürich,9,ZG,1711,Zug,1661
+1,ZH,7777,Andere Gemeinden,9,ZG,1711,Zug,92
+2,BE,301,Aarberg,9,ZG,1711,Zug,12
+2,BE,329,Langenthal,9,ZG,1711,Zug,5
+2,BE,351,Bern,9,ZG,1711,Zug,44
+2,BE,352,Bolligen,9,ZG,1711,Zug,6
+2,BE,355,Köniz,9,ZG,1711,Zug,16
+2,BE,356,Muri bei Bern,9,ZG,1711,Zug,10
+2,BE,360,Wohlen bei Bern,9,ZG,1711,Zug,5
+2,BE,362,Ittigen,9,ZG,1711,Zug,11
+2,BE,363,Ostermundigen,9,ZG,1711,Zug,6
+2,BE,371,Biel/Bienne,9,ZG,1711,Zug,10
+2,BE,540,Jegenstorf,9,ZG,1711,Zug,7
+2,BE,627,Worb,9,ZG,1711,Zug,6
+2,BE,928,Heimberg,9,ZG,1711,Zug,5
+2,BE,934,Oberhofen am Thunersee,9,ZG,1711,Zug,5
+2,BE,939,Steffisburg,9,ZG,1711,Zug,6
+2,BE,942,Thun,9,ZG,1711,Zug,17
+2,BE,944,Uetendorf,9,ZG,1711,Zug,5
+2,BE,7777,Andere Gemeinden,9,ZG,1711,Zug,157
+3,LU,1002,Entlebuch,9,ZG,1711,Zug,5
+3,LU,1009,Werthenstein,9,ZG,1711,Zug,10
+3,LU,1021,Aesch (LU),9,ZG,1711,Zug,8
+3,LU,1023,Ballwil,9,ZG,1711,Zug,58
+3,LU,1024,Emmen,9,ZG,1711,Zug,218
+3,LU,1026,Eschenbach (LU),9,ZG,1711,Zug,62
+3,LU,1030,Hitzkirch,9,ZG,1711,Zug,28
+3,LU,1031,Hochdorf,9,ZG,1711,Zug,116
+3,LU,1032,Hohenrain,9,ZG,1711,Zug,45
+3,LU,1033,Inwil,9,ZG,1711,Zug,54
+3,LU,1037,Rain,9,ZG,1711,Zug,30
+3,LU,1039,Römerswil,9,ZG,1711,Zug,16
+3,LU,1040,Rothenburg,9,ZG,1711,Zug,75
+3,LU,1041,Schongau,9,ZG,1711,Zug,7
+3,LU,1051,Adligenswil,9,ZG,1711,Zug,56
+3,LU,1052,Buchrain,9,ZG,1711,Zug,107
+3,LU,1053,Dierikon,9,ZG,1711,Zug,34
+3,LU,1054,Ebikon,9,ZG,1711,Zug,181
+3,LU,1055,Gisikon,9,ZG,1711,Zug,43
+3,LU,1056,Greppen,9,ZG,1711,Zug,35
+3,LU,1057,Honau,9,ZG,1711,Zug,16
+3,LU,1058,Horw,9,ZG,1711,Zug,140
+3,LU,1059,Kriens,9,ZG,1711,Zug,270
+3,LU,1061,Luzern,9,ZG,1711,Zug,1117
+3,LU,1062,Malters,9,ZG,1711,Zug,49
+3,LU,1063,Meggen,9,ZG,1711,Zug,103
+3,LU,1064,Meierskappel,9,ZG,1711,Zug,68
+3,LU,1065,Root,9,ZG,1711,Zug,131
+3,LU,1066,Schwarzenberg,9,ZG,1711,Zug,7
+3,LU,1067,Udligenswil,9,ZG,1711,Zug,40
+3,LU,1068,Vitznau,9,ZG,1711,Zug,20
+3,LU,1069,Weggis,9,ZG,1711,Zug,87
+3,LU,1081,Beromünster,9,ZG,1711,Zug,36
+3,LU,1082,Büron,9,ZG,1711,Zug,9
+3,LU,1083,Buttisholz,9,ZG,1711,Zug,9
+3,LU,1084,Eich,9,ZG,1711,Zug,15
+3,LU,1085,Geuensee,9,ZG,1711,Zug,12
+3,LU,1086,Grosswangen,9,ZG,1711,Zug,5
+3,LU,1088,Hildisrieden,9,ZG,1711,Zug,8
+3,LU,1089,Knutwil,9,ZG,1711,Zug,8
+3,LU,1091,Mauensee,9,ZG,1711,Zug,5
+3,LU,1093,Neuenkirch,9,ZG,1711,Zug,49
+3,LU,1094,Nottwil,9,ZG,1711,Zug,13
+3,LU,1095,Oberkirch,9,ZG,1711,Zug,22
+3,LU,1097,Rickenbach (LU),9,ZG,1711,Zug,8
+3,LU,1098,Ruswil,9,ZG,1711,Zug,26
+3,LU,1099,Schenkon,9,ZG,1711,Zug,15
+3,LU,1102,Sempach,9,ZG,1711,Zug,44
+3,LU,1103,Sursee,9,ZG,1711,Zug,50
+3,LU,1104,Triengen,9,ZG,1711,Zug,8
+3,LU,1107,Wolhusen,9,ZG,1711,Zug,9
+3,LU,1125,Dagmersellen,9,ZG,1711,Zug,14
+3,LU,1128,Ettiswil,9,ZG,1711,Zug,5
+3,LU,1136,Menznau,9,ZG,1711,Zug,5
+3,LU,1137,Nebikon,9,ZG,1711,Zug,7
+3,LU,1139,Pfaffnau,9,ZG,1711,Zug,6
+3,LU,1140,Reiden,9,ZG,1711,Zug,6
+3,LU,1147,Wikon,9,ZG,1711,Zug,6
+3,LU,1151,Willisau,9,ZG,1711,Zug,10
+3,LU,7777,Andere Gemeinden,9,ZG,1711,Zug,34
+4,UR,1201,Altdorf (UR),9,ZG,1711,Zug,61
+4,UR,1205,Bürglen (UR),9,ZG,1711,Zug,29
+4,UR,1206,Erstfeld,9,ZG,1711,Zug,12
+4,UR,1207,Flüelen,9,ZG,1711,Zug,21
+4,UR,1213,Schattdorf,9,ZG,1711,Zug,24
+4,UR,1214,Seedorf (UR),9,ZG,1711,Zug,8
+4,UR,1216,Silenen,9,ZG,1711,Zug,6
+4,UR,1217,Sisikon,9,ZG,1711,Zug,9
+4,UR,7777,Andere Gemeinden,9,ZG,1711,Zug,20
+5,SZ,1301,Einsiedeln,9,ZG,1711,Zug,105
+5,SZ,1311,Gersau,9,ZG,1711,Zug,51
+5,SZ,1321,Feusisberg,9,ZG,1711,Zug,53
+5,SZ,1322,Freienbach,9,ZG,1711,Zug,135
+5,SZ,1323,Wollerau,9,ZG,1711,Zug,66
+5,SZ,1331,Küssnacht (SZ),9,ZG,1711,Zug,349
+5,SZ,1341,Altendorf,9,ZG,1711,Zug,39
+5,SZ,1342,Galgenen,9,ZG,1711,Zug,25
+5,SZ,1344,Lachen,9,ZG,1711,Zug,44
+5,SZ,1345,Reichenburg,9,ZG,1711,Zug,12
+5,SZ,1346,Schübelbach,9,ZG,1711,Zug,32
+5,SZ,1347,Tuggen,9,ZG,1711,Zug,5
+5,SZ,1349,Wangen (SZ),9,ZG,1711,Zug,20
+5,SZ,1361,Alpthal,9,ZG,1711,Zug,6
+5,SZ,1362,Arth,9,ZG,1711,Zug,664
+5,SZ,1363,Illgau,9,ZG,1711,Zug,6
+5,SZ,1364,Ingenbohl,9,ZG,1711,Zug,190
+5,SZ,1365,Lauerz,9,ZG,1711,Zug,44
+5,SZ,1366,Morschach,9,ZG,1711,Zug,24
+5,SZ,1367,Muotathal,9,ZG,1711,Zug,23
+5,SZ,1368,Oberiberg,9,ZG,1711,Zug,10
+5,SZ,1370,Rothenthurm,9,ZG,1711,Zug,40
+5,SZ,1371,Sattel,9,ZG,1711,Zug,77
+5,SZ,1372,Schwyz,9,ZG,1711,Zug,241
+5,SZ,1373,Steinen,9,ZG,1711,Zug,105
+5,SZ,1374,Steinerberg,9,ZG,1711,Zug,36
+5,SZ,1375,Unteriberg,9,ZG,1711,Zug,7
+6,OW,1401,Alpnach,9,ZG,1711,Zug,23
+6,OW,1402,Engelberg,9,ZG,1711,Zug,18
+6,OW,1403,Giswil,9,ZG,1711,Zug,9
+6,OW,1404,Kerns,9,ZG,1711,Zug,11
+6,OW,1406,Sachseln,9,ZG,1711,Zug,15
+6,OW,1407,Sarnen,9,ZG,1711,Zug,40
+7,NW,1501,Beckenried,9,ZG,1711,Zug,19
+7,NW,1502,Buochs,9,ZG,1711,Zug,26
+7,NW,1503,Dallenwil,9,ZG,1711,Zug,5
+7,NW,1504,Emmetten,9,ZG,1711,Zug,7
+7,NW,1505,Ennetbürgen,9,ZG,1711,Zug,20
+7,NW,1506,Ennetmoos,9,ZG,1711,Zug,6
+7,NW,1507,Hergiswil (NW),9,ZG,1711,Zug,59
+7,NW,1508,Oberdorf (NW),9,ZG,1711,Zug,11
+7,NW,1509,Stans,9,ZG,1711,Zug,56
+7,NW,1510,Stansstad,9,ZG,1711,Zug,29
+7,NW,1511,Wolfenschiessen,9,ZG,1711,Zug,6
+8,GL,1630,Glarus Nord,9,ZG,1711,Zug,29
+8,GL,1631,Glarus Süd,9,ZG,1711,Zug,10
+8,GL,1632,Glarus,9,ZG,1711,Zug,16
+9,ZG,1701,Baar,9,ZG,1711,Zug,2927
+9,ZG,1702,Cham,9,ZG,1711,Zug,1715
+9,ZG,1703,Hünenberg,9,ZG,1711,Zug,880
+9,ZG,1704,Menzingen,9,ZG,1711,Zug,425
+9,ZG,1705,Neuheim,9,ZG,1711,Zug,202
+9,ZG,1706,Oberägeri,9,ZG,1711,Zug,608
+9,ZG,1707,Risch,9,ZG,1711,Zug,999
+9,ZG,1708,Steinhausen,9,ZG,1711,Zug,1050
+9,ZG,1709,Unterägeri,9,ZG,1711,Zug,995
+9,ZG,1710,Walchwil,9,ZG,1711,Zug,463
+9,ZG,1711,Zug,9,ZG,1711,Zug,7194
+10,FR,2196,Fribourg,9,ZG,1711,Zug,11
+10,FR,7777,Andere Gemeinden,9,ZG,1711,Zug,38
+11,SO,2422,Balsthal,9,ZG,1711,Zug,5
+11,SO,2476,Hofstetten-Flüh,9,ZG,1711,Zug,6
+11,SO,2546,Grenchen,9,ZG,1711,Zug,9
+11,SO,2581,Olten,9,ZG,1711,Zug,17
+11,SO,2601,Solothurn,9,ZG,1711,Zug,10
+11,SO,7777,Andere Gemeinden,9,ZG,1711,Zug,96
+12,BS,2701,Basel,9,ZG,1711,Zug,95
+12,BS,2703,Riehen,9,ZG,1711,Zug,14
+13,BL,2762,Allschwil,9,ZG,1711,Zug,9
+13,BL,2763,Arlesheim,9,ZG,1711,Zug,5
+13,BL,2765,Binningen,9,ZG,1711,Zug,16
+13,BL,2770,Muttenz,9,ZG,1711,Zug,5
+13,BL,2771,Oberwil (BL),9,ZG,1711,Zug,9
+13,BL,2773,Reinach (BL),9,ZG,1711,Zug,7
+13,BL,2775,Therwil,9,ZG,1711,Zug,7
+13,BL,2829,Liestal,9,ZG,1711,Zug,9
+13,BL,7777,Andere Gemeinden,9,ZG,1711,Zug,49
+14,SH,2937,Neuhausen am Rheinfall,9,ZG,1711,Zug,5
+14,SH,2939,Schaffhausen,9,ZG,1711,Zug,15
+14,SH,7777,Andere Gemeinden,9,ZG,1711,Zug,15
+15,AR,7777,Andere Gemeinden,9,ZG,1711,Zug,24
+16,AI,7777,Andere Gemeinden,9,ZG,1711,Zug,7
+17,SG,3203,St. Gallen,9,ZG,1711,Zug,17
+17,SG,3216,Rorschacherberg,9,ZG,1711,Zug,6
+17,SG,3271,Buchs (SG),9,ZG,1711,Zug,7
+17,SG,3293,Mels,9,ZG,1711,Zug,8
+17,SG,3296,Sargans,9,ZG,1711,Zug,5
+17,SG,3313,Kaltbrunn,9,ZG,1711,Zug,8
+17,SG,3338,Schmerikon,9,ZG,1711,Zug,6
+17,SG,3339,Uznach,9,ZG,1711,Zug,8
+17,SG,3340,Rapperswil-Jona,9,ZG,1711,Zug,58
+17,SG,3341,Gommiswald,9,ZG,1711,Zug,11
+17,SG,3342,Eschenbach (SG),9,ZG,1711,Zug,11
+17,SG,3379,Wattwil,9,ZG,1711,Zug,5
+17,SG,3408,Uzwil,9,ZG,1711,Zug,6
+17,SG,3427,Wil (SG),9,ZG,1711,Zug,20
+17,SG,3443,Gossau (SG),9,ZG,1711,Zug,6
+17,SG,7777,Andere Gemeinden,9,ZG,1711,Zug,87
+18,GR,3506,Vaz/Obervaz,9,ZG,1711,Zug,6
+18,GR,3722,Domat/Ems,9,ZG,1711,Zug,6
+18,GR,3851,Davos,9,ZG,1711,Zug,6
+18,GR,3901,Chur,9,ZG,1711,Zug,13
+18,GR,3921,Arosa,9,ZG,1711,Zug,5
+18,GR,7777,Andere Gemeinden,9,ZG,1711,Zug,50
+19,AG,4001,Aarau,9,ZG,1711,Zug,28
+19,AG,4003,Buchs (AG),9,ZG,1711,Zug,9
+19,AG,4005,Erlinsbach (AG),9,ZG,1711,Zug,7
+19,AG,4006,Gränichen,9,ZG,1711,Zug,5
+19,AG,4008,Küttigen,9,ZG,1711,Zug,11
+19,AG,4009,Muhen,9,ZG,1711,Zug,5
+19,AG,4021,Baden,9,ZG,1711,Zug,40
+19,AG,4023,Bergdietikon,9,ZG,1711,Zug,8
+19,AG,4024,Birmenstorf (AG),9,ZG,1711,Zug,7
+19,AG,4026,Ennetbaden,9,ZG,1711,Zug,16
+19,AG,4027,Fislisbach,9,ZG,1711,Zug,5
+19,AG,4030,Killwangen,9,ZG,1711,Zug,6
+19,AG,4033,Mellingen,9,ZG,1711,Zug,14
+19,AG,4034,Neuenhof,9,ZG,1711,Zug,9
+19,AG,4035,Niederrohrdorf,9,ZG,1711,Zug,5
+19,AG,4038,Obersiggenthal,9,ZG,1711,Zug,8
+19,AG,4040,Spreitenbach,9,ZG,1711,Zug,11
+19,AG,4045,Wettingen,9,ZG,1711,Zug,38
+19,AG,4049,Ehrendingen,9,ZG,1711,Zug,9
+19,AG,4061,Arni (AG),9,ZG,1711,Zug,19
+19,AG,4062,Berikon,9,ZG,1711,Zug,22
+19,AG,4063,Bremgarten (AG),9,ZG,1711,Zug,32
+19,AG,4064,Büttikon,9,ZG,1711,Zug,8
+19,AG,4065,Dottikon,9,ZG,1711,Zug,6
+19,AG,4066,Eggenwil,9,ZG,1711,Zug,6
+19,AG,4068,Hägglingen,9,ZG,1711,Zug,6
+19,AG,4071,Jonen,9,ZG,1711,Zug,32
+19,AG,4072,Niederwil (AG),9,ZG,1711,Zug,5
+19,AG,4073,Oberlunkhofen,9,ZG,1711,Zug,25
+19,AG,4074,Oberwil-Lieli,9,ZG,1711,Zug,14
+19,AG,4075,Rudolfstetten-Friedlisberg,9,ZG,1711,Zug,15
+19,AG,4076,Sarmenstorf,9,ZG,1711,Zug,13
+19,AG,4078,Uezwil,9,ZG,1711,Zug,6
+19,AG,4079,Unterlunkhofen,9,ZG,1711,Zug,15
+19,AG,4080,Villmergen,9,ZG,1711,Zug,20
+19,AG,4081,Widen,9,ZG,1711,Zug,11
+19,AG,4082,Wohlen (AG),9,ZG,1711,Zug,36
+19,AG,4083,Zufikon,9,ZG,1711,Zug,13
+19,AG,4095,Brugg,9,ZG,1711,Zug,16
+19,AG,4111,Riniken,9,ZG,1711,Zug,5
+19,AG,4120,Veltheim (AG),9,ZG,1711,Zug,5
+19,AG,4123,Windisch,9,ZG,1711,Zug,8
+19,AG,4131,Beinwil am See,9,ZG,1711,Zug,7
+19,AG,4139,Menziken,9,ZG,1711,Zug,9
+19,AG,4141,Reinach (AG),9,ZG,1711,Zug,16
+19,AG,4165,Gipf-Oberfrick,9,ZG,1711,Zug,7
+19,AG,4196,Fahrwangen,9,ZG,1711,Zug,7
+19,AG,4201,Lenzburg,9,ZG,1711,Zug,12
+19,AG,4202,Meisterschwanden,9,ZG,1711,Zug,17
+19,AG,4204,Niederlenz,9,ZG,1711,Zug,5
+19,AG,4208,Seengen,9,ZG,1711,Zug,12
+19,AG,4221,Abtwil,9,ZG,1711,Zug,57
+19,AG,4222,Aristau,9,ZG,1711,Zug,21
+19,AG,4223,Auw,9,ZG,1711,Zug,88
+19,AG,4224,Beinwil (Freiamt),9,ZG,1711,Zug,25
+19,AG,4226,Besenbüren,9,ZG,1711,Zug,6
+19,AG,4228,Boswil,9,ZG,1711,Zug,23
+19,AG,4229,Bünzen,9,ZG,1711,Zug,9
+19,AG,4230,Buttwil,9,ZG,1711,Zug,20
+19,AG,4231,Dietwil,9,ZG,1711,Zug,67
+19,AG,4234,Merenschwand,9,ZG,1711,Zug,80
+19,AG,4235,Mühlau,9,ZG,1711,Zug,34
+19,AG,4236,Muri (AG),9,ZG,1711,Zug,96
+19,AG,4237,Oberrüti,9,ZG,1711,Zug,109
+19,AG,4238,Rottenschwil,9,ZG,1711,Zug,5
+19,AG,4239,Sins,9,ZG,1711,Zug,196
+19,AG,4240,Waltenschwil,9,ZG,1711,Zug,9
+19,AG,4258,Rheinfelden,9,ZG,1711,Zug,9
+19,AG,4280,Oftringen,9,ZG,1711,Zug,12
+19,AG,4282,Rothrist,9,ZG,1711,Zug,11
+19,AG,4285,Strengelbach,9,ZG,1711,Zug,6
+19,AG,4289,Zofingen,9,ZG,1711,Zug,26
+19,AG,7777,Andere Gemeinden,9,ZG,1711,Zug,211
+20,TG,4566,Frauenfeld,9,ZG,1711,Zug,8
+20,TG,4643,Bottighofen,9,ZG,1711,Zug,5
+20,TG,4646,Ermatingen,9,ZG,1711,Zug,6
+20,TG,4671,Kreuzlingen,9,ZG,1711,Zug,26
+20,TG,4696,Tägerwilen,9,ZG,1711,Zug,10
+20,TG,4724,Eschlikon,9,ZG,1711,Zug,6
+20,TG,4746,Münchwilen (TG),9,ZG,1711,Zug,5
+20,TG,7777,Andere Gemeinden,9,ZG,1711,Zug,69
+21,TI,5002,Bellinzona,9,ZG,1711,Zug,8
+21,TI,5091,Ascona,9,ZG,1711,Zug,12
+21,TI,5113,Locarno,9,ZG,1711,Zug,12
+21,TI,5118,Minusio,9,ZG,1711,Zug,10
+21,TI,5210,Paradiso,9,ZG,1711,Zug,7
+21,TI,5236,Collina d'Oro,9,ZG,1711,Zug,10
+21,TI,7777,Andere Gemeinden,9,ZG,1711,Zug,103
+22,VD,7777,Andere Gemeinden,9,ZG,1711,Zug,7
+23,VS,6007,Naters,9,ZG,1711,Zug,5
+24,NE,6458,Neuchâtel,9,ZG,1711,Zug,7
+24,NE,7777,Andere Gemeinden,9,ZG,1711,Zug,17
+26,JU,7777,Andere Gemeinden,9,ZG,1711,Zug,10
+77,ZZ,7777,Andere Gemeinden,9,ZG,1711,Zug,5
