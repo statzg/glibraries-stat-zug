@@ -706,7 +706,7 @@ function loadGemeindeportrait(version) {
 						var höheübermeer=d.tot
 						if (höheübermeer>1000) { höheübermeer=NaN}
 						return höheübermeer;
-					}).formatNumber(germanFormatters.numberFormat(",müm"))
+					}).formatNumber(germanFormatters.numberFormat(","))
 					.group(höhenlagemümTotal);
 				
 				bevölkerung
