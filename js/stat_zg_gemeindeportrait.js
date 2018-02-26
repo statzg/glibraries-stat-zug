@@ -28,6 +28,8 @@ function loadGemeindeportrait(version) {
     var karte = dc.geoChoroplethChart("#karte");
 	
 	//Kennzahlen initialisieren
+	var fläche = dc.numberDisplay("#fläche");
+	var höhenlage = dc.numberDisplay("#höhenlage");
 	var bevölkerung = dc.numberDisplay("#bevölkerung");
 	var ausländeranteil = dc.numberDisplay("#ausländeranteil");
 	var haushalte = dc.numberDisplay("#haushalte");
@@ -49,6 +51,7 @@ function loadGemeindeportrait(version) {
 	//Alle Daten einlesen
 	if (version=="online") {
 	var q = queue()
+		.defer(d3.csv, "daten/result-data0.csv/download")
 		.defer(d3.csv, "daten/result-data1.csv/download")
 		.defer(d3.csv, "daten/result-data2.csv/download")
 		.defer(d3.csv, "daten/result-data3.csv/download")
@@ -63,6 +66,7 @@ function loadGemeindeportrait(version) {
 	}
 	else if (version=="print") {
 	var q = queue()
+		.defer(d3.csv, "data/result-data0.csv")
 		.defer(d3.csv, "data/result-data1.csv")
 		.defer(d3.csv, "data/result-data2.csv")
 		.defer(d3.csv, "data/result-data3.csv")
@@ -76,7 +80,9 @@ function loadGemeindeportrait(version) {
 		.defer(d3.csv, "data/result-data11.csv");
 	}
 	
-	q.await(function(error, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11) {
+	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11 ) {
+		
+		if (error) throw error;
 
 		//Metadaten auslesen und Datenobjekte für Tabellen-Export generieren.
 		meta1 = data1.filter(function(el) {
@@ -188,38 +194,41 @@ function loadGemeindeportrait(version) {
 		//Daten in Crossfilter-Objekt abfüllen.
 		var data = crossfilter();
 		
+		data.add(data0.map(function(d) {
+			return {Gemeinde: d["Gemeinde"], Homepage: d["Homepage"], "Fläche in ha":d["Fläche in ha"], "Höhenlage in Meter über Meer":d["Höhenlage in Meter über Meer"], "Ständige Wohnbevölkerung": 0, "Ausländer/innen": 0, "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+		}));		
 		data.add(data1.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raised:d["Raised"] , "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data2.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data3.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": 0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": 0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data4.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data5.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data6.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data7.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":d["Steuerfuss"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":d["Steuerfuss"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));	
 		data.add(data8.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data9.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"], "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"], "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data10.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":d["Sektor"], "BetriebenachSektor":d["Betriebe"], "BeschäftigtenachSektor":d["Beschäftigte"], "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":d["Sektor"], "BetriebenachSektor":d["Betriebe"], "BeschäftigtenachSektor":d["Beschäftigte"], "Zone":"NaN", "Fläche":0};
 		}));
 		data.add(data11.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Raise:0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":d["Zone"], "Fläche":d["Fläche"]};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":d["Zone"], "Fläche":d["Fläche"]};
 		}));
 
 		//Crossfilter Gruppen und Dimensionen definieren.
@@ -417,6 +426,42 @@ function loadGemeindeportrait(version) {
 			},
 			function () { return {n:0,tot:0}; }
 		);
+		
+		var flächeinha = gemeinden.group().reduceSum(function (d) {
+			return +d["Fläche in ha"];
+		});
+		
+		var flächeinhaTotal = data.groupAll().reduce(
+			function (p, v) {
+				++p.n;
+				p.tot += +v["Fläche in ha"];
+				return p;
+			},
+			function (p, v) {
+				--p.n;
+				p.tot -= +v["Fläche in ha"];
+				return p;
+			},
+			function () { return {n:0,tot:0}; }
+		);
+		
+		var höhenlagemüm = gemeinden.group().reduceSum(function (d) {
+			return +d["Höhenlage in Meter über Meer"];
+		});
+		
+		var höhenlagemümTotal = data.groupAll().reduce(
+			function (p, v) {
+				++p.n;
+				p.tot += +v["Höhenlage in Meter über Meer"];
+				return p;
+			},
+			function (p, v) {
+				--p.n;
+				p.tot -= +v["Höhenlage in Meter über Meer"];
+				return p;
+			},
+			function () { return {n:0,tot:0}; }
+		);
 			
 		var einwohnerprojahr = jahr.group().reduceSum(function (d) {
 			return +d["Bevölkerung"];
@@ -599,6 +644,7 @@ function loadGemeindeportrait(version) {
 					//Filterfunktionen müssen etwas angepasst werden, damit es mit dem Verbergen klappt und damit noch einige andere Sachen angepasst werden können.
 					.addFilterHandler(function (filters, filter) {
 						if (filter != "Zugersee" && filter != "Aegerisee") {
+							$('#müm').show();
 							if (version=="online") {
 								showall();
 								$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
@@ -615,6 +661,7 @@ function loadGemeindeportrait(version) {
 						return filters;
 					})
 					.removeFilterHandler(function (filters, filter) {
+						$('#müm').hide();
 						if (version=="online") {
 							showall();
 							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
@@ -634,6 +681,7 @@ function loadGemeindeportrait(version) {
 				
 				//Auch FilterAll muss etwas angepasst werden
 				dc.override(karte, "filterAll", function () {
+					$('#müm').hide();
 					if (version=="online") {
 						showall();
 						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
@@ -649,6 +697,18 @@ function loadGemeindeportrait(version) {
 				});
 				
 				//Kennzahlen
+				fläche
+					.valueAccessor(total).formatNumber(germanFormatters.numberFormat(","))
+					.group(flächeinhaTotal);
+				
+				höhenlage
+					.valueAccessor(function (d) {
+						var höheübermeer=d.tot
+						if (höheübermeer>1000) { höheübermeer=NaN}
+						return höheübermeer;
+					}).formatNumber(germanFormatters.numberFormat(",müm"))
+					.group(höhenlagemümTotal);
+				
 				bevölkerung
 					.valueAccessor(total).formatNumber(germanFormatters.numberFormat(","))
 					.group(einwohnerTotal);
@@ -692,7 +752,7 @@ function loadGemeindeportrait(version) {
 						return steuerfuss;
 					}).formatNumber(germanFormatters.numberFormat(","))
 					.group(SteuerfussTotal);
-		
+					
 				for (i = 0; i < Realeinwohnerprojahr.all().length; i++) {
 					if (typeof min == 'undefined' || min > Realeinwohnerprojahr.all()[i].key) {var min = Realeinwohnerprojahr.all()[i].key};
 					if (typeof max == 'undefined' || max < Realeinwohnerprojahr.all()[i].key) {var max = Realeinwohnerprojahr.all()[i].key};
