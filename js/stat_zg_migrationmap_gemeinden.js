@@ -44,6 +44,7 @@ function redraw(number) {
 	//Width and height
 	Atts[number].w = document.getElementById(Atts[number].maincontainer).offsetWidth;
 	Atts[number].h = 450;
+	Atts[number].center = [Atts[number].w / 2, Atts[number].h / 2]
 	Atts[number].scalemax = 13500
 	Atts[number].scalemin = 13000
 	Atts[number].scale = Math.min( Atts[number].scalemin + (Atts[number].w - 275)*45, Atts[number].scalemax);
@@ -498,7 +499,7 @@ function zoomed() {
 		if (typeof Atts[number].selected!="undefined") {
 			clicked(false);
 		}
-    }, 500);	
+    }, 0);	
 }
 
 function nozoom() {
@@ -570,6 +571,74 @@ function callTip(number){
 			Atts[number].tips.hide(d);
 		})
 	})
+}
+
+// Zoom-Buttons
+Atts[number].svg.selectAll(".button")
+    .data(['zoom_in', 'zoom_out'])
+    .enter()
+	.append("polygon")
+    .attr("points", function(d,i){return i ? "57,18 57,22, 48,22 48,18" : "22,13 22,18, 27,18 27,22 22,22 22,27 18,27 18,22 13,22 13,18 18,18 18,13" })
+	.attr("class", "button")
+	.attr("id", function(d){return d})
+    .style("fill", function(d,i){ return i ? colors[1] : colors[0] })
+
+// Control logic to zoom when buttons are pressed, keep zooming while they are
+// pressed, stop zooming when released or moved off of, not snap-pan when
+// moving off buttons, and restore pan on mouseup.
+
+var pressed = false;
+d3.selectAll('.button').on('mousedown', function(){
+    pressed = true;
+    disableZoom();
+    zoomButton(this.id === 'zoom_in')
+}).on('mouseup', function(){
+    pressed = false;
+}).on('mouseout', function(){
+    pressed = false;
+})
+Atts[number].svg.on("mouseup", function(){Atts[number].svg.call(Atts[number].zoom)});
+
+function disableZoom(){
+    Atts[number].svg.on("mousedown.zoom", null)
+       .on("touchstart.zoom", null)
+       .on("touchmove.zoom", null)
+       .on("touchend.zoom", null);
+}
+
+function zoomButton(zoom_in){
+    var scale = Atts[number].zoom.scale(),
+        extent = Atts[number].zoom.scaleExtent(),
+        translate = Atts[number].zoom.translate(),
+        x = translate[0], y = translate[1],
+        factor = zoom_in ? 1.2 : 1/1.2,
+        target_scale = scale * factor;
+
+    // If we're already at an extent, done
+    if (target_scale === extent[0] || target_scale === extent[1]) { return false; }
+    // If the factor is too much, scale it down to reach the extent exactly
+    var clamped_target_scale = Math.max(extent[0], Math.min(extent[1], target_scale));
+    if (clamped_target_scale != target_scale){
+        target_scale = clamped_target_scale;
+        factor = target_scale / scale;
+    }
+
+    // Center each vector, stretch, then put back
+    x = (x - Atts[number].center[0]) * factor + Atts[number].center[0];
+    y = (y - Atts[number].center[1]) * factor + Atts[number].center[1];
+
+    // Transition to the new view over 100ms
+    d3.transition().duration(100).tween("zoom", function () {
+        var interpolate_scale = d3.interpolate(scale, target_scale),
+            interpolate_trans = d3.interpolate(translate, [x,y]);
+        return function (t) {
+            Atts[number].zoom.scale(interpolate_scale(t))
+                .translate(interpolate_trans(t));
+            zoomed();
+        };
+    }).each("end", function(){
+        if (pressed) zoomButton(zoom_in);
+    });
 }
 
 function simulateClick(elem /* Must be the element, not d3 selection */) {

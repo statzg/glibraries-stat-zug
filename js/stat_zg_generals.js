@@ -274,13 +274,16 @@ function addDownloadButton(number) {
 		.append("a")
 		.attr('id', 'dropdown-button'+number)
 		.attr('href', 'javascript:;');	
-		
+	
+	var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
+	if ( IE ){ var bildquelle="behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/download.png/download" } 
+	else { var bildquelle='data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512"><path d="M452.5,285c15,0,27,12,27,27v147c0,15-12,27-27,27h-418c-15,0-28-12-28-27V312c0-15,13-27,28-27   s27,12,27,27v119h364V312C425.5,297,437.5,285,452.5,285z"/><path d="M224.5,346l-110-110c-11-11-11-27,0-38s27-11,38,0l64,63V27c0-15,12-27,27-27s27,12,27,27v234l63-63   c11-11,28-11,39,0s11,27,0,38l-110,110c-5,5-12,8-19,8S229.5,351,224.5,346z"/></svg>' } 
+	
 	d3.select('#'+Atts[number].maincontainer+" dl dt a")
 		.append("img")
 		.attr('id', 'downloadtools')
 		.attr('alt', '>')
-		.attr('src', 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512"><path d="M452.5,285c15,0,27,12,27,27v147c0,15-12,27-27,27h-418c-15,0-28-12-28-27V312c0-15,13-27,28-27   s27,12,27,27v119h364V312C425.5,297,437.5,285,452.5,285z"/><path d="M224.5,346l-110-110c-11-11-11-27,0-38s27-11,38,0l64,63V27c0-15,12-27,27-27s27,12,27,27v234l63-63   c11-11,28-11,39,0s11,27,0,38l-110,110c-5,5-12,8-19,8S229.5,351,224.5,346z"/></svg>')
-		//.attr('src', 'behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/download.png/download')
+		.attr('src', bildquelle)
 		.attr('width', '20')
 		.attr('height', '20');
 		
@@ -321,14 +324,18 @@ function addDownloadButtonPng(number, patience) {
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
-			if (patience==true) {
-				alert("Haben Sie etwas Geduld, die Produktion der Grafik dauer eine Weile.");
+			var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
+			if ( IE ){alert("Ihr Browser unterstützt diese Funktion nicht, Sie können die Grafik mit Rechtsklick -> 'Bild speichern unter' abspeichern."); } 
+			else {			
+				if (patience==true) {
+					alert("Haben Sie etwas Geduld, die Produktion der Grafik dauer eine Weile.");
+				}
+				var width=$("#"+Atts[number].maincontainer+" svg").width()
+				var height=$("#"+Atts[number].maincontainer+" svg").height()
+				var svg=d3.select("#"+Atts[number].maincontainer+" svg")
+				var svgString = svg.node();
+				downloadSvg(svgString, "Grafik.png", width, height);
 			}
-			var width=$("#"+Atts[number].maincontainer+" svg").width()
-			var height=$("#"+Atts[number].maincontainer+" svg").height()
-			var svg=d3.select("#"+Atts[number].maincontainer+" svg")
-			var svgString = svg.node();
-			downloadSvg(svgString, "Grafik.png", width, height);
 		})
 		.text('Als Grafik speichern');
 }
