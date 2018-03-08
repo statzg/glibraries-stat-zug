@@ -125,13 +125,13 @@ var characteristicsLength= characteristics.length;
 if (partei==true) {
 	parteien=["Parteilos","ALG", "SP", "CSP", "GLP", "CVP", "FDP", "SVP"]
 	var farben=['#ff6d36','#76aa7c','#ff403a','#ffdd5e','#a0bd6d','#ff8e39','#007ac4','#4c9596']
-	colorScale = d3.scale.ordinal()
+	var colorScale = d3.scale.ordinal()
 				.domain(parteien)
 				.range(farben);
 }
 else {
 	var farben=colorscheme[scale][characteristicsLength]
-	colorScale = d3.scale.ordinal()
+	var colorScale = d3.scale.ordinal()
 				.domain(characteristics)
 				.range(colorscheme[scale][characteristicsLength]);
 }

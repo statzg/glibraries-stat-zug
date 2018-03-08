@@ -76,7 +76,7 @@ if (typeof characteristics === 'undefined' || characteristics.length==0) {
 	}
 var characteristicsLength= characteristics.length;
 
-colorScale = d3.scale.ordinal()
+var colorScale = d3.scale.ordinal()
             .domain(characteristics)
             .range(colorscheme[scale][characteristicsStack.length]);
 

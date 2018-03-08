@@ -74,11 +74,11 @@ var path = sankey.link();
 	graph = {"nodes" : [], "links" : []};
 
     Atts[number].data.forEach(function (d) {
-      graph.nodes.push({ "name": d.source });
-      graph.nodes.push({ "name": d.target });
-      graph.links.push({ "source": d.source,
-                         "target": d.target,
-                         "value": +d.value });
+      graph.nodes.push({ "name": d.Quelle });
+      graph.nodes.push({ "name": d.Ziel });
+      graph.links.push({ "source": d.Quelle,
+                         "target": d.Ziel,
+                         "value": +d.Betrag });
      });
 
     // return only the distinct / unique nodes
@@ -294,7 +294,7 @@ $(window).resize(function(){resizeSankey(number)});
   
 }); 
 
-var columns=["source", "target", "value"]									 
+var columns=["Quelle", "Ziel", "Betrag"]									 
 addDownloadButton(number);
 addDownloadButtonPng(number)
 addDataTablesButton(number, columns)
