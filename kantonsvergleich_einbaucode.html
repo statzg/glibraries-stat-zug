@@ -95,7 +95,7 @@
 <script>
 args1 ={
 	number:1,													
-	csv_path:"daten/result-vergleich-01-01.csv/download",		
+	csv_path:"/behoerden/baudirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-01-01.csv",		
 	//dimension:"Kanton",											
 	//group:"Anzahl",							
 	characteristics:["Schweiz","Zürich","Bern","Luzern","Uri","Schwyz","Obwalden","Nidwalden","Glarus","Zug","Freiburg","Solothurn","Basel-Stadt","Basel-Landschaft","Schaffhausen",
@@ -107,7 +107,7 @@ args1 ={
 }
 args2 ={
 	number:2,													
-	csv_path:"daten/result-vergleich-01-01.csv/download",		
+	csv_path:"/behoerden/baudirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-01-01.csv",		
 	//dimension:"Kanton",											
 	//group:"Anzahl",							
 }
@@ -117,8 +117,8 @@ loadChoroplethMap(args2);
 
 $( ".selection" ).click(function(){
 	selectedkey=$(this).attr('id');
-	args1.csv_path=String("daten/result-vergleich-"+selectedkey+".csv/download");
-	args2.csv_path=String("daten/result-vergleich-"+selectedkey+".csv/download");
+	args1.csv_path=String("/behoerden/baudirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+selectedkey+".csv");
+	args2.csv_path=String("/behoerden/baudirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+selectedkey+".csv");
 	d3.selectAll('#datatablecontainer1').remove();
 	$('#actionMenu1 > ul > li > a:nth-child(2)').text("Daten anzeigen/herunterladen");
 	d3.selectAll('#datatablecontainer2').remove();
