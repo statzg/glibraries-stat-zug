@@ -143,6 +143,12 @@ function treatmetadata(number, data) {
 	if (Atts[number].source.length == 1) {
 		$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
 	}
+	
+	Atts[number].typerow = Atts[number].meta.filter(function( el ) { return el.Type == "datatypes";});
+	if (Atts[number].typerow.length == 1) {
+		Atts[number].datatypes = (Atts[number].typerow[0].Content).split(/,\s?/);
+	}	
+		
 }
 
 
@@ -340,6 +346,45 @@ function addDownloadButtonPng(number, patience) {
 		.text('Als Grafik speichern');
 }
 
+function formater(type, value) {
+	if (type=="string" || type=="year") {
+		return value
+	} 
+	else if (type=="integer") {
+		return germanFormatters.numberFormat(",f")(parseInt(value))
+	}
+	else if (type=="float") {
+		return germanFormatters.numberFormat(",.1f")(parseFloat(value))
+	}
+	else if (type=="float2") {
+		return germanFormatters.numberFormat(",.2f")(parseFloat(value))
+	}
+	else if (type=="float6") {
+		return germanFormatters.numberFormat(",.6f")(parseFloat(value))
+	}
+	else if (type=="float2variable") {
+		if (parseFloat(value) % 1) {var wert=germanFormatters.numberFormat(",.2f")(parseFloat(value))}
+		else {wert=germanFormatters.numberFormat(",")(parseFloat(value))}
+		return wert
+	}
+	else if (type=="percentage") {
+		return d3.format('.1%')(value)
+	}
+	else if (type=="datemonthyear") {
+		return d3.time.format("%B %Y")(new Date(value))
+	}
+	else if (type=="dateyear") {
+		return d3.time.format("%Y")(new Date(value))
+	}
+	else if (type=="miochf") {
+		return "" + germanFormatters.numberFormat(",f")(parseInt(value)) + " Mio Franken";
+	}
+	else if (type=="floatha") {
+		//return "" + germanFormatters.numberFormat(",.1f")(parseFloat(value)) + " ha";
+		return d3.format('.8f')(value) 
+	}
+}
+
 function addDataTablesButton(number, columns) {
 
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
@@ -351,7 +396,7 @@ function addDataTablesButton(number, columns) {
 		.attr('href', 'javascript:;')
 		.on('click', function(){
 			if ($(this).text()=="Daten anzeigen/herunterladen"){
-				tabulate(columns, number);
+				tabulate(number, columns);
 				$(this).text("Daten verbergen");
 			} else {
 				d3.selectAll('#datatablecontainer'+number).remove();
@@ -361,7 +406,14 @@ function addDataTablesButton(number, columns) {
 		.text('Daten anzeigen/herunterladen');
 }
 
-function tabulate(columns, number) {
+function tabulate(number, columns) {
+	
+	if (typeof Atts[number].datatypes=="undefined") {
+		Atts[number].datatypes=[]
+		for (var i = 0; i < columns.length; i++) {
+		Atts[number].datatypes.push("string");
+		}
+	}
 	
 	var titel=$('#'+Atts[number].maincontainer+' #title').text();
 	if (typeof Atts[number].title != 'undefined' && Atts[number].title[0].Content != "") {
@@ -376,10 +428,34 @@ function tabulate(columns, number) {
 		source="Quelle: " + Atts[number].source[0].Content
 	};
 		
+	function generateFormating(column, typ) {
+		this.render={
+							"_": function ( data, type, row ) {
+								return data;
+							},
+							"display": function ( data, type, row ) {
+								return formater(typ, data);
+							},
+							"export": function ( data, type, row ) {
+								return data;
+							}
+						}
+		this.targets=column
+	}
+	
+	var columnsfomats=[]
+	
+	for (var i = 0; i < columns.length; i++) {
+		var columnformat=new generateFormating(i, Atts[number].datatypes[i])
+		columnsfomats.push(columnformat);
+	}
+	
+	console.log(columnsfomats);	
 	
 	$(document).ready(function(){
 		setTimeout(function () {
-			$('#datatable'+number).DataTable({
+			$('#datatable'+number).DataTable(
+				{
 				"info":true,
 				"language": {
 					"decimal":        ".",
@@ -427,15 +503,19 @@ function tabulate(columns, number) {
 				"buttons": ['pageLength', 'csv', 'excel'],*/
 				"buttons": [{
 						extend: 'csv', 
-						filename: titel},
+						filename: titel,
+						exportOptions: { orthogonal: 'export' }},
 				//'csv', 
 					{
 						extend: 'excel', 
 						footer: true,
 						title: titel,
 						messageTop: subtitle, 
-						messageBottom: source}],
+						messageBottom: source,
+						exportOptions: { orthogonal: 'export' }}
+						],
 				"colReorder": true,
+				"columnDefs": columnsfomats
 			});
 		}, 200);
 	});
@@ -475,7 +555,7 @@ function tabulate(columns, number) {
 	  .selectAll('th')
 	  .data(columns).enter()
 	  .append('th')
-		.text(function (column) { return column; });
+		.html(function (column) { return column; });
 
 	// create a row for each object in the data
 	var rows = tbody.selectAll('tr')
@@ -492,7 +572,8 @@ function tabulate(columns, number) {
 	  })
 	  .enter()
 	  .append('td')
-		.text(function (d) { return d.value; });
+		.text(function (d) { return d.value; })
+	  .attr('style', function (d, i) {if (Atts[number].datatypes[i] == "string" || Atts[number].datatypes[i] == "year") {var alignment='text-align: left;'} else {var alignment='text-align: right;'}; return alignment; });
 
 	if (typeof Atts[number].description != 'undefined' && Atts[number].description[0].Content != "") {
 		container.append('div')

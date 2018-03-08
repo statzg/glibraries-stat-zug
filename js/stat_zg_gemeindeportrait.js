@@ -148,6 +148,15 @@ function loadGemeindeportrait(version) {
 			$(".steuerfussyear").html("("+year7[0].Content+")");
 		}
 		
+		meta8 = data8.filter(function(el) {
+			return el["Meta"] == 1
+		});	
+
+		Atts[3].typerow = meta8.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[3].typerow.length == 1) {
+			Atts[3].datatypes = (Atts[3].typerow[0].Content).split(/,\s?/);
+		}	
+		
 		Atts[3].data = data8.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
 		});
@@ -155,6 +164,11 @@ function loadGemeindeportrait(version) {
 		meta9 = data9.filter(function(el) {
 			return el["Meta"] == 1
 		});
+		
+		Atts[4].typerow = meta9.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[4].typerow.length == 1) {
+			Atts[4].datatypes = (Atts[4].typerow[0].Content).split(/,\s?/);
+		}	
 		
 		Atts[4].data = data9.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
@@ -169,6 +183,11 @@ function loadGemeindeportrait(version) {
 			return el["Meta"] == 1
 		});
 		
+		Atts[5].typerow = meta10.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[5].typerow.length == 1) {
+			Atts[5].datatypes = (Atts[5].typerow[0].Content).split(/,\s?/);
+		}	
+		
 		Atts[5].data = data10.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
 		});
@@ -181,6 +200,11 @@ function loadGemeindeportrait(version) {
 		meta11 = data11.filter(function(el) {
 			return el["Meta"] == 1
 		});
+		
+		Atts[6].typerow = meta11.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[6].typerow.length == 1) {
+			Atts[6].datatypes = (Atts[6].typerow[0].Content).split(/,\s?/);
+		}	
 		
 		Atts[6].data = data11.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
