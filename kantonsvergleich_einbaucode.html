@@ -1,0 +1,152 @@
+<script type="text/javascript" src="/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/stat_zg_generals.js/download"></script>
+<script type="text/javascript" src="/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/stat_zg_row.js/download"></script>
+<script type="text/javascript" src="/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/stat_zg_choropleth.js/download"></script>
+<script type="text/javascript" src="/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/jquery.slinky.js/download"></script>
+
+	<div class="slincky-wrapper">
+		<section>
+			<p>Wählen Sie das Vergleichsthema</p>
+			<div id="menu" class="slinky-menu">
+				<ul>
+<li><h2>Themenbereich (bitte wählen)</h2></li>
+					<li>
+						<a href="#">Bevölkerung</a>
+						<ul>
+							<li><a href="javascript:;" class="selection" id="01-01">Bevölkerung</a></li>
+							<li><a href="javascript:;" class="selection" id="01-02">Bevölkerungswachstum seit 2000</a></li>
+							<li><a href="javascript:;" class="selection" id="01-03">Jugendquotient</a></li>
+							<li><a href="javascript:;" class="selection" id="01-04">Altersquotient</a></li>
+							<li><a href="javascript:;" class="selection" id="01-05">Ausländeranteil</a></li>
+							<li><a href="javascript:;" class="selection" id="01-06">Bevölkerungsszenario</a></li>
+							<li><a href="javascript:;" class="selection" id="01-07">Wanderungssaldo pro Einwohner/in</a></li>
+							<li><a href="javascript:;" class="selection" id="01-08">Anteil Katholiken</a></li>
+							<li><a href="javascript:;" class="selection" id="01-09">Anteil Einpersonenhaushalte</a></li>
+							<li><a href="javascript:;" class="selection" id="01-10">Anteil Familienhaushalte</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Wirtschaft</a>
+						<ul>
+							<li><a href="javascript:;" class="selection" id="04-01">BIP pro Einwohner/in</a></li>
+							<li><a href="javascript:;" class="selection" id="04-02">Arbeitslosenquote</a></li>
+							<li><a href="javascript:;" class="selection" id="04-03">Neu gegründete Unternehmen pro Einwohner/in</a></li>
+							<li><a href="javascript:;" class="selection" id="04-04">Beschäftigte pro Einwohner/in</a></li>
+							<!--<li><a href="javascript:;" class="selection" id="04-05">Wachstum der Beschäftigten seit 2000</a></li>-->
+							<li><a href="javascript:;" class="selection" id="04-06">Anteil Beschäftigte im Industriesektor</a></li>
+							<li><a href="javascript:;" class="selection" id="04-07">Anteil Beschäftigte in KMUs</a></li>
+							<li><a href="javascript:;" class="selection" id="04-08">Erwerbstätigenquote</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Bildung</a>
+						<ul>
+							<li><a href="javascript:;" class="selection" id="15-01">Bildungsstand</a></li>
+							<li><a href="javascript:;" class="selection" id="15-02">Maturitätsquote</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('#menu').slinky({
+			title: true,
+			label: "Zurück",
+			
+		});
+	});
+</script>
+
+<!--<div style="float:right">Anzeigen als:
+<ul class="subelements-listing" style="float:right">
+<li><a id="desc" class="hiderow" href="javascript:;">Balken verbergen</a> </li>
+<li><a id="desc" class="hidemap" href="javascript:;">Karte verbergen</a> </li>
+</ul>-->
+</div>
+<div id="default1">
+	<div id="title" class="title"></div>
+	<div id="subtitle" class="subtitle"></div>	
+	<div id="chart1"></div>
+	<div id="description" class="description"></div>
+	<div id="source" class="source"></div>
+<ul class="subelements-listing">
+<li><a id="desc" class="order" href="javascript:;">Absteigend</a> </li>
+<li><a id="asc" class="order" href="javascript:;">Aufsteigend</a> </li>
+<li><a id="alpha" class="order" href="javascript:;">Alphabetisch</a> </li>
+<li><a id="list" class="order" href="javascript:;">Historisch</a> </li>
+</ul>
+</div>
+
+<!--<ul class="subelements-listing"  style="float:right">
+<li><a id="desc" class="hidemap" href="javascript:;">Karte verbergen</a> </li>
+</ul>-->
+<div id="default2">
+	<div id="title" class="title"></div>
+	<div id="subtitle" class="subtitle"></div>	
+	<div id="chart2"></div>
+	<div id="description" class="description"></div>
+	<div id="source" class="source"></div>
+</div>
+
+<script>
+args1 ={
+	number:1,													
+	csv_path:"daten/result-vergleich-01-01.csv/download",		
+	//dimension:"Kanton",											
+	//group:"Anzahl",							
+	characteristics:["Schweiz","Zürich","Bern","Luzern","Uri","Schwyz","Obwalden","Nidwalden","Glarus","Zug","Freiburg","Solothurn","Basel-Stadt","Basel-Landschaft","Schaffhausen",
+"Appenzell Ausserrhoden","Appenzell Innerrhoden","St. Gallen","Graubünden","Aargau","Thurgau","Tessin","Waadt","Wallis","Neuenburg","Genf","Jura"],										
+	showTotal:true,												
+	showAnteil:false,											
+	order:"desc",												
+	highlight:{"Zug":2, "Schweiz":1}													
+}
+args2 ={
+	number:2,													
+	csv_path:"daten/result-vergleich-01-01.csv/download",		
+	//dimension:"Kanton",											
+	//group:"Anzahl",							
+}
+
+loadRow(args1);
+loadChoroplethMap(args2);
+
+$( ".selection" ).click(function(){
+	selectedkey=$(this).attr('id');
+	args1.csv_path=String("daten/result-vergleich-"+selectedkey+".csv/download");
+	args2.csv_path=String("daten/result-vergleich-"+selectedkey+".csv/download");
+	d3.selectAll('#datatablecontainer1').remove();
+	$('#actionMenu1 > ul > li > a:nth-child(2)').text("Daten anzeigen/herunterladen");
+	d3.selectAll('#datatablecontainer2').remove();
+	$('#actionMenu2 > ul > li > a:nth-child(2)').text("Daten anzeigen/herunterladen");
+	loadRow(args1);
+        loadChoroplethMap(args2);
+});
+
+$(".order").click(function(){
+	args1.order=$(this).attr('id');
+	loadRow(args1);
+});
+
+$(".hiderow").click(function(){
+	$('#default1').toggle(500);
+	if ($(this).text() == 'Balken anzeigen') {
+                $(this).text('Balken verbergen');
+        } else {
+                $(this).text('Balken anzeigen');
+        }
+});
+
+$(".hidemap").click(function(){
+	$('#default2').toggle(500);
+	if ($(this).text() == 'Karte anzeigen') {
+                $(this).text('Karte verbergen');
+        } else {
+                $(this).text('Karte anzeigen');
+        }
+});
+</script>
