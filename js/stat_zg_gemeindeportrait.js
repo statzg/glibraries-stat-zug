@@ -49,35 +49,35 @@ function loadGemeindeportrait(version) {
 	var bauzonenChart = dc.barChart("#bauzonen-chart");
 	
 	//Alle Daten einlesen
-	if (version=="online") {
+	if (version=="online" /*| version=="print"*/) {
 	var q = queue()
-		.defer(d3.csv, "daten/result-data0.csv/download")
-		.defer(d3.csv, "daten/result-data1.csv/download")
-		.defer(d3.csv, "daten/result-data2.csv/download")
-		.defer(d3.csv, "daten/result-data3.csv/download")
-		.defer(d3.csv, "daten/result-data4.csv/download")
-		.defer(d3.csv, "daten/result-data5.csv/download")
-		.defer(d3.csv, "daten/result-data6.csv/download")
-		.defer(d3.csv, "daten/result-data7.csv/download")
-		.defer(d3.csv, "daten/result-data8.csv/download")
-		.defer(d3.csv, "daten/result-data9.csv/download")
-		.defer(d3.csv, "daten/result-data10.csv/download")
-		.defer(d3.csv, "daten/result-data11.csv/download");
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data0.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data1.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data2.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data3.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data4.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data5.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data6.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data7.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data8.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data9.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data10.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data11.csv");
 	}
 	else if (version=="print") {
 	var q = queue()
-		.defer(d3.csv, "data/result-data0.csv")
-		.defer(d3.csv, "data/result-data1.csv")
-		.defer(d3.csv, "data/result-data2.csv")
-		.defer(d3.csv, "data/result-data3.csv")
-		.defer(d3.csv, "data/result-data4.csv")
-		.defer(d3.csv, "data/result-data5.csv")
-		.defer(d3.csv, "data/result-data6.csv")
-		.defer(d3.csv, "data/result-data7.csv")
-		.defer(d3.csv, "data/result-data8.csv")
-		.defer(d3.csv, "data/result-data9.csv")
-		.defer(d3.csv, "data/result-data10.csv")
-		.defer(d3.csv, "data/result-data11.csv");
+		.defer(d3.csv, "gemeindeportrait/result-data0.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data1.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data2.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data3.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data4.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data5.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data6.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data7.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data8.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data9.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data10.csv")
+		.defer(d3.csv, "gemeindeportrait/result-data11.csv");
 	}
 	
 	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11 ) {
@@ -619,7 +619,7 @@ function loadGemeindeportrait(version) {
 			var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
 			var lat = 8.548589899
 			var lon = 47.15309567
-			var pfadKarte = "daten/gemeinden.json/download"
+			var pfadKarte = "/behoerden/baudirektion/statistikfachstelle/daten/geojson/gemeinden.json"
 			}
 			else if (version=="print") {
 			var totalWidth = document.getElementById('karte').offsetWidth;
@@ -633,7 +633,7 @@ function loadGemeindeportrait(version) {
 			var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
 			var lat = 8.548589899
 			var lon = 47.15309567
-			var pfadKarte = "data/gemeinden.json"
+			var pfadKarte = "geojson/gemeinden.json"
 			}
 			
 			var projection = d3.geo.mercator()
@@ -675,7 +675,7 @@ function loadGemeindeportrait(version) {
 								$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
 							}
 							else if (version=="print") {
-								$('#mainflag').attr("src", "logos/Gross/"+ filter.toLowerCase().replace("ü", "ü").replace("ä", "ä")+ ".png")
+								$('#mainflag').attr("src", "logos/gross/"+ filter.replace("ü", "ü").replace("ä", "ä")+ ".png")
 								$('#maintitle').html("Gemeindeporträt "+filter);
 							}
 							$('.gemeindename').html("Gemeinde "+filter);
