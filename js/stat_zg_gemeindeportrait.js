@@ -19,13 +19,17 @@ function loadGemeindeportrait(version) {
 	Atts[6].chartcontainer="bauzonen-chart"
 	
 	if (version=="online") {
-	$('h1.documentFirstHeading').html("Kantonsporträt");
+		$('h1.documentFirstHeading').html("Kantonsporträt");
+		tduration=1000
+	}
+	if (version=="print") {
+		tduration=0
 	}
 
     var numberFormat = d3.format(".2f");
 
 	//Übersichtskarte initialisieren
-    var karte = dc.geoChoroplethChart("#karte");
+    karte = dc.geoChoroplethChart("#karte");
 	
 	//Kennzahlen initialisieren
 	var fläche = dc.numberDisplay("#fläche");
@@ -673,6 +677,7 @@ function loadGemeindeportrait(version) {
 								showall();
 								$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
 								$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
+								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
 							else if (version=="print") {
 								$('#mainflag').attr("src", "logos/gross/"+ filter.replace("ü", "ü").replace("ä", "ä")+ ".png")
@@ -690,6 +695,7 @@ function loadGemeindeportrait(version) {
 							showall();
 							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 							$('h1.documentFirstHeading').html("Kantonsporträt");
+							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 						}
 						else if (version=="print") {
 							$('#mainflag').attr("src", "")
@@ -705,18 +711,19 @@ function loadGemeindeportrait(version) {
 				
 				//Auch FilterAll muss etwas angepasst werden
 				dc.override(karte, "filterAll", function () {
+					var g = this._filterAll();
 					$('#müm').hide();
 					if (version=="online") {
 						showall();
 						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 						$('h1.documentFirstHeading').html("Kantonsporträt");
+						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="));
 					}
 					else if (version=="print") {
 						$('#mainflag').attr("src", "")
 						$('#maintitle').html("Kantonsporträt");
 					}
 					$('.gemeindename').html("Kanton Zug");
-					var g = this._filterAll();
 					return g;
 				});
 				
@@ -796,7 +803,7 @@ function loadGemeindeportrait(version) {
 				entwicklungsChart
 					.width(totalWidth)
 					.height(height)
-					.transitionDuration(1000)
+					.transitionDuration(tduration)
 					.margins({left: links, top: 10, right: rechts, bottom: 30})
 					.dimension(jahr)
 					.group(Realeinwohnerprojahr)
@@ -967,7 +974,7 @@ function loadGemeindeportrait(version) {
 					.group(RealAltersstrukturGroup, characteristics[0] + "", sel_stack(characteristics[0]))
 					//.renderLabel(true)
 					.ordinalColors(colorsAltersstruktur)
-					.transitionDuration(1000)
+					.transitionDuration(tduration)
 					.yAxisPadding("5%")
 					.elasticY(true)
 					.filter = function() {}
@@ -1044,7 +1051,7 @@ function loadGemeindeportrait(version) {
 					.emptyTitle("Keine Daten vorhanden")
 					.innerRadius(0.3*wirtschaftsHeight)
 					.colors(colorScaleWirtschaftstruktur)
-					.transitionDuration(1000)
+					.transitionDuration(tduration)
 					.title(function(d) {
 						return ""; 
 					})
@@ -1074,7 +1081,7 @@ function loadGemeindeportrait(version) {
 					.emptyTitle("Keine Daten vorhanden")
 					.innerRadius(0.2*wirtschaftsHeight)
 					.colors(colorScaleWirtschaftstruktur)
-					.transitionDuration(1000)
+					.transitionDuration(tduration)
 					.title(function(d) {
 						return ""; 
 					})
@@ -1131,7 +1138,7 @@ function loadGemeindeportrait(version) {
 					.colorAccessor(function(d) { 
 						return d.key
 					})
-					.transitionDuration(1000)
+					.transitionDuration(tduration)
 					.yAxisPadding("5%")
 					.ordering(function(d) { return characteristicsBauzonen.indexOf(d.key); })
 					.filter = function() {};

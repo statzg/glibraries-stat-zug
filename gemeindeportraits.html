@@ -177,7 +177,40 @@ text.barLabel {
 <script type="text/javascript">
 
 loadGemeindeportrait(version="print")
+
+function simulateClick(elem /* Must be the element, not d3 selection */) {
+    var evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent(
+        "click", /* type */
+        true, /* canBubble */
+        true, /* cancelable */
+        window, /* view */
+        0, /* detail */
+        0, /* screenX */
+        0, /* screenY */
+        0, /* clientX */
+        0, /* clientY */
+        false, /* ctrlKey */
+        false, /* altKey */
+        false, /* shiftKey */
+        false, /* metaKey */
+        0, /* button */
+        null); /* relatedTarget */
+    elem.dispatchEvent(evt);
+}
+
+$( document ).ready(function() {
+	if (version=="print") {
+		setTimeout(function() {
+			var selection = decodeURI(location.search.split('selection=')[1])
+			simulateClick(d3.select("g."+selection+" > path").node());
+		}, 200);
+	}
+});
+
 </script>
 
+<!--<a class="pdfcrowd-remove" id="savelink" href="https://selectpdf.com/save-as-pdf/?pdf_name=Gemeindeportrait&margin_top=2&margin_right=12&margin_bottom=4&margin_left=12&page_numbers=false&web_page_width=1200px&web_page_height=1887px&min_load_time=2">Save as Pdf</a> 
+<a class="pdfcrowd-remove" href="//pdfcrowd.com/url_to_pdf/?width=1200px&height=1887px&pdf_name=Gemeindeportrait">Save to PDF</a>-->
 
 </body></html>
