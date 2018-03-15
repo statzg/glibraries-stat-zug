@@ -1,18 +1,18 @@
 ﻿/* stat_zg_general.js (version 0.3 (2017.11.28)*/
 
 function loadbasics() {
-	var stylesheets = ["/behoerden/baudirektion/statistikfachstelle/bibliotheken/css/statistik.css/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/css/datatables.css/download"]
+	var stylesheets = ["/behoerden/baudirektion/statistikfachstelle/daten/css/statistik.css",
+	"/behoerden/baudirektion/statistikfachstelle/daten/css/datatables.css"]
 	var $head = $("head");
 	for (var i = 0; i < stylesheets.length; i++) {
 		$head.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + stylesheets[i] + "\">");
 	}
-	var basics = ["/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/d3.js/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/crossfilter.js/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/dc.js/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/d3-tip.js/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/filesaver.js/download",
-	"/behoerden/baudirektion/statistikfachstelle/bibliotheken/javascript/datatables.js/download"];
+	var basics = ["/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/d3.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/crossfilter.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/dc.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/d3-tip.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/filesaver.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/datatables.js"];
 	var $head = $("head");
 	for (var i = 0; i < basics.length; i++) {
 		$head.append("<script src=\"" + basics[i] + "\"></scr" + "ipt>");
@@ -282,7 +282,7 @@ function addDownloadButton(number) {
 		.attr('href', 'javascript:;');	
 	
 	var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
-	if ( IE ){ var bildquelle="behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/download.png/download" } 
+	if ( IE ){ var bildquelle="behoerden/baudirektion/statistikfachstelle/daten/logos/download.png" } 
 	else { var bildquelle='data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512"><path d="M452.5,285c15,0,27,12,27,27v147c0,15-12,27-27,27h-418c-15,0-28-12-28-27V312c0-15,13-27,28-27   s27,12,27,27v119h364V312C425.5,297,437.5,285,452.5,285z"/><path d="M224.5,346l-110-110c-11-11-11-27,0-38s27-11,38,0l64,63V27c0-15,12-27,27-27s27,12,27,27v234l63-63   c11-11,28-11,39,0s11,27,0,38l-110,110c-5,5-12,8-19,8S229.5,351,224.5,346z"/></svg>' } 
 	
 	d3.select('#'+Atts[number].maincontainer+" dl dt a")
