@@ -55,33 +55,33 @@ function loadGemeindeportrait(version) {
 	//Alle Daten einlesen
 	if (version=="online" /*| version=="print"*/) {
 	var q = queue()
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data0.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data1.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data2.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data3.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data4.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data5.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data6.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data7.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data8.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data9.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data10.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-data11.csv");
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-11.csv");
 	}
 	else if (version=="print") {
 	var q = queue()
-		.defer(d3.csv, "gemeindeportrait/result-data0.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data1.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data2.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data3.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data4.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data5.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data6.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data7.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data8.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data9.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data10.csv")
-		.defer(d3.csv, "gemeindeportrait/result-data11.csv");
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-00.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-01.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-02.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-03.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-04.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-05.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-06.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-07.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-08.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-09.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-10.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-11.csv");
 	}
 	
 	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11 ) {
