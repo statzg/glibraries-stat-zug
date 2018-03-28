@@ -23,7 +23,7 @@ function loadGemeindeportrait(version) {
 		tduration=1000
 	}
 	if (version=="print") {
-		tduration=0
+		tduration=200
 	}
 
     var numberFormat = d3.format(".2f");
@@ -684,6 +684,7 @@ function loadGemeindeportrait(version) {
 								$('#maintitle').html("Gemeindeporträt "+filter);
 							}
 							$('.gemeindename').html("Gemeinde "+filter);
+							$('.ebene').html("Einwohnergemeinde");
 							filters.length = 0; // empty the array
 							filters.push(filter);
 						}
@@ -702,6 +703,7 @@ function loadGemeindeportrait(version) {
 							$('#maintitle').html("Kantonsporträt");
 						}
 						$('.gemeindename').html("Kanton Zug");
+						$('.ebene').html("Kanton");
 						filters.length = 0;
 						return filters;
 					});
@@ -724,6 +726,7 @@ function loadGemeindeportrait(version) {
 						$('#maintitle').html("Kantonsporträt");
 					}
 					$('.gemeindename').html("Kanton Zug");
+					$('.ebene').html("Kanton");
 					return g;
 				});
 				
