@@ -116,7 +116,7 @@ Charts[number]
 	})
 	.dimension(Atts[number].maindimension)
 	.group(Atts[number].maingroup, characteristics[0] + "", sel_stack(characteristics[0]))
-	.renderLabel(true)
+	.renderLabel(false)
 	.ordinalColors(colorscheme[scale][characteristicsLength])
 	.transitionDuration(0)
 	.yAxisPadding("5%")
@@ -222,7 +222,22 @@ function rotateX(){
 				maxheight = coordy;
 			}
 		});
-
+		
+	//Maximale Breite der BarLabels	
+	/*var maxwidthbar=0
+	var maxheightbar=0
+	Charts[number].selectAll("#"+Atts[number].chartcontainer+" text.barLabel")
+		.attr('transform', function (d) {
+			var coordx = this.getBBox().width;
+			if (maxwidthbar < coordx) {
+				maxwidthbar = coordx;
+			}
+			var coordy = this.getBBox().height;
+			if (maxheightbar < coordy) {
+				maxheightbar = coordy;
+			}
+		});*/
+	
 	var legendy=330+maxheight
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 	var legendHeight = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().getBBox().height;
@@ -278,6 +293,13 @@ function rotateX(){
 		}
 	});
 	}
+	//Wenn nötig BarLabels drehen
+	/*if (maxwidthbar-6>tickwidth*0.75) {
+		d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").attr("transform", function (d) {
+			console.log(this.getBBox());
+			return ("rotate(90, "+this.getBBox().x+", "+this.getBBox().y+"), translate("+(-(this.getBBox().width/2))+", "+(-this.getBBox().height)+")")
+		});
+	}*/
 	//Click-Event ausschalten
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on('click',null);
     d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect").on("click", function() { 
@@ -336,10 +358,9 @@ function callTip(number){
 		});
 }
 
-
 function formatBarLabels(){
 	d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
-		if (d.data.value["tota"] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value["total"])}
+		if (d.data.value["total"] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value["total"])}
 		else {wert=germanFormatters.numberFormat(",")(d.data.value["total"])}
 		d3.select(this).text(wert);
 	});
