@@ -211,10 +211,15 @@ else {
 	if (Atts[number].percent==true) {
 		axis.tickFormat(formatPercent);
 	}
-	else {
+	else if ((maxquote % 1)==0 & (minquote % 1)==0) {
 		axis.tickFormat(germanFormatters.numberFormat(","));
 	}
-
+	else {
+		axis.tickFormat(germanFormatters.numberFormat(",.2f"));
+	}
+	
+	
+	
 	svg.append('g').attr('class', 'axis')
 
 	svg.selectAll('.axis')
@@ -350,7 +355,7 @@ function callTip(number){
 			}
 			//console.log(d);
 			if (Atts[number].percent==true) {wert=germanFormatters.numberFormat(",.1%")(d.value)}
-			else if (d.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.value)}
+			else if (d.value % 1) {wert=germanFormatters.numberFormat(",.2f")(d.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.value)}
 			tiptext= "<span><b>" + d.id + "</b></span><br/><span>"+Atts[number].grouplabel+": <b>" + wert + "</b></span>";
 			$("#d3-tip"+number).html(tiptext);
