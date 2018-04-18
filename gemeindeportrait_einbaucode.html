@@ -120,17 +120,23 @@
 
 </div>
 
-<form action="https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment" method="post" enctype="multipart/form-data">
+<form id="downloadPdf" action="https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam=1" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="Url" value="https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html" />
 	<input type="hidden" name="FileName" value="Portrait" />
-	<input type="hidden" name="ConversionDelay" value="3" />
+	<input type="hidden" name="ConversionDelay" value="5" />
 	<input type="hidden" name="ViewportWidth" value="1200" />
 	<input type="hidden" name="ViewportHeight" value="1887" />
 	<input type="hidden" name="PageSize" value="a4" />
 	<input type="submit" value="Portrait als PDF ausgeben"/>
 </form>
 
-
 <script type="text/javascript">
+
+$('#downloadPdf').submit(function(ev) {
+    ev.preventDefault(); // to stop the form from submitting
+    $('#downloadPdf').attr('action', 'https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam='+ev.timeStamp);  //to add random number parameter to action-url
+    this.submit(); // submit with new url
+});
+
 loadGemeindeportrait();
 </script>
