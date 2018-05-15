@@ -1,5 +1,5 @@
 function loadGemeindeportrait(version) {
-	var version = (typeof version == 'undefined') ? "online" : version;					  
+	var version = (typeof version == 'undefined') ? "online" : version;
 	//Objekte für Grafik- und Tabelle-Export initialisieren.
 	Atts[2]={};
 	Atts[3]={};
@@ -20,6 +20,9 @@ function loadGemeindeportrait(version) {
 	
 	if (version=="online") {
 		$('h1.documentFirstHeading').html("Kantonsporträt");
+		tduration=1000
+	}
+	if (version=="iframe") {
 		tduration=1000
 	}
 	if (version=="print") {
@@ -53,7 +56,7 @@ function loadGemeindeportrait(version) {
 	var bauzonenChart = dc.barChart("#bauzonen-chart");
 	
 	//Alle Daten einlesen
-	if (version=="online" /*| version=="print"*/) {
+	if (version=="online" | version=="iframe") {
 	var q = queue()
 		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
 		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
@@ -611,7 +614,7 @@ function loadGemeindeportrait(version) {
 		function redraw() {
 
 			//Karte
-			if (version=="online") {
+			if (version=="online" | version=="iframe") {
 			var totalWidth = document.getElementById('default').offsetWidth;
 			var mapheight = 400
 			var heightmax = 400
@@ -679,6 +682,12 @@ function loadGemeindeportrait(version) {
 								$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
 								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
+							else if (version=="iframe") {
+								showall();
+								$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
+								$('h1.maintitle').html("Gemeindeporträt "+filter);
+								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+							}
 							else if (version=="print") {
 								$('#mainflag').attr("src", "logos/gross/"+ filter.replace("ü", "ü").replace("ä", "ä")+ ".png")
 								$('#maintitle').html("Gemeindeporträt "+filter);
@@ -696,7 +705,13 @@ function loadGemeindeportrait(version) {
 							showall();
 							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 							$('h1.documentFirstHeading').html("Kantonsporträt");
-							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+						}
+						else if (version=="iframe") {
+							showall();
+							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+							$('h1.maintitle').html("Kantonsportrait");
+							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 						}
 						else if (version=="print") {
 							$('#mainflag').attr("src", "")
@@ -719,7 +734,13 @@ function loadGemeindeportrait(version) {
 						showall();
 						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 						$('h1.documentFirstHeading').html("Kantonsporträt");
-						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="));
+						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+					}
+					else if (version=="iframe") {
+						showall();
+						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+						$('h1.maintitle').html("Kantonsportrait");
+						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 					}
 					else if (version=="print") {
 						$('#mainflag').attr("src", "")
@@ -794,7 +815,7 @@ function loadGemeindeportrait(version) {
 				
 				//Grafik zur Bevölkerungsentwicklung			
 				var height=Math.min(500, (1.2*totalWidth));
-				if (version=="online") {
+				if (version=="online" | version=="iframe") {
 					var links=65;
 					var rechts=65;
 				}
@@ -1107,7 +1128,7 @@ function loadGemeindeportrait(version) {
 					.domain(characteristicsBauzonen)
 					.range(colorscheme[1][6]);
 				
-				if (version=="online") {
+				if (version=="online" | version=="iframe") {
 					var hoeheBauzonen=500;
 					var faktorBauzonen=1.2;
 				}
@@ -1519,7 +1540,7 @@ function loadGemeindeportrait(version) {
 
 		//Funktion für die Änderung der Fensterbreite
 		function resizeWindow() {
-			if (version=="online") {
+			if (version=="online" | version=="iframe") {
 				showall()
 			}
 			d3.selectAll(".d3-tip").remove();
@@ -1527,23 +1548,36 @@ function loadGemeindeportrait(version) {
 			redraw()
 		}
 		
+		var w = 0;
+
+		$( window ).on('load', function(){
+			w = $( window ).width();
+		});
+		
 		var doit;
 		
 		$(window).resize(function(){
-			clearTimeout(doit);
-			doit = setTimeout(function() {
-				resizeWindow()
-			}, 200);
+			if( w != $( window ).width() ){
+				clearTimeout(doit);
+				doit = setTimeout(function() {
+					resizeWindow()
+				}, 200);
+				w = $( window ).width();
+				delete w;
+			}
 		});	
 
 	});
-	if (version=="online") {
+	if (version=="online" | version=="iframe") {
 		//Funktionen um immer nur eine Grafik (nebst der Karte) anzuzeigen.
 		//Alle Objekte die verborgen werden können
 		var hide=["kennzahlen", "entwicklung", "altersstruktur", "wirtschaftsstruktur", "bauzonen"]
 
 		//Zum neu zeichen müssen alle Grafiken eingeblendet werden, nach einer Sekunde werden sie wieder ausgeblendet.
 		function showall() {
+			if ('parentIFrame' in window) {
+				parentIFrame.autoResize(false);
+			}
 			for (i = 0; i < hide.length; i++) {
 				$('#'+hide[i]+'-container').show(0);
 			}
@@ -1553,7 +1587,10 @@ function loadGemeindeportrait(version) {
 						if (i!=shown) {
 							$('#'+hide[i]+'-container').hide(0);
 						}
-					}	
+					}
+					if ('parentIFrame' in window) {
+						parentIFrame.autoResize(true);
+					}					
 				}, 1000);
 		}
 		
