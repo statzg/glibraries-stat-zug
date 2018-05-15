@@ -33,6 +33,10 @@ createcontainers(number);
 
 // load the data (using the timelyportfolio csv method)
 d3.csv(csv_path, function(error, data) {
+	
+data.forEach(function(x) {
+	x['Betrag'] = +x['Betrag'];
+});
 
 function redraw() {
 
