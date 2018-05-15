@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Gemeindeportrait</title>
+
+	<meta http-Equiv="Cache-Control" Content="no-cache" />
+    <meta http-Equiv="Pragma" Content="no-cache" />
+    <meta http-Equiv="Expires" Content="0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+	
+    <link rel="stylesheet" type="text/css" href="css/statistik.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/theming.css?cachekey=e2defade10841fce56eb3205f8bae14a" />
+	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/customstyles_css?ts=" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>
+</head>
+<body>
+
+<div class="container" id="default">
+
+    <div style="float:right; position: absolute; right:0px; top:50px">
+		<img id="flag" src='/behoerden/baudirektion/statistikfachstelle/daten/logos/Kanton.png' alt='Wappen' width='75' >
+	</div>
+	
+	<div id="karte" class="non-float">
+	<h1 class="maintitle"> Gemeindenportrait
+	</h1>
+    </div>
+
+	<div>
+		<ul class="subelements-listing">
+			<li><a id="kennzahlen" class="hiderow" href="javascript:;">Kennzahlen</a> </li>
+			<li><a id="entwicklung" class="hiderow" href="javascript:;">Bevölkerungsentwicklung</a> </li>
+			<li><a id="altersstruktur" class="hiderow" href="javascript:;">Altersstruktur</a> </li>
+			<li><a id="wirtschaftsstruktur" class="hiderow" href="javascript:;">Wirtschaftsstruktur</a> </li>
+			<li><a id="bauzonen" class="hiderow" href="javascript:;">Raumstruktur</a> </li>
+		</ul>
+	</div>
+
+	<div id="kennzahlen-container">
+	<h3 id="title">Kennzahlen</h3> 
+	<div id="kennzahlen-chart" class="non-float">
+		<table width="100%">
+			<col width="70%">
+			<col width="30%">
+			<tr>
+				<td>Fläche ohne Seen</td>
+				<td align="right"><span id="fläche"></span><span> ha</span></td>
+			</tr>
+			<tr id="müm" style="display: none;">
+				<td>Höhenlage</td>
+				<td align="right"><span id="höhenlage"></span> m.ü.M.</td>
+			</tr>
+			<tr>
+				<td>Ständige Wohnbevölkerung <span class="bevölkerungyear"></span></td>
+				<td align="right"><span id="bevölkerung"></span></td>
+			</tr>
+			<tr>
+				<td>Anteil Ausländer/innen<span class="bevölkerungyear"></span></td>
+				<td align="right"><span id="ausländeranteil"></span></td>
+			</tr>
+			<tr>
+				<td>Haushalte <span class="haushalteyear"></span></td>
+				<td align="right"><span id="haushalte"></span></td>
+			</tr>
+			<tr>
+				<td>Anteil Einpersonenhaushalte<span class="haushalteyear"></span></td>
+				<td align="right"><span id="anteileinpersonenhaushalte"></span></td>
+			</tr>
+			<tr>
+				<td>Wohnungen <span class="wohnungenyear"></span></td>
+				<td align="right"><span id="wohnungen"></span></td>
+			</tr>
+			<tr>
+				<td>Neuerstellte Wohnungen <span class="neubauwohnungenyear"></span></td>
+				<td align="right"><span id="neuwohnungen"></span></td>
+			</tr>
+			<tr>
+				<td>Volksschüler/innen <span class="volksschüleryear"></span></td>
+				<td align="right"><span id="volksschüler"></span></td>
+			</tr>
+			<tr>
+				<td>Betriebe <span class="wirtschaftyear"></span></td>
+				<td align="right"><span id="betriebe"></span></td>
+			</tr>
+			<tr>
+				<td>Beschäftigte <span class="wirtschaftyear"></span></td>
+				<td align="right"><span id="beschäftigte"></span></td>
+			</tr>
+			<tr>
+				<td>Steuerfuss <span class="ebene">Kanton</span> <span class="steuerfussyear"></span></td>
+				<td align="right"><span id="steuerfuss"></span></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	
+	<div id="entwicklung-container">
+	<h3 id="title">Bevölkerungsentwicklung <span class="gemeindename">Kanton Zug</span></h3>
+	
+	<div id="entwicklung-chart" class="non-float">
+	</div>
+	</div>
+
+	<div id="altersstruktur-container">
+	<h3 id="title">Altersstruktur <span class="gemeindename">Kanton Zug</span> <span class="altersstrukturyear"></span></h3>
+	
+	<div id="altersstruktur-chart" class="non-float" style="text-align:center; display:block;">
+	</div>
+	</div>
+
+	<div id="wirtschaftsstruktur-container">
+	<h3 id="title">Wirtschaftsstruktur <span class="gemeindename">Kanton Zug</span> <span class="wirtschaftsstrukturyear"></span></h3>
+	
+	<div id="wirtschaftsstruktur-chart" class="overlaycontainer" style="position: relative;">
+		<div id="wirtschaftsstruktur1-chart" class="non-float" style="position: relative; z-index: 100;">
+		</div>
+		<div id="wirtschaftsstruktur2-chart" class="non-float" style="position: absolute; top: 0; left: 0; z-index: 99;">
+	    </div>
+	</div>
+	</div>
+
+	<div id="bauzonen-container">
+	<h3 id="title">Raumstruktur (Bauzonen) <span class="gemeindename">Kanton Zug</span> <span class="bauzonenyear"></span></h3>
+	
+	<div id="bauzonen-chart" class="non-float">
+	</div>
+	</div>
+	
+    <!--<div style="margin-top:10px">
+        <a href="javascript:karte.filterAll(); dc.redrawAll();">Zurück zum Kantonsportrait</a>
+    </div>-->
+
+</div>
+
+<form id="downloadPdf" action="https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam=1" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="Url" value="https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html" />
+	<input type="hidden" name="FileName" value="Portrait" />
+	<input type="hidden" name="ConversionDelay" value="5" />
+	<input type="hidden" name="ViewportWidth" value="1200" />
+	<input type="hidden" name="ViewportHeight" value="1887" />
+	<input type="hidden" name="PageSize" value="a4" />
+	<input type="submit" value="Portrait als PDF ausgeben"/>
+</form>
+
+<script type="text/javascript">
+$('#downloadPdf').submit(function(ev) {
+    ev.preventDefault(); // to stop the form from submitting
+    $('#downloadPdf').attr('action', 'https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam='+ev.timeStamp);  //to add random number parameter to action-url
+    this.submit(); // submit with new url
+});
+</script>
+
+<script type="text/javascript" src="js/libraries/queue.js"></script>
+<script type="text/javascript" src="js/libraries/d3.js"></script>
+<script type="text/javascript" src="js/libraries/crossfilter.js"></script>
+<script type="text/javascript" src="js/libraries/dc.js"></script>
+<script type="text/javascript" src="js/libraries/d3-tip.js"></script>
+<script type="text/javascript" src="js/stat_zg_generals.js"></script>
+<script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>
+<script type="text/javascript">
+
+loadGemeindeportrait(version="iframe")
+
+function GetQueryString()
+{
+	var qs = window.location.toString().split("?")[1];
+	if (typeof qs != "undefined" & qs!= "selection") {
+		qsobj = JSON.parse('{"' + qs.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
+		return qsobj;
+	} else {return "failed"}
+}
+
+urlparams=GetQueryString()
+
+if (typeof urlparams.gemeinde == "undefined") {
+	window.iFrameResizer = {
+		messageCallback: function (messageData){
+			$('head').append('<style type="text/css">'+messageData.addCSS+'</style>');
+			for (filenr=0; filenr<messageData.addCSSfiles.length; ++filenr) {
+				$('head').append('<link rel="stylesheet" type="text/css" href="'+messageData.addCSSfiles[filenr]+'" />');
+			}
+			setTimeout(	
+				function() {
+					simulateClick(d3.select("g."+messageData.gemeinde+" > path").node());
+					if (messageData.nurDieseGemeinde==true) {
+						d3.selectAll("g > path").on('click',null);
+					}
+				}
+			, 800);
+			if (messageData.titelAnzeigen==false) {
+				$(".maintitle").remove();
+			}
+		}
+	}
+} 
+else {
+	$('head').append('<style type="text/css">'+urlparams.addCSS+'</style>');
+	$('head').append('<link rel="stylesheet" type="text/css" href="'+urlparams.addCSSfiles+'" />');
+	setTimeout(	
+		function() {
+			simulateClick(d3.select("g."+urlparams.gemeinde+" > path").node());
+			if (urlparams.nurDieseGemeinde==true) {
+				d3.selectAll("g > path").on('click',null);
+			}
+		}
+	, 800);
+	if (urlparams.titelAnzeigen==false) {
+		$(".maintitle").remove();
+	}
+}
+
+function simulateClick(elem /* Must be the element, not d3 selection */) {
+    var evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent(
+        "click", /* type */
+        true, /* canBubble */
+        true, /* cancelable */
+        window, /* view */
+        0, /* detail */
+        0, /* screenX */
+        0, /* screenY */
+        0, /* clientX */
+        0, /* clientY */
+        false, /* ctrlKey */
+        false, /* altKey */
+        false, /* shiftKey */
+        false, /* metaKey */
+        0, /* button */
+        null); /* relatedTarget */
+    elem.dispatchEvent(evt);
+}
+
+</script>
+
+<!--<a class="pdfcrowd-remove" id="savelink" href="https://selectpdf.com/save-as-pdf/?pdf_name=Gemeindeportrait&margin_top=2&margin_right=12&margin_bottom=4&margin_left=12&page_numbers=false&web_page_width=1200px&web_page_height=1887px&min_load_time=2">Save as Pdf</a> 
+<a class="pdfcrowd-remove" href="//pdfcrowd.com/url_to_pdf/?width=1200px&height=1887px&pdf_name=Gemeindeportrait">Save to PDF</a>-->
+
+</body></html>
