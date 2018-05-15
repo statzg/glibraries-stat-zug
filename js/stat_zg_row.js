@@ -43,9 +43,6 @@ Charts[number] = dc.rowChart("#"+Atts[number].chartcontainer);
 
 //Daten einlesen
 var daten = d3.csv(csv_path, function(error, data) {
-	data.forEach(function(x) {
-		x[group] = +x[group];
-	});
 
 var dataValues = d3.values(data)[0];
 if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[0];};
@@ -53,6 +50,10 @@ if (group == undefined | group=="") {group = Object.keys(dataValues)[1];};
 	
 var dataValues = d3.values(data)[0];
 if (group=="") {group = Object.keys(dataValues)[1];	};
+	
+	data.forEach(function(x) {
+		x[group] = parseFloat(x[group]);
+	});
 
 if (group.indexOf(" (%)") !== -1) {
 	Atts[number].percent=true
