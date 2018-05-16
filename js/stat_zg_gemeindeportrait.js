@@ -158,6 +158,8 @@ function loadGemeindeportrait(version) {
 		meta8 = data8.filter(function(el) {
 			return el["Meta"] == 1
 		});	
+		
+		Atts[3].meta=meta8
 
 		Atts[3].typerow = meta8.filter(function( el ) { return el.Type == "datatypes";});
 		if (Atts[3].typerow.length == 1) {
@@ -168,9 +170,16 @@ function loadGemeindeportrait(version) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
 		});
 		
+		Atts[3].data.forEach(function(x) {
+			x["Bevölkerung"] = +x["Bevölkerung"];
+			x["Ausländer"] = +x["Ausländer"];
+		});
+		
 		meta9 = data9.filter(function(el) {
 			return el["Meta"] == 1
 		});
+		
+		Atts[4].meta=meta9
 		
 		Atts[4].typerow = meta9.filter(function( el ) { return el.Type == "datatypes";});
 		if (Atts[4].typerow.length == 1) {
@@ -179,6 +188,10 @@ function loadGemeindeportrait(version) {
 		
 		Atts[4].data = data9.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+		});
+		
+		Atts[4].data.forEach(function(x) {
+			x["Anzahl"] = +x["Anzahl"];
 		});
 		
 		year9 = meta9.filter(function( el ) { return el.Type == "year";});
@@ -190,6 +203,8 @@ function loadGemeindeportrait(version) {
 			return el["Meta"] == 1
 		});
 		
+		Atts[5].meta=meta10
+		
 		Atts[5].typerow = meta10.filter(function( el ) { return el.Type == "datatypes";});
 		if (Atts[5].typerow.length == 1) {
 			Atts[5].datatypes = (Atts[5].typerow[0].Content).split(/,\s?/);
@@ -197,6 +212,11 @@ function loadGemeindeportrait(version) {
 		
 		Atts[5].data = data10.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+		});
+		
+		Atts[5].data.forEach(function(x) {
+			x["Betriebe"] = +x["Betriebe"];
+			x["Beschäftigte"] = +x["Beschäftigte"];
 		});
 		
 		year10 = meta10.filter(function( el ) { return el.Type == "year";});
@@ -208,6 +228,8 @@ function loadGemeindeportrait(version) {
 			return el["Meta"] == 1
 		});
 		
+		Atts[6].meta=meta11
+		
 		Atts[6].typerow = meta11.filter(function( el ) { return el.Type == "datatypes";});
 		if (Atts[6].typerow.length == 1) {
 			Atts[6].datatypes = (Atts[6].typerow[0].Content).split(/,\s?/);
@@ -215,6 +237,10 @@ function loadGemeindeportrait(version) {
 		
 		Atts[6].data = data11.filter(function(el) {
 			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+		});
+		
+		Atts[6].data.forEach(function(x) {
+			x["Fläche"] = +x["Fläche"];
 		});
 		
 		year11 = meta11.filter(function( el ) { return el.Type == "year";});
