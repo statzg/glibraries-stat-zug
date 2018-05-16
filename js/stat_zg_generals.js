@@ -11,10 +11,14 @@ function loadbasics() {
 	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/crossfilter.js",
 	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/dc.js",
 	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/d3-tip.js",
-	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/filesaver.js",
-	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/datatables.js"];
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/FileSaver.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/datatables.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/exceljs.js",
+	"/behoerden/baudirektion/statistikfachstelle/daten/js/stat_zg_excelexportsimple.js",
+	];
 	var $head = $("head");
 	for (var i = 0; i < basics.length; i++) {
+		//$.getScript(basics[i]);
 		$head.append("<script src=\"" + basics[i] + "\"></scr" + "ipt>");
 	}
 }
@@ -23,6 +27,7 @@ loadbasics();
 
 if (typeof Charts == 'undefined') { Charts = {} };
 if (typeof Atts == 'undefined') { Atts = {} };
+if (typeof Datasheets == 'undefined') { Datasheets = {} };
 
 //Farben definieren
 //generiert mit http://gka.github.io/palettes/#diverging|c0=007AC4,00A763,FFDD5E|c1=FFDD5E,FF8A26,FF403A|steps=19|bez0=1|bez1=1|coL0=1|coL1=1
@@ -385,12 +390,28 @@ function formater(type, value) {
 	}
 }
 
+//Function to add ExcelJS export button
 function addDataTablesButton(number, columns) {
 
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
+		.attr('id', 'download-png');		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+		.append("a")
+		.attr('href', 'javascript:;')
+		.on('click', function(){
+			createXLSXsimple (number, columns)
+		})
+		.text('Daten herunterladen');
+}
+
+//function to add DataTablesButton to Graphics
+function addDataTablesButtonOriginal(number, columns) {
+
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
+		.append("li")
 		.attr('id', 'download-png');
-		
+	
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
 		.append("a")
 		.attr('href', 'javascript:;')
@@ -449,8 +470,6 @@ function tabulate(number, columns) {
 		var columnformat=new generateFormating(i, Atts[number].datatypes[i])
 		columnsfomats.push(columnformat);
 	}
-	
-	console.log(columnsfomats);	
 	
 	$(document).ready(function(){
 		setTimeout(function () {
