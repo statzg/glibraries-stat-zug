@@ -1,0 +1,236 @@
+<html><head>
+    <title>Leaflet.heat demo</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+	   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+	   crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+	   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+	   crossorigin=""></script>
+	<style>
+		#map { width: 100%; height: 100%; }
+		body { font: 16px/1.4 "Helvetica Neue", Arial, sans-serif; }
+		.ghbtns { position: relative; top: 4px; margin-left: 5px; }
+		a { color: #0077ff; }
+	</style>
+	
+	<link rel="stylesheet" type="text/css" href="/behoerden/baudirektion/statistikfachstelle/daten/css/statistik.css">	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/libraries/d3_v5.js"></script>
+	<script type="text/javascript" src="js/libraries/d3-tip.js"></script>
+	<script type="text/javascript" src="js/libraries/d3-hexbin.js"></script>
+	<script type="text/javascript" src="js/libraries/leaflet-heat.js"></script>
+	<script type="text/javascript" src="js/libraries/leaflet-activelayers.js"></script>
+	<script type="text/javascript" src="js/libraries/leaflet-d3.js" charset="utf-8"></script>
+
+</head>
+<body class="">
+
+<div id="map" class="leaflet-container leaflet-fade-anim" style="position: relative;" tabindex="0"></div>
+
+<script src="heatmap/total.js"></script>
+<script src="heatmap/65plus.js"></script>
+<script src="heatmap/18minus.js"></script>
+<script src="heatmap/foreignborn.js"></script>
+<script src="heatmap/averageage.js"></script>
+
+<script>
+
+//Funktion um den Heatmap-Radius dynamisch anzupassen.
+function getRadius(){
+	currentZoom=map.getZoom();
+	var radius;
+	if (currentZoom === 7){
+		radius=2
+	}
+	else if (currentZoom === 8) {
+		radius = 4;
+	}
+	else if (currentZoom === 9) {
+		radius = 6;
+	}
+	else if (currentZoom === 10) {
+		radius = 7;
+	}
+	else if (currentZoom === 11) {
+		radius = 8;
+	}
+	else if (currentZoom === 12) {
+		radius = 9;
+	}
+	else if (currentZoom === 13) {
+		radius = 10;
+	}
+	else if (currentZoom === 14) {
+		radius = 11;
+	}
+	else if (currentZoom === 15) {
+		radius = 12;
+	}
+	else if (currentZoom === 16) {
+		radius = 14;
+	}
+	else if (currentZoom === 17) {
+		radius = 16;
+	}
+	else if (currentZoom === 18) {
+		radius = 18;
+	}
+	return radius;
+}
+
+//Hintegrundkarte definieren		
+
+var background=L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiY2h1ZWxpYnJ1ZWRlciIsImEiOiJIZmNIdndBIn0.bgBM70EZg_d3WkkvePNguw'
+})
+
+//Daten einlesen
+totalPoints = totalPoints.map(function (p) { return [p[0], p[1]]; });
+sixtyfiveplusPoints = sixtyfiveplusPoints.map(function (p) { return [p[0], p[1], p[2]]; });
+eightteenminurPoints = eightteenminusPoints.map(function (p) { return [p[0], p[1]]; });
+foreignbornPoints = foreignbornPoints.map(function (p) { return [p[0], p[1]]; });
+averageAgePoints = averageAgePoints.map(function (p) { return [p[0], p[1], p[2]]; });
+
+//Heatmap-Layer erstellen
+var total = L.heatLayer(totalPoints, {radius:9, max: 15, blur: 15, gradient:{0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'}, minOpacity: 0.7});
+var sixtyfiveplus = L.heatLayer(sixtyfiveplusPoints, {radius:9, max: 15, blur: 15, gradient:{0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'}, minOpacity: 0.7});
+var eightteenminus = L.heatLayer(eightteenminusPoints, {radius:9, max: 15, blur: 15, gradient:{0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'}, minOpacity: 0.7});
+var foreignborn = L.heatLayer(foreignbornPoints, {radius:9, max: 15, blur: 15, gradient:{0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'}, minOpacity: 0.7});
+
+//Grundlegede Optionen für Hexbin-Maps
+var hexoptions = {
+    radius : 12,
+    opacity: 0.5,
+    duration: 200
+};
+
+//Hexbin-Map für Einwohner-Total erstellen
+var totalHex = L.hexbinLayer(hexoptions)
+totalHex.colorScale().range(['#007ac4', '#00A763', '#FFDD5E', '#FF8A26', '#ff403a']);
+totalHex.radiusRange([4, 11])
+	.lng(function(d) { return d[1]; })
+	.lat(function(d) { return d[0]; })
+	.colorScaleExtent( [ 5, 120000/12/12 ])
+	.radiusScaleExtent( [ 5, undefined ])
+	.colorValue(function(d) { return d.length; })
+	.radiusValue(function(d) { return d.length; });
+totalHex.data(totalPoints);
+
+//Hexbin-Map für Durchschnittsalter definieren (Grösse=Population, Farbe=Durchschnittsalter)
+var averageAgeHex = L.hexbinLayer(hexoptions)
+averageAgeHex.colorScale().range(['#007ac4', '#00A763', '#FFDD5E', '#FF8A26', '#ff403a']);
+averageAgeHex
+	.radiusRange([4, 11])
+	.lng(function(d) { return d[1]; })
+	.lat(function(d) { return d[0]; })
+	.colorScaleExtent( [ 30, 60 ])
+	.radiusScaleExtent( [ 5, undefined ])
+	.colorValue(function(d) { 
+		sum=0;
+		for( var i = 0; i < d.length; i++ ){
+			sum += d[i].o[2]; //don't forget to add the base
+		}
+		var avg = sum/d.length;
+		return avg; 
+	})
+	.radiusValue(function(d) { return d.length; })
+	.hoverHandler(L.HexbinHoverHandler.compound({
+		handlers: [
+			L.HexbinHoverHandler.resizeFill(),
+			L.HexbinHoverHandler.tooltip({tooltipContent: function(d, object) { 
+				var sum=0;
+				for( var i = 0; i < d.length; i++ ){
+					sum += d[i].o[2]; 
+				}
+				var avg = Math.round(sum/d.length);
+				return '<div class="d3-tip n" style="margin-left:-310px; margin-top:-100px; border-left:' + object._scale.color(avg) + ' solid 5px">Durchschnittsalter: '+avg+'</div>'; 
+			}})
+		]
+	}));
+averageAgeHex.data(averageAgePoints);
+
+//Ausgangsansicht definieren
+var map = L.map('map', {
+    center: [47.15626713, 8.51612091],
+    zoom: 12,
+    layers: [background]
+});
+
+//Layers für die Layerkontrolle definieren	
+var baseLayers = {
+	"Hintergrundkarte": background
+};
+
+var overlayLayers = {
+	"Total": total,
+	"65 und älter": sixtyfiveplus,
+	"18 und jünger": eightteenminus,
+	"Im Ausland geboren": foreignborn,
+	"Total Hexagonal": totalHex,
+	"Durchschnittsalter Hexagonal": averageAgeHex
+};
+
+//Layerkontrolle zur Karte hinzufügen
+var control=L.control.activeLayers(baseLayers, overlayLayers)
+control.addTo(map);
+
+//Anpassungen beim Zoomen
+map.on('zoomend', function(ev) {
+	totalHex.colorScaleExtent( [ 5, 12000/map.getZoom()/map.getZoom() ])
+	totalHex.redraw();
+	var baseLayers = control.getActiveBaseLayer()
+	if (baseLayers.name=="Total") {
+		total.setOptions({
+			radius: getRadius(),
+			max: 15,
+			blur: 15,              
+			gradient: {0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'},
+			minOpacity: 0.7
+		});
+		// render the new options
+		total.redraw();
+	}
+	else if (baseLayers.name=="65 und älter") {
+		sixtyfiveplus.setOptions({
+			radius: getRadius(),
+			max: 15,
+			blur: 15,              
+			gradient: {0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'},
+			minOpacity: 0.7
+		});
+		// render the new options
+		sixtyfiveplus.redraw();
+	}
+	else if (baseLayers.name=="18 und jünger") {
+		eightteenminus.setOptions({
+			radius: getRadius(),
+			max: 15,
+			blur: 15,              
+			gradient: {0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'},
+			minOpacity: 0.7
+		});
+		// render the new options
+		eightteenminus.redraw();
+	}
+	else if (baseLayers.name=="Im Ausland geboren") {
+		foreignborn.setOptions({
+			radius: getRadius(),
+			max: 15,
+			blur: 15,              
+			gradient: {0.2: '#007ac4', 0.6: '#ffdd5e', 1: '#ff403a'},
+			minOpacity: 0.7
+		});
+		// render the new options
+		foreignborn.redraw();
+	}
+});
+
+</script>
+
+
+</body></html>
