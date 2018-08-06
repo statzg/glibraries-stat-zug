@@ -1072,9 +1072,10 @@ function loadGemeindeportrait(version) {
 					c.svg().select('g').attr("transform","rotate(270 "+(Math.min(500, totalWidth)/2)+", "+(Math.min(500, totalWidth)/2)+")");
 					c.svg().selectAll('g.axis:nth-child(2) > g > text').attr("transform","translate(12,25) rotate(90 0,0)");
 					c.svg().select('g:nth-child(3) > g:nth-child(3)').attr("transform","translate(12,25) rotate(90 0,0)");
-					c.svg().selectAll('g.axis:nth-child(3) > g > text').each(function(d, i) {
+					d3.selectAll('g.axis:nth-child(3) > g > text').each(function(d, i) {
 						d3.select(this).text(d3.select(this).text().replace("-",""));
 					});
+										g.axis:nth-child(2) > g:nth-child(1) > text:nth-child(2)
 				});
 				
 				altersstrukturChart.yAxis().tickFormat(germanFormatters.numberFormat(","));

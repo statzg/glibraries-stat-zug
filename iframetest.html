@@ -13,11 +13,7 @@
 <div id="header" style="width:100%;">
     <div id="centered" style="margin: 0 auto; width:30%; background-color:#fff">
 	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.min.js"></script>-->
-	<iframe id="myIframe" src="https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=zug&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/css/zug/style.css" name="zug" width="100%" height="1120px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe> 
-	<script>
-	var _theframe = document.getElementById("myIframe");
-	_theframe.contentWindow.location.href = _theframe.src;
-	</script>
+
 	<!--<script>
 	iFrameResize({
 		log:false,
@@ -33,6 +29,13 @@
 		}
 	}, '#myIframe')
 	</script>-->
+	
+	<iframe id="myIframe" src="https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=unterägeri&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/css/unteraegeri/style.css" name="unteraegeri" width="100%" height="1160px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe>
+	<!--iframe id="myIframe" src="https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=zug&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/css/zug/style.css" name="zug" width="100%" height="1120px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe> -->
+	<script>
+	var _theframe = document.getElementById("myIframe");
+	_theframe.contentWindow.location.href = _theframe.src;
+	</script>
 	</div>
 </div>
 
