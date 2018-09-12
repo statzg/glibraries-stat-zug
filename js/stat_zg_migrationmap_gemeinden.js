@@ -80,7 +80,8 @@ function redraw(number) {
 		.append("svg")
 		.attr("width", Atts[number].w)
 		.attr("height", Atts[number].h)
-		.style("background", "#fff");
+		.style("background", "#fff")
+		.style("overflow", "hidden");
 	
 	var arrowhead="M374.203,1150c-25.391,0-50.818-9.721-70.199-29.044c-38.789-38.834-38.789-101.685,0-140.376L685.37,599.14L305.74,219.451c-38.716-38.741-38.716-101.614,0-140.379c38.799-38.763,101.663-38.763,140.389,0l449.857,449.915 c18.58,18.629,29.103,43.84,29.103,70.153c0,26.339-10.523,51.551-29.103,70.226l-451.592,451.59 C425.012,1140.279,399.621,1150,374.203,1150z"
 	var markerblue={"id":"arrowblue", "viewBox":"0 -5 1200 1200", "refX":-200, "refY":600, "markerWidth":1, "markerHeight":1, "orient":"auto"};
