@@ -6,17 +6,27 @@ function loadGemeindeportrait(version) {
 	Atts[4]={};
 	Atts[5]={};
 	Atts[6]={};
+	Atts[7]={};
+	Atts[8]={};
 
 	Atts[2].maincontainer="kennzahlen-container"
 	Atts[3].maincontainer="entwicklung-container"
 	Atts[4].maincontainer="altersstruktur-container"
 	Atts[5].maincontainer="wirtschaftsstruktur-container"
 	Atts[6].maincontainer="bauzonen-container"
+	if (version!="print") {
+		Atts[7].maincontainer="geschlechtsstruktur-container"
+		Atts[8].maincontainer="religionsstruktur-container"
+	}
 	Atts[2].chartcontainer="kennzahlen-chart"
 	Atts[3].chartcontainer="entwicklung-chart"
 	Atts[4].chartcontainer="altersstruktur-chart"
 	Atts[5].chartcontainer="wirtschaftsstruktur-chart"
 	Atts[6].chartcontainer="bauzonen-chart"
+	if (version!="print") {
+		Atts[7].chartcontainer="geschlechtsstruktur-chart"
+		Atts[8].chartcontainer="religionsstruktur-chart"
+	}
 	
 	if (version=="online") {
 		$('h1.documentFirstHeading').html("Kantonsporträt");
@@ -54,6 +64,10 @@ function loadGemeindeportrait(version) {
 	var wirtschaftsstrukturChart1 = dc.pieChart("#wirtschaftsstruktur1-chart");
 	var wirtschaftsstrukturChart2 = dc.pieChart("#wirtschaftsstruktur2-chart");
 	var bauzonenChart = dc.barChart("#bauzonen-chart");
+	if (version!="print") {
+		var geschlechterstrukturChart = dc.pieChart("#geschlechtsstruktur-chart");
+		var religionsstrukturChart = dc.pieChart("#religionsstruktur-chart");
+	}
 	
 	//Alle Daten einlesen
 	if (version=="online" | version=="iframe") {
@@ -69,7 +83,9 @@ function loadGemeindeportrait(version) {
 		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
 		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
 		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-11.csv");
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-11.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-12.csv")
+		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-13.csv");
 	}
 	else if (version=="print") {
 	var q = queue()
@@ -84,10 +100,12 @@ function loadGemeindeportrait(version) {
 		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-08.csv")
 		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-09.csv")
 		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-10.csv")
-		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-11.csv");
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-11.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-12.csv")
+		.defer(d3.csv, "gemeindeportrait/result-gemeindeportrait-13.csv");
 	}
 	
-	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11 ) {
+	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13 ) {
 		
 		if (error) throw error;
 
@@ -248,48 +266,102 @@ function loadGemeindeportrait(version) {
 			$(".bauzonenyear").html("("+year11[0].Content+")");
 		}
 		
+		meta12 = data12.filter(function(el) {
+			return el["Meta"] == 1
+		});
+		
+		Atts[7].meta=meta12
+		
+		Atts[7].typerow = meta12.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[7].typerow.length == 1) {
+			Atts[7].datatypes = (Atts[7].typerow[0].Content).split(/,\s?/);
+		}	
+		
+		Atts[7].data = data12.filter(function(el) {
+			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+		});
+		
+		Atts[7].data.forEach(function(x) {
+			x["Anzahl"] = +x["Anzahl"];
+		});
+		
+		year12 = meta12.filter(function( el ) { return el.Type == "year";});
+		if (year12.length == 1) {
+			$(".geschlechtsstrukturyear").html("("+year12[0].Content+")");
+		}
+		
+		meta13 = data13.filter(function(el) {
+			return el["Meta"] == 1
+		});
+		
+		Atts[8].meta=meta13
+		
+		Atts[8].typerow = meta13.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[8].typerow.length == 1) {
+			Atts[8].datatypes = (Atts[8].typerow[0].Content).split(/,\s?/);
+		}	
+		
+		Atts[8].data = data13.filter(function(el) {
+			return el["Meta"] == "NA" | el["Meta"] == undefined | el["Meta"] == ""
+		});
+		
+		Atts[8].data.forEach(function(x) {
+			x["Anzahl"] = +x["Anzahl"];
+		});
+		
+		year13 = meta13.filter(function( el ) { return el.Type == "year";});
+		if (year13.length == 1) {
+			$(".religionsstrukturyear").html("("+year13[0].Content+")");
+		}
+		
 		//Daten in Crossfilter-Objekt abfüllen.
 		var data = crossfilter();
 		
 		data.add(data0.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: d["Homepage"], "Fläche in ha":d["Fläche in ha"], "Höhenlage in Meter über Meer":d["Höhenlage in Meter über Meer"], "Ständige Wohnbevölkerung": 0, "Ausländer/innen": 0, "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: d["Homepage"], "Fläche in ha":d["Fläche in ha"], "Höhenlage in Meter über Meer":d["Höhenlage in Meter über Meer"], "Ständige Wohnbevölkerung": 0, "Ausländer/innen": 0, "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));		
 		data.add(data1.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung": d["Ständige Wohnbevölkerung"], "Ausländer/innen": d["Ausländer/innen"], "Haushalte":0, "Einpersonenhaushalte":0, "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data2.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte": d["Haushalte"], "Einpersonenhaushalte": d["Einpersonenhaushalte"], "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data3.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": 0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen": d["Wohnungen"], "Neuerstellte Wohnungen": 0, "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data4.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen": d["Neuerstellte Wohnungen"], "Volksschüler":0, "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data5.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler": d["Volksschüler"], "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data6.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": d["Betriebe"], "Beschäftigte": d["Beschäftigte"], "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data7.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":d["Steuerfuss"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe": 0, "Beschäftigte": 0, "Steuerfuss":d["Steuerfuss"], "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));	
 		data.add(data8.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":d["Jahr"], "Bevölkerung":d["Bevölkerung"], "Ausländer":d["Ausländer"], "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data9.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"], "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":d["Alterskategorie"], "GeschlechtNation":d["Typ"], "AnzahlPersonen":d["Anzahl"], "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data10.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":d["Sektor"], "BetriebenachSektor":d["Betriebe"], "BeschäftigtenachSektor":d["Beschäftigte"], "Zone":"NaN", "Fläche":0};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":d["Sektor"], "BetriebenachSektor":d["Betriebe"], "BeschäftigtenachSektor":d["Beschäftigte"], "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
 		}));
 		data.add(data11.map(function(d) {
-			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":d["Zone"], "Fläche":d["Fläche"]};
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":d["Zone"], "Fläche":d["Fläche"], "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":"NaN", "AnzahlReligion":0};
+		}))
+		data.add(data12.map(function(d) {
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":d["Geschlecht"], "AnzahlGeschlecht":d["Anzahl"], "Religion":"NaN", "AnzahlReligion":0};
+		}));
+		data.add(data13.map(function(d) {
+			return {Gemeinde: d["Gemeinde"], Homepage: "NaN", "Fläche in ha":0, "Höhenlage in Meter über Meer":0, "Ständige Wohnbevölkerung":0, "Ausländer/innen":0,  "Haushalte":0, "Einpersonenhaushalte":0 , "Wohnungen":0, "Neuerstellte Wohnungen":0, "Volksschüler":0 , "Betriebe":0, "Beschäftigte":0, "Steuerfuss":0, "Jahr":0, "Bevölkerung":0, "Ausländer":0, "Alterskategorie":"NaN", "GeschlechtNation":"NaN", "AnzahlPersonen":0, "Sektor":"NaN", "BetriebenachSektor":0, "BeschäftigtenachSektor":0, "Zone":"NaN", "Fläche":0, "Geschlecht":"NaN", "AnzahlGeschlecht":0, "Religion":d["Religion"], "AnzahlReligion":d["Anzahl"]};
 		}));
 
 		//Crossfilter Gruppen und Dimensionen definieren.
-
+		
 		//Funktion um leere Zeilen aus Gruppen entfernen
 		function remove_bins(source_group) { // (source_group, bins...}
 			var bins = ["", "NaN", 0];
@@ -585,6 +657,22 @@ function loadGemeindeportrait(version) {
 		var AnzahlPersonenTotal = data.groupAll().reduceSum(function (d) {
 			return d["AnzahlPersonen"];
 		});
+		
+		var GeschlechtDimension = data.dimension(function (d) {
+			return d["Geschlecht"];
+		});
+		var GeschlechtGroup = GeschlechtDimension.group().reduceSum(function (d) {
+			return d["AnzahlGeschlecht"];
+		});
+		var RealGeschlechtGroup = remove_bins(GeschlechtGroup);		
+		
+		var ReligionDimension = data.dimension(function (d) {
+			return d["Religion"];
+		});
+		var ReligionGroup = ReligionDimension.group().reduceSum(function (d) {
+			return d["AnzahlReligion"];
+		});
+		var RealReligionGroup = remove_bins(ReligionGroup);		
 		
 		var SektorDimension = data.dimension(function (d) {
 			return d["Sektor"];
@@ -1072,14 +1160,93 @@ function loadGemeindeportrait(version) {
 					c.svg().select('g').attr("transform","rotate(270 "+(Math.min(500, totalWidth)/2)+", "+(Math.min(500, totalWidth)/2)+")");
 					c.svg().selectAll('g.axis:nth-child(2) > g > text').attr("transform","translate(12,25) rotate(90 0,0)");
 					c.svg().select('g:nth-child(3) > g:nth-child(3)').attr("transform","translate(12,25) rotate(90 0,0)");
-					d3.selectAll('g.axis:nth-child(3) > g > text').each(function(d, i) {
+					c.svg().selectAll('g.axis:nth-child(3) > g > text').each(function(d, i) {
 						d3.select(this).text(d3.select(this).text().replace("-",""));
 					});
-										g.axis:nth-child(2) > g:nth-child(1) > text:nth-child(2)
 				});
 				
 				altersstrukturChart.yAxis().tickFormat(germanFormatters.numberFormat(","));
 				
+				if (version!="print") {
+					//Grafik zur Geschlechterstruktur
+					var characteristicsGeschlechterstruktur=["Frauen", "Männer"]
+					
+					var colorScaleGeschlechterstruktur = d3.scale.ordinal()
+						.domain(characteristicsGeschlechterstruktur)
+						.range([colorscheme[1][2][1],colorscheme[1][2][0]]);
+					
+					var GeschlechterHeight=Math.min(500, totalWidth);
+					
+					geschlechterstrukturChart.width(totalWidth)
+						.cx(totalWidth/2)
+						.cy(Math.min(500, totalWidth)/2)
+						.height(GeschlechterHeight)
+						.slicesCap(15)
+						.dimension(GeschlechtDimension)
+						.group(RealGeschlechtGroup)
+						.controlsUseVisibility(true)
+						.externalRadiusPadding(0.1*GeschlechterHeight)
+						.emptyTitle("Keine Daten vorhanden")
+						.innerRadius(0.2*GeschlechterHeight)
+						.colors(colorScaleGeschlechterstruktur)
+						.transitionDuration(tduration)
+						.title(function(d) {
+							return ""; 
+						})
+						.ordering(function(d) { return characteristicsGeschlechterstruktur.indexOf(d.key); })
+						.legend(dc.legend().x(10).y(10).itemHeight(13).gap(10)
+							.horizontal(false))
+						.on('renderlet', function(chart){
+							//Labels mit Prozentzahlen ersetzen
+							chart.selectAll('text.pie-slice').text( function(d) {
+								if (dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) > 3) {
+									return d3.format(".1%")(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI)*100)/100);
+								};
+							});
+						})
+						.filter = function() {}
+						;
+						
+					//Grafik zur Religionsstruktur
+					var characteristicsReligionsstruktur=["römisch-katholisch", "evangelisch-reformiert", "andere oder keine Konfession"]
+					
+					var colorScaleReligionsstruktur = d3.scale.ordinal()
+						.domain(characteristicsReligionsstruktur)
+						.range(colorscheme[1][3]);
+					
+					var ReligionsHeight=Math.min(500, totalWidth);
+					
+					religionsstrukturChart.width(totalWidth)
+						.cx(totalWidth/2)
+						.cy(Math.min(500, totalWidth)/2)
+						.height(ReligionsHeight)
+						.slicesCap(15)
+						.dimension(ReligionDimension)
+						.group(RealReligionGroup)
+						.controlsUseVisibility(true)
+						.externalRadiusPadding(0.1*ReligionsHeight)
+						.emptyTitle("Keine Daten vorhanden")
+						.innerRadius(0.2*ReligionsHeight)
+						.colors(colorScaleReligionsstruktur)
+						.transitionDuration(tduration)
+						.title(function(d) {
+							return ""; 
+						})
+						.ordering(function(d) { return characteristicsReligionsstruktur.indexOf(d.key); })
+						.legend(dc.legend().x(10).y(10).itemHeight(13).gap(10)
+							.horizontal(false))
+						.on('renderlet', function(chart){
+							//Labels mit Prozentzahlen ersetzen
+							chart.selectAll('text.pie-slice').text( function(d) {
+								if (dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) > 3) {
+									return d3.format(".1%")(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI)*100)/100);
+								};
+							});
+						})
+						.filter = function() {}
+						;
+				}
+								
 				//Grafik zur Wirtschaftsstruktur
 				var characteristicsWirtschaftsstruktur=["Land- und Forstwirtschaft", "Industrie und Gewerbe", "Dienstleistung"]
 				
@@ -1373,6 +1540,58 @@ function loadGemeindeportrait(version) {
 						});
 				}
 
+				if (version!="print") {
+					function callTipReligionsstruktur(number){
+						d3.selectAll("#religionsstruktur-chart g.pie-slice, #religionsstruktur-chart text.pie-slice")
+							.call(Tips[number])
+							.on('mouseover', function(d, i) {
+								if(d.key !== last_tip) {
+									Tips[number].show(d, $("#religionsstruktur-chart g.pie-slice")[characteristicsReligionsstruktur.indexOf(d.data.key)]);
+									last_tip = d.key;
+								}
+								if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+								else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+								gruppe="Anzahl Personen";
+								tiptext="<span>" + d.data.key + "</span><br/>Anteil: " + germanFormatters.numberFormat(",.1%")(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI)*100)/100) + "</span><br/><span>"+gruppe+": " + wert + "</span>"
+								$("#d3-tip"+number).html(tiptext)
+								$("#d3-tip"+number).css("border-left", colorScaleReligionsstruktur(d.data.key)+" solid 5px");
+								offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).width()/2));
+								offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) -10 - ($("#d3-tip"+number).height()/2));
+								$("#d3-tip"+number).css( 'left', offsetx);
+								$("#d3-tip"+number).css( 'top', offsety);
+							})
+							.on('mouseout', function(d) {
+								last_tip = null;
+								Tips[number].hide(d);
+							});
+					}
+
+					function callTipGeschlechterstruktur(number){
+						d3.selectAll("#geschlechtsstruktur-chart g.pie-slice, #geschlechtsstruktur-chart text.pie-slice")
+							.call(Tips[number])
+							.on('mouseover', function(d, i) {
+								if(d.key !== last_tip) {
+									Tips[number].show(d, $("#geschlechtsstruktur-chart g.pie-slice")[characteristicsGeschlechterstruktur.indexOf(d.data.key)]);
+									last_tip = d.key;
+								}
+								if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+								else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+								gruppe="Anzahl";
+								tiptext="<span>" + d.data.key + "</span><br/>Anteil: " + germanFormatters.numberFormat(",.1%")(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI)*100)/100) + "</span><br/><span>"+gruppe+": " + wert + "</span>"
+								$("#d3-tip"+number).html(tiptext)
+								$("#d3-tip"+number).css("border-left", colorScaleGeschlechterstruktur(d.data.key)+" solid 5px");
+								offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).width()/2));
+								offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) -10 - ($("#d3-tip"+number).height()/2));
+								$("#d3-tip"+number).css( 'left', offsetx);
+								$("#d3-tip"+number).css( 'top', offsety);
+							})
+							.on('mouseout', function(d) {
+								last_tip = null;
+								Tips[number].hide(d);
+							});
+					}
+				}
+				
 				function callTipWirtschaftsstruktur(number){
 					d3.selectAll("#wirtschaftsstruktur"+number+"-chart g.pie-slice, #wirtschaftsstruktur"+number+"-chart text.pie-slice")
 						.call(Tips[number])
@@ -1427,6 +1646,10 @@ function loadGemeindeportrait(version) {
 				callTipKarte("karte");
 				callTipBevölkerungsentwicklung("bevölkerungsentwicklung");
 				callTipAltersstruktur("altersstruktur");
+				if (version!="print") {
+					callTipGeschlechterstruktur("geschlechterstruktur");
+					callTipReligionsstruktur("religionsstruktur");
+				}
 				callTipWirtschaftsstruktur(1);
 				callTipWirtschaftsstruktur(2);
 				callTipBauzonen("bauzonen");
@@ -1558,6 +1781,10 @@ function loadGemeindeportrait(version) {
 		initTip("karte");
 		initTip("bevölkerungsentwicklung");
 		initTip("altersstruktur");
+		if (version!="print") {
+			initTip("geschlechterstruktur");
+			initTip("religionsstruktur");
+		}
 		initTip(1);
 		initTip(2);
 		initTip("bauzonen");
@@ -1598,7 +1825,7 @@ function loadGemeindeportrait(version) {
 	if (version=="online" | version=="iframe") {
 		//Funktionen um immer nur eine Grafik (nebst der Karte) anzuzeigen.
 		//Alle Objekte die verborgen werden können
-		var hide=["kennzahlen", "entwicklung", "altersstruktur", "wirtschaftsstruktur", "bauzonen"]
+		var hide=["kennzahlen", "entwicklung", "altersstruktur", "geschlechtsstruktur", "religionsstruktur", "wirtschaftsstruktur", "bauzonen"]
 
 		//Zum neu zeichen müssen alle Grafiken eingeblendet werden, nach einer Sekunde werden sie wieder ausgeblendet.
 		function showall() {
@@ -1666,5 +1893,15 @@ function loadGemeindeportrait(version) {
 		addDownloadButton(6);
 		addDownloadButtonPng(6);
 		addDataTablesButton(6, columns);
+		
+		var columns=["Gemeinde", "Geschlecht", "Anzahl"];
+		addDownloadButton(7);
+		addDownloadButtonPng(7);
+		addDataTablesButton(7, columns);
+		
+		var columns=["Gemeinde", "Religion", "Anzahl"];
+		addDownloadButton(8);
+		addDownloadButtonPng(8);
+		addDataTablesButton(8, columns);
 	}
 }
