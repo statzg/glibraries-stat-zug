@@ -19,6 +19,7 @@ var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
 //var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
+var removeZero = (typeof args.removeZero == 'undefined') ? false : args.removeZero;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -102,6 +103,11 @@ for (var i = 0; i < characteristicsStack.length; i++) {
 			.title(function(d) {
 				return ""; 
 			})
+	if (removeZero==true) {
+		Charts[number+100][i].defined(function(d) {
+			return d.y != 0;
+		})
+	}	
 }
 
 Charts[number]
