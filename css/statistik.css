@@ -683,3 +683,26 @@ margin-bottom: 20px;
 	background: #00538c !important;
 	color: #ebf4fa;
 }
+
+/*Sunburst*/
+
+.slice {
+	cursor: pointer;
+}
+
+.slice .main-arc {
+	stroke: #fff;
+	stroke-width: 1px;
+}
+
+.slice .hidden-arc {
+	fill: none;
+}
+
+.slice text {
+	pointer-events: none;
+	dominant-baseline: middle;
+	text-anchor: middle;
+	font-size: 11px;
+}
+
