@@ -77,9 +77,16 @@ function loadSunburst(args) {
 		return d.data.name.length * CHAR_SPACE < perimeter;
 	};
 
-	var svg = d3v4.select("#" + Atts[number].chartcontainer).append('svg').style('width', width).style('height', height).attr('viewBox', -width / 2 + ' ' + -height / 2 + ' ' + width + ' ' + height).on('click', function () {
-		return focusOn();
-	}); // Reset zoom on canvas click
+	var svg = d3v4.select("#" + Atts[number].chartcontainer)
+		.append('svg')
+		.style('width', width)
+		.style('height', height)
+		.attr("width", width)
+		.attr("height", height)
+		.attr('viewBox', -width / 2 + ' ' + -height / 2 + ' ' + width + ' ' + height)
+		.on('click', function () {
+			return focusOn();
+		}); // Reset zoom on canvas click
 
 	function buildHierarchy(csv) {
 		var root = { "name": "Schweiz", "children": [] };
