@@ -19,6 +19,7 @@ var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
 var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
+var percent = (typeof args.percent == 'undefined') ? false : args.percent;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -117,7 +118,11 @@ Charts[number]
 
 Charts[number].filter = function() {};
 
-Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
+if (percent==true) {
+	Charts[number].yAxis().tickFormat(d3.format(".1%"));
+} else {
+	Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
+}
 
 Charts[number].render()
 
@@ -221,7 +226,8 @@ function callTip(number){
 				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
-			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+			if (percent==true) {wert=d3.format(".1%")(d.data.value)}
+			else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 			if (showTotal==true & showAnteil==true) {
 				tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span><br/><span>"+group+": " +wert+  "</span>";
@@ -251,7 +257,8 @@ function callTip(number){
 
 function formatBarLabels(){
 	d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
-		if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+		if (percent==true) {wert=d3.format(".1%")(d.data.value)}
+		else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 		else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 		d3.select(this).text(wert);
 	});
