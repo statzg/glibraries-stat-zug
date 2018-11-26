@@ -279,7 +279,7 @@ a#ispeaker, a#ispeaker:hover {
 #title{
 	/*height: 227px;*/
 	overflow: hidden;
-	width: 985px;
+	/*width: 985px;*/
 	margin: 0 auto 5px
 }
 /*=== Navigation ===*/

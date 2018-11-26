@@ -728,10 +728,24 @@ function loadGemeindeportrait(version) {
 		function redraw() {
 
 			//Karte
-			if (version=="online" | version=="iframe") {
+			if (version=="online") {
 			var totalWidth = document.getElementById('default').offsetWidth;
 			var mapheight = 400
 			var heightmax = 400
+			var heightmin = 240
+			var mapheight = Math.min( heightmin + (totalWidth - 286)*1, heightmax);
+			var scale = 82000
+			var scalemax = 82000
+			var scalemin = 50000
+			var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
+			var lat = 8.548589899
+			var lon = 47.15309567
+			var pfadKarte = "/behoerden/baudirektion/statistikfachstelle/daten/geojson/gemeinden.json"
+			}
+			if (version=="iframe") {
+			var totalWidth = document.getElementById('default').offsetWidth;
+			var mapheight = 400
+			var heightmax = 380
 			var heightmin = 240
 			var mapheight = Math.min( heightmin + (totalWidth - 286)*1, heightmax);
 			var scale = 82000
@@ -1322,8 +1336,12 @@ function loadGemeindeportrait(version) {
 					.domain(characteristicsBauzonen)
 					.range(colorscheme[1][6]);
 				
-				if (version=="online" | version=="iframe") {
+				if (version=="online") {
 					var hoeheBauzonen=500;
+					var faktorBauzonen=1.2;
+				}
+				if (version=="iframe") {
+					var hoeheBauzonen=400;
 					var faktorBauzonen=1.2;
 				}
 				else if (version=="print") {

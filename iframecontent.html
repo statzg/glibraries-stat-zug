@@ -217,7 +217,7 @@ else {
 	setTimeout(	
 		function() {
 			simulateClick(d3.select("g."+urlparams.gemeinde+" > path").node());
-			if (urlparams.nurDieseGemeinde==true) {
+			if (urlparams.nurDieseGemeinde=="true") {
 				d3.selectAll("g > path").on('click',null);
 			}
 		}
