@@ -20,6 +20,7 @@ var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 var percent = (typeof args.percent == 'undefined') ? false : args.percent;
+var showBarLabels = (typeof args.showBarLabels == 'undefined') ? true : args.showBarLabels;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -256,12 +257,17 @@ function callTip(number){
 }
 
 function formatBarLabels(){
-	d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
-		if (percent==true) {wert=d3.format(".1%")(d.data.value)}
-		else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
-		else {wert=germanFormatters.numberFormat(",")(d.data.value)}
-		d3.select(this).text(wert);
-	});
+	if (showBarLabels==true) {
+		d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
+			if (percent==true) {wert=d3.format(".1%")(d.data.value)}
+			else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+			d3.select(this).text(wert);	
+		});
+	}
+	if (showBarLabels==false) {
+		d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").remove()
+	}
 }
 
 initTip(number);
