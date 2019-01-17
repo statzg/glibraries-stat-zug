@@ -181,6 +181,7 @@ loadGemeindeportrait(version="iframe")
 
 function GetQueryString()
 {
+	console.log(window.location);
 	var qs = window.location.toString().split("?")[1];
 	if (typeof qs != "undefined" & qs!= "selection") {
 		qsobj = JSON.parse('{"' + qs.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
@@ -216,6 +217,9 @@ else {
 	$('head').append('<link rel="stylesheet" type="text/css" href="'+urlparams.addCSSfiles+'" />');
 	setTimeout(	
 		function() {
+			console.log(urlparams.gemeinde);
+			urlparams.gemeinde=urlparams.gemeinde.replace("ae", "ä").replace("oe", "ö").replace("ue", "ü");
+			console.log(urlparams.gemeinde);
 			simulateClick(d3.select("g."+urlparams.gemeinde+" > path").node());
 			if (urlparams.nurDieseGemeinde=="true") {
 				d3.selectAll("g > path").on('click',null);
