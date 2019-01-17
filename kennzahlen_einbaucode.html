@@ -1,5 +1,5 @@
-<script type="text/javascript" src="/behoerden/baudirektion/statistikfachstelle/daten/js/libraries/queue.js"></script>
-<script type="text/javascript" src="/behoerden/baudirektion/statistikfachstelle/daten/js/stat_zg_generals.js"></script>
+<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/queue.js"></script>
+<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_generals.js"></script>
 
 <table class="listing">
 <tbody>
@@ -101,17 +101,17 @@ var betriebe = dc.numberDisplay("#betriebe");
 var beschäftigte = dc.numberDisplay("#beschäftigte");
 	
 var q = queue()
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
-	.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv");
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
+	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv");
 
 	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10) {
 		

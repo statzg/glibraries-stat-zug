@@ -4,10 +4,10 @@ filename="Tabelle1.xlsx"
 Datasheets[number]={};
 
 sheetnames=["Einbürgerungen", "Blatt 1"];
-csv_paths=["/behoerden/baudirektion/statistikfachstelle/daten/themen/datasheet-themen-01-01-02.csv","/behoerden/baudirektion/statistikfachstelle/daten/themen/result-themen-02-02-02.csv"]
+csv_paths=["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/datasheet-themen-01-01-02.csv","/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-02-02-02.csv"]
 
 //sheetnames=["Blatt 1"];
-//csv_paths=["/behoerden/baudirektion/statistikfachstelle/daten/themen/result-themen-02-02-02.csv"]
+//csv_paths=["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-02-02-02.csv"]
 
 
 autofilters=true;

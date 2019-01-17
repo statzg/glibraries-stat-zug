@@ -72,20 +72,20 @@ function loadGemeindeportrait(version) {
 	//Alle Daten einlesen
 	if (version=="online" | version=="iframe") {
 	var q = queue()
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-11.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-12.csv")
-		.defer(d3.csv, "/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-13.csv");
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-11.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-12.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-13.csv");
 	}
 	else if (version=="print") {
 	var q = queue()
@@ -740,7 +740,7 @@ function loadGemeindeportrait(version) {
 			var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
 			var lat = 8.548589899
 			var lon = 47.15309567
-			var pfadKarte = "/behoerden/baudirektion/statistikfachstelle/daten/geojson/gemeinden.json"
+			var pfadKarte = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/geojson/gemeinden.json"
 			}
 			if (version=="iframe") {
 			var totalWidth = document.getElementById('default').offsetWidth;
@@ -754,7 +754,7 @@ function loadGemeindeportrait(version) {
 			var scale = Math.min( scalemin + (totalWidth - 286)*180.5, scalemax);
 			var lat = 8.548589899
 			var lon = 47.15309567
-			var pfadKarte = "/behoerden/baudirektion/statistikfachstelle/daten/geojson/gemeinden.json"
+			var pfadKarte = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/geojson/gemeinden.json"
 			}
 			else if (version=="print") {
 			var totalWidth = document.getElementById('karte').offsetWidth;
@@ -806,15 +806,15 @@ function loadGemeindeportrait(version) {
 							$('#müm').show();
 							if (version=="online") {
 								showall();
-								$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
+								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
 								$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
-								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
 							else if (version=="iframe") {
 								showall();
-								$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
+								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
 								$('h1.maintitle').html("Gemeindeporträt "+filter);
-								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
 							else if (version=="print") {
 								$('#mainflag').attr("src", "logos/gross/"+ filter.replace("ü", "ü").replace("ä", "ä")+ ".png")
@@ -831,15 +831,15 @@ function loadGemeindeportrait(version) {
 						$('#müm').hide();
 						if (version=="online") {
 							showall();
-							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 							$('h1.documentFirstHeading').html("Kantonsporträt");
-							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 						}
 						else if (version=="iframe") {
 							showall();
-							$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 							$('h1.maintitle').html("Kantonsportrait");
-							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 						}
 						else if (version=="print") {
 							$('#mainflag').attr("src", "")
@@ -860,15 +860,15 @@ function loadGemeindeportrait(version) {
 					$('#müm').hide();
 					if (version=="online") {
 						showall();
-						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+						$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 						$('h1.documentFirstHeading').html("Kantonsporträt");
-						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 					}
 					else if (version=="iframe") {
 						showall();
-						$('#flag').attr("src", "/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+						$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
 						$('h1.maintitle').html("Kantonsportrait");
-						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/baudirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 					}
 					else if (version=="print") {
 						$('#mainflag').attr("src", "")
@@ -1471,7 +1471,7 @@ function loadGemeindeportrait(version) {
 								Tips[number].show(d, $("circle")[d.ind]);
 								last_tip = d.key;
 							}
-							tiptext= "<span><b>" + d.properties.name + "</b></span><!--<br/><br/><span><img src='/behoerden/baudirektion/statistikfachstelle/bibliotheken/grafiken/"+ d.properties.name.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download' alt='' width='75' ></span>-->";
+							tiptext= "<span><b>" + d.properties.name + "</b></span><!--<br/><br/><span><img src='/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/"+ d.properties.name.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download' alt='' width='75' ></span>-->";
 							$("#d3-tip"+number).html(tiptext);
 							$("#d3-tip"+number).css("background", "#fff");
 							$("#d3-tip"+number).css("border-left", colorscheme[1][2][0]+" solid 5px");

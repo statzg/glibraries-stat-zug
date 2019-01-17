@@ -132,7 +132,7 @@ function redraw(number) {
 		return el["Zielkanton"] != "Aegerisee" & el["Zielkanton"] != "Zugersee" & el["Zielkanton"] != "Zürichsee"
 	});
 	
-		d3.json("/behoerden/baudirektion/statistikfachstelle/daten/geojson/gemeindenundseenschweiz.json", function (json) {
+		d3.json("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/geojson/gemeindenundseenschweiz.json", function (json) {
 
 		for (var i = 0; i < Atts[number].gdata.length; i++) {
 			var dataName = Atts[number].gdata[i].Arbeitsgemeindenummer;
