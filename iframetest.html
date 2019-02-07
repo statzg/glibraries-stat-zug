@@ -12,25 +12,27 @@
 
 <div id="header" style="width:100%;">
     <div id="centered" style="margin: 0 auto; width:30%; background-color:#fff">
-	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.min.js"></script>-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.min.js"></script>
 
-	<!--<script>
-	iFrameResize({
-		log:false,
-		bodyBackground:"#fcfcfc",
-		initCallback: function (iFrame){
-			iFrame.iFrameResizer.sendMessage({
-				gemeinde:"risch",
-                nurDieseGemeinde:true,
-                titelAnzeigen:false,
-                addCSS:"",
-                addCSSfiles:["https://www.zg.ch/behoerden/gemeinden/risch-rotkreuz/de/customstyles_css?ts=", "https://www.zg.ch/behoerden/gemeinden/risch-rotkreuz/theming.css"]
-			});
-		}
-	}, '#myIframe')
-	</script>-->
+	<iframe id="myIframe" src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/iframecontent.html?selection" style="height: 1px;min-height: 100%; border: none" width="100%" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe> 
+	<script>
+		iFrameResize({
+			log:false,
+			bodyBackground:"#fcfcfc",
+			initCallback: function (iFrame){
+				iFrame.iFrameResizer.sendMessage({
+					gemeinde:"hünenberg",
+					nurDieseGemeinde:true,
+					titelAnzeigen:false,
+					addCSS:".actionMenu{position:absolute !important;}",
+					addCSSfiles:["https://www.zg.ch/behoerden/gemeinden/hunenberg/de/customstyles_css?ts=", "https://www.zg.ch/behoerden/gemeinden/hunenberg/de/theming.css"]
+				});
+			}
+		}, '#myIframe')
+
+	</script>
 	
-	<iframe id="myIframe" src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=oberägeri&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/oberaegeri/style.css" name="oberaegeri" width="100%" height="1160px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe>
+	<iframe src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=oberägeri&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/oberaegeri/style.css" name="oberaegeri" width="100%" height="1160px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe>
 	
 	<iframe src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=unteraegeri&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/unteraegeri/style.css" name="unteraegeri" width="100%" height="1160px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe>
 	<!--<iframe id="myIframe" src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/iframecontent.html?gemeinde=unterägeri&nurDieseGemeinde=true&titelAnzeigen=false&addCSS=&addCSSfiles=https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/unteraegeri/style.css" name="unteraegeri" width="100%" height="1160px" frameborder="0" scrolling="no">Your browser doesn't support iframes</iframe>-->

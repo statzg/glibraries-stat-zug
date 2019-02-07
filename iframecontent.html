@@ -181,9 +181,9 @@ loadGemeindeportrait(version="iframe")
 
 function GetQueryString()
 {
-	console.log(window.location);
 	var qs = window.location.toString().split("?")[1];
-	if (typeof qs != "undefined" & qs!= "selection") {
+	console.log(qs);
+	if (typeof qs != "undefined" & qs!= "selection" & qs!= "selection&wmode=transparent") {
 		qsobj = JSON.parse('{"' + qs.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
 		return qsobj;
 	} else {return "failed"}
