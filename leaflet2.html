@@ -7,7 +7,7 @@
 /*@import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css);*/
 @import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.2/leaflet.css);
 
-#map-container {
+#map {
   /*width: 960px;*/
   height: 500px;
 }
@@ -98,7 +98,6 @@ path:focus {
 					<a href="#">Alter</a>
 					<ul>
 						<li><a href="javascript:;" class="selection" id="Durchschnittsalter">Durchschnittsalter</a></li>
-						<li><a href="javascript:;" class="selection" id="Anteil 80 Jahre und mehr">Anteil 80 Jahre und mehr</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil 65 Jahre und mehr">Anteil 65 Jahre und mehr</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil unter 18">Anteil unter 18</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil unter 10">Anteil unter 10</a></li>
@@ -159,306 +158,265 @@ path:focus {
 	});
 </script>
 <h1 id="main-title">Anzahl Einwohner/innen</h1>
-<p id="map-container"></p>
+<p id="map"></p>
 <p id="source">Datenquelle: Bundesamt für Statistik, STATPOP 2017</p>
-
-<div id = 'control' class='controlBar'>
-    <ul class="subelements-listing" id="controlUL">
-      <li id='Hohe Auflösung' class='selected'><a href="javascript:;">Hohe Auflösung</a></li>
-      <li id='Tiefe Auflösung' class=''><a href="javascript:;">Tiefe Auflösung</a></li>
-    </ul>
-</div>
-
 <script>
 
-var variable = 'Total Einwohner/innen';
-var aufloesung = "geojson/hexbin-STATPOP-grid2.geojson"
-var initial = 0;
+var map = new L.Map("map", {center: [47.15626713, 8.51612091], 
+		zoom: 11, 
+		minZoom: 10,
+		maxZoom: 18,
+		zoomSnap: 0,
+		zoomDelta: 0.25,
+		wheelPxPerZoomLevel: 100})
+	.addLayer(new L.TileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>'}));	
 
-function loadhex() {
-
-	window.map = new L.Map("map-container", {center: [47.15626713, 8.51612091], 
-			zoom: 11, 
-			minZoom: 10,
-			maxZoom: 18,
-			zoomSnap: 0,
-			zoomDelta: 0.25,
-			wheelPxPerZoomLevel: 100})
-		.addLayer(new L.TileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>'}));	
-
-		L.control.scale({imperial:false}).addTo(window.map);
-
-	var svg = d3.select(window.map.getPanes().overlayPane).append("svg"),
-		g = svg.append("g").attr("class", "leaflet-zoom-hide").attr("id", "hexbin-container");
+	L.control.scale({imperial:false}).addTo(map);
 	
-	d3.json(aufloesung, function(error, collection) {
-		if (error) throw error;
-
-		var transform = d3.geo.transform({point: projectPoint}),
-			path = d3.geo.path().projection(transform);
-
-		var feature = g.selectAll("path")
-			.data(collection.features)
-			.enter().append("path");
-
-		var hexcoloring = d3.scale.linear()
-			.domain([-1, -0.5, 0, 0.5, 1])
-			.range(['#007AC4','#00A763','#FFDD5E','#FF8A26','#ff403a']);
-			
-		var maxquote=Number(d3.max(collection.features, function(d) { return d.properties[variable]; }));
-		var minquote=Number(d3.min(collection.features, function(d) { return d.properties[variable]; }));
-			
-		function calibrate(num) {
-			return ((num-minquote)/(maxquote-minquote)*2)-1
-		}
-			
-		var div = d3.select("body").append("div")
-			.attr("class", "d3-tip n")
-			.attr("id", "d3-tip")
-			.style("display", "none");
-			
-		function mouseover(d) {
-			//console.log("mouseover");
-			div.style("display", "inline");
-		}
-
-		function mousemove(d) {
-			//console.log("mousemove");
-			div.style("display", "inline");
-			if (variable=="Total Einwohner/innen") {
-				var text= variable + ": " + germanFormatters.numberFormat(",")(d3.select(this).datum().properties[variable]);
-			}
-			else {
-				if (variable=="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)" || variable=="Durchschnittsalter") {wert=germanFormatters.numberFormat(",.1f")(d3.select(this).datum().properties[variable]) + " Jahre"}
-				else {wert=germanFormatters.numberFormat(",.1%")(d3.select(this).datum().properties[variable])}
-				var text= variable + ": " + wert + "<br/>" + "Total Einwohner/innen" + ": " + germanFormatters.numberFormat(",")(d3.select(this).datum().properties["Total Einwohner/innen"]);
-			}
-			
-			div
-				.html(text)
-				.style("left", function(d){return (d3.event.pageX) + "px"})
-				.style("top", (d3.event.pageY) + "px");
-			
-			$("#d3-tip").css("border-left", hexcoloring(calibrate(d3.select(this).datum().properties[variable])) +" solid 5px");
-			offsetx=(Number($("#d3-tip").css( "left" ).slice(0, -2)) - 17 - ($("#d3-tip").width()/2));
-			offsety=(Number($("#d3-tip").css( "top" ).slice(0, -2)) - 40 - ($("#d3-tip").height()));
-			$("#d3-tip").css( 'left', offsetx);
-			$("#d3-tip").css( 'top', offsety);
-		}
-
-		function mouseout(d) {
-			//console.log("mouseout");
-			div.style("display", "none");
-		}
-		
-		function drawHex() {
-		
-			maxquote=Number(d3.max(collection.features, function(d) { return d.properties[variable]; }));
-			minquote=Number(d3.min(collection.features, function(d) { return d.properties[variable]; }));
-	  
-			feature.attr('style', 'pointer-events:visiblePainted;');
-			
-			feature.style("fill", function(d) {
-				return hexcoloring(calibrate(d.properties[variable]));
-			});
-			feature.style("visibility", function (d) {
-				return d.properties[variable] != null ? "visible" : "hidden";
-			});
-			feature.style("fill-opacity", 0.5)
-				.style("stroke", "#fff")
-				.style("stroke-width", "1px");
-			
-			window.map.on("zoom", reset);
-			window.map.on("move", reset);
-			//Notwendig für Mobile-Devices, damit, dass Tooltip nicht falsch positioniert wird.
-			window.map.on("zoom", mouseout);
-			window.map.on("move", mouseout);
-			reset();
-			
-			feature.on("mouseover", mouseover)
-				.on("mousemove", mousemove)
-				.on("mouseout", mouseout)
-				.on("click", mousemove)
-				;
-			
-			d3.selectAll("#scale").remove()
-			
-			//Skala hinzufügen
-			scalecontainer = d3.select("#map-container").append("svg")
-			.attr("id", "scale")
-			.attr("height", "220px")
-			.attr("width", "60px")
-			.style("margin-top", "120px")
-			.style("margin-left", "10px")
-			.style("pointer-events", "none")
-			.style("z-index","1000");
-		
-			y = d3.scale.linear()
-			.domain([maxquote, minquote])
-			.range([0, 0.4*500])
-			
-			gradient = scalecontainer.append('svg:linearGradient')
-				.attr('id', 'gradient')
-				.attr("x1", "100%")
-				.attr("y1", "100%")
-				.attr("x2", "100%")
-				.attr("y2", "0%")
-				.attr("spreadMethod", "pad")
-				
-			gradient.append('svg:stop')
-				.attr('stop-color', function(d) { return hexcoloring(-1) })
-				.attr('offset', '0')
-			
-			gradient.append('svg:stop')
-				.attr('stop-color', function(d) { return hexcoloring(-0.5) })
-				.attr('offset', '0.25')
-			
-			gradient.append('svg:stop')
-				.attr('stop-color', function(d) { return hexcoloring(0) })
-				.attr('offset', '0.5')
-				
-			gradient.append('svg:stop')
-				.attr('stop-color', function(d) { return hexcoloring(0.5) })
-				.attr('offset', '0.75')
-			
-			gradient.append('svg:stop')
-				.attr('stop-color', function(d) { return hexcoloring(1) })
-				.attr('offset', '1')
-				
-			scalecontainer
-				.datum({min: minquote, max: maxquote })
-				.append('svg:rect')
-					.attr('id', 'gradient-bar')
-					.attr('fill', 'url(#gradient)')
-					.attr('fill-opacity', 0.7)
-					.attr('width', function(d) { return 10 })
-					.attr('height', 0.4*500)
-					.attr("transform", "translate(0,10)")
-			
-			var axis = d3.svg.axis()
-				.scale(y)
-				.orient("right")
-				.tickValues([minquote, (maxquote-minquote)/4+minquote, (maxquote-minquote)/2+minquote, (maxquote-minquote)/4*3+minquote, maxquote]);
-			
-			if (variable=="Total Einwohner/innen") {
-				axis.tickFormat(germanFormatters.numberFormat(",.0f"));
-			}
-			else if (variable=="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)" || variable=="Durchschnittsalter") {
-				axis.tickFormat(germanFormatters.numberFormat(",.1f"));
-			}
-			else {
-				axis.tickFormat(d3.format(".1%"));
-			}
-			
-			scalecontainer.append('g').attr('class', 'axis')
-
-			scalecontainer.selectAll('.axis')
-				.attr('transform', 'translate(10,10)')
-				.call(axis)
-				
-		}
-		
-		drawHex();
-
-		// Reposition the SVG to cover the features.
-		function reset() {
-			//console.log("reset");
-			var bounds = path.bounds(collection),
-				topLeft = bounds[0],
-				bottomRight = bounds[1];
-				
-			svg.attr("width", bottomRight[0] - topLeft[0])
-				.attr("height", bottomRight[1] - topLeft[1])
-				.style("left", topLeft[0] + "px")
-				.style("top", topLeft[1] + "px");
-
-			g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
-
-			feature.attr("d", path);
-		}
-
-		// Use Leaflet to implement a D3 geometric transformation.
-		function projectPoint(x, y) {
-			var point = window.map.latLngToLayerPoint(new L.LatLng(y, x));
-			this.stream.point(point.x, point.y);
-		}
-	  
-		function changeInd() {
-			mouseout();
-		/*	d3.select('.subelements-listing').selectAll('li')
-				.attr('cursor', 'pointer')
-				.on('click', function() {
-					if (this.className == 'selected') {
-						console.log('schon gewählt');
-					} else {
-						d3.select('.subelements-listing').selectAll('li').attr('class', '');
-						this.className = 'selected';
-						variable = d3.select(this).attr('id');
-						console.log(variable);
-						drawHex();
-					}
-				});*/
-			d3.select('#menu').selectAll('a.selection')
-				.attr('cursor', 'pointer')
-				.on('click', function() {
-					if (this.className == 'selection selected') {
-						console.log('schon gewählt');
-					} else {
-						d3.select('#menu').selectAll('a.selection').attr('class', 'selection');
-						this.className = 'selection selected';
-						variable = d3.select(this).attr('id');
-						console.log(variable);
-						drawHex();
-						$("#main-title").text(variable);
-					}
-				});
-		}
-		
-		changeInd();
-		
-		L.control.locate({
-			circleStyle: {
-				stroke: true,
-				color: "#007AC4",
-				weight: 2,
-				fillColor: "#ffffff",
-				fillOpacity: 0.3
-			},
-			showPopup: false
-		}).addTo(window.map);
-		
-		window.map.on('zoomstart zoom zoomend', function(ev){
-			console.log('Zoom level: ' + window.map.getZoom());
-		})
-		
-	});
+var svg = d3.select(map.getPanes().overlayPane).append("svg"),
+    g = svg.append("g").attr("class", "leaflet-zoom-hide").attr("id", "hexbin-container");
 	
-}
+d3.json("geojson/hexbin-STATPOP.geojson", function(error, collection) {
+	if (error) throw error;
 
-loadhex();
+	var variable = 'Total Einwohner/innen';
+  
+	var transform = d3.geo.transform({point: projectPoint}),
+		path = d3.geo.path().projection(transform);
 
-function changeInd2() {
-	d3.select('.subelements-listing').selectAll('li')
-		.attr('cursor', 'pointer')
-		.on('click', function() {
-			if (this.className == 'selected') {
-				console.log('schon gewählt');
-			} else {
-				d3.select('.subelements-listing').selectAll('li').attr('class', '');
-				this.className = 'selected';
-				if (d3.select(this).attr('id')=="Tiefe Auflösung") {
-					aufloesung = "geojson/hexbin-STATPOP.geojson";
-				} else {
-					aufloesung = "geojson/hexbin-STATPOP-grid2.geojson";
-				};
-				console.log(aufloesung);
-				window.map.remove()
-				//d3.select("svg").remove();
-				loadhex();
-			}
+	var feature = g.selectAll("path")
+		.data(collection.features)
+		.enter().append("path");
+
+	var hexcoloring = d3.scale.linear()
+		.domain([-1, -0.5, 0, 0.5, 1])
+		.range(['#007AC4','#00A763','#FFDD5E','#FF8A26','#ff403a']);
+		
+	var maxquote=Number(d3.max(collection.features, function(d) { return d.properties[variable]; }));
+	var minquote=Number(d3.min(collection.features, function(d) { return d.properties[variable]; }));
+		
+	function calibrate(num) {
+		return ((num-minquote)/(maxquote-minquote)*2)-1
+	}
+		
+	var div = d3.select("body").append("div")
+		.attr("class", "d3-tip n")
+		.attr("id", "d3-tip")
+		.style("display", "none");
+		
+	function mouseover(d) {
+		//console.log("mouseover");
+		div.style("display", "inline");
+	}
+
+	function mousemove(d) {
+		//console.log("mousemove");
+		div.style("display", "inline");
+		if (variable=="Total Einwohner/innen") {
+			var text= variable + ": " + germanFormatters.numberFormat(",")(d3.select(this).datum().properties[variable]);
+		}
+		else {
+			if (variable=="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)" || variable=="Durchschnittsalter") {wert=germanFormatters.numberFormat(",.1f")(d3.select(this).datum().properties[variable]) + " Jahre"}
+			else {wert=germanFormatters.numberFormat(",.1%")(d3.select(this).datum().properties[variable])}
+			var text= variable + ": " + wert + "<br/>" + "Total Einwohner/innen" + ": " + germanFormatters.numberFormat(",")(d3.select(this).datum().properties["Total Einwohner/innen"]);
+		}
+		
+		div
+			.html(text)
+			.style("left", function(d){return (d3.event.pageX) + "px"})
+			.style("top", (d3.event.pageY) + "px");
+		
+		$("#d3-tip").css("border-left", hexcoloring(calibrate(d3.select(this).datum().properties[variable])) +" solid 5px");
+		offsetx=(Number($("#d3-tip").css( "left" ).slice(0, -2)) - 17 - ($("#d3-tip").width()/2));
+		offsety=(Number($("#d3-tip").css( "top" ).slice(0, -2)) - 40 - ($("#d3-tip").height()));
+		$("#d3-tip").css( 'left', offsetx);
+		$("#d3-tip").css( 'top', offsety);
+	}
+
+	function mouseout(d) {
+		//console.log("mouseout");
+		div.style("display", "none");
+	}
+	
+	function drawHex() {
+	
+		maxquote=Number(d3.max(collection.features, function(d) { return d.properties[variable]; }));
+		minquote=Number(d3.min(collection.features, function(d) { return d.properties[variable]; }));
+  
+		feature.attr('style', 'pointer-events:visiblePainted;');
+		
+		feature.style("fill", function(d) {
+			return hexcoloring(calibrate(d.properties[variable]));
 		});
-}
+		feature.style("visibility", function (d) {
+			return d.properties[variable] != null ? "visible" : "hidden";
+		});
+		feature.style("fill-opacity", 0.5)
+			.style("stroke", "#fff")
+			.style("stroke-width", "1px");
+		
+		map.on("zoom", reset);
+		map.on("move", reset);
+		//Notwendig für Mobile-Devices, damit, dass Tooltip nicht falsch positioniert wird.
+		map.on("zoom", mouseout);
+		map.on("move", mouseout);
+		reset();
+		
+		feature.on("mouseover", mouseover)
+			.on("mousemove", mousemove)
+			.on("mouseout", mouseout)
+			.on("click", mousemove)
+			;
+		
+		d3.selectAll("#scale").remove()
+		
+		//Skala hinzufügen
+		scalecontainer = d3.select("#map").append("svg")
+		.attr("id", "scale")
+		.attr("height", "220px")
+		.attr("width", "60px")
+		.style("margin-top", "100px")
+		.style("margin-left", "10px")
+		.style("pointer-events", "none");
 	
-changeInd2();
+		y = d3.scale.linear()
+		.domain([maxquote, minquote])
+		.range([0, 0.4*500])
+		
+		gradient = scalecontainer.append('svg:linearGradient')
+			.attr('id', 'gradient')
+			.attr("x1", "100%")
+			.attr("y1", "100%")
+			.attr("x2", "100%")
+			.attr("y2", "0%")
+			.attr("spreadMethod", "pad")
+			
+		gradient.append('svg:stop')
+			.attr('stop-color', function(d) { return hexcoloring(-1) })
+			.attr('offset', '0')
+		
+		gradient.append('svg:stop')
+			.attr('stop-color', function(d) { return hexcoloring(-0.5) })
+			.attr('offset', '0.25')
+		
+		gradient.append('svg:stop')
+			.attr('stop-color', function(d) { return hexcoloring(0) })
+			.attr('offset', '0.5')
+			
+		gradient.append('svg:stop')
+			.attr('stop-color', function(d) { return hexcoloring(0.5) })
+			.attr('offset', '0.75')
+		
+		gradient.append('svg:stop')
+			.attr('stop-color', function(d) { return hexcoloring(1) })
+			.attr('offset', '1')
+			
+		scalecontainer
+			.datum({min: minquote, max: maxquote })
+			.append('svg:rect')
+				.attr('id', 'gradient-bar')
+				.attr('fill', 'url(#gradient)')
+				.attr('fill-opacity', 0.7)
+				.attr('width', function(d) { return 10 })
+				.attr('height', 0.4*500)
+				.attr("transform", "translate(0,10)")
+		
+		var axis = d3.svg.axis()
+			.scale(y)
+			.orient("right")
+			.tickValues([minquote, (maxquote-minquote)/4+minquote, (maxquote-minquote)/2+minquote, (maxquote-minquote)/4*3+minquote, maxquote]);
+		
+		if (variable=="Total Einwohner/innen") {
+			axis.tickFormat(germanFormatters.numberFormat(",.0f"));
+		}
+		else if (variable=="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)" || variable=="Durchschnittsalter") {
+			axis.tickFormat(germanFormatters.numberFormat(",.1f"));
+		}
+		else {
+			axis.tickFormat(d3.format(".1%"));
+		}
+		
+		scalecontainer.append('g').attr('class', 'axis')
+
+		scalecontainer.selectAll('.axis')
+			.attr('transform', 'translate(10,10)')
+			.call(axis)
+			
+	}
+	
+	drawHex();
+
+	// Reposition the SVG to cover the features.
+	function reset() {
+		//console.log("reset");
+		var bounds = path.bounds(collection),
+			topLeft = bounds[0],
+			bottomRight = bounds[1];
+			
+		svg.attr("width", bottomRight[0] - topLeft[0])
+			.attr("height", bottomRight[1] - topLeft[1])
+			.style("left", topLeft[0] + "px")
+			.style("top", topLeft[1] + "px");
+
+		g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+
+		feature.attr("d", path);
+	}
+
+	// Use Leaflet to implement a D3 geometric transformation.
+	function projectPoint(x, y) {
+		var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+		this.stream.point(point.x, point.y);
+	}
+  
+	function changeInd() {
+		mouseout();
+	/*	d3.select('.subelements-listing').selectAll('li')
+		    .attr('cursor', 'pointer')
+		    .on('click', function() {
+		        if (this.className == 'selected') {
+		            console.log('schon gewählt');
+		        } else {
+		            d3.select('.subelements-listing').selectAll('li').attr('class', '');
+		            this.className = 'selected';
+		            variable = d3.select(this).attr('id');
+					console.log(variable);
+					drawHex();
+		        }
+		    });*/
+		d3.select('#menu').selectAll('a.selection')
+		    .attr('cursor', 'pointer')
+		    .on('click', function() {
+				if (this.className == 'selection selected') {
+		            console.log('schon gewählt');
+		        } else {
+					d3.select('#menu').selectAll('a.selection').attr('class', 'selection');
+		            this.className = 'selection selected';
+		            variable = d3.select(this).attr('id');
+					console.log(variable);
+					drawHex();
+					$("#main-title").text(variable);
+		        }
+		    });
+	}
+	
+	changeInd();
+	
+	L.control.locate({
+		circleStyle: {
+			stroke: true,
+			color: "#007AC4",
+			weight: 2,
+			fillColor: "#ffffff",
+			fillOpacity: 0.3
+		},
+		showPopup: false
+	}).addTo(map);
+	
+	map.on('zoomstart zoom zoomend', function(ev){
+		console.log('Zoom level: ' + map.getZoom());
+	})
+	
+});
 
 </script>

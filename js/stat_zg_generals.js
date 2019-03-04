@@ -114,8 +114,8 @@ function createcontainers(number) {
 	if ( $( "#default" + number + " > div.description" ).length === 0) {
 		$("#default" + number + " > div#chart" + number +"").after( "<div id='description' class='description'></div>" );
 	}
-	if ( $( "#default" + number + " > div.source" ).length === 0) {
-		$("#default" + number + " > div.description").after( "<div id='source' class='source'></div>" );
+	if ( $( "#default" + number + " > div.subtitle" ).length === 0) {
+		$("#default" + number + " > div.description").after( "<div id='description' class='description'></div>" );
 	}
 }
 
