@@ -1,75 +1,117 @@
 <!DOCTYPE html>
 <html class="ocks-org do-not-copy">
-<meta charset="utf-8">
-<title>D3 + Leaflet</title>
-<style>
 
-/*@import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css);*/
-@import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.2/leaflet.css);
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="Kleinräumige Analysen im Kanton Zug">
+	<meta property="og:title" content="Kleinräumige Analysen">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://www.zg.ch/logo.jpg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+	<title>Kleinräumige Analysen im Kanton Zug</title>
 
-#map-container {
-  /*width: 960px;*/
-  height: 500px;
-}
+	<!--includes font icomoon-->
+	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/portal_css/OneGov%20Theme/resourceseantis.dir.eventsportlet.stylesheetsevents-cachekey-aa143e883dcc14eeb6fb199befe1fcd4.css">
 
-svg {
-  position: relative;
-}
+	<link type="image/x-icon" rel="shortcut icon" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/favicon.ico">
+	<link rel="search" href="https://www.zg.ch/@@search" title="Website durchsuchen">
+	<link rel="stylesheet" type="text/css" href="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/statistik.css">
+	<link rel="stylesheet" type="text/css" href="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/datatables.css"></head>
 
-/*path {
-  fill-opacity: .5;
-  stroke: #fff;
-  stroke-width: 1px;
-}*/
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+	<script src="js/stat_zg_generals.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.2/leaflet.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/theming.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/customstyles_css?ts=" />
+	<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/jquery.slinky.js"></script>
 
-path:hover {
-  fill-opacity: .8;
-}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-path.leaflet-clickable:hover {
-  fill-opacity: .5;
-}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.62.0/dist/L.Control.Locate.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.62.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+	
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	
+	<style>
 
-path.leaflet-clickable,
-.leaflet-zoom-animated {
-	pointer-events: none;
-}
+		/*@import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css);*/
+		@import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.2/leaflet.css);
 
-path:focus {
-  fill-opacity: .8;
-}
+		#map-container {
+		  /*width: 960px;*/
+		  height: 600px;
+		}
 
-/* Change cursor when mousing over clickable layer */
-.leaflet-clickable {
-  cursor: crosshair !important;
-}
-/* Change cursor when over entire map */
-.leaflet-container {
-  cursor: crosshair !important;
-}
+		svg {
+		  position: relative;
+		}
 
-.d3-tip {
-  position: absolute;
-  pointer-events: none;
-}
+		/*path {
+		  fill-opacity: .5;
+		  stroke: #fff;
+		  stroke-width: 1px;
+		}*/
 
-</style>
+		path:hover {
+		  fill-opacity: .8;
+		}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
-<script src="js/stat_zg_generals.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.2/leaflet.js"></script>
-<link rel="stylesheet" type="text/css" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/customstyles_css?ts=" />
-<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/jquery.slinky.js"></script>
+		path.leaflet-clickable:hover {
+		  fill-opacity: .5;
+		}
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		path.leaflet-clickable,
+		.leaflet-zoom-animated {
+			pointer-events: none;
+		}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.62.0/dist/L.Control.Locate.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.62.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+		path:focus {
+		  fill-opacity: .8;
+		}
 
-<h1>Kleinräumige Analyse</h1>
+		/* Change cursor when mousing over clickable layer */
+		.leaflet-clickable {
+		  cursor: crosshair !important;
+		}
+		/* Change cursor when over entire map */
+		.leaflet-container {
+		  cursor: crosshair !important;
+		}
 
-<p>Wie ist die Bevölkerung in Ihrer näheren Umgebung zusammengesetzt?</p>
+		.d3-tip {
+		  position: absolute;
+		  pointer-events: none;
+		}
+
+	</style>
+	
+</head>
+<body>
+<div id="container">
+<div id="portal-topactions" class="fixedWidth">
+</div>
+<div id="page-wrapper" class="fixedWidth clearfix">
+
+<div id="header" class="clearfix">
+<div class="row logoRow">
+            <div class="cell position-0 width-8">
+              <a id="portal-logo" title="Fachstelle für Statistik" accesskey="1" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle">
+  <img src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/@@images/1e1c2396-9f30-4f3d-b94f-a4f9e4bb5236.jpeg" alt="" width="313" height="20">
+</a>
+            </div>
+
+          </div>
+		  <div class="row headerDelimiterWrapper">
+            <div class="cell position-0 width-16" id="header-delimiter">&nbsp;</div>
+          </div>
+
+</div>
+<div id="columns" class="clearfix">
+<div class="row">
+<div class="cell position-0 width-16" id="column">
+<h1>Kleinräumige Analysen Kanton Zug</h1>
+
 <!--<div id = 'control' class='controlBar'>
     <ul class="subelements-listing" id="controlUL">
       <li id='Total Einwohner' class='selected'><a href="javascript:;">Einwohner/innen</a></li>
@@ -82,7 +124,7 @@ path:focus {
 
 <div class="slincky-wrapper">
 	<section>
-		<p>Wählen Sie das Thema</p>
+		<p>Wie ist die Bevölkerung in Ihrer näheren Umgebung zusammengesetzt? Wählen Sie das Thema</p>
 		<div id="menu" class="slinky-menu">
 			<ul>
 				<li><h2>Themenbereich (bitte wählen)</h2></li>
@@ -165,7 +207,7 @@ path:focus {
 <div id = 'control' class='controlBar'>
     <ul class="subelements-listing" id="controlUL">
       <li id='Hohe Auflösung' class='selected'><a href="javascript:;">Hohe Auflösung</a></li>
-      <li id='Tiefe Auflösung' class=''><a href="javascript:;">Tiefe Auflösung</a></li>
+      <li id='Tiefe Auflösung' class=''><a href="javascript:;">Tiefe Auflösung (besser in Randregionen)</a></li>
     </ul>
 </div>
 
@@ -288,7 +330,7 @@ function loadhex() {
 			.attr("id", "scale")
 			.attr("height", "220px")
 			.attr("width", "60px")
-			.style("margin-top", "120px")
+			.style("margin-top", "170px")
 			.style("margin-left", "10px")
 			.style("pointer-events", "none")
 			.style("z-index","1000");
@@ -427,6 +469,8 @@ function loadhex() {
 			showPopup: false
 		}).addTo(window.map);
 		
+		window.map.addControl(new L.Control.Fullscreen());
+		
 		window.map.on('zoomstart zoom zoomend', function(ev){
 			console.log('Zoom level: ' + window.map.getZoom());
 		})
@@ -462,3 +506,9 @@ function changeInd2() {
 changeInd2();
 
 </script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
