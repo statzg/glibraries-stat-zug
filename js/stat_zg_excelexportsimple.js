@@ -213,8 +213,7 @@ function createXLSXsimple (number, columns) {
 	//If title exist splice it in at the top
 	console.log(Atts[number].meta);
 	var title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
-	console.log(title);
-	if (title.length == 1) {
+	if (title.length == 1 & title[0].Content != "") {
 		if (title[0].Content!="") {
 			var titlestr=createRichText([title[0].Content], 20, true)
 			var titlelength=getTextWidth(title[0].Content, "20pt arial")
@@ -222,13 +221,13 @@ function createXLSXsimple (number, columns) {
 			++headerRows;
 			++totalRows;
 		}
-	} else if (typeof $('#'+Atts[number].maincontainer+'').prevAll('h2')[0] != 'undefined') {
+	} else if (typeof($('#'+Atts[number].maincontainer+'').prevAll('h2')[0]) != 'undefined') {
 		var titlestr=$('#'+Atts[number].maincontainer+'').prevAll('h2')[0].textContent;
 		var titlelength=getTextWidth(titlestr, "20pt arial")
 		worksheet.spliceRows(headerRows, 0, [titlestr]);
 		++headerRows;
 		++totalRows;
-	} else if (typeof $('#'+Atts[number].maincontainer+'').prevAll('h3')[0] != 'undefined') {
+	} else if (typeof($('#'+Atts[number].maincontainer+'').prevAll('h3')[0]) != 'undefined') {
 		var titlestr=$('#'+Atts[number].maincontainer+'').prevAll('h3')[0].textContent;
 		var titlelength=getTextWidth(titlestr, "20pt arial")
 		worksheet.spliceRows(headerRows, 0, [titlestr]);
@@ -373,13 +372,8 @@ function createXLSXsimple (number, columns) {
 		if (merge>maxMerge) {maxMerge=merge;}
 	}
 	
-	//Adapt header spacer so that logo image always fits into the header
-	if (headerHeight + 12.75 < 80) {
-		worksheet.getRow(spacerRow).height = 80-headerHeight
-		Datasheets[number].cellHeights.push(worksheet.getRow(spacerRow).height)
-	} else {
-		Datasheets[number].cellHeights.push(12.75)
-	}
+	worksheet.getRow(spacerRow).height = 15
+	Datasheets[number].cellHeights.push(15.0)
 	
 	//Adapt hight of logoRow to fit the logo
 	worksheet.getRow(logoRow).height = 79
@@ -394,16 +388,18 @@ function createXLSXsimple (number, columns) {
 		maxRows = Math.max(maxRows, Math.ceil(((getTextWidth(dataHeaderRow.getCell(i).value, "10pt arial")/7.025)+1)/Datasheets[number].cellWidths[i]));
 	}
 
-	//adjust header row heights (add some space for auto filters
-	dataHeaderRow.height = (maxRows*12.75);
+	//adjust header row heights (add some space for auto filters)
+	dataHeaderRow.height = (maxRows*15);
 	if (autofilters==true) {
-		dataHeaderRow.height = (maxRows*12.75)+15;
+		dataHeaderRow.height = (maxRows*15)+12;
 	}
 	Datasheets[number].cellHeights.push(dataHeaderRow.height)
 	
 	//Add cell heights to array for data rows (including spacer row at bottom)
 	for (i=headerRows+1; i<(Atts[number].data.length+headerRows+2); ++i) {
-		Datasheets[number].cellHeights.push(12.75)
+		worksheet.getRow(i).height = 15
+		Datasheets[number].cellHeights.push(15.0)
+		worksheet.getRow(i).alignment = { vertical: 'middle'}
 	}
 	
 	//Add formating to description row
@@ -420,7 +416,7 @@ function createXLSXsimple (number, columns) {
 		}
 		worksheet.mergeCells(descriptionRow,1,descriptionRow,merge)
 
-		descRow.height = Math.ceil(((getTextWidth(description[0].Content, "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*12.75;
+		descRow.height = Math.ceil(((getTextWidth(description[0].Content, "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*15;
 		Datasheets[number].cellHeights.push(descRow.height)
 	}
 	
@@ -437,7 +433,7 @@ function createXLSXsimple (number, columns) {
 		}
 		worksheet.mergeCells(sourceRow,1,sourceRow,merge)
 
-		sourcRow.height = Math.ceil(((getTextWidth("Quelle: " + source[0].Content, "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*12.75;
+		sourcRow.height = Math.ceil(((getTextWidth("Quelle: " + source[0].Content, "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*15;
 		Datasheets[number].cellHeights.push(sourcRow.height)
 	}
 	
@@ -453,7 +449,7 @@ function createXLSXsimple (number, columns) {
 	}
 	worksheet.mergeCells(filesourceRow,1,filesourceRow,merge)
 
-	filesourcRow.height = Math.ceil(((getTextWidth("Fachstelle Statistik des Kantons Zug", "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*12.75;
+	filesourcRow.height = Math.ceil(((getTextWidth("Fachstelle Statistik des Kantons Zug", "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*15;
 	Datasheets[number].cellHeights.push(filesourcRow.height)
 	
 	//Create array with summed up cell heights
