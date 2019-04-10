@@ -806,13 +806,13 @@ function loadGemeindeportrait(version) {
 							$('#müm').show();
 							if (version=="online") {
 								showall();
-								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
+								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ filter.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png")
 								$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
 								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
 							else if (version=="iframe") {
 								showall();
-								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/"+ filter.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download")
+								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ filter.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png")
 								$('h1.maintitle').html("Gemeindeporträt "+filter);
 								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
@@ -831,13 +831,13 @@ function loadGemeindeportrait(version) {
 						$('#müm').hide();
 						if (version=="online") {
 							showall();
-							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 							$('h1.documentFirstHeading').html("Kantonsporträt");
 							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 						}
 						else if (version=="iframe") {
 							showall();
-							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 							$('h1.maintitle').html("Kantonsportrait");
 							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 						}
@@ -860,13 +860,13 @@ function loadGemeindeportrait(version) {
 					$('#müm').hide();
 					if (version=="online") {
 						showall();
-						$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+						$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 						$('h1.documentFirstHeading').html("Kantonsporträt");
 						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 					}
 					else if (version=="iframe") {
 						showall();
-						$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/kanton.png/download")
+						$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 						$('h1.maintitle').html("Kantonsportrait");
 						$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
 					}
