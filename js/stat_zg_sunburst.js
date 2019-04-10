@@ -18,7 +18,9 @@ function loadSunburst(args) {
 	//var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 	//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 	//var removeZero = (typeof args.removeZero == 'undefined') ? false : args.removeZero;
-
+	var levels = (typeof args.levels == 'undefined') ? ["Schweiz", "Kanton", "Bezirk", "Gemeinde"] : args.levels;
+	var colors = (typeof args.colors == 'undefined') ? ['#007ac4', '#3388aa', '#499399', '#5d9d8a', '#6ea680', '#81b077', '#94b970', '#a7c16b', '#bcc866', '#d1d062', '#e8d760', '#ffdd5e', '#ffd156', '#ffc750', '#ffbb49', '#ffae43', '#ffa23f', '#ff963b', '#ff8738', '#ff7936', '#ff6936', '#ff5637', '#ff403a'] : args.colors;
+	
 	//Attributeobjekt initialisieren
 	Atts[number] = {};
 
@@ -37,7 +39,7 @@ function loadSunburst(args) {
 
 	Atts[number].y = d3v4.scaleSqrt().range([maxRadius * .1, maxRadius]);
 
-	var color = d3v4.scaleOrdinal(['#007ac4', '#3388aa', '#499399', '#5d9d8a', '#6ea680', '#81b077', '#94b970', '#a7c16b', '#bcc866', '#d1d062', '#e8d760', '#ffdd5e', '#ffd156', '#ffc750', '#ffbb49', '#ffae43', '#ffa23f', '#ff963b', '#ff8738', '#ff7936', '#ff6936', '#ff5637', '#ff403a']);
+	var color = d3v4.scaleOrdinal(colors);
 
 	Atts[number].partition = d3v4.partition();
 
@@ -89,7 +91,7 @@ function loadSunburst(args) {
 		}); // Reset zoom on canvas click
 
 	function buildHierarchy(csv) {
-		var root = { "name": "Schweiz", "children": [] };
+		var root = { "name": levels[0], "children": [] };
 		for (var i = 0; i < csv.length; i++) {
 			if (csv[i][1] != "" & csv[i][2] != "") {
 				var sequence = csv[i][0] + "&" + csv[i][1] + "&" + csv[i][2];
@@ -169,7 +171,11 @@ function loadSunburst(args) {
 		});
 
 		Atts[number].newSlice.append('path').attr('class', 'main-arc').style('fill', function (d) {
-			return color((d.children ? d : d.parent).data.name);
+			if (typeof(args.colors)=="undefined") {
+				return color((d.children ? d : d.parent).data.name);
+			} else {
+				return color(d.data.name);
+			}
 		}).attr('d', arc);
 
 		Atts[number].newSlice.append('path').attr('class', 'hidden-arc').attr('id', function (_, i) {
@@ -226,13 +232,13 @@ function loadSunburst(args) {
 			}
 
 			if (d.parent == null) {
-				tiptext = "<span>" + label + "</span><br/><span>Anteil am Total: 100%</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
+				tiptext = "<span>" + label + "</span><br/><span>Anteil Total: 100%</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
 			} else if (d.parent.parent == null) {
-				tiptext = "<span>Kanton " + label + "</span><br/><span>Anteil am Total: " + (Math.round(d.value / d.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
+				tiptext = "<span>"+(levels[1]=="Kanton" ? "Kanton " : "") + label + "</span><br/><span>Anteil Total: " + (Math.round(d.value / d.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
 			} else if (d.parent.parent.parent == null) {
-				tiptext = "<span>" + label + "</span><br/><span>Anteil am Total: " + (Math.round(d.value / d.parent.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anteil am Kanton: " + (Math.round(d.value / d.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
+				tiptext = "<span>" + label + "</span><br/><span>Anteil Total: " + (Math.round(d.value / d.parent.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anteil "+levels[1]+": " + (Math.round(d.value / d.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
 			} else if (d.parent.parent.parent.parent == null) {
-				tiptext = "<span>" + label + "</span><br/><span>Anteil am Total: " + (Math.round(d.value / d.parent.parent.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anteil am Kanton: " + (Math.round(d.value / d.parent.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anteil am Bezirk: " + (Math.round(d.value / d.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
+				tiptext = "<span>" + label + "</span><br/><span>Anteil Total: " + (Math.round(d.value / d.parent.parent.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anteil "+levels[1]+": " + (Math.round(d.value / d.parent.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anteil "+levels[2]+": " + (Math.round(d.value / d.parent.value * 1000) / 10).toFixed(1) + '%' + "</span><br/><span>Anzahl Personen: " + germanFormatters.numberFormat(",")(d.value) + "</span>";
 			}
 
 			$("#d3-tip" + number).html(tiptext);
@@ -301,8 +307,10 @@ function loadSunburst(args) {
 		}
 	}
 
-	var columns=["Kanton", "Bezirk", "Gemeinde", "Anzahl"]
+	var columns=levels.slice(1,levels.length);
+	columns.push("Anzahl");
 	addDownloadButton(number);
-	addDataTablesButton(number, columns)
+	addDataTablesButton(number, columns);
+	//addDataTablesButtonOriginal(number, columns)
 
 }
