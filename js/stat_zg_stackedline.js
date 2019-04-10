@@ -44,6 +44,8 @@ if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)
 if (group == undefined | group=="") {group = Object.keys(dataValues)[2];};
 if (stack == undefined | stack=="") {stack = Object.keys(dataValues)[1];};	
 	
+Atts[number].group=group;
+
 	if (asDate==true) {
 		data.forEach(function(x) {
 			x[dimension] = new Date(x[dimension]);
@@ -262,7 +264,7 @@ function rotateX(){
 
 rotateX();
 
-function initTip(){
+function initTip(number){
 	last_tip = null;
 	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
@@ -272,10 +274,11 @@ function initTip(){
 		.html("no data");
 }
 
-function callTip(){		
-	d3.selectAll("circle.dot")
+function callTip(number){
+	d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot")
 		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
+
 			if(d.key !== last_tip) {
 				Atts[number].tips.show(d);
 				last_tip = d.key;
@@ -296,18 +299,17 @@ function callTip(){
 			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 
-			
 			if (showTotal==true & showAnteil==true) {
-				tiptext= "<span>"+characteristicsStack[$(this).parent().index()]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
+				tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
 			}
 			else if (showTotal==true) {
-				tiptext= "<span>"+characteristicsStack[$(this).parent().index()]+"</span><br/><span>" + label + "</span><br/><span>"+group+": " + wert +  "</span>";
+				tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
 			}
 			else if (showAnteil==true) {
-				tiptext= "<span>"+characteristicsStack[$(this).parent().index()]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
+				tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
 			}
 			else {
-				tiptext= "<span>"+characteristicsStack[$(this).parent().index()]+"</span><br/><span>" + label + "</span>";
+				tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span>";
 			};
 			$("#d3-tip"+number).html(tiptext)
 			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
@@ -326,8 +328,8 @@ function callTip(){
 		});
 }
 
-initTip();
-callTip();
+initTip(number);
+callTip(number);
 
 $("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 
@@ -345,7 +347,7 @@ window.addEventListener('resize', function(){
 	Charts[number].render();
 	
 	rotateX();
-	callTip();
+	callTip(number);
 	
 	Charts[number].transitionDuration(1500);
 	$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);

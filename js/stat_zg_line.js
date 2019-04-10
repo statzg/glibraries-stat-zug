@@ -254,7 +254,7 @@ function initTip(){
 }
 
 function callTip(){		
-	d3.selectAll("circle.dot")
+	d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot")
 		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
 			if(d.data.key !== last_tip) {
