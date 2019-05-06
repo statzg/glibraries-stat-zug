@@ -2,6 +2,7 @@
 <script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_row.js"></script>
 <script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_choropleth.js"></script>
 <script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/jquery.slinky.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js"></script>
 
 	<div class="slincky-wrapper">
 		<section>
@@ -42,6 +43,7 @@
 						<ul>
 							<li><a href="javascript:;" class="selection" id="15-01">Bildungsstand</a></li>
 							<li><a href="javascript:;" class="selection" id="15-02">Maturitätsquote</a></li>
+							<li><a href="javascript:;" class="selection" id="15-03">Hochschuleinstrittsquote</a></li>
 						</ul>
 					</li>
 					<li>
@@ -114,23 +116,46 @@
 </div>
 
 <script>
+
+var uri = new URI(window.location.href);
+
 args1 ={
 	number:1,													
-	csv_path:"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-01-01.csv",		
+	//csv_path:"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-01-01.csv",		
 	//dimension:"Kanton",											
 	//group:"Anzahl",							
 	characteristics:["Schweiz","Zürich","Bern","Luzern","Uri","Schwyz","Obwalden","Nidwalden","Glarus","Zug","Freiburg","Solothurn","Basel-Stadt","Basel-Landschaft","Schaffhausen",
 "Appenzell Ausserrhoden","Appenzell Innerrhoden","St. Gallen","Graubünden","Aargau","Thurgau","Tessin","Waadt","Wallis","Neuenburg","Genf","Jura"],										
 	showTotal:true,												
 	showAnteil:false,											
-	order:"desc",												
 	highlight:{"Zug":2, "Schweiz":1}													
 }
+
 args2 ={
 	number:2,													
-	csv_path:"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-01-01.csv",		
+	//csv_path:"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-01-01.csv",		
 	//dimension:"Kanton",											
 	//group:"Anzahl",							
+}
+
+if (typeof uri.search(true)["chart"] == "undefined") {
+	var chart="01-01"
+	args1.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+chart+".csv");
+	args2.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+chart+".csv");
+	uri.setSearch("chart", chart)
+	window.history.pushState("", "", uri.href());
+} else {
+	var chart=uri.search(true)["chart"]
+	args1.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+chart+".csv");
+	args2.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+chart+".csv");
+}
+
+if (typeof uri.search(true)["order"] == "undefined") {
+	args1.order="desc"
+	uri.setSearch("order", args1.order)
+	window.history.pushState("", "", uri.href());
+} else {
+	args1.order = uri.search(true)["order"];
 }
 
 loadRow(args1);
@@ -138,21 +163,26 @@ loadChoroplethMap(args2);
 
 $( ".selection" ).click(function(){
 	selectedkey=$(this).attr('id');
-	args1.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+selectedkey+".csv");
+    args1.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+selectedkey+".csv");
 	args2.csv_path=String("/behoerden/gesundheitsdirektion/statistikfachstelle/daten/kantonsvergleich/result-vergleich-"+selectedkey+".csv");
 	d3.selectAll('#datatablecontainer1').remove();
 	$('#actionMenu1 > ul > li > a:nth-child(2)').text("Daten anzeigen/herunterladen");
 	d3.selectAll('#datatablecontainer2').remove();
 	$('#actionMenu2 > ul > li > a:nth-child(2)').text("Daten anzeigen/herunterladen");
 	loadRow(args1);
-        loadChoroplethMap(args2);
+    loadChoroplethMap(args2);
+	uri.setSearch("chart", selectedkey)
+	window.history.pushState("", "", uri.href());
 });
 
 $(".order").click(function(){
 	args1.order=$(this).attr('id');
 	loadRow(args1);
+	uri.setSearch("order", args1.order)
+	window.history.pushState("", "", uri.href());
 });
 
+//Not used
 $(".hiderow").click(function(){
 	$('#default1').toggle(500);
 	if ($(this).text() == 'Balken anzeigen') {
@@ -170,4 +200,5 @@ $(".hidemap").click(function(){
                 $(this).text('Karte anzeigen');
         }
 });
+
 </script>
