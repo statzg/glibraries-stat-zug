@@ -19,7 +19,7 @@ function loadSunburst(args) {
 	//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 	//var removeZero = (typeof args.removeZero == 'undefined') ? false : args.removeZero;
 	var levels = (typeof args.levels == 'undefined') ? ["Schweiz", "Kanton", "Bezirk", "Gemeinde"] : args.levels;
-	var colors = (typeof args.colors == 'undefined') ? ['#007ac4', '#3388aa', '#499399', '#5d9d8a', '#6ea680', '#81b077', '#94b970', '#a7c16b', '#bcc866', '#d1d062', '#e8d760', '#ffdd5e', '#ffd156', '#ffc750', '#ffbb49', '#ffae43', '#ffa23f', '#ff963b', '#ff8738', '#ff7936', '#ff6936', '#ff5637', '#ff403a'] : args.colors;
+	var colors = (typeof args.colors == 'undefined') ? ['#007ac4', '#ff403a'] : args.colors;
 	
 	//Attributeobjekt initialisieren
 	Atts[number] = {};
@@ -41,8 +41,11 @@ function loadSunburst(args) {
 
 	var color = d3v4.scaleOrdinal(colors);
 
-	Atts[number].partition = d3v4.partition();
+	var myColor = d3v4.scaleLinear().domain([-0.2,0,0.2,0.4,0.6,0.8,1])
+		.range(['#c3cec3','#007AC4','#00A763','#FFDD5E','#FFDD5E','#FF8A26','#FF403A'])
 
+	Atts[number].partition = d3v4.partition();
+	
 	var arc = d3v4.arc().startAngle(function (d) {
 		return Atts[number].x(d.x0);
 	}).endAngle(function (d) {
@@ -91,7 +94,7 @@ function loadSunburst(args) {
 		}); // Reset zoom on canvas click
 
 	function buildHierarchy(csv) {
-		var root = { "name": levels[0], "children": [] };
+		var root = { "name": levels[0], "children": [], "colorkey":-0.2 };
 		for (var i = 0; i < csv.length; i++) {
 			if (csv[i][1] != "" & csv[i][2] != "") {
 				var sequence = csv[i][0] + "&" + csv[i][1] + "&" + csv[i][2];
@@ -136,9 +139,33 @@ function loadSunburst(args) {
 				}
 			}
 		}
+		//Colorkey definieren
+		root.children.forEach(function(element1,index1) {
+			var diff1=1/(root.children.length-1)
+			element1.colorkey=diff1*(index1);
+			if (typeof element1.children != 'undefined') {
+				element1.children.forEach(function(element2,index2){
+					var diff2=Math.max(diff1/element1.children.length,0.04)
+					element2.colorkey=Math.max(element1.colorkey+diff1/element1.children.length*index2, element1.colorkey+0.04*index2);
+					if (typeof element2.children != 'undefined') {
+						element2.children.forEach(function(element3,index3){
+							var diff3=Math.max(diff2/element2.children.length,0.04)
+							element3.colorkey=Math.max(element2.colorkey+diff2/element2.children.length*index3, element2.colorkey+0.04*index3)
+							if (typeof element3.children != 'undefined') {
+								element3.children.forEach(function(element4,index4){
+									var diff4=Math.max(diff3/element3.children.length,0.04)
+									element4.colorkey=Math.max(element3.colorkey+diff3/element3.children.length*index4, element3.colorkey+0.04*index4)
+								});
+							}
+
+						});
+					}
+				});
+			}
+		});
 		return root;
 	};
-
+	
 	var daten = d3.csv(csv_path, function(error, data) {
 		
 		data.forEach(function(x) {
@@ -172,8 +199,10 @@ function loadSunburst(args) {
 
 		Atts[number].newSlice.append('path').attr('class', 'main-arc').style('fill', function (d) {
 			if (typeof(args.colors)=="undefined") {
-				return color((d.children ? d : d.parent).data.name);
+				return myColor(d.data.colorkey);
+				//return color((d.children ? d : d.parent).data.name);
 			} else {
+				//return myColor(d.data.colorkey);
 				return color(d.data.name);
 			}
 		}).attr('d', arc);
@@ -242,7 +271,11 @@ function loadSunburst(args) {
 			}
 
 			$("#d3-tip" + number).html(tiptext);
-			$("#d3-tip" + number).css("border-left", color((d.children ? d : d.parent).data.name) + " solid 5px");
+			if (typeof(args.colors)=="undefined") {
+				$("#d3-tip" + number).css("border-left", myColor(d.data.colorkey) + " solid 5px");
+			} else {
+				$("#d3-tip" + number).css("border-left", color(d.data.name) + " solid 5px");
+			}
 			offsetx = Number($("#d3-tip" + number).css("left").slice(0, -2)) + 18 - $("#d3-tip" + number).width() / 2;
 			offsety = Number($("#d3-tip" + number).css("top").slice(0, -2)) + 18 - $("#d3-tip" + number).height() / 2;
 			$("#d3-tip" + number).css('left', offsetx);
