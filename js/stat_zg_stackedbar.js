@@ -19,6 +19,7 @@ var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAntei
 //var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
+var asPercent=(typeof args.asPercent == 'undefined') ? false : args.asPercent;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -122,7 +123,7 @@ Charts[number]
 	.yAxisPadding("5%")
 	;
 
-if (typeof relative !== 'undefined' && relative==true) {
+if (relative==true || asPercent==true) {
 Charts[number].yAxis().tickFormat(d3.format('.0%'));
 Charts[number].renderLabel(false)
 Charts[number].yAxisPadding("0%");
@@ -330,14 +331,15 @@ function callTip(number){
 				last_tip = d.key;
 			}
 			
-			if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
+			if (asPercent==true) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]*100)+'%'}
+			else if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 			
 			if (showTotal==true & showAnteil==true) {
 				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span><br/><span>Anzahl: " + wert +  "</span>";
 			}
 			else if (showTotal==true) {
-				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anzahl: " + wert +  "</span>";
+				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>"+group+": " + wert +  "</span>";
 			}
 			else if (showAnteil==true) {
 				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span>";

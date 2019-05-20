@@ -20,6 +20,7 @@ var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 var removeZero = (typeof args.removeZero == 'undefined') ? false : args.removeZero;
+var asPercent = (typeof args.asPercent == 'undefined') ? false : args.asPercent;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -151,8 +152,15 @@ Charts[number].legend(dc.legend().x(10).y(330).itemHeight(13).gap(10)
 			.legendWidth(totalWidth-10)
 			.autoItemWidth(true));
 			
+if (asPercent==true) {
+Charts[number].yAxis().tickFormat(d3.format('.0%'));
+Charts[number].renderLabel(false)
+Charts[number].yAxisPadding("0%");
+}
+else {			
 Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
-	
+}
+
 Charts[number].render();
 
 var YWidth=0
@@ -304,7 +312,8 @@ function callTip(number){
 			}
 			else {label=d.data.key}
 			
-			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+			if (asPercent==true) {wert=germanFormatters.numberFormat(",.1f")(d.data.value*100)+'%'}
+			else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 
 			if (showTotal==true & showAnteil==true) {
