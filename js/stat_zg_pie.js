@@ -175,6 +175,7 @@ function initTip(number){
 	last_tip = null;
 	Atts[number].tips = d3.tip()
 		.attr('class', 'd3-tip')
+		.attr('id', 'd3-tip'+number)
 		.direction('n')
 		.offset([5, 0])
 		.html(function(d) {
@@ -198,7 +199,7 @@ function callTip(number){
 				Atts[number].tips.show(d, $("#"+Atts[number].chartcontainer+" .pie-slice")[characteristics.indexOf(d.data.key)]);
 				last_tip = d.key;
 			}
-			$(".d3-tip").css("border-left", colorScale.range()[i]+" solid 5px");
+			$("#d3-tip"+number).css("border-left", colorScale.range()[i]+" solid 5px");
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
