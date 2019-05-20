@@ -38,12 +38,12 @@ data.forEach(function(x) {
 	x['Betrag'] = +x['Betrag'];
 });
 
-var units = "Mio Franken";					  
+var units = "Franken";
+
 function redraw() {
 
 var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
-var totalHeight = 400;
-
+var totalHeight = 800;
 var margin = {top: 10, right: 0, bottom: 10, left: 0};
     width = totalWidth - margin.left - margin.right,
     height = totalHeight - margin.top - margin.bottom;
@@ -68,7 +68,7 @@ svg = d3.select("#"+Atts[number].chartcontainer).append("svg")
 // Set the sankey diagram properties
 var sankey = d3.sankey()
     .nodeWidth(60)
-    .nodePadding(40)
+    .nodePadding(10)
     .size([width, height]);
 
 // append a defs (for definition) element to your SVG
@@ -76,6 +76,7 @@ var defs = svg.append('defs');
 
 var path = sankey.link();
 
+	totalAusgaben=0;
 	//set up graph in same style as original example but empty
 	graph = {"nodes" : [], "links" : []};
 
@@ -86,7 +87,7 @@ var path = sankey.link();
                          "target": d.Ziel,
                          "value": +d.Betrag });
      });
-
+	 
     // return only the distinct / unique nodes
     graph.nodes = d3.keys(d3.nest()
 		.key(function (d) { return d.name; })
@@ -101,24 +102,24 @@ var path = sankey.link();
     //now loop through each nodes to make nodes an array of objects
     // rather than an array of strings
     graph.nodes.forEach(function (d, i) {
-		graph.nodes[i] = { "name": d };
+		graph.nodes[i] = { "name": d, "nodeid":i };
     });
+
+
+	//console.log(graph.nodes);
 
 	sankey
 		.nodes(graph.nodes)
 		.links(graph.links)
-		.layout(100);
+		.layout(10);
 
 for (i=0; i<graph.nodes.length; i++) {
 	characteristics.push(graph.nodes[i].name)
 }
 
-characteristics.splice(characteristics.indexOf("Steuerverwaltung"),1)
-characteristics.splice(0,0,"Steuerverwaltung")
-	
-colorScale = d3.scale.ordinal()
-            .domain(characteristics)
-            .range(colorscheme[scale][graph.nodes.length]);
+myColor = d3.scale.linear().domain([-0.2,0,0.2,0.4,0.6,0.8,1])
+			.range(['#c3cec3','#007AC4','#00A763','#FFDD5E','#FFDD5E','#FF8A26','#FF403A'])
+
 
 // add in the links
   var link = svg.append("g").selectAll(".sankey-link")
@@ -127,21 +128,18 @@ colorScale = d3.scale.ordinal()
 		.attr("class", "sankey-link")
 		.attr("d", path)
 		.style("stroke", function(d) { 
-			if (d.target.name=="Steuerverwaltung") {
-				var bordercolor=colorScale(d.source.name)
-			} else {
-				var bordercolor=colorScale(d.target.name)
-			}
+			var bordercolor=myColor(d.source.nodeid/graph.nodes.length)
 			return d.color = bordercolor; })
 		.style("stroke-width", function(d) { return Math.max(2, d.dy); })
 		.sort(function(a, b) { return b.dy - a.dy; })
 		.style('stroke', function(d, i) {
 
+		//Farbverlauf anstatt einfarbige Verbindung	
 		// make unique gradient ids  
 		const gradientID = 'gradient'+i;
 
-		const startColor = colorScale(d.source.name);
-		const stopColor = colorScale(d.target.name);
+		const startColor = myColor(d.source.nodeid/graph.nodes.length);
+		const stopColor = myColor(d.target.nodeid/graph.nodes.length);
 		
 		const linearGradient = defs.append('linearGradient')
 			.attr('id', gradientID)
@@ -182,7 +180,7 @@ colorScale = d3.scale.ordinal()
       .attr("height", function(d) { return (Math.max(2,d.dy)); })
       .attr("width", sankey.nodeWidth()-4)
       .style("fill", function(d) { 
-		  return d.color = colorScale(d.name); })
+		  return d.color = myColor(d.nodeid/graph.nodes.length); })
       //.style("stroke", "#FFFFFF")
     /*.append("title")
       .text(function(d) { 
@@ -190,7 +188,7 @@ colorScale = d3.scale.ordinal()
 
 // add in the title for the nodes
   node.append("text")
-      .attr("x", -6)
+      .attr("x", sankey.nodeWidth()-5)
       .attr("y", function(d) { return d.dy / 2; })
       .attr("dy", ".35em")
       .attr("text-anchor", "end")
@@ -200,14 +198,23 @@ colorScale = d3.scale.ordinal()
       .attr("x", sankey.nodeWidth()/2)
       .attr("text-anchor", "middle")
 	.filter(function(d) { return d.x < width / 3; })
-      .attr("x", 6 + sankey.nodeWidth())
-      .attr("text-anchor", "start")
+      .attr("x", 5)
+      .attr("text-anchor", "start");
+	
+	node.selectAll('text')
+	.filter(function(d) { return d.dy < 11})
+	.text("");
 	  //Dreizeilige Texte Links von Hand zentrieren (unschön aber einfach)
-	  .attr("y", function(d) { return (d.dy / 2) - 16; });
+	  //.attr("y", function(d) { return (d.dy / 2) - 16; });
 	  
-	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > text")
-		.call(wrap, 105);
+//	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > text")
+//		.call(wrap, 200);
 
+    graph.nodes.forEach(function (d, i) {
+		if (d.targetLinks.length==0) {
+			totalAusgaben=totalAusgaben+graph.nodes[i].value;
+		}
+	});
 		
 // the function for moving the nodes
 function dragmove(d) {
@@ -227,7 +234,6 @@ function initTip(number){
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction(function(d) {
-			console.log(d);
 			if (typeof d.sourceLinks !== 'undefined' && d.sourceLinks.length == 0) return "nw"
 			if (typeof d.targetLinks !== 'undefined' && d.targetLinks.length == 0) return 'ne'
 			else return 'n'
@@ -236,9 +242,32 @@ function initTip(number){
 		.html("no data");
 }
 
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function mergeColors(c1, c2) {
+	var rgb1=hexToRgb(c1)
+	var rgb2=hexToRgb(c2)
+	var r=(rgb1.r+rgb2.r)/2
+	var g=(rgb1.g+rgb2.g)/2
+	var b=(rgb1.b+rgb2.b)/2
+	return(rgbToHex(r, g, b));
+}
+
 function callTip(number){
 	//Total der Einnahmen und Ausgaben ermitteln
 	result = $.grep(graph.nodes, function(e){ return e.name == "Steuerverwaltung"; });
+
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > rect")
 		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
@@ -246,18 +275,14 @@ function callTip(number){
 				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
-			if (d.name=="Steuerverwaltung") {
-				tiptext= "<span>" + d.name + "</span><br/><span>Betrag: " + germanFormatters.numberFormat(",")(d.value) +  " Mio CHF</span>";
-			} else {
-				tiptext= "<span>" + d.name + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.value/result[0].value) + "</span><br/><span>Betrag: " +germanFormatters.numberFormat(",")(d.value)+  " Mio CHF</span>";
-			}
+			tiptext= "<span>" + d.name + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.value/totalAusgaben) + "</span><br/><span>Betrag: " + germanFormatters.numberFormat(",")(d.value) +  " " + units + "</span>";
 			$("#d3-tip"+number).html(tiptext)
-			$("#d3-tip"+number).css("border-left", colorScale(d.name) +" solid 5px");
+			$("#d3-tip"+number).css("border-left", myColor(d.nodeid/graph.nodes.length) +" solid 5px");
 			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 20 - ($("#d3-tip"+number).width()/2));
 			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 5 - ($("#d3-tip"+number).height()));
 			$("#d3-tip"+number).css( 'left', offsetx);
 			$("#d3-tip"+number).css( 'top', offsety);
-			$("#d3-tip"+number).css( 'pointer-events', 'none' );									
+			$("#d3-tip"+number).css( 'pointer-events', 'none' );
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
@@ -270,13 +295,9 @@ function callTip(number){
 				Atts[number].tips.show(d);
 				last_tip = d.key;
 			}
-			tiptext= "<span>" + d.source.name + " -> " + d.target.name + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.value/result[0].value) + "</span><br/><span>Betrag: " +germanFormatters.numberFormat(",")(d.value)+  " Mio CHF</span>";
+			tiptext= "<span>" + d.source.name + " -> " + d.target.name + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.value/totalAusgaben) + "</span><br/><span>Betrag: " +germanFormatters.numberFormat(",")(d.value)+  " " + units + "</span>";
 			$("#d3-tip"+number).html(tiptext)
-			if (d.target.name=="Steuerverwaltung") {
-				var bordercolor=colorScale(d.source.name)
-			} else {
-				var bordercolor=colorScale(d.target.name)
-			}
+			var bordercolor=mergeColors(myColor(d.source.nodeid/graph.nodes.length), myColor(d.target.nodeid/graph.nodes.length))
 			$("#d3-tip"+number).css("border-left", bordercolor +" solid 5px");
 			var pathSegList = this.pathSegList;
 			var steigung=Math.abs(pathSegList[1]['y1']-pathSegList[1]['y2'])
@@ -285,6 +306,7 @@ function callTip(number){
 			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 5 - ($("#d3-tip"+number).height()) - parseFloat($(this).css("stroke-width"))/2 + steigung/2);
 			$("#d3-tip"+number).css( 'left', offsetx);
 			$("#d3-tip"+number).css( 'top', offsety);
+			$(".d3-tip").css( 'pointer-events', 'none' );
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
