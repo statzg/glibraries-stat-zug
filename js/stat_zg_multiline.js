@@ -121,6 +121,9 @@ Charts[number]
 	.dimension(Atts[number].maindimension)
 	.elasticY(true)
 	.legend(dc.legend().x(70).y(10).itemHeight(13).gap(5))
+	.title(function(d) {
+		return ""; 
+	})
 	.brushOn(false)
      //._rangeBandPadding(1)
 	.compose(Charts[number+100])
