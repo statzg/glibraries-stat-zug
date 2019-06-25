@@ -21,6 +21,8 @@ var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
 //var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
+var align = (typeof args.align == 'undefined') ? "justify" : args.align;
+
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -69,6 +71,7 @@ svg = d3.select("#"+Atts[number].chartcontainer).append("svg")
 var sankey = d3.sankey()
     .nodeWidth(60)
     .nodePadding(10)
+	.align(align)
     .size([width, height]);
 
 // append a defs (for definition) element to your SVG
@@ -111,7 +114,7 @@ var path = sankey.link();
 	sankey
 		.nodes(graph.nodes)
 		.links(graph.links)
-		.layout(10);
+		.layout(100);
 
 for (i=0; i<graph.nodes.length; i++) {
 	characteristics.push(graph.nodes[i].name)
@@ -188,7 +191,7 @@ myColor = d3.scale.linear().domain([-0.2,0,0.2,0.4,0.6,0.8,1])
 
 // add in the title for the nodes
   node.append("text")
-      .attr("x", sankey.nodeWidth()-5)
+      .attr("x", sankey.nodeWidth()-10)
       .attr("y", function(d) { return d.dy / 2; })
       .attr("dy", ".35em")
       .attr("text-anchor", "end")
@@ -207,8 +210,8 @@ myColor = d3.scale.linear().domain([-0.2,0,0.2,0.4,0.6,0.8,1])
 	  //Dreizeilige Texte Links von Hand zentrieren (unschön aber einfach)
 	  //.attr("y", function(d) { return (d.dy / 2) - 16; });
 	  
-//	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > text")
-//		.call(wrap, 200);
+	d3.selectAll("#"+Atts[number].chartcontainer+" g.sankey-node > text")
+		.call(wrap, 250);
 
     graph.nodes.forEach(function (d, i) {
 		if (d.targetLinks.length==0) {
