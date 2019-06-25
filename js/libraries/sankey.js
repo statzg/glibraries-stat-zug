@@ -3,6 +3,7 @@ d3.sankey = function() {
       nodeWidth = 24,
       nodePadding = 8,
       size = [1, 1],
+      align = 'justify', // left, right, center or justify
       nodes = [],
       links = [];
 
@@ -36,6 +37,12 @@ d3.sankey = function() {
     return sankey;
   };
 
+  sankey.align = function(_) {
+    if (!arguments.length) return align;
+    align = _.toLowerCase();
+    return sankey;
+  };
+  
   sankey.layout = function(iterations) {
     computeNodeLinks();
     computeNodeValues();
@@ -110,28 +117,46 @@ d3.sankey = function() {
   function computeNodeBreadths() {
     var remainingNodes = nodes,
         nextNodes,
-        x = 0;
+        x = 0,
+        reverse = (align === 'right'); // Reverse traversal direction
 
     while (remainingNodes.length) {
       nextNodes = [];
       remainingNodes.forEach(function(node) {
         node.x = x;
         node.dx = nodeWidth;
-        node.sourceLinks.forEach(function(link) {
-          nextNodes.push(link.target);
+        node[reverse ? 'targetLinks' : 'sourceLinks'].forEach(function(link) {
+          var nextNode = link[reverse ? 'source' : 'target'];
+          if (nextNodes.indexOf(nextNode) < 0) {
+			nextNodes.push(nextNode);
+		  }						   
         });
       });
       remainingNodes = nextNodes;
       ++x;
     }
 
-    //
-    moveSinksRight(x);
-    scaleNodeBreadths((width - nodeWidth) / (x - 1));
+    if (reverse) {
+      // Flip nodes horizontally
+      nodes.forEach(function(node) {
+        node.x *= -1;
+        node.x += x - 1;
+      });
+    }
+    if (align === 'center') {
+      moveSourcesRight();
+    }
+    if (align === 'justify') {
+      moveSinksRight(x);
+    }
+    scaleNodeBreadths((size[0] - nodeWidth) / (x - 1));
   }
 
   function moveSourcesRight() {
-    nodes.forEach(function(node) {
+    nodes.slice()
+      // Pack nodes from right to left
+      .sort(function(a, b) { return b.x - a.x; })
+      .forEach(function(node) {
       if (!node.targetLinks.length) {
         node.x = d3.min(node.sourceLinks, function(d) { return d.target.x; }) - 1;
       }
