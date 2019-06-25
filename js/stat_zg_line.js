@@ -14,7 +14,7 @@ var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
 var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
 var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
 var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
-//var dateUnit = (typeof args.dateUnit == 'undefined') ? true : args.dateUnit;
+var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
 //var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
 //var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
@@ -148,7 +148,7 @@ Charts[number]
 }
 
 Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
-	
+
 Charts[number].render();
 
 function adaptY(){
@@ -264,7 +264,14 @@ function callTip(){
 
 			if (asDate==true){
 				var monthNameFormat = d3.time.format("%B %Y");
-				label=monthNameFormat(d.data.key)}
+				var yearNameFormat = d3.time.format("%Y");
+				if (dateUnit=="year") {
+					label=yearNameFormat(d.data.key)
+				}
+				else {
+					label=monthNameFormat(d.data.key)
+				}
+			}
 			else {label=d.data.key}
 			
 			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
