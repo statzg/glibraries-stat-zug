@@ -11,7 +11,7 @@
 	<title>Kleinräumige Analysen im Kanton Zug</title>
 
 	<!--includes font icomoon-->
-	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/portal_css/OneGov%20Theme/resourceseantis.dir.eventsportlet.stylesheetsevents-cachekey-aa143e883dcc14eeb6fb199befe1fcd4.css">
+	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/specialfont.css">
 
 	<link type="image/x-icon" rel="shortcut icon" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/favicon.ico">
 	<link rel="search" href="https://www.zg.ch/@@search" title="Website durchsuchen">
@@ -32,6 +32,8 @@
 	
 	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js"></script>
 	
 	<style>
 
@@ -97,7 +99,7 @@
 <div class="row logoRow">
             <div class="cell position-0 width-8">
               <a id="portal-logo" title="Fachstelle für Statistik" accesskey="1" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle">
-  <img src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/@@images/1e1c2396-9f30-4f3d-b94f-a4f9e4bb5236.jpeg" alt="" width="313" height="20">
+  <img src="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/logo-stat-zug.jpeg" alt="" width="313" height="20">
 </a>
             </div>
 
@@ -128,7 +130,7 @@
 		<div id="menu" class="slinky-menu">
 			<ul>
 				<li><h2>Themenbereich (bitte wählen)</h2></li>
-				<li><a href="javascript:;" class='selection selected' id="Total Einwohner/innen">Anzahl Einwohner/innen</a></li>
+				<li><a href="javascript:;" class='selection' id="Total Einwohner/innen">Anzahl Einwohner/innen</a></li>
 				<li>
 					<a href="#">Geschlecht</a>
 					<ul>
@@ -166,7 +168,7 @@
 						<li><a href="javascript:;" class="selection" id="Anteil nicht in der Schweiz geboren">Anteil nicht in der Schweiz geboren</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil in Europa geboren">Anteil in Europa geboren</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil nicht in Europa geboren">Anteil nicht in Europa geboren</a></li>
-						<li><a href="javascript:;" class="selection" id="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)">Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)</a></li>
+						<li><a href="javascript:;" class="selection" id="Durchschnittliche Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)">Durchschnittliche Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)</a></li>
 					</ul>
 				</li>
 
@@ -174,7 +176,10 @@
 					<a href="#">Wohndauer im Ort</a>
 					<ul>
 						<li><a href="javascript:;" class="selection" id="Anteil seit Geburt im Ort Wohnhaft">Anteil seit Geburt im Ort Wohnhaft</a></li>
+						<li><a href="javascript:;" class="selection" id="Durchschnittliche Wohndauer in der Gemeinde (alle Personen)">Durchschnittliche Wohndauer in der Gemeinde (alle Personen)</a></li>
+						<li><a href="javascript:;" class="selection" id="Total zugezogen seit 2000">Total zugezogen seit 2000</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil zugezogen seit 2000">Anteil zugezogen seit 2000</a></li>
+						<li><a href="javascript:;" class="selection" id="Total zugezogen seit 2014">Total zugezogen seit 2014</a></li>
 						<li><a href="javascript:;" class="selection" id="Anteil zugezogen seit 2014">Anteil zugezogen seit 2014</a></li>
 					</ul>
 				</li>
@@ -206,7 +211,7 @@
 
 <div id = 'control' class='controlBar'>
     <ul class="subelements-listing" id="controlUL">
-      <li id='Hohe Auflösung' class='selected'><a href="javascript:;">Hohe Auflösung</a></li>
+      <li id='Hohe Auflösung' class=''><a href="javascript:;">Hohe Auflösung</a></li>
       <li id='Tiefe Auflösung' class=''><a href="javascript:;">Tiefe Auflösung (besser in Randregionen)</a></li>
     </ul>
 </div>
@@ -217,7 +222,30 @@ var variable = 'Total Einwohner/innen';
 var aufloesung = "geojson/hexbin-STATPOP-grid2.geojson"
 var initial = 0;
 
+var uri = new URI(window.location.href);
+
 function loadhex() {
+
+	if (typeof uri.search(true)["chart"] == "undefined") {
+		uri.setSearch("chart", variable)
+		window.history.pushState("", "", uri.href());
+	} else {
+		var chart=uri.search(true)["chart"]
+		variable=chart
+		$("#main-title").text(variable);
+	}
+	
+	if (typeof uri.search(true)["resolution"] == "undefined") {
+		uri.setSearch("resolution", "high")
+		window.history.pushState("", "", uri.href());
+	} else {
+		res = uri.search(true)["resolution"];
+		if (res=="low") {
+			aufloesung = "geojson/hexbin-STATPOP-grid1.geojson"
+		} else {
+			aufloesung = "geojson/hexbin-STATPOP-grid2.geojson"
+		}
+	}
 
 	window.map = new L.Map("map-container", {center: [47.15626713, 8.51612091], 
 			zoom: 11, 
@@ -271,7 +299,8 @@ function loadhex() {
 				var text= variable + ": " + germanFormatters.numberFormat(",")(d3.select(this).datum().properties[variable]);
 			}
 			else {
-				if (variable=="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)" || variable=="Durchschnittsalter") {wert=germanFormatters.numberFormat(",.1f")(d3.select(this).datum().properties[variable]) + " Jahre"}
+				if (variable.substring(0, 5)=="Durch") {wert=germanFormatters.numberFormat(",.1f")(d3.select(this).datum().properties[variable]) + " Jahre"}
+				else if (variable.substring(0, 5)=="Total") {wert=germanFormatters.numberFormat(",.0f")(d3.select(this).datum().properties[variable])}
 				else {wert=germanFormatters.numberFormat(",.1%")(d3.select(this).datum().properties[variable])}
 				var text= variable + ": " + wert + "<br/>" + "Total Einwohner/innen" + ": " + germanFormatters.numberFormat(",")(d3.select(this).datum().properties["Total Einwohner/innen"]);
 			}
@@ -382,10 +411,10 @@ function loadhex() {
 				.orient("right")
 				.tickValues([minquote, (maxquote-minquote)/4+minquote, (maxquote-minquote)/2+minquote, (maxquote-minquote)/4*3+minquote, maxquote]);
 			
-			if (variable=="Total Einwohner/innen") {
+			if (variable.substring(0, 5)=="Total") {
 				axis.tickFormat(germanFormatters.numberFormat(",.0f"));
 			}
-			else if (variable=="Durchschnittlicher Wohndauer in der Schweiz (nur aus dem Ausland Zugezogene)" || variable=="Durchschnittsalter") {
+			else if (variable.substring(0, 5)=="Durch") {
 				axis.tickFormat(germanFormatters.numberFormat(",.1f"));
 			}
 			else {
@@ -452,6 +481,8 @@ function loadhex() {
 						console.log(variable);
 						drawHex();
 						$("#main-title").text(variable);
+						uri.setSearch("chart", variable)
+						window.history.pushState("", "", uri.href());
 					}
 				});
 		}
@@ -491,9 +522,13 @@ function changeInd2() {
 				d3.select('.subelements-listing').selectAll('li').attr('class', '');
 				this.className = 'selected';
 				if (d3.select(this).attr('id')=="Tiefe Auflösung") {
-					aufloesung = "geojson/hexbin-STATPOP.geojson";
+					aufloesung = "geojson/hexbin-STATPOP-grid1.geojson";
+					uri.setSearch("resolution", "low")
+					window.history.pushState("", "", uri.href());
 				} else {
 					aufloesung = "geojson/hexbin-STATPOP-grid2.geojson";
+					uri.setSearch("resolution", "high")
+					window.history.pushState("", "", uri.href());
 				};
 				console.log(aufloesung);
 				window.map.remove()

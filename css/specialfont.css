@@ -1,0 +1,752 @@
+
+/* - ++resource++seantis.dir.eventsportlet.stylesheets/events.css - */
+/* https://www.zg.ch/portal_css/++resource++seantis.dir.eventsportlet.stylesheets/events.css?original=1 */
+span.eventDate {
+display: block;
+}
+
+/* - ++resource++seantis.dir.base.stylesheets/token-input.css - */
+@media screen {
+/* https://www.zg.ch/portal_css/++resource++seantis.dir.base.stylesheets/token-input.css?original=1 */
+ul.token-input-list {
+overflow: hidden;
+height: auto !important;
+height: 1%;
+width: 50%;
+border: 1px solid #999;
+cursor: text;
+font-size: 12px;
+font-family: Verdana;
+z-index: 999;
+margin: 0 !important;
+padding: 0;
+background-color: #fff;
+list-style-type: none;
+clear: left;
+}
+ul.token-input-list li {
+list-style-type: none;
+}
+ul.token-input-list li input {
+border: 0;
+width: 350px;
+padding: 3px 8px;
+background-color: white;
+-webkit-appearance: caret;
+}
+li.token-input-token {
+overflow: hidden;
+height: auto !important;
+height: 1%;
+margin: 3px;
+padding: 3px 5px;
+background-color: #add5ff;
+color: #000;
+font-weight: bold;
+cursor: default;
+display: block;
+}
+li.token-input-token p {
+float: left;
+padding: 0;
+margin: 0;
+}
+li.token-input-token span {
+float: right;
+color: #777;
+cursor: pointer;
+}
+li.token-input-selected-token {
+background-color: #77a1d8;
+color: #fff;
+}
+li.token-input-selected-token span {
+color: #bbb;
+}
+div.token-input-dropdown {
+position: absolute;
+width: 400px;
+background-color: #fff;
+overflow: hidden;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+cursor: default;
+font-size: 12px;
+font-family: Verdana;
+z-index: 1;
+}
+div.token-input-dropdown p {
+margin: 0;
+padding: 5px;
+font-weight: bold;
+color: #777;
+}
+div.token-input-dropdown ul {
+margin: 0;
+padding: 0;
+}
+div.token-input-dropdown ul li {
+background-color: #fff;
+padding: 3px;
+list-style-type: none;
+display: block;
+}
+div.token-input-dropdown ul li.token-input-dropdown-item {
+background-color: #fafafa;
+}
+div.token-input-dropdown ul li.token-input-dropdown-item2 {
+background-color: #fff;
+}
+div.token-input-dropdown ul li em {
+font-weight: bold;
+font-style: normal;
+}
+div.token-input-dropdown ul li.token-input-selected-dropdown-item {
+background-color: #add5ff;
+}
+
+}
+
+
+/* - ++resource++seanits.dir.contacts-resources/seantis-dir-contacts.css - */
+@media screen {
+/* https://www.zg.ch/portal_css/++resource++seanits.dir.contacts-resources/seantis-dir-contacts.css?original=1 */
+.portaltype-seantis-dir-contacts-directory #directorySearch {
+padding: 1em 1.5em 1em 0;
+margin-top: auto;
+}
+.portaltype-seantis-dir-contacts-directory .directoryResult {
+padding: 1em 1.5em;
+margin: auto;
+}
+.portaltype-seantis-dir-contacts-item .function-kml_download-inverse {
+display: none;
+}
+
+}
+
+
+/* - ++resource++colorpicker.jpicker/css/jPicker-1.1.6.min.css - */
+@media screen {
+﻿.jPicker label{font-weight:400}.jPicker .Icon{display:inline-block;height:24px;position:relative;text-align:left;width:25px}.jPicker .Icon span.Color,.jPicker .Icon span.Alpha{background-position:2px 2px;display:block;height:100%;left:0;position:absolute;top:0;width:100%}.jPicker .Icon span.Image{background-repeat:no-repeat;cursor:pointer;display:block;height:100%;left:0;position:absolute;top:0;width:100%}.jPicker.Container{color:#000;z-index:10}table.jPicker{background-color:#efefef;border:1px outset #666;font-family:Arial,Helvetica,Sans-Serif;font-size:12px!important;margin:0;padding:5px;width:550px;z-index:20}.jPicker .Move{background-color:#ddd;border-color:#fff #666 #666 #fff;border-style:solid;border-width:1px;cursor:move;height:12px;padding:0}.jPicker .Title{font-size:11px!important;font-weight:700;margin:-2px 0 0;padding:10px 0 0;text-align:center;width:100%}.jPicker div.Map{border-bottom:2px solid #fff;border-left:2px solid #9a9a9a;border-right:2px solid #fff;border-top:2px solid #9a9a9a;cursor:crosshair;height:260px;margin:0 10px 10px;overflow:hidden;padding:0;position:relative;width:260px}.jPicker div[class="Map"]{height:256px;width:256px}.jPicker div.Bar{border-bottom:2px solid #fff;border-left:2px solid #9a9a9a;border-right:2px solid #fff;border-top:2px solid #9a9a9a;cursor:n-resize;height:260px;margin:12px 10px 0 5px;overflow:hidden;padding:0;position:relative;width:24px}.jPicker div[class="Bar"]{height:256px;width:20px}.jPicker .Map .Map1,.jPicker .Map .Map2,.jPicker .Map .Map3,.jPicker .Bar .Map1,.jPicker .Bar .Map2,.jPicker .Bar .Map3,.jPicker .Bar .Map4,.jPicker .Bar .Map5,.jPicker .Bar .Map6{background-color:transparent;background-image:none;display:block;left:0;position:absolute;top:0}.jPicker .Map .Map1,.jPicker .Map .Map2,.jPicker .Map .Map3{height:2596px;width:256px}.jPicker .Bar .Map1,.jPicker .Bar .Map2,.jPicker .Bar .Map3,.jPicker .Bar .Map4{height:3896px;width:20px}.jPicker .Bar .Map5,.jPicker .Bar .Map6{height:256px;width:20px}.jPicker .Map .Map1,.jPicker .Map .Map2,.jPicker .Bar .Map6{background-repeat:no-repeat}.jPicker .Map .Map3,.jPicker .Bar .Map5{background-repeat:repeat}.jPicker .Bar .Map1,.jPicker .Bar .Map2,.jPicker .Bar .Map3,.jPicker .Bar .Map4{background-repeat:repeat-x}.jPicker .Map .Arrow{display:block;position:absolute}.jPicker .Bar .Arrow{display:block;left:0;position:absolute}.jPicker .Preview{font-size:9px;padding:5px 0 0;text-align:center}.jPicker .Preview div{border:2px inset #eee;height:62px;margin:0 auto;padding:0;width:62px}.jPicker .Preview div span{border:1px solid #000;display:block;height:30px;margin:0 auto;padding:0;width:60px}.jPicker .Preview .Active{border-bottom-width:0}.jPicker .Preview .Current{border-top-width:0;cursor:pointer}.jPicker input{font-size:13px}.jPicker .Button{text-align:center;padding:0 4px;width:115px}.jPicker .Button input{padding:2px 0;width:100px}.jPicker .Button .Ok{margin:12px 0 5px}.jPicker td{margin:0;padding:0}.jPicker td.Radio{margin:0;padding:0;width:40px}.jPicker td.Radio input{margin:0 5px 0 0;padding:0}.jPicker td.Text{font-size:12px!important;height:22px;margin:0;padding:0;text-align:left;width:70px}.jPicker tr.Hex td.Text{width:110px}.jPicker td.Text input{background-color:#fff;border:1px inset #aaa;height:19px;margin:0 0 0 5px;text-align:left;width:30px}.jPicker td[class="Text"] input{height:15px}.jPicker tr.Hex td.Text input.Hex{width:50px}.jPicker tr.Hex td.Text input.AHex{width:20px}.jPicker .Grid{text-align:center;width:114px}.jPicker .Grid span.QuickColor{border:1px inset #aaa;cursor:pointer;display:inline-block;height:15px;line-height:15px;margin:0;padding:0;width:19px}.jPicker .Grid span[class="QuickColor"]{width:17px}
+
+}
+
+
+/* - ++resource++colorpicker.farbtastic/farbtastic.css - */
+@media screen {
+/* https://www.zg.ch/portal_css/++resource++colorpicker.farbtastic/farbtastic.css?original=1 */
+.color {
+background-image: none;
+}
+.color-popup {
+display: none;
+position: absolute !important;
+width:200px;
+z-index:198 !important;
+background: white !important;
+border: 1px solid #cccccc;
+-moz-border-radius: 10px;
+padding: 5px;
+margin: 2px;
+margin-left:6.5em;
+}
+.color-popup-header {
+text-align: right;
+}
+.color-popup-header a {
+cursor:pointer;
+}
+.farbtastic {
+position: relative;
+}
+.farbtastic * {
+position: absolute;
+cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+width: 195px;
+height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+top: 47px;
+left: 47px;
+width: 101px;
+height: 101px;
+}
+.farbtastic .wheel {
+background: url(/++resource++colorpicker.farbtastic/++resource++colorpicker.farbtastic/wheel.png) no-repeat;
+width: 195px;
+height: 195px;
+}
+.farbtastic .overlay {
+background: url(/++resource++colorpicker.farbtastic/++resource++colorpicker.farbtastic/mask.png) no-repeat;
+margin:0;
+display: block;
+}
+.farbtastic .marker {
+width: 17px;
+height: 17px;
+margin: -8px 0 0 -8px;
+overflow: hidden;
+background: url(/++resource++colorpicker.farbtastic/++resource++colorpicker.farbtastic/marker.png) no-repeat;
+}
+
+}
+
+
+/* - ++resource++ftw.slider/slick.css - */
+@media screen {
+/* https://www.zg.ch/portal_css/++resource++ftw.slider/slick.css?original=1 */
+/* */
+.slick-slider
+{
+position: relative;
+display: block;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-touch-callout: none;
+-khtml-user-select: none;
+-ms-touch-action: pan-y;
+touch-action: pan-y;
+-webkit-tap-highlight-color: transparent;
+}
+.slick-list
+{
+position: relative;
+display: block;
+overflow: hidden;
+margin: 0;
+padding: 0;
+}
+.slick-list:focus
+{
+outline: none;
+}
+.slick-list.dragging
+{
+cursor: pointer;
+cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+-o-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+.slick-track
+{
+position: relative;
+top: 0;
+left: 0;
+display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+display: table;
+content: '';
+}
+.slick-track:after
+{
+clear: both;
+}
+.slick-loading .slick-track
+{
+visibility: hidden;
+}
+.slick-slide
+{
+display: none;
+float: left;
+height: 100%;
+min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+float: right;
+}
+.slick-slide img
+{
+display: block;
+}
+.slick-slide.slick-loading img
+{
+display: none;
+}
+.slick-slide.dragging img
+{
+pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+display: block;
+}
+.slick-loading .slick-slide
+{
+visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+display: block;
+height: auto;
+border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+display: none;
+}
+
+}
+
+
+/* - ++theme++plonetheme.onegov/css/reset.css - */
+/* https://www.zg.ch/portal_css/++theme++plonetheme.onegov/css/reset.css?original=1 */
+* { margin: 0; padding: 0; }
+* :link,:visited { text-decoration:none }
+* ul,ol { list-style:none; }
+* li { display: inline; }
+* h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+* a img,:link img,:visited img { border:none }
+a { outline: none; }
+table { border-spacing: 0; }
+img { vertical-align: text-bottom; }
+iframe { border-width: 0; border-style:none; }
+/* */
+/* */
+form {
+margin: 0;
+}
+fieldset {
+border: 1px solid #c0c0c0;
+margin: 0 2px;
+padding: 0.35em 0.625em 0.75em;
+}
+legend {
+border: 0; /* */
+padding: 0;
+white-space: normal; /* */
+*margin-left: -7px; /* */
+}
+button,
+input,
+select,
+textarea {
+font-size: 100%; /* */
+margin: 0; /* */
+vertical-align: baseline; /* */
+*vertical-align: middle; /* */
+}
+button,
+input {
+line-height: normal;
+}
+button,
+html input[type="button"], /* */
+input[type="reset"],
+input[type="submit"] {
+-webkit-appearance: button; /* */
+cursor: pointer; /* */
+*overflow: visible;  /* */
+}
+button[disabled],
+input[disabled] {
+cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+box-sizing: border-box; /* */
+padding: 0; /* */
+*height: 13px; /* */
+*width: 13px; /* */
+}
+input[type="search"] {
+-webkit-appearance: textfield; /* */
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box; /* */
+box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+border: 0;
+padding: 0;
+}
+textarea {
+overflow: auto; /* */
+vertical-align: top; /* */
+}
+/* */
+
+/* - ++theme++plonetheme.onegov/css/fonts.css - */
+/* https://www.zg.ch/portal_css/++theme++plonetheme.onegov/css/fonts.css?original=1 */
+@font-face {
+font-family: 'icomoon';
+src:url('/++theme++plonetheme.onegov/fonts/icomoon.eot');
+src:url('/++theme++plonetheme.onegov/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+url('/++theme++plonetheme.onegov/fonts/icomoon.woff') format('woff'),
+url('/++theme++plonetheme.onegov/fonts/icomoon.ttf') format('truetype'),
+url('/++theme++plonetheme.onegov/fonts/icomoon.svg#icomoon') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/* - ++theme++plonetheme.onegov/css/print.css - */
+@media print {
+/* https://www.zg.ch/portal_css/++theme++plonetheme.onegov/css/print.css?original=1 */
+img, h1, h2, h3, h4 {
+page-break-before: avoid;
+font-family: Arial !important;
+}
+.olLayerDiv img {
+max-width: none;
+}
+h1 {
+font-size: 26pt !important;
+}
+h2 {
+font-size: 18pt !important;
+}
+@media print and (color) {
+* {
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+}
+}
+* {
+-webkit-box-shadow: none !important;
+-moz-box-shadow: none !important;
+box-shadow: none !important;
+}
+html, html body {
+background-color: #FFFFFF !important;
+font-size: 14pt;
+}
+#column-content {
+left: 0;
+margin-left: 0;
+width: 100%;
+text-align: justify;
+}
+a, a:hover, a:visited, a:active {
+font-weight: bolder;
+color: #00538c !important;
+text-decoration: none !important;
+}
+#portal-topactions,
+#portal-languageselector-wrapper,
+#portal-personaltools-wrapper,
+#portal-globalnav,
+#portal-searchbox,
+#breadcrumbs-wrapper,
+#column-navigation,
+#column-sidebar,
+#footer,
+#banner-image,
+.documentEditable #edit-bar,
+#addResponse,
+.portletActionsWrapper,
+#dashboard-add-portlet {
+display: none !important;
+}
+.sliderText {
+background-color: #FFFFFF !important;
+background-image: none !important;
+position: static !important;
+color: #000000 !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+.slick-slide[style*="opacity: 0;"] {
+display: none !important;
+}
+.slick-slide[style*="opacity: 1;"] {
+left: 0 !important;
+}
+.slick-dots {
+display: none !important;
+}
+.slick-next {
+display: none !important;
+}
+.slick-prev {
+display: none !important;
+}
+.to_top {
+display: none;
+}
+#bottom-actions {
+display: none;
+}
+.portalMessage {
+display: none;
+}
+.sl-actions-wrapper {
+display: none;
+}
+.formTab:not(.selected) {
+display: none;
+}
+table {
+background-color: #FFFFFF !important;
+page-break-inside: auto;
+}
+tr {
+page-break-inside: avoid;
+page-break-after: auto;
+background-color: #FFFFFF !important;
+}
+td {
+background-color: #FFFFFF !important;
+}
+thead {
+display: table-header-group;
+}
+th {
+vertical-align: top !important;
+background-color: #FFFFFF !important;
+}
+tfoot {
+display: table-footer-group;
+}
+.logoRow .cell {
+left: 0;
+margin-left: 0;
+}
+#header-delimiter {
+left: 0;
+margin-left: 0;
+}
+#page-wrapper {
+width: 21cm;
+}
+#container #page-wrapper {
+margin: 0;
+border: none;
+}
+#container #page-wrapper {
+background-color: #FFFFFF;
+}
+.row {
+position: static !important;
+float: none !important;
+}
+.cell {
+position: static !important;
+float: none !important;
+width: 100% !important;
+margin-left: 0 !important;
+}
+div.olLayerGoogleCopyright, div.olControlMousePosition, div.olControlLayerSwitcher, div.olButton {
+display: none;
+}
+.sl-text-wrapper .addressText, .sl-text-wrapper .addressMap {
+float: none;
+}
+#sl-toolbox {
+display: none;
+}
+.sl-column:empty {
+height: 0px !important;
+min-height:0px !important;
+display: none !important;
+}
+.sl-layout, .sl-simplelayout {
+min-height:0px !important;
+}
+@page {
+size: 22cm 28in portrait;
+margin: 2.5cm 2.5cm 2cm 2.5cm;
+orphans: 8;
+widows: 4;
+}
+
+}
+
+
+/* - ++theme++plonetheme.onegov/css/tinymce_popups.css - */
+@media screen {
+/* https://www.zg.ch/portal_css/++theme++plonetheme.onegov/css/tinymce_popups.css?original=1 */
+/* */
+#plonebrowser .formHelp,
+.dialog-wrapper#content {
+font-size: 13px !important;
+font-family: Arial;
+}
+.dialog-wrapper#content .formHelp {
+clear: both;
+}
+#plonebrowser #content {
+padding: 0;
+}
+.dialog-wrapper#content input[type="radio"],
+.dialog-wrapper#content input[type="checkbox"] {
+margin: 0.5em 0 !important;
+}
+.dialog-wrapper #details-fields input[type="text"] {
+padding: 0.25em 0;
+}
+.dialog-wrapper #footer {
+height: auto;
+}
+.dialog-wrapper label {
+font-weight: bold;
+}
+.dialog-wrapper a {
+color: #000;
+}
+.dialog-wrapper a:hover {
+text-decoration: underline;
+color: #444;
+}
+/* */
+
+}
+
+
+/* - ++resource++izug-organisation/izug.organisation.custom.css - */
+@media all {
+/* https://www.zg.ch/portal_css/++resource++izug-organisation/izug.organisation.custom.css?original=1 */
+.template-directories_view #header-phone {
+min-width:10em;
+}
+.template-consultations_view #columns #content .col-effective {
+width:10em;
+}
+.template-consultations_view #columns #content .col-Description {
+width:17em;
+}
+.template-statistic ul.review-state-filter {
+list-style: none;
+padding-left: 0;
+}
+.template-statistic ul.review-state-filter > li {
+float: left;
+display: block;
+padding: 0px 2px;
+margin: 0px;
+}
+.template-statistic ul.review-state-filter > li a.selected {
+color: black;
+text-decoration: underline;
+}
+.template-statistic ul.review-state-filter > li:after {
+content: "|"
+}
+.template-statistic ul.review-state-filter > li:last-child:after {
+content: "";
+}
+.template-statistic #mini-stats-items {
+padding-top: 2em;
+clear: both;
+}
+.documentDescription,
+.eventDescription {
+display: none;
+}
+a.no-icon:before,
+a.no-icon[target='_blank']:before{
+content:"";
+}
+/* */
+/* */
+body.site-platform.portaltype-ftw-topics-topic .topic-filter {
+display: none;
+}
+/* */
+body.template-subsite_view #slider-panes {
+margin-bottom: 0;
+}
+.sliderImage {
+margin-bottom: 1em;
+}
+/* */
+body.site-platform .teaser_portlet .portletHeader {
+margin-bottom: 0;
+}
+body.site-platform .teaser_portlet .portletItem {
+font-weight: bold;
+cursor: default;
+font-size: 16px;
+margin-bottom: 1em;
+}
+body.site-platform .subsiteColumns #subsite-column-5.column {
+width: 100%;
+}
+body.site-platform dl.portlet.teaser_portlet {
+height:14em;
+}
+@media screen and (max-width: 769px) {
+body.site-platform dl.portlet.teaser_portlet {
+height:auto;
+}
+}
+@media screen and (max-width: 493px) {
+body.site-platform dl.portlet.teaser_portlet {
+height:14em;
+}
+}
+/* */
+body.site-platform.template-subsite_view #page-wrapper #columns .column .portletStaticText .portletContent ul li a,
+body.portaltype-plone-site #content .subelements-listing li a {
+border: 1px solid #00416d;
+border-radius: 3px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+background-color: #005187;
+background-image: -moz-linear-gradient(top, #006FBA, #005187);
+background-image: -ms-linear-gradient(top, #006FBA, #005187);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#006FBA), to(#005187));
+background-image: -webkit-linear-gradient(top, #006FBA, #005187);
+background-image: -o-linear-gradient(top, #006FBA, #005187);
+background-image: linear-gradient(top, #006FBA, #005187);
+font-family: Arial;
+color: #fff;
+padding: .5em 1em;
+margin: .5em .5em 0 0;
+display: inline-block;
+box-shadow: 0 .1em .3em -0.1em #5b5a54;
+-webkit-box-shadow: 0 .1em .3em -0.1em #5b5a54;
+-moz-box-shadow: 0 .1em .3em -0.1em #5b5a54;
+float:none;
+}
+body.site-platform.template-subsite_view #page-wrapper #columns .column .portletStaticText .portletContent ul li a:hover,
+body.portaltype-plone-site #content .subelements-listing li a:hover {
+border: 1px solid #00416d;
+background-color: #003254;
+background-image: -moz-linear-gradient(top, #005187, #003254);
+background-image: -ms-linear-gradient(top, #005187, #003254);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#005187), to(#003254));
+background-image: -webkit-linear-gradient(top, #005187, #003254);
+background-image: -o-linear-gradient(top, #005187, #003254);
+background-image: linear-gradient(top, #005187, #003254);
+color: #fff;
+text-decoration: none;
+}
+/* */
+/* */
+.sortdirection {
+float: right;
+}
+/* */
+.portaltype-shopcategory .content-listing {
+margin-bottom: 1em;
+}
+/* */
+.portlet.portlet-static-hidden-placeholder {
+display: none;
+}
+/* */
+
+}
+
