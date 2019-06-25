@@ -124,14 +124,31 @@ function initTip(){
 		.direction('n')
 		.offset([-30, 0])
 		.html("no data");
+		
+	Atts[number].tips2 = d3.tip()
+		.attr('class', 'd3-tip')
+		.attr('id', 'd3-tip2'+number)
+		.direction('s')
+		.offset([7, 0])
+		.html("no data");
 }
 
 function callTip(){		
 	d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot")
 		.call(Atts[number].tips)
+		.call(Atts[number].tips2)
 		.on('mouseover', function(d, i) {
 			if(d.key !== last_tip) {
+				counteri=(i >= Atts[number].maingroup.all().length ? i-Atts[number].maingroup.all().length : i +Atts[number].maingroup.all().length)
+				if($("circle")[counteri].attributes.cy.value < $("circle")[i].attributes.cy.value) {
+					Atts[number].tips2.direction('n').offset([-30, 0])
+					Atts[number].tips.direction('s').offset([7, 0])
+				} else {
+					Atts[number].tips2.direction('s').offset([7, 0])
+					Atts[number].tips.direction('n').offset([-30, 0])
+				}
 				Atts[number].tips.show(d);
+				Atts[number].tips2.show(d, $("circle")[(counteri)]);
 				last_tip = d.key;
 			}
 			if (asDate==true){
@@ -140,11 +157,14 @@ function callTip(){
 			else {label=d.data.key}
 			if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 			else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+			if ($("circle")[counteri].__data__.data.value % 1) {wert2=germanFormatters.numberFormat(",.1f")($("circle")[counteri].__data__.data.value)}
+			else {wert2=germanFormatters.numberFormat(",")($("circle")[counteri].__data__.data.value)}
 			if (showTotal==true & showAnteil==true) {
 				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span><br/><span>Anzahl: " + wert +  "</span>";
 			}
 			else if (showTotal==true) {
 				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anzahl: " + wert +  "</span>";
+				tiptext2= "<span>"+$("circle")[counteri].__data__.layer+"</span><br/><span>" + label + "</span><br/><span>Anzahl: " + wert2 +  "</span>";
 			}
 			else if (showAnteil==true) {
 				tiptext= "<span>"+characteristicsStack[Math.floor(i/Atts[number].maingroup.all().length)]+"</span><br/><span>" + label + "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span>";
@@ -158,10 +178,23 @@ function callTip(){
 			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 18 - ($("#d3-tip"+number).height()/2));
 			$("#d3-tip"+number).css( 'left', offsetx);
 			$("#d3-tip"+number).css( 'top', offsety);
+			$("#d3-tip2"+number).html(tiptext2)
+			$("#d3-tip2"+number).css("border-left", colorScale.range()[Math.floor(counteri/Atts[number].maingroup.all().length)] +" solid 5px");
+			offsetx2=(Number($("#d3-tip2"+number).css( "left" ).slice(0, -2)) + 18 - ($("#d3-tip2"+number).width()/2));
+			offsety2=(Number($("#d3-tip2"+number).css( "top" ).slice(0, -2)) + 18 - ($("#d3-tip2"+number).height()/2));
+			$("#d3-tip2"+number).css( 'left', offsetx2);
+			$("#d3-tip2"+number).css( 'top', offsety2);
+			d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot").each(function (d, i) {
+				if (i === counteri) {
+				  // put all your operations on the second element, e.g.
+				  d3.select(this).attr('style', "fill-opacity:0.8");    
+				}
+			});;
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
 			Atts[number].tips.hide(d);
+			Atts[number].tips2.hide(d);
 			//document.getElementsByClassName("dot")
 			d3.selectAll("#"+Atts[number].chartcontainer+" circle.dot").attr('style', "fill-opacity:0.000001");
 			d3.selectAll("path.yRef").attr('style', "display:none");

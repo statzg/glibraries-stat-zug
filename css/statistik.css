@@ -545,9 +545,11 @@ g.dc-legend-item.fadeout {
 
 /* Southward tooltips */
 .d3-tip.s:after {
-  content: "\25B2";
-  margin: 0 0 1px 0;
-  top: -8px;
+  content: "\00A0";
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,10 5,0 10,10' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,10 10,10' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat center;
+  /*"\25BC";*/
+  margin: 0 0 0px 0;
+  top: -10px;
   left: 0;
   text-align: center;
 }
