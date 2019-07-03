@@ -128,6 +128,8 @@ function treatmetadata(number, data) {
 	Atts[number].data = data.filter(function(el) {
 		return el["Meta"] == "NA" | el["Meta"] == undefined
 	});
+	
+	Atts[number].exportdata = Atts[number].data;
 
 	Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
 	if (Atts[number].title.length == 1) {
@@ -578,7 +580,7 @@ function tabulate(number, columns) {
 
 	// create a row for each object in the data
 	var rows = tbody.selectAll('tr')
-	  .data(Atts[number].data)
+	  .data(Atts[number].exportdata)
 	  .enter()
 	  .append('tr');
 

@@ -171,7 +171,7 @@ function createXLSXsimple (number, columns) {
 	//Define column widths depending on data	
 	Datasheets[number].cellWidths=[]
 	for (i=0; i<columns.length; ++i) {
-		var cw=(d3.max(Atts[number].data, function(d) { return getTextWidth(d[columns[i]], "10pt arial"); })/7.025)+2;
+		var cw=(d3.max(Atts[number].exportdata, function(d) { return getTextWidth(d[columns[i]], "10pt arial"); })/7.025)+2;
 		if (Atts[number].datatypes[i]=="miochf") {
 			cw=cw+10
 		}
@@ -254,7 +254,7 @@ function createXLSXsimple (number, columns) {
 	++totalRows;
 	
 	//Add actual data to sheet
-	Atts[number].data.forEach(function(d) {
+	Atts[number].exportdata.forEach(function(d) {
 		var cellContent=[]
 		for (i=0; i<columns.length; ++i) {
 			switch(Atts[number].datatypes[i]) {
@@ -309,7 +309,7 @@ function createXLSXsimple (number, columns) {
 	var filesourceRow=totalRows;
 
 	//Add border to data portion (including header row)
-	for (i=headerRows; i<(Atts[number].data.length+headerRows+1); ++i) {
+	for (i=headerRows; i<(Atts[number].exportdata.length+headerRows+1); ++i) {
 		var row = worksheet.getRow(i);
 		row.eachCell(function(cell, colNumber) {
 			cell.border= {
@@ -396,7 +396,7 @@ function createXLSXsimple (number, columns) {
 	Datasheets[number].cellHeights.push(dataHeaderRow.height)
 	
 	//Add cell heights to array for data rows (including spacer row at bottom)
-	for (i=headerRows+1; i<(Atts[number].data.length+headerRows+2); ++i) {
+	for (i=headerRows+1; i<(Atts[number].exportdata.length+headerRows+2); ++i) {
 		worksheet.getRow(i).height = 15
 		Datasheets[number].cellHeights.push(15.0)
 		worksheet.getRow(i).alignment = { vertical: 'middle'}
