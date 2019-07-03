@@ -535,11 +535,11 @@ g.dc-legend-item.fadeout {
 /* Eastward tooltips */
 .d3-tip.e:after {
   content: "\00A0";
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,0 5,10 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,0 10,0' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='10,0 0,5 10,10' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='10,0 10,10' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat left;
   /*"\25BC";*/
   margin: 0px 0 0 0;
-  top: 100%;
-  left: 0px;
+  top: 50%;
+  left: -10px;
   text-align: center;
 }
 
@@ -556,10 +556,13 @@ g.dc-legend-item.fadeout {
 
 /* Westward tooltips */
 .d3-tip.w:after {
-  content: "\25B6";
-  margin: -4px 0 0 -1px;
+  content: "\00A0";
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polyline points='0,0 10,5 0,10' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(0, 0, 0, 0.8);stroke-width:1' /><polyline points='0,0 0,10' style='fill:rgba(255, 255, 255, 0.8);stroke:rgba(255, 255, 255, 0.8);stroke-width:1' /></svg>") no-repeat right;
+  /*"\25BC";*/
+  margin: 0 0 0 0px;
   top: 50%;
-  left: 100%;
+  left: 10px;
+  text-align: left;
 }
 
 .title {

@@ -20,6 +20,7 @@ var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAntei
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 var asPercent=(typeof args.asPercent == 'undefined') ? false : args.asPercent;
+var showBarLabels = (typeof args.showBarLabels == 'undefined') ? "never" : args.showBarLabels;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -122,6 +123,10 @@ Charts[number]
 	.transitionDuration(0)
 	.yAxisPadding("5%")
 	;
+	
+if (showBarLabels!="never") {
+	Charts[number].renderLabel(true);
+}
 
 if (relative==true || asPercent==true) {
 Charts[number].yAxis().tickFormat(d3.format('.0%'));
@@ -318,14 +323,28 @@ function initTip(number){
 		.attr('class', 'd3-tip')
 		.attr('id', 'd3-tip'+number)
 		.direction('n')
-		.offset([0, 0])
+		.offset([5, 0])
 		.html("no data");
+		
+	if (showBarLabels!="never") {
+		Atts[number].tips
+			.direction('s')
+			.offset([5, 0]);
+	}
 }
 
 function callTip(number){
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.stack > rect")
 		.call(Atts[number].tips)
 		.on('mouseover', function(d, i) {
+			columnindex=i-(d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").size()*(Math.floor(i/d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").size())))
+			if (showBarLabels=="mouseOver") {
+				d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(e, j) {
+					if (j==columnindex) {
+						d3.select(this).attr("visibility", "visible");
+					}
+				});
+			}
 			if(d.key !== last_tip) {
 				Atts[number].tips.show(d);
 				last_tip = d.key;
@@ -350,13 +369,20 @@ function callTip(number){
 			$("#d3-tip"+number).html(tiptext)
 			$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
 			offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 20 - ($("#d3-tip"+number).width()/2));
-			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) -18 - ($("#d3-tip"+number).height()/2));
+			offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 0 - ($("#d3-tip"+number).height()));
 			$("#d3-tip"+number).css( 'left', offsetx);
-			$("#d3-tip"+number).css( 'top', offsety);
+			if (showBarLabels=="never") {
+				$("#d3-tip"+number).css( 'top', offsety);
+			}
 		})
 		.on('mouseout', function(d) {
 			last_tip = null;
 			Atts[number].tips.hide(d);
+			if (showBarLabels=="mouseOver") {
+				d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
+					d3.select(this).attr("visibility", "hidden");
+				});
+			}
 		});
 }
 
@@ -365,6 +391,9 @@ function formatBarLabels(){
 		if (d.data.value["total"] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value["total"])}
 		else {wert=germanFormatters.numberFormat(",")(d.data.value["total"])}
 		d3.select(this).text(wert);
+		if (showBarLabels=="mouseOver") {
+			d3.select(this).attr("visibility", "hidden");
+		}
 	});
 }
 
