@@ -1,4 +1,4 @@
-/* stat_zg_groupedBar.js (version 0.3 (2017.11.28)*/
+ï»¿/* stat_zg_groupedBar.js (version 0.3 (2017.11.28)*/
 
 function loadGroupedBar(args) {
 var number = (typeof args.number == 'undefined') ? 1 : args.number;
@@ -20,6 +20,7 @@ var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAntei
 //var last = (typeof args.last == 'undefined') ? "" : args.last;
 //var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 //var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
+var groupFilter = (typeof args.groupFilter == 'undefined') ? [] : args.groupFilter;
 
 //Attributeobjekt initialisieren
 Atts[number]={};
@@ -85,9 +86,11 @@ Atts[number].dataset= crossfilter(Atts[number].data),
 				return d.value[i];
 			};
 		};
-	};			
+	};
+	FilterDimension = Atts[number].dataset.dimension(function(d) {return d[stack];}),
+	FilterGroup = FilterDimension.group()
 
-//Ausprägungen in Array abfüllen, wenn nicht manuell definiert (für Farbzuweisung)
+//AusprÃ¤gungen in Array abfÃ¼llen, wenn nicht manuell definiert (fÃ¼r Farbzuweisung)
 if (typeof characteristics === 'undefined' || characteristics.length==0) {
 	characteristics = [];
 	SecondGroup.all().forEach(function (x) {
@@ -95,6 +98,17 @@ if (typeof characteristics === 'undefined' || characteristics.length==0) {
 		});
 	}
 characteristicsLength= characteristics.length;
+
+if (typeof groupFilter === 'undefined' || groupFilter.length==0) {
+	groupFilter = [];
+	Atts[number].maingroup.all().forEach(function (x) {
+			groupFilter.push(x["key"]);
+		});
+	}
+	
+FilterDimension.filter(function(d){
+  return groupFilter.indexOf(d) > -1;
+});
 
 var colorScale = d3.scale.ordinal()
             .domain(characteristics)
@@ -129,14 +143,14 @@ function getLegendWidth(number) {
 	
 function rotateX(){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
 	var totalWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 	
 	//Zeilen umbrechen, wenn breiter als Zwischenstrich
 	Charts[number].selectAll(".x .tick text")
 		.call(wrap, tickwidth);
 
-	//Maximale Breite und Höhe der Skalenbezeichner	
+	//Maximale Breite und HÃ¶he der Skalenbezeichner	
 	var maxwidth=0
 	var maxheight=0
 	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
@@ -156,7 +170,7 @@ function rotateX(){
 	var legendy=totalHeight-30+maxheight
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 	var legendHeight = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().getBBox().height;
-	//Höhe der Grafik den neuen Begebenheiten anpassen
+	//HÃ¶he der Grafik den neuen Begebenheiten anpassen
 	Charts[number].width(totalWidth)
 	Charts[number].height(totalHeight+maxheight+legendHeight-20)
 		.margins({left: YWidth, top: 10, right: 10, bottom: 40 + maxheight + legendHeight});
@@ -166,7 +180,7 @@ function rotateX(){
 		.call(wrap, tickwidth);
 	d3.selectAll("#"+Atts[number].chartcontainer+" g.dc-legend").attr("transform", "translate(10,"+legendy+")")
 	
-	//Maximale Breite und Höhe der Skalenbezeichner
+	//Maximale Breite und HÃ¶he der Skalenbezeichner
 	var maxwidth=0
 	var maxheight=0
 	Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g > text")
@@ -197,7 +211,7 @@ function rotateX(){
 		return ("rotate(90), translate(10,"+moveleft+")")
 	});
 	}
-	//Wenn nötig Legende umbrechen, funktioniert nur bis 2 Zeilen.
+	//Wenn nÃ¶tig Legende umbrechen, funktioniert nur bis 2 Zeilen.
 	getLegendWidth(number);
 	if (legendMaxWidth > totalWidth-30){
 		Charts[number].selectAll("#"+Atts[number].chartcontainer+" g.dc-legend text")
@@ -224,12 +238,15 @@ function rotateX(){
 
 function initTip(){
 	last_tip = null;
-	Atts[number].tips = d3.tip()
-		.attr('class', 'd3-tip')
-		.attr('id', 'd3-tip'+number)
-		.direction('n')
-		.offset([-15, 0])
-		.html("no data");
+	d3.select("#d3-tip"+number).remove();
+	if(typeof Atts[number].tips == 'undefined') {
+		Atts[number].tips = d3.tip()
+			.attr('class', 'd3-tip')
+			.attr('id', 'd3-tip'+number)
+			.direction('n')
+			.offset([-15, 0])
+			.html("no data");
+	}
 }
 
 function callTip(){
@@ -268,7 +285,6 @@ function callTip(){
 		});
 }
 
-
 Charts[number]
 	.width(totalWidth)
 	.height(totalHeight)
@@ -276,8 +292,9 @@ Charts[number]
 	.group(Atts[number].maingroup, characteristics[0] + "", sel_stack(characteristics[0]))
 	.margins({left: 20, top: 10, right: 10, bottom: 40})
 	//.elasticY(true)
-	.x(d3.scale.ordinal())
+	.x(d3.scale.ordinal().domain(groupFilter))
 	.xUnits(dc.units.ordinal)
+	//.elasticX(true)
 	.brushOn(false)
 	.compose(columns)
 	.controlsUseVisibility(true)
@@ -295,10 +312,10 @@ Charts[number].legend(dc.legend().x(10).y(totalHeight-40).itemHeight(13).gap(10)
 			.legendWidth(totalWidth-10)
 			.autoItemWidth(true));
 
-//Breite der Balken so anpassen, dass sie nicht überschneiden.
+//Breite der Balken so anpassen, dass sie nicht Ã¼berschneiden.
 Charts[number].on('renderlet', function(chart){
 	//Breite eines Zwischenstrichs
-	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];
+	var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];
 	var groupwidth=tickwidth*0.9;
 	var yAxis=d3.svg.axis().scale(d3.scale.ordinal()).orient("bottom").ticks(4);
 		
@@ -328,7 +345,7 @@ for (var i=0; i < characteristicsLength; i++) {
 	columns[i].filter = function() {};
 }
 
-//Legende rückwärts wiedergeben
+//Legende rÃ¼ckwÃ¤rts wiedergeben
 /*dc.override(Charts[number], 'legendables', function() {
 	var items = Charts[number]._legendables();
 	return items.reverse();
@@ -381,7 +398,7 @@ window.addEventListener('resize', function(){
 
 		Charts[number].on('renderlet', function(chart){
 		//Breite eines Zwischenstrichs
-		var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+		var tickwidth=d3.transform(d3.selectAll("#"+Atts[number].chartcontainer+" g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
 		var groupwidth=tickwidth*0.9;
 
 			for (var j=2; j <= characteristicsLength+1; j++) {
