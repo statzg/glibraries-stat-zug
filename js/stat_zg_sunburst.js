@@ -28,6 +28,11 @@ function loadSunburst(args) {
 	Atts[number].chartcontainer = "chart" + number;
 	
 	createcontainers(number);
+	
+	function redraw() {
+	
+	d3.select("svg").remove();
+	$("svg").remove();
 
 	var width = document.getElementById(Atts[number].maincontainer).offsetWidth,
 	    height = 400,
@@ -339,11 +344,19 @@ function loadSunburst(args) {
 			});
 		}
 	}
-
+	
 	var columns=levels.slice(1,levels.length);
 	columns.push("Anzahl");
 	addDownloadButton(number);
 	addDataTablesButton(number, columns);
 	//addDataTablesButtonOriginal(number, columns)
+
+	}
+	
+	redraw();
+
+	window.addEventListener('resize', function(){
+		redraw();
+	});
 
 }
