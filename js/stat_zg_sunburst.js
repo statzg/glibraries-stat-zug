@@ -31,8 +31,8 @@ function loadSunburst(args) {
 	
 	function redraw() {
 	
-	d3.select("svg").remove();
-	$("svg").remove();
+	d3v4.select("#" + Atts[number].chartcontainer + " svg").remove();
+	$("#" + Atts[number].chartcontainer + " svg").remove();
 
 	var width = document.getElementById(Atts[number].maincontainer).offsetWidth,
 	    height = 400,
@@ -243,6 +243,7 @@ function loadSunburst(args) {
 
 	function initTip(number) {
 		last_tip = null;
+		d3v4.select("#d3-tip"+number).remove();
 		Atts[number].tips = d3v4.tip()
 			.attr('class', 'd3-tip')
 			.attr('id', 'd3-tip' + number)
