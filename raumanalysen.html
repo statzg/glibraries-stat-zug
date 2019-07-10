@@ -211,8 +211,8 @@
 
 <div id = 'control' class='controlBar'>
     <ul class="subelements-listing" id="controlUL">
-      <li id='Hohe Auflösung' class=''><a href="javascript:;">Hohe Auflösung</a></li>
-      <li id='Tiefe Auflösung' class=''><a href="javascript:;">Tiefe Auflösung (besser in Randregionen)</a></li>
+      <li><a id='Hohe Auflösung' class="selected" href="javascript:;">Hohe Auflösung</a></li>
+      <li><a id='Tiefe Auflösung' href="javascript:;">Tiefe Auflösung (besser in Randregionen)</a></li>
     </ul>
 </div>
 
@@ -513,13 +513,13 @@ function loadhex() {
 loadhex();
 
 function changeInd2() {
-	d3.select('.subelements-listing').selectAll('li')
+	d3.select('.subelements-listing').selectAll('li a')
 		.attr('cursor', 'pointer')
 		.on('click', function() {
 			if (this.className == 'selected') {
 				console.log('schon gewählt');
 			} else {
-				d3.select('.subelements-listing').selectAll('li').attr('class', '');
+				d3.select('.subelements-listing').selectAll('li a').attr('class', '');
 				this.className = 'selected';
 				if (d3.select(this).attr('id')=="Tiefe Auflösung") {
 					aufloesung = "geojson/hexbin-STATPOP-grid1.geojson";
