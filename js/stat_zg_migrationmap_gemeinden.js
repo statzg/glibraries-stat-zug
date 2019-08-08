@@ -31,6 +31,10 @@ Atts[number].chartcontainer="chart"+number
 //Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
 createcontainers(number);
 
+if ( $('#chart'+number+' svg').length ) {
+	$('#chart'+number+' svg').remove();
+}
+
 var coloring = d3.scale.linear()
 	.domain([0, 25, 50, 75, 100])
 	.range(["#007AC4", "#00A763", "#FFDD5E", "#FF8A26", "#FF403A"]);

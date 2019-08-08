@@ -31,8 +31,12 @@ Atts[number].chartcontainer="chart"+number
 //Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
 createcontainers(number);
 
-function redraw() {
+if ( $('#chart'+number+' svg').length ) {
+	$('#chart'+number+' svg').remove();
+}
 
+function redraw() {
+	
 	var cantoncolors=['#fff','#fff','#76aa7c','#a0bd6d','#cece63','#ffdd5e','#007ac4','#A7D5F1','#A7D5F1']
 
 	//Width and height
@@ -105,7 +109,7 @@ function redraw() {
 					
 	d3.csv(csv_path, function (data) {
 		
-treatmetadata(number, data);
+	treatmetadata(number, data);
 
 	going = Atts[number].data;
 
@@ -223,8 +227,6 @@ treatmetadata(number, data);
 			initTip(number);
 			callTip(number);
 
-		//});
-	
 	});
 
 function clicked(selected) {
@@ -754,7 +756,7 @@ function resizeMap(number) {
 	redraw();
 }
 
-$(window).resize(function(){resizeMap(1)});	
+$(window).resize(function(){resizeMap(number)});	
 
 var columns=["Zielkanton", "Ausland", "Restliche Schweiz", "Zürich", "Aargau", "Luzern", "Schwyz", "Zug"]									 
 addDownloadButton(number);

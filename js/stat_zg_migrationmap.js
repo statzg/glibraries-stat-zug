@@ -31,6 +31,10 @@ Atts[number].chartcontainer="chart"+number
 //Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
 createcontainers(number);
 
+if ( $('#chart'+number+' svg').length ) {
+	$('#chart'+number+' svg').remove();
+}
+
 function redraw(number) {
 
 	var cantoncolors=['#fff','#76aa7c','#a0bd6d','#cece63','#ffdd5e','#007ac4','#A7D5F1','#A7D5F1']
