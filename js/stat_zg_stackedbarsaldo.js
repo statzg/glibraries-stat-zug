@@ -478,7 +478,6 @@ $(window).resize(function(event) {
 });
 
 	Atts[number].exportdata = Atts[number].exportdata.filter(function(el) {
-		console.log(el);
 		return el[dimension] != "Minus";
 	});
 
