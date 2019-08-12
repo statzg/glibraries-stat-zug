@@ -540,7 +540,7 @@ function clicked(selected) {
 		Atts[number].g.selectAll(".goingline").call(transition);
 		
 		var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
-		if ( IE ){ var timeout=0 } else { var timeout=1500 };
+		if ( IE ){ var timeout=0 } else { var timeout=1000 };
 		setTimeout(function() {
 			Atts[number].g.selectAll(".comingline")
 				.attr({
@@ -653,7 +653,7 @@ function transition(path) {
 	var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
 	if ( IE ){ } else {
 	path.transition()
-		.duration(1500)
+		.duration(1000)
 		.attrTween("stroke-dasharray", tweenDash);
 	}
 }
@@ -748,7 +748,7 @@ $(window).resize(function(){resizeMap(number)});
 
 var columns=["Zielkanton", "Restliche Schweiz", "Zürich", "Aargau", "Luzern", "Schwyz", "Zug"]									 
 addDownloadButton(number);
-addDownloadButtonPng(number)
+addDownloadButtonPng(number, true)
 addDataTablesButton(number, columns)
 
 };

@@ -31,6 +31,10 @@ Atts[number].chartcontainer="chart"+number
 //Container erstellen, falls diese noch nicht existieren (den Hauptcontainer braucht es unweigerlich)
 createcontainers(number);
 
+if ( $('#chart'+number+' svg').length ) {
+	$('#chart'+number+' svg').remove();
+}
+
 // load the data (using the timelyportfolio csv method)
 d3.csv(csv_path, function(error, data) {
 	

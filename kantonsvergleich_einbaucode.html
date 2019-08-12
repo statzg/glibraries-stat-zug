@@ -2,7 +2,6 @@
 <script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_row.js"></script>
 <script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_choropleth.js"></script>
 <script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/jquery.slinky.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js"></script>
 
 	<div class="slincky-wrapper">
 		<section>
@@ -92,23 +91,26 @@
 <li><a id="desc" class="hidemap" href="javascript:;">Karte verbergen</a> </li>
 </ul>-->
 </div>
+<div>
 <div id="default1">
 	<div id="title" class="title"></div>
 	<div id="subtitle" class="subtitle"></div>	
 	<div id="chart1"></div>
 	<div id="description" class="description"></div>
 	<div id="source" class="source"></div>
+</div>
+</div>
 <ul class="subelements-listing">
 <li><a id="desc" class="order" href="javascript:;">Absteigend</a> </li>
 <li><a id="asc" class="order" href="javascript:;">Aufsteigend</a> </li>
 <li><a id="alpha" class="order" href="javascript:;">Alphabetisch</a> </li>
 <li><a id="list" class="order" href="javascript:;">Historisch</a> </li>
 </ul>
-</div>
 
 <!--<ul class="subelements-listing"  style="float:right">
 <li><a id="desc" class="hidemap" href="javascript:;">Karte verbergen</a> </li>
 </ul>-->
+<div>
 <div id="default2">
 	<div id="title" class="title"></div>
 	<div id="subtitle" class="subtitle"></div>	
@@ -116,10 +118,11 @@
 	<div id="description" class="description"></div>
 	<div id="source" class="source"></div>
 </div>
+</div>
 
 <script>
 
-var uri = new URI(window.location.href);
+//var uri = new URI(window.location.href);
 
 args1 ={
 	number:1,													

@@ -7,14 +7,15 @@ function loadbasics() {
 	for (var i = 0; i < stylesheets.length; i++) {
 		$head.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + stylesheets[i] + "\">");
 	}
-	var basics = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/d3.js",
+	var basics = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/URI.min.js",
+	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/d3.js",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/crossfilter.js",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/dc.js",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/d3-tip.js",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/FileSaver.js",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/datatables.js",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/exceljs.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_excelexportsimple.js",
+	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_excelexportsimple.js"
 	];
 	var $head = $("head");
 	for (var i = 0; i < basics.length; i++) {
@@ -28,6 +29,8 @@ loadbasics();
 if (typeof Charts == 'undefined') { Charts = {} };
 if (typeof Atts == 'undefined') { Atts = {} };
 if (typeof Datasheets == 'undefined') { Datasheets = {} };
+if (typeof uri == 'undefined') { uri= new URI(window.location.href)};
+isolatecircle=0;
 
 //Farben definieren
 //generiert mit http://gka.github.io/palettes/#diverging|c0=007AC4,00A763,FFDD5E|c1=FFDD5E,FF8A26,FF403A|steps=19|bez0=1|bez1=1|coL0=1|coL1=1
@@ -155,9 +158,20 @@ function treatmetadata(number, data) {
 	if (Atts[number].typerow.length == 1) {
 		Atts[number].datatypes = (Atts[number].typerow[0].Content).split(/,\s?/);
 	}	
-		
+
 }
 
+function isolateChart(number) {
+	$( document ).ready(function() {
+		$('body > :not(#default' + number + ')').hide();
+		$('#default' + number ).parent().width(650).css('margin-left','20px');
+		$('#default' + number ).parent().appendTo('body');
+		setTimeout(function () {
+			$('#dropdowncontainer' + number ).remove();
+		}, 300);
+		//$('#d3-tip' + number ).remove();
+	});
+}
 
 function wrap (text, width) {
   text.each(function() {
@@ -286,7 +300,7 @@ function addDownloadButton(number) {
 	d3.select('#'+Atts[number].maincontainer+" dl dt")
 		.append("a")
 		.attr('id', 'dropdown-button'+number)
-		.attr('href', 'javascript:;');	
+		.attr('href', 'javascript:;');
 	
 	var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
 	if ( IE ){ var bildquelle="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/download.png" } 
@@ -314,18 +328,29 @@ function addDownloadButton(number) {
 	d3.select('#'+Atts[number].maincontainer+" dl dd")
 		.append("ul");
 	
-	$("#dropdown-button"+number).focusin(function(){
-		$('#actionMenu'+number).show(0);
+	$("#dropdowncontainer"+number).on( "click", function(){
+		$('#actionMenu'+number).toggle(0);
 	});
 	
-	$("#dropdown-button"+number).parent().focusout(function(){
+/*	$("#dropdown-button"+number).click(function(){
+		$('#actionMenu'+number).show(0);
+	});*/
+	
+	$("#dropdowncontainer"+number).focusout(function(){
 		setTimeout(function () { // needed because nothing has focus during 'focusout'
 			$('#actionMenu'+number).hide(0);
 		}, 250);
 	});
+	
+/*	$("#dropdown-button"+number).parent().focusout(function(){
+		setTimeout(function () { // needed because nothing has focus during 'focusout'
+			$('#actionMenu'+number).hide(0);
+		}, 250);
+	});*/
+	
 }
 
-function addDownloadButtonPng(number, patience) {
+function addDownloadButtonPngLegacy(number, patience) {
 	
 	var patience = (typeof patience == 'undefined') ? false : patience;
 	
@@ -348,9 +373,132 @@ function addDownloadButtonPng(number, patience) {
 				var svg=d3.select("#"+Atts[number].maincontainer+" svg")
 				var svgString = svg.node();
 				downloadSvg(svgString, "Grafik.png", width, height);
+				
 			}
 		})
 		.text('Als Grafik speichern');
+		
+}
+
+function addDownloadButtonPng(number, patience) {
+	
+	var patience = (typeof patience == 'undefined') ? false : patience;
+	
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
+		.append("li")
+		.attr('id', 'download-png');
+		
+	/*d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+		.append("a")
+		.attr('href', 'javascript:;')
+		.on('click', function(){
+			var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
+			if ( IE ){alert("Ihr Browser unterstützt diese Funktion nicht, Sie können die Grafik mit Rechtsklick -> 'Bild speichern unter' abspeichern."); } 
+			else {			
+				if (patience==true) {
+					alert("Haben Sie etwas Geduld, die Produktion der Grafik dauer eine Weile.");
+				}
+				var width=$("#"+Atts[number].maincontainer+" svg").width()
+				var height=$("#"+Atts[number].maincontainer+" svg").height()
+				var svg=d3.select("#"+Atts[number].maincontainer+" svg")
+				var svgString = svg.node();
+				//downloadSvg(svgString, "Grafik.png", width, height);
+				
+			}
+		})
+		.text('Als Grafik speichern');*/
+	downloadurl='https://www.zg.ch'+uri.path().replace('/web','')+'?isolate='+number
+	ConversionDelay=3;
+	if (patience==true){
+		ConversionDelay=5;
+	}
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+		.append("a")
+		.attr('href', 'javascript:;')
+		.attr('rel', 'nofollow')
+		.on('click', function(){
+			uri.addSearch('isolate',number);
+			downloadurl='https://www.zg.ch'+uri.path().replace('/web','')+uri.search();
+			$('#URL'+number).val(downloadurl);
+			if (patience==true) {
+				alert("Haben Sie etwas Geduld, die Produktion der Grafik dauert eine Weile.");
+			}
+			document.getElementById('downloadform'+number).submit(); 
+			uri.removeSearch('isolate');
+			return false;	
+		})
+		.text('Als Grafik speichern');
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+		.append("form")
+		.attr('action','https://v2.convertapi.com/convert/web/to/png?Secret=IApvnZBoUyuZD92G&download=attachment')
+		.attr('method','post')
+		.attr('enctype','multipart/form-data')
+		.attr('id','downloadform'+number);
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+		.append("input")
+		.attr('type','hidden')
+		.attr('name','Url')
+		.attr('id','URL'+number)
+		.attr('value',downloadurl);
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+		.append("input")
+		.attr('type','hidden')
+		.attr('name','ConversionDelay')
+		.attr('value',ConversionDelay);
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+		.append("input")
+		.attr('type','hidden')
+		.attr('name','FileName')
+		.attr('value','grafik');
+	
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+		.append("input")
+		.attr('type','hidden')
+		.attr('name','Zoom')
+		.attr('value','4');
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+		.append("input")
+		.attr('type','hidden')
+		.attr('name','ImageWidth')
+		.attr('value','690');
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+		.append("input")
+		.attr('type','hidden')
+		.attr('name','ImageHeight')
+		.attr('id','ImageHeight'+number)
+		.attr('value','650');
+		
+	$( document ).ready(function() {
+		setTimeout(function () {
+			height=Math.round(document.getElementById('default' + number ).parentNode.getBoundingClientRect().height)+10;
+			if ($('#default' + number ).parent().children('h2').length){
+				height=height+30;
+			}
+			$('#ImageHeight'+number).val(height);
+		}, 1000);
+	});
+		
+}
+
+function addDownloadButtonPrintView(number) {
+	
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
+		.append("li")
+		.attr('id', 'download-print');
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+		.append("a")
+		.attr('href', 'javascript:;')
+		.on('click', function(){
+			isolateChart(number);
+		})
+		.text('Druckansicht der Grafik');
 }
 
 function formater(type, value) {
@@ -628,3 +776,12 @@ function tabulate(number, columns) {
   //return table;
 
 }
+
+$( document ).ready(function() {
+	setTimeout(function () {
+		if (typeof uri.search(true)["isolate"] != "undefined" & isolatecircle==0) {
+			isolateChart(uri.search(true)["isolate"]);
+			isolatecircle=isolatecircle+1
+		}
+	}, 500);
+});
