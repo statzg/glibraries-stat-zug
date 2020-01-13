@@ -101,16 +101,26 @@ function loadSunburst(args) {
 	function buildHierarchy(csv) {
 		var root = { "name": levels[0], "children": [], "colorkey":-0.2 };
 		for (var i = 0; i < csv.length; i++) {
-			if (csv[i][1] != "" & csv[i][2] != "") {
-				var sequence = csv[i][0] + "&" + csv[i][1] + "&" + csv[i][2];
-			} else if (csv[i][1] == "" & csv[i][2] != "") {
-				var sequence = csv[i][0] + "&" + csv[i][2];
-			} else if (csv[i][1] != "" & csv[i][2] == "") {
-				var sequence = csv[i][0] + "&" + csv[i][1];
-			} else if (csv[i][1] == "" & csv[i][2] == "") {
-				var sequence = csv[i][0];
+			if (levels.length==3) {
+				if (csv[i][1] != "") {
+					var sequence = csv[i][0] + "&" + csv[i][1];
+				} else if (csv[i][1] == "") {
+					var sequence = csv[i][0];
+				}
+				var size = +csv[i][2];
 			}
-			var size = +csv[i][3];
+			else if (levels.length==4) {
+				if (csv[i][1] != "" & csv[i][2] != "") {
+					var sequence = csv[i][0] + "&" + csv[i][1] + "&" + csv[i][2];
+				} else if (csv[i][1] == "" & csv[i][2] != "") {
+					var sequence = csv[i][0] + "&" + csv[i][2];
+				} else if (csv[i][1] != "" & csv[i][2] == "") {
+					var sequence = csv[i][0] + "&" + csv[i][1];
+				} else if (csv[i][1] == "" & csv[i][2] == "") {
+					var sequence = csv[i][0];
+				}
+				var size = +csv[i][3];
+			}
 			if (isNaN(size)) {
 				// e.g. if this is a header row
 				continue;
