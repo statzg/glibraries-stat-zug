@@ -684,9 +684,26 @@ margin-bottom: 20px;
 	padding: 0 5px;
 }
 
+@media (min-width: 800px){
 .subelements-listing li a.selected {
 	background: #00538c !important;
-	color: #ebf4fa;
+	color: #fff;
+}
+}
+
+@media (max-width: 799px){
+.sl-block .subelements-listing li a.selected {
+	background: #00538c !important;
+	color: #fff !important;
+}
+
+.sl-block .subelements-listing li {
+	height: 40px !important;
+}
+
+.sl-block .subelements-listing li.selected {
+	background: #00538c !important;
+}
 }
 
 /*Sunburst*/

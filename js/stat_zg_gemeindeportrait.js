@@ -1,5 +1,7 @@
 function loadGemeindeportrait(version) {
+
 	var version = (typeof version == 'undefined') ? "online" : version;
+
 	//Objekte für Grafik- und Tabelle-Export initialisieren.
 	Atts[2]={};
 	Atts[3]={};
@@ -37,6 +39,34 @@ function loadGemeindeportrait(version) {
 	}
 	if (version=="print") {
 		tduration=200
+	}
+	
+	//URL-Parameter für Gemeinde setzen, falls noch nicht gesetzt
+	if (version=="online") {
+//		var uri = new URI(window.location.href);
+		
+		if (typeof uri.search(true)["gemeinde"] == "undefined") {
+			gemeinde="kanton"
+			uri.setSearch("gemeinde", gemeinde)
+			window.history.pushState("", "", uri.href());
+		} else {
+			gemeinde = (uri.search(true)["gemeinde"].charAt(0).toLowerCase() + uri.search(true)["gemeinde"].slice(1)).replace("ae", "ä").replace("oe", "ö").replace("ue", "ü");
+			
+		}
+
+		if (typeof uri.search(true)["merkmal"] == "undefined") {
+			merkmal="kennzahlen"
+			uri.setSearch("merkmal", merkmal)
+			window.history.pushState("", "", uri.href());
+			$(".hiderow#"+merkmal).addClass("selected")
+			$(".hiderow#"+merkmal).parent().addClass("selected")
+		} else {
+			merkmal = uri.search(true)["merkmal"];
+			
+		}
+	}
+	if (version=="iframe") {
+		merkmal="kennzahlen"
 	}
 
     var numberFormat = d3.format(".2f");
@@ -725,7 +755,7 @@ function loadGemeindeportrait(version) {
 		//Counter für Anzahl Redraws
 		var redrawx=0;
 			
-		function redraw() {
+		function neuzeichnen() {
 
 			//Karte
 			if (version=="online") {
@@ -771,6 +801,10 @@ function loadGemeindeportrait(version) {
 			var pfadKarte = "geojson/gemeinden.json"
 			}
 			
+			if (typeof uri.search(true)["isolate"] != "undefined") {
+				totalWidth=650
+			}
+			
 			var projection = d3.geo.mercator()
 				.center([lat,lon])
 				.scale(scale)
@@ -808,13 +842,16 @@ function loadGemeindeportrait(version) {
 								showall();
 								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ filter.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png")
 								$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
-								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+								$('#URLdownload').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+								gemeinde=(filter.charAt(0).toLowerCase() + filter.slice(1)).replace("ä", "ae").replace("ö", "oe").replace("ü", "ue");
+								uri.setSearch("gemeinde", gemeinde)
+								window.history.pushState("", "", uri.href());
 							}
 							else if (version=="iframe") {
 								showall();
 								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ filter.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png")
 								$('h1.maintitle').html("Gemeindeporträt "+filter);
-								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+								$('#URLdownload').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
 							}
 							else if (version=="print") {
 								$('#mainflag').attr("src", "logos/gross/"+ filter.replace("ü", "ü").replace("ä", "ä")+ ".png")
@@ -834,6 +871,9 @@ function loadGemeindeportrait(version) {
 							$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 							$('h1.documentFirstHeading').html("Kantonsporträt");
 							$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+							uri.setSearch("gemeinde", "kanton")
+							window.history.pushState("", "", uri.href());
+							gemeinde="kanton";
 						}
 						else if (version=="iframe") {
 							showall();
@@ -878,6 +918,15 @@ function loadGemeindeportrait(version) {
 					$('.ebene').html("Kanton");
 					return g;
 				});
+				
+				//Filter von URL-Parameter übernehmen
+				if (version=="online") {
+					if (gemeinde!="kanton") {
+						if (karte.filters()[0]!=(gemeinde.charAt(0).toUpperCase() + gemeinde.slice(1)).replace("ae", "ä").replace("oe", "ö").replace("ue", "ü")) {
+							karte.filter((gemeinde.charAt(0).toUpperCase() + gemeinde.slice(1)).replace("ae", "ä").replace("oe", "ö").replace("ue", "ü"));
+						}
+					}
+				}
 				
 				//Kennzahlen
 				fläche
@@ -992,7 +1041,7 @@ function loadGemeindeportrait(version) {
 					.yAxisLabel("Bevölkerung")
 					.rightYAxisLabel("Anteil Ausländer/innen in %")
 					.renderHorizontalGridLines(true)
-					.legend(dc.legend().x(20).y(height-15).itemHeight(13).gap(10)
+					.legend(dc.legend().x(20).y(height-20).itemHeight(13).gap(10)
 					.horizontal(true)
 					.legendWidth(totalWidth-10)
 					.autoItemWidth(true))
@@ -1345,7 +1394,7 @@ function loadGemeindeportrait(version) {
 					var faktorBauzonen=1.2;
 				}
 				else if (version=="print") {
-					var hoeheBauzonen=400;
+					var hoeheBauzonen=380;
 					var faktorBauzonen=1;
 				}
 				
@@ -1390,7 +1439,7 @@ function loadGemeindeportrait(version) {
 				//Funktion um wenn nötig bei Bauzonen Labels der X-Achse anzupassen
 				function rotateXbauzonen(){
 					//Breite eines Zwischenstrichs
-					var tickwidth=d3.transform(d3.selectAll("#bauzonen-chart g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#bauzonen-chart g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];;
+					var tickwidth=d3.transform(d3.selectAll("#bauzonen-chart g.axis.x > g.tick:nth-child(2)").attr("transform")).translate[0]-d3.transform(d3.selectAll("#bauzonen-chart g.axis.x > g.tick:nth-child(1)").attr("transform")).translate[0];
 
 					//Zeilen umbrechen, wenn breiter als Zwischenstrich
 					bauzonenChart.selectAll(".x .tick text")
@@ -1437,7 +1486,9 @@ function loadGemeindeportrait(version) {
 					bauzonenChart.selectAll(".x .tick text")
 						.call(wrap, Math.min(150, maxwidth));
 					d3.selectAll("#bauzonen-chart g.axis.x > g > text")
-						.style("text-anchor", "start")
+						.style("text-anchor", "start");
+					d3.selectAll("#bauzonen-chart g.axis.x > g > text > tspan")
+						.attr("x", 0);
 					//var moveleft = (-maxheight)/2-3
 					d3.selectAll("#bauzonen-chart g.axis.x > g > text").attr("transform", function (d) {
 						var moveleft = (-(this.getBBox().height)/2)-5;
@@ -1471,7 +1522,7 @@ function loadGemeindeportrait(version) {
 								Tips[number].show(d, $("circle")[d.ind]);
 								last_tip = d.key;
 							}
-							tiptext= "<span><b>" + d.properties.name + "</b></span><!--<br/><br/><span><img src='/behoerden/gesundheitsdirektion/statistikfachstelle/bibliotheken/grafiken/"+ d.properties.name.toLowerCase().replace("ü", "u").replace("ä", "a")+ ".png/download' alt='' width='75' ></span>-->";
+							tiptext= "<span><b>" + d.properties.name + "</b></span><br/><br/><span><img src='/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ d.properties.name.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png' alt='' width='75' ></span>";
 							$("#d3-tip"+number).html(tiptext);
 							$("#d3-tip"+number).css("background", "#fff");
 							$("#d3-tip"+number).css("border-left", colorscheme[1][2][0]+" solid 5px");
@@ -1777,8 +1828,11 @@ function loadGemeindeportrait(version) {
 
 						}, 1000);
 				});*/
+				
 			});
+			
 		}
+
 
 		//Objekt mit Tips erstellen
 		if (typeof Tips == 'undefined') { Tips = {} };
@@ -1808,7 +1862,7 @@ function loadGemeindeportrait(version) {
 		initTip("bauzonen");
 		
 		//Effektives Zeichnen der Grafiken.	
-		redraw();
+		neuzeichnen();
 
 		//Funktion für die Änderung der Fensterbreite
 		function resizeWindow() {
@@ -1817,7 +1871,39 @@ function loadGemeindeportrait(version) {
 			}
 			d3.selectAll(".d3-tip").remove();
 			d3.selectAll("svg").remove()
-			redraw()
+			neuzeichnen()
+		}
+		
+		if (version=="online" | version=="iframe") {	
+			//Funktion um bei Knopfklick die entsprechende Grafik einzublenden und die andere auszublenden.
+			$(".hiderow").click(function(){
+				merkmal=this.id;
+				if (version=="online") {
+					
+					for (i = 0; i < hide.length; i++) {
+						$('#'+hide[i]+'-container').show(0);
+					}
+
+					uri.setSearch("merkmal", merkmal)
+					window.history.pushState("", "", uri.href());
+					d3.selectAll(".d3-tip").remove();
+					d3.selectAll("svg").remove()
+					neuzeichnen()
+				}
+				for (i = 0; i < hide.length; i++) {
+					if (merkmal==hide[i]) {
+						shown=i;
+						$('#'+hide[i]+'-container').show(500);
+						$(".hiderow#"+hide[i]).addClass("selected")
+						$(".hiderow#"+hide[i]).parent().addClass("selected")
+					}
+					else {
+						$('#'+hide[i]+'-container').hide(500);
+						$(".hiderow#"+hide[i]).removeClass("selected")
+						$(".hiderow#"+hide[i]).parent().removeClass("selected")
+					}
+				}
+			});
 		}
 		
 		var w = 0;
@@ -1829,13 +1915,15 @@ function loadGemeindeportrait(version) {
 		var doit;
 		
 		$(window).resize(function(){
-			if( w != $( window ).width() ){
-				clearTimeout(doit);
-				doit = setTimeout(function() {
-					resizeWindow()
-				}, 200);
-				w = $( window ).width();
-				delete w;
+			if (typeof uri.search(true)["isolate"] == "undefined") {
+				if( w != $( window ).width() ){
+					clearTimeout(doit);
+					doit = setTimeout(function() {
+						resizeWindow()
+					}, 200);
+					w = $( window ).width();
+					delete w;
+				}
 			}
 		});	
 
@@ -1853,43 +1941,44 @@ function loadGemeindeportrait(version) {
 			for (i = 0; i < hide.length; i++) {
 				$('#'+hide[i]+'-container').show(0);
 			}
-			setTimeout(	
-				function() {
-					for (i = 0; i < hide.length; i++) {
-						if (i!=shown) {
-							$('#'+hide[i]+'-container').hide(0);
+			if (typeof uri.search(true)["isolate"] == "undefined") {
+				setTimeout(	
+					function() {
+						for (i = 0; i < hide.length; i++) {
+							if (merkmal!=hide[i]) {
+								$('#'+hide[i]+'-container').hide(0);
+							}
+							else {
+								$(".hiderow#"+hide[i]).addClass("selected")
+								$(".hiderow#"+hide[i]).parent().addClass("selected")
+							}
 						}
-					}
-					if ('parentIFrame' in window) {
-						parentIFrame.autoResize(true);
-					}					
-				}, 1000);
+						if ('parentIFrame' in window) {
+							parentIFrame.autoResize(true);
+						}					
+					}, 1000);
+			}
 		}
 		
 		//Standarmässig werden die Kennzahlen angezeigt.
 		var shown=0
 		
-		//Beim Seiten laden werden nach 2 Sekunden alle ausser "Kennzahlen" ausgeblendet.
+		//Beim Seiten laden werden nach 2 Sekunden alle ausser gewähltes Merkmal (gemäss url) ausgeblendet.
 		$( document ).ready(function() {
-			setTimeout(	
-				function() {
-					for (i = 1; i < hide.length; i++) {
-						$('#'+hide[i]+'-container').hide()
-					}
-				}, 2000);
-		});
-
-		//Funktion um bei Knopfklick die entsprechende Grafik einzublenden und die andere auszublenden.
-		$(".hiderow").click(function(){
-			for (i = 0; i < hide.length; i++) {
-				if (this.id==hide[i]) {
-					shown=i;
-					$('#'+hide[i]+'-container').show(500);
-				}
-				else {
-					$('#'+hide[i]+'-container').hide(500);
-				}
-			}	
+			if (typeof uri.search(true)["isolate"] == "undefined") {
+				setTimeout(	
+					function() {
+						for (i = 0; i < hide.length; i++) {
+							if (merkmal!=hide[i]) {
+								$('#'+hide[i]+'-container').hide()
+							} 
+							else {
+								$(".hiderow#"+hide[i]).addClass("selected")
+								$(".hiderow#"+hide[i]).parent().addClass("selected")
+							}
+						}
+					}, 2000);
+			}
 		});
 		
 		//Bei verschiedenen Grafiken die Download-Knöpfe anbringen
@@ -1905,6 +1994,7 @@ function loadGemeindeportrait(version) {
 		
 		var columns=["Gemeinde", "Sektor", "Betriebe", "Beschäftigte"];
 		addDownloadButton(5);
+		addDownloadButtonPng(5);
 		addDataTablesButton(5, columns);
 
 		var columns=["Gemeinde", "Zone", "Fläche"];
@@ -1922,4 +2012,5 @@ function loadGemeindeportrait(version) {
 		addDownloadButtonPng(8);
 		addDataTablesButton(8, columns);
 	}
+
 }

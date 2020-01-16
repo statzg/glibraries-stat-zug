@@ -23,7 +23,7 @@
 <div class="container" id="default">
 
     <div style="float:right; position: absolute; right:0px; top:50px">
-		<img id="flag" src='/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/Kanton.png' alt='Wappen' width='75' >
+		<img id="flag" src='/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png' alt='Wappen' width='75' >
 	</div>
 	
 	<div id="karte" class="non-float">
@@ -100,35 +100,44 @@
 		</table>
 	</div>
 	</div>
-	
+
+	<div class="isolatecontainer">	
 	<div id="entwicklung-container">
 	<h3 id="title">Bevölkerungsentwicklung <span class="gemeindename">Kanton Zug</span></h3>
 	
 	<div id="entwicklung-chart" class="non-float">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="altersstruktur-container">
 	<h3 id="title">Altersstruktur <span class="gemeindename">Kanton Zug</span> <span class="altersstrukturyear"></span></h3>
 	
 	<div id="altersstruktur-chart" class="non-float" style="text-align:center; display:block;">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="geschlechtsstruktur-container">
 	<h3 id="title">Geschlechterverhältnis <span class="gemeindename">Kanton Zug</span> <span class="geschlechtsstrukturyear"></span></h3>
 	
 	<div id="geschlechtsstruktur-chart" class="non-float" style="text-align:center; display:block;">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="religionsstruktur-container">
 	<h3 id="title">Konfessionen <span class="gemeindename">Kanton Zug</span> <span class="religionsstrukturyear"></span></h3>
 	
 	<div id="religionsstruktur-chart" class="non-float" style="text-align:center; display:block;">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="wirtschaftsstruktur-container">
 	<h3 id="title">Wirtschaftsstruktur <span class="gemeindename">Kanton Zug</span> <span class="wirtschaftsstrukturyear"></span></h3>
 	
@@ -139,11 +148,14 @@
 	    </div>
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="bauzonen-container">
 	<h3 id="title">Raumstruktur (Bauzonen) <span class="gemeindename">Kanton Zug</span> <span class="bauzonenyear"></span></h3>
 	
 	<div id="bauzonen-chart" class="non-float">
+	</div>
 	</div>
 	</div>
 	
@@ -154,7 +166,7 @@
 </div>
 
 <form style="float: left;" id="downloadPdf" action="https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam=1" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="Url" value="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html" />
+	<input type="hidden" id="URLdownload" name="Url" value="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html" />
 	<input type="hidden" name="FileName" value="Portrait" />
 	<input type="hidden" name="ConversionDelay" value="5" />
 	<input type="hidden" name="ViewportWidth" value="1200" />
@@ -180,22 +192,12 @@ $('#downloadPdf').submit(function(ev) {
 <script type="text/javascript" src="js/libraries/d3-tip.js"></script>
 <script type="text/javascript" src="js/stat_zg_generals.js"></script>
 <script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>
+
 <script type="text/javascript">
 
 loadGemeindeportrait(version="iframe")
 
-function GetQueryString()
-{
-	var qs = window.location.toString().split("?")[1];
-	if (typeof qs != "undefined" & qs!= "selection" & qs!= "selection&wmode=transparent") {
-		qsobj = JSON.parse('{"' + qs.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
-		return qsobj;
-	} else {return "failed"}
-}
-
-urlparams=GetQueryString()
-
-if (typeof urlparams.gemeinde == "undefined") {
+if (typeof uri.search(true)["gemeinde"] == "undefined") {
 	window.iFrameResizer = {
 		messageCallback: function (messageData){
 			$('head').append('<style type="text/css">'+messageData.addCSS+'</style>');
@@ -208,6 +210,7 @@ if (typeof urlparams.gemeinde == "undefined") {
 					if (messageData.nurDieseGemeinde==true) {
 						d3.selectAll("g > path").on('click',null);
 					}
+					uri.addSearch("gemeinde", messageData.gemeinde);
 				}
 			, 800);
 			if (messageData.titelAnzeigen==false) {
@@ -217,18 +220,22 @@ if (typeof urlparams.gemeinde == "undefined") {
 	}
 } 
 else {
-	$('head').append('<style type="text/css">'+urlparams.addCSS+'</style>');
-	$('head').append('<link rel="stylesheet" type="text/css" href="'+urlparams.addCSSfiles+'" />');
+	if (typeof uri.search(true)["addCSS"] != "undefined") {
+		$('head').append('<style type="text/css">'+uri.search(true)["addCSS"]+'</style>');
+	}
+	if (typeof uri.search(true)["addCSSfiles"] != "undefined") {
+		$('head').append('<link rel="stylesheet" type="text/css" href="'+uri.search(true)["addCSSfiles"]+'" />');
+	}
 	setTimeout(	
 		function() {
-			urlparams.gemeinde=urlparams.gemeinde.replace("ae", "ä").replace("oe", "ö").replace("ue", "ü");
-			simulateClick(d3.select("g."+urlparams.gemeinde+" > path").node());
-			if (urlparams.nurDieseGemeinde=="true") {
+			gemeinde = (uri.search(true)["gemeinde"].charAt(0).toLowerCase() + uri.search(true)["gemeinde"].slice(1)).replace("ae", "ä").replace("oe", "ö").replace("ue", "ü");
+			simulateClick(d3.select("g."+gemeinde+" > path").node());
+			if (uri.search(true)["nurDieseGemeinde"]=="true") {
 				d3.selectAll("g > path").on('click',null);
 			}
 		}
 	, 800);
-	if (urlparams.titelAnzeigen=="false") {
+	if (uri.search(true)["titelAnzeigen"]=="false") {
 		$(".maintitle").remove();
 	}
 }
@@ -255,8 +262,5 @@ function simulateClick(elem /* Must be the element, not d3 selection */) {
 }
 
 </script>
-
-<!--<a class="pdfcrowd-remove" id="savelink" href="https://selectpdf.com/save-as-pdf/?pdf_name=Gemeindeportrait&margin_top=2&margin_right=12&margin_bottom=4&margin_left=12&page_numbers=false&web_page_width=1200px&web_page_height=1887px&min_load_time=2">Save as Pdf</a> 
-<a class="pdfcrowd-remove" href="//pdfcrowd.com/url_to_pdf/?width=1200px&height=1887px&pdf_name=Gemeindeportrait">Save to PDF</a>-->
 
 </body></html>

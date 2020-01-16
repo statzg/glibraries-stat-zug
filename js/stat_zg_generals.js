@@ -33,7 +33,7 @@ if (typeof uri == 'undefined') { uri= new URI(window.location.href)};
 isolatecircle=0;
 
 //Farben definieren
-//generiert mit http://gka.github.io/palettes/#diverging|c0=007AC4,00A763,FFDD5E|c1=FFDD5E,FF8A26,FF403A|steps=19|bez0=1|bez1=1|coL0=1|coL1=1
+//generiert mit https://gka.github.io/palettes/#/19|d|007ac4,00a763,ffdd5e|ffdd5e,ff8a26,ff403a|1|1
 colorscheme={
 	1:{ //Bipolare Skala
 		1:['#007ac4'],
@@ -163,9 +163,9 @@ function treatmetadata(number, data) {
 
 function isolateChart(number) {
 	$( document ).ready(function() {
-		$('body > :not(#default' + number + ')').hide();
-		$('#default' + number ).parent().width(650).css('margin-left','20px');
-		$('#default' + number ).parent().appendTo('body');
+		$('body > :not(#' + Atts[number].maincontainer+')').hide();
+		$('#' + Atts[number].maincontainer ).parent().width(650).css('margin-left','20px');
+		$('#' + Atts[number].maincontainer ).parent().appendTo('body');
 		setTimeout(function () {
 			$('#dropdowncontainer' + number ).remove();
 		}, 300);
@@ -356,9 +356,9 @@ function addDownloadButtonPngLegacy(number, patience) {
 	
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
-		.attr('id', 'download-png');
+		.attr('id', 'download-png-legacy');
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png-legacy")
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
@@ -388,31 +388,13 @@ function addDownloadButtonPng(number, patience) {
 		.append("li")
 		.attr('id', 'download-png');
 		
-	/*d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
-		.append("a")
-		.attr('href', 'javascript:;')
-		.on('click', function(){
-			var IE = (navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1) ? true : false;
-			if ( IE ){alert("Ihr Browser unterstützt diese Funktion nicht, Sie können die Grafik mit Rechtsklick -> 'Bild speichern unter' abspeichern."); } 
-			else {			
-				if (patience==true) {
-					alert("Haben Sie etwas Geduld, die Produktion der Grafik dauer eine Weile.");
-				}
-				var width=$("#"+Atts[number].maincontainer+" svg").width()
-				var height=$("#"+Atts[number].maincontainer+" svg").height()
-				var svg=d3.select("#"+Atts[number].maincontainer+" svg")
-				var svgString = svg.node();
-				//downloadSvg(svgString, "Grafik.png", width, height);
-				
-			}
-		})
-		.text('Als Grafik speichern');*/
+
 	downloadurl='https://www.zg.ch'+uri.path().replace('/web','')+'?isolate='+number
 	ConversionDelay=3;
 	if (patience==true){
 		ConversionDelay=5;
 	}
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png")
 		.append("a")
 		.attr('href', 'javascript:;')
 		.attr('rel', 'nofollow')
@@ -429,45 +411,45 @@ function addDownloadButtonPng(number, patience) {
 		})
 		.text('Als Grafik speichern');
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png")
 		.append("form")
 		.attr('action','https://v2.convertapi.com/convert/web/to/png?Secret=IApvnZBoUyuZD92G&download=attachment')
 		.attr('method','post')
 		.attr('enctype','multipart/form-data')
 		.attr('id','downloadform'+number);
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
 		.append("input")
 		.attr('type','hidden')
 		.attr('name','Url')
 		.attr('id','URL'+number)
 		.attr('value',downloadurl);
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
 		.append("input")
 		.attr('type','hidden')
 		.attr('name','ConversionDelay')
 		.attr('value',ConversionDelay);
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
 		.append("input")
 		.attr('type','hidden')
 		.attr('name','FileName')
 		.attr('value','grafik');
 	
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
 		.append("input")
 		.attr('type','hidden')
 		.attr('name','Zoom')
 		.attr('value','4');
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
 		.append("input")
 		.attr('type','hidden')
 		.attr('name','ImageWidth')
 		.attr('value','690');
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li form")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
 		.append("input")
 		.attr('type','hidden')
 		.attr('name','ImageHeight')
@@ -476,8 +458,8 @@ function addDownloadButtonPng(number, patience) {
 		
 	$( document ).ready(function() {
 		setTimeout(function () {
-			height=Math.round(document.getElementById('default' + number ).parentNode.getBoundingClientRect().height)+10;
-			if ($('#default' + number ).parent().children('h2').length){
+			height=Math.round(document.getElementById(Atts[number].maincontainer).parentNode.getBoundingClientRect().height)+10;
+			if ($('#' + Atts[number].maincontainer ).parent().children('h2').length){
 				height=height+30;
 			}
 			$('#ImageHeight'+number).val(height);
@@ -492,7 +474,7 @@ function addDownloadButtonPrintView(number) {
 		.append("li")
 		.attr('id', 'download-print');
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-print")
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
@@ -545,8 +527,8 @@ function addDataTablesButton(number, columns) {
 
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
-		.attr('id', 'download-png');		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+		.attr('id', 'download-tables');		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-tables")
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
@@ -560,9 +542,9 @@ function addDataTablesButtonOriginal(number, columns) {
 
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
-		.attr('id', 'download-png');
+		.attr('id', 'download-tables');
 	
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li")
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-tables")
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){

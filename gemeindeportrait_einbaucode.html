@@ -5,7 +5,7 @@
 <div class="container" id="default">
 
     <div style="float:right; position: absolute; right:0px; top:30px">
-		<img id="flag" src='/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/Kanton.png' alt='Wappen' width='75' >
+		<img id="flag" src='/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png' alt='Wappen' width='75' >
 	</div>
 	
 	<div id="karte" class="non-float">
@@ -14,8 +14,8 @@
 	</div>
     </div>
 
-	<div style="float:left">
-		<ul class="subelements-listing" style="float:left">
+	<div>
+		<ul class="subelements-listing">
 			<li><a id="kennzahlen" class="hiderow" href="javascript:;">Kennzahlen</a> </li>
 			<li><a id="entwicklung" class="hiderow" href="javascript:;">Bevölkerungsentwicklung</a> </li>
 			<li><a id="altersstruktur" class="hiderow" href="javascript:;">Altersstruktur</a> </li>
@@ -84,34 +84,43 @@
 	</div>
 	</div>
 	
+	<div class="isolatecontainer">
 	<div id="entwicklung-container">
 	<h3 id="title">Bevölkerungsentwicklung <span class="gemeindename">Kanton Zug</span></h3>
 	
 	<div id="entwicklung-chart" class="non-float">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">	
 	<div id="altersstruktur-container">
 	<h3 id="title">Altersstruktur <span class="gemeindename">Kanton Zug</span> <span class="altersstrukturyear"></span></h3>
 	
 	<div id="altersstruktur-chart" class="non-float" style="text-align:center; display:block;">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="geschlechtsstruktur-container">
 	<h3 id="title">Geschlechterverhältnis <span class="gemeindename">Kanton Zug</span> <span class="geschlechtsstrukturyear"></span></h3>
 	
 	<div id="geschlechtsstruktur-chart" class="non-float" style="text-align:center; display:block;">
 	</div>
 	</div>
+	</div>
 
+	<div class="isolatecontainer">
 	<div id="religionsstruktur-container">
 	<h3 id="title">Konfessionen <span class="gemeindename">Kanton Zug</span> <span class="religionsstrukturyear"></span></h3>
 	
 	<div id="religionsstruktur-chart" class="non-float" style="text-align:center; display:block;">
 	</div>
 	</div>
+	</div>
 	
+	<div class="isolatecontainer">
 	<div id="wirtschaftsstruktur-container">
 	<h3 id="title">Wirtschaftsstruktur <span class="gemeindename">Kanton Zug</span> <span class="wirtschaftsstrukturyear"></span></h3>
 	
@@ -122,11 +131,14 @@
 	    </div>
 	</div>
 	</div>
+	</div>
 	
+	<div class="isolatecontainer">
 	<div id="bauzonen-container">
 	<h3 id="title">Raumstruktur (Bauzonen) <span class="gemeindename">Kanton Zug</span> <span class="bauzonenyear"></span></h3>
 	
 	<div id="bauzonen-chart" class="non-float">
+	</div>
 	</div>
 	</div>
 	
@@ -137,7 +149,7 @@
 </div>
 
 <form id="downloadPdf" action="https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam=1" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="Url" value="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html" />
+	<input type="hidden" id="URLdownload" name="Url" value="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html" />
 	<input type="hidden" name="FileName" value="Portrait" />
 	<input type="hidden" name="ConversionDelay" value="5" />
 	<input type="hidden" name="ViewportWidth" value="1200" />

@@ -51,6 +51,15 @@ data.forEach(function(x) {
 });
 
 treatmetadata(number, data);
+
+datatype=Atts[number].datatypes[Object.keys(dataValues).indexOf(group)];
+unit=""
+
+if (datatype=="percent") {
+	percent=true;
+} else if (datatype=="chf") {
+	unit=" Franken";
+}	
 	
 Atts[number].dataset= crossfilter(Atts[number].data),
 	Atts[number].maindimension = Atts[number].dataset.dimension(function(d) {return d[stack];}),
@@ -99,16 +108,11 @@ if (typeof characteristics === 'undefined' || characteristics.length==0) {
 	}
 characteristicsLength= characteristics.length;
 
-if (typeof groupFilter === 'undefined' || groupFilter.length==0) {
-	groupFilter = [];
-	Atts[number].maingroup.all().forEach(function (x) {
-			groupFilter.push(x["key"]);
-		});
-	}
-	
-FilterDimension.filter(function(d){
-  return groupFilter.indexOf(d) > -1;
-});
+if (typeof groupFilter != 'undefined' & groupFilter.length!=0) {	
+	FilterDimension.filter(function(d){
+		return groupFilter.indexOf(d) > -1;
+	});
+}
 
 var colorScale = d3.scale.ordinal()
             .domain(characteristics)
@@ -259,8 +263,8 @@ function callTip(){
 			}
 			
 			if (percent==true) {wert=germanFormatters.numberFormat(",.1%")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
-			else if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
-			else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
+			else if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])+unit}
+			else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])+unit}
 			
 			if (showTotal==true & showAnteil==true) {
 				tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*100).toFixed(2) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
@@ -334,7 +338,7 @@ Charts[number].on('renderlet', function(chart){
 });
 
 if ((typeof relative !== 'undefined' && relative==true) || (typeof percent !== 'undefined' && percent==true)) {
-Charts[number].yAxis().tickFormat(d3.format('.0%'));
+Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(",.2p"));
 Charts[number].renderLabel(false);
 }
 else {

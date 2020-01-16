@@ -157,10 +157,14 @@ if (typeof uri.search(true)["chart"] == "undefined") {
 
 if (typeof uri.search(true)["order"] == "undefined") {
 	args1.order="desc"
+	$("#"+args1.order).addClass("selected")
+	$("#"+args1.order).parent().addClass("selected")
 	uri.setSearch("order", args1.order)
 	window.history.pushState("", "", uri.href());
 } else {
 	args1.order = uri.search(true)["order"];
+	$("#"+args1.order).addClass("selected")
+	$("#"+args1.order).parent().addClass("selected")
 }
 
 loadRow(args1);
@@ -181,7 +185,11 @@ $( ".selection" ).click(function(){
 });
 
 $(".order").click(function(){
+	$(".order").removeClass("selected");
+	$(".order").parent().removeClass("selected");
 	args1.order=$(this).attr('id');
+	$(this).addClass("selected");
+	$(this).parent().addClass("selected");
 	loadRow(args1);
 	uri.setSearch("order", args1.order)
 	window.history.pushState("", "", uri.href());
