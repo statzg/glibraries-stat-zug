@@ -981,7 +981,7 @@ function loadGemeindeportrait(version) {
 					.valueAccessor(function (d) {
 						var steuerfuss=d.tot
 						if (steuerfuss>200) { steuerfuss=data7[11].Steuerfuss}
-						return steuerfuss;
+						return Math.round(steuerfuss*100)/100;
 					}).formatNumber(germanFormatters.numberFormat(","))
 					.group(SteuerfussTotal);
 					
