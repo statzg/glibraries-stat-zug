@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="css/statistik.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 </head>
 <body>
 <style>
@@ -172,16 +173,27 @@ document.write(today); </script>. Interessiert an weiteren statistischen Informa
 
 </div>
 
-<script type="text/javascript" src="js/libraries/queue.js"></script>
+<!--<script type="text/javascript" src="js/libraries/queue.js"></script>
 <script type="text/javascript" src="js/libraries/d3.js"></script>
 <script type="text/javascript" src="js/libraries/crossfilter.js"></script>
 <script type="text/javascript" src="js/libraries/dc.js"></script>
 <script type="text/javascript" src="js/libraries/d3-tip.js"></script>
 <script type="text/javascript" src="js/stat_zg_generals.js"></script>
-<script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>
+<script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>-->
 <script type="text/javascript">
 
-loadGemeindeportrait(version="print")
+require.config({
+	urlArgs: "bust=" + (new Date()).getTime(),
+	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+	paths: {
+		'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery'
+	}
+});
+
+require(['stat_zg_gemeindeportrait','jquery'], function (gemeindeportrait,$) {
+	gemeindeportrait.load(version="print");
+
+//loadGemeindeportrait(version="print")
 
 function simulateClick(elem /* Must be the element, not d3 selection */) {
     var evt = document.createEvent("MouseEvents");
@@ -212,6 +224,8 @@ $( document ).ready(function() {
 		}, 800);
 	}
 });
+
+})
 
 </script>
 

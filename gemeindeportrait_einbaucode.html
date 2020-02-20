@@ -1,7 +1,3 @@
-<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/queue.js"></script>
-<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_generals.js"></script>
-<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_gemeindeportrait.js"></script>
-
 <div class="container" id="default">
 
     <div style="float:right; position: absolute; right:0px; top:30px">
@@ -160,11 +156,20 @@
 
 <script type="text/javascript">
 
+require.config({
+   urlArgs: "bust=" + (new Date()).getTime(),
+   baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/'
+});
+
 $('#downloadPdf').submit(function(ev) {
     ev.preventDefault(); // to stop the form from submitting
     $('#downloadPdf').attr('action', 'https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam='+ev.timeStamp);  //to add random number parameter to action-url
     this.submit(); // submit with new url
 });
 
-loadGemeindeportrait();
+require(['stat_zg_gemeindeportrait'], function (gemeindeportrait) {
+	gemeindeportrait.load();
+})
+
+//loadGemeindeportrait();
 </script>

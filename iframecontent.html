@@ -10,10 +10,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
 	
     <link rel="stylesheet" type="text/css" href="css/statistik.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/theming.css?cachekey=e2defade10841fce56eb3205f8bae14a" />
 	<link rel="stylesheet" type="text/css" href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/customstyles_css?ts=" />
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>-->
 
 	<style>a[target="_blank"]::before{content:"" !important}</style>
 
@@ -178,27 +179,41 @@
 <p style="float: right;"><a href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle" target="_blank">Weitere Zahlen</a></p>
 
 <script type="text/javascript">
-$('#downloadPdf').submit(function(ev) {
-    ev.preventDefault(); // to stop the form from submitting
-    $('#downloadPdf').attr('action', 'https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam='+ev.timeStamp);  //to add random number parameter to action-url
-    this.submit(); // submit with new url
-});
+
 </script>
 
-<script type="text/javascript" src="js/libraries/queue.js"></script>
+<!--<script type="text/javascript" src="js/libraries/queue.js"></script>
 <script type="text/javascript" src="js/libraries/d3.js"></script>
 <script type="text/javascript" src="js/libraries/crossfilter.js"></script>
 <script type="text/javascript" src="js/libraries/dc.js"></script>
 <script type="text/javascript" src="js/libraries/d3-tip.js"></script>
 <script type="text/javascript" src="js/stat_zg_generals.js"></script>
-<script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>
+<script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>-->
 
 <script type="text/javascript">
 
-loadGemeindeportrait(version="iframe")
+require.config({
+	urlArgs: "bust=" + (new Date()).getTime(),
+	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+	paths: {
+		'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery',
+		'iframeresizer': 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer'
+	}
+});
+
+require(['stat_zg_gemeindeportrait','jquery','iframeresizer'], function (gemeindeportrait,$,iFrameResize) {
+	gemeindeportrait.load(version="iframe");
+	
+//loadGemeindeportrait(version="iframe")
+
+$('#downloadPdf').submit(function(ev) {
+    ev.preventDefault(); // to stop the form from submitting
+    $('#downloadPdf').attr('action', 'https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam='+ev.timeStamp);  //to add random number parameter to action-url
+    this.submit(); // submit with new url
+});
 
 if (typeof uri.search(true)["gemeinde"] == "undefined") {
-	window.iFrameResizer = {
+	window.iFrameResize = {
 		messageCallback: function (messageData){
 			$('head').append('<style type="text/css">'+messageData.addCSS+'</style>');
 			for (filenr=0; filenr<messageData.addCSSfiles.length; ++filenr) {
@@ -261,6 +276,7 @@ function simulateClick(elem /* Must be the element, not d3 selection */) {
     elem.dispatchEvent(evt);
 }
 
+})
 </script>
 
 </body></html>

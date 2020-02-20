@@ -1,36 +1,37 @@
-﻿/* stat_zg_general.js (version 0.3 (2017.11.28)*/
+﻿/* stat_zg_generals.js (version 0.3 (2017.11.28)*/
 
-function loadbasics() {
+require.config({
+	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+	paths: {
+		"libs": "libraries/",
+		"urijs":"libraries/URI",
+		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
+		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
+		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
+		"exceljs": "https://cdnjs.cloudflare.com/ajax/libs/exceljs/3.8.0/exceljs"
+    },
+    shim:{
+		'crossfilter':{
+			exports:'crossfilter'
+		} 
+    }
+});
+
+define(['urijs/URI','d3','crossfilter','dc','libs/d3-tip','libs/FileSaver','exceljs','stat_zg_excelexportsimple'], function (URI,d3,crossfilter,dc,d3tip,FileSaver,ExcelJS,stat_zg_excelexportsimple) {
+
 	var stylesheets = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/statistik.css",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/datatables.css"]
 	var $head = $("head");
 	for (var i = 0; i < stylesheets.length; i++) {
 		$head.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + stylesheets[i] + "\">");
 	}
-	var basics = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/URI.min.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/d3.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/crossfilter.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/dc.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/d3-tip.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/FileSaver.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/datatables.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/exceljs.js",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_excelexportsimple.js"
-	];
-	var $head = $("head");
-	for (var i = 0; i < basics.length; i++) {
-		//$.getScript(basics[i]);
-		$head.append("<script src=\"" + basics[i] + "\"></scr" + "ipt>");
-	}
-}
+		
+	if (typeof Charts == 'undefined') { Charts = {} };
+	if (typeof Atts == 'undefined') { Atts = {} };
 
-loadbasics();
-
-if (typeof Charts == 'undefined') { Charts = {} };
-if (typeof Atts == 'undefined') { Atts = {} };
-if (typeof Datasheets == 'undefined') { Datasheets = {} };
-if (typeof uri == 'undefined') { uri= new URI(window.location.href)};
-isolatecircle=0;
+	if (typeof Datasheets == 'undefined') { Datasheets = {} };
+	if (typeof uri == 'undefined') { uri= new URI(window.location.href)};
+	isolatecircle=0;
 
 //Farben definieren
 //generiert mit https://gka.github.io/palettes/#/19|d|007ac4,00a763,ffdd5e|ffdd5e,ff8a26,ff403a|1|1
@@ -104,7 +105,32 @@ germanFormatters = d3.locale({
 
 d3.time.format = germanFormatters.timeFormat;
 
-function createcontainers(number) {
+$( document ).ready(function() {
+	setTimeout(function () {
+		if (typeof uri.search(true)["isolate"] != "undefined" & isolatecircle==0) {
+			isolateChart(uri.search(true)["isolate"]);
+			isolatecircle=isolatecircle+1
+		}
+	}, 500);
+});
+
+function isolateChart(number) {
+	$( document ).ready(function() {
+		$('body > :not(#' + Atts[number].maincontainer+')').hide();
+		$('#' + Atts[number].maincontainer ).parent().width(650).css('margin-left','20px');
+		$('#' + Atts[number].maincontainer ).parent().appendTo('body');
+		setTimeout(function () {
+			$('#dropdowncontainer' + number ).remove();
+		}, 300);
+		$('body').css('background-color','transparent');
+		//$('#d3-tip' + number ).remove();
+	});
+}
+
+return {
+      createcontainers: function (number) {
+
+//function createcontainers(number) {
 	if ( $( "#default" + number + " > div.title" ).length === 0) {
 		$("#default" + number).prepend( "<div id='title' class='title'></div>" );
 	}
@@ -120,9 +146,9 @@ function createcontainers(number) {
 	if ( $( "#default" + number + " > div.source" ).length === 0) {
 		$("#default" + number + " > div.description").after( "<div id='source' class='source'></div>" );
 	}
-}
+},
 
-function treatmetadata(number, data) {
+	treatmetadata: function(number, data) {
 	
 	Atts[number].meta = data.filter(function(el) {
 		return el["Meta"] == 1
@@ -159,21 +185,9 @@ function treatmetadata(number, data) {
 		Atts[number].datatypes = (Atts[number].typerow[0].Content).split(/,\s?/);
 	}	
 
-}
+},
 
-function isolateChart(number) {
-	$( document ).ready(function() {
-		$('body > :not(#' + Atts[number].maincontainer+')').hide();
-		$('#' + Atts[number].maincontainer ).parent().width(650).css('margin-left','20px');
-		$('#' + Atts[number].maincontainer ).parent().appendTo('body');
-		setTimeout(function () {
-			$('#dropdowncontainer' + number ).remove();
-		}, 300);
-		//$('#d3-tip' + number ).remove();
-	});
-}
-
-function wrap (text, width) {
+	wrap: function(text, width) {
   text.each(function() {
     var breakChars = ['&'],
       text = d3.select(this),
@@ -210,9 +224,9 @@ function wrap (text, width) {
 		}
     }
   });
-}
+},
 
-function copyStylesInline(destinationNode, sourceNode) {
+	copyStylesInline: function(destinationNode, sourceNode) {
 	var containerElements = ["svg","g"];
 	for (var cd = 0; cd < destinationNode.childNodes.length; cd++) {
 		var child = destinationNode.childNodes[cd];
@@ -228,7 +242,7 @@ function copyStylesInline(destinationNode, sourceNode) {
 			}
 		}
 	}
-}
+},
 
 /*function triggerDownload (imgURI, fileName) {
   var evt = new MouseEvent("click", {
@@ -243,7 +257,7 @@ function copyStylesInline(destinationNode, sourceNode) {
   a.dispatchEvent(evt);
 }*/
 
-function downloadSvg(svg, fileName, width, height) {
+	downloadSvg: function(svg, fileName, width, height) {
   var copy = svg.cloneNode(true);
   copyStylesInline(copy, svg);
   var canvas = document.createElement("canvas");
@@ -253,7 +267,6 @@ function downloadSvg(svg, fileName, width, height) {
   var ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, width*scale, height*scale);
   var data = (new XMLSerializer()).serializeToString(copy);
-  //console.log(data);
   var DOMURL = window.URL || window.webkitURL || window;
   var img = new Image();
   var svgBlob = new Blob([data], {type: "image/svg+xml;charset=utf-8"});
@@ -281,9 +294,9 @@ function downloadSvg(svg, fileName, width, height) {
     //document.removeChild(canvas);
   };
   img.src = url;
-}
+},
 
-function addDownloadButton(number) {
+	addDownloadButton: function(number) {
 	d3.select("#"+Atts[number].maincontainer+" dl").remove();
 	
 	// Set-up the export button
@@ -348,9 +361,9 @@ function addDownloadButton(number) {
 		}, 250);
 	});*/
 	
-}
+},
 
-function addDownloadButtonPngLegacy(number, patience) {
+	addDownloadButtonPngLegacy: function(number, patience) {
 	
 	var patience = (typeof patience == 'undefined') ? false : patience;
 	
@@ -378,9 +391,9 @@ function addDownloadButtonPngLegacy(number, patience) {
 		})
 		.text('Als Grafik speichern');
 		
-}
+},
 
-function addDownloadButtonPng(number, patience) {
+	addDownloadButtonPng: function(number, patience) {
 	
 	var patience = (typeof patience == 'undefined') ? false : patience;
 	
@@ -466,9 +479,9 @@ function addDownloadButtonPng(number, patience) {
 		}, 1000);
 	});
 		
-}
+},
 
-function addDownloadButtonPrintView(number) {
+	addDownloadButtonPrintView: function(number) {
 	
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
@@ -481,9 +494,9 @@ function addDownloadButtonPrintView(number) {
 			isolateChart(number);
 		})
 		.text('Druckansicht der Grafik');
-}
+},
 
-function formater(type, value) {
+	formater: function(type, value) {
 	if (type=="string" || type=="year") {
 		return value
 	} 
@@ -520,10 +533,10 @@ function formater(type, value) {
 		//return "" + germanFormatters.numberFormat(",.1f")(parseFloat(value)) + " ha";
 		return d3.format('.8f')(value) 
 	}
-}
+}, 
 
 //Function to add ExcelJS export button
-function addDataTablesButton(number, columns) {
+	addDataTablesButton: function(number, columns) {
 
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
@@ -532,13 +545,13 @@ function addDataTablesButton(number, columns) {
 		.append("a")
 		.attr('href', 'javascript:;')
 		.on('click', function(){
-			createXLSXsimple (number, columns)
+			stat_zg_excelexportsimple.createXLSXsimple (number, columns)
 		})
 		.text('Daten herunterladen');
-}
+},
 
 //function to add DataTablesButton to Graphics
-function addDataTablesButtonOriginal(number, columns) {
+	addDataTablesButtonOriginal: function(number, columns) {
 
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
@@ -557,9 +570,9 @@ function addDataTablesButtonOriginal(number, columns) {
 			}
 		})
 		.text('Daten anzeigen/herunterladen');
-}
+},
 
-function tabulate(number, columns) {
+	tabulate: function(number, columns) {
 	
 	if (typeof Atts[number].datatypes=="undefined") {
 		Atts[number].datatypes=[]
@@ -759,11 +772,6 @@ function tabulate(number, columns) {
 
 }
 
-$( document ).ready(function() {
-	setTimeout(function () {
-		if (typeof uri.search(true)["isolate"] != "undefined" & isolatecircle==0) {
-			isolateChart(uri.search(true)["isolate"]);
-			isolatecircle=isolatecircle+1
-		}
-	}, 500);
+}
+
 });

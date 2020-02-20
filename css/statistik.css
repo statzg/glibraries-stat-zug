@@ -583,6 +583,9 @@ margin-top: 10px;
 margin-bottom: 20px;
 }
 
+
+/* SLINKY */
+
 .slinky-menu {
 	margin: 0 0 1em 0;
 }
@@ -666,6 +669,10 @@ margin-bottom: 20px;
 	outline: none;
 	padding: 0;
 }
+
+
+
+
 
 .dropdown-container {
 	position: absolute;

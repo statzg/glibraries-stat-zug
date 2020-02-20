@@ -1,4 +1,23 @@
 //Attributes defining the datasheet
+require.config({
+	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+	paths: {
+		"libs": "libraries/",
+		"urijs":"libraries/URI",
+		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
+		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
+		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
+		"exceljs": "https://cdnjs.cloudflare.com/ajax/libs/exceljs/3.8.0/exceljs"
+    },
+    shim:{
+		'crossfilter':{
+			exports:'crossfilter'
+		} 
+    }
+});
+
+define(['libs/FileSaver','libs/exceljs'], function (FileSaver,ExcelJS) {
+
 filename="Datentabelle.xlsx"
 autofilters=true;
 
@@ -142,8 +161,9 @@ function createRichText(html, size, bold) {
 	return rT
 }
 
+return {
 //function that actually creates xlsx file
-function createXLSXsimple (number, columns) {
+createXLSXsimple: function(number, columns) {
 	
 	Datasheets[number]={};
 
@@ -589,3 +609,5 @@ function createXLSXsimple (number, columns) {
 	});
 	
 }
+}
+})
