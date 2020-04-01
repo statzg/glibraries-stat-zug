@@ -69,7 +69,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					});
 				}
 
-			generals.treatmetadata(number, data);
+			generals.treatmetadata(number, data, dimension, stack, group);
 
 			//Daten an Crossfilter übergeben
 			Atts[number].dataset = crossfilter(Atts[number].data),
@@ -359,10 +359,11 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				});
 			});
 
-			var columns=[dimension, stack, group]									 
+			var columns=[dimension];
+			columns = columns.concat(characteristicsStack)										 
 			generals.addDownloadButton(number);
 			generals.addDownloadButtonPng(number)
-			generals.addDataTablesButton(number, columns)
+			generals.addDataTablesButton(number, columns, wide=true)
 		}
 	}
 })

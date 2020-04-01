@@ -67,7 +67,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					});
 				}
 
-			generals.treatmetadata(number, data);
+			generals.treatmetadata(number, data, dimension, stack, group);
 
 			Atts[number].data = Atts[number].data.slice(0, 200);
 
@@ -420,13 +420,16 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				Charts[number].transitionDuration(1500);
 				$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 				});
+			
+				var columns=[dimension];
+				columns = columns.concat(characteristicsStack)
+				//Ja, ich habe das einfach von Hand reingeschrieben, solange es nur einen DualLine gibt geht das ja.
+				Atts[number].datatypeswide=["year","integer","floatha"]		
+				generals.addDownloadButton(number);
+				generals.addDownloadButtonPng(number);
+				generals.addDataTablesButton(number, columns, wide=true);
+				
 			});
-
-			var columns=[dimension, stack, group]									 
-			generals.addDownloadButton(number);
-			generals.addDownloadButtonPng(number);
-			generals.addDataTablesButton(number, columns);
-
 		}
 	}
 });

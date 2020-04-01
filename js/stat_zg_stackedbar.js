@@ -61,7 +61,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				x[group] = +x[group];
 			});
 				
-			generals.treatmetadata(number, data);
+			generals.treatmetadata(number, data, stack, dimension, group);
 				
 			Atts[number].dataset = crossfilter(Atts[number].data),
 				Atts[number].maindimension = Atts[number].dataset.dimension(function(d) {return d[stack];}),
@@ -420,12 +420,13 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				formatBarLabels();
 			});
 
-			});
-
-			var columns=[dimension, stack, group]									 
+			var columns=[stack];
+			columns = columns.concat(characteristics)			
 			generals.addDownloadButton(number);
 			generals.addDownloadButtonPng(number)
-			generals.addDataTablesButton(number, columns)	
+			generals.addDataTablesButton(number, columns, wide=true)	
+
+			});
 
 		}
 	}

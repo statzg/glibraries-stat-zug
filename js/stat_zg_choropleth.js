@@ -104,14 +104,14 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			generals.treatmetadata(number, data);
 
-			Atts[number].data = Atts[number].data.filter(function(el) {
-				return el[dimension]!= "Schweiz";
-			});
-
 			Atts[number].data.forEach(function(d) {
 				d[dimension] = d[dimension];
 				d[group] = parseFloat(d[group]);
 			});
+			
+			Atts[number].data = Atts[number].data.filter(function(el) {
+				return el[dimension]!= "Schweiz";
+			});			
 
 			if (group.indexOf(" (%)") !== -1) {
 				Atts[number].percent=true

@@ -62,20 +62,21 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			Atts[number].group=group;
 
-				if (asDate==true) {
-					data.forEach(function(x) {
-						x["Datum"] = x[dimension];
-						x[dimension] = new Date(x[dimension]);
-						x[group] = +x[group];
-					});
-				}
-				else {
-					data.forEach(function(x) {
-						x[group] = +x[group];
-					});
-				}
+			if (asDate==true) {
+				data.forEach(function(x) {
+					x["Datum"] = x[dimension];
+					x[dimension] = new Date(x[dimension]);
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, "Datum", stack, group);
+			}
+			else {
+				data.forEach(function(x) {
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, dimension, stack, group);
+			}
 
-			generals.treatmetadata(number, data);
 
 			//Daten an Crossfilter übergeben
 			Atts[number].dataset = crossfilter(Atts[number].data),
@@ -380,16 +381,24 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				Charts[number].transitionDuration(1500);
 				$("#"+Atts[number].maincontainer+" .dc-legend-item text").attr("x", 17);
 				});
+				
+				/*if (asDate==true) {
+					var columns=["Datum", stack, group]									 
+				} else {
+					var columns=[dimension, stack, group]
+				}*/
+				if (asDate==true) {
+					var columns=["Datum"];
+				} else {
+					var columns=[dimension];
+				}
+				Atts[number].meta
+				columns = columns.concat(characteristicsStack)
+				generals.addDownloadButton(number);
+				generals.addDownloadButtonPng(number)
+				generals.addDataTablesButton(number, columns, wide=true)
+				
 			});
-
-			if (asDate==true) {
-				var columns=["Datum", stack, group]									 
-			} else {
-				var columns=[dimension, stack, group]
-			}
-			generals.addDownloadButton(number);
-			generals.addDownloadButtonPng(number)
-			generals.addDataTablesButton(number, columns)
 
 		}
 	}

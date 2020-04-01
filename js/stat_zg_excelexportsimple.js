@@ -161,9 +161,61 @@ function createRichText(html, size, bold) {
 	return rT
 }
 
+function formater(type, value) {
+	if (type=="string" || type=="year") {
+		return value
+	} 
+	else if (type=="integer") {
+		return germanFormatters.numberFormat(",f")(parseInt(value))
+	}
+	else if (type=="float") {
+		return germanFormatters.numberFormat(",.1f")(parseFloat(value))
+	}
+	else if (type=="float2") {
+		return germanFormatters.numberFormat(",.2f")(parseFloat(value))
+	}
+	else if (type=="float6") {
+		return germanFormatters.numberFormat(",.6f")(parseFloat(value))
+	}
+	else if (type=="float2variable") {
+		if (parseFloat(value) % 1) {var werte=germanFormatters.numberFormat(",.2f")(parseFloat(value))}
+		else {werte=germanFormatters.numberFormat(",")(parseFloat(value))}
+		return werte
+	}
+	else if (type=="percentage") {
+		return d3.format('.1%')(value)
+	}
+	else if (type=="datemonthyear") {
+		return d3.time.format("%B %Y")(new Date(value))
+	}
+	else if (type=="dateyear") {
+		return d3.time.format("%Y")(new Date(value))
+	}
+	else if (type=="miochf") {
+		return "" + germanFormatters.numberFormat(",f")(parseInt(value)) + " Mio Franken";
+	}
+	else if (type=="chf") {
+		return "Fr. " + germanFormatters.numberFormat(",.2f")(parseInt(value)) + "";
+	}
+	else if (type=="floatha") {
+		return "" + germanFormatters.numberFormat(",.2f")(parseFloat(value)) + " ha";
+		//return d3.format('.8f')(value) 
+	}
+	else if (type=="terrajoule") {
+		return "" + germanFormatters.numberFormat(",f")(parseFloat(value)) + " TJ";
+	}
+}
+
 return {
 //function that actually creates xlsx file
-createXLSXsimple: function(number, columns) {
+createXLSXsimple: function(number, columns, wide) {
+	
+	if (wide==true) {
+		Atts[number].exportdata=Atts[number].wide
+		Atts[number].datatypes=Atts[number].datatypeswide
+	}
+	
+	console.log(Atts[number].exportdata)
 	
 	Datasheets[number]={};
 
@@ -190,12 +242,27 @@ createXLSXsimple: function(number, columns) {
 	
 	//Define column widths depending on data	
 	Datasheets[number].cellWidths=[]
+	console.log(columns)
 	for (i=0; i<columns.length; ++i) {
-		var cw=(d3.max(Atts[number].exportdata, function(d) { return getTextWidth(d[columns[i]], "10pt arial"); })/7.025)+2;
-		if (Atts[number].datatypes[i]=="miochf") {
-			cw=cw+10
-		}
+		var cw=(d3.max(Atts[number].exportdata, function(d) { 
+				wert=formater(Atts[number].datatypes[i],d[columns[i]])
+				return getTextWidth(wert, "10pt arial"); 
+			})/7.025)+2;
 		Datasheets[number].cellWidths.push(cw);
+	}
+	//Define width depending on column keys, where keys are wider than data
+	for (i=0; i<columns.length; ++i) {
+		keyarray=columns[i].split(" ");
+		keywidth=0
+		for (j=0; j<keyarray.length; ++j) {
+			if(keywidth<getTextWidth(keyarray[j], "10pt arial")) {
+				keywidth=getTextWidth(keyarray[j], "10pt arial")
+			}
+		}
+		var cw=(keywidth/7.025)+2;
+		if (Datasheets[number].cellWidths[i]<cw) {
+			Datasheets[number].cellWidths[i]=cw
+		}
 	}
 	
 	//Limit column widths with min and max
@@ -221,9 +288,12 @@ createXLSXsimple: function(number, columns) {
 	
 	//Define columns
 	var defineColumns = []
-	for (i=0; i<columns.length; ++i) {
+	for (i=0; i<columns.length; i++) {
 		defineColumns.push({header: createRichText(columns[i], 10, false), key: columns[i], width: Datasheets[number].cellWidths[i]})
 	}
+	/*for (i=columns.length; i<100; i++) {
+		defineColumns.push({header: "", key: "", width: Datasheets[number].cellWidths[i], outlineLevel: 0});
+	}*/
 	worksheet.columns = defineColumns;
 	
 	//Counter for header rows and total rows (one row is allready defined though column definition)
@@ -231,7 +301,7 @@ createXLSXsimple: function(number, columns) {
 	var totalRows=1
 	
 	//If title exist splice it in at the top
-	console.log(Atts[number].meta);
+	//console.log(Atts[number].meta);
 	var title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
 	if (title.length == 1 & title[0].Content != "") {
 		if (title[0].Content!="") {
@@ -273,6 +343,9 @@ createXLSXsimple: function(number, columns) {
 	++headerRows;
 	++totalRows;
 	
+	//console.log(Atts[number].exportdata);
+	//console.log(Atts[number].datatypes);
+	
 	//Add actual data to sheet
 	Atts[number].exportdata.forEach(function(d) {
 		var cellContent=[]
@@ -286,6 +359,8 @@ createXLSXsimple: function(number, columns) {
 					var cellCT=d[columns[i]]
 					break;
 			}
+			//Wandelt undefined und NaN in "" um.
+			if(cellCT==undefined | cellCT!==cellCT) {cellCT=''};
 			cellContent.push(cellCT)
 		}
 		worksheet.addRow(cellContent)
@@ -331,7 +406,7 @@ createXLSXsimple: function(number, columns) {
 	//Add border to data portion (including header row)
 	for (i=headerRows; i<(Atts[number].exportdata.length+headerRows+1); ++i) {
 		var row = worksheet.getRow(i);
-		row.eachCell(function(cell, colNumber) {
+		row.eachCell({ includeEmpty: true }, function(cell, colNumber) {
 			cell.border= {
 				top: {style:'thin', color: {argb:'FFD9D9D9'}},
 				left: {style:'thin', color: {argb:'FFD9D9D9'}},
@@ -349,7 +424,7 @@ createXLSXsimple: function(number, columns) {
 	//Add formating to metadata rows
 	Datasheets[number].cellHeights=[]
 	var headerHeight=0.0;
-	var maxMerge=0
+	var maxMerge=20
 	
 	//Add formating to title row
 	if (typeof titlelength != 'undefined') {
@@ -358,11 +433,12 @@ createXLSXsimple: function(number, columns) {
 		firstRow.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true};
 	
 		//Merge cells
-		var merge=0
+		var merge=8
 		while (Datasheets[number].cellWidthsSums[merge] < ((titlelength/7.025)+10)
 				& Datasheets[number].cellWidthsSums[merge] < 90) {
 			++merge
 		}
+		if (merge>20) {merge=20}
 		worksheet.mergeCells(1,1,1,merge)
 
 		firstRow.height = Math.ceil(((titlelength/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*30;
@@ -379,11 +455,12 @@ createXLSXsimple: function(number, columns) {
 		secondRow.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true};
 		
 		//Merge cells
-		var merge=0
+		var merge=8
 		while (Datasheets[number].cellWidthsSums[merge] < ((getTextWidth(subtitle[0].Content, fontSizeSubtitle+"pt arial")/7.025)+10)
 				& Datasheets[number].cellWidthsSums[merge] < 90) {
 			++merge
 		}
+		if (merge>20) {merge=20}
 		worksheet.mergeCells(subtitleRow,1,subtitleRow,merge)
 
 		secondRow.height = Math.ceil(((getTextWidth(subtitle[0].Content, fontSizeSubtitle+"pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*20;
@@ -429,11 +506,12 @@ createXLSXsimple: function(number, columns) {
 		descRow.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true};
 	
 		//Merge cells
-		var merge=0
+		var merge=8
 		while (Datasheets[number].cellWidthsSums[merge] < ((getTextWidth(description[0].Content, "10pt arial")/7.025)+10)
 				& Datasheets[number].cellWidthsSums[merge] < 90) {
 			++merge
 		}
+		if (merge>20) {merge=20}
 		worksheet.mergeCells(descriptionRow,1,descriptionRow,merge)
 
 		descRow.height = Math.ceil(((getTextWidth(description[0].Content, "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*15;
@@ -446,11 +524,12 @@ createXLSXsimple: function(number, columns) {
 		sourcRow.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true};
 	
 		//Merge cells
-		var merge=0
+		var merge=8
 		while (Datasheets[number].cellWidthsSums[merge] < ((getTextWidth("Quelle: " + source[0].Content, "10pt arial")/7.025)+10)
 				& Datasheets[number].cellWidthsSums[merge] < 90) {
 			++merge
 		}
+		if (merge>20) {merge=20}
 		worksheet.mergeCells(sourceRow,1,sourceRow,merge)
 
 		sourcRow.height = Math.ceil(((getTextWidth("Quelle: " + source[0].Content, "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*15;
@@ -462,11 +541,12 @@ createXLSXsimple: function(number, columns) {
 	filesourcRow.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true};
 
 	//Merge cells
-	var merge=0
+	var merge=8
 	while (Datasheets[number].cellWidthsSums[merge] < ((getTextWidth("Fachstelle Statistik des Kantons Zug", "10pt arial")/7.025)+10)
 			& Datasheets[number].cellWidthsSums[merge] < 90) {
 		++merge
 	}
+	if (merge>20) {merge=20}
 	worksheet.mergeCells(filesourceRow,1,filesourceRow,merge)
 
 	filesourcRow.height = Math.ceil(((getTextWidth("Fachstelle Statistik des Kantons Zug", "10pt arial")/7.025)+10)/Datasheets[number].cellWidthsSums[merge])*15;
@@ -568,6 +648,8 @@ createXLSXsimple: function(number, columns) {
 	};
 	}
 	
+	console.log(Atts[number].datatypes)
+	
 	for (i=0; i<Atts[number].datatypes.length; i++) {
 		switch(Atts[number].datatypes[i]) {
 			case "integer":
@@ -600,14 +682,18 @@ createXLSXsimple: function(number, columns) {
 			case "datemonthyear":
 				worksheet.getColumn(i+1).numFmt = 'mmm yyyy';
 				break;
+			case "terrajoule":
+				worksheet.getColumn(i+1).numFmt = '#,##0 "TJ"';
+				break;
 		}
 	}
 
-	var buff = workbook.xlsx.writeBuffer().then(function (xlsxdata) {
-		Datasheets[number].blob = new Blob([xlsxdata]/*, {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}*/);
-		saveAs(Datasheets[number].blob, filename);
-	});
-	
+	if (true) {
+		var buff = workbook.xlsx.writeBuffer().then(function (xlsxdata) {
+			Datasheets[number].blob = new Blob([xlsxdata]/*, {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}*/);
+			saveAs(Datasheets[number].blob, filename);
+		});
+	}	
 }
 }
 })

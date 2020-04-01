@@ -5,6 +5,7 @@ require.config({
 	paths: {
 		"libs": "libraries/",
 		"urijs":"libraries/URI",
+		"waitme":"libraries/waitme",
 		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
 		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
 		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
@@ -17,9 +18,10 @@ require.config({
     }
 });
 
-define(['urijs/URI','d3','crossfilter','dc','libs/d3-tip','libs/FileSaver','exceljs','stat_zg_excelexportsimple'], function (URI,d3,crossfilter,dc,d3tip,FileSaver,ExcelJS,stat_zg_excelexportsimple) {
+define(['urijs/URI','waitme/waitMe.min','d3','crossfilter','dc','libs/d3-tip','libs/FileSaver','exceljs','stat_zg_excelexportsimple'], function (URI,waitMe,d3,crossfilter,dc,d3tip,FileSaver,ExcelJS,stat_zg_excelexportsimple) {
 
 	var stylesheets = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/statistik.css",
+	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/waitme/waitMe.css",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/datatables.css"]
 	var $head = $("head");
 	for (var i = 0; i < stylesheets.length; i++) {
@@ -128,173 +130,188 @@ function isolateChart(number) {
 }
 
 return {
-      createcontainers: function (number) {
-
-//function createcontainers(number) {
-	if ( $( "#default" + number + " > div.title" ).length === 0) {
-		$("#default" + number).prepend( "<div id='title' class='title'></div>" );
-	}
-	if ( $( "#default" + number + " > div.subtitle" ).length === 0) {
-		$("#default" + number + " > div.title").after( "<div id='subtitle' class='subtitle'></div>" );
-	}
-	if ( $( "#default" + number + " > div#chart" + number ).length === 0) {
-		$("#default" + number + " > div.subtitle").after( "<div id='chart"+number+"'></div>" );
-	}
-	if ( $( "#default" + number + " > div.description" ).length === 0) {
-		$("#default" + number + " > div#chart" + number +"").after( "<div id='description' class='description'></div>" );
-	}
-	if ( $( "#default" + number + " > div.source" ).length === 0) {
-		$("#default" + number + " > div.description").after( "<div id='source' class='source'></div>" );
-	}
-},
-
-	treatmetadata: function(number, data) {
-	
-	Atts[number].meta = data.filter(function(el) {
-		return el["Meta"] == 1
-	});
-
-	Atts[number].data = data.filter(function(el) {
-		return el["Meta"] == "NA" | el["Meta"] == undefined
-	});
-	
-	Atts[number].exportdata = Atts[number].data;
-
-	Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
-	if (Atts[number].title.length == 1) {
-		$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
-	}
-
-	Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
-	if (Atts[number].subtitle.length == 1) {
-		$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
-	}
-
-	Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
-	if (Atts[number].description.length == 1) {
-		$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
-	}
-
-	Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
-	if (Atts[number].source.length == 1) {
-		$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
-	}
-	
-	Atts[number].typerow = Atts[number].meta.filter(function( el ) { return el.Type == "datatypes";});
-	if (Atts[number].typerow.length == 1) {
-		Atts[number].datatypes = (Atts[number].typerow[0].Content).split(/,\s?/);
-	}	
-
-},
-
-	wrap: function(text, width) {
-  text.each(function() {
-    var breakChars = ['&'],
-      text = d3.select(this),
-      textContent = text.text(),
-      spanContent;
-	
-    breakChars.forEach(function(char) {
-      // Add a space after each break char for the function to use to determine line breaks
-      textContent = textContent.replace(char, char + ' ');
-    });
-
-    var words = textContent.split(/\s+/).reverse(),
-		word,
-		line = [],
-		lineNumber = 0,
-		lineHeight = 1.2, // ems
-		x = text.attr('x'),
-		y = text.attr('y'),
-		dy = parseFloat(text.attr('dy') || 0),
-		tspan = text.text(null).append('tspan').attr('x', x).attr('y', y).attr('dy', dy + 'em');
-	while (word = words.pop()) {
-		line.push(word);
-		tspan.text(line.join(' '));
-		if (tspan.node().getComputedTextLength() > width) {
-			line.pop();
-			spanContent = line.join(' ');
-			breakChars.forEach(function(char) {
-				// Remove spaces trailing breakChars that were added above
-				spanContent = spanContent.replace(char + ' ', char);
-			});
-			tspan.text(spanContent);
-			line = [word];
-			tspan = text.append('tspan').attr('x', x).attr('y', y).attr('dy', ++lineNumber * lineHeight + dy + 'em').text(word);
+	createcontainers: function (number) {
+	//function createcontainers(number) {
+		if ( $( "#default" + number + " > div.title" ).length === 0) {
+			$("#default" + number).prepend( "<div id='title' class='title'></div>" );
 		}
-    }
-  });
-},
-
-	copyStylesInline: function(destinationNode, sourceNode) {
-	var containerElements = ["svg","g"];
-	for (var cd = 0; cd < destinationNode.childNodes.length; cd++) {
-		var child = destinationNode.childNodes[cd];
-		if (containerElements.indexOf(child.tagName) != -1) {
-			copyStylesInline(child, sourceNode.childNodes[cd]);
-			continue;
+		if ( $( "#default" + number + " > div.subtitle" ).length === 0) {
+			$("#default" + number + " > div.title").after( "<div id='subtitle' class='subtitle'></div>" );
 		}
-		var style = sourceNode.childNodes[cd].currentStyle || window.getComputedStyle(sourceNode.childNodes[cd]);
-		if (style == "undefined" || style == null) continue;
-		for (var st = 0; st < style.length; st++){
-			if (!((style[st]=="height" | style[st]=="width") & style.getPropertyValue(style[st])== "auto")) {
-				child.style.setProperty(style[st], style.getPropertyValue(style[st]));
+		if ( $( "#default" + number + " > div#chart" + number ).length === 0) {
+			$("#default" + number + " > div.subtitle").after( "<div id='chart"+number+"'></div>" );
+		}
+		if ( $( "#default" + number + " > div.description" ).length === 0) {
+			$("#default" + number + " > div#chart" + number +"").after( "<div id='description' class='description'></div>" );
+		}
+		if ( $( "#default" + number + " > div.source" ).length === 0) {
+			$("#default" + number + " > div.description").after( "<div id='source' class='source'></div>" );
+		}
+	},
+
+	treatmetadata: function(number, data, vertical, horizontal, values) {
+	
+		Atts[number].meta = data.filter(function(el) {
+			return el["Meta"] == 1
+		});
+
+		Atts[number].data = data.filter(function(el) {
+			return el["Meta"] == "NA" | el["Meta"] == undefined
+		});
+		
+		Atts[number].exportdata = Atts[number].data;
+		
+		//console.log(Atts[number].exportdata);
+
+		Atts[number].title = Atts[number].meta.filter(function( el ) { return el.Type == "title";});
+		if (Atts[number].title.length == 1) {
+			$("#"+Atts[number].maincontainer+" #title").html(Atts[number].title[0].Content);
+		}
+
+		Atts[number].subtitle = Atts[number].meta.filter(function( el ) { return el.Type == "subtitle";});
+		if (Atts[number].subtitle.length == 1) {
+			$("#"+Atts[number].maincontainer+" #subtitle").html(Atts[number].subtitle[0].Content);
+		}
+
+		Atts[number].description = Atts[number].meta.filter(function( el ) { return el.Type == "description";});
+		if (Atts[number].description.length == 1) {
+			$("#"+Atts[number].maincontainer+" #description").html(Atts[number].description[0].Content);
+		}
+
+		Atts[number].source = Atts[number].meta.filter(function( el ) { return el.Type == "source";});
+		if (Atts[number].source.length == 1) {
+			$("#"+Atts[number].maincontainer+" #source").html("Quelle: "+Atts[number].source[0].Content);
+		}
+		
+		Atts[number].typerow = Atts[number].meta.filter(function( el ) { return el.Type == "datatypes";});
+		if (Atts[number].typerow.length == 1) {
+			Atts[number].datatypes = (Atts[number].typerow[0].Content).split(/,\s?/);
+		}
+		//long to wide for threedimensional charts
+		if(horizontal!=undefined & vertical!=undefined & values!=undefined ) {
+			Atts[number].wide = d3.nest()
+				.key(function(d) { return d[vertical] }) // sort by key
+				.rollup(function(d) { 
+					return d.reduce(function(prev, curr) {
+						prev[vertical] = curr[vertical];
+						prev[curr[horizontal]] = curr[values];
+						return prev;
+					}, {});
+				})
+				.entries(Atts[number].data) // tell it what data to process
+				.map(function(d) { // pull out only the values
+					return d.values;
+				});
+			
+			verticalIndex=Object.keys(Atts[number].data[0]).indexOf(vertical)
+			valuesIndex=Object.keys(Atts[number].data[0]).indexOf(values)
+			
+			Atts[number].datatypeswide = [Atts[number].datatypes[verticalIndex]]
+			for(i=1;i<Object.keys(Atts[number].wide[0]).length;i++) {
+				if(Object.keys(Atts[number].wide[0])[i]!="Minus") {
+					//console.log(Object.keys(Atts[number].wide[0]));
+					Atts[number].datatypeswide.push(Atts[number].datatypes[valuesIndex])
+				}
 			}
 		}
-	}
-},
+		//console.log(Atts[number].wide);
+	},
 
-/*function triggerDownload (imgURI, fileName) {
-  var evt = new MouseEvent("click", {
-    view: window,
-    bubbles: false,
-    cancelable: true
-  });
-  var a = document.createElement("a");
-  a.setAttribute("download", fileName);
-  a.setAttribute("href", imgURI);
-  a.setAttribute("target", '_blank');
-  a.dispatchEvent(evt);
-}*/
+	wrap: function(text, width) {
+		text.each(function() {
+			var breakChars = ['&'],
+			  text = d3.select(this),
+			  textContent = text.text(),
+			  spanContent;
+			
+			breakChars.forEach(function(char) {
+			  // Add a space after each break char for the function to use to determine line breaks
+			  textContent = textContent.replace(char, char + ' ');
+			});
+
+			var words = textContent.split(/\s+/).reverse(),
+				word,
+				line = [],
+				lineNumber = 0,
+				lineHeight = 1.2, // ems
+				x = text.attr('x'),
+				y = text.attr('y'),
+				dy = parseFloat(text.attr('dy') || 0),
+				tspan = text.text(null).append('tspan').attr('x', x).attr('y', y).attr('dy', dy + 'em');
+			while (word = words.pop()) {
+				line.push(word);
+				tspan.text(line.join(' '));
+				if (tspan.node().getComputedTextLength() > width) {
+					line.pop();
+					spanContent = line.join(' ');
+					breakChars.forEach(function(char) {
+						// Remove spaces trailing breakChars that were added above
+						spanContent = spanContent.replace(char + ' ', char);
+					});
+					tspan.text(spanContent);
+					line = [word];
+					tspan = text.append('tspan').attr('x', x).attr('y', y).attr('dy', ++lineNumber * lineHeight + dy + 'em').text(word);
+				}
+			}
+		});
+	},
+
+	copyStylesInline: function(destinationNode, sourceNode) {
+		var containerElements = ["svg","g"];
+		for (var cd = 0; cd < destinationNode.childNodes.length; cd++) {
+			var child = destinationNode.childNodes[cd];
+			if (containerElements.indexOf(child.tagName) != -1) {
+				copyStylesInline(child, sourceNode.childNodes[cd]);
+				continue;
+			}
+			var style = sourceNode.childNodes[cd].currentStyle || window.getComputedStyle(sourceNode.childNodes[cd]);
+			if (style == "undefined" || style == null) continue;
+			for (var st = 0; st < style.length; st++){
+				if (!((style[st]=="height" | style[st]=="width") & style.getPropertyValue(style[st])== "auto")) {
+					child.style.setProperty(style[st], style.getPropertyValue(style[st]));
+				}
+			}
+		}
+	},
 
 	downloadSvg: function(svg, fileName, width, height) {
-  var copy = svg.cloneNode(true);
-  copyStylesInline(copy, svg);
-  var canvas = document.createElement("canvas");
-  var scale = 8
-  canvas.width = width*scale;
-  canvas.height = height*scale;
-  var ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, width*scale, height*scale);
-  var data = (new XMLSerializer()).serializeToString(copy);
-  var DOMURL = window.URL || window.webkitURL || window;
-  var img = new Image();
-  var svgBlob = new Blob([data], {type: "image/svg+xml;charset=utf-8"});
-  var url = DOMURL.createObjectURL(svgBlob);
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0, width*scale, height*scale);
-    DOMURL.revokeObjectURL(url);
-    if (typeof navigator !== "undefined" && navigator.msSaveOrOpenBlob)
-    {
-        try {var blob = canvas.msToBlob();         
-        navigator.msSaveOrOpenBlob(blob, fileName);}
-		catch(err) {alert("Der Grafik-Export funktioniert in Internet Explorer durch Rechtsklick -> Bild speichern unter");} 
-    } 
-    else {
-        //Original-Download-Funktion
-		//var imgURI = canvas
-        //    .toDataURL("image/png")
-        //    .replace("image/png", "image/octet-stream");
-        //triggerDownload(imgURI, fileName);
-		canvas.toBlob( function(blob) {
-			var filesize = Math.round( blob.length/1024 ) + ' KB';
-			saveAs( blob, 'grafik.png' );
-		});
-    }
-    //document.removeChild(canvas);
-  };
-  img.src = url;
-},
+		var copy = svg.cloneNode(true);
+		copyStylesInline(copy, svg);
+		var canvas = document.createElement("canvas");
+		var scale = 8
+		canvas.width = width*scale;
+		canvas.height = height*scale;
+		var ctx = canvas.getContext("2d");
+		ctx.clearRect(0, 0, width*scale, height*scale);
+		var data = (new XMLSerializer()).serializeToString(copy);
+		var DOMURL = window.URL || window.webkitURL || window;
+		var img = new Image();
+		var svgBlob = new Blob([data], {type: "image/svg+xml;charset=utf-8"});
+		var url = DOMURL.createObjectURL(svgBlob);
+		img.onload = function () {
+			ctx.drawImage(img, 0, 0, width*scale, height*scale);
+			DOMURL.revokeObjectURL(url);
+			if (typeof navigator !== "undefined" && navigator.msSaveOrOpenBlob)
+			{
+				try {var blob = canvas.msToBlob();         
+				navigator.msSaveOrOpenBlob(blob, fileName);}
+				catch(err) {alert("Der Grafik-Export funktioniert in Internet Explorer durch Rechtsklick -> Bild speichern unter");} 
+			} 
+			else {
+				//Original-Download-Funktion
+				//var imgURI = canvas
+				//    .toDataURL("image/png")
+				//    .replace("image/png", "image/octet-stream");
+				//triggerDownload(imgURI, fileName);
+				canvas.toBlob( function(blob) {
+					var filesize = Math.round( blob.length/1024 ) + ' KB';
+					saveAs( blob, 'grafik.png' );
+				});
+			}
+			//document.removeChild(canvas);
+		};
+		img.src = url;
+	},
 
 	addDownloadButton: function(number) {
 	d3.select("#"+Atts[number].maincontainer+" dl").remove();
@@ -397,85 +414,78 @@ return {
 	
 	var patience = (typeof patience == 'undefined') ? false : patience;
 	
+	ConversionDelay=3;
+	if (patience==true){
+		ConversionDelay=5;
+	}
+	
+	function downloadPNG(urlToSend) {
+		urlToCall='https://www.resmarti.ch/convertapi/converturltopng.php?link='+encodeURIComponent(urlToSend)+'&height='+Atts[number].Imageheight+'&delay='+ConversionDelay
+		var req = new XMLHttpRequest();
+		req.open("GET", urlToCall, true);
+		req.responseType = "blob";
+		req.onloadstart = function (event) {
+			$('#'+Atts[number].maincontainer).waitMe({
+				effect : 'bounce',
+				text : '',
+				bg : "rgba(255,255,255,0.7)",
+				color : "#000",
+				maxSize : '',
+				waitTime : -1,
+				textPos : 'vertical',
+				fontSize : '',
+				source : '',
+				onClose : function() {}
+			});
+		};
+		req.onloadend = function (event) {
+			$('#'+Atts[number].maincontainer).waitMe("hide");
+		};
+		req.onabort = function (event) {
+			$('#'+Atts[number].maincontainer).waitMe("hide");
+		};
+		req.onerror = function (event) {
+			$('#'+Atts[number].maincontainer).waitMe("hide");
+		};
+		req.onload = function (event) {
+			console.log("END");
+			var blob = req.response;
+			var fileName = "Grafik.png"
+			var link=document.createElement('a');
+			link.href=window.URL.createObjectURL(blob);
+			link.download=fileName;
+			link.click();
+		};
+		req.send();
+	}
+	
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
 		.append("li")
 		.attr('id', 'download-png');
 		
 
-	downloadurl='https://www.zg.ch'+uri.path().replace('/web','')+'?isolate='+number
-	ConversionDelay=3;
-	if (patience==true){
-		ConversionDelay=5;
-	}
+	downloadurl=uri.path().replace('/web','')+'?isolate='+number
+	
 	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png")
 		.append("a")
 		.attr('href', 'javascript:;')
 		.attr('rel', 'nofollow')
 		.on('click', function(){
 			uri.addSearch('isolate',number);
-			downloadurl='https://www.zg.ch'+uri.path().replace('/web','')+uri.search();
+			downloadurl=uri.path().replace('/web','')+uri.search();
 			$('#URL'+number).val(downloadurl);
-			if (patience==true) {
-				alert("Haben Sie etwas Geduld, die Produktion der Grafik dauert eine Weile.");
-			}
-			document.getElementById('downloadform'+number).submit(); 
+			downloadPNG(downloadurl);
 			uri.removeSearch('isolate');
 			return false;	
 		})
 		.text('Als Grafik speichern');
 		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png")
-		.append("form")
-		.attr('action','https://v2.convertapi.com/convert/web/to/png?Secret=IApvnZBoUyuZD92G&download=attachment')
-		.attr('method','post')
-		.attr('enctype','multipart/form-data')
-		.attr('id','downloadform'+number);
-		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
-		.append("input")
-		.attr('type','hidden')
-		.attr('name','Url')
-		.attr('id','URL'+number)
-		.attr('value',downloadurl);
-		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
-		.append("input")
-		.attr('type','hidden')
-		.attr('name','ConversionDelay')
-		.attr('value',ConversionDelay);
-		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
-		.append("input")
-		.attr('type','hidden')
-		.attr('name','FileName')
-		.attr('value','grafik');
-	
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
-		.append("input")
-		.attr('type','hidden')
-		.attr('name','Zoom')
-		.attr('value','4');
-		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
-		.append("input")
-		.attr('type','hidden')
-		.attr('name','ImageWidth')
-		.attr('value','690');
-		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-png form")
-		.append("input")
-		.attr('type','hidden')
-		.attr('name','ImageHeight')
-		.attr('id','ImageHeight'+number)
-		.attr('value','650');
-		
 	$( document ).ready(function() {
 		setTimeout(function () {
-			height=Math.round(document.getElementById(Atts[number].maincontainer).parentNode.getBoundingClientRect().height)+10;
+			Atts[number].Imageheight=Math.round(document.getElementById(Atts[number].maincontainer).parentNode.getBoundingClientRect().height)+10;
 			if ($('#' + Atts[number].maincontainer ).parent().children('h2').length){
-				height=height+30;
+				Atts[number].Imageheight=Atts[number].Imageheight+30;
 			}
-			$('#ImageHeight'+number).val(height);
 		}, 1000);
 	});
 		
@@ -536,19 +546,19 @@ return {
 }, 
 
 //Function to add ExcelJS export button
-	addDataTablesButton: function(number, columns) {
-
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
-		.append("li")
-		.attr('id', 'download-tables');		
-	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-tables")
-		.append("a")
-		.attr('href', 'javascript:;')
-		.on('click', function(){
-			stat_zg_excelexportsimple.createXLSXsimple (number, columns)
-		})
-		.text('Daten herunterladen');
-},
+	addDataTablesButton: function(number, columns, wide) {
+		if (wide==undefined) {wide=false}
+		d3.select('#'+Atts[number].maincontainer+" dl dd ul")
+			.append("li")
+			.attr('id', 'download-tables');		
+		d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-tables")
+			.append("a")
+			.attr('href', 'javascript:;')
+			.on('click', function(){
+				stat_zg_excelexportsimple.createXLSXsimple (number, columns, wide)
+			})
+			.text('Daten herunterladen');
+	},
 
 //function to add DataTablesButton to Graphics
 	addDataTablesButtonOriginal: function(number, columns) {

@@ -28,6 +28,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 	return {
 		load: function(version) {
 			var version = (typeof version == 'undefined') ? "online" : version;
+			
+			URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"
 
 			//Objekte für Grafik- und Tabelle-Export initialisieren.
 			Atts[2]={};
@@ -250,6 +252,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 					x["Ausländer"] = +x["Ausländer"];
 				});
 				
+				Atts[3].exportdata=Atts[3].data
+				
 				meta9 = data9.filter(function(el) {
 					return el["Meta"] == 1
 				});
@@ -268,6 +272,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 				Atts[4].data.forEach(function(x) {
 					x["Anzahl"] = +x["Anzahl"];
 				});
+				
+				Atts[4].exportdata=Atts[4].data
 				
 				year9 = meta9.filter(function( el ) { return el.Type == "year";});
 				if (year9.length == 1) {
@@ -293,6 +299,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 					x["Betriebe"] = +x["Betriebe"];
 					x["Beschäftigte"] = +x["Beschäftigte"];
 				});
+					
+				Atts[5].exportdata=Atts[5].data
 				
 				year10 = meta10.filter(function( el ) { return el.Type == "year";});
 				if (year10.length == 1) {
@@ -318,6 +326,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 					x["Fläche"] = +x["Fläche"];
 				});
 				
+				Atts[6].exportdata=Atts[6].data
+				
 				year11 = meta11.filter(function( el ) { return el.Type == "year";});
 				if (year11.length == 1) {
 					$(".bauzonenyear").html("("+year11[0].Content+")");
@@ -342,6 +352,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 					x["Anzahl"] = +x["Anzahl"];
 				});
 				
+				Atts[7].exportdata=Atts[7].data
+				
 				year12 = meta12.filter(function( el ) { return el.Type == "year";});
 				if (year12.length == 1) {
 					$(".geschlechtsstrukturyear").html("("+year12[0].Content+")");
@@ -365,6 +377,8 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 				Atts[8].data.forEach(function(x) {
 					x["Anzahl"] = +x["Anzahl"];
 				});
+				
+				Atts[8].exportdata=Atts[8].data
 				
 				year13 = meta13.filter(function( el ) { return el.Type == "year";});
 				if (year13.length == 1) {
@@ -869,7 +883,7 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 										showall();
 										$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ filter.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png")
 										$('h1.documentFirstHeading').html("Gemeindeporträt "+filter);
-										$('#URLdownload').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+										URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase();
 										gemeinde=(filter.charAt(0).toLowerCase() + filter.slice(1)).replace("ä", "ae").replace("ö", "oe").replace("ü", "ue");
 										uri.setSearch("gemeinde", gemeinde)
 										window.history.pushState("", "", uri.href());
@@ -878,7 +892,7 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 										showall();
 										$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/"+ filter.toLowerCase().replace("ü", "ue").replace("ä", "ae")+ ".png")
 										$('h1.maintitle').html("Gemeindeporträt "+filter);
-										$('#URLdownload').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase()));
+										URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html?selection="+filter.toLowerCase();
 									}
 									else if (version=="print") {
 										$('#mainflag').attr("src", "logos/gross/"+ filter.replace("ü", "ü").replace("ä", "ä")+ ".png")
@@ -897,7 +911,7 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 									showall();
 									$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 									$('h1.documentFirstHeading').html("Kantonsporträt");
-									$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+									URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html";
 									uri.setSearch("gemeinde", "kanton")
 									window.history.pushState("", "", uri.href());
 									gemeinde="kanton";
@@ -906,7 +920,7 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 									showall();
 									$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 									$('h1.maintitle').html("Kantonsportrait");
-									$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+									URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html";
 								}
 								else if (version=="print") {
 									$('#mainflag').attr("src", "")
@@ -929,13 +943,13 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 								showall();
 								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 								$('h1.documentFirstHeading').html("Kantonsporträt");
-								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+								URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html";
 							}
 							else if (version=="iframe") {
 								showall();
 								$('#flag').attr("src", "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/kanton.png")
 								$('h1.maintitle').html("Kantonsportrait");
-								$('input[name="Url"]').val(encodeURI("https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html"));
+								URLdownload = "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html";
 							}
 							else if (version=="print") {
 								$('#mainflag').attr("src", "")
@@ -2039,6 +2053,51 @@ define(['stat_zg_generals','dc','libs/d3-tip','d3queue'], function(generals,dc,d
 				generals.addDownloadButtonPng(8);
 				generals.addDataTablesButton(8, columns);
 			}
+			
+			function downloadPDF(urlToSend) {
+				urlToCall='https://www.resmarti.ch/convertapi/converturltopdf.php?link='+encodeURIComponent(urlToSend)
+				var req = new XMLHttpRequest();
+				req.open("GET", urlToCall, true);
+				req.responseType = "blob";
+				req.onloadstart = function (event) {
+					$('#default').waitMe({
+						effect : 'bounce',
+						text : '',
+						bg : "rgba(255,255,255,0.7)",
+						color : "#000",
+						maxSize : '',
+						waitTime : -1,
+						textPos : 'vertical',
+						fontSize : '',
+						source : '',
+						onClose : function() {}
+					});
+				};
+				req.onloadend = function (event) {
+					$('#default').waitMe("hide");
+				};
+				req.onabort = function (event) {
+					$('#default').waitMe("hide");
+				};
+				req.onerror = function (event) {
+					$('#default').waitMe("hide");
+				};
+				req.onload = function (event) {
+					var blob = req.response;
+					var fileName = "Portrait.pdf"
+					var link=document.createElement('a');
+					link.href=window.URL.createObjectURL(blob);
+					link.download=fileName;
+					link.click();
+				};
+				req.send();
+			}
+			
+			$(function(){
+				$("#downloadPDF").click(function(){
+					downloadPDF(URLdownload)
+				});
+			});
 		}
 	}
 });

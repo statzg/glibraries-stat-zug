@@ -166,14 +166,8 @@
 
 </div>
 
-<form style="float: left;" id="downloadPdf" action="https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam=1" method="post" enctype="multipart/form-data">
-	<input type="hidden" id="URLdownload" name="Url" value="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportraits.html" />
-	<input type="hidden" name="FileName" value="Portrait" />
-	<input type="hidden" name="ConversionDelay" value="5" />
-	<input type="hidden" name="ViewportWidth" value="1200" />
-	<input type="hidden" name="ViewportHeight" value="1887" />
-	<input type="hidden" name="PageSize" value="a4" />
-	<input type="submit" value="Portrait als PDF ausgeben"/>
+<form>
+	<input type="button" id="downloadPDF" value="Portrait als PDF ausgeben"/>
 </form>
 
 <p style="float: right;"><a href="https://www.zg.ch/behoerden/gesundheitsdirektion/statistikfachstelle" target="_blank">Weitere Zahlen</a></p>
@@ -181,14 +175,6 @@
 <script type="text/javascript">
 
 </script>
-
-<!--<script type="text/javascript" src="js/libraries/queue.js"></script>
-<script type="text/javascript" src="js/libraries/d3.js"></script>
-<script type="text/javascript" src="js/libraries/crossfilter.js"></script>
-<script type="text/javascript" src="js/libraries/dc.js"></script>
-<script type="text/javascript" src="js/libraries/d3-tip.js"></script>
-<script type="text/javascript" src="js/stat_zg_generals.js"></script>
-<script type="text/javascript" src="js/stat_zg_gemeindeportrait.js"></script>-->
 
 <script type="text/javascript">
 
@@ -203,14 +189,6 @@ require.config({
 
 require(['stat_zg_gemeindeportrait','jquery','iframeresizer'], function (gemeindeportrait,$,iFrameResize) {
 	gemeindeportrait.load(version="iframe");
-	
-//loadGemeindeportrait(version="iframe")
-
-$('#downloadPdf').submit(function(ev) {
-    ev.preventDefault(); // to stop the form from submitting
-    $('#downloadPdf').attr('action', 'https://v2.convertapi.com/web/to/pdf?Secret=IApvnZBoUyuZD92G&download=attachment&ignoreparam='+ev.timeStamp);  //to add random number parameter to action-url
-    this.submit(); // submit with new url
-});
 
 if (typeof uri.search(true)["gemeinde"] == "undefined") {
 	window.iFrameResize = {
