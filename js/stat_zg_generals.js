@@ -21,8 +21,9 @@ require.config({
 define(['urijs/URI','waitme/waitMe.min','d3','crossfilter','dc','libs/d3-tip','libs/FileSaver','exceljs','stat_zg_excelexportsimple'], function (URI,waitMe,d3,crossfilter,dc,d3tip,FileSaver,ExcelJS,stat_zg_excelexportsimple) {
 
 	var stylesheets = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/statistik.css",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/waitme/waitMe.css",
-	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/datatables.css"]
+	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/waitme/waitMe.css"
+	//"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/datatables.css"
+	]
 	var $head = $("head");
 	for (var i = 0; i < stylesheets.length; i++) {
 		$head.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + stylesheets[i] + "\">");
@@ -489,6 +490,18 @@ return {
 		}, 1000);
 	});
 		
+},
+
+	addDownloadButtonSourceData: function(number) {
+	
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul")
+		.append("li")
+		.attr('id', 'download-source');
+		
+	d3.select('#'+Atts[number].maincontainer+" dl dd ul li#download-source")
+		.append("a")
+		.attr('href', Atts[number].csv_path)
+		.text('Rohdaten der Grafik');
 },
 
 	addDownloadButtonPrintView: function(number) {
