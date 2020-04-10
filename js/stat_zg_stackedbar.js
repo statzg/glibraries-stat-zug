@@ -24,8 +24,8 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
 			var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
 			//var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
-			//var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
-			//var dateUnit = (typeof args.dateUnit == 'undefined') ? true : args.dateUnit;
+			var asDate = (typeof args.asDate == 'undefined') ? false : args.asDate;
+			var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
 			//var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
 			//var last = (typeof args.last == 'undefined') ? "" : args.last;
 			//var partei = (typeof args.partei == 'undefined') ? false : args.partei;
@@ -56,12 +56,29 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[1];};
 			if (group == undefined | group=="") {group = Object.keys(dataValues)[2];};
 			if (stack == undefined | stack=="") {stack = Object.keys(dataValues)[0];};
-				
-			data.forEach(function(x) {
-				x[group] = +x[group];
-			});
-				
-			generals.treatmetadata(number, data, stack, dimension, group);
+			
+			if (asDate==true & dateUnit=="date") {
+				format=d3.time.format("%d.%m.%Y")
+				data.forEach(function(x) {
+					x["Datum"] = x[stack];
+					x[stack] = format.parse(x[stack]);
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, "Datum", dimension, group);
+			} else if (asDate==true) {
+								data.forEach(function(x) {
+					x["Datum"] = x[stack];
+					x[stack] = new Date(x[stack]);
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, "Datum", dimension, group);
+			}
+			else {
+				data.forEach(function(x) {
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, stack, dimension, group);
+			}
 				
 			Atts[number].dataset = crossfilter(Atts[number].data),
 				Atts[number].maindimension = Atts[number].dataset.dimension(function(d) {return d[stack];}),
@@ -115,8 +132,6 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Charts[number]
 				.width(totalWidth)
 				.height(totalHeight)
-				.x(d3.scale.ordinal())
-				.xUnits(dc.units.ordinal)
 				.margins({left: 20, top: 10, right: 10, bottom: 40})
 				.brushOn(false)
 				.barPadding(0.2)
@@ -134,6 +149,41 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				.transitionDuration(0)
 				.yAxisPadding("5%")
 				;
+			
+			if (asDate==true) {
+				if (dateUnit="date") {
+					Charts[number]
+						.x(d3.time.scale())
+						.xUnits(d3.time.days);
+						function calc_domain(chart) {
+							var min = d3.min(data, function(d) {return d[stack]}),
+								max = d3.max(data, function(d) {return d[stack]});
+								max = d3.time.day.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+					Charts[number].on('preRender', calc_domain);
+					Charts[number].on('preRedraw', calc_domain);
+					Charts[number].xAxis().tickFormat(d3.time.format("%d.%m.%Y"));
+				} else {
+					Charts[number]
+						.x(d3.time.scale())
+						.round(d3.time.month.round)
+						.xUnits(d3.time.months);
+						function calc_domain(chart) {
+							var min = d3.min(data, function(d) {return d[stack]}),
+								max = d3.max(data, function(d) {return d[stack]});
+								max = d3.time.month.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+						Charts[number].on('preRender', calc_domain);
+						Charts[number].on('preRedraw', calc_domain);
+				}
+			}
+			else {
+			Charts[number]
+				.x(d3.scale.ordinal().domain(characteristics))
+				.xUnits(dc.units.ordinal);
+			}
 				
 			if (showBarLabels!="never") {
 				Charts[number].renderLabel(true);
@@ -347,21 +397,37 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 							last_tip = d.key;
 						}
 						
+						if (asDate==true){
+							var dateNameFormat = d3.time.format("%d %B %Y");
+							var monthNameFormat = d3.time.format("%B %Y");
+							var yearNameFormat = d3.time.format("%Y");
+							if (dateUnit=="year") {
+								label=yearNameFormat(d.data.key)
+							}
+							if (dateUnit=="date") {
+								label=dateNameFormat(d.data.key)
+							}
+							else {
+								label=monthNameFormat(d.data.key)
+							}
+						}
+						else {label=d.data.key}
+						
 						if (asPercent==true) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]*100)+'%'}
 						else if (d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]] % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 						else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 						
 						if (showTotal==true & showAnteil==true) {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span><br/><span>Anzahl: " + wert +  "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span><br/><span>Anzahl: " + wert +  "</span>";
 						}
 						else if (showTotal==true) {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>"+group+": " + wert +  "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>"+group+": " + wert +  "</span>";
 						}
 						else if (showAnteil==true) {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span><br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span>";
 						}
 						else {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"";
 						};
 						$("#d3-tip"+number).html(tiptext)
 						$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");

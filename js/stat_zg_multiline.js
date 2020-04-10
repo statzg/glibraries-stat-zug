@@ -34,9 +34,14 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 			var removeZero = (typeof args.removeZero == 'undefined') ? false : args.removeZero;
 			var asPercent = (typeof args.asPercent == 'undefined') ? false : args.asPercent;
+			var groupFilter = (typeof args.groupFilter == 'undefined') ? [] : args.groupFilter;
+			var downloadSource = (typeof args.downloadSource == 'undefined') ? false : args.downloadSource;
+			var showLastValue = (typeof args.showLastValue == 'undefined') ? false : args.showLastValue;
 
 			//Attributeobjekt initialisieren
 			Atts[number]={};
+			
+			Atts[number].csv_path=csv_path;
 
 			Atts[number].maincontainer="default"+number
 			Atts[number].chartcontainer="chart"+number
@@ -62,8 +67,16 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			Atts[number].group=group;
 
-			if (asDate==true) {
+			if (asDate==true & dateUnit=="date") {
+				format=d3.time.format("%d.%m.%Y")
 				data.forEach(function(x) {
+					x["Datum"] = x[dimension];
+					x[dimension] = format.parse(x[dimension]);
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, "Datum", stack, group);
+			} else if (asDate==true) {
+								data.forEach(function(x) {
 					x["Datum"] = x[dimension];
 					x[dimension] = new Date(x[dimension]);
 					x[group] = +x[group];
@@ -76,7 +89,6 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				});
 				generals.treatmetadata(number, data, dimension, stack, group);
 			}
-
 
 			//Daten an Crossfilter übergeben
 			Atts[number].dataset = crossfilter(Atts[number].data),
@@ -107,6 +119,15 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Atts[number].secondgroup={};
 			for (var i = 0; i < characteristicsStack.length; i++) {
 				Atts[number].secondgroup[characteristicsStack[i]]=createPropertyGroup(i)
+			}
+			
+			FilterDimension = Atts[number].dataset.dimension(function(d) {return d[stack];}),
+			FilterGroup = FilterDimension.group()
+			
+			if (typeof groupFilter != 'undefined' & groupFilter.length!=0) {	
+				FilterDimension.filter(function(d){
+					return groupFilter.indexOf(d) > -1;
+				});
 			}
 
 			Charts[number+100]=[]
@@ -144,18 +165,33 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				
 				
 			if (asDate==true) {
-			Charts[number]
-				.x(d3.time.scale())
-				.round(d3.time.month.round)
-				.xUnits(d3.time.months);
-				function calc_domain(chart) {
-					var min = d3.min(Charts[number+100][0].group().all(), function(kv) { return kv.key; }),
-						max = d3.max(Charts[number+100][0].group().all(), function(kv) { return kv.key; });
-						max = d3.time.month.offset(max, 1);
-					Charts[number].x(d3.time.scale().domain([min, max]));
+				if (dateUnit="date") {
+					Charts[number]
+						.x(d3.time.scale())
+						.xUnits(d3.time.days);
+						function calc_domain(chart) {
+							var min = d3.min(Charts[number+100][0].group().all(), function(kv) { return kv.key; }),
+								max = d3.max(Charts[number+100][0].group().all(), function(kv) { return kv.key; });
+								max = d3.time.day.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+					Charts[number].on('preRender', calc_domain);
+					Charts[number].on('preRedraw', calc_domain);
+					Charts[number].xAxis().tickFormat(d3.time.format("%d.%m.%Y"));
+				} else {
+					Charts[number]
+						.x(d3.time.scale())
+						.round(d3.time.month.round)
+						.xUnits(d3.time.months);
+						function calc_domain(chart) {
+							var min = d3.min(Charts[number+100][0].group().all(), function(kv) { return kv.key; }),
+								max = d3.max(Charts[number+100][0].group().all(), function(kv) { return kv.key; });
+								max = d3.time.month.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+						Charts[number].on('preRender', calc_domain);
+						Charts[number].on('preRedraw', calc_domain);
 				}
-				Charts[number].on('preRender', calc_domain);
-				Charts[number].on('preRedraw', calc_domain);
 			}
 			else {
 			Charts[number]
@@ -199,6 +235,33 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			}
 
 			adaptY();
+			
+			if (showLastValue==true) {
+				//Function to add text-labels to last data point, functions only in date charts (needs to be expanded if used otherwise)
+				$( document ).ready(function() {
+					setTimeout(function() {
+						yScale=d3.scale.linear()
+							.domain(Charts[number].y().domain())
+							.range(Charts[number].y().range());
+						xScale=d3.time.scale()
+							.domain(Charts[number].x().domain())
+							.range(Charts[number].x().range());
+						d3.selectAll("#"+Atts[number].chartcontainer+" svg g.stack").append("text")
+							.attr("class", "valuetext")
+							.attr("x", 0)
+							.attr("y", -3)
+							.attr("transform", function(d) {
+								return "translate(" + xScale(d.values[d.values.length-1].x) + "," + yScale(d.values[d.values.length-1].y) + ")";
+							})
+							.attr("font-size", 10)
+							.attr("fill", "#32444a")
+							.style("text-anchor", "middle")
+							.text(function(d) {
+								return (d.values[d.values.length-1].y!=0) ? d.values[d.values.length-1].y : "" ;
+							});
+					}, 500);
+				})
+			}
 
 			function getLegendWidth(number) {
 				var legendLength = d3.select("#"+Atts[number].chartcontainer+" g.dc-legend").node().childElementCount;
@@ -297,12 +360,15 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			function initTip(number){
 				last_tip = null;
-				Atts[number].tips = d3tip()
-					.attr('class', 'd3-tip')
-					.attr('id', 'd3-tip'+number)
-					.direction('n')
-					.offset([-30, 0])
-					.html("no data");
+				d3.select("#d3-tip"+number).remove();
+				if(typeof Atts[number].tips == 'undefined') {
+					Atts[number].tips = d3tip()
+						.attr('class', 'd3-tip')
+						.attr('id', 'd3-tip'+number)
+						.direction('n')
+						.offset([-30, 0])
+						.html("no data");
+				}
 			}
 
 			function callTip(number){
@@ -316,10 +382,14 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						}
 
 						if (asDate==true){
+							var dateNameFormat = d3.time.format("%d %B %Y");
 							var monthNameFormat = d3.time.format("%B %Y");
 							var yearNameFormat = d3.time.format("%Y");
 							if (dateUnit=="year") {
 								label=yearNameFormat(d.data.key)
+							}
+							if (dateUnit=="date") {
+								label=dateNameFormat(d.data.key)
 							}
 							else {
 								label=monthNameFormat(d.data.key)
@@ -397,7 +467,9 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				generals.addDownloadButton(number);
 				generals.addDownloadButtonPng(number)
 				generals.addDataTablesButton(number, columns, wide=true)
-				
+				if (downloadSource==true) {
+					generals.addDownloadButtonSourceData(number);
+				}
 			});
 
 		}

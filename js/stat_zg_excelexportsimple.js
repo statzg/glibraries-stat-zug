@@ -185,6 +185,9 @@ function formater(type, value) {
 	else if (type=="percentage") {
 		return d3.format('.1%')(value)
 	}
+	else if (type=="date") {
+		return d3.time.format("%d.%m.%Y")(new Date(value))
+	}
 	else if (type=="datemonthyear") {
 		return d3.time.format("%B %Y")(new Date(value))
 	}
@@ -678,6 +681,9 @@ createXLSXsimple: function(number, columns, wide) {
 				break;
 			case "dateyear":
 				worksheet.getColumn(i+1).numFmt = 'yyyy';
+				break;
+			case "date":
+				worksheet.getColumn(i+1).numFmt = 'dd.mm.yyyy';
 				break;
 			case "datemonthyear":
 				worksheet.getColumn(i+1).numFmt = 'mmm yyyy';

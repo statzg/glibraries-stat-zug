@@ -26,8 +26,8 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
 			var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
 			//var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
-			//var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
-			//var dateUnit = (typeof args.dateUnit == 'undefined') ? true : args.dateUnit;
+			var asDate = (typeof args.asDate == 'undefined') ? false : args.asDate;
+			var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
 			var order = (typeof args.order == 'undefined') ? "alpha" : args.order;
 			var last = (typeof args.last == 'undefined') ? "" : args.last;
 			//var partei = (typeof args.partei == 'undefined') ? false : args.partei;
@@ -57,10 +57,26 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			var dataValues = d3.values(data)[0];
 			if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[1];};
 			if (group == undefined | group=="") {group = Object.keys(dataValues)[2];};
-				
-			data.forEach(function(x) {
-				x[group] = +x[group];
-			});
+			
+			if (asDate==true & dateUnit=="date") {
+				format=d3.time.format("%d.%m.%Y")
+				data.forEach(function(x) {
+					x["Datumstr"] = x[dimension];
+					x[dimension] = format.parse(x[dimension]);
+					x[group] = +x[group];
+				});
+			} else if (asDate==true) {
+								data.forEach(function(x) {
+					x["Datumstr"] = x[dimension];
+					x[dimension] = new Date(x[dimension]);
+					x[group] = +x[group];
+				});
+			}
+			else {			
+				data.forEach(function(x) {
+					x[group] = +x[group];
+				});
+			}
 				
 			generals.treatmetadata(number, data);
 
@@ -109,8 +125,6 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Charts[number]
 				.width(totalWidth)
 				.height(totalHeight)
-				.x(d3.scale.ordinal())
-				.xUnits(dc.units.ordinal)
 				.margins({left: 20, top: 10, right: 10, bottom: 20})
 				.brushOn(false)
 				.barPadding(0.2)
@@ -124,7 +138,6 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				.dimension(Atts[number].maindimension)
 				.group(Atts[number].maingroup)
 				.renderLabel(true)
-				.ordinalColors(colorscheme[scale][characteristicsLength])
 				.transitionDuration(0)
 				.yAxisPadding("5%")
 				.ordering(function(d) { return characteristics.indexOf(d.key); })
@@ -136,6 +149,43 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				Charts[number].yAxis().tickFormat(d3.format(".1%"));
 			} else {
 				Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
+			}
+			
+			if (asDate==true) {
+				if (dateUnit="date") {
+					Charts[number]
+						.x(d3.time.scale())
+						.xUnits(d3.time.days)
+						.ordinalColors(colorscheme[scale][1]);
+						function calc_domain(chart) {
+							var min = d3.min(data, function(d) {return d[dimension]}),
+								max = d3.max(data, function(d) {return d[dimension]});
+								max = d3.time.day.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+					Charts[number].on('preRender', calc_domain);
+					Charts[number].on('preRedraw', calc_domain);
+					Charts[number].xAxis().tickFormat(d3.time.format("%d.%m.%Y"));
+				} else {
+					Charts[number]
+						.x(d3.time.scale())
+						.round(d3.time.month.round)
+						.xUnits(d3.time.months)
+						.ordinalColors(colorscheme[scale][1]);
+						function calc_domain(chart) {
+							var min = d3.min(data, function(d) {return d[dimension]}),
+								max = d3.max(data, function(d) {return d[dimension]});
+								max = d3.time.month.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+						Charts[number].on('preRender', calc_domain);
+						Charts[number].on('preRedraw', calc_domain);
+				}
+			}	else {
+			Charts[number]
+				.x(d3.scale.ordinal())
+				.xUnits(dc.units.ordinal)
+				.ordinalColors(colorscheme[scale][characteristicsLength]);
 			}
 
 			Charts[number].render()
@@ -248,29 +298,45 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 									d3.select(this).attr("visibility", "visible");
 								}
 							});
-						}
+						}						
 						if(d.key !== last_tip) {
 							Atts[number].tips.show(d);
 							last_tip = d.key;
 						}
+						if (asDate==true){
+							var dateNameFormat = d3.time.format("%d %B %Y");
+							var monthNameFormat = d3.time.format("%B %Y");
+							var yearNameFormat = d3.time.format("%Y");
+							if (dateUnit=="year") {
+								label=yearNameFormat(d.data.key)
+							}
+							if (dateUnit=="date") {
+								label=dateNameFormat(d.data.key)
+							}
+							else {
+								label=monthNameFormat(d.data.key)
+							}
+						}
+						else {label=d.data.key}
+						
 						if (percent==true) {wert=d3.format(".1%")(d.data.value)}
 						else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 						else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 						if (showTotal==true & showAnteil==true) {
-							tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span><br/><span>"+group+": " +wert+  "</span>";
+							tiptext= "<span>" + label + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span><br/><span>"+group+": " +wert+  "</span>";
 						}
 						else if (showTotal==true) {
-							tiptext= "<span>" + d.data.key + "</span><br/><span>"+group+": " +wert+  "</span>";
+							tiptext= "<span>" + label + "</span><br/><span>"+group+": " +wert+  "</span>";
 						}
 						else if (showAnteil==true) {
-							tiptext= "<span>" + d.data.key + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span>";
+							tiptext= "<span>" + label + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span>";
 						}
 						else {
-							tiptext= "<span>" + d.data.key + "</span>";
+							tiptext= "<span>" + label + "</span>";
 						};
 
 						$("#d3-tip"+number).html(tiptext)
-						$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
+						$("#d3-tip"+number).css("border-left", colorscheme[1][1][0] +" solid 5px");
 						offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 20 - ($("#d3-tip"+number).width()/2));
 						offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 0 - ($("#d3-tip"+number).height()));
 						$("#d3-tip"+number).css( 'left', offsetx);
