@@ -11,7 +11,7 @@ define(['libs/d3_v4'],  function(d3v4) {
 
 	return {
 		load: function() {
-			csv_path ="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-14-03-01.csv";
+			csv_path ="https://raw.githubusercontent.com/statzg/glibraries-stat-zug/master/daten/result-themen-14-03-01.csv";
 			d3v4.csv(csv_path, function (data) {
 				format=d3.time.format("%d.%m.%Y")
 				data.forEach(function(x) {
