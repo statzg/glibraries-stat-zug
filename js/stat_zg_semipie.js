@@ -36,7 +36,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
 			//var relative = (typeof args.relative == 'undefined') ? false : args.relative;
 			var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
-			var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
+			//var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
 			//var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
 			//var asDate = (typeof args.asDate == 'undefined') ? true : args.asDate;
 			//var dateUnit = (typeof args.dateUnit == 'undefined') ? "month" : args.dateUnit;
