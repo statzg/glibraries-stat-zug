@@ -47,6 +47,7 @@
 "Fallzahl","15.04.2020","171",NA,NA,NA
 "Fallzahl","16.04.2020","171",NA,NA,NA
 "Fallzahl","17.04.2020","172",NA,NA,NA
+"Fallzahl","18.04.2020","174",NA,NA,NA
 "Hospitalisierte","01.03.2020","0",NA,NA,NA
 "Hospitalisierte","02.03.2020","0",NA,NA,NA
 "Hospitalisierte","03.03.2020","0",NA,NA,NA
@@ -95,6 +96,7 @@
 "Hospitalisierte","15.04.2020","13",NA,NA,NA
 "Hospitalisierte","16.04.2020","9",NA,NA,NA
 "Hospitalisierte","17.04.2020","8",NA,NA,NA
+"Hospitalisierte","18.04.2020","6",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0",NA,NA,NA
@@ -143,6 +145,7 @@
 "Hospitalisierte in Intensivpflege","15.04.2020","9",NA,NA,NA
 "Hospitalisierte in Intensivpflege","16.04.2020","7",NA,NA,NA
 "Hospitalisierte in Intensivpflege","17.04.2020","6",NA,NA,NA
+"Hospitalisierte in Intensivpflege","18.04.2020","6",NA,NA,NA
 "Genesene","01.03.2020","0",NA,NA,NA
 "Genesene","02.03.2020","0",NA,NA,NA
 "Genesene","03.03.2020","0",NA,NA,NA
@@ -191,6 +194,7 @@
 "Genesene","15.04.2020","92",NA,NA,NA
 "Genesene","16.04.2020","94",NA,NA,NA
 "Genesene","17.04.2020","96",NA,NA,NA
+"Genesene","18.04.2020","99",NA,NA,NA
 "Todesfälle","01.03.2020","0",NA,NA,NA
 "Todesfälle","02.03.2020","0",NA,NA,NA
 "Todesfälle","03.03.2020","0",NA,NA,NA
@@ -239,6 +243,7 @@
 "Todesfälle","15.04.2020","5",NA,NA,NA
 "Todesfälle","16.04.2020","6",NA,NA,NA
 "Todesfälle","17.04.2020","6",NA,NA,NA
+"Todesfälle","18.04.2020","7",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,"1","title",""
 NA,NA,NA,"1","subtitle",""
