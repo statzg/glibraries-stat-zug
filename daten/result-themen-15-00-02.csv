@@ -1,0 +1,10 @@
+Kanton,Schulstufe,Anzahl,Meta,Type,Content
+Zug,Kindergarten,2238,NA,NA,NA
+Zug,Primarschulen,6968,NA,NA,NA
+Zug,Sekundarschulen,2369,NA,NA,NA
+Zug,Mittelschulen,2066,NA,NA,NA
+NA,NA,NA,1,datatypes,"string,integer"
+NA,NA,NA,1,title,Lernende nach Schulstufe
+NA,NA,NA,1,subtitle,"Kanton Zug, Schujahr 2018/19"
+NA,NA,NA,1,description,"Lernende an öffentlichen Schulen im Kanton Zug, ohne Sonderschulen"
+NA,NA,NA,1,source,"Kanton Zug, Amt für gemeindliche Schulen"
