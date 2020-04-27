@@ -55,6 +55,8 @@
 "Erkrankte ohne Hospitalisierung","23.04.2020","164",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","24.04.2020","166",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","25.04.2020","167",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","26.04.2020","167",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","27.04.2020","170",NA,NA,NA
 "Hospitalisierte","01.03.2020","0",NA,NA,NA
 "Hospitalisierte","02.03.2020","0",NA,NA,NA
 "Hospitalisierte","03.03.2020","0",NA,NA,NA
@@ -111,6 +113,8 @@
 "Hospitalisierte","23.04.2020","3",NA,NA,NA
 "Hospitalisierte","24.04.2020","3",NA,NA,NA
 "Hospitalisierte","25.04.2020","3",NA,NA,NA
+"Hospitalisierte","26.04.2020","3",NA,NA,NA
+"Hospitalisierte","27.04.2020","4",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0",NA,NA,NA
@@ -167,6 +171,8 @@
 "Hospitalisierte in Intensivpflege","23.04.2020","3",NA,NA,NA
 "Hospitalisierte in Intensivpflege","24.04.2020","3",NA,NA,NA
 "Hospitalisierte in Intensivpflege","25.04.2020","3",NA,NA,NA
+"Hospitalisierte in Intensivpflege","26.04.2020","3",NA,NA,NA
+"Hospitalisierte in Intensivpflege","27.04.2020","3",NA,NA,NA
 "Todesfälle","01.03.2020","0",NA,NA,NA
 "Todesfälle","02.03.2020","0",NA,NA,NA
 "Todesfälle","03.03.2020","0",NA,NA,NA
@@ -223,6 +229,8 @@
 "Todesfälle","23.04.2020","8",NA,NA,NA
 "Todesfälle","24.04.2020","8",NA,NA,NA
 "Todesfälle","25.04.2020","8",NA,NA,NA
+"Todesfälle","26.04.2020","8",NA,NA,NA
+"Todesfälle","27.04.2020","8",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,"1","title",""
 NA,NA,NA,"1","subtitle",""

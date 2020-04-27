@@ -55,6 +55,8 @@
 "Fallzahl","23.04.2020","178","2020-04-23 08:00:00",NA,NA,NA
 "Fallzahl","24.04.2020","180","2020-04-24 08:00:00",NA,NA,NA
 "Fallzahl","25.04.2020","181","2020-04-25 08:00:00",NA,NA,NA
+"Fallzahl","26.04.2020","181","2020-04-26 08:00:00",NA,NA,NA
+"Fallzahl","27.04.2020","185","2020-04-27 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -111,6 +113,8 @@
 "Hospitalisierte","23.04.2020","6","2020-04-23 08:00:00",NA,NA,NA
 "Hospitalisierte","24.04.2020","6","2020-04-24 08:00:00",NA,NA,NA
 "Hospitalisierte","25.04.2020","6","2020-04-25 08:00:00",NA,NA,NA
+"Hospitalisierte","26.04.2020","6","2020-04-26 08:00:00",NA,NA,NA
+"Hospitalisierte","27.04.2020","7","2020-04-27 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -167,6 +171,8 @@
 "Hospitalisierte in Intensivpflege","23.04.2020","3","2020-04-23 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","24.04.2020","3","2020-04-24 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","25.04.2020","3","2020-04-25 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","26.04.2020","3","2020-04-26 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","27.04.2020","3","2020-04-27 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -223,6 +229,8 @@
 "Genesene","23.04.2020","133","2020-04-23 08:00:00",NA,NA,NA
 "Genesene","24.04.2020","133","2020-04-24 08:00:00",NA,NA,NA
 "Genesene","25.04.2020","133","2020-04-25 08:00:00",NA,NA,NA
+"Genesene","26.04.2020","133","2020-04-26 08:00:00",NA,NA,NA
+"Genesene","27.04.2020","134","2020-04-27 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -279,6 +287,8 @@
 "Todesfälle","23.04.2020","8","2020-04-23 08:00:00",NA,NA,NA
 "Todesfälle","24.04.2020","8","2020-04-24 08:00:00",NA,NA,NA
 "Todesfälle","25.04.2020","8","2020-04-25 08:00:00",NA,NA,NA
+"Todesfälle","26.04.2020","8","2020-04-26 08:00:00",NA,NA,NA
+"Todesfälle","27.04.2020","8","2020-04-27 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,NA,"1","title",""
 NA,NA,NA,NA,"1","subtitle",""
