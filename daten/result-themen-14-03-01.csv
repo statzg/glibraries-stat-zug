@@ -65,6 +65,7 @@
 "Fallzahl","03.05.2020","189","2020-05-03 08:00:00",NA,NA,NA
 "Fallzahl","04.05.2020","190","2020-05-04 08:00:00",NA,NA,NA
 "Fallzahl","05.05.2020","191","2020-05-05 08:00:00",NA,NA,NA
+"Fallzahl","06.05.2020","191","2020-05-06 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -131,6 +132,7 @@
 "Hospitalisierte","03.05.2020","3","2020-05-03 08:00:00",NA,NA,NA
 "Hospitalisierte","04.05.2020","3","2020-05-04 08:00:00",NA,NA,NA
 "Hospitalisierte","05.05.2020","4","2020-05-05 08:00:00",NA,NA,NA
+"Hospitalisierte","06.05.2020","3","2020-05-06 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -197,6 +199,7 @@
 "Hospitalisierte in Intensivpflege","03.05.2020","1","2020-05-03 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","04.05.2020","1","2020-05-04 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","05.05.2020","2","2020-05-05 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","06.05.2020","2","2020-05-06 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -263,6 +266,7 @@
 "Genesene","03.05.2020","137","2020-05-03 08:00:00",NA,NA,NA
 "Genesene","04.05.2020","138","2020-05-04 08:00:00",NA,NA,NA
 "Genesene","05.05.2020","138","2020-05-05 08:00:00",NA,NA,NA
+"Genesene","06.05.2020","142","2020-05-06 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -329,6 +333,7 @@
 "Todesfälle","03.05.2020","8","2020-05-03 08:00:00",NA,NA,NA
 "Todesfälle","04.05.2020","8","2020-05-04 08:00:00",NA,NA,NA
 "Todesfälle","05.05.2020","8","2020-05-05 08:00:00",NA,NA,NA
+"Todesfälle","06.05.2020","8","2020-05-06 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,NA,"1","title",""
 NA,NA,NA,NA,"1","subtitle",""
