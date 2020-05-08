@@ -120,7 +120,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			var colorScale = d3.scale.ordinal()
 						.domain(characteristics)
-						.range(colorscheme[scale][characteristicsLength]);
+						.range(colorscheme[scale][1]);
 
 			Charts[number]
 				.width(totalWidth)
@@ -185,7 +185,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Charts[number]
 				.x(d3.scale.ordinal())
 				.xUnits(dc.units.ordinal)
-				.ordinalColors(colorscheme[scale][characteristicsLength]);
+				.ordinalColors(colorscheme[scale][1]);
 			}
 
 			Charts[number].render()
