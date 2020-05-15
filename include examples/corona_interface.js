@@ -1,5 +1,5 @@
 <div id="default4">
-	<div><p>Altersgruppe auswählen:</p>
+	<!--<div><p>Altersgruppe auswählen:</p>
 		<ul class="subelements-listing">
 			<li><a id="0-4" class="alter" href="javascript:;">0-4</a> </li>
 			<li><a id="5-9" class="alter" href="javascript:;">5-9</a> </li>
@@ -22,12 +22,22 @@
 			<li><a id="90+" class="alter" href="javascript:;">90+</a> </li>
 			<li><a id="Alle" class="alter" href="javascript:;">Alle</a> </li>
 		</ul>
+	</div>-->
+	<div><p>Altersgruppe auswählen:</p>
+		<ul class="subelements-listing">
+			<li><a id="0-24" class="alter selected" href="javascript:;">0-24</a> </li>
+			<li><a id="25-44" class="alter selected" href="javascript:;">25-44</a> </li>
+			<li><a id="45-64" class="alter selected" href="javascript:;">45-64</a> </li>
+			<li><a id="65+" class="alter selected" href="javascript:;">65+</a> </li>
+			<li><a id="Alle" class="alter" href="javascript:;">Alle</a> </li>
+		</ul>
 	</div>
 	<div><p>Geschlecht auswählen:</p>
 		<ul class="subelements-listing">
-			<li><a id="Total" class="geschlecht" href="javascript:;">Total</a> </li>
-			<li><a id="männlich" class="geschlecht" href="javascript:;">männlich</a> </li>
-			<li><a id="weiblich" class="geschlecht" href="javascript:;">weiblich</a> </li>
+			<li><a id="Total" class="geschlecht selected" href="javascript:;">Total</a> </li>
+			<li><a id="männlich" class="geschlecht selected" href="javascript:;">männlich</a> </li>
+			<li><a id="weiblich" class="geschlecht selected" href="javascript:;">weiblich</a> </li>
+			<li><a id="Alle" class="geschlecht" href="javascript:;">Alle</a> </li>
 		</ul>
 	</div>
 	<div><p>Kennzahl von:</p>
@@ -56,15 +66,14 @@ require(['stat_zg_groupedbar'], function (groupedbar) {
 		csv_path:"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-14-03-04-k1.csv",	
 		dimension:"Geschlecht",											
 		//group:"Anzahl",	
-		stack:"Alterskategorie",		
-		characteristicsStack:["Zug", "Oberägeri", "Unterägeri", "Menzingen", "Baar", "Cham", "Hünenberg", "Steinhausen", "Risch", "Walchwil", "Neuheim", "Mittelwert"],
+		stack:"Alterskategorie",
+		characteristics:["Total","männlich","weiblich"],	
+		characteristicsStack:["0-24","25-44","45-64","65+"],
 		scale:1,													
 		showTotal:true,												
-		showAnteil:false											
+		showAnteil:false,
+		groupFilter:["0-24","25-44","45-64","65+"]	
 	}
-
-	args4.groupFilter=[]
-	args4.characteristics=[];
 
 	if (typeof uri.search(true)["kennzahl"] == "undefined") {
 		uri.addSearch('kennzahl',"k1");
@@ -107,9 +116,11 @@ require(['stat_zg_groupedbar'], function (groupedbar) {
 	//Funktion um bei Knopfklick die Alterskategorien einzublenden oder auszublenden.
 	$(".alter").click(function(){
 		if(this.id=="Alle") {
-			$(".alter").removeClass("selected")
-			$(".alter").parent().removeClass("selected")
-			args4.groupFilter=[]
+			$(".alter").addClass("selected")
+			$(".alter").parent().addClass("selected")
+			$(this).removeClass("selected")
+			$(this).parent().removeClass("selected")
+			args4.groupFilter=["0-24","25-44","45-64","65+"]
 			uri.removeSearch('alter');
 			window.history.pushState("", "", uri.href());
 		} else {
@@ -152,15 +163,17 @@ require(['stat_zg_groupedbar'], function (groupedbar) {
 	//Funktion um bei Knopfklick die Geschlechter einzublenden oder auszublenden.
 	$(".geschlecht").click(function(){
 		if(this.id=="Alle") {
-			$(".geschlecht").removeClass("selected")
-			$(".geschlecht").parent().removeClass("selected")
-			args4.characteristics=[]
+			$(".geschlecht").addClass("selected")
+			$(".geschlecht").parent().addClass("selected")
+			$(this).removeClass("selected")
+			$(this).parent().removeClass("selected")
+			args4.characteristics=["Total","männlich","weiblich"]
 			uri.removeSearch('geschlecht');
 			window.history.pushState("", "", uri.href());
 		} else {
 			shown=false
 			if (typeof args4.characteristics == "undefined") {
-				args3.characteristics=[];
+				args4.characteristics=[];
 			}
 			for (k = 0; k < args4.characteristics.length; k++) {
 				if (this.id==args4.characteristics[k]) {

@@ -74,6 +74,7 @@
 "Erkrankte ohne Hospitalisierung","12.05.2020","185",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","13.05.2020","187",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","14.05.2020","189",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","15.05.2020","187",NA,NA,NA
 "Hospitalisierte","01.03.2020","0",NA,NA,NA
 "Hospitalisierte","02.03.2020","0",NA,NA,NA
 "Hospitalisierte","03.03.2020","0",NA,NA,NA
@@ -149,6 +150,7 @@
 "Hospitalisierte","12.05.2020","0",NA,NA,NA
 "Hospitalisierte","13.05.2020","0",NA,NA,NA
 "Hospitalisierte","14.05.2020","0",NA,NA,NA
+"Hospitalisierte","15.05.2020","3",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0",NA,NA,NA
@@ -224,6 +226,7 @@
 "Hospitalisierte in Intensivpflege","12.05.2020","1",NA,NA,NA
 "Hospitalisierte in Intensivpflege","13.05.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","14.05.2020","0",NA,NA,NA
+"Hospitalisierte in Intensivpflege","15.05.2020","0",NA,NA,NA
 "Todesfälle","01.03.2020","0",NA,NA,NA
 "Todesfälle","02.03.2020","0",NA,NA,NA
 "Todesfälle","03.03.2020","0",NA,NA,NA
@@ -299,8 +302,9 @@
 "Todesfälle","12.05.2020","8",NA,NA,NA
 "Todesfälle","13.05.2020","8",NA,NA,NA
 "Todesfälle","14.05.2020","8",NA,NA,NA
+"Todesfälle","15.05.2020","8",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,"1","title",""
-NA,NA,NA,"1","subtitle","Datenstand: 14.05.2020 08:00"
+NA,NA,NA,"1","subtitle","Datenstand: 15.05.2020 08:00"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitatilierungen umfassen nur die Hospitalisierungen des jeweiligen Tags."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

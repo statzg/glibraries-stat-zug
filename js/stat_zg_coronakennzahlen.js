@@ -30,9 +30,9 @@ define(['libs/d3_v4'],  function(d3v4) {
 				Genesene=aktuelleDaten.filter(function(d) { return d.Typ == "Genesene" })[0].Anzahl;
 				Verstorbene=aktuelleDaten.filter(function(d) { return d.Typ == "Todesfälle" })[0].Anzahl;
 				dateNameFormat = d3.time.format("%-d.%-m.%Y");
-				$("#Infizierte").html("Infizierte Personen: "+Fallzahl);
-				$("#Genesene").html("Genesene Personen: "+Genesene);
-				$("#Verstorbene").html("Verstorbene Personen: "+Verstorbene);
+				$("#InfiziertePersonen").html("Infizierte Personen: "+Fallzahl);
+				$("#GenesenePersonen").html("Genesene Personen: "+Genesene);
+				$("#VerstorbenePersonen").html("Verstorbene Personen: "+Verstorbene);
 				$("#Stand").html("Stand: "+dateNameFormat(latestdate)+ ", 8:00 Uhr");
 			});
 		}
