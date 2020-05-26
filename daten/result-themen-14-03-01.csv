@@ -85,6 +85,7 @@
 "Fallzahl","23.05.2020","201","2020-05-23 08:00:00",NA,NA,NA
 "Fallzahl","24.05.2020","202","2020-05-24 08:00:00",NA,NA,NA
 "Fallzahl","25.05.2020","202","2020-05-25 08:00:00",NA,NA,NA
+"Fallzahl","26.05.2020","202","2020-05-26 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -171,6 +172,7 @@
 "Hospitalisierte","23.05.2020","0","2020-05-23 08:00:00",NA,NA,NA
 "Hospitalisierte","24.05.2020","0","2020-05-24 08:00:00",NA,NA,NA
 "Hospitalisierte","25.05.2020","1","2020-05-25 08:00:00",NA,NA,NA
+"Hospitalisierte","26.05.2020","1","2020-05-26 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -257,6 +259,7 @@
 "Hospitalisierte in Intensivpflege","23.05.2020","0","2020-05-23 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","24.05.2020","0","2020-05-24 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","25.05.2020","0","2020-05-25 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","26.05.2020","1","2020-05-26 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -343,6 +346,7 @@
 "Genesene","23.05.2020","174","2020-05-23 08:00:00",NA,NA,NA
 "Genesene","24.05.2020","174","2020-05-24 08:00:00",NA,NA,NA
 "Genesene","25.05.2020","175","2020-05-25 08:00:00",NA,NA,NA
+"Genesene","26.05.2020","176","2020-05-26 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-01 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
@@ -429,8 +433,9 @@
 "Todesfälle","23.05.2020","8","2020-05-23 08:00:00",NA,NA,NA
 "Todesfälle","24.05.2020","8","2020-05-24 08:00:00",NA,NA,NA
 "Todesfälle","25.05.2020","8","2020-05-25 08:00:00",NA,NA,NA
+"Todesfälle","26.05.2020","8","2020-05-26 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,NA,"1","title","Fallzahlen absolut"
-NA,NA,NA,NA,"1","subtitle","Datenstand: 25.05.2020 08:00"
+NA,NA,NA,NA,"1","subtitle","Datenstand: 26.05.2020 08:00"
 NA,NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Zahlen der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitalisierungen umfassen nur die Hospitalisierungen des jeweiligen Tags."
 NA,NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"
