@@ -68,7 +68,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			datatype=Atts[number].datatypes[Object.keys(dataValues).indexOf(group)];
 			unit=""
 
-			if (datatype=="percent") {
+			if (datatype=="percentage") {
 				percent=true;
 			} else if (datatype=="chf") {
 				unit=" Franken";
