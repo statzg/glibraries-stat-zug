@@ -20,7 +20,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			var stack = (typeof args.stack == 'undefined') ? "" : args.stack
 			var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
 			var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
-			//var relative = (typeof args.relative == 'undefined') ? false : args.relative;
+			var relative = (typeof args.relative == 'undefined') ? false : args.relative;
 			var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
 			var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
 			var showArea = (typeof args.showArea== 'undefined') ? true : args.showArea;
@@ -94,13 +94,26 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						.range(colorscheme[scale][characteristicsStack.length]);
 
 			var createPropertyGroup = function(i) {
-				return Atts[number].maindimension.group().reduceSum(function (d) {if (d[stack]===characteristicsStack[i]) {return d[group];}else{return 0;}});
+				if (relative==true) {
+					if (asDate==true) {
+						return Atts[number].maindimension.group().reduceSum(function (d) {if (d[stack]===characteristicsStack[i]) {return d[group]/Atts[number].maingroup.all().find(x => x.key.getTime() === d[dimension].getTime()).value;}else{return 0;}});
+					} else {
+						return Atts[number].maindimension.group().reduceSum(function (d) {if (d[stack]===characteristicsStack[i]) {return d[group]/Atts[number].maingroup.all().find(x => x.key === d[dimension]).value;}else{return 0;}});
+					}
+				} else {
+					return Atts[number].maindimension.group().reduceSum(function (d) {if (d[stack]===characteristicsStack[i]) {return d[group];}else{return 0;}});
+				}
 			}
 
 			Atts[number].secondgroup={};
 			for (var i = 0; i < characteristicsStack.length; i++) {
 				Atts[number].secondgroup[characteristicsStack[i]]=createPropertyGroup(i)
 			}
+			
+			console.log(Atts[number].maindimension.top(20))
+			console.log(Atts[number].maingroup.all())
+			//console.log(Atts[number].maingroup)
+			console.log(Atts[number].secondgroup["0-19-Jährige"].all())
 
 			Charts[number]
 				.width(totalWidth)
@@ -144,6 +157,15 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				.x(d3.scale.ordinal())
 				.xUnits(dc.units.ordinal);
 			}
+			
+			if (relative==true) {
+				Charts[number].yAxis().tickFormat(d3.format('.0%'));
+				Charts[number].renderLabel(false)
+				Charts[number].yAxisPadding("0%");
+			}
+			else {
+				Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));	
+			}
 
 			for (var i = 1; i < characteristicsStack.length; i++) {
 				//Damit 0er nicht angezeigt werden
@@ -155,7 +177,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						.legendWidth(totalWidth-10)
 						.autoItemWidth(true));
 						
-			Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));	
+			//Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));	
 
 			Charts[number].render();
 
@@ -302,21 +324,39 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 							}
 						}
 						else {label=d.data.key}
-						
-						if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
-						else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 
-						if (showTotal==true & showAnteil==true) {
-							tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
-						}
-						else if (showTotal==true) {
-							tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
-						}
-						else if (showAnteil==true) {
-							tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
-						}
-						else {
-							tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span>";
+						if (relative==true) {
+							if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+							else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+							
+							if (showTotal==true & showAnteil==true) {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round(d.data.value*1000)/10).toFixed(1)+ "% "+i +"bla"+(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
+							}
+							else if (showTotal==true) {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
+							}
+							else if (showAnteil==true) {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
+							}
+							else {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span>";
+							};
+						} else {
+							if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
+							else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+							
+							if (showTotal==true & showAnteil==true) {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
+							}
+							else if (showTotal==true) {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>"+Atts[number].group+": " + wert +  "</span>";
+							}
+							else if (showAnteil==true) {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span><br/><span>Anteil: " +(Math.round((d.data.value/Atts[number].maingroup.all()[i-(($(this).parent().index())*characteristicsLength)].value)*1000)/10).toFixed(1) + '%' + "</span>";
+							}
+							else {
+								tiptext= "<span>" + d.layer + "</span><br/><span>" + label + "</span>";
+							};
 						};
 						$("#d3-tip"+number).html(tiptext)
 						$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
