@@ -165,7 +165,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				
 				
 			if (asDate==true) {
-				if (dateUnit="date") {
+				if (dateUnit=="date") {
 					Charts[number]
 						.x(d3.time.scale())
 						.xUnits(d3.time.days);
@@ -226,7 +226,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 							maxwidth = coordx;
 						}
 					});
-				YWidth=maxwidth+7;
+				YWidth=maxwidth+10;
 				if (YWidth>20) {
 					Charts[number].margins({left: YWidth, top: 10, right: 10, bottom: 40})
 					.compose(Charts[number+100]);
