@@ -79,6 +79,15 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			}
 				
 			generals.treatmetadata(number, data);
+			
+			datatype=Atts[number].datatypes[Object.keys(dataValues).indexOf(group)];
+			unit=""
+
+			if (datatype=="percentage") {
+				percent=true;
+			} else if (datatype=="chf") {
+				unit=" Franken";
+			}
 
 			Atts[number].dataset = crossfilter(Atts[number].data),
 				Atts[number].maindimension = Atts[number].dataset.dimension(function (d) {
@@ -320,8 +329,8 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						else {label=d.data.key}
 						
 						if (percent==true) {wert=d3.format(".1%")(d.data.value)}
-						else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
-						else {wert=germanFormatters.numberFormat(",")(d.data.value)}
+						else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)+unit}
+						else {wert=germanFormatters.numberFormat(",")(d.data.value)+unit}
 						if (showTotal==true & showAnteil==true) {
 							tiptext= "<span>" + label + "</span><br/><span>Anteil: " + germanFormatters.numberFormat(",.1%")(d.data.value/Atts[number].secondgroup["Total"].value()) + "</span><br/><span>"+group+": " +wert+  "</span>";
 						}
