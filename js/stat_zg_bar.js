@@ -22,6 +22,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			//var stack = (typeof args.stack == 'undefined') ? "" : args.stack
 			//var characteristicsStack = (typeof args.characteristicsStack == 'undefined') ? [] : args.characteristicsStack;
 			var scale = (typeof args.scale == 'undefined') ? 1 : args.scale;
+			var color = (typeof args.color == 'undefined') ? colorscheme[scale][1] : [args.color];
 			//var relative = (typeof args.relative == 'undefined') ? false : args.relative;
 			var showTotal = (typeof args.showTotal == 'undefined') ? true : args.showTotal;
 			var showAnteil = (typeof args.showAnteil == 'undefined') ? true : args.showAnteil;
@@ -33,6 +34,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			//var partei = (typeof args.partei == 'undefined') ? false : args.partei;
 			//var highlight = (typeof args.highlight == 'undefined') ? {} : args.highlight;
 			var percent = (typeof args.percent == 'undefined') ? false : args.percent;
+			var accuracy = (typeof args.accuracy == 'undefined') ? 1 : args.accuracy;
 			var showBarLabels = (typeof args.showBarLabels == 'undefined') ? "always" : args.showBarLabels;
 
 			//Attributeobjekt initialisieren
@@ -129,7 +131,9 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			var colorScale = d3.scale.ordinal()
 						.domain(characteristics)
-						.range(colorscheme[scale][1]);
+						.range(color);
+						
+			
 
 			Charts[number]
 				.width(totalWidth)
@@ -155,7 +159,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Charts[number].filter = function() {};
 
 			if (percent==true) {
-				Charts[number].yAxis().tickFormat(d3.format(".1%"));
+				Charts[number].yAxis().tickFormat(d3.format("."+accuracy+"%"));
 			} else {
 				Charts[number].yAxis().tickFormat(germanFormatters.numberFormat(","));
 			}
@@ -165,7 +169,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					Charts[number]
 						.x(d3.time.scale())
 						.xUnits(d3.time.days)
-						.ordinalColors(colorscheme[scale][1]);
+						.ordinalColors(color);
 						function calc_domain(chart) {
 							var min = d3.min(data, function(d) {return d[dimension]}),
 								max = d3.max(data, function(d) {return d[dimension]});
@@ -180,7 +184,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						.x(d3.time.scale())
 						.round(d3.time.month.round)
 						.xUnits(d3.time.months)
-						.ordinalColors(colorscheme[scale][1]);
+						.ordinalColors(color);
 						function calc_domain(chart) {
 							var min = d3.min(data, function(d) {return d[dimension]}),
 								max = d3.max(data, function(d) {return d[dimension]});
@@ -194,7 +198,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Charts[number]
 				.x(d3.scale.ordinal())
 				.xUnits(dc.units.ordinal)
-				.ordinalColors(colorscheme[scale][1]);
+				.ordinalColors(color);
 			}
 
 			Charts[number].render()
@@ -328,7 +332,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						}
 						else {label=d.data.key}
 						
-						if (percent==true) {wert=d3.format(".1%")(d.data.value)}
+						if (percent==true) {wert=d3.format("."+accuracy+"%")(d.data.value)}
 						else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)+unit}
 						else {wert=germanFormatters.numberFormat(",")(d.data.value)+unit}
 						if (showTotal==true & showAnteil==true) {
@@ -345,7 +349,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						};
 
 						$("#d3-tip"+number).html(tiptext)
-						$("#d3-tip"+number).css("border-left", colorscheme[1][1][0] +" solid 5px");
+						$("#d3-tip"+number).css("border-left", color +" solid 5px");
 						offsetx=(Number($("#d3-tip"+number).css( "left" ).slice(0, -2)) + 20 - ($("#d3-tip"+number).width()/2));
 						offsety=(Number($("#d3-tip"+number).css( "top" ).slice(0, -2)) + 0 - ($("#d3-tip"+number).height()));
 						$("#d3-tip"+number).css( 'left', offsetx);
@@ -367,7 +371,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			function formatBarLabels(){
 				if (showBarLabels!="never") {
 					d3.selectAll("#"+Atts[number].chartcontainer+" text.barLabel").each(function(d, i) {
-						if (percent==true) {wert=d3.format(".1%")(d.data.value)}
+						if (percent==true) {wert=d3.format("."+accuracy+"%")(d.data.value)}
 						else if (d.data.value % 1) {wert=germanFormatters.numberFormat(",.1f")(d.data.value)}
 						else {wert=germanFormatters.numberFormat(",")(d.data.value)}
 						d3.select(this).text(wert);
