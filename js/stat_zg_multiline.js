@@ -255,9 +255,11 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 							})
 							.attr("font-size", 10)
 							.attr("fill", "#32444a")
-							.style("text-anchor", "middle")
+							.style("text-anchor", "end")
 							.text(function(d) {
-								return (d.values[d.values.length-1].y!=0) ? d.values[d.values.length-1].y : "" ;
+								if (d.values[d.values.length-1].y % 1) {wert=germanFormatters.numberFormat(",.1f")(d.values[d.values.length-1].y)}
+								else {wert=germanFormatters.numberFormat(",")(d.values[d.values.length-1].y)}
+								return (wert!=0) ? wert : "" ;
 							});
 					}, 500);
 				})
