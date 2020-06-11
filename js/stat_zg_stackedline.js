@@ -109,11 +109,6 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			for (var i = 0; i < characteristicsStack.length; i++) {
 				Atts[number].secondgroup[characteristicsStack[i]]=createPropertyGroup(i)
 			}
-			
-			console.log(Atts[number].maindimension.top(20))
-			console.log(Atts[number].maingroup.all())
-			//console.log(Atts[number].maingroup)
-			console.log(Atts[number].secondgroup["0-19-Jährige"].all())
 
 			Charts[number]
 				.width(totalWidth)
