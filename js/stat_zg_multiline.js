@@ -37,6 +37,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			var groupFilter = (typeof args.groupFilter == 'undefined') ? [] : args.groupFilter;
 			var downloadSource = (typeof args.downloadSource == 'undefined') ? false : args.downloadSource;
 			var showLastValue = (typeof args.showLastValue == 'undefined') ? false : args.showLastValue;
+			var onlyDots = (typeof args.onlyDots == 'undefined') ? false : args.onlyDots;
 
 			//Attributeobjekt initialisieren
 			Atts[number]={};
@@ -145,7 +146,10 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					Charts[number+100][i].defined(function(d) {
 						return d.y != 0;
 					})
-				}	
+				}
+				if (onlyDots==true) {
+					Charts[number+100][i].renderDataPoints({radius: 3, fillOpacity: 1, strokeOpacity: 0.0})
+				}
 			}
 
 			Charts[number]
@@ -356,6 +360,9 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					}
 				});
 				}
+				if(onlyDots==true) {
+					$(".dc-chart path.line").css("stroke-width", "0px");
+				}
 			}
 
 			rotateX();
@@ -425,7 +432,12 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					.on('mouseout', function(d) {
 						last_tip = null;
 						Atts[number].tips.hide(d);
-						d3.selectAll("circle.dot").attr('style', "fill-opacity:0.000001");
+						if(onlyDots==true) {
+							d3.selectAll("circle.dot").attr('r', "3");
+						} 
+						else {
+							d3.selectAll("circle.dot").attr('style', "fill-opacity:0.000001");
+						}
 						d3.selectAll("path.yRef").attr('style', "display:none");
 						d3.selectAll("path.xRef").attr('style', "display:none");
 					});
