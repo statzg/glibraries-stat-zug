@@ -3,10 +3,10 @@ require.config({
 	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
 	paths: {
 		"libs": "libraries/",
-		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
-		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
-		"d3v4": "https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3",
-		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0-dev/dc"
+		"crossfilter": "libraries/crossfilter",
+		"d3": "libraries/d3",
+		"d3v4": "libraries/d3_v4",
+		"dc": "libraries/dc"
     },
     shim:{
 		'd3v4-tip':{

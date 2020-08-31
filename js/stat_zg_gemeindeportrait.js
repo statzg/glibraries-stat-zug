@@ -4,10 +4,10 @@ require.config({
 	paths: {
 		"libs": "libraries/",
 		"urijs":"libraries/URI",
-		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
-		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
-		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
-		"d3queue":"https://d3js.org/d3-queue.v3"
+		"crossfilter": "libraries/crossfilter",
+		"d3": "libraries/d3",
+		"dc": "libraries/dc",
+		"d3queue":"libraries/queue"
     },
     shim:{
 		'crossfilter':{

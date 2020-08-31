@@ -1,106 +1,134 @@
+// https://d3js.org/d3-queue/ Version 3.0.7. Copyright 2017 Mike Bostock.
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define('queue', factory) :
-  (global.queue = factory());
-}(this, function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.d3 = global.d3 || {})));
+}(this, (function (exports) { 'use strict';
 
-  var slice = [].slice;
+var slice = [].slice;
 
-  function noop() {}
+var noabort = {};
 
-  var noabort = {};
-  var success = [null];
-  function newQueue(concurrency) {
-    if (!(concurrency >= 1)) throw new Error;
+function Queue(size) {
+  this._size = size;
+  this._call =
+  this._error = null;
+  this._tasks = [];
+  this._data = [];
+  this._waiting =
+  this._active =
+  this._ended =
+  this._start = 0; // inside a synchronous task callback?
+}
 
-    var q,
-        tasks = [],
-        results = [],
-        waiting = 0,
-        active = 0,
-        ended = 0,
-        starting, // inside a synchronous task callback?
-        error,
-        callback = noop,
-        callbackAll = true;
+Queue.prototype = queue.prototype = {
+  constructor: Queue,
+  defer: function(callback) {
+    if (typeof callback !== "function") throw new Error("invalid callback");
+    if (this._call) throw new Error("defer after await");
+    if (this._error != null) return this;
+    var t = slice.call(arguments, 1);
+    t.push(callback);
+    ++this._waiting, this._tasks.push(t);
+    poke(this);
+    return this;
+  },
+  abort: function() {
+    if (this._error == null) abort(this, new Error("abort"));
+    return this;
+  },
+  await: function(callback) {
+    if (typeof callback !== "function") throw new Error("invalid callback");
+    if (this._call) throw new Error("multiple await");
+    this._call = function(error, results) { callback.apply(null, [error].concat(results)); };
+    maybeNotify(this);
+    return this;
+  },
+  awaitAll: function(callback) {
+    if (typeof callback !== "function") throw new Error("invalid callback");
+    if (this._call) throw new Error("multiple await");
+    this._call = callback;
+    maybeNotify(this);
+    return this;
+  }
+};
 
-    function start() {
-      if (starting) return; // let the current task complete
-      while (starting = waiting && active < concurrency) {
-        var i = ended + active,
-            t = tasks[i],
-            j = t.length - 1,
-            c = t[j];
-        t[j] = end(i);
-        --waiting, ++active, tasks[i] = c.apply(null, t) || noabort;
+function poke(q) {
+  if (!q._start) {
+    try { start(q); } // let the current task complete
+    catch (e) {
+      if (q._tasks[q._ended + q._active - 1]) abort(q, e); // task errored synchronously
+      else if (!q._data) throw e; // await callback errored synchronously
+    }
+  }
+}
+
+function start(q) {
+  while (q._start = q._waiting && q._active < q._size) {
+    var i = q._ended + q._active,
+        t = q._tasks[i],
+        j = t.length - 1,
+        c = t[j];
+    t[j] = end(q, i);
+    --q._waiting, ++q._active;
+    t = c.apply(null, t);
+    if (!q._tasks[i]) continue; // task finished synchronously
+    q._tasks[i] = t || noabort;
+  }
+}
+
+function end(q, i) {
+  return function(e, r) {
+    if (!q._tasks[i]) return; // ignore multiple callbacks
+    --q._active, ++q._ended;
+    q._tasks[i] = null;
+    if (q._error != null) return; // ignore secondary errors
+    if (e != null) {
+      abort(q, e);
+    } else {
+      q._data[i] = r;
+      if (q._waiting) poke(q);
+      else maybeNotify(q);
+    }
+  };
+}
+
+function abort(q, e) {
+  var i = q._tasks.length, t;
+  q._error = e; // ignore active callbacks
+  q._data = undefined; // allow gc
+  q._waiting = NaN; // prevent starting
+
+  while (--i >= 0) {
+    if (t = q._tasks[i]) {
+      q._tasks[i] = null;
+      if (t.abort) {
+        try { t.abort(); }
+        catch (e) { /* ignore */ }
       }
     }
-
-    function end(i) {
-      return function(e, r) {
-        if (!tasks[i]) throw new Error; // detect multiple callbacks
-        --active, ++ended, tasks[i] = null;
-        if (error != null) return; // only report the first error
-        if (e != null) {
-          abort(e);
-        } else {
-          results[i] = r;
-          if (waiting) start();
-          else if (!active) notify();
-        }
-      };
-    }
-
-    function abort(e) {
-      error = e; // ignore new tasks and squelch active callbacks
-      waiting = NaN; // stop queued tasks from starting
-      notify();
-    }
-
-    function notify() {
-      if (error != null) callback(error);
-      else if (callbackAll) callback(null, results);
-      else callback.apply(null, success.concat(results));
-    }
-
-    return q = {
-      defer: function(f) {
-        if (callback !== noop) throw new Error;
-        var t = slice.call(arguments, 1);
-        t.push(f);
-        ++waiting, tasks.push(t);
-        start();
-        return q;
-      },
-      abort: function() {
-        if (error == null) {
-          var i = ended + active, t;
-          while (--i >= 0) (t = tasks[i]) && t.abort && t.abort();
-          abort(new Error("abort"));
-        }
-        return q;
-      },
-      await: function(f) {
-        if (callback !== noop) throw new Error;
-        callback = f, callbackAll = false;
-        if (!waiting && !active) notify();
-        return q;
-      },
-      awaitAll: function(f) {
-        if (callback !== noop) throw new Error;
-        callback = f, callbackAll = true;
-        if (!waiting && !active) notify();
-        return q;
-      }
-    };
   }
 
-  function queue(concurrency) {
-    return newQueue(arguments.length ? +concurrency : Infinity);
+  q._active = NaN; // allow notification
+  maybeNotify(q);
+}
+
+function maybeNotify(q) {
+  if (!q._active && q._call) {
+    var d = q._data;
+    q._data = undefined; // allow gc
+    q._call(q._error, d);
   }
+}
 
-  queue.version = "1.2.1";
+function queue(concurrency) {
+  if (concurrency == null) concurrency = Infinity;
+  else if (!((concurrency = +concurrency) >= 1)) throw new Error("invalid concurrency");
+  return new Queue(concurrency);
+}
 
-  return queue;
+exports.queue = queue;
 
-}));
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

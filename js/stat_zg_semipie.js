@@ -4,9 +4,9 @@ require.config({
 	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
 	paths: {
 		"libs": "libraries/",
-		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
-		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
-		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc"
+		"crossfilter": "libraries/crossfilter",
+		"d3": "libraries/d3",
+		"dc": "libraries/dc"
     }
 });
 

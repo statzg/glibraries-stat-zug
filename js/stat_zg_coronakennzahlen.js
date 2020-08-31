@@ -3,11 +3,12 @@
 require.config({
   baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
   paths: {
-    libs: "libraries"
+    "libs": "libraries",
+	"d3v4": "libraries/d3_v4"
   }
 });
 
-define(['libs/d3_v4'],  function(d3v4) {
+define(['d3v4'],  function(d3v4) {
 
 	return {
 		load: function() {
@@ -33,7 +34,7 @@ define(['libs/d3_v4'],  function(d3v4) {
 				$("#InfiziertePersonen").html("Infizierte Personen: "+Fallzahl);
 				$("#GenesenePersonen").html("Genesene Personen: "+Genesene);
 				$("#VerstorbenePersonen").html("Verstorbene Personen: "+Verstorbene);
-				$("#Stand").html("Stand: "+dateNameFormat(latestdate)+ ", 8:00 Uhr");
+				$("#Stand").html("Stand: "+dateNameFormat(latestdate.setDate(latestdate.getDate()+1))+ ", 8:00 Uhr");
 			});
 		}
 	}

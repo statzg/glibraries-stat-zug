@@ -6,10 +6,10 @@ require.config({
 		"libs": "libraries/",
 		"urijs":"libraries/URI",
 		"waitme":"libraries/waitme",
-		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
-		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
-		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
-		"exceljs": "https://cdnjs.cloudflare.com/ajax/libs/exceljs/3.8.0/exceljs"
+		"crossfilter": "libraries/crossfilter",
+		"d3": "libraries/d3",
+		"dc": "libraries/dc",
+		"exceljs": "libraries/exceljs"
     },
     shim:{
 		'crossfilter':{

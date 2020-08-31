@@ -1,61 +1,10 @@
 <script src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/jquery.tagcanvas.js" type="text/javascript"></script>
-<!--<script src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/tagsCloud.js" type="text/javascript"></script>-->
 
 <div id="myCanvasContainer">
 	<canvas width="400" height="500" id="myCanvas">
 		<p>Die Anzeige funktioniert in ihrem Browser leider nicht.</p>
 	</canvas>
 </div>
-
-<!--<style>
-#tagscloud{
-	width:100%;
-	height:500px;
-	position:relative;
-	font-size:12px;
-	color:#333;
-	margin:20px auto 0;
-	text-align:center;
-}
-#tagscloud a{
-	position:absolute;
-	top:0px;
-	left:0px;
-	color:#333;
-	font-family:Arial;
-	text-decoration:none;
-	margin:0 10px 15px 0;
-	line-height:18px;
-	text-align:center;
-	font-size:12px;
-	padding:10px 5px;
-	display:inline-block;
-	border-radius:3px;
-}
-#tagscloud a.tagc1{
-	font-size:16px;
-	line-height: 1.5em;
-	background:#fff;
-	color:#00538c;
-}
-#tagscloud a.tagc2{
-	font-size:16px;
-	line-height: 1.5em;
-	background:#fff;
-	color:#00538c;
-}
-#tagscloud a.tagc3{
-	font-size:16px;
-	line-height: 1.5em;
-	background:#fff;
-	color:#00538c;
-}
-#tagscloud a:hover{
-	color:#00538c;
-	boder-color:#00538c;
-	background:#0099ff;
-}
-</style>-->
 
 <div id="tagsList">
 	<ul>
@@ -121,29 +70,6 @@
 		</li>
 	</ul>
 </div>
-
-<!--<div id="tagscloud">
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/zug-in-zahlen" title="00 Broschüre Zug in Zahlen" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/brochure.png" style="width:24px !important;height:24px !important;"> Brosch&uuml;re Zug in Zahlen</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/01bevoelkerungszahlen" title="01 Bevölkerung" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/population.png" style="width:24px !important;height:24px !important;"> Bev&ouml;lkerung</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/raum-und-umwelt" title="02 Raum und Umwelt" target="_self" class="tagc1"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/traffic.png" style="width:24px !important;height:24px !important;"> Raum und Umwelt</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/arbeitsmarkt-1" title="03 Arbeitsmarkt" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/work.png" style="width:24px !important;height:24px !important;"> Arbeitsmarkt</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/volkswirtschaft-1" title="04 Volkswirtschaft" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/economy.png" style="width:24px !important;height:24px !important;"> Volkswirtschaft</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/Preise" title="05 Preise" target="_self" class="tagc1"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/price.png" style="width:24px !important;height:24px !important;"> Preise</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/betriebe-und-unternehmen" title="06 Industrie und Dienstleistungen" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/industry.png" style="width:24px !important;height:24px !important;"> Industrie und Dienstleistungen</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/land-und-forstwirtschaft" title="07 Land- und Forstwirtschaft" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/agriculture.png" style="width:24px !important;height:24px !important;"> Land- und Forstwirtschaft</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/18-energie" title="08 Energie" target="_self" class="tagc1"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/energy.png" style="width:24px !important;height:24px !important;"> Energie</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/09bau-und-wohnungswesen" title="09 Bau- und Wohnungswesen" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/construction.png" style="width:24px !important;height:24px !important;"> Bau- und Wohnungswesen</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/10-tourismus" title="10 Tourismus" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/tourism.png" style="width:24px !important;height:24px !important;"> Tourismus</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/11-mobilitaet-und-verkehr" title="11 Mobilität und Verkehr" target="_self" class="tagc1"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/traffic.png" style="width:24px !important;height:24px !important;"> Mobilit&auml;t und Verkehr</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/banken-und-versicherungen" title="12 Banken und Versicherungen" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/banking.png" style="width:24px !important;height:24px !important;"> Banken und Versicherungen</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/soziale-sicherheit" title="13 Soziale Sicherheit" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/socialsecurity.png" style="width:24px !important;height:24px !important;"> Soziale Sicherheit</a>
-		<a href="gesundheitsdirektion/statistikfachstelle/themen/gesundheit" title="14 Gesundheit" target="_self" class="tagc1"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/health.png" style="width:24px !important;height:24px !important;"> Gesundheit</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/bildung" title="15 Bildung" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/education.png" style="width:24px !important;height:24px !important;"> Bildung</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/16-kultur-medien-sport" title="16 Sport" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/sport.png" style="width:24px !important;height:24px !important;"> Sport</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/17-politik" title="17 Politik" target="_self" class="tagc1"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/politics.png" style="width:24px !important;height:24px !important;"> Politik</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/oeffentliche-finanzen" title="18 Öffentliche Finanzen" target="_self" class="tagc3"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/publicfinance.png" style="width:24px !important;height:24px !important;"> &Ouml;ffentliche Finanzen</a>
-		<a href="behoerden/gesundheitsdirektion/statistikfachstelle/themen/19-oeffentliche-sicherheit" title="19 Öffentliche Sicherheit" target="_self" class="tagc2"><img src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/logos/cloud/publicsecurity.png" style="width:24px !important;height:24px !important;"> &Ouml;ffentliche Sicherheit</a> 
-</div>-->
 
 <script type="text/javascript">
 $(document).ready(function() {

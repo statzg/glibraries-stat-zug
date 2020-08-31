@@ -4,10 +4,10 @@ require.config({
 	paths: {
 		"libs": "libraries/",
 		"urijs":"libraries/URI",
-		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
-		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
-		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
-		"exceljs": "https://cdnjs.cloudflare.com/ajax/libs/exceljs/3.8.0/exceljs"
+		"crossfilter": "libraries/crossfilter",
+		"d3": "libraries/d3",
+		"dc": "libraries/dc",
+		"exceljs": "libraries/exceljs"
     },
     shim:{
 		'crossfilter':{
@@ -358,6 +358,9 @@ createXLSXsimple: function(number, columns, wide) {
 				case "year":
 					var cellCT=createRichText(d[columns[i]], 10, false)
 					break;
+				case "date":
+					var cellCT=d3.time.hour.offset(d[columns[i]],2)
+					break;
 				default:
 					var cellCT=d[columns[i]]
 					break;
@@ -366,6 +369,7 @@ createXLSXsimple: function(number, columns, wide) {
 			if(cellCT==undefined | cellCT!==cellCT) {cellCT=''};
 			cellContent.push(cellCT)
 		}
+		console.log(cellContent)
 		worksheet.addRow(cellContent)
 		++totalRows;
 	});

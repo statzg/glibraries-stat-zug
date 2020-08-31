@@ -6,12 +6,12 @@ require.config({
 	paths: {
 		"libs": "libraries/",
 		"urijs":"libraries/URI",
-		"crossfilter": "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.5/crossfilter",
-		"d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3",
-		"dc": "https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0/dc",
-		"d3geoprojections": "https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/2.4.0/d3-geo-projection",
-		"d3-array":"https://cdnjs.cloudflare.com/ajax/libs/d3-array/1.2.2/d3-array",
-		"d3-geo":"https://cdnjs.cloudflare.com/ajax/libs/d3-geo/1.9.1/d3-geo"
+		"crossfilter": "libraries/crossfilter",
+		"d3": "libraries/d3",
+		"dc": "libraries/dc",
+		"d3geoprojections": "libraries/d3-geo-projection",
+		"d3-array":"libraries/d3-array",
+		"d3-geo":"libraries/d3-geo"
     }
 });
 
