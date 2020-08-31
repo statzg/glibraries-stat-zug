@@ -1,10 +1,7 @@
-<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/queue.js"></script>
-<script type="text/javascript" src="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/stat_zg_generals.js"></script>
-
 <table class="listing">
 <tbody>
 <tr>
-<td><strong>Nombre d’habitants </strong><span id="bevölkerungyear"></span></td>
+<td><strong>Inhabitants </strong><span id="bevölkerungyear"></span></td>
 <td id="bevölkerung"></td>
 </tr>
 <tr>
@@ -12,23 +9,23 @@
 <td> </td>
 </tr>
 <tr>
-<td><strong>Superficie totale du canton </strong>en ha</td>
+<td><strong>The area of the whole canton </strong>in hectares</td>
 <td>23'873</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zones bâties </td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Built-up area </td>
 <td>3'306</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zones agricoles </td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agricultural area </td>
 <td>10'366</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forêts </td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forest </td>
 <td>6'529</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lacs </td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lakes </td>
 <td>3'172</td>
 </tr>
 <tr>
@@ -36,7 +33,7 @@
 <td> </td>
 </tr>
 <tr>
-<td><strong><a href="http://www.zg.ch/behoerden/gemeinden">communes</a></strong></td>
+<td><strong><a href="http://www.zg.ch/behoerden/gemeinden">Municipalities</a></strong></td>
 <td>11</td>
 </tr>
 <tr>
@@ -44,7 +41,7 @@
 <td> </td>
 </tr>
 <tr>
-<td><strong>Point le plus haut</strong> en mètres d'altitude </td>
+<td><strong>Highest point</strong> in meters above sea level</td>
 <td>1'580 Wildspitz (Rossberg) </td>
 </tr>
 <tr>
@@ -52,19 +49,19 @@
 <td> </td>
 </tr>
 <tr>
-<td><strong>Structure économique</strong>, Nombre d’actifs par secteur <span id="wirtschaftsstrukturyear"></span></td>
+<td><strong>Economic structure</strong>, employees per sector <span id="wirtschaftsstrukturyear"></span></td>
 <td> </td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Secteur primaire (“Agriculture“)</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primary sector (agriculture)</td>
 <td><span id="wsabs1"></span> (<span id="wsrel1"></span>)</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Secteur secondaire (“Industrie“)</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Secondary sector (industry)</td>
 <td><span id="wsabs2"></span> (<span id="wsrel2"></span>)</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Secteur tertiaire (“Services“)</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tertiary sector (services)</td>
 <td><span id="wsabs3"></span> (<span id="wsrel3"></span>)</td>
 </tr>
 <tr>
@@ -72,15 +69,15 @@
 <td> </td>
 </tr>
 <tr>
-<td><strong>Nombre d'employés </strong><span class="wirtschaftyear"></span></td>
+<td><strong>Number of employed </strong><span class="wirtschaftyear"></span></td>
 <td><span id="Beschäftigte"></span></td>
 </tr>
 <tr>
-<td><strong>Equivalent plein temps </strong><span class="wirtschaftyear"></span></td>
+<td><strong>Full-time equivalent </strong><span class="wirtschaftyear"></span></td>
 <td><span id="Vollzeitäquivalente"></span></td>
 </tr>
 <tr>
-<td><strong>Nombre d’entreprises </strong><span class="wirtschaftyear"></span></td>
+<td><strong>Businesses </strong><span class="wirtschaftyear"></span></td>
 <td><span id="Betriebe"></span></td>
 </tr>
 <tr>
@@ -88,30 +85,41 @@
 <td> </td>
 </tr>
 <tr>
-<td><strong>Logements </strong><span id="wohnungenyear"></span></td>
+<td><strong>Housing units </strong><span id="wohnungenyear"></span></td>
 <td><span id="wohnungen"></span></td>
 </tr>
 </tbody>
 </table>
 
 <script>
-var bevölkerung = dc.numberDisplay("#bevölkerung");
-var bestandwohnungen = dc.numberDisplay("#wohnungen");
-var betriebe = dc.numberDisplay("#betriebe");
-var beschäftigte = dc.numberDisplay("#beschäftigte");
-	
-var q = queue()
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
-	.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv");
+require.config({
+	urlArgs: "bust=" + (new Date()).getTime(),
+	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+	paths: {
+		libs: "libraries",
+		"d3queue":"libraries/queue",
+		"dc": "libraries/dc"
+	}
+});
+
+require(['stat_zg_generals','dc','d3queue'], function(generals,dc,queue){
+	var bevölkerung = dc.numberDisplay("#bevölkerung");
+	var bestandwohnungen = dc.numberDisplay("#wohnungen");
+	var betriebe = dc.numberDisplay("#betriebe");
+	var beschäftigte = dc.numberDisplay("#beschäftigte");
+		
+	var q = queue.queue()
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-00.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-01.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-02.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-03.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-04.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-05.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-06.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-07.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-08.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-09.csv")
+		.defer(d3.csv, "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/gemeindeportrait/result-gemeindeportrait-10.csv");
 
 	q.await(function(error, data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10) {
 		
@@ -216,5 +224,6 @@ var q = queue()
 		$("#wsrel3").html(germanFormatters.numberFormat(",.1%")((data110.filter(function(d, i) {return d.key == "Dienstleistung"})[0].values)/tots10));
 
 	})
+})  
 
 </script>
