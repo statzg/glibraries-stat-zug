@@ -188,6 +188,9 @@ function formater(type, value) {
 	else if (type=="date") {
 		return d3.time.format("%d.%m.%Y")(new Date(value))
 	}
+	else if (type=="week") {
+		return "Woche vom "+d3.time.format("%d.%m.%Y")(new Date(value))
+	}
 	else if (type=="datemonthyear") {
 		return d3.time.format("%B %Y")(new Date(value))
 	}
@@ -213,12 +216,15 @@ return {
 //function that actually creates xlsx file
 createXLSXsimple: function(number, columns, wide) {
 	
+	//console.log(Atts[number].datatypes)
+	
 	if (wide==true) {
 		Atts[number].exportdata=Atts[number].wide
 		Atts[number].datatypes=Atts[number].datatypeswide
 	}
 	
-	console.log(Atts[number].exportdata)
+	//console.log(Atts[number].exportdata)
+	//console.log(Atts[number].datatypes)
 	
 	Datasheets[number]={};
 
@@ -688,6 +694,9 @@ createXLSXsimple: function(number, columns, wide) {
 				break;
 			case "date":
 				worksheet.getColumn(i+1).numFmt = 'dd.mm.yyyy';
+				break;
+			case "week":
+				worksheet.getColumn(i+1).numFmt = '"Woche vom" dd.mm.yyyy';
 				break;
 			case "datemonthyear":
 				worksheet.getColumn(i+1).numFmt = 'mmm yyyy';

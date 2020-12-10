@@ -1,0 +1,17 @@
+"Gemeinde","Inzidenz pro 100'000","Meta","Type","Content"
+"Baar","3278.22236665719",NA,NA,NA
+"Cham","2734.86059314509",NA,NA,NA
+"Hünenberg","2026.4116575592",NA,NA,NA
+"Menzingen","3208.0861349154",NA,NA,NA
+"Neuheim","2860.97451944569",NA,NA,NA
+"Oberägeri","3603.45932094811",NA,NA,NA
+"Risch","2656.96087352138",NA,NA,NA
+"Steinhausen","3613.38730378122",NA,NA,NA
+"Unterägeri","3078.48443843031",NA,NA,NA
+"Walchwil","2074.91242252762",NA,NA,NA
+"Zug","2877.39238356522",NA,NA,NA
+NA,NA,"1","datatypes","string,float"
+NA,NA,"1","title","Positiv getestete Personen nach Gemeinde im Total pro 100'000"
+NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Gemeinde ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
+NA,NA,"1","source","ISM, Bundesamt für Gesundheit"

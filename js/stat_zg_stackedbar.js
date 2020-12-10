@@ -64,14 +64,21 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					x[stack] = format.parse(x[stack]);
 					x[group] = +x[group];
 				});
-				generals.treatmetadata(number, data, "Datum", dimension, group);
-			} else if (asDate==true) {
-								data.forEach(function(x) {
+				generals.treatmetadata(number, data, "Datum", dimension, group, stack);
+			} else if (asDate==true & dateUnit=="week") {
+				data.forEach(function(x) {
 					x["Datum"] = x[stack];
 					x[stack] = new Date(x[stack]);
 					x[group] = +x[group];
 				});
-				generals.treatmetadata(number, data, "Datum", dimension, group);
+				generals.treatmetadata(number, data, stack, dimension, group);
+			} else if (asDate==true) {
+				data.forEach(function(x) {
+					x["Datum"] = x[stack];
+					x[stack] = new Date(x[stack]);
+					x[group] = +x[group];
+				});
+				generals.treatmetadata(number, data, "Datum", dimension, group, stack);
 			}
 			else {
 				data.forEach(function(x) {
@@ -151,7 +158,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				;
 			
 			if (asDate==true) {
-				if (dateUnit="date") {
+				if (dateUnit=="date") {
 					Charts[number]
 						.x(d3.time.scale())
 						.xUnits(d3.time.days);
@@ -164,6 +171,20 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					Charts[number].on('preRender', calc_domain);
 					Charts[number].on('preRedraw', calc_domain);
 					Charts[number].xAxis().tickFormat(d3.time.format("%d.%m.%Y"));
+				} else if (dateUnit=="week") {
+					Charts[number]
+						.x(d3.time.scale())
+						.xUnits(d3.time.weeks);
+						function calc_domain(chart) {
+							var min = d3.min(data, function(d) {return d[stack]}),
+								max = d3.max(data, function(d) {return d[stack]});
+								max = d3.time.week.offset(max, 1);
+							Charts[number].x(d3.time.scale().domain([min, max]));
+						}
+					Charts[number].on('preRender', calc_domain);
+					Charts[number].on('preRedraw', calc_domain);
+					Charts[number].xAxis().tickFormat(d3.time.format("Woche %W"));
+
 				} else {
 					Charts[number]
 						.x(d3.time.scale())
@@ -366,6 +387,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			function initTip(number){
 				last_tip = null;
+				d3.select("#d3-tip"+number).remove();
 				Atts[number].tips = d3tip()
 					.attr('class', 'd3-tip')
 					.attr('id', 'd3-tip'+number)
@@ -399,12 +421,18 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						
 						if (asDate==true){
 							var dateNameFormat = d3.time.format("%d %B %Y");
+							var date2NameFormat = d3.time.format("%d.%m.%Y");
+							var weekNameFormat = d3.time.format("Woche %W")
 							var monthNameFormat = d3.time.format("%B %Y");
 							var yearNameFormat = d3.time.format("%Y");
 							if (dateUnit=="year") {
 								label=yearNameFormat(d.data.key)
 							}
-							if (dateUnit=="date") {
+							if (dateUnit=="week") {
+								label=date2NameFormat(d.data.key)+" bis "+date2NameFormat(d3.time.day.offset(d.data.key, 6))
+								console.log(label)
+							}
+							else if (dateUnit=="date") {
 								label=dateNameFormat(d.data.key)
 							}
 							else {
@@ -418,16 +446,16 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 						else {wert=germanFormatters.numberFormat(",")(d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]])}
 						
 						if (showTotal==true & showAnteil==true) {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span><br/><span>Anzahl: " + wert +  "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date' | dateUnit == 'week') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span><br/><span>"+group+": " + wert +  "</span>";
 						}
 						else if (showTotal==true) {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>"+group+": " + wert +  "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date' | dateUnit == 'week') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>"+group+": " + wert +  "</span>";
 						}
 						else if (showAnteil==true) {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span>";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date' | dateUnit == 'week') ? "<br/><span>"+label+"</span>" : "")+"<br/><span>Anteil: " +(Math.round((d.data.value[characteristics[Math.floor(i/Atts[number].maingroup.all().length)]]/d.data.value["total"])*1000)/10).toFixed(1) + '%' + "</span>";
 						}
 						else {
-							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date') ? "<br/><span>"+label+"</span>" : "")+"";
+							tiptext= "<span>"/* + d.data.key + "</span><br/><span>" */+characteristics[Math.floor(i/Atts[number].maingroup.all().length)]+ "</span>"+((dateUnit == 'date' | dateUnit == 'week') ? "<br/><span>"+label+"</span>" : "")+"";
 						};
 						$("#d3-tip"+number).html(tiptext)
 						$("#d3-tip"+number).css("border-left", colorScale.range()[Math.floor(i/Atts[number].maingroup.all().length)] +" solid 5px");
