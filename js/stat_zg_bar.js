@@ -287,6 +287,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 
 			function initTip(number){
 				last_tip = null;
+				d3.select("#d3-tip"+number).remove();
 				Atts[number].tips = d3tip()
 					.attr('class', 'd3-tip')
 					.attr('id', 'd3-tip'+number)
