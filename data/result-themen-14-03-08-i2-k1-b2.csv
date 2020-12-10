@@ -1,0 +1,8 @@
+"Geschlecht","Inzidenz pro 100'000","Meta","Type","Content"
+"männlich","3074.58",NA,NA,NA
+"weiblich","2878.76",NA,NA,NA
+NA,NA,"1","datatypes","string,float"
+NA,NA,"1","title","Positiv getestete Personen nach Geschlecht im Total pro 100'000"
+NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
+NA,NA,"1","source","Bundesamt für Gesundheit"

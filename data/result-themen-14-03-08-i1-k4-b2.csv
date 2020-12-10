@@ -1,0 +1,15 @@
+"Altersklasse","Inzidenz pro 100'000","Meta","Type","Content"
+"0 - 9 Jahre","5482.37",NA,NA,NA
+"10 - 19 Jahre","33651.05",NA,NA,NA
+"20 - 29 Jahre","48882.78",NA,NA,NA
+"30 - 39 Jahre","39705.17",NA,NA,NA
+"40 - 49 Jahre","31961.44",NA,NA,NA
+"50 - 59 Jahre","26675",NA,NA,NA
+"60 - 69 Jahre","20824.24",NA,NA,NA
+"70 - 79 Jahre","14425.63",NA,NA,NA
+"80+ Jahre","21532.41",NA,NA,NA
+NA,NA,"1","datatypes","string,float"
+NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Alterskategorien im Total pro 100'000"
+NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Alterklasse ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
+NA,NA,"1","source","Bundesamt für Gesundheit"

@@ -1,0 +1,16 @@
+"Altersklasse","Anzahl Fälle","Meta","Type","Content"
+"0 - 9 Jahre","724",NA,NA,NA
+"10 - 19 Jahre","4272",NA,NA,NA
+"20 - 29 Jahre","6563",NA,NA,NA
+"30 - 39 Jahre","7299",NA,NA,NA
+"40 - 49 Jahre","6205",NA,NA,NA
+"50 - 59 Jahre","5550",NA,NA,NA
+"60 - 69 Jahre","2865",NA,NA,NA
+"70 - 79 Jahre","1458",NA,NA,NA
+"80+ Jahre","1259",NA,NA,NA
+"Unbekannt","3",NA,NA,NA
+NA,NA,"1","datatypes","string,integer"
+NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Alterskategorien im Total"
+NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
+NA,NA,"1","source","Bundesamt für Gesundheit"

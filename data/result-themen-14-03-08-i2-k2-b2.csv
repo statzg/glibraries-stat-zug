@@ -1,0 +1,8 @@
+"Geschlecht","Inzidenz pro 100'000","Meta","Type","Content"
+"männlich","21.68",NA,NA,NA
+"weiblich","30.14",NA,NA,NA
+NA,NA,"1","datatypes","string,float"
+NA,NA,"1","title","Todesfälle aufgrund von COVID-19 nach Geschlecht im Total pro 100'000"
+NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Todesfälle werden beim BAG mit zeitlicher Verzögerung registriert, diese Zahlen umfassen noch nicht alle im Kanton registrierten Fälle."
+NA,NA,"1","source","Bundesamt für Gesundheit"
