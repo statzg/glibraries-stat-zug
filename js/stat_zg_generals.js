@@ -9,7 +9,9 @@ require.config({
 		"crossfilter": "libraries/crossfilter",
 		"d3": "libraries/d3",
 		"dc": "libraries/dc",
-		"exceljs": "libraries/exceljs"
+		"exceljs": "libraries/exceljs",
+		"iframeresizer": "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer",
+		"iframeresizer-contentwindow": "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.11/iframeResizer.contentWindow"
     },
     shim:{
 		'crossfilter':{
@@ -18,7 +20,7 @@ require.config({
     }
 });
 
-define(['urijs/URI','waitme/waitMe.min','d3','crossfilter','dc','libs/d3-tip','libs/FileSaver','exceljs','stat_zg_excelexportsimple'], function (URI,waitMe,d3,crossfilter,dc,d3tip,FileSaver,ExcelJS,stat_zg_excelexportsimple) {
+define(['urijs/URI','waitme/waitMe.min','d3','crossfilter','dc','libs/d3-tip','libs/FileSaver','exceljs','stat_zg_excelexportsimple','iframeresizer-contentwindow'], function (URI,waitMe,d3,crossfilter,dc,d3tip,FileSaver,ExcelJS,stat_zg_excelexportsimple,iFrameResizercontentWindow) {
 
 	var stylesheets = ["/behoerden/gesundheitsdirektion/statistikfachstelle/daten/css/statistik.css",
 	"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/libraries/waitme/waitMe.css"
@@ -130,6 +132,30 @@ function isolateChart(number) {
 	});
 }
 
+$( document ).ready(function() {
+	setTimeout(function () {
+		if (typeof uri.search(true)["embed"] != "undefined" & isolatecircle==0) {
+			embedChart(uri.search(true)["embed"]);
+			isolatecircle=isolatecircle+1
+		}
+	}, 500);
+});
+
+function embedChart(number) {
+	$( document ).ready(function() {
+		$('body > :not(#' + Atts[number].maincontainer+')').hide();
+		$('#' + Atts[number].maincontainer ).parent().css('margin-left','0px');
+		$('#' + Atts[number].maincontainer ).parent().appendTo('body');
+		$('#d3-tip' + number ).show();
+		/*setTimeout(function () {
+			$('#dropdowncontainer' + number ).remove();
+		}, 300);*/
+		$('body').css('background-color','transparent');
+		$(window).trigger('resize');
+		//$('#d3-tip' + number ).remove();
+	});
+}
+
 return {
 	createcontainers: function (number) {
 	//function createcontainers(number) {
@@ -150,7 +176,7 @@ return {
 		}
 	},
 
-	treatmetadata: function(number, data, vertical, horizontal, values) {
+	treatmetadata: function(number, data, vertical, horizontal, values, datatypevertical) {
 	
 		Atts[number].meta = data.filter(function(el) {
 			return el["Meta"] == 1
@@ -208,9 +234,10 @@ return {
 			valuesIndex=Object.keys(Atts[number].data[0]).indexOf(values)
 			
 			Atts[number].datatypeswide = [Atts[number].datatypes[verticalIndex]]
+			//Ersatz mit effektivem Spaltentyp, wenn vertikale Spalte generiert ist (Datum).
+			if (Atts[number].datatypeswide[0]===undefined) Atts[number].datatypeswide=[Atts[number].datatypes[Object.keys(Atts[number].data[0]).indexOf(datatypevertical)]]
 			for(i=1;i<Object.keys(Atts[number].wide[0]).length;i++) {
 				if(Object.keys(Atts[number].wide[0])[i]!="Minus") {
-					//console.log(Object.keys(Atts[number].wide[0]));
 					Atts[number].datatypeswide.push(Atts[number].datatypes[valuesIndex])
 				}
 			}
