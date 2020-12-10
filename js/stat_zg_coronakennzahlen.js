@@ -1,7 +1,8 @@
 /* stat_zg_kennzahlen.js (version 0.1 (2018.11.14)*/
 
 require.config({
-  baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+  //baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
+  baseUrl: 'https://cdn.jsdelivr.net/gh/statzg/glibraries-stat-zug@master/js/',
   paths: {
     "libs": "libraries",
 	"d3v4": "libraries/d3_v4"
