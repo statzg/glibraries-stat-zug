@@ -75,14 +75,14 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 					x[dimension] = format.parse(x[dimension]);
 					x[group] = +x[group];
 				});
-				generals.treatmetadata(number, data, "Datum", stack, group);
+				generals.treatmetadata(number, data, "Datum", stack, group, dimension);
 			} else if (asDate==true) {
 								data.forEach(function(x) {
 					x["Datum"] = x[dimension];
 					x[dimension] = new Date(x[dimension]);
 					x[group] = +x[group];
 				});
-				generals.treatmetadata(number, data, "Datum", stack, group);
+				generals.treatmetadata(number, data, "Datum", stack, group, dimension);
 			}
 			else {
 				data.forEach(function(x) {

@@ -317,8 +317,8 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			initTip();
 			callTip();
 
-			window.addEventListener('resize', function(){
-			  //Breite des Hauptcontainers einlesen
+			$(window).resize(function(event) {
+				//Breite des Hauptcontainers einlesen
 				var newWidth = document.getElementById(Atts[number].maincontainer).offsetWidth;
 				Charts[number].width(newWidth)
 					.transitionDuration(0);
