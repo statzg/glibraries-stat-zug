@@ -283,6 +283,7 @@
 "Fallzahl","07.12.2020","2936.24424035357","2020-12-08 08:00:00",NA,NA,NA
 "Fallzahl","08.12.2020","2976.99275930163","2020-12-09 08:00:00",NA,NA,NA
 "Fallzahl","09.12.2020","3017.74127824969","2020-12-10 08:00:00",NA,NA,NA
+"Fallzahl","10.12.2020","3054.57167037583","2020-12-11 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -567,6 +568,7 @@
 "Hospitalisierte","07.12.2020","20.3742594740307","2020-12-08 08:00:00",NA,NA,NA
 "Hospitalisierte","08.12.2020","16.4561326521017","2020-12-09 08:00:00",NA,NA,NA
 "Hospitalisierte","09.12.2020","17.2397580164875","2020-12-10 08:00:00",NA,NA,NA
+"Hospitalisierte","10.12.2020","19.5906341096449","2020-12-11 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -851,6 +853,7 @@
 "Hospitalisierte in Intensivpflege","07.12.2020","2.35087609315738","2020-12-08 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","08.12.2020","3.13450145754318","2020-12-09 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","09.12.2020","3.13450145754318","2020-12-10 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","10.12.2020","3.13450145754318","2020-12-11 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1135,6 +1138,7 @@
 "Genesene","07.12.2020","2629.84672287873","2020-12-08 08:00:00",NA,NA,NA
 "Genesene","08.12.2020","2666.67711500486","2020-12-09 08:00:00",NA,NA,NA
 "Genesene","09.12.2020","2709.77651004608","2020-12-10 08:00:00",NA,NA,NA
+"Genesene","10.12.2020","2738.77064852835","2020-12-11 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1419,6 +1423,7 @@
 "Todesfälle","07.12.2020","32.1286399398176","2020-12-08 08:00:00",NA,NA,NA
 "Todesfälle","08.12.2020","33.6958906685892","2020-12-09 08:00:00",NA,NA,NA
 "Todesfälle","09.12.2020","35.2631413973608","2020-12-10 08:00:00",NA,NA,NA
+"Todesfälle","10.12.2020","36.0467667617465","2020-12-11 08:00:00",NA,NA,NA
 "Aktive Fälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Aktive Fälle","02.03.2020","0.783625364385794","2020-03-03 08:00:00",NA,NA,NA
 "Aktive Fälle","03.03.2020","0.783625364385794","2020-03-04 08:00:00",NA,NA,NA
@@ -1703,8 +1708,9 @@
 "Aktive Fälle","07.12.2020","274.268877535028","2020-12-08 08:00:00",NA,NA,NA
 "Aktive Fälle","08.12.2020","276.619753628185","2020-12-09 08:00:00",NA,NA,NA
 "Aktive Fälle","09.12.2020","272.701626806256","2020-12-10 08:00:00",NA,NA,NA
+"Aktive Fälle","10.12.2020","279.754255085729","2020-12-11 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,NA,"1","title","Entwicklung der Fallzahen"
-NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 10.12.2020 08:00"
+NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 11.12.2020 08:00"
 NA,NA,NA,NA,"1","description","Aufgrund der kleinen Grösse des Kantons Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Zahlen der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitalisierungen und aktiven Fälle umfassen jeweils nur den aktuellen Tageswert. Die Zahl der Genesenen und der aktiven Fälle bassierte vom 10.10.2020 bis zum 29.11.2020 auf einer Schätzung anhand des üblichen Verlauf der Krankheit, davor und danach wurden die Zahlen anhand des Contact Tracings ermittelt."
 NA,NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

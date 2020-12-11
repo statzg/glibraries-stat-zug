@@ -1,15 +1,15 @@
 "Gemeinde","Anzahl Fälle","Meta","Type","Content"
-"Baar","807",NA,NA,NA
-"Cham","462",NA,NA,NA
-"Hünenberg","178",NA,NA,NA
+"Baar","816",NA,NA,NA
+"Cham","472",NA,NA,NA
+"Hünenberg","180",NA,NA,NA
 "Menzingen","146",NA,NA,NA
 "Neuheim","64",NA,NA,NA
-"Oberägeri","225",NA,NA,NA
-"Risch","292",NA,NA,NA
-"Steinhausen","366",NA,NA,NA
-"Unterägeri","273",NA,NA,NA
-"Walchwil","77",NA,NA,NA
-"Zug","881",NA,NA,NA
+"Oberägeri","229",NA,NA,NA
+"Risch","299",NA,NA,NA
+"Steinhausen","368",NA,NA,NA
+"Unterägeri","276",NA,NA,NA
+"Walchwil","78",NA,NA,NA
+"Zug","892",NA,NA,NA
 NA,NA,"1","datatypes","string,integer"
 NA,NA,"1","title","Positiv getestete Personen nach Gemeinde im Total"
 NA,NA,"1","subtitle","Datenstand: 10.12.2020"

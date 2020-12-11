@@ -2,7 +2,8 @@
 
 require.config({
   //baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/',
-  baseUrl: 'https://cdn.jsdelivr.net/gh/statzg/glibraries-stat-zug@master/js/',
+  //baseUrl: 'https://cdn.jsdelivr.net/gh/statzg/glibraries-stat-zug@master/js/',
+  baseUrl: 'https://survey.zg.ch/cdn/js/',
   paths: {
     "libs": "libraries",
 	"d3v4": "libraries/d3_v4"

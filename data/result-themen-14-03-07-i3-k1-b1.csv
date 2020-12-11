@@ -31,7 +31,7 @@
 2020-11-16,"Baar","77",NA,NA,NA
 2020-11-23,"Baar","75",NA,NA,NA
 2020-11-30,"Baar","82",NA,NA,NA
-2020-12-07,"Baar","35",NA,NA,NA
+2020-12-07,"Baar","44",NA,NA,NA
 2020-03-16,"Cham","2",NA,NA,NA
 2020-03-23,"Cham","8",NA,NA,NA
 2020-03-30,"Cham","6",NA,NA,NA
@@ -64,7 +64,7 @@
 2020-11-16,"Cham","39",NA,NA,NA
 2020-11-23,"Cham","38",NA,NA,NA
 2020-11-30,"Cham","36",NA,NA,NA
-2020-12-07,"Cham","20",NA,NA,NA
+2020-12-07,"Cham","30",NA,NA,NA
 2020-03-09,"Hünenberg","1",NA,NA,NA
 2020-03-23,"Hünenberg","2",NA,NA,NA
 2020-03-30,"Hünenberg","2",NA,NA,NA
@@ -86,7 +86,7 @@
 2020-11-16,"Hünenberg","11",NA,NA,NA
 2020-11-23,"Hünenberg","19",NA,NA,NA
 2020-11-30,"Hünenberg","15",NA,NA,NA
-2020-12-07,"Hünenberg","6",NA,NA,NA
+2020-12-07,"Hünenberg","8",NA,NA,NA
 2020-03-16,"Menzingen","2",NA,NA,NA
 2020-04-06,"Menzingen","1",NA,NA,NA
 2020-07-20,"Menzingen","1",NA,NA,NA
@@ -138,7 +138,7 @@
 2020-11-16,"Oberägeri","12",NA,NA,NA
 2020-11-23,"Oberägeri","15",NA,NA,NA
 2020-11-30,"Oberägeri","10",NA,NA,NA
-2020-12-07,"Oberägeri","6",NA,NA,NA
+2020-12-07,"Oberägeri","10",NA,NA,NA
 2020-03-02,"Risch","1",NA,NA,NA
 2020-03-09,"Risch","1",NA,NA,NA
 2020-03-16,"Risch","3",NA,NA,NA
@@ -168,7 +168,7 @@
 2020-11-16,"Risch","39",NA,NA,NA
 2020-11-23,"Risch","13",NA,NA,NA
 2020-11-30,"Risch","20",NA,NA,NA
-2020-12-07,"Risch","8",NA,NA,NA
+2020-12-07,"Risch","15",NA,NA,NA
 2020-03-16,"Steinhausen","2",NA,NA,NA
 2020-03-23,"Steinhausen","7",NA,NA,NA
 2020-03-30,"Steinhausen","1",NA,NA,NA
@@ -192,7 +192,7 @@
 2020-11-16,"Steinhausen","39",NA,NA,NA
 2020-11-23,"Steinhausen","36",NA,NA,NA
 2020-11-30,"Steinhausen","56",NA,NA,NA
-2020-12-07,"Steinhausen","12",NA,NA,NA
+2020-12-07,"Steinhausen","14",NA,NA,NA
 2020-02-24,"Unterägeri","1",NA,NA,NA
 2020-03-09,"Unterägeri","1",NA,NA,NA
 2020-03-16,"Unterägeri","3",NA,NA,NA
@@ -215,7 +215,7 @@
 2020-11-16,"Unterägeri","34",NA,NA,NA
 2020-11-23,"Unterägeri","27",NA,NA,NA
 2020-11-30,"Unterägeri","33",NA,NA,NA
-2020-12-07,"Unterägeri","12",NA,NA,NA
+2020-12-07,"Unterägeri","15",NA,NA,NA
 2020-03-23,"Walchwil","1",NA,NA,NA
 2020-03-30,"Walchwil","3",NA,NA,NA
 2020-07-27,"Walchwil","1",NA,NA,NA
@@ -232,7 +232,7 @@
 2020-11-16,"Walchwil","13",NA,NA,NA
 2020-11-23,"Walchwil","7",NA,NA,NA
 2020-11-30,"Walchwil","12",NA,NA,NA
-2020-12-07,"Walchwil","3",NA,NA,NA
+2020-12-07,"Walchwil","4",NA,NA,NA
 2020-03-02,"Zug","3",NA,NA,NA
 2020-03-09,"Zug","3",NA,NA,NA
 2020-03-16,"Zug","13",NA,NA,NA
@@ -263,7 +263,7 @@
 2020-11-16,"Zug","86",NA,NA,NA
 2020-11-23,"Zug","79",NA,NA,NA
 2020-11-30,"Zug","67",NA,NA,NA
-2020-12-07,"Zug","20",NA,NA,NA
+2020-12-07,"Zug","31",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Positiv getestete Personen nach Gemeinde im Zeitverlauf"
 NA,NA,NA,"1","subtitle","Datenstand: 10.12.2020"
