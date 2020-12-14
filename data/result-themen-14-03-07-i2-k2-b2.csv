@@ -81,8 +81,8 @@
 2020-11-09,"weiblich","6.34",NA,NA,NA
 2020-11-16,"weiblich","4.76",NA,NA,NA
 2020-11-23,"weiblich","1.59",NA,NA,NA
-2020-11-30,"weiblich","4.76",NA,NA,NA
-2020-12-07,"weiblich","0",NA,NA,NA
+2020-11-30,"weiblich","6.34",NA,NA,NA
+2020-12-07,"weiblich","1.59",NA,NA,NA
 2020-02-24,"Unbekannt",NA,NA,NA,NA
 2020-03-02,"Unbekannt",NA,NA,NA,NA
 2020-03-09,"Unbekannt",NA,NA,NA,NA
@@ -127,6 +127,6 @@
 2020-12-07,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Todesfälle aufgrund von COVID-19 nach Geschlecht im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 11.12.2020"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Todesfälle werden beim BAG mit zeitlicher Verzögerung registriert, diese Zahlen umfassen noch nicht alle im Kanton registrierten Fälle."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

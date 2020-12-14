@@ -278,12 +278,15 @@
 "Fallzahl","02.12.2020","3525","2020-12-03 08:00:00",NA,NA,NA
 "Fallzahl","03.12.2020","3571","2020-12-04 08:00:00",NA,NA,NA
 "Fallzahl","04.12.2020","3641","2020-12-05 08:00:00",NA,NA,NA
-"Fallzahl","05.12.2020","3641","2020-12-06 08:00:00",NA,NA,NA
+"Fallzahl","05.12.2020","3673","2020-12-06 08:00:00",NA,NA,NA
 "Fallzahl","06.12.2020","3706","2020-12-07 08:00:00",NA,NA,NA
 "Fallzahl","07.12.2020","3747","2020-12-08 08:00:00",NA,NA,NA
 "Fallzahl","08.12.2020","3799","2020-12-09 08:00:00",NA,NA,NA
 "Fallzahl","09.12.2020","3851","2020-12-10 08:00:00",NA,NA,NA
 "Fallzahl","10.12.2020","3898","2020-12-11 08:00:00",NA,NA,NA
+"Fallzahl","11.12.2020","3961","2020-12-12 08:00:00",NA,NA,NA
+"Fallzahl","12.12.2020","4001","2020-12-13 08:00:00",NA,NA,NA
+"Fallzahl","13.12.2020","4038","2020-12-14 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -569,6 +572,9 @@
 "Hospitalisierte","08.12.2020","21","2020-12-09 08:00:00",NA,NA,NA
 "Hospitalisierte","09.12.2020","22","2020-12-10 08:00:00",NA,NA,NA
 "Hospitalisierte","10.12.2020","25","2020-12-11 08:00:00",NA,NA,NA
+"Hospitalisierte","11.12.2020","25","2020-12-12 08:00:00",NA,NA,NA
+"Hospitalisierte","12.12.2020","23","2020-12-13 08:00:00",NA,NA,NA
+"Hospitalisierte","13.12.2020","24","2020-12-14 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -854,6 +860,9 @@
 "Hospitalisierte in Intensivpflege","08.12.2020","4","2020-12-09 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","09.12.2020","4","2020-12-10 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","10.12.2020","4","2020-12-11 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","11.12.2020","4","2020-12-12 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","12.12.2020","4","2020-12-13 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","13.12.2020","4","2020-12-14 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1133,12 +1142,15 @@
 "Genesene","02.12.2020","3137","2020-12-03 08:00:00",NA,NA,NA
 "Genesene","03.12.2020","3174","2020-12-04 08:00:00",NA,NA,NA
 "Genesene","04.12.2020","3217","2020-12-05 08:00:00",NA,NA,NA
-"Genesene","05.12.2020","3217","2020-12-06 08:00:00",NA,NA,NA
+"Genesene","05.12.2020","3249","2020-12-06 08:00:00",NA,NA,NA
 "Genesene","06.12.2020","3299","2020-12-07 08:00:00",NA,NA,NA
 "Genesene","07.12.2020","3356","2020-12-08 08:00:00",NA,NA,NA
 "Genesene","08.12.2020","3403","2020-12-09 08:00:00",NA,NA,NA
 "Genesene","09.12.2020","3458","2020-12-10 08:00:00",NA,NA,NA
 "Genesene","10.12.2020","3495","2020-12-11 08:00:00",NA,NA,NA
+"Genesene","11.12.2020","3558","2020-12-12 08:00:00",NA,NA,NA
+"Genesene","12.12.2020","3650","2020-12-13 08:00:00",NA,NA,NA
+"Genesene","13.12.2020","3668","2020-12-14 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1424,6 +1436,9 @@
 "Todesfälle","08.12.2020","43","2020-12-09 08:00:00",NA,NA,NA
 "Todesfälle","09.12.2020","45","2020-12-10 08:00:00",NA,NA,NA
 "Todesfälle","10.12.2020","46","2020-12-11 08:00:00",NA,NA,NA
+"Todesfälle","11.12.2020","47","2020-12-12 08:00:00",NA,NA,NA
+"Todesfälle","12.12.2020","47","2020-12-13 08:00:00",NA,NA,NA
+"Todesfälle","13.12.2020","48","2020-12-14 08:00:00",NA,NA,NA
 "Aktive Fälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Aktive Fälle","02.03.2020","1","2020-03-03 08:00:00",NA,NA,NA
 "Aktive Fälle","03.03.2020","1","2020-03-04 08:00:00",NA,NA,NA
@@ -1709,8 +1724,11 @@
 "Aktive Fälle","08.12.2020","353","2020-12-09 08:00:00",NA,NA,NA
 "Aktive Fälle","09.12.2020","348","2020-12-10 08:00:00",NA,NA,NA
 "Aktive Fälle","10.12.2020","357","2020-12-11 08:00:00",NA,NA,NA
+"Aktive Fälle","11.12.2020","356","2020-12-12 08:00:00",NA,NA,NA
+"Aktive Fälle","12.12.2020","304","2020-12-13 08:00:00",NA,NA,NA
+"Aktive Fälle","13.12.2020","322","2020-12-14 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,NA,"1","title","Entwicklung der Fallzahlen"
-NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 11.12.2020 08:00"
+NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 14.12.2020 08:00"
 NA,NA,NA,NA,"1","description","Aufgrund der kleinen Grösse des Kantons Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Zahlen der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitalisierungen und aktiven Fälle umfassen jeweils nur den aktuellen Tageswert. Die Zahl der Genesenen und der aktiven Fälle bassierte vom 10.10.2020 bis zum 29.11.2020 auf einer Schätzung anhand des üblichen Verlauf der Krankheit, davor und danach wurden die Zahlen anhand des Contact Tracings ermittelt."
 NA,NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

@@ -27,7 +27,7 @@
 2020-11-16,"männlich","1111",NA,NA,NA
 2020-11-23,"männlich","1165",NA,NA,NA
 2020-11-30,"männlich","1200",NA,NA,NA
-2020-12-07,"männlich","562",NA,NA,NA
+2020-12-07,"männlich","814",NA,NA,NA
 2020-05-25,"weiblich","105",NA,NA,NA
 2020-06-01,"weiblich","130",NA,NA,NA
 2020-06-08,"weiblich","250",NA,NA,NA
@@ -56,7 +56,7 @@
 2020-11-16,"weiblich","1143",NA,NA,NA
 2020-11-23,"weiblich","1108",NA,NA,NA
 2020-11-30,"weiblich","1166",NA,NA,NA
-2020-12-07,"weiblich","517",NA,NA,NA
+2020-12-07,"weiblich","728",NA,NA,NA
 2020-05-25,"Unbekannt","0",NA,NA,NA
 2020-06-01,"Unbekannt","0",NA,NA,NA
 2020-06-08,"Unbekannt","0",NA,NA,NA
@@ -88,6 +88,6 @@
 2020-12-07,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 11.12.2020"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

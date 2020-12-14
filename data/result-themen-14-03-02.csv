@@ -278,12 +278,15 @@
 "Erkrankte ohne Hospitalisierung","02.12.2020","3470",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","03.12.2020","3512",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","04.12.2020","3576",NA,NA,NA
-"Erkrankte ohne Hospitalisierung","05.12.2020","3576",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","05.12.2020","3608",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","06.12.2020","3640",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","07.12.2020","3680",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","08.12.2020","3735",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","09.12.2020","3784",NA,NA,NA
 "Erkrankte ohne Hospitalisierung","10.12.2020","3827",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","11.12.2020","3889",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","12.12.2020","3931",NA,NA,NA
+"Erkrankte ohne Hospitalisierung","13.12.2020","3966",NA,NA,NA
 "Hospitalisierte","01.03.2020","0",NA,NA,NA
 "Hospitalisierte","02.03.2020","0",NA,NA,NA
 "Hospitalisierte","03.03.2020","0",NA,NA,NA
@@ -569,6 +572,9 @@
 "Hospitalisierte","08.12.2020","17",NA,NA,NA
 "Hospitalisierte","09.12.2020","18",NA,NA,NA
 "Hospitalisierte","10.12.2020","21",NA,NA,NA
+"Hospitalisierte","11.12.2020","21",NA,NA,NA
+"Hospitalisierte","12.12.2020","19",NA,NA,NA
+"Hospitalisierte","13.12.2020","20",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0",NA,NA,NA
@@ -854,6 +860,9 @@
 "Hospitalisierte in Intensivpflege","08.12.2020","4",NA,NA,NA
 "Hospitalisierte in Intensivpflege","09.12.2020","4",NA,NA,NA
 "Hospitalisierte in Intensivpflege","10.12.2020","4",NA,NA,NA
+"Hospitalisierte in Intensivpflege","11.12.2020","4",NA,NA,NA
+"Hospitalisierte in Intensivpflege","12.12.2020","4",NA,NA,NA
+"Hospitalisierte in Intensivpflege","13.12.2020","4",NA,NA,NA
 "Todesfälle","01.03.2020","0",NA,NA,NA
 "Todesfälle","02.03.2020","0",NA,NA,NA
 "Todesfälle","03.03.2020","0",NA,NA,NA
@@ -1139,8 +1148,11 @@
 "Todesfälle","08.12.2020","43",NA,NA,NA
 "Todesfälle","09.12.2020","45",NA,NA,NA
 "Todesfälle","10.12.2020","46",NA,NA,NA
+"Todesfälle","11.12.2020","47",NA,NA,NA
+"Todesfälle","12.12.2020","47",NA,NA,NA
+"Todesfälle","13.12.2020","48",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,"1","title",""
-NA,NA,NA,"1","subtitle","Datenstand: 11.12.2020 08:00"
+NA,NA,NA,"1","subtitle","Datenstand: 14.12.2020 08:00"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitatilierungen umfassen nur die Hospitalisierungen des jeweiligen Tags und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

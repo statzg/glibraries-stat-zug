@@ -27,7 +27,7 @@
 2020-11-16,"männlich","1719.97",NA,NA,NA
 2020-11-23,"männlich","1803.57",NA,NA,NA
 2020-11-30,"männlich","1857.76",NA,NA,NA
-2020-12-07,"männlich","870.05",NA,NA,NA
+2020-12-07,"männlich","1260.18",NA,NA,NA
 2020-05-25,"weiblich","166.54",NA,NA,NA
 2020-06-01,"weiblich","206.19",NA,NA,NA
 2020-06-08,"weiblich","396.52",NA,NA,NA
@@ -56,7 +56,7 @@
 2020-11-16,"weiblich","1812.9",NA,NA,NA
 2020-11-23,"weiblich","1757.39",NA,NA,NA
 2020-11-30,"weiblich","1849.38",NA,NA,NA
-2020-12-07,"weiblich","820.01",NA,NA,NA
+2020-12-07,"weiblich","1154.68",NA,NA,NA
 2020-05-25,"Unbekannt",NA,NA,NA,NA
 2020-06-01,"Unbekannt",NA,NA,NA,NA
 2020-06-08,"Unbekannt",NA,NA,NA,NA
@@ -88,6 +88,6 @@
 2020-12-07,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 10.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 11.12.2020"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"
