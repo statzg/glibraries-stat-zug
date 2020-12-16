@@ -40,7 +40,8 @@
 2020-11-16,"männlich","190",NA,NA,NA
 2020-11-23,"männlich","161",NA,NA,NA
 2020-11-30,"männlich","169",NA,NA,NA
-2020-12-07,"männlich","85",NA,NA,NA
+2020-12-07,"männlich","163",NA,NA,NA
+2020-12-14,"männlich","23",NA,NA,NA
 2020-02-24,"weiblich","0",NA,NA,NA
 2020-03-02,"weiblich","1",NA,NA,NA
 2020-03-09,"weiblich","4",NA,NA,NA
@@ -82,7 +83,8 @@
 2020-11-16,"weiblich","192",NA,NA,NA
 2020-11-23,"weiblich","160",NA,NA,NA
 2020-11-30,"weiblich","188",NA,NA,NA
-2020-12-07,"weiblich","96",NA,NA,NA
+2020-12-07,"weiblich","169",NA,NA,NA
+2020-12-14,"weiblich","18",NA,NA,NA
 2020-02-24,"Unbekannt","0",NA,NA,NA
 2020-03-02,"Unbekannt","0",NA,NA,NA
 2020-03-09,"Unbekannt","0",NA,NA,NA
@@ -125,8 +127,9 @@
 2020-11-23,"Unbekannt","0",NA,NA,NA
 2020-11-30,"Unbekannt","0",NA,NA,NA
 2020-12-07,"Unbekannt","0",NA,NA,NA
+2020-12-14,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Positiv getestete Personen nach Geschlecht im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 11.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 15.12.2020"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

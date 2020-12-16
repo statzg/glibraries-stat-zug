@@ -1,15 +1,15 @@
 "Altersklasse","Inzidenz pro 100'000","Meta","Type","Content"
-"0 - 9 Jahre","242.3",NA,NA,NA
-"10 - 19 Jahre","2883.05",NA,NA,NA
-"20 - 29 Jahre","5288.26",NA,NA,NA
-"30 - 39 Jahre","3350.93",NA,NA,NA
-"40 - 49 Jahre","3033.87",NA,NA,NA
-"50 - 59 Jahre","3316.39",NA,NA,NA
-"60 - 69 Jahre","2754.79",NA,NA,NA
-"70 - 79 Jahre","2374.58",NA,NA,NA
-"80+ Jahre","3916.52",NA,NA,NA
+"0 - 9 Jahre","265.01",NA,NA,NA
+"10 - 19 Jahre","3064.22",NA,NA,NA
+"20 - 29 Jahre","5526.6",NA,NA,NA
+"30 - 39 Jahre","3476.05",NA,NA,NA
+"40 - 49 Jahre","3219.3",NA,NA,NA
+"50 - 59 Jahre","3460.58",NA,NA,NA
+"60 - 69 Jahre","2900.17",NA,NA,NA
+"70 - 79 Jahre","2483.42",NA,NA,NA
+"80+ Jahre","4155.96",NA,NA,NA
 NA,NA,"1","datatypes","string,float"
 NA,NA,"1","title","Positiv getestete Personen nach Alterskategorien im Total pro 100'000"
-NA,NA,"1","subtitle","Datenstand: 11.12.2020"
+NA,NA,"1","subtitle","Datenstand: 15.12.2020"
 NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Alterklasse ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,"1","source","Bundesamt für Gesundheit"

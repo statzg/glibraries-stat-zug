@@ -287,6 +287,8 @@
 "Fallzahl","11.12.2020","3103.94006833213","2020-12-12 08:00:00",NA,NA,NA
 "Fallzahl","12.12.2020","3135.28508290756","2020-12-13 08:00:00",NA,NA,NA
 "Fallzahl","13.12.2020","3164.27922138984","2020-12-14 08:00:00",NA,NA,NA
+"Fallzahl","14.12.2020","3208.94586715983","2020-12-15 08:00:00",NA,NA,NA
+"Fallzahl","15.12.2020","3257.53063975175","2020-12-16 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -575,6 +577,8 @@
 "Hospitalisierte","11.12.2020","19.5906341096449","2020-12-12 08:00:00",NA,NA,NA
 "Hospitalisierte","12.12.2020","18.0233833808733","2020-12-13 08:00:00",NA,NA,NA
 "Hospitalisierte","13.12.2020","18.8070087452591","2020-12-14 08:00:00",NA,NA,NA
+"Hospitalisierte","14.12.2020","18.0233833808733","2020-12-15 08:00:00",NA,NA,NA
+"Hospitalisierte","15.12.2020","18.0233833808733","2020-12-16 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -863,6 +867,8 @@
 "Hospitalisierte in Intensivpflege","11.12.2020","3.13450145754318","2020-12-12 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","12.12.2020","3.13450145754318","2020-12-13 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","13.12.2020","3.13450145754318","2020-12-14 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","14.12.2020","3.13450145754318","2020-12-15 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","15.12.2020","3.13450145754318","2020-12-16 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1151,6 +1157,8 @@
 "Genesene","11.12.2020","2788.13904648466","2020-12-12 08:00:00",NA,NA,NA
 "Genesene","12.12.2020","2860.23258000815","2020-12-13 08:00:00",NA,NA,NA
 "Genesene","13.12.2020","2874.33783656709","2020-12-14 08:00:00",NA,NA,NA
+"Genesene","14.12.2020","2919.78810770147","2020-12-15 08:00:00",NA,NA,NA
+"Genesene","15.12.2020","2963.67112810707","2020-12-16 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1439,6 +1447,8 @@
 "Todesfälle","11.12.2020","36.8303921261323","2020-12-12 08:00:00",NA,NA,NA
 "Todesfälle","12.12.2020","36.8303921261323","2020-12-13 08:00:00",NA,NA,NA
 "Todesfälle","13.12.2020","37.6140174905181","2020-12-14 08:00:00",NA,NA,NA
+"Todesfälle","14.12.2020","39.9648935836755","2020-12-15 08:00:00",NA,NA,NA
+"Todesfälle","15.12.2020","42.3157696768329","2020-12-16 08:00:00",NA,NA,NA
 "Aktive Fälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Aktive Fälle","02.03.2020","0.783625364385794","2020-03-03 08:00:00",NA,NA,NA
 "Aktive Fälle","03.03.2020","0.783625364385794","2020-03-04 08:00:00",NA,NA,NA
@@ -1727,8 +1737,10 @@
 "Aktive Fälle","11.12.2020","278.970629721343","2020-12-12 08:00:00",NA,NA,NA
 "Aktive Fälle","12.12.2020","238.222110773282","2020-12-13 08:00:00",NA,NA,NA
 "Aktive Fälle","13.12.2020","252.327367332226","2020-12-14 08:00:00",NA,NA,NA
+"Aktive Fälle","14.12.2020","249.192865874683","2020-12-15 08:00:00",NA,NA,NA
+"Aktive Fälle","15.12.2020","251.54374196784","2020-12-16 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,NA,"1","title","Entwicklung der Fallzahen"
-NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 14.12.2020 08:00"
+NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 16.12.2020 08:00"
 NA,NA,NA,NA,"1","description","Aufgrund der kleinen Grösse des Kantons Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Zahlen der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitalisierungen und aktiven Fälle umfassen jeweils nur den aktuellen Tageswert. Die Zahl der Genesenen und der aktiven Fälle bassierte vom 10.10.2020 bis zum 29.11.2020 auf einer Schätzung anhand des üblichen Verlauf der Krankheit, davor und danach wurden die Zahlen anhand des Contact Tracings ermittelt."
 NA,NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

@@ -40,7 +40,8 @@
 2020-11-16,"0 - 9 Jahre","30.29",NA,NA,NA
 2020-11-23,"0 - 9 Jahre","15.14",NA,NA,NA
 2020-11-30,"0 - 9 Jahre","30.29",NA,NA,NA
-2020-12-07,"0 - 9 Jahre","0",NA,NA,NA
+2020-12-07,"0 - 9 Jahre","15.14",NA,NA,NA
+2020-12-14,"0 - 9 Jahre","7.57",NA,NA,NA
 2020-02-24,"10 - 19 Jahre","0",NA,NA,NA
 2020-03-02,"10 - 19 Jahre","0",NA,NA,NA
 2020-03-09,"10 - 19 Jahre","0",NA,NA,NA
@@ -82,7 +83,8 @@
 2020-11-16,"10 - 19 Jahre","236.31",NA,NA,NA
 2020-11-23,"10 - 19 Jahre","204.81",NA,NA,NA
 2020-11-30,"10 - 19 Jahre","220.56",NA,NA,NA
-2020-12-07,"10 - 19 Jahre","173.3",NA,NA,NA
+2020-12-07,"10 - 19 Jahre","307.21",NA,NA,NA
+2020-12-14,"10 - 19 Jahre","47.26",NA,NA,NA
 2020-02-24,"20 - 29 Jahre","0",NA,NA,NA
 2020-03-02,"20 - 29 Jahre","7.45",NA,NA,NA
 2020-03-09,"20 - 29 Jahre","14.9",NA,NA,NA
@@ -124,7 +126,8 @@
 2020-11-16,"20 - 29 Jahre","580.96",NA,NA,NA
 2020-11-23,"20 - 29 Jahre","432",NA,NA,NA
 2020-11-30,"20 - 29 Jahre","379.86",NA,NA,NA
-2020-12-07,"20 - 29 Jahre","186.21",NA,NA,NA
+2020-12-07,"20 - 29 Jahre","379.86",NA,NA,NA
+2020-12-14,"20 - 29 Jahre","44.69",NA,NA,NA
 2020-02-24,"30 - 39 Jahre","5.44",NA,NA,NA
 2020-03-02,"30 - 39 Jahre","16.32",NA,NA,NA
 2020-03-09,"30 - 39 Jahre","10.88",NA,NA,NA
@@ -166,7 +169,8 @@
 2020-11-16,"30 - 39 Jahre","288.31",NA,NA,NA
 2020-11-23,"30 - 39 Jahre","293.75",NA,NA,NA
 2020-11-30,"30 - 39 Jahre","282.87",NA,NA,NA
-2020-12-07,"30 - 39 Jahre","184.95",NA,NA,NA
+2020-12-07,"30 - 39 Jahre","277.43",NA,NA,NA
+2020-12-14,"30 - 39 Jahre","32.64",NA,NA,NA
 2020-02-24,"40 - 49 Jahre","0",NA,NA,NA
 2020-03-02,"40 - 49 Jahre","0",NA,NA,NA
 2020-03-09,"40 - 49 Jahre","15.45",NA,NA,NA
@@ -208,7 +212,8 @@
 2020-11-16,"40 - 49 Jahre","288.45",NA,NA,NA
 2020-11-23,"40 - 49 Jahre","190.58",NA,NA,NA
 2020-11-30,"40 - 49 Jahre","288.45",NA,NA,NA
-2020-12-07,"40 - 49 Jahre","159.68",NA,NA,NA
+2020-12-07,"40 - 49 Jahre","298.75",NA,NA,NA
+2020-12-14,"40 - 49 Jahre","46.36",NA,NA,NA
 2020-02-24,"50 - 59 Jahre","0",NA,NA,NA
 2020-03-02,"50 - 59 Jahre","9.61",NA,NA,NA
 2020-03-09,"50 - 59 Jahre","14.42",NA,NA,NA
@@ -250,7 +255,8 @@
 2020-11-16,"50 - 59 Jahre","350.86",NA,NA,NA
 2020-11-23,"50 - 59 Jahre","302.8",NA,NA,NA
 2020-11-30,"50 - 59 Jahre","331.64",NA,NA,NA
-2020-12-07,"50 - 59 Jahre","144.19",NA,NA,NA
+2020-12-07,"50 - 59 Jahre","264.35",NA,NA,NA
+2020-12-14,"50 - 59 Jahre","24.03",NA,NA,NA
 2020-02-24,"60 - 69 Jahre","0",NA,NA,NA
 2020-03-02,"60 - 69 Jahre","0",NA,NA,NA
 2020-03-09,"60 - 69 Jahre","0",NA,NA,NA
@@ -292,7 +298,8 @@
 2020-11-16,"60 - 69 Jahre","305.28",NA,NA,NA
 2020-11-23,"60 - 69 Jahre","232.59",NA,NA,NA
 2020-11-30,"60 - 69 Jahre","218.05",NA,NA,NA
-2020-12-07,"60 - 69 Jahre","72.68",NA,NA,NA
+2020-12-07,"60 - 69 Jahre","196.25",NA,NA,NA
+2020-12-14,"60 - 69 Jahre","21.81",NA,NA,NA
 2020-02-24,"70 - 79 Jahre","0",NA,NA,NA
 2020-03-02,"70 - 79 Jahre","0",NA,NA,NA
 2020-03-09,"70 - 79 Jahre","0",NA,NA,NA
@@ -334,7 +341,8 @@
 2020-11-16,"70 - 79 Jahre","227.57",NA,NA,NA
 2020-11-23,"70 - 79 Jahre","187.99",NA,NA,NA
 2020-11-30,"70 - 79 Jahre","158.31",NA,NA,NA
-2020-12-07,"70 - 79 Jahre","207.78",NA,NA,NA
+2020-12-07,"70 - 79 Jahre","277.04",NA,NA,NA
+2020-12-14,"70 - 79 Jahre","39.58",NA,NA,NA
 2020-02-24,"80+ Jahre","0",NA,NA,NA
 2020-03-02,"80+ Jahre","0",NA,NA,NA
 2020-03-09,"80+ Jahre","0",NA,NA,NA
@@ -376,7 +384,8 @@
 2020-11-16,"80+ Jahre","393.36",NA,NA,NA
 2020-11-23,"80+ Jahre","513.08",NA,NA,NA
 2020-11-30,"80+ Jahre","872.24",NA,NA,NA
-2020-12-07,"80+ Jahre","136.82",NA,NA,NA
+2020-12-07,"80+ Jahre","359.16",NA,NA,NA
+2020-12-14,"80+ Jahre","17.1",NA,NA,NA
 2020-02-24,"Unbekannt",NA,NA,NA,NA
 2020-03-02,"Unbekannt",NA,NA,NA,NA
 2020-03-09,"Unbekannt",NA,NA,NA,NA
@@ -419,8 +428,9 @@
 2020-11-23,"Unbekannt",NA,NA,NA,NA
 2020-11-30,"Unbekannt",NA,NA,NA,NA
 2020-12-07,"Unbekannt",NA,NA,NA,NA
+2020-12-14,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Positiv getestete Personen nach Alterskategorien im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 11.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 15.12.2020"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Alterklasse ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

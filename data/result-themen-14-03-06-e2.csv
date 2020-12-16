@@ -287,6 +287,8 @@
 "Isolation","11.12.2020","278.970629721343",NA,NA,NA
 "Isolation","12.12.2020","238.222110773282",NA,NA,NA
 "Isolation","13.12.2020","252.327367332226",NA,NA,NA
+"Isolation","14.12.2020","249.192865874683",NA,NA,NA
+"Isolation","15.12.2020","251.54374196784",NA,NA,NA
 "Quarantäne aus Contact Tracing","01.03.2020","0",NA,NA,NA
 "Quarantäne aus Contact Tracing","02.03.2020","1.56725072877159",NA,NA,NA
 "Quarantäne aus Contact Tracing","03.03.2020","1.56725072877159",NA,NA,NA
@@ -575,6 +577,8 @@
 "Quarantäne aus Contact Tracing","11.12.2020","406.701564116227",NA,NA,NA
 "Quarantäne aus Contact Tracing","12.12.2020","426.292198225872",NA,NA,NA
 "Quarantäne aus Contact Tracing","13.12.2020","467.040717173934",NA,NA,NA
+"Quarantäne aus Contact Tracing","14.12.2020","473.30972008902",NA,NA,NA
+"Quarantäne aus Contact Tracing","15.12.2020","474.876970817791",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","06.07.2020","0.783625364385794",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","07.07.2020","5.48537755070056",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","08.07.2020","7.05262827947215",NA,NA,NA
@@ -736,6 +740,8 @@
 "Quarantäne nach Rückkehr aus Risikoland","11.12.2020","0",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","12.12.2020","0",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","13.12.2020","0",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","14.12.2020","1.56725072877159",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","15.12.2020","2.35087609315738",NA,NA,NA
 "Quarantäne via SwissCovid App","25.06.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","26.06.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","27.06.2020","0",NA,NA,NA
@@ -908,6 +914,8 @@
 "Quarantäne via SwissCovid App","11.12.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","12.12.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","13.12.2020","0",NA,NA,NA
+"Quarantäne via SwissCovid App","14.12.2020","0",NA,NA,NA
+"Quarantäne via SwissCovid App","15.12.2020","0",NA,NA,NA
 "Quarantäne Total","01.03.2020","0",NA,NA,NA
 "Quarantäne Total","02.03.2020","1.56725072877159",NA,NA,NA
 "Quarantäne Total","03.03.2020","1.56725072877159",NA,NA,NA
@@ -1196,8 +1204,10 @@
 "Quarantäne Total","11.12.2020","406.701564116227",NA,NA,NA
 "Quarantäne Total","12.12.2020","426.292198225872",NA,NA,NA
 "Quarantäne Total","13.12.2020","467.040717173934",NA,NA,NA
+"Quarantäne Total","14.12.2020","474.876970817791",NA,NA,NA
+"Quarantäne Total","15.12.2020","477.227846910949",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,"1","title","Quarantänefälle"
-NA,NA,NA,"1","subtitle","Zahlen pro 100'000 Einwohner, Zeitlicher Verlauf; Datenstand: 14.12.2020 08:00"
+NA,NA,NA,"1","subtitle","Zahlen pro 100'000 Einwohner, Zeitlicher Verlauf; Datenstand: 16.12.2020 08:00"
 NA,NA,NA,"1","description","Umfasst nur Personen im Contact Tracing des Kantons Zug, Rückkehrern aus Risikoländern und Quarantänefälle aufgrund der SwissCovid App. Einzelne Fälle im Spital oder Alterheim sind in diesen Zahlen nicht enthalten.<br/>Das Total entspricht nicht der Summe der einzelnen Kategorien, weil gewisse Personen im Haushalt auch noch positiv getestet wurden.<br/>Isolation: Personen in Isolation nach positivem Corona-Test.<br/>Quarantäne aus Contact Tracing: Personen, welche durch das Contact Tracing in Quarantäne versetzt wurden, weil sie Kontakt mit einer positiv getesten Person hatten.<br/>Quarantäne nach Rückkehr aus Risikoland: Personen welche aufgrund der Rückkehr aus einem Risikoland für 10 Tage in Quarantäne sind, werden solche Personen positiv getestet werden dieser Fälle dem Contact Tracing übergeben.<br/>Quarantäne via SwissCovid App: Personen welche aufgrund eines Kontakts in der SwissCovid App in Quarantäne sind.<br/>Quarantäne Total: Umfasst alle Personen in Quarantäne ohne positiv getestete Personen in Isolation."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"
