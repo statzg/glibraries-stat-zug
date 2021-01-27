@@ -10,8 +10,8 @@ require.config({
 		"d3": "libraries/d3",
 		"dc": "libraries/dc",
 		"exceljs": "libraries/exceljs",
-		"iframeresizer": "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer",
-		"iframeresizer-contentwindow": "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.11/iframeResizer.contentWindow"
+		"iframeresizer": "libraries/iframeResizer",
+		"iframeresizer-contentwindow": "libraries/iframeResizer.contentWindow"
     },
     shim:{
 		'crossfilter':{
