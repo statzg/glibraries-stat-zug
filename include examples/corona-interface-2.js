@@ -23,36 +23,29 @@
 			<li><a id="Alle" class="alter" href="javascript:;">Alle</a> </li>
 		</ul>
 	</div>-->
-	<div style="background-color: #d0eef7; padding:0px 5px 0px 5px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; margin-bottom: 0.5em;"><p style="margin-bottom: 0.3em">Altersgruppe auswählen:</p>
+	<div style="background-color: #d0eef7; padding:0px 5px 0px 5px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; margin-bottom: 0.5em;"><p style="margin-bottom: 0.3em">Indikator auswählen:</p>
 		<ul class="subelements-listing">
-			<li><a id="0-24" class="alter" href="javascript:;">0-24</a> </li>
-			<li><a id="25-44" class="alter" href="javascript:;">25-44</a> </li>
-			<li><a id="45-64" class="alter" href="javascript:;">45-64</a> </li>
-			<li><a id="65+" class="alter" href="javascript:;">65+</a> </li>
-			<li><a id="Alle" class="alter" href="javascript:;">Alle</a> </li>
+			<li><a id="i1" class="indikator78" href="javascript:;">Altersklassen</a> </li>
+			<li><a id="i2" class="indikator78" href="javascript:;">Geschlecht</a> </li>
+			<li><a id="i3" class="indikator78" href="javascript:;">Gemeinde</a> </li>
 		</ul>
 	</div>
-	<div style="background-color: #d0eef7; padding:0px 5px 0px 5px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; margin-bottom: 0.5em;"><p style="margin-bottom: 0.3em">Geschlecht auswählen:</p>
+	<div style="background-color: #d0eef7; padding:0px 5px 0px 5px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; margin-bottom: 0.5em;"><p style="margin-bottom: 0.3em">Basis auswählen:</p>
 		<ul class="subelements-listing">
-			<li><a id="Total" class="geschlecht" href="javascript:;">Total</a> </li>
-			<li><a id="männlich" class="geschlecht" href="javascript:;">männlich</a> </li>
-			<li><a id="weiblich" class="geschlecht" href="javascript:;">weiblich</a> </li>
-			<li><a id="Alle" class="geschlecht" href="javascript:;">Alle</a> </li>
+			<li><a id="b1" class="basis78" href="javascript:;">Absolute Fallzahl</a> </li>
+			<li><a id="b2" class="basis78" href="javascript:;">Relative Fallzahl pro 100'000</a> </li>
 		</ul>
 	</div>
-	<div style="background-color: #d0eef7; padding:0px 5px 0px 5px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; margin-bottom: 0.5em;"><p style="margin-bottom: 0.3em">Kennzahl von:</p>
+	<div style="background-color: #d0eef7; padding:0px 5px 0px 5px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; margin-bottom: 0.5em;"><p style="margin-bottom: 0.3em">Kennzahl auswählen:</p>
 		<ul class="subelements-listing">
-			<li><a id="k1" class="kennzahl" href="javascript:;">Fallzahl</a> </li>
-			<li><a id="k2" class="kennzahl" href="javascript:;">Todesfälle</a> </li>
-			<li><a id="k3" class="kennzahl" href="javascript:;">Hospitalisationen</a> </li>
-			<li><a id="k4" class="kennzahl" href="javascript:;">Genesene</a> </li>
+			<li><a id="k1" class="kennzahl78" href="javascript:;">Fallzahl</a> </li>
+			<li><a id="k2" class="kennzahl78" href="javascript:;">Todesfälle</a> </li>
+			<li><a id="k3" class="kennzahl78" href="javascript:;">Hospitalisationen</a> </li>
+			<li><a id="k4" class="kennzahl78" href="javascript:;">Durchgeführte Tests</a> </li>
 		</ul>
 	</div>
-	<div id="title" class="title"></div>
-	<div id="subtitle" class="subtitle"></div>	
-	<div id="chart2"></div>
-	<div id="description" class="description"></div>
-	<div id="source" class="source"></div>
+	<div id="default7"></div>
+	<div id="default8"></div>
 </div>
 
 <script>
@@ -60,44 +53,110 @@ require.config({
 	baseUrl: '/behoerden/gesundheitsdirektion/statistikfachstelle/daten/js/'
 });
 
-groupfilter=["0-24","25-44","45-64","65+"]
-characteristics=["Total","männlich","weiblich"]
+//var folder="https://raw.githubusercontent.com/statzg/glibraries-stat-zug/master/data/"
+var folder="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/"
 
-var dict02 = {
-  "Total": "total",
-  "total": "Total",
-  "männlich": "maennlich",
-  "maennlich": "männlich",
-  "weiblich": "weiblich",
-  "Alle": "alle",
-  "alle":"Alle"
-};
+characteristics7i1=["0 - 9 Jahre", "10 - 19 Jahre", "20 - 29 Jahre", "30 - 39 Jahre", "40 - 49 Jahre", "50 - 59 Jahre", "60 - 69 Jahre", "70 - 79 Jahre", "80+ Jahre"]
+characteristics8i1=["0 - 9 Jahre", "10 - 19 Jahre", "20 - 29 Jahre", "30 - 39 Jahre", "40 - 49 Jahre", "50 - 59 Jahre", "60 - 69 Jahre", "70 - 79 Jahre", "80+ Jahre", "Unbekannt"]
+characteristics7i2=["männlich", "weiblich"]
+characteristics8i2=["männlich", "weiblich", "Unbekannt"]
+characteristics7i3=["Baar", "Cham", "Hünenberg", "Menzingen", "Neuheim", "Oberägeri", "Risch", "Steinhausen", "Unterägeri", "Walchwil", "Zug"]
+characteristics8i3=["Baar", "Cham", "Hünenberg", "Menzingen", "Neuheim", "Oberägeri", "Risch", "Steinhausen", "Unterägeri", "Walchwil", "Zug"]
 
-require(['stat_zg_groupedbar'], function (groupedbar) {
-	args2 ={
-		number:2,													
-		csv_path:"/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-14-03-04-k1.csv",	
-		dimension:"Geschlecht",											
-		//group:"Anzahl",	
-		stack:"Alterskategorie",
-		characteristics:[],	
-		characteristicsStack:["0-24","25-44","45-64","65+"],
+
+require(['stat_zg_stackedbar', 'stat_zg_bar'], function (stackedbar, bar) {
+	args7={
+		number:7,													
+		csv_path:folder + "result-themen-14-03-07-k1-b1.csv",		
+		dimension:"Altersklasse",											
+		group:"Anzahl Fälle",
+		stack:"Woche",
+		characteristics:["0 - 9 Jahre", "10 - 19 Jahre", "20 - 29 Jahre", "30 - 39 Jahre", "40 - 49 Jahre", "50 - 59 Jahre", "60 - 69 Jahre", "70 - 79 Jahre", "80+ Jahre"],					
 		scale:1,													
+		relative:false,
+		asDate:true,
+		dateUnit:"week",								
 		showTotal:true,												
-		showAnteil:false,
-		groupFilter:[]	
+		showAnteil:true																					
+	}
+	
+	args8={
+		number:8,													
+		csv_path:folder + "result-themen-14-03-08-k1-b1.csv",		
+		dimension:"Altersklasse",											
+		group:"Anzahl Fälle",
+		characteristics:["0 - 9 Jahre", "10 - 19 Jahre", "20 - 29 Jahre", "30 - 39 Jahre", "40 - 49 Jahre", "50 - 59 Jahre", "60 - 69 Jahre", "70 - 79 Jahre", "80+ Jahre", "Unbekannt"],
+		scale:1,													
+		showTotal:true,
+		//order:"alpha",
+		//last:"Unbekannt"
 	}
 
-	if (typeof uri.search(true)["kennzahl"] == "undefined") {
-		uri.addSearch('kennzahl',"k1");
+	if (typeof uri.search(true)["indikator78"] == "undefined") {
+		uri.addSearch('indikator78',"i1");
 		window.history.pushState("", "", uri.href());
+		indikator78="i1"
 	}
-	if (typeof uri.search(true)["kennzahl"] != "undefined") {
-		args2.csv_path="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-14-03-04-"+uri.search(true)["kennzahl"]+".csv";
-		$("#"+uri.search(true)["kennzahl"]).addClass("selected");
-		$("#"+uri.search(true)["kennzahl"]).parent().addClass("selected");
+	if (typeof uri.search(true)["kennzahl78"] == "undefined") {
+		uri.addSearch('kennzahl78',"k1");
+		window.history.pushState("", "", uri.href());
+		kennzahl78="k1"
 	}
-	if (typeof uri.search(true)["alter"] != "undefined") {
+	if (typeof uri.search(true)["basis78"] == "undefined") {
+		uri.addSearch('basis78',"b1");
+		window.history.pushState("", "", uri.href());
+		basis78="b1"
+	}
+	if (typeof uri.search(true)["kennzahl78"] != "undefined" & typeof uri.search(true)["basis78"] != "undefined" & typeof uri.search(true)["indikator78"] != "undefined") {
+		kennzahl78=uri.search(true)["kennzahl78"]
+		basis78=uri.search(true)["basis78"]
+		indikator78=uri.search(true)["indikator78"]
+		args7.csv_path=folder + "result-themen-14-03-07-"+indikator78+"-"+kennzahl78+"-"+basis78+".csv";
+		args8.csv_path=folder + "result-themen-14-03-08-"+indikator78+"-"+kennzahl78+"-"+basis78+".csv";
+		if(basis78=="b1") {
+			args7.group="Anzahl Fälle"
+			args7.showAnteil=true
+			args8.group="Anzahl Fälle"
+		} else {
+			args7.group="Inzidenz pro 100'000"
+			args7.showAnteil=false
+			args8.group="Inzidenz pro 100'000"
+		}
+		if(indikator78=="i1") {
+			args7.dimension="Altersklasse"
+			args7.characteristics=characteristics7i1
+			args8.dimension="Altersklasse"
+			args8.characteristics=characteristics8i1
+		} else if (indikator78=="i2") {
+			args7.dimension="Geschlecht"
+			args7.characteristics=characteristics7i2
+			args8.dimension="Geschlecht"
+			args8.characteristics=characteristics8i2
+		} else if (indikator78=="i3") {
+			args7.dimension="Gemeinde"
+			args7.characteristics=characteristics7i3
+			args8.dimension="Gemeinde"
+			args8.characteristics=characteristics8i3
+			$("#k2").hide()
+			$("#k3").hide()
+			$("#k4").hide()
+			kennzahl78="k1"
+			$(".kennzahl78").removeClass("selected");
+			$(".kennzahl78").parent().removeClass("selected");
+			args7.csv_path=folder + "result-themen-14-03-07-"+indikator78+"-"+kennzahl78+"-"+basis78+".csv";
+			args8.csv_path=folder + "result-themen-14-03-08-"+indikator78+"-"+kennzahl78+"-"+basis78+".csv";
+			uri.setSearch('kennzahl78',"k1");
+			window.history.pushState("", "", uri.href());
+
+		}
+		$("#"+kennzahl78).addClass("selected");
+		$("#"+kennzahl78).parent().addClass("selected");
+		$("#"+uri.search(true)["basis78"]).addClass("selected");
+		$("#"+uri.search(true)["basis78"]).parent().addClass("selected");
+		$("#"+uri.search(true)["indikator78"]).addClass("selected");
+		$("#"+uri.search(true)["indikator78"]).parent().addClass("selected");
+	}
+	/*if (typeof uri.search(true)["alter"] != "undefined") {
 		if(typeof uri.search(true)["alter"] =="string") {
 			args2.groupFilter.push(uri.search(true)["alter"]);
 			$("#"+uri.search(true)["alter"]).addClass("selected")
@@ -117,34 +176,13 @@ require(['stat_zg_groupedbar'], function (groupedbar) {
 			$("[id='"+groupfilter[k]+"']").parent().addClass("selected");
 		};
 		window.history.pushState("", "", uri.href());
-	}
+	}*/
 
-	if (typeof uri.search(true)["geschlecht"] != "undefined") {
-		if(typeof uri.search(true)["geschlecht"] =="string") {
-			args2.characteristics.push(dict02[uri.search(true)["geschlecht"]]);
-			$("#"+dict02[uri.search(true)["geschlecht"]]).addClass("selected")
-			$("#"+dict02[uri.search(true)["geschlecht"]]).parent().addClass("selected")
-		} else {
-			for(k=0; k < uri.search(true)["geschlecht"].length; k++) {
-				args2.characteristics.push(dict02[uri.search(true)["geschlecht"][k]]);
-				$("#"+dict02[uri.search(true)["geschlecht"][k]]).addClass("selected")
-				$("#"+dict02[uri.search(true)["geschlecht"][k]]).parent().addClass("selected")
-			}
-		}
-	} else {
-		for(k=0; k < characteristics.length; k++) {
-			args2.characteristics.push(characteristics[k]);
-			uri.addSearch('geschlecht',dict02[characteristics[k]]);
-			$("[id='"+characteristics[k]+"']").addClass("selected");
-			$("[id='"+characteristics[k]+"']").parent().addClass("selected");
-		};
-		window.history.pushState("", "", uri.href());
-	}
-
-	groupedbar.load(args2);
+	stackedbar.load(args7);
+	bar.load(args8);
 
 	//Funktion um bei Knopfklick die Alterskategorien einzublenden oder auszublenden.
-	$(".alter").click(function(){
+	/*$(".alter").click(function(){
 		if(this.id=="Alle") {
 			$(".alter").addClass("selected")
 			$(".alter").parent().addClass("selected")
@@ -176,56 +214,89 @@ require(['stat_zg_groupedbar'], function (groupedbar) {
 			}
 		}
 		groupedbar.load(args2);
-	});
+	});*/
 
-	//Funktion um bei Knopfklick die Kennzahl einzublenden oder auszublenden.
-	$(".kennzahl").click(function(){
-		$(".kennzahl").removeClass("selected");
-		$(".kennzahl").parent().removeClass("selected");
-		args2.csv_path="/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-14-03-04-"+this.id+".csv";
+	//Funktion um bei Knopfklick die Kennzahl anzupassen.
+	$(".kennzahl78").click(function(){
+		$(".kennzahl78").removeClass("selected");
+		$(".kennzahl78").parent().removeClass("selected");
+		args7.csv_path=folder + "result-themen-14-03-07-"+indikator78+"-"+this.id+"-"+basis78+".csv";
+		args8.csv_path=folder + "result-themen-14-03-08-"+indikator78+"-"+this.id+"-"+basis78+".csv";
 		$(this).addClass("selected");
 		$(this).parent().addClass("selected");
-		groupedbar.load(args2);
-		uri.setSearch('kennzahl',this.id);
+		stackedbar.load(args7);
+		bar.load(args8);
+		kennzahl78=this.id;
+		uri.setSearch('kennzahl78',this.id);
 		window.history.pushState("", "", uri.href());
 	});
-
-	//Funktion um bei Knopfklick die Geschlechter einzublenden oder auszublenden.
-	$(".geschlecht").click(function(){
-		if(this.id=="Alle") {
-			$(".geschlecht").addClass("selected")
-			$(".geschlecht").parent().addClass("selected")
-			$(this).removeClass("selected")
-			$(this).parent().removeClass("selected")
-			args2.characteristics=["Total","männlich","weiblich"]
-			uri.removeSearch('geschlecht');
-			window.history.pushState("", "", uri.href());
+	//Funktion um bei Knopfklick die Basis anzupassen.
+	$(".basis78").click(function(){
+		$(".basis78").removeClass("selected");
+		$(".basis78").parent().removeClass("selected");
+		args7.csv_path=folder + "result-themen-14-03-07-"+indikator78+"-"+kennzahl78+"-"+this.id+".csv";
+		args8.csv_path=folder + "result-themen-14-03-08-"+indikator78+"-"+kennzahl78+"-"+this.id+".csv";
+		if(this.id=="b1") {
+			args7.group="Anzahl Fälle"
+			args7.showAnteil=true
+			args8.group="Anzahl Fälle"
 		} else {
-			shown=false
-			if (typeof args2.characteristics == "undefined") {
-				args2.characteristics=[];
-			}
-			for (k = 0; k < args2.characteristics.length; k++) {
-				if (this.id==args2.characteristics[k]) {
-					shown=true;
-					j=k
-				}
-			}
-			if (shown==false) {
-				args2.characteristics.push(this.id);
-				$(this).addClass("selected")
-				$(this).parent().addClass("selected")
-				uri.addSearch('geschlecht',dict02[this.id]);
-				window.history.pushState("", "", uri.href());
-			} else {
-				args2.characteristics.splice(j, 1);
-				$(this).removeClass("selected")
-				$(this).parent().removeClass("selected")
-				uri.removeSearch('geschlecht',dict02[this.id]);
-				window.history.pushState("", "", uri.href());  
-			}
+			args7.group="Inzidenz pro 100'000"
+			args7.showAnteil=false
+			args8.group="Inzidenz pro 100'000"
 		}
-		groupedbar.load(args2);	
+		$(this).addClass("selected");
+		$(this).parent().addClass("selected");
+		stackedbar.load(args7);
+		bar.load(args8);
+		basis78=this.id;
+		uri.setSearch('basis78',this.id);
+		window.history.pushState("", "", uri.href());
+	});
+		//Funktion um bei Knopfklick die Basis anzupassen.
+	$(".indikator78").click(function(){
+		$(".indikator78").removeClass("selected");
+		$(".indikator78").parent().removeClass("selected");
+		args7.csv_path=folder + "result-themen-14-03-07-"+this.id+"-"+kennzahl78+"-"+basis78+".csv";
+		args8.csv_path=folder + "result-themen-14-03-08-"+this.id+"-"+kennzahl78+"-"+basis78+".csv";
+		$("#k2").show()
+		$("#k3").show()
+		$("#k4").show()
+		if(this.id=="i1") {
+			args7.dimension="Altersklasse"
+			args7.characteristics=characteristics7i1
+			args8.dimension="Altersklasse"
+			args8.characteristics=characteristics8i1
+		} else if(this.id=="i2") {
+			args7.dimension="Geschlecht"
+			args7.characteristics=characteristics7i2
+			args8.dimension="Geschlecht"
+			args8.characteristics=characteristics8i2
+		} else if(this.id=="i3") {
+			args7.dimension="Gemeinde"
+			args7.characteristics=characteristics7i3
+			args8.dimension="Gemeinde"
+			args8.characteristics=characteristics8i3
+			$("#k2").hide()
+			$("#k3").hide()
+			$("#k4").hide()
+			kennzahl78="k1"
+			$(".kennzahl78").removeClass("selected");
+			$(".kennzahl78").parent().removeClass("selected");
+			$("#k1").addClass("selected");
+			$("#k1").parent().addClass("selected");
+			uri.setSearch('kennzahl78',"k1");
+			args7.csv_path=folder + "result-themen-14-03-07-"+this.id+"-"+kennzahl78+"-"+basis78+".csv";
+			args8.csv_path=folder + "result-themen-14-03-08-"+this.id+"-"+kennzahl78+"-"+basis78+".csv";
+
+		}
+		$(this).addClass("selected");
+		$(this).parent().addClass("selected");
+		stackedbar.load(args7);
+		bar.load(args8);
+		indikator78=this.id;
+		uri.setSearch('indikator78',this.id);
+		window.history.pushState("", "", uri.href());
 	});
 });
 </script>
