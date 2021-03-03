@@ -1,0 +1,16 @@
+"Geschlecht","Bildungsabschluss","Anzahl","Meta","Type","Content"
+"Männer","Ohne nachobligatorische Ausbildung","0.0891897497511586",NA,NA,NA
+"Frauen","Ohne nachobligatorische Ausbildung","0.161089833483244",NA,NA,NA
+"Männer","Sekundarstufe II: Berufsbildung","0.296814600962847",NA,NA,NA
+"Frauen","Sekundarstufe II: Berufsbildung","0.334473027725745",NA,NA,NA
+"Männer","Sekundarstufe II: Allgemeinbildung","0.0776300984732364",NA,NA,NA
+"Frauen","Sekundarstufe II: Allgemeinbildung","0.124592146422408",NA,NA,NA
+"Männer","Tertiärstufe: höhere Berufsbildung","0.205602096818534",NA,NA,NA
+"Frauen","Tertiärstufe: höhere Berufsbildung","0.125219484127987",NA,NA,NA
+"Männer","Tertiärstufe: Hochschulen","0.330763453994224",NA,NA,NA
+"Frauen","Tertiärstufe: Hochschulen","0.254625508240616",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,float"
+NA,NA,NA,"1","title","Höchste abgeschlossene Ausbildung"
+NA,NA,NA,"1","subtitle","Ständige Wohnbevölkerung ab 25 Jahren, Kanton Zug, 2019"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

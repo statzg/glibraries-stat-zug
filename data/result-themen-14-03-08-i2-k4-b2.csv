@@ -1,8 +1,8 @@
 "Geschlecht","Inzidenz pro 100'000","Meta","Type","Content"
-"männlich","30351.11",NA,NA,NA
-"weiblich","29441.04",NA,NA,NA
+"männlich","53203.09",NA,NA,NA
+"weiblich","52567.86",NA,NA,NA
 NA,NA,"1","datatypes","string,float"
 NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Total pro 100'000"
-NA,NA,"1","subtitle","Datenstand: 15.12.2020"
+NA,NA,"1","subtitle","Datenstand: 02.03.2021"
 NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,"1","source","Bundesamt für Gesundheit"

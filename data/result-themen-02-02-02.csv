@@ -1,0 +1,27 @@
+"Jahr","Stunden über dem Grenzwert","Meta","Type","Content"
+"2000","145",NA,NA,NA
+"2001","177",NA,NA,NA
+"2002","175",NA,NA,NA
+"2003","442",NA,NA,NA
+"2004","166",NA,NA,NA
+"2005","158",NA,NA,NA
+"2006","227",NA,NA,NA
+"2007","127",NA,NA,NA
+"2008","133",NA,NA,NA
+"2009","95",NA,NA,NA
+"2010","184",NA,NA,NA
+"2011","164",NA,NA,NA
+"2012","118",NA,NA,NA
+"2013","178",NA,NA,NA
+"2014","82",NA,NA,NA
+"2015","275",NA,NA,NA
+"2016","329",NA,NA,NA
+"2017","321",NA,NA,NA
+"2018","786",NA,NA,NA
+"2019","524",NA,NA,NA
+"2020","338",NA,NA,NA
+NA,NA,"1","datatypes","string,integer"
+NA,NA,"1","title","Ozonbelastung"
+NA,NA,"1","subtitle","Zug Postplatz (bis Ende 2015), Zugerberg (ab Anfang 2016), 2000 bis 2020"
+NA,NA,"1","description","Anzahl Stunden, während derer der durchschnittliche Grenzwert von 120 Mikrogramm pro m<sup>3</sup> überschritten wurde."
+NA,NA,"1","source","Kanton Zug, Amt für Umweltschutz"

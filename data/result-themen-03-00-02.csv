@@ -1,0 +1,24 @@
+"Geschlecht","Arbeitsmarktstatus","Anzahl","Meta","Type","Content"
+"Männer","Vollzeiterwerbstätige (90-100%)","33275",NA,NA,NA
+"Frauen","Vollzeiterwerbstätige (90-100%)","14850",NA,NA,NA
+"Männer","Teilzeiterwerbstätige (70-89%)","1685",NA,NA,NA
+"Frauen","Teilzeiterwerbstätige (70-89%)","4678",NA,NA,NA
+"Männer","Teilzeiterwerbstätige (50-69%)","1031",NA,NA,NA
+"Frauen","Teilzeiterwerbstätige (50-69%)","4989",NA,NA,NA
+"Männer","Teilzeiterwerbstätige (unter 50%)","1609",NA,NA,NA
+"Frauen","Teilzeiterwerbstätige (unter 50%)","5438",NA,NA,NA
+"Männer","Erwerbslose","1517",NA,NA,NA
+"Frauen","Erwerbslose","1265",NA,NA,NA
+"Männer","Nichterwerbspersonen in Ausbildung","3341",NA,NA,NA
+"Frauen","Nichterwerbspersonen in Ausbildung","2980",NA,NA,NA
+"Männer","Hausfrauen/Hausmänner","214",NA,NA,NA
+"Frauen","Hausfrauen/Hausmänner","5275",NA,NA,NA
+"Männer","Rentner/innen (AHV, IV)","9893",NA,NA,NA
+"Frauen","Rentner/innen (AHV, IV)","11566",NA,NA,NA
+"Männer","Andere Nichterwerbspersonen","1264",NA,NA,NA
+"Frauen","Andere Nichterwerbspersonen","1174",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,integer"
+NA,NA,NA,"1","title","Arbeitsmarktstatus nach Geschlecht"
+NA,NA,NA,"1","subtitle","Kanton Zug, 2019"
+NA,NA,NA,"1","description","Ständige Wohnbevölkerung über 15 Jahren"
+NA,NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

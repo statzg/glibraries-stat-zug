@@ -1,0 +1,33 @@
+"Kanton","Anteil Römisch-Katholische (%)","Meta","Type","Content"
+"Schweiz","0.344120586436558",NA,NA,NA
+"Waadt","0.277462944714091",NA,NA,NA
+"Wallis","0.68899073038394",NA,NA,NA
+"Genf","0.309931118548659",NA,NA,NA
+"Bern","0.153786404525186",NA,NA,NA
+"Freiburg","0.579706299045867",NA,NA,NA
+"Solothurn","0.312074555703917",NA,NA,NA
+"Neuenburg","0.19698249813972",NA,NA,NA
+"Jura","0.6434251899757",NA,NA,NA
+"Basel-Stadt","0.149424419111633",NA,NA,NA
+"Basel-Landschaft","0.262276473870353",NA,NA,NA
+"Aargau","0.301848456996292",NA,NA,NA
+"Zürich","0.248660605872717",NA,NA,NA
+"Glarus","0.300845286273482",NA,NA,NA
+"Schaffhausen","0.210622503939664",NA,NA,NA
+"Appenzell Ausserrhoden","0.277466407537",NA,NA,NA
+"Appenzell Innerrhoden","0.739714832213229",NA,NA,NA
+"St. Gallen","0.419779175824667",NA,NA,NA
+"Graubünden","0.402250583810097",NA,NA,NA
+"Thurgau","0.300495933619752",NA,NA,NA
+"Luzern","0.588011544452765",NA,NA,NA
+"Uri","0.748211601328562",NA,NA,NA
+"Schwyz","0.565189681348255",NA,NA,NA
+"Obwalden","0.68074310243602",NA,NA,NA
+"Nidwalden","0.626495503842365",NA,NA,NA
+"Zug","0.480048252340106",NA,NA,NA
+"Tessin","0.627981843068946",NA,NA,NA
+NA,NA,"1","datatypes","string,percentage"
+NA,NA,"1","title","Anteil Katholiken an der Gesamtbevölkerung"
+NA,NA,"1","subtitle","2019"
+NA,NA,"1","description",""
+NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

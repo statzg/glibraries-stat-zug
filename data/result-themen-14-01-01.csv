@@ -1,0 +1,50 @@
+"Jahr","Spitalart","Anzahl","Meta","Type","Content"
+"2009","Akutspitäler","106.99",NA,NA,NA
+"2010","Akutspitäler","108.7573494",NA,NA,NA
+"2011","Akutspitäler","108.5279399",NA,NA,NA
+"2012","Akutspitäler","110.0922153",NA,NA,NA
+"2013","Akutspitäler","106.0972926",NA,NA,NA
+"2014","Akutspitäler","106.687540075",NA,NA,NA
+"2015","Akutspitäler","109.920251528",NA,NA,NA
+"2016","Akutspitäler","107.80327234",NA,NA,NA
+"2017","Akutspitäler","105.644190366",NA,NA,NA
+"2018","Akutspitäler","103.23486049",NA,NA,NA
+"2019","Akutspitäler","104.072327291",NA,NA,NA
+"2009","Psychiatrische Kliniken","5.14",NA,NA,NA
+"2010","Psychiatrische Kliniken","4.74780072",NA,NA,NA
+"2011","Psychiatrische Kliniken","4.93466778",NA,NA,NA
+"2012","Psychiatrische Kliniken","5.34419901",NA,NA,NA
+"2013","Psychiatrische Kliniken","5.57070049",NA,NA,NA
+"2014","Psychiatrische Kliniken","5.3793436535",NA,NA,NA
+"2015","Psychiatrische Kliniken","5.624969296",NA,NA,NA
+"2016","Psychiatrische Kliniken","5.2925420338",NA,NA,NA
+"2017","Psychiatrische Kliniken","5.6051219493",NA,NA,NA
+"2018","Psychiatrische Kliniken","5.227181343",NA,NA,NA
+"2019","Psychiatrische Kliniken","5.1942150703",NA,NA,NA
+"2009","Rehabilitationskliniken","6.17",NA,NA,NA
+"2010","Rehabilitationskliniken","6.05631935",NA,NA,NA
+"2011","Rehabilitationskliniken","6.15964693",NA,NA,NA
+"2012","Rehabilitationskliniken","5.93609264",NA,NA,NA
+"2013","Rehabilitationskliniken","5.92627711",NA,NA,NA
+"2014","Rehabilitationskliniken","6.5451456836",NA,NA,NA
+"2015","Rehabilitationskliniken","6.5419948581",NA,NA,NA
+"2016","Rehabilitationskliniken","7.3337205925",NA,NA,NA
+"2017","Rehabilitationskliniken","7.1758317985",NA,NA,NA
+"2018","Rehabilitationskliniken","6.7724717551",NA,NA,NA
+"2019","Rehabilitationskliniken","6.6200780307",NA,NA,NA
+"2009","Andere Spezialkliniken","4.17",NA,NA,NA
+"2010","Andere Spezialkliniken","3.88134919",NA,NA,NA
+"2011","Andere Spezialkliniken","4.1353906",NA,NA,NA
+"2012","Andere Spezialkliniken","4.60647652",NA,NA,NA
+"2013","Andere Spezialkliniken","4.63942837",NA,NA,NA
+"2014","Andere Spezialkliniken","4.4133933999",NA,NA,NA
+"2015","Andere Spezialkliniken","4.3722468764",NA,NA,NA
+"2016","Andere Spezialkliniken","4.2437151063",NA,NA,NA
+"2017","Andere Spezialkliniken","4.4888814473",NA,NA,NA
+"2018","Andere Spezialkliniken","4.2337803638",NA,NA,NA
+"2019","Andere Spezialkliniken","3.9720468184",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,year,integer"
+NA,NA,NA,"1","title","Hospitalisierungsrate der Zuger Bevölkerung"
+NA,NA,NA,"1","subtitle","Anzahl hospitalisierte Personen pro 1‘000 Einwohner, 2009 bis 2019"
+NA,NA,NA,"1","description","Erfasst werden nur Fälle mit stationärer Behandlung, Personen welche in unterschiedlichen Spitaltypen hospitalisiert wurden, werden doppelt gezählt"
+NA,NA,NA,"1","source","Bundesamt für Statistik, Medizinische Statistik der Krankenhäuser"

@@ -32,16 +32,27 @@
 2020-09-21,"männlich","9",NA,NA,NA
 2020-09-28,"männlich","33",NA,NA,NA
 2020-10-05,"männlich","98",NA,NA,NA
-2020-10-12,"männlich","152",NA,NA,NA
-2020-10-19,"männlich","258",NA,NA,NA
+2020-10-12,"männlich","153",NA,NA,NA
+2020-10-19,"männlich","257",NA,NA,NA
 2020-10-26,"männlich","247",NA,NA,NA
 2020-11-02,"männlich","192",NA,NA,NA
 2020-11-09,"männlich","191",NA,NA,NA
-2020-11-16,"männlich","190",NA,NA,NA
+2020-11-16,"männlich","191",NA,NA,NA
 2020-11-23,"männlich","161",NA,NA,NA
 2020-11-30,"männlich","169",NA,NA,NA
 2020-12-07,"männlich","163",NA,NA,NA
-2020-12-14,"männlich","23",NA,NA,NA
+2020-12-14,"männlich","199",NA,NA,NA
+2020-12-21,"männlich","148",NA,NA,NA
+2020-12-28,"männlich","156",NA,NA,NA
+2021-01-04,"männlich","145",NA,NA,NA
+2021-01-11,"männlich","97",NA,NA,NA
+2021-01-18,"männlich","92",NA,NA,NA
+2021-01-25,"männlich","73",NA,NA,NA
+2021-02-01,"männlich","100",NA,NA,NA
+2021-02-08,"männlich","64",NA,NA,NA
+2021-02-15,"männlich","37",NA,NA,NA
+2021-02-22,"männlich","38",NA,NA,NA
+2021-03-01,"männlich","4",NA,NA,NA
 2020-02-24,"weiblich","0",NA,NA,NA
 2020-03-02,"weiblich","1",NA,NA,NA
 2020-03-09,"weiblich","4",NA,NA,NA
@@ -77,14 +88,25 @@
 2020-10-05,"weiblich","83",NA,NA,NA
 2020-10-12,"weiblich","130",NA,NA,NA
 2020-10-19,"weiblich","206",NA,NA,NA
-2020-10-26,"weiblich","207",NA,NA,NA
+2020-10-26,"weiblich","208",NA,NA,NA
 2020-11-02,"weiblich","213",NA,NA,NA
 2020-11-09,"weiblich","179",NA,NA,NA
 2020-11-16,"weiblich","192",NA,NA,NA
 2020-11-23,"weiblich","160",NA,NA,NA
 2020-11-30,"weiblich","188",NA,NA,NA
 2020-12-07,"weiblich","169",NA,NA,NA
-2020-12-14,"weiblich","18",NA,NA,NA
+2020-12-14,"weiblich","199",NA,NA,NA
+2020-12-21,"weiblich","135",NA,NA,NA
+2020-12-28,"weiblich","204",NA,NA,NA
+2021-01-04,"weiblich","201",NA,NA,NA
+2021-01-11,"weiblich","115",NA,NA,NA
+2021-01-18,"weiblich","113",NA,NA,NA
+2021-01-25,"weiblich","97",NA,NA,NA
+2021-02-01,"weiblich","93",NA,NA,NA
+2021-02-08,"weiblich","64",NA,NA,NA
+2021-02-15,"weiblich","45",NA,NA,NA
+2021-02-22,"weiblich","43",NA,NA,NA
+2021-03-01,"weiblich","11",NA,NA,NA
 2020-02-24,"Unbekannt","0",NA,NA,NA
 2020-03-02,"Unbekannt","0",NA,NA,NA
 2020-03-09,"Unbekannt","0",NA,NA,NA
@@ -128,8 +150,19 @@
 2020-11-30,"Unbekannt","0",NA,NA,NA
 2020-12-07,"Unbekannt","0",NA,NA,NA
 2020-12-14,"Unbekannt","0",NA,NA,NA
+2020-12-21,"Unbekannt","0",NA,NA,NA
+2020-12-28,"Unbekannt","0",NA,NA,NA
+2021-01-04,"Unbekannt","0",NA,NA,NA
+2021-01-11,"Unbekannt","0",NA,NA,NA
+2021-01-18,"Unbekannt","0",NA,NA,NA
+2021-01-25,"Unbekannt","0",NA,NA,NA
+2021-02-01,"Unbekannt","0",NA,NA,NA
+2021-02-08,"Unbekannt","0",NA,NA,NA
+2021-02-15,"Unbekannt","0",NA,NA,NA
+2021-02-22,"Unbekannt","0",NA,NA,NA
+2021-03-01,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Positiv getestete Personen nach Geschlecht im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 15.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

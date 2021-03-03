@@ -1,0 +1,18 @@
+"Jahr","Sektor","Anzahl","Meta","Type","Content"
+"2013","Industrie und Gewerbe","113",NA,NA,NA
+"2013","Dienstleistung","1369",NA,NA,NA
+"2014","Industrie und Gewerbe","111",NA,NA,NA
+"2014","Dienstleistung","1478",NA,NA,NA
+"2015","Industrie und Gewerbe","123",NA,NA,NA
+"2015","Dienstleistung","1364",NA,NA,NA
+"2016","Industrie und Gewerbe","105",NA,NA,NA
+"2016","Dienstleistung","1295",NA,NA,NA
+"2017","Industrie und Gewerbe","140",NA,NA,NA
+"2017","Dienstleistung","1325",NA,NA,NA
+"2018","Industrie und Gewerbe","126",NA,NA,NA
+"2018","Dienstleistung","1453",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,year,integer"
+NA,NA,NA,"1","title",""
+NA,NA,NA,"1","subtitle","Kanton Zug, 2013 bis 2018"
+NA,NA,NA,"1","description","Die Definition des BFS hat 2013 stark geändert, frühere Daten sind nicht mehr vergleichbar."
+NA,NA,NA,"1","source","Bundesamt für Statistik, UDEMO"

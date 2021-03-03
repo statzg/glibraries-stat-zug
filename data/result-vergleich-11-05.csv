@@ -1,0 +1,33 @@
+"Kanton","ÖV-Pendleranteil (%)","Meta","Type","Content"
+"Schweiz","0.306200051525113",NA,NA,NA
+"Zürich","0.465799755120278",NA,NA,NA
+"Bern","0.313429896679403",NA,NA,NA
+"Luzern","0.256004405457386",NA,NA,NA
+"Uri","0.124194904329957",NA,NA,NA
+"Schwyz","0.199762891924211",NA,NA,NA
+"Obwalden","0.127236966059476",NA,NA,NA
+"Nidwalden","0.165866602439434",NA,NA,NA
+"Glarus","0.149985272289002",NA,NA,NA
+"Zug","0.330978243988026",NA,NA,NA
+"Freiburg","0.181965364778453",NA,NA,NA
+"Solothurn","0.218736374443694",NA,NA,NA
+"Basel-Stadt","0.469168838921641",NA,NA,NA
+"Basel-Landschaft","0.383202943946309",NA,NA,NA
+"Schaffhausen","0.305830848035582",NA,NA,NA
+"Appenzell Ausserrhoden","0.210228360163043",NA,NA,NA
+"Appenzell Innerrhoden","0.0586317620076833",NA,NA,NA
+"St. Gallen","0.229209201373512",NA,NA,NA
+"Graubünden","0.185281639505263",NA,NA,NA
+"Aargau","0.243553363377183",NA,NA,NA
+"Thurgau","0.165251683304938",NA,NA,NA
+"Tessin","0.187073962149859",NA,NA,NA
+"Waadt","0.327725041939214",NA,NA,NA
+"Wallis","0.145997460113404",NA,NA,NA
+"Neuenburg","0.280569744951361",NA,NA,NA
+"Genf","0.453881802340844",NA,NA,NA
+"Jura","0.165967518819871",NA,NA,NA
+NA,NA,"1","datatypes","string,percentage"
+NA,NA,"1","title","Anteil ÖV-Pendler"
+NA,NA,"1","subtitle","Anteil der Arbeitspendler, welche mit dem ÖV als Hauptverkehrsmittel pendeln, 2019"
+NA,NA,"1","description",""
+NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

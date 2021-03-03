@@ -1,0 +1,66 @@
+"Jahr","Hochschultyp","Abschlussquote","Meta","Type","Content"
+"2000","Total","0.1209",NA,NA,NA
+"2000","Universitäre Hochschulen","0.0912",NA,NA,NA
+"2000","Fach- und pädagogische Hochschulen","0.0297",NA,NA,NA
+"2001","Total","0.1099",NA,NA,NA
+"2001","Universitäre Hochschulen","0.0747",NA,NA,NA
+"2001","Fach- und pädagogische Hochschulen","0.0352",NA,NA,NA
+"2002","Total","0.1119",NA,NA,NA
+"2002","Universitäre Hochschulen","0.0805",NA,NA,NA
+"2002","Fach- und pädagogische Hochschulen","0.0315",NA,NA,NA
+"2003","Total","0.1588",NA,NA,NA
+"2003","Universitäre Hochschulen","0.0948",NA,NA,NA
+"2003","Fach- und pädagogische Hochschulen","0.064",NA,NA,NA
+"2004","Total","0.1673",NA,NA,NA
+"2004","Universitäre Hochschulen","0.0995",NA,NA,NA
+"2004","Fach- und pädagogische Hochschulen","0.0692",NA,NA,NA
+"2005","Total","0.2442",NA,NA,NA
+"2005","Universitäre Hochschulen","0.1476",NA,NA,NA
+"2005","Fach- und pädagogische Hochschulen","0.0987",NA,NA,NA
+"2006","Total","0.2354",NA,NA,NA
+"2006","Universitäre Hochschulen","0.1462",NA,NA,NA
+"2006","Fach- und pädagogische Hochschulen","0.0904",NA,NA,NA
+"2007","Total","0.2684",NA,NA,NA
+"2007","Universitäre Hochschulen","0.1436",NA,NA,NA
+"2007","Fach- und pädagogische Hochschulen","0.1258",NA,NA,NA
+"2008","Total","0.2729",NA,NA,NA
+"2008","Universitäre Hochschulen","0.1479",NA,NA,NA
+"2008","Fach- und pädagogische Hochschulen","0.1271",NA,NA,NA
+"2009","Total","0.2556",NA,NA,NA
+"2009","Universitäre Hochschulen","0.1396",NA,NA,NA
+"2009","Fach- und pädagogische Hochschulen","0.1176",NA,NA,NA
+"2010","Total","0.2495",NA,NA,NA
+"2010","Universitäre Hochschulen","0.1357",NA,NA,NA
+"2010","Fach- und pädagogische Hochschulen","0.1182",NA,NA,NA
+"2011","Total","0.2649",NA,NA,NA
+"2011","Universitäre Hochschulen","0.1267",NA,NA,NA
+"2011","Fach- und pädagogische Hochschulen","0.1411",NA,NA,NA
+"2012","Total","0.2888",NA,NA,NA
+"2012","Universitäre Hochschulen","0.1367",NA,NA,NA
+"2012","Fach- und pädagogische Hochschulen","0.1611",NA,NA,NA
+"2013","Total","0.2708",NA,NA,NA
+"2013","Universitäre Hochschulen","0.1287",NA,NA,NA
+"2013","Fach- und pädagogische Hochschulen","0.1498",NA,NA,NA
+"2014","Total","0.2901",NA,NA,NA
+"2014","Universitäre Hochschulen","0.1343",NA,NA,NA
+"2014","Fach- und pädagogische Hochschulen","0.163",NA,NA,NA
+"2015","Total","0.2683",NA,NA,NA
+"2015","Universitäre Hochschulen","0.1242",NA,NA,NA
+"2015","Fach- und pädagogische Hochschulen","0.1506",NA,NA,NA
+"2016","Total","0.2942",NA,NA,NA
+"2016","Universitäre Hochschulen","0.1582",NA,NA,NA
+"2016","Fach- und pädagogische Hochschulen","0.1428",NA,NA,NA
+"2017","Total","0.2952",NA,NA,NA
+"2017","Universitäre Hochschulen","0.146",NA,NA,NA
+"2017","Fach- und pädagogische Hochschulen","0.1608",NA,NA,NA
+"2018","Total","0.3257",NA,NA,NA
+"2018","Universitäre Hochschulen","0.1647",NA,NA,NA
+"2018","Fach- und pädagogische Hochschulen","0.1722",NA,NA,NA
+"2019","Total","0.2978",NA,NA,NA
+"2019","Universitäre Hochschulen","0.1233",NA,NA,NA
+"2019","Fach- und pädagogische Hochschulen","0.1885",NA,NA,NA
+NA,NA,NA,"1","datatypes","year,string,percentage"
+NA,NA,NA,"1","title","Entwicklung der Hochschulabschlussquote"
+NA,NA,NA,"1","subtitle","Wohnkanton Kanton Zug vor Studienbeginn, 2000 bis 2019"
+NA,NA,NA,"1","description","In % der gleichaltrigen Wohnbevölkerung (Netto-Quoten), berücksichtigt werden nur erstmalige Abschlüsse im Hochschulsystem, die totale Abschlussquote ist kleiner als die einzelnen Abschlussquoten nach Hochschultyp, da Doppelzählungen ausgeschlossen werden."
+NA,NA,NA,"1","source","Bundesamt für Statistik, LABB, ESPOP (bis 2010), STATPOP (seit 2011)"

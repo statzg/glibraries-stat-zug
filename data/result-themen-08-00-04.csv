@@ -1,0 +1,15 @@
+"Gebiet","Energieträger","Energieverbrauch in PJ","Meta","Type","Content"
+"Schweiz","Raumwärme","223.064825582121",NA,NA,NA
+"Schweiz","Warmwasser","45.5706611770841",NA,NA,NA
+"Schweiz","Prozesswärme","95.9295445113311",NA,NA,NA
+"Schweiz","Beleuchtung","19.8594790516858",NA,NA,NA
+"Schweiz","Klima, Lüftung & Haustechnik","22.5702299191979",NA,NA,NA
+"Schweiz","Information & Kommunikation, Unterhaltung","10.9134352836271",NA,NA,NA
+"Schweiz","Antriebe, Prozesse","69.6293689526742",NA,NA,NA
+"Schweiz","Mobilität Inland","232.923256918126",NA,NA,NA
+"Schweiz","sonstige","21.0604592729771",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,float6"
+NA,NA,NA,"1","title","Energieverbrauch im Inland nach Verwendungszweck"
+NA,NA,NA,"1","subtitle","Schweiz, 2019"
+NA,NA,NA,"1","description","Energieverbrauch in PJ (Petajoule)"
+NA,NA,NA,"1","source","Bundesamt für Energie"

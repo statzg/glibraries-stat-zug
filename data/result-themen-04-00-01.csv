@@ -1,0 +1,28 @@
+"Kanton","Jahr","BIP pro Einwohner","Meta","Type","Content"
+"Zug","2008","150581",NA,NA,NA
+"Schweiz","2008","80428",NA,NA,NA
+"Zug","2009","148165",NA,NA,NA
+"Schweiz","2009","78124",NA,NA,NA
+"Zug","2010","161774",NA,NA,NA
+"Schweiz","2010","80111",NA,NA,NA
+"Zug","2011","160051",NA,NA,NA
+"Schweiz","2011","81037",NA,NA,NA
+"Zug","2012","159253",NA,NA,NA
+"Schweiz","2012","81154",NA,NA,NA
+"Zug","2013","167703",NA,NA,NA
+"Schweiz","2013","81669",NA,NA,NA
+"Zug","2014","161033",NA,NA,NA
+"Schweiz","2014","82165",NA,NA,NA
+"Zug","2015","156261",NA,NA,NA
+"Schweiz","2015","81587",NA,NA,NA
+"Zug","2016","157190",NA,NA,NA
+"Schweiz","2016","81860",NA,NA,NA
+"Zug","2017","156695",NA,NA,NA
+"Schweiz","2017","82076",NA,NA,NA
+"Zug","2018p","160884",NA,NA,NA
+"Schweiz","2018p","84518",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,year,integer"
+NA,NA,NA,"1","title","Bruttoinlandprodukt pro Einwohner/-in"
+NA,NA,NA,"1","subtitle","2008 bis 2018, zu laufenden Preisen"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Bundesamt für Statistik, Volkswirtschaftliche Gesamtrechnung"

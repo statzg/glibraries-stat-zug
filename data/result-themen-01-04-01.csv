@@ -1,0 +1,56 @@
+"Region","Sprache","Anteil","Meta","Type","Content"
+"Schweiz","Deutsch (oder Schweizerdeutsch)","0.626787145782248",NA,NA,NA
+"Aargau","Deutsch (oder Schweizerdeutsch)","0.863545228891778",NA,NA,NA
+"Zürich","Deutsch (oder Schweizerdeutsch)","0.806730451754014",NA,NA,NA
+"Zentralschweiz","Deutsch (oder Schweizerdeutsch)","0.877500227312079",NA,NA,NA
+"Zug","Deutsch (oder Schweizerdeutsch)","0.803454834331846",NA,NA,NA
+"Schweiz","Französisch (oder Patois Romand)","0.227880156643992",NA,NA,NA
+"Aargau","Französisch (oder Patois Romand)","0.019757402134712",NA,NA,NA
+"Zürich","Französisch (oder Patois Romand)","0.0332880372312059",NA,NA,NA
+"Zentralschweiz","Französisch (oder Patois Romand)","0.018951130674479",NA,NA,NA
+"Zug","Französisch (oder Patois Romand)","0.0344438864442073",NA,NA,NA
+"Schweiz","Italienisch (oder Tessiner/Bündner-italienischer Dialekt)","0.0827512766704184",NA,NA,NA
+"Aargau","Italienisch (oder Tessiner/Bündner-italienischer Dialekt)","0.0507420618597018",NA,NA,NA
+"Zürich","Italienisch (oder Tessiner/Bündner-italienischer Dialekt)","0.0564729291505175",NA,NA,NA
+"Zentralschweiz","Italienisch (oder Tessiner/Bündner-italienischer Dialekt)","0.0332899159497662",NA,NA,NA
+"Zug","Italienisch (oder Tessiner/Bündner-italienischer Dialekt)","0.0432710859205104",NA,NA,NA
+"Schweiz","Rätoromanisch","0.00509615702348316",NA,NA,NA
+"Aargau","Rätoromanisch","0.00141706962158795",NA,NA,NA
+"Zürich","Rätoromanisch","0.00268453730525215",NA,NA,NA
+"Zentralschweiz","Rätoromanisch","0.00240167874037836",NA,NA,NA
+"Zug","Rätoromanisch","0.00180231344627906",NA,NA,NA
+"Schweiz","Englisch","0.0652222033209085",NA,NA,NA
+"Aargau","Englisch","0.0551499607200295",NA,NA,NA
+"Zürich","Englisch","0.0950103272948667",NA,NA,NA
+"Zentralschweiz","Englisch","0.0604561585478827",NA,NA,NA
+"Zug","Englisch","0.121454199433008",NA,NA,NA
+"Schweiz","Portugiesisch","0.0353727012933971",NA,NA,NA
+"Aargau","Portugiesisch","0.0177079932475454",NA,NA,NA
+"Zürich","Portugiesisch","0.0243887588740587",NA,NA,NA
+"Zentralschweiz","Portugiesisch","0.0205768652801153",NA,NA,NA
+"Zug","Portugiesisch","0.0224522637822878",NA,NA,NA
+"Schweiz","Serbisch und Kroatisch","0.0234711984809296",NA,NA,NA
+"Aargau","Serbisch und Kroatisch","0.0351081111835633",NA,NA,NA
+"Zürich","Serbisch und Kroatisch","0.0296230827740147",NA,NA,NA
+"Zentralschweiz","Serbisch und Kroatisch","0.0290844805725299",NA,NA,NA
+"Zug","Serbisch und Kroatisch","0.0373901473603848",NA,NA,NA
+"Schweiz","Albanisch","0.0282056207192162",NA,NA,NA
+"Aargau","Albanisch","0.0413850634796274",NA,NA,NA
+"Zürich","Albanisch","0.0336645294276148",NA,NA,NA
+"Zentralschweiz","Albanisch","0.0291721685108565",NA,NA,NA
+"Zug","Albanisch","0.0205209912315305",NA,NA,NA
+"Schweiz","Spanisch","0.0243948034134374",NA,NA,NA
+"Aargau","Spanisch","0.0144477234453299",NA,NA,NA
+"Zürich","Spanisch","0.029353376317282",NA,NA,NA
+"Zentralschweiz","Spanisch","0.0136076530964422",NA,NA,NA
+"Zug","Spanisch","0.0219903412392433",NA,NA,NA
+"Schweiz","Türkisch","0.010501064796759",NA,NA,NA
+"Aargau","Türkisch","0.0161139638677428",NA,NA,NA
+"Zürich","Türkisch","0.014522630656674",NA,NA,NA
+"Zentralschweiz","Türkisch","0.00626359657045842",NA,NA,NA
+"Zug","Türkisch","0.0111119329459779",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,percentage"
+NA,NA,NA,"1","title","Hauptsprachen im Kanton Zug"
+NA,NA,NA,"1","subtitle",""
+NA,NA,NA,"1","description","Daten 2019 hochgerechnet auf die Bevölkerung des Kantons Zug (Über 15 Jahre)"
+NA,NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

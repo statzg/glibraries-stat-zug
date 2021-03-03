@@ -1,0 +1,12 @@
+"Haushaltstyp","Anzahl","Meta","Type","Content"
+"1 Person","17720",NA,NA,NA
+"2 Personen","18733",NA,NA,NA
+"3 Personen","7575",NA,NA,NA
+"4 Personen","7790",NA,NA,NA
+"5 Personen","2446",NA,NA,NA
+"6 oder mehr Personen","685",NA,NA,NA
+NA,NA,"1","datatypes","string,integer"
+NA,NA,"1","title","Privathaushalte nach Grösse"
+NA,NA,"1","subtitle","Kanton Zug, 2019"
+NA,NA,"1","description",""
+NA,NA,"1","source","Bundesamt für Statistik, STATPOP"

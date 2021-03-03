@@ -1,0 +1,33 @@
+"Kanton","Anteil Hochschulabsolvent/innen (%)","Meta","Type","Content"
+"Schweiz","0.209943256798284",NA,NA,NA
+"Zürich","0.289775849412773",NA,NA,NA
+"Bern","0.163290384066355",NA,NA,NA
+"Luzern","0.155369229969743",NA,NA,NA
+"Uri","0.0969831542949791",NA,NA,NA
+"Schwyz","0.164778781058421",NA,NA,NA
+"Obwalden","0.105686376604177",NA,NA,NA
+"Nidwalden","0.161149367391524",NA,NA,NA
+"Glarus","0.0979346018542346",NA,NA,NA
+"Zug","0.293166710356018",NA,NA,NA
+"Freiburg","0.192598324671409",NA,NA,NA
+"Solothurn","0.129531415043756",NA,NA,NA
+"Basel-Stadt","0.341894023873765",NA,NA,NA
+"Basel-Landschaft","0.191009142590906",NA,NA,NA
+"Schaffhausen","0.144961361311274",NA,NA,NA
+"Appenzell Ausserrhoden","0.129481061552234",NA,NA,NA
+"Appenzell Innerrhoden","0.143343659885807",NA,NA,NA
+"St. Gallen","0.139115578903544",NA,NA,NA
+"Graubünden","0.130230527694188",NA,NA,NA
+"Aargau","0.153202554803826",NA,NA,NA
+"Thurgau","0.130975644600649",NA,NA,NA
+"Tessin","0.197095861585304",NA,NA,NA
+"Waadt","0.279047742589358",NA,NA,NA
+"Wallis","0.15839509625693",NA,NA,NA
+"Neuenburg","0.196450592729787",NA,NA,NA
+"Genf","0.356041082211205",NA,NA,NA
+"Jura","0.12116175172299",NA,NA,NA
+NA,NA,"1","datatypes","string,percentage"
+NA,NA,"1","title","Anteil Personen mit einem unversitären Hochschulabschluss"
+NA,NA,"1","subtitle","2019"
+NA,NA,"1","description","Hochrechnung aus der Strukturerhebung (Ständige Wohnbevölkerung ab 25 Jahren) "
+NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

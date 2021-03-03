@@ -1,0 +1,31 @@
+"Haushaltstyp","Erwerbstätigkeit","Anzahl","Meta","Type","Content"
+"Paarhaushalte: jüngstes Kind 0- bis 6-jährig","Frau nicht erwerbstätig, Mann Vollzeit erwerbstätig","1490",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 7- bis 14-jährig","Frau nicht erwerbstätig, Mann Vollzeit erwerbstätig","1019",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 15- bis 24-jährig","Frau nicht erwerbstätig, Mann Vollzeit erwerbstätig","696",NA,NA,NA
+"Paarhaushalte mit anderen Personen ohne Kinder unter 25 Jahren","Frau nicht erwerbstätig, Mann Vollzeit erwerbstätig","187",NA,NA,NA
+"Paarhaushalte ohne weitere Haushaltsmitglieder","Frau nicht erwerbstätig, Mann Vollzeit erwerbstätig","811",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 0- bis 6-jährig","Frau Teilzeit erwerbstätig (1-49%), Mann Vollzeit erwerbstätig","1433",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 7- bis 14-jährig","Frau Teilzeit erwerbstätig (1-49%), Mann Vollzeit erwerbstätig","1098",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 15- bis 24-jährig","Frau Teilzeit erwerbstätig (1-49%), Mann Vollzeit erwerbstätig","812",NA,NA,NA
+"Paarhaushalte mit anderen Personen ohne Kinder unter 25 Jahren","Frau Teilzeit erwerbstätig (1-49%), Mann Vollzeit erwerbstätig","177",NA,NA,NA
+"Paarhaushalte ohne weitere Haushaltsmitglieder","Frau Teilzeit erwerbstätig (1-49%), Mann Vollzeit erwerbstätig","522",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 0- bis 6-jährig","Frau Teilzeit erwerbstätig (50-89%), Mann Vollzeit erwerbstätig","1015",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 7- bis 14-jährig","Frau Teilzeit erwerbstätig (50-89%), Mann Vollzeit erwerbstätig","824",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 15- bis 24-jährig","Frau Teilzeit erwerbstätig (50-89%), Mann Vollzeit erwerbstätig","1046",NA,NA,NA
+"Paarhaushalte mit anderen Personen ohne Kinder unter 25 Jahren","Frau Teilzeit erwerbstätig (50-89%), Mann Vollzeit erwerbstätig","308",NA,NA,NA
+"Paarhaushalte ohne weitere Haushaltsmitglieder","Frau Teilzeit erwerbstätig (50-89%), Mann Vollzeit erwerbstätig","1272",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 0- bis 6-jährig","Frau und Mann Vollzeit erwerbstätig","780",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 7- bis 14-jährig","Frau und Mann Vollzeit erwerbstätig","553",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 15- bis 24-jährig","Frau und Mann Vollzeit erwerbstätig","752",NA,NA,NA
+"Paarhaushalte mit anderen Personen ohne Kinder unter 25 Jahren","Frau und Mann Vollzeit erwerbstätig","359",NA,NA,NA
+"Paarhaushalte ohne weitere Haushaltsmitglieder","Frau und Mann Vollzeit erwerbstätig","3760",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 0- bis 6-jährig","Andere Kombinationen","901",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 7- bis 14-jährig","Andere Kombinationen","615",NA,NA,NA
+"Paarhaushalte: jüngstes Kind 15- bis 24-jährig","Andere Kombinationen","655",NA,NA,NA
+"Paarhaushalte mit anderen Personen ohne Kinder unter 25 Jahren","Andere Kombinationen","368",NA,NA,NA
+"Paarhaushalte ohne weitere Haushaltsmitglieder","Andere Kombinationen","1749",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,integer"
+NA,NA,NA,"1","title","Erwerbstätigkeit bei Paarhaushalten"
+NA,NA,NA,"1","subtitle","Kanton Zug, 2015-2017"
+NA,NA,NA,"1","description","Daten 2015-2017 hochgerechnet auf die Paarhaushalte des Kantons Zug"
+NA,NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

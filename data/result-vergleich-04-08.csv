@@ -1,0 +1,33 @@
+"Kanton","Erwerbsquote (%)","Meta","Type","Content"
+"Schweiz","0.645049020998377",NA,NA,NA
+"Zürich","0.680898508442592",NA,NA,NA
+"Bern","0.646227517371604",NA,NA,NA
+"Luzern","0.676775393404641",NA,NA,NA
+"Uri","0.630295546402985",NA,NA,NA
+"Schwyz","0.673454587041159",NA,NA,NA
+"Obwalden","0.67861560125721",NA,NA,NA
+"Nidwalden","0.673170488204931",NA,NA,NA
+"Glarus","0.647904365742821",NA,NA,NA
+"Zug","0.663282725900788",NA,NA,NA
+"Freiburg","0.657235222415675",NA,NA,NA
+"Solothurn","0.64663026876019",NA,NA,NA
+"Basel-Stadt","0.622898608833705",NA,NA,NA
+"Basel-Landschaft","0.596422791581706",NA,NA,NA
+"Schaffhausen","0.623247113837801",NA,NA,NA
+"Appenzell Ausserrhoden","0.641246672348974",NA,NA,NA
+"Appenzell Innerrhoden","0.634687310332656",NA,NA,NA
+"St. Gallen","0.656701543161994",NA,NA,NA
+"Graubünden","0.640631844965465",NA,NA,NA
+"Aargau","0.663701570416416",NA,NA,NA
+"Thurgau","0.667681462215378",NA,NA,NA
+"Tessin","0.553700240851159",NA,NA,NA
+"Waadt","0.628330618773846",NA,NA,NA
+"Wallis","0.613770641337785",NA,NA,NA
+"Neuenburg","0.606791259982245",NA,NA,NA
+"Genf","0.606368206042428",NA,NA,NA
+"Jura","0.588057384109583",NA,NA,NA
+NA,NA,"1","datatypes","string,percentage"
+NA,NA,"1","title","Erwerbsquote"
+NA,NA,"1","subtitle","Ständige Wohnbevölkerung ab 15 Jahren 2019"
+NA,NA,"1","description",""
+NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

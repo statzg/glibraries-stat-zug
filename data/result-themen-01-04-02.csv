@@ -1,0 +1,36 @@
+"Region","Sprache","Anteil","Meta","Type","Content"
+"Zürich","Schweizerdeutsch","0.775974762264278",NA,NA,NA
+"Zug","Schweizerdeutsch","0.765808108055147",NA,NA,NA
+"Zentralschweiz","Schweizerdeutsch","0.868245556860265",NA,NA,NA
+"Schweiz","Schweizerdeutsch","0.6324220882505",NA,NA,NA
+"Aargau","Schweizerdeutsch","0.862716969490164",NA,NA,NA
+"Zürich","Deutsch","0.485946569260764",NA,NA,NA
+"Zug","Deutsch","0.451069466980022",NA,NA,NA
+"Zentralschweiz","Deutsch","0.371122869435911",NA,NA,NA
+"Schweiz","Deutsch","0.335911596578688",NA,NA,NA
+"Aargau","Deutsch","0.427116373709472",NA,NA,NA
+"Zürich","Französisch","0.0751306751231487",NA,NA,NA
+"Zug","Französisch","0.0683524749572282",NA,NA,NA
+"Zentralschweiz","Französisch","0.0522447338637667",NA,NA,NA
+"Schweiz","Französisch","0.282217137238905",NA,NA,NA
+"Aargau","Französisch","0.0602222982847308",NA,NA,NA
+"Zürich","Italienisch","0.065059095724722",NA,NA,NA
+"Zug","Italienisch","0.0482205387652849",NA,NA,NA
+"Zentralschweiz","Italienisch","0.0399002435197207",NA,NA,NA
+"Schweiz","Italienisch","0.0818654157008002",NA,NA,NA
+"Aargau","Italienisch","0.0524621780836814",NA,NA,NA
+"Zürich","Englisch","0.315424649001057",NA,NA,NA
+"Zug","Englisch","0.368186052087926",NA,NA,NA
+"Zentralschweiz","Englisch","0.192371344098154",NA,NA,NA
+"Schweiz","Englisch","0.206555783740033",NA,NA,NA
+"Aargau","Englisch","0.183981670654923",NA,NA,NA
+"Zürich","Andere Sprache/n","0.0764793747151151",NA,NA,NA
+"Zug","Andere Sprache/n","0.0680471127952942",NA,NA,NA
+"Zentralschweiz","Andere Sprache/n","0.0521093257926639",NA,NA,NA
+"Schweiz","Andere Sprache/n","0.0637203595896105",NA,NA,NA
+"Aargau","Andere Sprache/n","0.0601958885264973",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,percentage"
+NA,NA,NA,"1","title","Bei der Arbeit gesprochene Sprachen im Kanton Zug"
+NA,NA,NA,"1","subtitle","Wohnort im Kanton Zug"
+NA,NA,NA,"1","description","Daten 2019 hochgerechnet auf die Bevölkerung des Kantons Zug (Über 15 Jahre), betrifft alle Personen mit Wohnort im Kanton Zug."
+NA,NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

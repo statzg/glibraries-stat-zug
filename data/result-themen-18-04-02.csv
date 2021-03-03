@@ -1,0 +1,17 @@
+"Kanton","Gemeinde","Steuerfuss","Meta","Type","Content"
+"Zug","Baar","53",NA,NA,NA
+"Zug","Cham","59",NA,NA,NA
+"Zug","Hünenberg","65",NA,NA,NA
+"Zug","Menzingen","65",NA,NA,NA
+"Zug","Neuheim","61",NA,NA,NA
+"Zug","Oberägeri","60",NA,NA,NA
+"Zug","Risch","57",NA,NA,NA
+"Zug","Steinhausen","60",NA,NA,NA
+"Zug","Unterägeri","60",NA,NA,NA
+"Zug","Walchwil","55",NA,NA,NA
+"Zug","Zug","54",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,integer"
+NA,NA,NA,"1","title",""
+NA,NA,NA,"1","subtitle","Kanton Zug, 2021, in % der einfachen Steuer"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Kanton Zug, Steuerverwaltung"

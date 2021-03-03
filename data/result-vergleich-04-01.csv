@@ -1,0 +1,33 @@
+"Kanton","BIP pro Einwohner/in in Fr.","Meta","Type","Content"
+"Zürich","104820.08142",NA,NA,NA
+"Bern","79114.62118",NA,NA,NA
+"Luzern","69256.29787",NA,NA,NA
+"Uri","54290.76041",NA,NA,NA
+"Schwyz","62039.72437",NA,NA,NA
+"Obwalden","67457.56564",NA,NA,NA
+"Nidwalden","73728.59797",NA,NA,NA
+"Glarus","69860.27602",NA,NA,NA
+"Zug","160883.54546",NA,NA,NA
+"Freiburg","61236.99758",NA,NA,NA
+"Solothurn","68639.70042",NA,NA,NA
+"Basel-Stadt","203966.65297",NA,NA,NA
+"Basel-Landschaft","73549.85891",NA,NA,NA
+"Schaffhausen","91378.51408",NA,NA,NA
+"Appenzell Ausserrhoden","58807.11516",NA,NA,NA
+"Appenzell Innerrhoden","64868.07176",NA,NA,NA
+"St. Gallen","76218.83284",NA,NA,NA
+"Graubünden","73365.99599",NA,NA,NA
+"Aargau","64995.81418",NA,NA,NA
+"Thurgau","62739.07927",NA,NA,NA
+"Tessin","87612.35896",NA,NA,NA
+"Waadt","74060.08303",NA,NA,NA
+"Wallis","56627.28938",NA,NA,NA
+"Neuenburg","93276.99261",NA,NA,NA
+"Genf","109846.92223",NA,NA,NA
+"Jura","68876.35124",NA,NA,NA
+"Schweiz","84517.97327",NA,NA,NA
+NA,NA,"1","datatypes","string,integer"
+NA,NA,"1","title","BIP pro Einwohner/in"
+NA,NA,"1","subtitle","2018"
+NA,NA,"1","description","Provisorische Ergebnisse in Fr."
+NA,NA,"1","source","Bundesamt für Statistik, Volkswirtschaftliche Gesamtrechnung"

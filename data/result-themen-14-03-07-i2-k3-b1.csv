@@ -33,15 +33,26 @@
 2020-09-28,"männlich","0",NA,NA,NA
 2020-10-05,"männlich","1",NA,NA,NA
 2020-10-12,"männlich","4",NA,NA,NA
-2020-10-19,"männlich","8",NA,NA,NA
+2020-10-19,"männlich","9",NA,NA,NA
 2020-10-26,"männlich","4",NA,NA,NA
 2020-11-02,"männlich","2",NA,NA,NA
 2020-11-09,"männlich","4",NA,NA,NA
-2020-11-16,"männlich","1",NA,NA,NA
-2020-11-23,"männlich","2",NA,NA,NA
-2020-11-30,"männlich","2",NA,NA,NA
-2020-12-07,"männlich","0",NA,NA,NA
-2020-12-14,"männlich","0",NA,NA,NA
+2020-11-16,"männlich","2",NA,NA,NA
+2020-11-23,"männlich","3",NA,NA,NA
+2020-11-30,"männlich","4",NA,NA,NA
+2020-12-07,"männlich","3",NA,NA,NA
+2020-12-14,"männlich","2",NA,NA,NA
+2020-12-21,"männlich","1",NA,NA,NA
+2020-12-28,"männlich","5",NA,NA,NA
+2021-01-04,"männlich","0",NA,NA,NA
+2021-01-11,"männlich","5",NA,NA,NA
+2021-01-18,"männlich","1",NA,NA,NA
+2021-01-25,"männlich","2",NA,NA,NA
+2021-02-01,"männlich","3",NA,NA,NA
+2021-02-08,"männlich","1",NA,NA,NA
+2021-02-15,"männlich","4",NA,NA,NA
+2021-02-22,"männlich","1",NA,NA,NA
+2021-03-01,"männlich","0",NA,NA,NA
 2020-02-24,"weiblich","0",NA,NA,NA
 2020-03-02,"weiblich","0",NA,NA,NA
 2020-03-09,"weiblich","0",NA,NA,NA
@@ -82,9 +93,20 @@
 2020-11-09,"weiblich","0",NA,NA,NA
 2020-11-16,"weiblich","0",NA,NA,NA
 2020-11-23,"weiblich","2",NA,NA,NA
-2020-11-30,"weiblich","1",NA,NA,NA
-2020-12-07,"weiblich","0",NA,NA,NA
-2020-12-14,"weiblich","0",NA,NA,NA
+2020-11-30,"weiblich","3",NA,NA,NA
+2020-12-07,"weiblich","2",NA,NA,NA
+2020-12-14,"weiblich","2",NA,NA,NA
+2020-12-21,"weiblich","1",NA,NA,NA
+2020-12-28,"weiblich","0",NA,NA,NA
+2021-01-04,"weiblich","1",NA,NA,NA
+2021-01-11,"weiblich","1",NA,NA,NA
+2021-01-18,"weiblich","3",NA,NA,NA
+2021-01-25,"weiblich","0",NA,NA,NA
+2021-02-01,"weiblich","1",NA,NA,NA
+2021-02-08,"weiblich","1",NA,NA,NA
+2021-02-15,"weiblich","3",NA,NA,NA
+2021-02-22,"weiblich","0",NA,NA,NA
+2021-03-01,"weiblich","0",NA,NA,NA
 2020-02-24,"Unbekannt","0",NA,NA,NA
 2020-03-02,"Unbekannt","0",NA,NA,NA
 2020-03-09,"Unbekannt","0",NA,NA,NA
@@ -128,8 +150,19 @@
 2020-11-30,"Unbekannt","0",NA,NA,NA
 2020-12-07,"Unbekannt","0",NA,NA,NA
 2020-12-14,"Unbekannt","0",NA,NA,NA
+2020-12-21,"Unbekannt","0",NA,NA,NA
+2020-12-28,"Unbekannt","0",NA,NA,NA
+2021-01-04,"Unbekannt","0",NA,NA,NA
+2021-01-11,"Unbekannt","0",NA,NA,NA
+2021-01-18,"Unbekannt","0",NA,NA,NA
+2021-01-25,"Unbekannt","0",NA,NA,NA
+2021-02-01,"Unbekannt","0",NA,NA,NA
+2021-02-08,"Unbekannt","0",NA,NA,NA
+2021-02-15,"Unbekannt","0",NA,NA,NA
+2021-02-22,"Unbekannt","0",NA,NA,NA
+2021-03-01,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Hospitalisierung aufgrund von COVID-19 nach Geschlecht im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 15.12.2020"
+NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Hospitalisierungen werden beim BAG mit zeitlicher Verzögerung registriert, diese Zahlen umfassen noch nicht alle im Kanton registrierten Fälle."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

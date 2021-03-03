@@ -1,0 +1,21 @@
+"Kanton","Jahr","Anzahl","Meta","Type","Content"
+"Zug","2005","236312",NA,NA,NA
+"Zug","2006","247628",NA,NA,NA
+"Zug","2007","265176",NA,NA,NA
+"Zug","2008","270769",NA,NA,NA
+"Zug","2009","253088",NA,NA,NA
+"Zug","2010","275802",NA,NA,NA
+"Zug","2011","299316",NA,NA,NA
+"Zug","2012","287108",NA,NA,NA
+"Zug","2013","307454",NA,NA,NA
+"Zug","2014","336742",NA,NA,NA
+"Zug","2015","327445",NA,NA,NA
+"Zug","2016","290642",NA,NA,NA
+"Zug","2017","305013",NA,NA,NA
+"Zug","2018","302196",NA,NA,NA
+"Zug","2019","278756",NA,NA,NA
+NA,NA,NA,"1","datatypes","dateyear,integer"
+NA,NA,NA,"1","title",""
+NA,NA,NA,"1","subtitle","Kanton Zug, 2005 bis 2019"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Bundesamt für Statistik, HESTA"

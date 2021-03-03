@@ -1,0 +1,49 @@
+"Jahr","Szenario","Anzahl","Meta","Type","Content"
+"2009","bisherige Entwicklung","963",NA,NA,NA
+"2010","bisherige Entwicklung","914",NA,NA,NA
+"2011","bisherige Entwicklung","870",NA,NA,NA
+"2012","bisherige Entwicklung","839",NA,NA,NA
+"2013","bisherige Entwicklung","852",NA,NA,NA
+"2014","bisherige Entwicklung","855",NA,NA,NA
+"2015","bisherige Entwicklung","835",NA,NA,NA
+"2016","bisherige Entwicklung","920",NA,NA,NA
+"2017","bisherige Entwicklung","883",NA,NA,NA
+"2018","bisherige Entwicklung","927",NA,NA,NA
+"2019","Referenzszenario","905",NA,NA,NA
+"2020","Referenzszenario","944",NA,NA,NA
+"2021","Referenzszenario","980",NA,NA,NA
+"2022","Referenzszenario","1016",NA,NA,NA
+"2023","Referenzszenario","1041",NA,NA,NA
+"2024","Referenzszenario","1052",NA,NA,NA
+"2025","Referenzszenario","1064",NA,NA,NA
+"2026","Referenzszenario","1089",NA,NA,NA
+"2027","Referenzszenario","1104",NA,NA,NA
+"2028","Referenzszenario","1106",NA,NA,NA
+"2029","Referenzszenario","1117",NA,NA,NA
+"2019","'hohes' Szenario","909",NA,NA,NA
+"2020","'hohes' Szenario","951",NA,NA,NA
+"2021","'hohes' Szenario","992",NA,NA,NA
+"2022","'hohes' Szenario","1031",NA,NA,NA
+"2023","'hohes' Szenario","1058",NA,NA,NA
+"2024","'hohes' Szenario","1071",NA,NA,NA
+"2025","'hohes' Szenario","1085",NA,NA,NA
+"2026","'hohes' Szenario","1113",NA,NA,NA
+"2027","'hohes' Szenario","1130",NA,NA,NA
+"2028","'hohes' Szenario","1134",NA,NA,NA
+"2029","'hohes' Szenario","1148",NA,NA,NA
+"2019","'tiefes' Szenario","902",NA,NA,NA
+"2020","'tiefes' Szenario","936",NA,NA,NA
+"2021","'tiefes' Szenario","967",NA,NA,NA
+"2022","'tiefes' Szenario","1001",NA,NA,NA
+"2023","'tiefes' Szenario","1024",NA,NA,NA
+"2024","'tiefes' Szenario","1033",NA,NA,NA
+"2025","'tiefes' Szenario","1042",NA,NA,NA
+"2026","'tiefes' Szenario","1065",NA,NA,NA
+"2027","'tiefes' Szenario","1078",NA,NA,NA
+"2028","'tiefes' Szenario","1078",NA,NA,NA
+"2029","'tiefes' Szenario","1087",NA,NA,NA
+NA,NA,NA,"1","datatypes","year,string,integer"
+NA,NA,NA,"1","title","Szenarien für die Entwicklung der Anzahl Lernenden an gymnasialen Maturitätsschulen"
+NA,NA,NA,"1","subtitle","Für die Jahre 2007-2027"
+NA,NA,NA,"1","description","Das Referenzszenario spiegelt die erwarteten Entwicklungen der nächsten Jahre, also hauptsächlich die verschiedenen kantonalen demografischen Dynamiken wider. Das «hohe» Szenario beruht auf einer Kombination von Hypothesen, die das Wachstum der Anzahl Lernenden begünstigen, während das «tiefe» Szenario Hypothesen kombiniert, die dem Wachstum der Anzahl Lernenden weniger förderlich sind."
+NA,NA,NA,"1","source","Bundesamt für Statistik, Bildungsperspektiven"

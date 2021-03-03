@@ -1,0 +1,49 @@
+"Gemeinde","Zimmeranzahl","Preis","Meta","Type","Content"
+"Baar","1 Zimmer","1840",NA,NA,NA
+"Baar","2 Zimmer","1928",NA,NA,NA
+"Baar","3 Zimmer","2150",NA,NA,NA
+"Baar","4 Zimmer","3150",NA,NA,NA
+"Cham","1 Zimmer","1748",NA,NA,NA
+"Cham","2 Zimmer","1901",NA,NA,NA
+"Cham","3 Zimmer","2425",NA,NA,NA
+"Cham","4 Zimmer","3035",NA,NA,NA
+"Hünenberg","1 Zimmer","1760",NA,NA,NA
+"Hünenberg","2 Zimmer","2140",NA,NA,NA
+"Hünenberg","3 Zimmer","2384",NA,NA,NA
+"Hünenberg","4 Zimmer","3200",NA,NA,NA
+"Menzingen","1 Zimmer",NA,NA,NA,NA
+"Menzingen","2 Zimmer","1600",NA,NA,NA
+"Menzingen","3 Zimmer",NA,NA,NA,NA
+"Menzingen","4 Zimmer",NA,NA,NA,NA
+"Neuheim","1 Zimmer",NA,NA,NA,NA
+"Neuheim","2 Zimmer",NA,NA,NA,NA
+"Neuheim","3 Zimmer",NA,NA,NA,NA
+"Oberägeri","1 Zimmer","1400",NA,NA,NA
+"Oberägeri","2 Zimmer","2710",NA,NA,NA
+"Oberägeri","3 Zimmer","3855",NA,NA,NA
+"Oberägeri","4 Zimmer","4140",NA,NA,NA
+"Risch","1 Zimmer","1610",NA,NA,NA
+"Risch","2 Zimmer","2220",NA,NA,NA
+"Risch","3 Zimmer","2755",NA,NA,NA
+"Risch","4 Zimmer",NA,NA,NA,NA
+"Steinhausen","1 Zimmer","1410",NA,NA,NA
+"Steinhausen","2 Zimmer","1930",NA,NA,NA
+"Steinhausen","3 Zimmer","2185",NA,NA,NA
+"Steinhausen","4 Zimmer","2645",NA,NA,NA
+"Unterägeri","1 Zimmer","1577",NA,NA,NA
+"Unterägeri","2 Zimmer","2050",NA,NA,NA
+"Unterägeri","3 Zimmer","3100",NA,NA,NA
+"Unterägeri","4 Zimmer","2550",NA,NA,NA
+"Walchwil","1 Zimmer",NA,NA,NA,NA
+"Walchwil","2 Zimmer","2100",NA,NA,NA
+"Walchwil","3 Zimmer","4300",NA,NA,NA
+"Walchwil","4 Zimmer",NA,NA,NA,NA
+"Zug","1 Zimmer","1820",NA,NA,NA
+"Zug","2 Zimmer","2620",NA,NA,NA
+"Zug","3 Zimmer","2500",NA,NA,NA
+"Zug","4 Zimmer","3650",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,integer"
+NA,NA,NA,"1","title","Nettomiete für Wohnungen"
+NA,NA,NA,"1","subtitle","Kanton Zug, 3. Quartal, 2020; Median"
+NA,NA,NA,"1","description","Bei weniger als 5 Beobachtungen wird kein Wert ausgewiesen"
+NA,NA,NA,"1","source","Wüest Partner"

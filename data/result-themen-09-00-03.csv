@@ -1,0 +1,41 @@
+"Kanton","Jahr","Anzahl","Meta","Type","Content"
+"Zug","1984","938",NA,NA,NA
+"Zug","1985","748",NA,NA,NA
+"Zug","1986","748",NA,NA,NA
+"Zug","1987","816",NA,NA,NA
+"Zug","1988","365",NA,NA,NA
+"Zug","1989","546",NA,NA,NA
+"Zug","1990","436",NA,NA,NA
+"Zug","1991","655",NA,NA,NA
+"Zug","1992","529",NA,NA,NA
+"Zug","1993","614",NA,NA,NA
+"Zug","1994","1237",NA,NA,NA
+"Zug","1995","1310",NA,NA,NA
+"Zug","1996","819",NA,NA,NA
+"Zug","1997","968",NA,NA,NA
+"Zug","1998","574",NA,NA,NA
+"Zug","1999","872",NA,NA,NA
+"Zug","2000","592",NA,NA,NA
+"Zug","2001","683",NA,NA,NA
+"Zug","2002","759",NA,NA,NA
+"Zug","2003","860",NA,NA,NA
+"Zug","2004","994",NA,NA,NA
+"Zug","2005","773",NA,NA,NA
+"Zug","2006","843",NA,NA,NA
+"Zug","2007","771",NA,NA,NA
+"Zug","2008","659",NA,NA,NA
+"Zug","2009","774",NA,NA,NA
+"Zug","2010","851",NA,NA,NA
+"Zug","2011","1328",NA,NA,NA
+"Zug","2012","833",NA,NA,NA
+"Zug","2013","743",NA,NA,NA
+"Zug","2014","1375",NA,NA,NA
+"Zug","2015","840",NA,NA,NA
+"Zug","2016","892",NA,NA,NA
+"Zug","2017","631",NA,NA,NA
+"Zug","2018","762",NA,NA,NA
+NA,NA,NA,"1","datatypes","dateyear,integer"
+NA,NA,NA,"1","title","Neu erstellte Wohnungen"
+NA,NA,NA,"1","subtitle","Kanton Zug, 2018"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Bundesamt für Statistik, Gebäude und Wohnungsstatistik"

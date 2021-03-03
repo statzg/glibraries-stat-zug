@@ -1,0 +1,765 @@
+"Kanton","Bezirk","Gemeinde","Anzahl","Meta","Type","Content"
+"Zürich","","Zürich","5041",NA,NA,NA
+"Zürich","Bezirk Affoltern","Affoltern am Albis","788",NA,NA,NA
+"Zürich","Bezirk Affoltern","Mettmenstetten","560",NA,NA,NA
+"Zürich","Bezirk Affoltern","Knonau","486",NA,NA,NA
+"Zürich","Bezirk Affoltern","Hausen am Albis","474",NA,NA,NA
+"Zürich","Bezirk Affoltern","Obfelden","445",NA,NA,NA
+"Zürich","Bezirk Affoltern","Kappel am Albis","240",NA,NA,NA
+"Zürich","Bezirk Affoltern","Bonstetten","174",NA,NA,NA
+"Zürich","Bezirk Affoltern","Ottenbach","157",NA,NA,NA
+"Zürich","Bezirk Affoltern","Aeugst am Albis","154",NA,NA,NA
+"Zürich","Bezirk Affoltern","Hedingen","149",NA,NA,NA
+"Zürich","Bezirk Affoltern","Wettswil am Albis","140",NA,NA,NA
+"Zürich","Bezirk Affoltern","Rifferswil","121",NA,NA,NA
+"Zürich","Bezirk Affoltern","Stallikon","104",NA,NA,NA
+"Zürich","Bezirk Affoltern","Maschwanden","68",NA,NA,NA
+"Zürich","Bezirk Horgen","Horgen","652",NA,NA,NA
+"Zürich","Bezirk Horgen","Thalwil","556",NA,NA,NA
+"Zürich","Bezirk Horgen","Wädenswil","441",NA,NA,NA
+"Zürich","Bezirk Horgen","Richterswil","268",NA,NA,NA
+"Zürich","Bezirk Horgen","Adliswil","261",NA,NA,NA
+"Zürich","Bezirk Horgen","Kilchberg (ZH)","243",NA,NA,NA
+"Zürich","Bezirk Horgen","Langnau am Albis","155",NA,NA,NA
+"Zürich","Bezirk Horgen","Rüschlikon","152",NA,NA,NA
+"Zürich","Bezirk Horgen","Oberrieden","129",NA,NA,NA
+"Zürich","Bezirk Horgen","Schönenberg (ZH)","63",NA,NA,NA
+"Zürich","Bezirk Horgen","Hütten","41",NA,NA,NA
+"Zürich","Bezirk Dietikon","Dietikon","228",NA,NA,NA
+"Zürich","Bezirk Dietikon","Schlieren","183",NA,NA,NA
+"Zürich","Bezirk Dietikon","Birmensdorf (ZH)","109",NA,NA,NA
+"Zürich","Bezirk Dietikon","Urdorf","102",NA,NA,NA
+"Zürich","Bezirk Dietikon","Uitikon","77",NA,NA,NA
+"Zürich","Bezirk Dietikon","Oberengstringen","61",NA,NA,NA
+"Zürich","Bezirk Dietikon","Aesch (ZH)","45",NA,NA,NA
+"Zürich","Bezirk Dietikon","Unterengstringen","39",NA,NA,NA
+"Zürich","Bezirk Dietikon","Geroldswil","32",NA,NA,NA
+"Zürich","Bezirk Dietikon","Weiningen (ZH)","31",NA,NA,NA
+"Zürich","Bezirk Dietikon","Oetwil an der Limmat","26",NA,NA,NA
+"Zürich","Bezirk Meilen","Küsnacht (ZH)","171",NA,NA,NA
+"Zürich","Bezirk Meilen","Zollikon","146",NA,NA,NA
+"Zürich","Bezirk Meilen","Meilen","129",NA,NA,NA
+"Zürich","Bezirk Meilen","Männedorf","86",NA,NA,NA
+"Zürich","Bezirk Meilen","Stäfa","78",NA,NA,NA
+"Zürich","Bezirk Meilen","Erlenbach (ZH)","72",NA,NA,NA
+"Zürich","Bezirk Meilen","Herrliberg","66",NA,NA,NA
+"Zürich","Bezirk Meilen","Hombrechtikon","48",NA,NA,NA
+"Zürich","Bezirk Meilen","Uetikon am See","44",NA,NA,NA
+"Zürich","Bezirk Meilen","Zumikon","40",NA,NA,NA
+"Zürich","Bezirk Meilen","Oetwil am See","19",NA,NA,NA
+"Zürich","Bezirk Bülach","Opfikon","158",NA,NA,NA
+"Zürich","Bezirk Bülach","Wallisellen","139",NA,NA,NA
+"Zürich","Bezirk Bülach","Kloten","85",NA,NA,NA
+"Zürich","Bezirk Bülach","Bülach","81",NA,NA,NA
+"Zürich","Bezirk Bülach","Bassersdorf","59",NA,NA,NA
+"Zürich","Bezirk Bülach","Dietlikon","44",NA,NA,NA
+"Zürich","Bezirk Bülach","Embrach","36",NA,NA,NA
+"Zürich","Bezirk Bülach","Eglisau","29",NA,NA,NA
+"Zürich","Bezirk Bülach","Winkel","28",NA,NA,NA
+"Zürich","Bezirk Bülach","Nürensdorf","25",NA,NA,NA
+"Zürich","Bezirk Bülach","Bachenbülach","24",NA,NA,NA
+"Zürich","Bezirk Bülach","Rafz","20",NA,NA,NA
+"Zürich","Bezirk Bülach","Lufingen","16",NA,NA,NA
+"Zürich","Bezirk Bülach","Glattfelden","15",NA,NA,NA
+"Zürich","Bezirk Bülach","Andere Gemeinden","9",NA,NA,NA
+"Zürich","Bezirk Bülach","Freienstein-Teufen","8",NA,NA,NA
+"Zürich","Bezirk Bülach","Höri","7",NA,NA,NA
+"Zürich","Bezirk Bülach","Rorbas","7",NA,NA,NA
+"Zürich","Bezirk Bülach","Wasterkingen","6",NA,NA,NA
+"Zürich","Bezirk Bülach","Wil (ZH)","6",NA,NA,NA
+"Zürich","Bezirk Uster","Dübendorf","193",NA,NA,NA
+"Zürich","Bezirk Uster","Uster","161",NA,NA,NA
+"Zürich","Bezirk Uster","Volketswil","85",NA,NA,NA
+"Zürich","Bezirk Uster","Maur","56",NA,NA,NA
+"Zürich","Bezirk Uster","Wangen-Brüttisellen","47",NA,NA,NA
+"Zürich","Bezirk Uster","Fällanden","46",NA,NA,NA
+"Zürich","Bezirk Uster","Egg","42",NA,NA,NA
+"Zürich","Bezirk Uster","Greifensee","18",NA,NA,NA
+"Zürich","Bezirk Uster","Schwerzenbach","14",NA,NA,NA
+"Zürich","Bezirk Uster","Mönchaltorf","9",NA,NA,NA
+"Zürich","Bezirk Winterthur","Winterthur","364",NA,NA,NA
+"Zürich","Bezirk Winterthur","Seuzach","23",NA,NA,NA
+"Zürich","Bezirk Winterthur","Pfungen","19",NA,NA,NA
+"Zürich","Bezirk Winterthur","Wiesendangen","17",NA,NA,NA
+"Zürich","Bezirk Winterthur","Zell (ZH)","17",NA,NA,NA
+"Zürich","Bezirk Winterthur","Andere Gemeinden","14",NA,NA,NA
+"Zürich","Bezirk Winterthur","Turbenthal","13",NA,NA,NA
+"Zürich","Bezirk Winterthur","Hettlingen","12",NA,NA,NA
+"Zürich","Bezirk Winterthur","Neftenbach","10",NA,NA,NA
+"Zürich","Bezirk Winterthur","Elsau","9",NA,NA,NA
+"Zürich","Bezirk Winterthur","Brütten","7",NA,NA,NA
+"Zürich","Bezirk Winterthur","Elgg","7",NA,NA,NA
+"Zürich","Bezirk Winterthur","Hagenbuch","5",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Regensdorf","108",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Rümlang","62",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Oberglatt","55",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Niederhasli","52",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Buchs (ZH)","40",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Neerach","23",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Otelfingen","22",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Dielsdorf","21",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Dällikon","16",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Niederweningen","13",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Niederglatt","12",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Schöfflisdorf","12",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Oberweningen","11",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Steinmaur","10",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Weiach","10",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Stadel","7",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Boppelsen","6",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Hüttikon","6",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Andere Gemeinden","5",NA,NA,NA
+"Zürich","Bezirk Dielsdorf","Dänikon","5",NA,NA,NA
+"Zürich","Bezirk Hinwil","Wetzikon (ZH)","79",NA,NA,NA
+"Zürich","Bezirk Hinwil","Hinwil","42",NA,NA,NA
+"Zürich","Bezirk Hinwil","Gossau (ZH)","35",NA,NA,NA
+"Zürich","Bezirk Hinwil","Rüti (ZH)","31",NA,NA,NA
+"Zürich","Bezirk Hinwil","Wald (ZH)","29",NA,NA,NA
+"Zürich","Bezirk Hinwil","Bubikon","28",NA,NA,NA
+"Zürich","Bezirk Hinwil","Dürnten","12",NA,NA,NA
+"Zürich","Bezirk Hinwil","Seegräben","12",NA,NA,NA
+"Zürich","Bezirk Hinwil","Bäretswil","11",NA,NA,NA
+"Zürich","Bezirk Hinwil","Grüningen","10",NA,NA,NA
+"Zürich","Bezirk Hinwil","Fischenthal","7",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Illnau-Effretikon","80",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Pfäffikon","41",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Lindau","35",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Bauma","21",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Fehraltorf","21",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Hittnau","19",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Russikon","15",NA,NA,NA
+"Zürich","Bezirk Pfäffikon","Weisslingen","15",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Andere Gemeinden","25",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Feuerthalen","8",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Buch am Irchel","7",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Andelfingen","6",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Dachsen","6",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Henggart","6",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Adlikon","5",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Flaach","5",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Flurlingen","5",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Kleinandelfingen","5",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Marthalen","5",NA,NA,NA
+"Zürich","Bezirk Andelfingen","Rheinau","5",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Kriens","781",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Ebikon","753",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Root","576",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Horw","424",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Buchrain","358",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Meggen","337",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Meierskappel","317",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Weggis","292",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Gisikon","266",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Adligenswil","241",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Udligenswil","174",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Malters","138",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Dierikon","118",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Greppen","104",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Honau","87",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Vitznau","78",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Land","Schwarzenberg","28",NA,NA,NA
+"Luzern","Wahlkreis Luzern-Stadt","Luzern","3227",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Emmen","1017",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Hochdorf","430",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Rothenburg","248",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Eschenbach (LU)","219",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Inwil","211",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Hitzkirch","179",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Ballwil","178",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Hohenrain","123",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Rain","103",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Römerswil","59",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Aesch (LU)","32",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Ermensee","27",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Schongau","25",NA,NA,NA
+"Luzern","Wahlkreis Hochdorf","Altwis","12",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Neuenkirch","169",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Sursee","166",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Ruswil","121",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Beromünster","116",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Sempach","111",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Schenkon","84",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Oberkirch","76",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Hildisrieden","64",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Nottwil","61",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Eich","47",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Geuensee","43",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Buttisholz","36",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Rickenbach (LU)","32",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Triengen","31",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Knutwil","28",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Mauensee","27",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Büron","21",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Grosswangen","19",NA,NA,NA
+"Luzern","Wahlkreis Sursee","Schlierbach","9",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Dagmersellen","45",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Reiden","45",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Willisau","34",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Schötz","27",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Ettiswil","22",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Menznau","22",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Wauwil","18",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Andere Gemeinden","17",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Egolzwil","17",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Pfaffnau","17",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Wikon","17",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Nebikon","16",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Zell (LU)","8",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Grossdietwil","7",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Alberswil","6",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Altbüron","6",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Altishofen","6",NA,NA,NA
+"Luzern","Wahlkreis Willisau","Fischbach","6",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Wolhusen","43",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Werthenstein","26",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Entlebuch","19",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Schüpfheim","18",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Escholzmatt-Marbach","13",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Hasle (LU)","10",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Andere Gemeinden","6",NA,NA,NA
+"Luzern","Wahlkreis Entlebuch","Flühli","5",NA,NA,NA
+"Aargau","Bezirk Muri","Sins","761",NA,NA,NA
+"Aargau","Bezirk Muri","Muri (AG)","452",NA,NA,NA
+"Aargau","Bezirk Muri","Oberrüti","358",NA,NA,NA
+"Aargau","Bezirk Muri","Auw","349",NA,NA,NA
+"Aargau","Bezirk Muri","Merenschwand","333",NA,NA,NA
+"Aargau","Bezirk Muri","Dietwil","235",NA,NA,NA
+"Aargau","Bezirk Muri","Abtwil","199",NA,NA,NA
+"Aargau","Bezirk Muri","Mühlau","185",NA,NA,NA
+"Aargau","Bezirk Muri","Aristau","121",NA,NA,NA
+"Aargau","Bezirk Muri","Beinwil (Freiamt)","111",NA,NA,NA
+"Aargau","Bezirk Muri","Boswil","103",NA,NA,NA
+"Aargau","Bezirk Muri","Buttwil","61",NA,NA,NA
+"Aargau","Bezirk Muri","Waltenschwil","53",NA,NA,NA
+"Aargau","Bezirk Muri","Bünzen","35",NA,NA,NA
+"Aargau","Bezirk Muri","Besenbüren","27",NA,NA,NA
+"Aargau","Bezirk Muri","Rottenschwil","27",NA,NA,NA
+"Aargau","Bezirk Muri","Bettwil","24",NA,NA,NA
+"Aargau","Bezirk Muri","Kallern","17",NA,NA,NA
+"Aargau","Bezirk Muri","Geltwil","12",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Wohlen (AG)","191",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Jonen","128",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Bremgarten (AG)","122",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Villmergen","90",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Berikon","76",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Oberwil-Lieli","74",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Oberlunkhofen","70",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Widen","59",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Zufikon","59",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Arni (AG)","50",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Unterlunkhofen","50",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Rudolfstetten-Friedlisberg","47",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Sarmenstorf","37",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Dottikon","34",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Niederwil (AG)","29",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Islisberg","26",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Hägglingen","23",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Büttikon","21",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Eggenwil","18",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Fischbach-Göslikon","15",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Uezwil","14",NA,NA,NA
+"Aargau","Bezirk Bremgarten","Tägerig","8",NA,NA,NA
+"Aargau","Bezirk Baden","Baden","132",NA,NA,NA
+"Aargau","Bezirk Baden","Wettingen","116",NA,NA,NA
+"Aargau","Bezirk Baden","Spreitenbach","68",NA,NA,NA
+"Aargau","Bezirk Baden","Mellingen","50",NA,NA,NA
+"Aargau","Bezirk Baden","Neuenhof","50",NA,NA,NA
+"Aargau","Bezirk Baden","Bergdietikon","42",NA,NA,NA
+"Aargau","Bezirk Baden","Obersiggenthal","42",NA,NA,NA
+"Aargau","Bezirk Baden","Würenlos","42",NA,NA,NA
+"Aargau","Bezirk Baden","Remetschwil","37",NA,NA,NA
+"Aargau","Bezirk Baden","Niederrohrdorf","30",NA,NA,NA
+"Aargau","Bezirk Baden","Ennetbaden","27",NA,NA,NA
+"Aargau","Bezirk Baden","Fislisbach","26",NA,NA,NA
+"Aargau","Bezirk Baden","Killwangen","24",NA,NA,NA
+"Aargau","Bezirk Baden","Künten","24",NA,NA,NA
+"Aargau","Bezirk Baden","Untersiggenthal","24",NA,NA,NA
+"Aargau","Bezirk Baden","Gebenstorf","22",NA,NA,NA
+"Aargau","Bezirk Baden","Oberrohrdorf","22",NA,NA,NA
+"Aargau","Bezirk Baden","Ehrendingen","21",NA,NA,NA
+"Aargau","Bezirk Baden","Birmenstorf (AG)","19",NA,NA,NA
+"Aargau","Bezirk Baden","Stetten (AG)","18",NA,NA,NA
+"Aargau","Bezirk Baden","Turgi","18",NA,NA,NA
+"Aargau","Bezirk Baden","Bellikon","15",NA,NA,NA
+"Aargau","Bezirk Baden","Mägenwil","12",NA,NA,NA
+"Aargau","Bezirk Baden","Wohlenschwil","9",NA,NA,NA
+"Aargau","Bezirk Baden","Würenlingen","9",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Lenzburg","68",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Meisterschwanden","43",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Seengen","42",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Fahrwangen","37",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Seon","31",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Staufen","26",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Niederlenz","22",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Dintikon","19",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Hunzenschwil","16",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Möriken-Wildegg","16",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Othmarsingen","14",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Rupperswil","14",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Schafisheim","13",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Boniswil","11",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Holderbank (AG)","11",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Andere Gemeinden","10",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Egliswil","8",NA,NA,NA
+"Aargau","Bezirk Lenzburg","Brunegg","5",NA,NA,NA
+"Aargau","Bezirk Aarau","Aarau","101",NA,NA,NA
+"Aargau","Bezirk Aarau","Suhr","54",NA,NA,NA
+"Aargau","Bezirk Aarau","Buchs (AG)","40",NA,NA,NA
+"Aargau","Bezirk Aarau","Gränichen","35",NA,NA,NA
+"Aargau","Bezirk Aarau","Oberentfelden","26",NA,NA,NA
+"Aargau","Bezirk Aarau","Küttigen","18",NA,NA,NA
+"Aargau","Bezirk Aarau","Erlinsbach (AG)","14",NA,NA,NA
+"Aargau","Bezirk Aarau","Hirschthal","10",NA,NA,NA
+"Aargau","Bezirk Aarau","Unterentfelden","10",NA,NA,NA
+"Aargau","Bezirk Aarau","Biberstein","9",NA,NA,NA
+"Aargau","Bezirk Aarau","Muhen","9",NA,NA,NA
+"Aargau","Bezirk Zofingen","Zofingen","60",NA,NA,NA
+"Aargau","Bezirk Zofingen","Oftringen","58",NA,NA,NA
+"Aargau","Bezirk Zofingen","Aarburg","42",NA,NA,NA
+"Aargau","Bezirk Zofingen","Rothrist","34",NA,NA,NA
+"Aargau","Bezirk Zofingen","Strengelbach","28",NA,NA,NA
+"Aargau","Bezirk Zofingen","Brittnau","22",NA,NA,NA
+"Aargau","Bezirk Zofingen","Andere Gemeinden","19",NA,NA,NA
+"Aargau","Bezirk Zofingen","Kölliken","16",NA,NA,NA
+"Aargau","Bezirk Zofingen","Murgenthal","10",NA,NA,NA
+"Aargau","Bezirk Zofingen","Safenwil","10",NA,NA,NA
+"Aargau","Bezirk Zofingen","Reitnau","7",NA,NA,NA
+"Aargau","Bezirk Kulm","Reinach (AG)","68",NA,NA,NA
+"Aargau","Bezirk Kulm","Menziken","53",NA,NA,NA
+"Aargau","Bezirk Kulm","Beinwil am See","40",NA,NA,NA
+"Aargau","Bezirk Kulm","Gontenschwil","20",NA,NA,NA
+"Aargau","Bezirk Kulm","Teufenthal (AG)","19",NA,NA,NA
+"Aargau","Bezirk Kulm","Oberkulm","13",NA,NA,NA
+"Aargau","Bezirk Kulm","Unterkulm","13",NA,NA,NA
+"Aargau","Bezirk Kulm","Andere Gemeinden","12",NA,NA,NA
+"Aargau","Bezirk Kulm","Schöftland","8",NA,NA,NA
+"Aargau","Bezirk Kulm","Dürrenäsch","7",NA,NA,NA
+"Aargau","Bezirk Kulm","Holziken","7",NA,NA,NA
+"Aargau","Bezirk Kulm","Birrwil","6",NA,NA,NA
+"Aargau","Bezirk Kulm","Burg (AG)","5",NA,NA,NA
+"Aargau","Bezirk Brugg","Brugg","38",NA,NA,NA
+"Aargau","Bezirk Brugg","Windisch","26",NA,NA,NA
+"Aargau","Bezirk Brugg","Andere Gemeinden","21",NA,NA,NA
+"Aargau","Bezirk Brugg","Hausen (AG)","18",NA,NA,NA
+"Aargau","Bezirk Brugg","Birr","16",NA,NA,NA
+"Aargau","Bezirk Brugg","Lupfig","11",NA,NA,NA
+"Aargau","Bezirk Brugg","Veltheim (AG)","9",NA,NA,NA
+"Aargau","Bezirk Brugg","Bözberg","8",NA,NA,NA
+"Aargau","Bezirk Brugg","Mülligen","7",NA,NA,NA
+"Aargau","Bezirk Brugg","Schinznach","7",NA,NA,NA
+"Aargau","Bezirk Brugg","Villnachern","7",NA,NA,NA
+"Aargau","Bezirk Brugg","Riniken","6",NA,NA,NA
+"Aargau","Bezirk Brugg","Schinznach-Bad","6",NA,NA,NA
+"Aargau","Bezirk Zurzach","Bad Zurzach","16",NA,NA,NA
+"Aargau","Bezirk Zurzach","Klingnau","13",NA,NA,NA
+"Aargau","Bezirk Zurzach","Andere Gemeinden","10",NA,NA,NA
+"Aargau","Bezirk Zurzach","Döttingen","9",NA,NA,NA
+"Aargau","Bezirk Zurzach","Endingen","9",NA,NA,NA
+"Aargau","Bezirk Zurzach","Lengnau (AG)","9",NA,NA,NA
+"Aargau","Bezirk Zurzach","Böttstein","7",NA,NA,NA
+"Aargau","Bezirk Zurzach","Leuggern","7",NA,NA,NA
+"Aargau","Bezirk Zurzach","Rümikon","7",NA,NA,NA
+"Aargau","Bezirk Zurzach","Tegerfelden","7",NA,NA,NA
+"Aargau","Bezirk Zurzach","Fisibach","6",NA,NA,NA
+"Aargau","Bezirk Zurzach","Rietheim","6",NA,NA,NA
+"Aargau","Bezirk Zurzach","Schneisingen","6",NA,NA,NA
+"Aargau","Bezirk Zurzach","Koblenz","5",NA,NA,NA
+"Aargau","Bezirk Zurzach","Siglistorf","5",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Rheinfelden","34",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Möhlin","19",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Andere Gemeinden","14",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Zeiningen","9",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Kaiseraugst","8",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Magden","5",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Mumpf","5",NA,NA,NA
+"Aargau","Bezirk Rheinfelden","Schupfart","5",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Andere Gemeinden","31",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Gipf-Oberfrick","16",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Frick","11",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Eiken","10",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Laufenburg","8",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Kaisten","6",NA,NA,NA
+"Aargau","Bezirk Laufenburg","Mettauertal","6",NA,NA,NA
+"Aargau","Anderer Bezirk","","7",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Arth","1728",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Schwyz","749",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Ingenbohl","493",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Sattel","255",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Steinen","251",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Rothenthurm","133",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Lauerz","111",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Steinerberg","79",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Morschach","61",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Muotathal","55",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Unteriberg","37",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Illgau","27",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Oberiberg","24",NA,NA,NA
+"Schwyz","Bezirk Schwyz","Alpthal","7",NA,NA,NA
+"Schwyz","Bezirk Küssnacht (SZ)","Küssnacht (SZ)","1359",NA,NA,NA
+"Schwyz","Bezirk Höfe","Freienbach","285",NA,NA,NA
+"Schwyz","Bezirk Höfe","Feusisberg","227",NA,NA,NA
+"Schwyz","Bezirk Höfe","Wollerau","190",NA,NA,NA
+"Schwyz","Bezirk March","Altendorf","104",NA,NA,NA
+"Schwyz","Bezirk March","Lachen","100",NA,NA,NA
+"Schwyz","Bezirk March","Schübelbach","76",NA,NA,NA
+"Schwyz","Bezirk March","Galgenen","59",NA,NA,NA
+"Schwyz","Bezirk March","Wangen (SZ)","48",NA,NA,NA
+"Schwyz","Bezirk March","Reichenburg","27",NA,NA,NA
+"Schwyz","Bezirk March","Tuggen","24",NA,NA,NA
+"Schwyz","Bezirk March","Andere Gemeinden","6",NA,NA,NA
+"Schwyz","Bezirk Einsiedeln","Einsiedeln","393",NA,NA,NA
+"Schwyz","Bezirk Gersau","Gersau","131",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Bern","170",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Andere Gemeinden","50",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Köniz","49",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Muri bei Bern","28",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Ittigen","22",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Ostermundigen","15",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Münsingen","14",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Jegenstorf","13",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Münchenbuchsee","13",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Urtenen-Schönbühl","13",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Vechigen","13",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Worb","13",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Zollikofen","13",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Wohlen bei Bern","12",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Belp","11",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Kehrsatz","11",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Fraubrunnen","9",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Oberdiessbach","9",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Schwarzenburg","9",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Bolligen","8",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Toffen","7",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Bremgarten bei Bern","6",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Moosseedorf","6",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Neuenegg","6",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Wichtrach","6",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Biglen","5",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Mühleberg","5",NA,NA,NA
+"Bern","Verwaltungskreis Bern-Mittelland","Stettlen","5",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Andere Gemeinden","36",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Langenthal","31",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Niederbipp","18",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Aarwangen","13",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Huttwil","13",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Madiswil","11",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Herzogenbuchsee","10",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Roggwil (BE)","8",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Wynau","8",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Thunstetten","6",NA,NA,NA
+"Bern","Verwaltungskreis Oberaargau","Wiedlisbach","6",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Biel/Bienne","57",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Andere Gemeinden","28",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Ipsach","13",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Nidau","13",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Pieterlen","8",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Evilard","5",NA,NA,NA
+"Bern","Verwaltungskreis Biel/Bienne","Port","5",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Andere Gemeinden","47",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Burgdorf","18",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Kirchberg (BE)","16",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Langnau im Emmental","12",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Hasle bei Burgdorf","7",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Hindelbank","5",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Lyssach","5",NA,NA,NA
+"Bern","Verwaltungskreis Emmental","Rüdtligen-Alchenflüh","5",NA,NA,NA
+"Bern","Verwaltungskreis Thun","Thun","47",NA,NA,NA
+"Bern","Verwaltungskreis Thun","Andere Gemeinden","21",NA,NA,NA
+"Bern","Verwaltungskreis Thun","Steffisburg","16",NA,NA,NA
+"Bern","Verwaltungskreis Thun","Heimberg","11",NA,NA,NA
+"Bern","Verwaltungskreis Thun","Sigriswil","10",NA,NA,NA
+"Bern","Verwaltungskreis Thun","Uetendorf","6",NA,NA,NA
+"Bern","Verwaltungskreis Seeland","Andere Gemeinden","46",NA,NA,NA
+"Bern","Verwaltungskreis Seeland","Lyss","27",NA,NA,NA
+"Bern","Verwaltungskreis Seeland","Studen (BE)","6",NA,NA,NA
+"Bern","Verwaltungskreis Seeland","Grossaffoltern","5",NA,NA,NA
+"Bern","Verwaltungskreis Seeland","Rapperswil (BE)","5",NA,NA,NA
+"Bern","Verwaltungskreis Interlaken-Oberhasli","Andere Gemeinden","23",NA,NA,NA
+"Bern","Verwaltungskreis Interlaken-Oberhasli","Meiringen","15",NA,NA,NA
+"Bern","Verwaltungskreis Interlaken-Oberhasli","Ringgenberg (BE)","7",NA,NA,NA
+"Bern","Verwaltungskreis Interlaken-Oberhasli","Wilderswil","6",NA,NA,NA
+"Bern","Verwaltungskreis Interlaken-Oberhasli","Brienz (BE)","5",NA,NA,NA
+"Bern","Verwaltungskreis Interlaken-Oberhasli","Grindelwald","5",NA,NA,NA
+"Bern","Arrondissement administratif Jura bernois","Andere Gemeinden","29",NA,NA,NA
+"Bern","Arrondissement administratif Jura bernois","Corgémont","6",NA,NA,NA
+"Bern","Arrondissement administratif Jura bernois","Saint-Imier","5",NA,NA,NA
+"Bern","Verwaltungskreis Frutigen-Niedersimmental","Spiez","19",NA,NA,NA
+"Bern","Verwaltungskreis Frutigen-Niedersimmental","Andere Gemeinden","8",NA,NA,NA
+"Bern","Verwaltungskreis Frutigen-Niedersimmental","Wimmis","6",NA,NA,NA
+"Bern","Verwaltungskreis Frutigen-Niedersimmental","Aeschi bei Spiez","5",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Rapperswil-Jona","181",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Eschenbach (SG)","38",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Gommiswald","29",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Uznach","28",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Schmerikon","20",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Benken (SG)","14",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Kaltbrunn","14",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Weesen","14",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Schänis","13",NA,NA,NA
+"St. Gallen","Wahlkreis See-Gaster","Amden","10",NA,NA,NA
+"St. Gallen","Wahlkreis St. Gallen","St. Gallen","81",NA,NA,NA
+"St. Gallen","Wahlkreis St. Gallen","Gossau (SG)","22",NA,NA,NA
+"St. Gallen","Wahlkreis St. Gallen","Gaiserwald","9",NA,NA,NA
+"St. Gallen","Wahlkreis St. Gallen","Andere Gemeinden","7",NA,NA,NA
+"St. Gallen","Wahlkreis St. Gallen","Wittenbach","6",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Wil (SG)","51",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Flawil","21",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Andere Gemeinden","10",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Zuzwil (SG)","10",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Oberuzwil","7",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Uzwil","7",NA,NA,NA
+"St. Gallen","Wahlkreis Wil","Oberbüren","5",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Walenstadt","21",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Bad Ragaz","19",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Mels","15",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Quarten","13",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Sargans","13",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Flums","6",NA,NA,NA
+"St. Gallen","Wahlkreis Sarganserland","Vilters-Wangs","5",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Wattwil","19",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Ebnat-Kappel","10",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Kirchberg (SG)","10",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Andere Gemeinden","9",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Bütschwil-Ganterschwil","9",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Neckertal","7",NA,NA,NA
+"St. Gallen","Wahlkreis Toggenburg","Nesslau","6",NA,NA,NA
+"St. Gallen","Wahlkreis Rorschach","Rorschach","14",NA,NA,NA
+"St. Gallen","Wahlkreis Rorschach","Thal","14",NA,NA,NA
+"St. Gallen","Wahlkreis Rorschach","Rorschacherberg","10",NA,NA,NA
+"St. Gallen","Wahlkreis Rorschach","Andere Gemeinden","8",NA,NA,NA
+"St. Gallen","Wahlkreis Rorschach","Goldach","8",NA,NA,NA
+"St. Gallen","Wahlkreis Rorschach","Steinach","6",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Andere Gemeinden","15",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Altstätten","10",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Au (SG)","6",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Diepoldsau","6",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Balgach","5",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Berneck","5",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Oberriet (SG)","5",NA,NA,NA
+"St. Gallen","Wahlkreis Rheintal","Widnau","5",NA,NA,NA
+"St. Gallen","Wahlkreis Werdenberg","Grabs","12",NA,NA,NA
+"St. Gallen","Wahlkreis Werdenberg","Buchs (SG)","10",NA,NA,NA
+"St. Gallen","Wahlkreis Werdenberg","Andere Gemeinden","8",NA,NA,NA
+"St. Gallen","Wahlkreis Werdenberg","Wartau","8",NA,NA,NA
+"St. Gallen","Wahlkreis Werdenberg","Sennwald","7",NA,NA,NA
+"Nidwalden","","Hergiswil (NW)","180",NA,NA,NA
+"Nidwalden","","Stans","151",NA,NA,NA
+"Nidwalden","","Stansstad","95",NA,NA,NA
+"Nidwalden","","Ennetbürgen","81",NA,NA,NA
+"Nidwalden","","Beckenried","73",NA,NA,NA
+"Nidwalden","","Buochs","60",NA,NA,NA
+"Nidwalden","","Oberdorf (NW)","47",NA,NA,NA
+"Nidwalden","","Ennetmoos","36",NA,NA,NA
+"Nidwalden","","Dallenwil","32",NA,NA,NA
+"Nidwalden","","Wolfenschiessen","27",NA,NA,NA
+"Nidwalden","","Emmetten","25",NA,NA,NA
+"Solothurn","Bezirk Olten","Olten","57",NA,NA,NA
+"Solothurn","Bezirk Olten","Dulliken","28",NA,NA,NA
+"Solothurn","Bezirk Olten","Hägendorf","26",NA,NA,NA
+"Solothurn","Bezirk Olten","Wangen bei Olten","19",NA,NA,NA
+"Solothurn","Bezirk Olten","Schönenwerd","14",NA,NA,NA
+"Solothurn","Bezirk Olten","Andere Gemeinden","10",NA,NA,NA
+"Solothurn","Bezirk Olten","Däniken","8",NA,NA,NA
+"Solothurn","Bezirk Olten","Gretzenbach","8",NA,NA,NA
+"Solothurn","Bezirk Olten","Kappel (SO)","8",NA,NA,NA
+"Solothurn","Bezirk Olten","Walterswil (SO)","8",NA,NA,NA
+"Solothurn","Bezirk Olten","Starrkirch-Wil","6",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Zuchwil","24",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Andere Gemeinden","20",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Derendingen","14",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Biberist","11",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Luterbach","11",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Recherswil","8",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Subingen","8",NA,NA,NA
+"Solothurn","Bezirk Wasseramt","Lohn-Ammannsegg","7",NA,NA,NA
+"Solothurn","Bezirk Lebern","Grenchen","30",NA,NA,NA
+"Solothurn","Bezirk Lebern","Andere Gemeinden","22",NA,NA,NA
+"Solothurn","Bezirk Lebern","Langendorf","10",NA,NA,NA
+"Solothurn","Bezirk Lebern","Feldbrunnen-St. Niklaus","6",NA,NA,NA
+"Solothurn","Bezirk Lebern","Lommiswil","5",NA,NA,NA
+"Solothurn","Bezirk Lebern","Riedholz","5",NA,NA,NA
+"Solothurn","Bezirk Gösgen","Trimbach","23",NA,NA,NA
+"Solothurn","Bezirk Gösgen","Niedergösgen","21",NA,NA,NA
+"Solothurn","Bezirk Gösgen","Lostorf","13",NA,NA,NA
+"Solothurn","Bezirk Gösgen","Erlinsbach (SO)","6",NA,NA,NA
+"Solothurn","Bezirk Gösgen","Andere Gemeinden","5",NA,NA,NA
+"Solothurn","Bezirk Gösgen","Obergösgen","5",NA,NA,NA
+"Solothurn","Bezirk Gäu","Egerkingen","13",NA,NA,NA
+"Solothurn","Bezirk Gäu","Wolfwil","13",NA,NA,NA
+"Solothurn","Bezirk Gäu","Oberbuchsiten","11",NA,NA,NA
+"Solothurn","Bezirk Gäu","Oensingen","10",NA,NA,NA
+"Solothurn","Bezirk Gäu","Härkingen","6",NA,NA,NA
+"Solothurn","Bezirk Gäu","Kestenholz","5",NA,NA,NA
+"Solothurn","Bezirk Gäu","Neuendorf","5",NA,NA,NA
+"Solothurn","Bezirk Solothurn","Solothurn","44",NA,NA,NA
+"Solothurn","Anderer Bezirk","","7",NA,NA,NA
+"Solothurn","Bezirk Dorneck","Andere Gemeinden","14",NA,NA,NA
+"Solothurn","Bezirk Dorneck","Hofstetten-Flüh","10",NA,NA,NA
+"Solothurn","Bezirk Dorneck","Dornach","5",NA,NA,NA
+"Solothurn","Bezirk Thierstein","Andere Gemeinden","13",NA,NA,NA
+"Solothurn","Bezirk Thal","Balsthal","9",NA,NA,NA
+"Solothurn","Bezirk Bucheggberg","Buchegg","6",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Frauenfeld","69",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Andere Gemeinden","30",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Gachnang","13",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Steckborn","11",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Diessenhofen","10",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Matzingen","8",NA,NA,NA
+"Thurgau","Bezirk Frauenfeld","Stettfurt","5",NA,NA,NA
+"Thurgau","Bezirk Kreuzlingen","Kreuzlingen","47",NA,NA,NA
+"Thurgau","Bezirk Kreuzlingen","Andere Gemeinden","23",NA,NA,NA
+"Thurgau","Bezirk Kreuzlingen","Ermatingen","16",NA,NA,NA
+"Thurgau","Bezirk Kreuzlingen","Tägerwilen","16",NA,NA,NA
+"Thurgau","Bezirk Kreuzlingen","Salenstein","12",NA,NA,NA
+"Thurgau","Bezirk Kreuzlingen","Bottighofen","7",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Aadorf","20",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Münchwilen (TG)","14",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Andere Gemeinden","13",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Sirnach","10",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Eschlikon","8",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Wängi","8",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Bettwiesen","5",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Bichelsee-Balterswil","5",NA,NA,NA
+"Thurgau","Bezirk Münchwilen","Fischingen","5",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Andere Gemeinden","16",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Affeltrangen","10",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Bussnang","10",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Märstetten","8",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Bischofszell","7",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Kradolf-Schönenberg","7",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Sulgen","7",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Weinfelden","7",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Wigoltingen","7",NA,NA,NA
+"Thurgau","Bezirk Weinfelden","Berg (TG)","6",NA,NA,NA
+"Thurgau","Bezirk Arbon","Amriswil","18",NA,NA,NA
+"Thurgau","Bezirk Arbon","Arbon","16",NA,NA,NA
+"Thurgau","Bezirk Arbon","Horn","9",NA,NA,NA
+"Thurgau","Bezirk Arbon","Andere Gemeinden","8",NA,NA,NA
+"Thurgau","Bezirk Arbon","Romanshorn","8",NA,NA,NA
+"Thurgau","Bezirk Arbon","Egnach","7",NA,NA,NA
+"Thurgau","Bezirk Arbon","Kesswil","5",NA,NA,NA
+"Obwalden","","Sarnen","136",NA,NA,NA
+"Obwalden","","Alpnach","92",NA,NA,NA
+"Obwalden","","Sachseln","71",NA,NA,NA
+"Obwalden","","Kerns","62",NA,NA,NA
+"Obwalden","","Engelberg","49",NA,NA,NA
+"Obwalden","","Giswil","42",NA,NA,NA
+"Obwalden","","Lungern","5",NA,NA,NA
+"Uri","","Altdorf (UR)","129",NA,NA,NA
+"Uri","","Schattdorf","70",NA,NA,NA
+"Uri","","Bürglen (UR)","53",NA,NA,NA
+"Uri","","Erstfeld","36",NA,NA,NA
+"Uri","","Flüelen","35",NA,NA,NA
+"Uri","","Seedorf (UR)","26",NA,NA,NA
+"Uri","","Attinghausen","18",NA,NA,NA
+"Uri","","Silenen","16",NA,NA,NA
+"Uri","","Andere Gemeinden","13",NA,NA,NA
+"Uri","","Seelisberg","10",NA,NA,NA
+"Uri","","Sisikon","10",NA,NA,NA
+"Uri","","Gurtnellen","7",NA,NA,NA
+"Uri","","Andermatt","6",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Binningen","33",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Allschwil","30",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Oberwil (BL)","30",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Reinach (BL)","25",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Muttenz","20",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Münchenstein","18",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Bottmingen","17",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Birsfelden","14",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Therwil","14",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Aesch (BL)","13",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Arlesheim","13",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Ettingen","11",NA,NA,NA
+"Basel-Landschaft","Bezirk Arlesheim","Andere Gemeinden","9",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Liestal","24",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Pratteln","15",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Andere Gemeinden","14",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Frenkendorf","10",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Füllinsdorf","8",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Lupsingen","7",NA,NA,NA
+"Basel-Landschaft","Bezirk Liestal","Augst","6",NA,NA,NA
+"Basel-Landschaft","Bezirk Sissach","Andere Gemeinden","33",NA,NA,NA
+"Basel-Landschaft","Bezirk Sissach","Gelterkinden","8",NA,NA,NA
+"Basel-Landschaft","Bezirk Sissach","Sissach","8",NA,NA,NA
+"Basel-Landschaft","Bezirk Sissach","Itingen","5",NA,NA,NA
+"Basel-Landschaft","Bezirk Laufen","Andere Gemeinden","11",NA,NA,NA
+"Basel-Landschaft","Bezirk Laufen","Laufen","8",NA,NA,NA
+"Basel-Landschaft","Bezirk Laufen","Zwingen","6",NA,NA,NA
+"Basel-Landschaft","Bezirk Waldenburg","Andere Gemeinden","14",NA,NA,NA
+"Basel-Landschaft","Bezirk Waldenburg","Hölstein","5",NA,NA,NA
+"Basel-Stadt","","Basel","333",NA,NA,NA
+"Basel-Stadt","","Riehen","38",NA,NA,NA
+"Graubünden","Region Plessur","Chur","52",NA,NA,NA
+"Graubünden","Region Plessur","Churwalden","6",NA,NA,NA
+"Graubünden","Anderer Bezirk","","8",NA,NA,NA
+"Graubünden","Region Prättigau / Davos","Andere Gemeinden","17",NA,NA,NA
+"Graubünden","Region Prättigau / Davos","Klosters-Serneus","12",NA,NA,NA
+"Graubünden","Region Prättigau / Davos","Davos","7",NA,NA,NA
+"Graubünden","Region Surselva","Laax","14",NA,NA,NA
+"Graubünden","Region Imboden","Flims","11",NA,NA,NA
+"Graubünden","Region Surselva","Andere Gemeinden","10",NA,NA,NA
+"Graubünden","Region Imboden","Domat/Ems","9",NA,NA,NA
+"Graubünden","Region Surselva","Ilanz/Glion","8",NA,NA,NA
+"Graubünden","Region Imboden","Andere Gemeinden","7",NA,NA,NA
+"Graubünden","Region Imboden","Bonaduz","5",NA,NA,NA
+"Graubünden","Region Landquart","Andere Gemeinden","11",NA,NA,NA
+"Graubünden","Region Landquart","Landquart","8",NA,NA,NA
+"Graubünden","Region Landquart","Maienfeld","6",NA,NA,NA
+"Graubünden","Region Viamala","Andere Gemeinden","21",NA,NA,NA
+"Graubünden","Region Albula","Vaz/Obervaz","5",NA,NA,NA
+"Schaffhausen","Bezirk Schaffhausen","Schaffhausen","68",NA,NA,NA
+"Schaffhausen","Bezirk Schaffhausen","Neuhausen am Rheinfall","28",NA,NA,NA
+"Schaffhausen","Bezirk Schaffhausen","Beringen","14",NA,NA,NA
+"Schaffhausen","Bezirk Schaffhausen","Rüdlingen","5",NA,NA,NA
+"Schaffhausen","Anderer Bezirk","","11",NA,NA,NA
+"Schaffhausen","Bezirk Reiat","Thayngen","10",NA,NA,NA
+"Schaffhausen","Bezirk Stein","Andere Gemeinden","8",NA,NA,NA
+"Schaffhausen","Bezirk Stein","Stein am Rhein","8",NA,NA,NA
+"Schaffhausen","Bezirk Reiat","Stetten (SH)","6",NA,NA,NA
+"Schaffhausen","Bezirk Unterklettgau","Wilchingen","6",NA,NA,NA
+"Schaffhausen","Bezirk Schleitheim","Andere Gemeinden","5",NA,NA,NA
+"Schaffhausen","Bezirk Oberklettgau","Gächlingen","5",NA,NA,NA
+"Glarus","","Glarus Nord","93",NA,NA,NA
+"Glarus","","Glarus","44",NA,NA,NA
+"Glarus","","Glarus Süd","20",NA,NA,NA
+"Freiburg","District de la Sarine","Fribourg","21",NA,NA,NA
+"Freiburg","District de la Sarine","Andere Gemeinden","20",NA,NA,NA
+"Freiburg","District de la Sarine","Villars-sur-Glâne","11",NA,NA,NA
+"Freiburg","District de la Sarine","Belfaux","7",NA,NA,NA
+"Freiburg","District de la Sarine","Givisiez","7",NA,NA,NA
+"Freiburg","Bezirk Sense","Andere Gemeinden","22",NA,NA,NA
+"Freiburg","Bezirk Sense","Düdingen","7",NA,NA,NA
+"Freiburg","Bezirk Sense","Bösingen","5",NA,NA,NA
+"Freiburg","Bezirk See / District du Lac","Andere Gemeinden","11",NA,NA,NA
+"Freiburg","Bezirk See / District du Lac","Murten","11",NA,NA,NA
+"Freiburg","Bezirk See / District du Lac","Muntelier","6",NA,NA,NA
+"Freiburg","Bezirk See / District du Lac","Courtepin","5",NA,NA,NA
+"Freiburg","District de la Broye","Andere Gemeinden","5",NA,NA,NA
+"Tessin","Distretto di Bellinzona","Bellinzona","38",NA,NA,NA
+"Tessin","Distretto di Bellinzona","Arbedo-Castione","6",NA,NA,NA
+"Tessin","Distretto di Bellinzona","Andere Gemeinden","5",NA,NA,NA
+"Tessin","Anderer Bezirk","","5",NA,NA,NA
+"Tessin","Distretto di Lugano","Lugano","11",NA,NA,NA
+"Tessin","Distretto di Locarno","Gordola","9",NA,NA,NA
+"Tessin","Distretto di Leventina","Andere Gemeinden","8",NA,NA,NA
+"Tessin","Distretto di Riviera","Biasca","8",NA,NA,NA
+"Appenzell Ausserrhoden","Bezirk Hinterland","Herisau","17",NA,NA,NA
+"Appenzell Ausserrhoden","Bezirk Vorderland","Andere Gemeinden","9",NA,NA,NA
+"Appenzell Ausserrhoden","Bezirk Vorderland","Walzenhausen","8",NA,NA,NA
+"Appenzell Ausserrhoden","Bezirk Vorderland","Lutzenberg","5",NA,NA,NA
+"Appenzell Ausserrhoden","Bezirk Hinterland","Urnäsch","5",NA,NA,NA
+"Appenzell Ausserrhoden","Bezirk Mittelland","Andere Gemeinden","8",NA,NA,NA
+"Jura","District de Delémont","Andere Gemeinden","9",NA,NA,NA
+"Jura","District de Delémont","Delémont","8",NA,NA,NA
+"Jura","District de Delémont","Haute-Sorne","7",NA,NA,NA
+"Jura","District de Porrentruy","Andere Gemeinden","5",NA,NA,NA
+"Neuenburg","Canton de Neuchâtel","Andere Gemeinden","9",NA,NA,NA
+"Neuenburg","Canton de Neuchâtel","Le Landeron","5",NA,NA,NA
+"Waadt","District de la Broye-Vully","Andere Gemeinden","11",NA,NA,NA
+"Anderer Kanton","","","10",NA,NA,NA
+"Appenzell Innerrhoden","","Andere Gemeinden","9",NA,NA,NA
+NA,NA,NA,NA,"1","datatypes","string,string,string,integer"
+NA,NA,NA,NA,"1","title","Zupendelnde in den Kanton Zug"
+NA,NA,NA,NA,"1","subtitle","Kanton Zug, 2018"
+NA,NA,NA,NA,"1","description","Beinhaltet nur Arbeitspendelnde, welche entweder im Kanton Zug arbeiten. Es werden nur Beziehungen ab 5 Personen ausgewiesen. Bei mehreren Wohnorten wird der Wohnsitz der am nächsten beim Arbeitsort liegt ausgewählt."
+NA,NA,NA,NA,"1","source","Bundesamt für Statistik, Pendlermatrix"
