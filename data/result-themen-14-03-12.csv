@@ -69,6 +69,11 @@
 "28.02.2021","Total verimpfte Dosen","15639",NA,NA,NA
 "01.03.2021","Total verimpfte Dosen","15750",NA,NA,NA
 "02.03.2021","Total verimpfte Dosen","15906",NA,NA,NA
+"03.03.2021","Total verimpfte Dosen","16169",NA,NA,NA
+"04.03.2021","Total verimpfte Dosen","16646",NA,NA,NA
+"05.03.2021","Total verimpfte Dosen","16971",NA,NA,NA
+"06.03.2021","Total verimpfte Dosen","17216",NA,NA,NA
+"07.03.2021","Total verimpfte Dosen","17453",NA,NA,NA
 "23.12.2020","Total 1. Impfung","250",NA,NA,NA
 "24.12.2020","Total 1. Impfung","250",NA,NA,NA
 "25.12.2020","Total 1. Impfung","250",NA,NA,NA
@@ -139,6 +144,11 @@
 "28.02.2021","Total 1. Impfung","8689",NA,NA,NA
 "01.03.2021","Total 1. Impfung","8793",NA,NA,NA
 "02.03.2021","Total 1. Impfung","8942",NA,NA,NA
+"03.03.2021","Total 1. Impfung","9189",NA,NA,NA
+"04.03.2021","Total 1. Impfung","9490",NA,NA,NA
+"05.03.2021","Total 1. Impfung","9714",NA,NA,NA
+"06.03.2021","Total 1. Impfung","9948",NA,NA,NA
+"07.03.2021","Total 1. Impfung","10135",NA,NA,NA
 "23.12.2020","Total 2. Impfung","0",NA,NA,NA
 "24.12.2020","Total 2. Impfung","0",NA,NA,NA
 "25.12.2020","Total 2. Impfung","0",NA,NA,NA
@@ -209,8 +219,13 @@
 "28.02.2021","Total 2. Impfung","6950",NA,NA,NA
 "01.03.2021","Total 2. Impfung","6957",NA,NA,NA
 "02.03.2021","Total 2. Impfung","6964",NA,NA,NA
+"03.03.2021","Total 2. Impfung","6980",NA,NA,NA
+"04.03.2021","Total 2. Impfung","7174",NA,NA,NA
+"05.03.2021","Total 2. Impfung","7257",NA,NA,NA
+"06.03.2021","Total 2. Impfung","7268",NA,NA,NA
+"07.03.2021","Total 2. Impfung","7318",NA,NA,NA
 NA,NA,NA,"1","datatypes","date,string,integer"
 NA,NA,NA,"1","title","Verimpfte Dosen"
-NA,NA,NA,"1","subtitle","Datenstand: 03.03.2021 08:00"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021 08:00"
 NA,NA,NA,"1","description","Es wird jeweils die kummulierte Anzahl verabreichter Impfungen dargestellt. Die Impfung gilt es nach zwei verabreichten Dosen als komplett."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

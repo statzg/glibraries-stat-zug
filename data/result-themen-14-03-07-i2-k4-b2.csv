@@ -22,7 +22,7 @@
 2020-10-12,"männlich","1718.43",NA,NA,NA
 2020-10-19,"männlich","2314.46",NA,NA,NA
 2020-10-26,"männlich","2168.93",NA,NA,NA
-2020-11-02,"männlich","1961.48",NA,NA,NA
+2020-11-02,"männlich","1959.93",NA,NA,NA
 2020-11-09,"männlich","1645.66",NA,NA,NA
 2020-11-16,"männlich","1721.52",NA,NA,NA
 2020-11-23,"männlich","1803.57",NA,NA,NA
@@ -35,11 +35,12 @@
 2021-01-11,"männlich","1647.21",NA,NA,NA
 2021-01-18,"männlich","1887.17",NA,NA,NA
 2021-01-25,"männlich","1727.71",NA,NA,NA
-2021-02-01,"männlich","2268.01",NA,NA,NA
-2021-02-08,"männlich","2173.58",NA,NA,NA
-2021-02-15,"männlich","1764.87",NA,NA,NA
-2021-02-22,"männlich","2760.32",NA,NA,NA
-2021-03-01,"männlich","218.29",NA,NA,NA
+2021-02-01,"männlich","2266.46",NA,NA,NA
+2021-02-08,"männlich","2168.93",NA,NA,NA
+2021-02-15,"männlich","1766.42",NA,NA,NA
+2021-02-22,"männlich","2764.96",NA,NA,NA
+2021-03-01,"männlich","5997.46",NA,NA,NA
+2021-03-08,"männlich","0",NA,NA,NA
 2020-05-25,"weiblich","166.54",NA,NA,NA
 2020-06-01,"weiblich","206.19",NA,NA,NA
 2020-06-08,"weiblich","396.52",NA,NA,NA
@@ -67,7 +68,7 @@
 2020-11-09,"weiblich","1741.53",NA,NA,NA
 2020-11-16,"weiblich","1812.9",NA,NA,NA
 2020-11-23,"weiblich","1760.56",NA,NA,NA
-2020-11-30,"weiblich","1850.97",NA,NA,NA
+2020-11-30,"weiblich","1849.38",NA,NA,NA
 2020-12-07,"weiblich","2014.34",NA,NA,NA
 2020-12-14,"weiblich","3042.13",NA,NA,NA
 2020-12-21,"weiblich","2369.62",NA,NA,NA
@@ -79,8 +80,9 @@
 2021-02-01,"weiblich","2493.34",NA,NA,NA
 2021-02-08,"weiblich","1920.76",NA,NA,NA
 2021-02-15,"weiblich","1611.47",NA,NA,NA
-2021-02-22,"weiblich","2772.49",NA,NA,NA
-2021-03-01,"weiblich","185.57",NA,NA,NA
+2021-02-22,"weiblich","2774.08",NA,NA,NA
+2021-03-01,"weiblich","5985.92",NA,NA,NA
+2021-03-08,"weiblich","0",NA,NA,NA
 2020-05-25,"Unbekannt",NA,NA,NA,NA
 2020-06-01,"Unbekannt",NA,NA,NA,NA
 2020-06-08,"Unbekannt",NA,NA,NA,NA
@@ -122,8 +124,9 @@
 2021-02-15,"Unbekannt",NA,NA,NA,NA
 2021-02-22,"Unbekannt",NA,NA,NA,NA
 2021-03-01,"Unbekannt",NA,NA,NA,NA
+2021-03-08,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

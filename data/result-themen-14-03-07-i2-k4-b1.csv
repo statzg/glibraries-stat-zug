@@ -22,7 +22,7 @@
 2020-10-12,"männlich","1110",NA,NA,NA
 2020-10-19,"männlich","1495",NA,NA,NA
 2020-10-26,"männlich","1401",NA,NA,NA
-2020-11-02,"männlich","1267",NA,NA,NA
+2020-11-02,"männlich","1266",NA,NA,NA
 2020-11-09,"männlich","1063",NA,NA,NA
 2020-11-16,"männlich","1112",NA,NA,NA
 2020-11-23,"männlich","1165",NA,NA,NA
@@ -35,11 +35,12 @@
 2021-01-11,"männlich","1064",NA,NA,NA
 2021-01-18,"männlich","1219",NA,NA,NA
 2021-01-25,"männlich","1116",NA,NA,NA
-2021-02-01,"männlich","1465",NA,NA,NA
-2021-02-08,"männlich","1404",NA,NA,NA
-2021-02-15,"männlich","1140",NA,NA,NA
-2021-02-22,"männlich","1783",NA,NA,NA
-2021-03-01,"männlich","141",NA,NA,NA
+2021-02-01,"männlich","1464",NA,NA,NA
+2021-02-08,"männlich","1401",NA,NA,NA
+2021-02-15,"männlich","1141",NA,NA,NA
+2021-02-22,"männlich","1786",NA,NA,NA
+2021-03-01,"männlich","3874",NA,NA,NA
+2021-03-08,"männlich","0",NA,NA,NA
 2020-05-25,"weiblich","105",NA,NA,NA
 2020-06-01,"weiblich","130",NA,NA,NA
 2020-06-08,"weiblich","250",NA,NA,NA
@@ -67,7 +68,7 @@
 2020-11-09,"weiblich","1098",NA,NA,NA
 2020-11-16,"weiblich","1143",NA,NA,NA
 2020-11-23,"weiblich","1110",NA,NA,NA
-2020-11-30,"weiblich","1167",NA,NA,NA
+2020-11-30,"weiblich","1166",NA,NA,NA
 2020-12-07,"weiblich","1270",NA,NA,NA
 2020-12-14,"weiblich","1918",NA,NA,NA
 2020-12-21,"weiblich","1494",NA,NA,NA
@@ -79,8 +80,9 @@
 2021-02-01,"weiblich","1572",NA,NA,NA
 2021-02-08,"weiblich","1211",NA,NA,NA
 2021-02-15,"weiblich","1016",NA,NA,NA
-2021-02-22,"weiblich","1748",NA,NA,NA
-2021-03-01,"weiblich","117",NA,NA,NA
+2021-02-22,"weiblich","1749",NA,NA,NA
+2021-03-01,"weiblich","3774",NA,NA,NA
+2021-03-08,"weiblich","0",NA,NA,NA
 2020-05-25,"Unbekannt","0",NA,NA,NA
 2020-06-01,"Unbekannt","0",NA,NA,NA
 2020-06-08,"Unbekannt","0",NA,NA,NA
@@ -122,8 +124,9 @@
 2021-02-15,"Unbekannt","0",NA,NA,NA
 2021-02-22,"Unbekannt","0",NA,NA,NA
 2021-03-01,"Unbekannt","0",NA,NA,NA
+2021-03-08,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

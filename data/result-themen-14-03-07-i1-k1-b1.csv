@@ -52,7 +52,8 @@
 2021-02-08,"0 - 9 Jahre","10",NA,NA,NA
 2021-02-15,"0 - 9 Jahre","2",NA,NA,NA
 2021-02-22,"0 - 9 Jahre","3",NA,NA,NA
-2021-03-01,"0 - 9 Jahre","0",NA,NA,NA
+2021-03-01,"0 - 9 Jahre","1",NA,NA,NA
+2021-03-08,"0 - 9 Jahre","0",NA,NA,NA
 2020-02-24,"10 - 19 Jahre","0",NA,NA,NA
 2020-03-02,"10 - 19 Jahre","0",NA,NA,NA
 2020-03-09,"10 - 19 Jahre","0",NA,NA,NA
@@ -106,7 +107,8 @@
 2021-02-08,"10 - 19 Jahre","15",NA,NA,NA
 2021-02-15,"10 - 19 Jahre","8",NA,NA,NA
 2021-02-22,"10 - 19 Jahre","15",NA,NA,NA
-2021-03-01,"10 - 19 Jahre","1",NA,NA,NA
+2021-03-01,"10 - 19 Jahre","11",NA,NA,NA
+2021-03-08,"10 - 19 Jahre","0",NA,NA,NA
 2020-02-24,"20 - 29 Jahre","0",NA,NA,NA
 2020-03-02,"20 - 29 Jahre","1",NA,NA,NA
 2020-03-09,"20 - 29 Jahre","2",NA,NA,NA
@@ -160,7 +162,8 @@
 2021-02-08,"20 - 29 Jahre","20",NA,NA,NA
 2021-02-15,"20 - 29 Jahre","10",NA,NA,NA
 2021-02-22,"20 - 29 Jahre","10",NA,NA,NA
-2021-03-01,"20 - 29 Jahre","1",NA,NA,NA
+2021-03-01,"20 - 29 Jahre","7",NA,NA,NA
+2021-03-08,"20 - 29 Jahre","0",NA,NA,NA
 2020-02-24,"30 - 39 Jahre","1",NA,NA,NA
 2020-03-02,"30 - 39 Jahre","3",NA,NA,NA
 2020-03-09,"30 - 39 Jahre","2",NA,NA,NA
@@ -214,7 +217,8 @@
 2021-02-08,"30 - 39 Jahre","16",NA,NA,NA
 2021-02-15,"30 - 39 Jahre","13",NA,NA,NA
 2021-02-22,"30 - 39 Jahre","12",NA,NA,NA
-2021-03-01,"30 - 39 Jahre","0",NA,NA,NA
+2021-03-01,"30 - 39 Jahre","19",NA,NA,NA
+2021-03-08,"30 - 39 Jahre","0",NA,NA,NA
 2020-02-24,"40 - 49 Jahre","0",NA,NA,NA
 2020-03-02,"40 - 49 Jahre","0",NA,NA,NA
 2020-03-09,"40 - 49 Jahre","3",NA,NA,NA
@@ -268,7 +272,8 @@
 2021-02-08,"40 - 49 Jahre","19",NA,NA,NA
 2021-02-15,"40 - 49 Jahre","14",NA,NA,NA
 2021-02-22,"40 - 49 Jahre","18",NA,NA,NA
-2021-03-01,"40 - 49 Jahre","4",NA,NA,NA
+2021-03-01,"40 - 49 Jahre","22",NA,NA,NA
+2021-03-08,"40 - 49 Jahre","0",NA,NA,NA
 2020-02-24,"50 - 59 Jahre","0",NA,NA,NA
 2020-03-02,"50 - 59 Jahre","2",NA,NA,NA
 2020-03-09,"50 - 59 Jahre","3",NA,NA,NA
@@ -322,7 +327,8 @@
 2021-02-08,"50 - 59 Jahre","30",NA,NA,NA
 2021-02-15,"50 - 59 Jahre","14",NA,NA,NA
 2021-02-22,"50 - 59 Jahre","14",NA,NA,NA
-2021-03-01,"50 - 59 Jahre","6",NA,NA,NA
+2021-03-01,"50 - 59 Jahre","20",NA,NA,NA
+2021-03-08,"50 - 59 Jahre","0",NA,NA,NA
 2020-02-24,"60 - 69 Jahre","0",NA,NA,NA
 2020-03-02,"60 - 69 Jahre","0",NA,NA,NA
 2020-03-09,"60 - 69 Jahre","0",NA,NA,NA
@@ -376,7 +382,8 @@
 2021-02-08,"60 - 69 Jahre","9",NA,NA,NA
 2021-02-15,"60 - 69 Jahre","6",NA,NA,NA
 2021-02-22,"60 - 69 Jahre","6",NA,NA,NA
-2021-03-01,"60 - 69 Jahre","3",NA,NA,NA
+2021-03-01,"60 - 69 Jahre","9",NA,NA,NA
+2021-03-08,"60 - 69 Jahre","0",NA,NA,NA
 2020-02-24,"70 - 79 Jahre","0",NA,NA,NA
 2020-03-02,"70 - 79 Jahre","0",NA,NA,NA
 2020-03-09,"70 - 79 Jahre","0",NA,NA,NA
@@ -430,7 +437,8 @@
 2021-02-08,"70 - 79 Jahre","1",NA,NA,NA
 2021-02-15,"70 - 79 Jahre","5",NA,NA,NA
 2021-02-22,"70 - 79 Jahre","2",NA,NA,NA
-2021-03-01,"70 - 79 Jahre","0",NA,NA,NA
+2021-03-01,"70 - 79 Jahre","1",NA,NA,NA
+2021-03-08,"70 - 79 Jahre","0",NA,NA,NA
 2020-02-24,"80+ Jahre","0",NA,NA,NA
 2020-03-02,"80+ Jahre","0",NA,NA,NA
 2020-03-09,"80+ Jahre","0",NA,NA,NA
@@ -484,7 +492,8 @@
 2021-02-08,"80+ Jahre","8",NA,NA,NA
 2021-02-15,"80+ Jahre","10",NA,NA,NA
 2021-02-22,"80+ Jahre","1",NA,NA,NA
-2021-03-01,"80+ Jahre","0",NA,NA,NA
+2021-03-01,"80+ Jahre","1",NA,NA,NA
+2021-03-08,"80+ Jahre","0",NA,NA,NA
 2020-02-24,"Unbekannt","0",NA,NA,NA
 2020-03-02,"Unbekannt","0",NA,NA,NA
 2020-03-09,"Unbekannt","0",NA,NA,NA
@@ -539,8 +548,9 @@
 2021-02-15,"Unbekannt","0",NA,NA,NA
 2021-02-22,"Unbekannt","0",NA,NA,NA
 2021-03-01,"Unbekannt","0",NA,NA,NA
+2021-03-08,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Positiv getestete Personen nach Alterskategorien im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

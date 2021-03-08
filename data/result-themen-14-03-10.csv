@@ -1,10 +1,10 @@
 "Bekanntheit der Ansteckungsquelle","Anzahl","Meta","Type","Content"
-"Keine Vermutung zur Ansteckungsquelle","1430",NA,NA,NA
-"Vermutung zur Ansteckungsquelle","1015",NA,NA,NA
-"Indexperson bekannt (nicht in Quarantäne)","708",NA,NA,NA
-"Aus Quarantäne","446",NA,NA,NA
+"Keine Vermutung zur Ansteckungsquelle","1457",NA,NA,NA
+"Vermutung zur Ansteckungsquelle","1023",NA,NA,NA
+"Indexperson bekannt (nicht in Quarantäne)","721",NA,NA,NA
+"Aus Quarantäne","458",NA,NA,NA
 NA,NA,"1","datatypes","string,integer"
 NA,NA,"1","title","Bekanntheit der Ansteckungsquelle"
-NA,NA,"1","subtitle","Datenstand: 02.03.2021 00:00"
+NA,NA,"1","subtitle","Datenstand: 08.03.2021 00:00"
 NA,NA,"1","description","Die Bekanntheit der Ansteckungsquelle wird im Contact Tracing seit dem 23.11.2020 systematisch erhoben. Vorher erfasst Fälle wurden soweit möglich nachcodiert, Informationen vor dem 25.10.2020 wurden aus Zeitgründen noch nicht codiert. Auch nach dem 23.11.2020 liegt die Information bei einigen Fällen nicht vor, da die entsprechenden Fragen nicht in jedem Fall gestellt werden können."
 NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

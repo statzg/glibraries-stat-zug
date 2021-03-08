@@ -1,0 +1,28 @@
+"Gemeinde","Datentyp","Anzahl","Meta","Type","Content"
+"Baar","Schutzplätze","29330",NA,NA,NA
+"Cham","Schutzplätze","20105",NA,NA,NA
+"Hünenberg","Schutzplätze","11058",NA,NA,NA
+"Menzingen","Schutzplätze","5706",NA,NA,NA
+"Neuheim","Schutzplätze","2537",NA,NA,NA
+"Oberägeri","Schutzplätze","6651",NA,NA,NA
+"Risch","Schutzplätze","13690",NA,NA,NA
+"Steinhausen","Schutzplätze","12545",NA,NA,NA
+"Unterägeri","Schutzplätze","9604",NA,NA,NA
+"Walchwil","Schutzplätze","4595",NA,NA,NA
+"Zug","Schutzplätze","35481",NA,NA,NA
+"Baar","Bevölkerung","24617",NA,NA,NA
+"Cham","Bevölkerung","16893",NA,NA,NA
+"Hünenberg","Bevölkerung","8784",NA,NA,NA
+"Menzingen","Bevölkerung","4551",NA,NA,NA
+"Neuheim","Bevölkerung","2237",NA,NA,NA
+"Oberägeri","Bevölkerung","6244",NA,NA,NA
+"Risch","Bevölkerung","10990",NA,NA,NA
+"Steinhausen","Bevölkerung","10129",NA,NA,NA
+"Unterägeri","Bevölkerung","8868",NA,NA,NA
+"Walchwil","Bevölkerung","3711",NA,NA,NA
+"Zug","Bevölkerung","30618",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,string,integer"
+NA,NA,NA,"1","title","Schutzplätze in den Zuger Gemeinden"
+NA,NA,NA,"1","subtitle","Ende 2020, ständige Wohnbevölkergung Ende 2019"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Kanton Zug, Amt für Zivilschutz und Militär, Schutzplätze; Bundesamt für Statistik, STATPOP"

@@ -4,12 +4,12 @@
 "20 - 29 Jahre","59.6",NA,NA,NA
 "30 - 39 Jahre","21.76",NA,NA,NA
 "40 - 49 Jahre","25.75",NA,NA,NA
-"50 - 59 Jahre","86.54",NA,NA,NA
+"50 - 59 Jahre","100.96",NA,NA,NA
 "60 - 69 Jahre","167.2",NA,NA,NA
 "70 - 79 Jahre","286.89",NA,NA,NA
 "80+ Jahre","667",NA,NA,NA
 NA,NA,"1","datatypes","string,float"
 NA,NA,"1","title","Hospitalisierungen aufgrund von COVID-19 nach Alterskategorien im Total pro 100'000"
-NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Alterklasse ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Hospitalisierungen werden beim BAG mit zeitlicher Verzögerung registriert, diese Zahlen umfassen noch nicht alle im Kanton registrierten Fälle."
 NA,NA,"1","source","Bundesamt für Gesundheit"

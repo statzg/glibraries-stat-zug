@@ -366,6 +366,11 @@
 "Aktive Fälle","28.02.2021","88.4285714285714",NA,NA,NA
 "Aktive Fälle","01.03.2021","87",NA,NA,NA
 "Aktive Fälle","02.03.2021","85.5714285714286",NA,NA,NA
+"Aktive Fälle","03.03.2021","86.4285714285714",NA,NA,NA
+"Aktive Fälle","04.03.2021","87.7142857142857",NA,NA,NA
+"Aktive Fälle","05.03.2021","88.4285714285714",NA,NA,NA
+"Aktive Fälle","06.03.2021","90.4285714285714",NA,NA,NA
+"Aktive Fälle","07.03.2021","92.5714285714286",NA,NA,NA
 "Fallzahl","01.03.2020","0",NA,NA,NA
 "Fallzahl","02.03.2020","0.142857142857143",NA,NA,NA
 "Fallzahl","03.03.2020","0.142857142857143",NA,NA,NA
@@ -733,6 +738,11 @@
 "Fallzahl","28.02.2021","11.8571428571429",NA,NA,NA
 "Fallzahl","01.03.2021","13.2857142857143",NA,NA,NA
 "Fallzahl","02.03.2021","13.5714285714286",NA,NA,NA
+"Fallzahl","03.03.2021","13",NA,NA,NA
+"Fallzahl","04.03.2021","13",NA,NA,NA
+"Fallzahl","05.03.2021","13.1428571428571",NA,NA,NA
+"Fallzahl","06.03.2021","13",NA,NA,NA
+"Fallzahl","07.03.2021","13.8571428571429",NA,NA,NA
 "Genesene","01.03.2020","0",NA,NA,NA
 "Genesene","02.03.2020","0",NA,NA,NA
 "Genesene","03.03.2020","0",NA,NA,NA
@@ -1100,6 +1110,11 @@
 "Genesene","28.02.2021","12.2857142857143",NA,NA,NA
 "Genesene","01.03.2021","14.5714285714286",NA,NA,NA
 "Genesene","02.03.2021","14.8571428571429",NA,NA,NA
+"Genesene","03.03.2021","12.1428571428571",NA,NA,NA
+"Genesene","04.03.2021","11.7142857142857",NA,NA,NA
+"Genesene","05.03.2021","12.4285714285714",NA,NA,NA
+"Genesene","06.03.2021","11",NA,NA,NA
+"Genesene","07.03.2021","11.7142857142857",NA,NA,NA
 "Hospitalisierte","01.03.2020","0",NA,NA,NA
 "Hospitalisierte","02.03.2020","0",NA,NA,NA
 "Hospitalisierte","03.03.2020","0",NA,NA,NA
@@ -1467,6 +1482,11 @@
 "Hospitalisierte","28.02.2021","-0.142857142857143",NA,NA,NA
 "Hospitalisierte","01.03.2021","-0.142857142857143",NA,NA,NA
 "Hospitalisierte","02.03.2021","0",NA,NA,NA
+"Hospitalisierte","03.03.2021","0",NA,NA,NA
+"Hospitalisierte","04.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte","05.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte","06.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte","07.03.2021","-0.714285714285714",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0",NA,NA,NA
@@ -1834,6 +1854,11 @@
 "Hospitalisierte in Intensivpflege","28.02.2021","-0.285714285714286",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2021","-0.428571428571429",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte in Intensivpflege","03.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte in Intensivpflege","04.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte in Intensivpflege","05.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte in Intensivpflege","06.03.2021","-0.142857142857143",NA,NA,NA
+"Hospitalisierte in Intensivpflege","07.03.2021","0",NA,NA,NA
 "Todesfälle","01.03.2020","0",NA,NA,NA
 "Todesfälle","02.03.2020","0",NA,NA,NA
 "Todesfälle","03.03.2020","0",NA,NA,NA
@@ -2201,8 +2226,13 @@
 "Todesfälle","28.02.2021","0.142857142857143",NA,NA,NA
 "Todesfälle","01.03.2021","0.142857142857143",NA,NA,NA
 "Todesfälle","02.03.2021","0.142857142857143",NA,NA,NA
+"Todesfälle","03.03.2021","0",NA,NA,NA
+"Todesfälle","04.03.2021","0",NA,NA,NA
+"Todesfälle","05.03.2021","0",NA,NA,NA
+"Todesfälle","06.03.2021","0",NA,NA,NA
+"Todesfälle","07.03.2021","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,"1","title","Tägliche Veränderung der Fallzahlen"
-NA,NA,NA,"1","subtitle","Durchschnitt der letzten 7 Tage, Datenstand: 03.03.2021 08:00"
+NA,NA,NA,"1","subtitle","Durchschnitt der letzten 7 Tage, Datenstand: 08.03.2021 08:00"
 NA,NA,NA,"1","description","Die Zahl der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt. Die Zahl der Genesenen und der aktiven Fälle basierte vom 10.10.2020 bis zum 29.11.2020 auf einer Schätzung anhand des üblichen Verlauf der Krankheit, davor und danach wurden die Zahlen anhand des Contact Tracings ermittelt."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

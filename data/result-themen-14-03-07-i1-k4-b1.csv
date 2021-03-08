@@ -35,11 +35,12 @@
 2021-01-11,"0 - 9 Jahre","29",NA,NA,NA
 2021-01-18,"0 - 9 Jahre","48",NA,NA,NA
 2021-01-25,"0 - 9 Jahre","61",NA,NA,NA
-2021-02-01,"0 - 9 Jahre","133",NA,NA,NA
+2021-02-01,"0 - 9 Jahre","132",NA,NA,NA
 2021-02-08,"0 - 9 Jahre","85",NA,NA,NA
 2021-02-15,"0 - 9 Jahre","26",NA,NA,NA
 2021-02-22,"0 - 9 Jahre","21",NA,NA,NA
-2021-03-01,"0 - 9 Jahre","1",NA,NA,NA
+2021-03-01,"0 - 9 Jahre","26",NA,NA,NA
+2021-03-08,"0 - 9 Jahre","0",NA,NA,NA
 2020-05-25,"10 - 19 Jahre","20",NA,NA,NA
 2020-06-01,"10 - 19 Jahre","27",NA,NA,NA
 2020-06-08,"10 - 19 Jahre","70",NA,NA,NA
@@ -79,8 +80,9 @@
 2021-02-01,"10 - 19 Jahre","407",NA,NA,NA
 2021-02-08,"10 - 19 Jahre","301",NA,NA,NA
 2021-02-15,"10 - 19 Jahre","150",NA,NA,NA
-2021-02-22,"10 - 19 Jahre","1649",NA,NA,NA
-2021-03-01,"10 - 19 Jahre","20",NA,NA,NA
+2021-02-22,"10 - 19 Jahre","1651",NA,NA,NA
+2021-03-01,"10 - 19 Jahre","4747",NA,NA,NA
+2021-03-08,"10 - 19 Jahre","0",NA,NA,NA
 2020-05-25,"20 - 29 Jahre","32",NA,NA,NA
 2020-06-01,"20 - 29 Jahre","13",NA,NA,NA
 2020-06-08,"20 - 29 Jahre","64",NA,NA,NA
@@ -119,9 +121,10 @@
 2021-01-25,"20 - 29 Jahre","314",NA,NA,NA
 2021-02-01,"20 - 29 Jahre","398",NA,NA,NA
 2021-02-08,"20 - 29 Jahre","456",NA,NA,NA
-2021-02-15,"20 - 29 Jahre","333",NA,NA,NA
+2021-02-15,"20 - 29 Jahre","334",NA,NA,NA
 2021-02-22,"20 - 29 Jahre","343",NA,NA,NA
-2021-03-01,"20 - 29 Jahre","41",NA,NA,NA
+2021-03-01,"20 - 29 Jahre","508",NA,NA,NA
+2021-03-08,"20 - 29 Jahre","0",NA,NA,NA
 2020-05-25,"30 - 39 Jahre","37",NA,NA,NA
 2020-06-01,"30 - 39 Jahre","40",NA,NA,NA
 2020-06-08,"30 - 39 Jahre","92",NA,NA,NA
@@ -145,7 +148,7 @@
 2020-10-12,"30 - 39 Jahre","420",NA,NA,NA
 2020-10-19,"30 - 39 Jahre","539",NA,NA,NA
 2020-10-26,"30 - 39 Jahre","539",NA,NA,NA
-2020-11-02,"30 - 39 Jahre","519",NA,NA,NA
+2020-11-02,"30 - 39 Jahre","518",NA,NA,NA
 2020-11-09,"30 - 39 Jahre","413",NA,NA,NA
 2020-11-16,"30 - 39 Jahre","439",NA,NA,NA
 2020-11-23,"30 - 39 Jahre","461",NA,NA,NA
@@ -162,7 +165,8 @@
 2021-02-08,"30 - 39 Jahre","509",NA,NA,NA
 2021-02-15,"30 - 39 Jahre","423",NA,NA,NA
 2021-02-22,"30 - 39 Jahre","361",NA,NA,NA
-2021-03-01,"30 - 39 Jahre","50",NA,NA,NA
+2021-03-01,"30 - 39 Jahre","618",NA,NA,NA
+2021-03-08,"30 - 39 Jahre","0",NA,NA,NA
 2020-05-25,"40 - 49 Jahre","43",NA,NA,NA
 2020-06-01,"40 - 49 Jahre","52",NA,NA,NA
 2020-06-08,"40 - 49 Jahre","94",NA,NA,NA
@@ -190,7 +194,7 @@
 2020-11-09,"40 - 49 Jahre","348",NA,NA,NA
 2020-11-16,"40 - 49 Jahre","330",NA,NA,NA
 2020-11-23,"40 - 49 Jahre","376",NA,NA,NA
-2020-11-30,"40 - 49 Jahre","449",NA,NA,NA
+2020-11-30,"40 - 49 Jahre","448",NA,NA,NA
 2020-12-07,"40 - 49 Jahre","473",NA,NA,NA
 2020-12-14,"40 - 49 Jahre","753",NA,NA,NA
 2020-12-21,"40 - 49 Jahre","577",NA,NA,NA
@@ -200,10 +204,11 @@
 2021-01-18,"40 - 49 Jahre","414",NA,NA,NA
 2021-01-25,"40 - 49 Jahre","438",NA,NA,NA
 2021-02-01,"40 - 49 Jahre","609",NA,NA,NA
-2021-02-08,"40 - 49 Jahre","505",NA,NA,NA
+2021-02-08,"40 - 49 Jahre","504",NA,NA,NA
 2021-02-15,"40 - 49 Jahre","414",NA,NA,NA
-2021-02-22,"40 - 49 Jahre","381",NA,NA,NA
-2021-03-01,"40 - 49 Jahre","48",NA,NA,NA
+2021-02-22,"40 - 49 Jahre","382",NA,NA,NA
+2021-03-01,"40 - 49 Jahre","610",NA,NA,NA
+2021-03-08,"40 - 49 Jahre","0",NA,NA,NA
 2020-05-25,"50 - 59 Jahre","32",NA,NA,NA
 2020-06-01,"50 - 59 Jahre","28",NA,NA,NA
 2020-06-08,"50 - 59 Jahre","62",NA,NA,NA
@@ -241,10 +246,11 @@
 2021-01-18,"50 - 59 Jahre","346",NA,NA,NA
 2021-01-25,"50 - 59 Jahre","362",NA,NA,NA
 2021-02-01,"50 - 59 Jahre","457",NA,NA,NA
-2021-02-08,"50 - 59 Jahre","403",NA,NA,NA
+2021-02-08,"50 - 59 Jahre","402",NA,NA,NA
 2021-02-15,"50 - 59 Jahre","363",NA,NA,NA
-2021-02-22,"50 - 59 Jahre","432",NA,NA,NA
-2021-03-01,"50 - 59 Jahre","48",NA,NA,NA
+2021-02-22,"50 - 59 Jahre","433",NA,NA,NA
+2021-03-01,"50 - 59 Jahre","654",NA,NA,NA
+2021-03-08,"50 - 59 Jahre","0",NA,NA,NA
 2020-05-25,"60 - 69 Jahre","26",NA,NA,NA
 2020-06-01,"60 - 69 Jahre","22",NA,NA,NA
 2020-06-08,"60 - 69 Jahre","36",NA,NA,NA
@@ -282,10 +288,11 @@
 2021-01-18,"60 - 69 Jahre","196",NA,NA,NA
 2021-01-25,"60 - 69 Jahre","210",NA,NA,NA
 2021-02-01,"60 - 69 Jahre","216",NA,NA,NA
-2021-02-08,"60 - 69 Jahre","211",NA,NA,NA
+2021-02-08,"60 - 69 Jahre","210",NA,NA,NA
 2021-02-15,"60 - 69 Jahre","273",NA,NA,NA
 2021-02-22,"60 - 69 Jahre","218",NA,NA,NA
-2021-03-01,"60 - 69 Jahre","34",NA,NA,NA
+2021-03-01,"60 - 69 Jahre","323",NA,NA,NA
+2021-03-08,"60 - 69 Jahre","0",NA,NA,NA
 2020-05-25,"70 - 79 Jahre","10",NA,NA,NA
 2020-06-01,"70 - 79 Jahre","13",NA,NA,NA
 2020-06-08,"70 - 79 Jahre","13",NA,NA,NA
@@ -326,7 +333,8 @@
 2021-02-08,"70 - 79 Jahre","79",NA,NA,NA
 2021-02-15,"70 - 79 Jahre","109",NA,NA,NA
 2021-02-22,"70 - 79 Jahre","72",NA,NA,NA
-2021-03-01,"70 - 79 Jahre","11",NA,NA,NA
+2021-03-01,"70 - 79 Jahre","104",NA,NA,NA
+2021-03-08,"70 - 79 Jahre","0",NA,NA,NA
 2020-05-25,"80+ Jahre","25",NA,NA,NA
 2020-06-01,"80+ Jahre","8",NA,NA,NA
 2020-06-08,"80+ Jahre","12",NA,NA,NA
@@ -367,7 +375,8 @@
 2021-02-08,"80+ Jahre","67",NA,NA,NA
 2021-02-15,"80+ Jahre","65",NA,NA,NA
 2021-02-22,"80+ Jahre","54",NA,NA,NA
-2021-03-01,"80+ Jahre","5",NA,NA,NA
+2021-03-01,"80+ Jahre","57",NA,NA,NA
+2021-03-08,"80+ Jahre","0",NA,NA,NA
 2020-05-25,"Unbekannt","0",NA,NA,NA
 2020-06-01,"Unbekannt","0",NA,NA,NA
 2020-06-08,"Unbekannt","0",NA,NA,NA
@@ -408,9 +417,10 @@
 2021-02-08,"Unbekannt","0",NA,NA,NA
 2021-02-15,"Unbekannt","0",NA,NA,NA
 2021-02-22,"Unbekannt","0",NA,NA,NA
-2021-03-01,"Unbekannt","0",NA,NA,NA
+2021-03-01,"Unbekannt","1",NA,NA,NA
+2021-03-08,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Alterskategorien im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

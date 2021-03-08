@@ -53,6 +53,7 @@
 2021-02-15,"männlich","6.19",NA,NA,NA
 2021-02-22,"männlich","1.55",NA,NA,NA
 2021-03-01,"männlich","0",NA,NA,NA
+2021-03-08,"männlich","0",NA,NA,NA
 2020-02-24,"weiblich","0",NA,NA,NA
 2020-03-02,"weiblich","0",NA,NA,NA
 2020-03-09,"weiblich","0",NA,NA,NA
@@ -105,8 +106,9 @@
 2021-02-01,"weiblich","1.59",NA,NA,NA
 2021-02-08,"weiblich","1.59",NA,NA,NA
 2021-02-15,"weiblich","4.76",NA,NA,NA
-2021-02-22,"weiblich","0",NA,NA,NA
-2021-03-01,"weiblich","0",NA,NA,NA
+2021-02-22,"weiblich","1.59",NA,NA,NA
+2021-03-01,"weiblich","3.17",NA,NA,NA
+2021-03-08,"weiblich","0",NA,NA,NA
 2020-02-24,"Unbekannt",NA,NA,NA,NA
 2020-03-02,"Unbekannt",NA,NA,NA,NA
 2020-03-09,"Unbekannt",NA,NA,NA,NA
@@ -161,8 +163,9 @@
 2021-02-15,"Unbekannt",NA,NA,NA,NA
 2021-02-22,"Unbekannt",NA,NA,NA,NA
 2021-03-01,"Unbekannt",NA,NA,NA,NA
+2021-03-08,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Hospitalisierungen aufgrund von COVID-19 nach Geschlecht im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Hospitalisierungen werden beim BAG mit zeitlicher Verzögerung registriert, diese Zahlen umfassen noch nicht alle im Kanton registrierten Fälle."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

@@ -1,11 +1,11 @@
 "Haushaltstyp","Anzahl","Meta","Type","Content"
-"Einpersonenhaushalte","17514",NA,NA,NA
-"Paare ohne Kinder","15971",NA,NA,NA
-"Übrige Haushalte","1800",NA,NA,NA
-"Paare mit Kind(ern)","16506",NA,NA,NA
-"Einelternhaushalte","2676",NA,NA,NA
+"Einpersonenhaushalte","17720",NA,NA,NA
+"Paare ohne Kinder","16105",NA,NA,NA
+"Übrige Haushalte","1444",NA,NA,NA
+"Paare mit Kind(ern)","16819",NA,NA,NA
+"Einelternhaushalte","2863",NA,NA,NA
 NA,NA,"1","datatypes","string,integer"
 NA,NA,"1","title",""
-NA,NA,"1","subtitle","Kanton Zug, 2018"
-NA,NA,"1","description","Daten 2018 hochgerechnet auf die Haushalte des Kantons Zug"
+NA,NA,"1","subtitle","Kanton Zug, 2019"
+NA,NA,"1","description","Daten 2019 hochgerechnet auf die Haushalte des Kantons Zug"
 NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung"

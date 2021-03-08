@@ -1,0 +1,11 @@
+"Kanton","Eingetumsverhältnis","Anzahl","Meta","Type","Content"
+"Zug","Mieter/in oder Untermieter/in","34505",NA,NA,NA
+"Zug","Genossenschafter/in","997",NA,NA,NA
+"Zug","Stockwerk-/ Wohnungseigentümer/in","9782",NA,NA,NA
+"Zug","Eigentümer/in des Hauses","8154",NA,NA,NA
+"Zug","Andere Situation","1511",NA,NA,NA
+NA,NA,NA,"1","datatypes","string,integer"
+NA,NA,NA,"1","title","Eigentumsverhältnisse der bewohnten Wohnungen"
+NA,NA,NA,"1","subtitle","Kanton Zug, 2019"
+NA,NA,NA,"1","description",""
+NA,NA,NA,"1","source","Bundesamt für Statistik, Strukturerhebung sowie Gebäude und Wohnungsstatistik"

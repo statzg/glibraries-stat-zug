@@ -366,6 +366,11 @@
 "Isolation","28.02.2021","67.3917813371783",NA,NA,NA
 "Isolation","01.03.2021","62.6900291508636",NA,NA,NA
 "Isolation","02.03.2021","68.1754067015641",NA,NA,NA
+"Isolation","03.03.2021","68.9590320659499",NA,NA,NA
+"Isolation","04.03.2021","72.8771588878789",NA,NA,NA
+"Isolation","05.03.2021","74.4444096166505",NA,NA,NA
+"Isolation","06.03.2021","84.6315393536658",NA,NA,NA
+"Isolation","07.03.2021","79.1461618029652",NA,NA,NA
 "Quarantäne aus Contact Tracing","01.03.2020","0",NA,NA,NA
 "Quarantäne aus Contact Tracing","02.03.2020","1.56725072877159",NA,NA,NA
 "Quarantäne aus Contact Tracing","03.03.2020","1.56725072877159",NA,NA,NA
@@ -733,6 +738,11 @@
 "Quarantäne aus Contact Tracing","28.02.2021","108.14030028524",NA,NA,NA
 "Quarantäne aus Contact Tracing","01.03.2021","115.192928564712",NA,NA,NA
 "Quarantäne aus Contact Tracing","02.03.2021","130.081810488042",NA,NA,NA
+"Quarantäne aus Contact Tracing","03.03.2021","126.947309030499",NA,NA,NA
+"Quarantäne aus Contact Tracing","04.03.2021","130.081810488042",NA,NA,NA
+"Quarantäne aus Contact Tracing","05.03.2021","130.865435852428",NA,NA,NA
+"Quarantäne aus Contact Tracing","06.03.2021","145.754317775758",NA,NA,NA
+"Quarantäne aus Contact Tracing","07.03.2021","142.619816318215",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","06.07.2020","0.783625364385794",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","07.07.2020","5.48537755070056",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","08.07.2020","7.05262827947215",NA,NA,NA
@@ -973,6 +983,11 @@
 "Quarantäne nach Rückkehr aus Risikoland","28.02.2021","123.812807572956",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","01.03.2021","149.672444597687",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","02.03.2021","154.374196784001",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","03.03.2021","137.9180641319",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","04.03.2021","135.567188038742",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","05.03.2021","139.485314860671",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","06.03.2021","137.9180641319",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","07.03.2021","135.567188038742",NA,NA,NA
 "Quarantäne via SwissCovid App","25.06.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","26.06.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","27.06.2020","0",NA,NA,NA
@@ -1224,6 +1239,11 @@
 "Quarantäne via SwissCovid App","28.02.2021","0",NA,NA,NA
 "Quarantäne via SwissCovid App","01.03.2021","0",NA,NA,NA
 "Quarantäne via SwissCovid App","02.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","03.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","04.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","05.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","06.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","07.03.2021","0",NA,NA,NA
 "Quarantäne Total","01.03.2020","0",NA,NA,NA
 "Quarantäne Total","02.03.2020","1.56725072877159",NA,NA,NA
 "Quarantäne Total","03.03.2020","1.56725072877159",NA,NA,NA
@@ -1591,8 +1611,13 @@
 "Quarantäne Total","28.02.2021","231.953107858195",NA,NA,NA
 "Quarantäne Total","01.03.2021","264.865373162399",NA,NA,NA
 "Quarantäne Total","02.03.2021","284.456007272043",NA,NA,NA
+"Quarantäne Total","03.03.2021","264.865373162399",NA,NA,NA
+"Quarantäne Total","04.03.2021","265.648998526784",NA,NA,NA
+"Quarantäne Total","05.03.2021","270.350750713099",NA,NA,NA
+"Quarantäne Total","06.03.2021","283.672381907658",NA,NA,NA
+"Quarantäne Total","07.03.2021","278.187004356957",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,"1","title","Quarantänefälle"
-NA,NA,NA,"1","subtitle","Zahlen pro 100'000 Einwohner, Zeitlicher Verlauf; Datenstand: 03.03.2021 08:00"
+NA,NA,NA,"1","subtitle","Zahlen pro 100'000 Einwohner, Zeitlicher Verlauf; Datenstand: 08.03.2021 08:00"
 NA,NA,NA,"1","description","Umfasst nur Personen im Contact Tracing des Kantons Zug, Rückkehrern aus Risikoländern und Quarantänefälle aufgrund der SwissCovid App. Einzelne Fälle im Spital oder Alterheim sind in diesen Zahlen nicht enthalten.<br/>Das Total entspricht nicht der Summe der einzelnen Kategorien, weil gewisse Personen im Haushalt auch noch positiv getestet wurden."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

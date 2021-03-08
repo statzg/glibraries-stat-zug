@@ -43,7 +43,7 @@
 2021-02-08,"Baar","44",NA,NA,NA
 2021-02-15,"Baar","19",NA,NA,NA
 2021-02-22,"Baar","22",NA,NA,NA
-2021-03-01,"Baar","3",NA,NA,NA
+2021-03-01,"Baar","24",NA,NA,NA
 2020-03-16,"Cham","2",NA,NA,NA
 2020-03-23,"Cham","8",NA,NA,NA
 2020-03-30,"Cham","6",NA,NA,NA
@@ -88,7 +88,7 @@
 2021-02-08,"Cham","19",NA,NA,NA
 2021-02-15,"Cham","4",NA,NA,NA
 2021-02-22,"Cham","8",NA,NA,NA
-2021-03-01,"Cham","5",NA,NA,NA
+2021-03-01,"Cham","8",NA,NA,NA
 2020-03-09,"Hünenberg","1",NA,NA,NA
 2020-03-23,"Hünenberg","2",NA,NA,NA
 2020-03-30,"Hünenberg","2",NA,NA,NA
@@ -122,7 +122,7 @@
 2021-02-08,"Hünenberg","12",NA,NA,NA
 2021-02-15,"Hünenberg","9",NA,NA,NA
 2021-02-22,"Hünenberg","2",NA,NA,NA
-2021-03-01,"Hünenberg","2",NA,NA,NA
+2021-03-01,"Hünenberg","15",NA,NA,NA
 2020-03-16,"Menzingen","2",NA,NA,NA
 2020-04-06,"Menzingen","1",NA,NA,NA
 2020-07-20,"Menzingen","1",NA,NA,NA
@@ -206,6 +206,7 @@
 2021-02-01,"Oberägeri","5",NA,NA,NA
 2021-02-15,"Oberägeri","2",NA,NA,NA
 2021-02-22,"Oberägeri","5",NA,NA,NA
+2021-03-01,"Oberägeri","3",NA,NA,NA
 2020-03-02,"Risch","1",NA,NA,NA
 2020-03-09,"Risch","1",NA,NA,NA
 2020-03-16,"Risch","3",NA,NA,NA
@@ -247,7 +248,7 @@
 2021-02-08,"Risch","8",NA,NA,NA
 2021-02-15,"Risch","4",NA,NA,NA
 2021-02-22,"Risch","3",NA,NA,NA
-2021-03-01,"Risch","2",NA,NA,NA
+2021-03-01,"Risch","4",NA,NA,NA
 2020-03-16,"Steinhausen","2",NA,NA,NA
 2020-03-23,"Steinhausen","7",NA,NA,NA
 2020-03-30,"Steinhausen","1",NA,NA,NA
@@ -283,7 +284,7 @@
 2021-02-08,"Steinhausen","17",NA,NA,NA
 2021-02-15,"Steinhausen","4",NA,NA,NA
 2021-02-22,"Steinhausen","17",NA,NA,NA
-2021-03-01,"Steinhausen","5",NA,NA,NA
+2021-03-01,"Steinhausen","12",NA,NA,NA
 2020-02-24,"Unterägeri","1",NA,NA,NA
 2020-03-09,"Unterägeri","1",NA,NA,NA
 2020-03-16,"Unterägeri","3",NA,NA,NA
@@ -318,7 +319,7 @@
 2021-02-08,"Unterägeri","4",NA,NA,NA
 2021-02-15,"Unterägeri","10",NA,NA,NA
 2021-02-22,"Unterägeri","7",NA,NA,NA
-2021-03-01,"Unterägeri","2",NA,NA,NA
+2021-03-01,"Unterägeri","3",NA,NA,NA
 2020-03-23,"Walchwil","1",NA,NA,NA
 2020-03-30,"Walchwil","3",NA,NA,NA
 2020-07-27,"Walchwil","1",NA,NA,NA
@@ -346,6 +347,7 @@
 2021-02-08,"Walchwil","5",NA,NA,NA
 2021-02-15,"Walchwil","2",NA,NA,NA
 2021-02-22,"Walchwil","2",NA,NA,NA
+2021-03-01,"Walchwil","1",NA,NA,NA
 2020-03-02,"Zug","3",NA,NA,NA
 2020-03-09,"Zug","3",NA,NA,NA
 2020-03-16,"Zug","13",NA,NA,NA
@@ -388,9 +390,9 @@
 2021-02-08,"Zug","15",NA,NA,NA
 2021-02-15,"Zug","23",NA,NA,NA
 2021-02-22,"Zug","7",NA,NA,NA
-2021-03-01,"Zug","5",NA,NA,NA
+2021-03-01,"Zug","19",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Positiv getestete Personen nach Gemeinde im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 02.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,NA,"1","source","ISM, Bundesamt für Gesundheit"

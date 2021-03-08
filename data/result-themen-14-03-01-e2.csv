@@ -366,6 +366,11 @@
 "Fallzahl","28.02.2021","5098.26662069398","2021-03-01 08:00:00",NA,NA,NA
 "Fallzahl","01.03.2021","5113.93912798169","2021-03-02 08:00:00",NA,NA,NA
 "Fallzahl","02.03.2021","5122.55900698994","2021-03-03 08:00:00",NA,NA,NA
+"Fallzahl","03.03.2021","5131.17888599818","2021-03-04 08:00:00",NA,NA,NA
+"Fallzahl","04.03.2021","5142.93326646397","2021-03-05 08:00:00",NA,NA,NA
+"Fallzahl","05.03.2021","5156.25489765853","2021-03-06 08:00:00",NA,NA,NA
+"Fallzahl","06.03.2021","5164.87477666677","2021-03-07 08:00:00",NA,NA,NA
+"Fallzahl","07.03.2021","5174.2782810394","2021-03-08 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -733,6 +738,11 @@
 "Hospitalisierte","28.02.2021","5.48537755070056","2021-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2021","5.48537755070056","2021-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2021","5.48537755070056","2021-03-03 08:00:00",NA,NA,NA
+"Hospitalisierte","03.03.2021","5.48537755070056","2021-03-04 08:00:00",NA,NA,NA
+"Hospitalisierte","04.03.2021","5.48537755070056","2021-03-05 08:00:00",NA,NA,NA
+"Hospitalisierte","05.03.2021","5.48537755070056","2021-03-06 08:00:00",NA,NA,NA
+"Hospitalisierte","06.03.2021","5.48537755070056","2021-03-07 08:00:00",NA,NA,NA
+"Hospitalisierte","07.03.2021","1.56725072877159","2021-03-08 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1100,6 +1110,11 @@
 "Hospitalisierte in Intensivpflege","28.02.2021","0.783625364385794","2021-03-01 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2021","0.783625364385794","2021-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2021","0.783625364385794","2021-03-03 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","03.03.2021","0.783625364385794","2021-03-04 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","04.03.2021","0.783625364385794","2021-03-05 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","05.03.2021","0.783625364385794","2021-03-06 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","06.03.2021","0.783625364385794","2021-03-07 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","07.03.2021","0.783625364385794","2021-03-08 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1467,6 +1482,11 @@
 "Genesene","28.02.2021","4942.32517318121","2021-03-01 08:00:00",NA,NA,NA
 "Genesene","01.03.2021","4962.69943265524","2021-03-02 08:00:00",NA,NA,NA
 "Genesene","02.03.2021","4965.83393411278","2021-03-03 08:00:00",NA,NA,NA
+"Genesene","03.03.2021","4973.67018775664","2021-03-04 08:00:00",NA,NA,NA
+"Genesene","04.03.2021","4981.5064414005","2021-03-05 08:00:00",NA,NA,NA
+"Genesene","05.03.2021","4993.26082186628","2021-03-06 08:00:00",NA,NA,NA
+"Genesene","06.03.2021","4994.82807259505","2021-03-07 08:00:00",NA,NA,NA
+"Genesene","07.03.2021","5006.58245306084","2021-03-08 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1834,6 +1854,11 @@
 "Todesfälle","28.02.2021","88.5496661755948","2021-03-01 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2021","88.5496661755948","2021-03-02 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2021","88.5496661755948","2021-03-03 08:00:00",NA,NA,NA
+"Todesfälle","03.03.2021","88.5496661755948","2021-03-04 08:00:00",NA,NA,NA
+"Todesfälle","04.03.2021","88.5496661755948","2021-03-05 08:00:00",NA,NA,NA
+"Todesfälle","05.03.2021","88.5496661755948","2021-03-06 08:00:00",NA,NA,NA
+"Todesfälle","06.03.2021","88.5496661755948","2021-03-07 08:00:00",NA,NA,NA
+"Todesfälle","07.03.2021","88.5496661755948","2021-03-08 08:00:00",NA,NA,NA
 "Aktive Fälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Aktive Fälle","02.03.2020","0.783625364385794","2020-03-03 08:00:00",NA,NA,NA
 "Aktive Fälle","03.03.2020","0.783625364385794","2020-03-04 08:00:00",NA,NA,NA
@@ -2201,8 +2226,13 @@
 "Aktive Fälle","28.02.2021","67.3917813371783","2021-03-01 08:00:00",NA,NA,NA
 "Aktive Fälle","01.03.2021","62.6900291508636","2021-03-02 08:00:00",NA,NA,NA
 "Aktive Fälle","02.03.2021","68.1754067015641","2021-03-03 08:00:00",NA,NA,NA
+"Aktive Fälle","03.03.2021","68.9590320659499","2021-03-04 08:00:00",NA,NA,NA
+"Aktive Fälle","04.03.2021","72.8771588878789","2021-03-05 08:00:00",NA,NA,NA
+"Aktive Fälle","05.03.2021","74.4444096166505","2021-03-06 08:00:00",NA,NA,NA
+"Aktive Fälle","06.03.2021","81.4970378961226","2021-03-07 08:00:00",NA,NA,NA
+"Aktive Fälle","07.03.2021","79.1461618029652","2021-03-08 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,NA,"1","title","Entwicklung der Fallzahen"
-NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 03.03.2021 08:00"
+NA,NA,NA,NA,"1","subtitle","Absolute Zahlen, Datenstand: 08.03.2021 08:00"
 NA,NA,NA,NA,"1","description","Aufgrund der kleinen Grösse des Kantons Zug können die Veränderungen von Tag zu Tag stark schwanken. Veränderungen dürfen deshalb nicht als Trend interpretiert werden. Die Zahl der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitalisierungen und aktiven Fälle umfassen jeweils nur den aktuellen Tageswert. Die Zahl der Genesenen und der aktiven Fälle basierte vom 10.10.2020 bis zum 29.11.2020 auf einer Schätzung anhand des üblichen Verlauf der Krankheit, davor und danach wurden die Zahlen anhand des Contact Tracings ermittelt."
 NA,NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"
