@@ -36,11 +36,12 @@
 2021-01-18,"männlich","1887.17",NA,NA,NA
 2021-01-25,"männlich","1727.71",NA,NA,NA
 2021-02-01,"männlich","2266.46",NA,NA,NA
-2021-02-08,"männlich","2168.93",NA,NA,NA
+2021-02-08,"männlich","2172.03",NA,NA,NA
 2021-02-15,"männlich","1766.42",NA,NA,NA
 2021-02-22,"männlich","2764.96",NA,NA,NA
-2021-03-01,"männlich","5997.46",NA,NA,NA
-2021-03-08,"männlich","0",NA,NA,NA
+2021-03-01,"männlich","6372.11",NA,NA,NA
+2021-03-08,"männlich","6045.45",NA,NA,NA
+2021-03-15,"männlich","3540.58",NA,NA,NA
 2020-05-25,"weiblich","166.54",NA,NA,NA
 2020-06-01,"weiblich","206.19",NA,NA,NA
 2020-06-08,"weiblich","396.52",NA,NA,NA
@@ -77,12 +78,13 @@
 2021-01-11,"weiblich","1690.78",NA,NA,NA
 2021-01-18,"weiblich","1739.94",NA,NA,NA
 2021-01-25,"weiblich","1820.83",NA,NA,NA
-2021-02-01,"weiblich","2493.34",NA,NA,NA
-2021-02-08,"weiblich","1920.76",NA,NA,NA
+2021-02-01,"weiblich","2490.17",NA,NA,NA
+2021-02-08,"weiblich","1919.17",NA,NA,NA
 2021-02-15,"weiblich","1611.47",NA,NA,NA
-2021-02-22,"weiblich","2774.08",NA,NA,NA
-2021-03-01,"weiblich","5985.92",NA,NA,NA
-2021-03-08,"weiblich","0",NA,NA,NA
+2021-02-22,"weiblich","2772.49",NA,NA,NA
+2021-03-01,"weiblich","6326.93",NA,NA,NA
+2021-03-08,"weiblich","6149.28",NA,NA,NA
+2021-03-15,"weiblich","3695.6",NA,NA,NA
 2020-05-25,"Unbekannt",NA,NA,NA,NA
 2020-06-01,"Unbekannt",NA,NA,NA,NA
 2020-06-08,"Unbekannt",NA,NA,NA,NA
@@ -125,8 +127,9 @@
 2021-02-22,"Unbekannt",NA,NA,NA,NA
 2021-03-01,"Unbekannt",NA,NA,NA,NA
 2021-03-08,"Unbekannt",NA,NA,NA,NA
+2021-03-15,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 19.03.2021"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen im entsprechenden Geschlecht ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

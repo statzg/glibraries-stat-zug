@@ -371,6 +371,21 @@
 "Fallzahl","05.03.2021","6537.14285714286","2021-03-06 08:00:00",NA,NA,NA
 "Fallzahl","06.03.2021","6550.14285714286","2021-03-07 08:00:00",NA,NA,NA
 "Fallzahl","07.03.2021","6564","2021-03-08 08:00:00",NA,NA,NA
+"Fallzahl","08.03.2021","6578.71428571429","2021-03-09 08:00:00",NA,NA,NA
+"Fallzahl","09.03.2021","6594.57142857143","2021-03-10 08:00:00",NA,NA,NA
+"Fallzahl","10.03.2021","6613.28571428571","2021-03-11 08:00:00",NA,NA,NA
+"Fallzahl","11.03.2021","6632.28571428571","2021-03-12 08:00:00",NA,NA,NA
+"Fallzahl","12.03.2021","6652.28571428571","2021-03-13 08:00:00",NA,NA,NA
+"Fallzahl","13.03.2021","6672.14285714286","2021-03-14 08:00:00",NA,NA,NA
+"Fallzahl","14.03.2021","6692.28571428571","2021-03-15 08:00:00",NA,NA,NA
+"Fallzahl","15.03.2021","6713","2021-03-16 08:00:00",NA,NA,NA
+"Fallzahl","16.03.2021","6736.14285714286","2021-03-17 08:00:00",NA,NA,NA
+"Fallzahl","17.03.2021","6759.14285714286","2021-03-18 08:00:00",NA,NA,NA
+"Fallzahl","18.03.2021","6783.42857142857","2021-03-19 08:00:00",NA,NA,NA
+"Fallzahl","19.03.2021","6809.85714285714","2021-03-20 08:00:00",NA,NA,NA
+"Fallzahl","20.03.2021","6836.57142857143","2021-03-21 08:00:00",NA,NA,NA
+"Fallzahl","21.03.2021","6863.14285714286","2021-03-22 08:00:00",NA,NA,NA
+"Fallzahl","22.03.2021","6890.14285714286","2021-03-23 08:00:00",NA,NA,NA
 "Hospitalisierte","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -743,6 +758,21 @@
 "Hospitalisierte","05.03.2021","7.14285714285714","2021-03-06 08:00:00",NA,NA,NA
 "Hospitalisierte","06.03.2021","7","2021-03-07 08:00:00",NA,NA,NA
 "Hospitalisierte","07.03.2021","6.28571428571429","2021-03-08 08:00:00",NA,NA,NA
+"Hospitalisierte","08.03.2021","6","2021-03-09 08:00:00",NA,NA,NA
+"Hospitalisierte","09.03.2021","5.42857142857143","2021-03-10 08:00:00",NA,NA,NA
+"Hospitalisierte","10.03.2021","4.71428571428571","2021-03-11 08:00:00",NA,NA,NA
+"Hospitalisierte","11.03.2021","4","2021-03-12 08:00:00",NA,NA,NA
+"Hospitalisierte","12.03.2021","3.28571428571429","2021-03-13 08:00:00",NA,NA,NA
+"Hospitalisierte","13.03.2021","2.57142857142857","2021-03-14 08:00:00",NA,NA,NA
+"Hospitalisierte","14.03.2021","3.14285714285714","2021-03-15 08:00:00",NA,NA,NA
+"Hospitalisierte","15.03.2021","3.28571428571429","2021-03-16 08:00:00",NA,NA,NA
+"Hospitalisierte","16.03.2021","3.71428571428571","2021-03-17 08:00:00",NA,NA,NA
+"Hospitalisierte","17.03.2021","4.42857142857143","2021-03-18 08:00:00",NA,NA,NA
+"Hospitalisierte","18.03.2021","5.14285714285714","2021-03-19 08:00:00",NA,NA,NA
+"Hospitalisierte","19.03.2021","5.85714285714286","2021-03-20 08:00:00",NA,NA,NA
+"Hospitalisierte","20.03.2021","6.57142857142857","2021-03-21 08:00:00",NA,NA,NA
+"Hospitalisierte","21.03.2021","6.85714285714286","2021-03-22 08:00:00",NA,NA,NA
+"Hospitalisierte","22.03.2021","7.28571428571429","2021-03-23 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1115,6 +1145,21 @@
 "Hospitalisierte in Intensivpflege","05.03.2021","1.14285714285714","2021-03-06 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","06.03.2021","1","2021-03-07 08:00:00",NA,NA,NA
 "Hospitalisierte in Intensivpflege","07.03.2021","1","2021-03-08 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","08.03.2021","1","2021-03-09 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","09.03.2021","1","2021-03-10 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","10.03.2021","1","2021-03-11 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","11.03.2021","1","2021-03-12 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","12.03.2021","1","2021-03-13 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","13.03.2021","1","2021-03-14 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","14.03.2021","1.14285714285714","2021-03-15 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","15.03.2021","1.28571428571429","2021-03-16 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","16.03.2021","1.28571428571429","2021-03-17 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","17.03.2021","1.28571428571429","2021-03-18 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","18.03.2021","1.28571428571429","2021-03-19 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","19.03.2021","1.28571428571429","2021-03-20 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","20.03.2021","1.28571428571429","2021-03-21 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","21.03.2021","1","2021-03-22 08:00:00",NA,NA,NA
+"Hospitalisierte in Intensivpflege","22.03.2021","0.714285714285714","2021-03-23 08:00:00",NA,NA,NA
 "Genesene","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Genesene","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Genesene","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1487,6 +1532,21 @@
 "Genesene","05.03.2021","6335.71428571429","2021-03-06 08:00:00",NA,NA,NA
 "Genesene","06.03.2021","6346.71428571429","2021-03-07 08:00:00",NA,NA,NA
 "Genesene","07.03.2021","6358.42857142857","2021-03-08 08:00:00",NA,NA,NA
+"Genesene","08.03.2021","6370.42857142857","2021-03-09 08:00:00",NA,NA,NA
+"Genesene","09.03.2021","6383.14285714286","2021-03-10 08:00:00",NA,NA,NA
+"Genesene","10.03.2021","6397.28571428571","2021-03-11 08:00:00",NA,NA,NA
+"Genesene","11.03.2021","6411.85714285714","2021-03-12 08:00:00",NA,NA,NA
+"Genesene","12.03.2021","6425.71428571429","2021-03-13 08:00:00",NA,NA,NA
+"Genesene","13.03.2021","6439.42857142857","2021-03-14 08:00:00",NA,NA,NA
+"Genesene","14.03.2021","6454.14285714286","2021-03-15 08:00:00",NA,NA,NA
+"Genesene","15.03.2021","6469","2021-03-16 08:00:00",NA,NA,NA
+"Genesene","16.03.2021","6488.14285714286","2021-03-17 08:00:00",NA,NA,NA
+"Genesene","17.03.2021","6506.71428571429","2021-03-18 08:00:00",NA,NA,NA
+"Genesene","18.03.2021","6525.14285714286","2021-03-19 08:00:00",NA,NA,NA
+"Genesene","19.03.2021","6547","2021-03-20 08:00:00",NA,NA,NA
+"Genesene","20.03.2021","6568.85714285714","2021-03-21 08:00:00",NA,NA,NA
+"Genesene","21.03.2021","6588.71428571429","2021-03-22 08:00:00",NA,NA,NA
+"Genesene","22.03.2021","6609.57142857143","2021-03-23 08:00:00",NA,NA,NA
 "Todesfälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Todesfälle","02.03.2020","0","2020-03-03 08:00:00",NA,NA,NA
 "Todesfälle","03.03.2020","0","2020-03-04 08:00:00",NA,NA,NA
@@ -1859,6 +1919,21 @@
 "Todesfälle","05.03.2021","113","2021-03-06 08:00:00",NA,NA,NA
 "Todesfälle","06.03.2021","113","2021-03-07 08:00:00",NA,NA,NA
 "Todesfälle","07.03.2021","113","2021-03-08 08:00:00",NA,NA,NA
+"Todesfälle","08.03.2021","113","2021-03-09 08:00:00",NA,NA,NA
+"Todesfälle","09.03.2021","113.142857142857","2021-03-10 08:00:00",NA,NA,NA
+"Todesfälle","10.03.2021","113.285714285714","2021-03-11 08:00:00",NA,NA,NA
+"Todesfälle","11.03.2021","113.428571428571","2021-03-12 08:00:00",NA,NA,NA
+"Todesfälle","12.03.2021","113.571428571429","2021-03-13 08:00:00",NA,NA,NA
+"Todesfälle","13.03.2021","113.714285714286","2021-03-14 08:00:00",NA,NA,NA
+"Todesfälle","14.03.2021","113.857142857143","2021-03-15 08:00:00",NA,NA,NA
+"Todesfälle","15.03.2021","114","2021-03-16 08:00:00",NA,NA,NA
+"Todesfälle","16.03.2021","114","2021-03-17 08:00:00",NA,NA,NA
+"Todesfälle","17.03.2021","114","2021-03-18 08:00:00",NA,NA,NA
+"Todesfälle","18.03.2021","114","2021-03-19 08:00:00",NA,NA,NA
+"Todesfälle","19.03.2021","114","2021-03-20 08:00:00",NA,NA,NA
+"Todesfälle","20.03.2021","114","2021-03-21 08:00:00",NA,NA,NA
+"Todesfälle","21.03.2021","114","2021-03-22 08:00:00",NA,NA,NA
+"Todesfälle","22.03.2021","114","2021-03-23 08:00:00",NA,NA,NA
 "Aktive Fälle","01.03.2020","0","2020-03-02 08:00:00",NA,NA,NA
 "Aktive Fälle","02.03.2020","0.142857142857143","2020-03-03 08:00:00",NA,NA,NA
 "Aktive Fälle","03.03.2020","0.285714285714286","2020-03-04 08:00:00",NA,NA,NA
@@ -2231,8 +2306,23 @@
 "Aktive Fälle","05.03.2021","88.4285714285714","2021-03-06 08:00:00",NA,NA,NA
 "Aktive Fälle","06.03.2021","90.4285714285714","2021-03-07 08:00:00",NA,NA,NA
 "Aktive Fälle","07.03.2021","92.5714285714286","2021-03-08 08:00:00",NA,NA,NA
+"Aktive Fälle","08.03.2021","95.2857142857143","2021-03-09 08:00:00",NA,NA,NA
+"Aktive Fälle","09.03.2021","98.2857142857143","2021-03-10 08:00:00",NA,NA,NA
+"Aktive Fälle","10.03.2021","102.714285714286","2021-03-11 08:00:00",NA,NA,NA
+"Aktive Fälle","11.03.2021","107","2021-03-12 08:00:00",NA,NA,NA
+"Aktive Fälle","12.03.2021","113","2021-03-13 08:00:00",NA,NA,NA
+"Aktive Fälle","13.03.2021","119","2021-03-14 08:00:00",NA,NA,NA
+"Aktive Fälle","14.03.2021","124.285714285714","2021-03-15 08:00:00",NA,NA,NA
+"Aktive Fälle","15.03.2021","130","2021-03-16 08:00:00",NA,NA,NA
+"Aktive Fälle","16.03.2021","134","2021-03-17 08:00:00",NA,NA,NA
+"Aktive Fälle","17.03.2021","138.428571428571","2021-03-18 08:00:00",NA,NA,NA
+"Aktive Fälle","18.03.2021","144.285714285714","2021-03-19 08:00:00",NA,NA,NA
+"Aktive Fälle","19.03.2021","148.857142857143","2021-03-20 08:00:00",NA,NA,NA
+"Aktive Fälle","20.03.2021","153.714285714286","2021-03-21 08:00:00",NA,NA,NA
+"Aktive Fälle","21.03.2021","160.428571428571","2021-03-22 08:00:00",NA,NA,NA
+"Aktive Fälle","22.03.2021","166.571428571429","2021-03-23 08:00:00",NA,NA,NA
 NA,NA,NA,NA,"1","datatypes","string,date,float"
 NA,NA,NA,NA,"1","title","Entwicklung der Fallzahlen"
-NA,NA,NA,NA,"1","subtitle","Durchschnitt der letzten 7 Tage, Datenstand: 08.03.2021 08:00"
+NA,NA,NA,NA,"1","subtitle","Durchschnitt der letzten 7 Tage, Datenstand: 23.03.2021 08:00"
 NA,NA,NA,NA,"1","description","Die Zahl der Hospitalisierten umfasst jeweils auch Hospitalisierte in Intensivpflege und umfasst alle Hospitalisierten im Kanton Zug unabhängig vom Wohnort. Bewohner/innen des Kantons Zug in einem Spital ausserhalb des Kantons werden nicht gezählt. Die Fallzahlen und Todesfälle werden im Zeitverlauf summiert, die Hospitalisierungen und aktiven Fälle umfassen jeweils nur den aktuellen Tageswert. Die Zahl der Genesenen und der aktiven Fälle basierte vom 10.10.2020 bis zum 29.11.2020 auf einer Schätzung anhand des üblichen Verlauf der Krankheit, davor und danach wurden die Zahlen anhand des Contact Tracings ermittelt."
 NA,NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

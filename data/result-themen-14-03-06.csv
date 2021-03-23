@@ -369,8 +369,23 @@
 "Isolation","03.03.2021","88",NA,NA,NA
 "Isolation","04.03.2021","93",NA,NA,NA
 "Isolation","05.03.2021","95",NA,NA,NA
-"Isolation","06.03.2021","108",NA,NA,NA
+"Isolation","06.03.2021","104",NA,NA,NA
 "Isolation","07.03.2021","101",NA,NA,NA
+"Isolation","08.03.2021","99",NA,NA,NA
+"Isolation","09.03.2021","108",NA,NA,NA
+"Isolation","10.03.2021","119",NA,NA,NA
+"Isolation","11.03.2021","123",NA,NA,NA
+"Isolation","12.03.2021","137",NA,NA,NA
+"Isolation","13.03.2021","146",NA,NA,NA
+"Isolation","14.03.2021","138",NA,NA,NA
+"Isolation","15.03.2021","139",NA,NA,NA
+"Isolation","16.03.2021","136",NA,NA,NA
+"Isolation","17.03.2021","150",NA,NA,NA
+"Isolation","18.03.2021","164",NA,NA,NA
+"Isolation","19.03.2021","169",NA,NA,NA
+"Isolation","20.03.2021","180",NA,NA,NA
+"Isolation","21.03.2021","185",NA,NA,NA
+"Isolation","22.03.2021","182",NA,NA,NA
 "Quarantäne aus Contact Tracing","01.03.2020","0",NA,NA,NA
 "Quarantäne aus Contact Tracing","02.03.2020","2",NA,NA,NA
 "Quarantäne aus Contact Tracing","03.03.2020","2",NA,NA,NA
@@ -743,6 +758,21 @@
 "Quarantäne aus Contact Tracing","05.03.2021","167",NA,NA,NA
 "Quarantäne aus Contact Tracing","06.03.2021","186",NA,NA,NA
 "Quarantäne aus Contact Tracing","07.03.2021","182",NA,NA,NA
+"Quarantäne aus Contact Tracing","08.03.2021","200",NA,NA,NA
+"Quarantäne aus Contact Tracing","09.03.2021","189",NA,NA,NA
+"Quarantäne aus Contact Tracing","10.03.2021","190",NA,NA,NA
+"Quarantäne aus Contact Tracing","11.03.2021","188",NA,NA,NA
+"Quarantäne aus Contact Tracing","12.03.2021","170",NA,NA,NA
+"Quarantäne aus Contact Tracing","13.03.2021","187",NA,NA,NA
+"Quarantäne aus Contact Tracing","14.03.2021","182",NA,NA,NA
+"Quarantäne aus Contact Tracing","15.03.2021","196",NA,NA,NA
+"Quarantäne aus Contact Tracing","16.03.2021","214",NA,NA,NA
+"Quarantäne aus Contact Tracing","17.03.2021","232",NA,NA,NA
+"Quarantäne aus Contact Tracing","18.03.2021","246",NA,NA,NA
+"Quarantäne aus Contact Tracing","19.03.2021","216",NA,NA,NA
+"Quarantäne aus Contact Tracing","20.03.2021","218",NA,NA,NA
+"Quarantäne aus Contact Tracing","21.03.2021","249",NA,NA,NA
+"Quarantäne aus Contact Tracing","22.03.2021","234",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","06.07.2020","1",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","07.07.2020","7",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","08.07.2020","9",NA,NA,NA
@@ -988,6 +1018,21 @@
 "Quarantäne nach Rückkehr aus Risikoland","05.03.2021","178",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","06.03.2021","176",NA,NA,NA
 "Quarantäne nach Rückkehr aus Risikoland","07.03.2021","173",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","08.03.2021","183",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","09.03.2021","165",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","10.03.2021","151",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","11.03.2021","134",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","12.03.2021","159",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","13.03.2021","151",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","14.03.2021","149",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","15.03.2021","152",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","16.03.2021","166",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","17.03.2021","129",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","18.03.2021","134",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","19.03.2021","135",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","20.03.2021","125",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","21.03.2021","127",NA,NA,NA
+"Quarantäne nach Rückkehr aus Risikoland","22.03.2021","151",NA,NA,NA
 "Quarantäne via SwissCovid App","25.06.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","26.06.2020","0",NA,NA,NA
 "Quarantäne via SwissCovid App","27.06.2020","0",NA,NA,NA
@@ -1244,6 +1289,21 @@
 "Quarantäne via SwissCovid App","05.03.2021","0",NA,NA,NA
 "Quarantäne via SwissCovid App","06.03.2021","0",NA,NA,NA
 "Quarantäne via SwissCovid App","07.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","08.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","09.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","10.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","11.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","12.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","13.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","14.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","15.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","16.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","17.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","18.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","19.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","20.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","21.03.2021","0",NA,NA,NA
+"Quarantäne via SwissCovid App","22.03.2021","0",NA,NA,NA
 "Quarantäne Total","01.03.2020","0",NA,NA,NA
 "Quarantäne Total","02.03.2020","2",NA,NA,NA
 "Quarantäne Total","03.03.2020","2",NA,NA,NA
@@ -1616,8 +1676,23 @@
 "Quarantäne Total","05.03.2021","345",NA,NA,NA
 "Quarantäne Total","06.03.2021","362",NA,NA,NA
 "Quarantäne Total","07.03.2021","355",NA,NA,NA
+"Quarantäne Total","08.03.2021","383",NA,NA,NA
+"Quarantäne Total","09.03.2021","354",NA,NA,NA
+"Quarantäne Total","10.03.2021","341",NA,NA,NA
+"Quarantäne Total","11.03.2021","322",NA,NA,NA
+"Quarantäne Total","12.03.2021","329",NA,NA,NA
+"Quarantäne Total","13.03.2021","338",NA,NA,NA
+"Quarantäne Total","14.03.2021","331",NA,NA,NA
+"Quarantäne Total","15.03.2021","348",NA,NA,NA
+"Quarantäne Total","16.03.2021","380",NA,NA,NA
+"Quarantäne Total","17.03.2021","361",NA,NA,NA
+"Quarantäne Total","18.03.2021","380",NA,NA,NA
+"Quarantäne Total","19.03.2021","351",NA,NA,NA
+"Quarantäne Total","20.03.2021","343",NA,NA,NA
+"Quarantäne Total","21.03.2021","376",NA,NA,NA
+"Quarantäne Total","22.03.2021","385",NA,NA,NA
 NA,NA,NA,"1","datatypes","string,date,integer"
 NA,NA,NA,"1","title","Quarantänefälle"
-NA,NA,NA,"1","subtitle","Absolute Zahlen, Zeitlicher Verlauf; Datenstand: 08.03.2021 08:00"
+NA,NA,NA,"1","subtitle","Absolute Zahlen, Zeitlicher Verlauf; Datenstand: 23.03.2021 08:00"
 NA,NA,NA,"1","description","Umfasst nur Personen im Contact Tracing des Kantons Zug, Rückkehrern aus Risikoländern und Quarantänefälle aufgrund der SwissCovid App. Einzelne Fälle im Spital oder Alterheim sind in diesen Zahlen nicht enthalten.<br/>Das Total entspricht nicht der Summe der einzelnen Kategorien, weil gewisse Personen im Haushalt auch noch positiv getestet wurden."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

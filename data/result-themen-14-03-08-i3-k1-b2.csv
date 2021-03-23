@@ -1,17 +1,17 @@
 "Gemeinde","Inzidenz pro 100'000","Meta","Type","Content"
-"Baar","5691.18901572084",NA,NA,NA
-"Cham","4960.6345823714",NA,NA,NA
-"Hünenberg","4428.50637522769",NA,NA,NA
-"Menzingen","5778.94968138871",NA,NA,NA
-"Neuheim","4202.05632543585",NA,NA,NA
-"Oberägeri","4804.61242793081",NA,NA,NA
-"Risch","5332.12010919017",NA,NA,NA
-"Steinhausen","5578.04324217593",NA,NA,NA
-"Unterägeri","4860.17140279657",NA,NA,NA
-"Walchwil","4203.7186742118",NA,NA,NA
-"Zug","4859.88634136782",NA,NA,NA
+"Baar","5967.42088800422",NA,NA,NA
+"Cham","5167.82099094299",NA,NA,NA
+"Hünenberg","4690.34608378871",NA,NA,NA
+"Menzingen","5866.84245220831",NA,NA,NA
+"Neuheim","4380.86723290121",NA,NA,NA
+"Oberägeri","5461.24279308136",NA,NA,NA
+"Risch","5404.9135577798",NA,NA,NA
+"Steinhausen","6121.03860203376",NA,NA,NA
+"Unterägeri","5243.57239512855",NA,NA,NA
+"Walchwil","4580.97547830773",NA,NA,NA
+"Zug","4993.79449996734",NA,NA,NA
 NA,NA,"1","datatypes","string,float"
 NA,NA,"1","title","Positiv getestete Personen nach Gemeinde im Total pro 100'000"
-NA,NA,"1","subtitle","Datenstand: 08.03.2021"
+NA,NA,"1","subtitle","Datenstand: 19.03.2021"
 NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Gemeinde ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen."
 NA,NA,"1","source","ISM, Bundesamt für Gesundheit"

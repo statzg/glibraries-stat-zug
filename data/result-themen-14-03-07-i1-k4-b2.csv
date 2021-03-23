@@ -35,12 +35,13 @@
 2021-01-11,"0 - 9 Jahre","219.6",NA,NA,NA
 2021-01-18,"0 - 9 Jahre","363.47",NA,NA,NA
 2021-01-25,"0 - 9 Jahre","461.91",NA,NA,NA
-2021-02-01,"0 - 9 Jahre","999.55",NA,NA,NA
+2021-02-01,"0 - 9 Jahre","984.4",NA,NA,NA
 2021-02-08,"0 - 9 Jahre","643.65",NA,NA,NA
 2021-02-15,"0 - 9 Jahre","196.88",NA,NA,NA
 2021-02-22,"0 - 9 Jahre","159.02",NA,NA,NA
 2021-03-01,"0 - 9 Jahre","196.88",NA,NA,NA
-2021-03-08,"0 - 9 Jahre","0",NA,NA,NA
+2021-03-08,"0 - 9 Jahre","598.21",NA,NA,NA
+2021-03-15,"0 - 9 Jahre","567.92",NA,NA,NA
 2020-05-25,"10 - 19 Jahre","157.54",NA,NA,NA
 2020-06-01,"10 - 19 Jahre","212.68",NA,NA,NA
 2020-06-08,"10 - 19 Jahre","551.4",NA,NA,NA
@@ -81,8 +82,9 @@
 2021-02-08,"10 - 19 Jahre","2371.01",NA,NA,NA
 2021-02-15,"10 - 19 Jahre","1181.57",NA,NA,NA
 2021-02-22,"10 - 19 Jahre","13005.12",NA,NA,NA
-2021-03-01,"10 - 19 Jahre","37392.67",NA,NA,NA
-2021-03-08,"10 - 19 Jahre","0",NA,NA,NA
+2021-03-01,"10 - 19 Jahre","40480.5",NA,NA,NA
+2021-03-08,"10 - 19 Jahre","38204.02",NA,NA,NA
+2021-03-15,"10 - 19 Jahre","19661.28",NA,NA,NA
 2020-05-25,"20 - 29 Jahre","238.34",NA,NA,NA
 2020-06-01,"20 - 29 Jahre","96.83",NA,NA,NA
 2020-06-08,"20 - 29 Jahre","476.69",NA,NA,NA
@@ -123,8 +125,9 @@
 2021-02-08,"20 - 29 Jahre","3396.4",NA,NA,NA
 2021-02-15,"20 - 29 Jahre","2487.71",NA,NA,NA
 2021-02-22,"20 - 29 Jahre","2554.74",NA,NA,NA
-2021-03-01,"20 - 29 Jahre","3783.7",NA,NA,NA
-2021-03-08,"20 - 29 Jahre","0",NA,NA,NA
+2021-03-01,"20 - 29 Jahre","3880.53",NA,NA,NA
+2021-03-08,"20 - 29 Jahre","4238.05",NA,NA,NA
+2021-03-15,"20 - 29 Jahre","2726.05",NA,NA,NA
 2020-05-25,"30 - 39 Jahre","201.27",NA,NA,NA
 2020-06-01,"30 - 39 Jahre","217.59",NA,NA,NA
 2020-06-08,"30 - 39 Jahre","500.46",NA,NA,NA
@@ -162,11 +165,12 @@
 2021-01-18,"30 - 39 Jahre","2116.09",NA,NA,NA
 2021-01-25,"30 - 39 Jahre","2224.88",NA,NA,NA
 2021-02-01,"30 - 39 Jahre","3209.49",NA,NA,NA
-2021-02-08,"30 - 39 Jahre","2768.86",NA,NA,NA
+2021-02-08,"30 - 39 Jahre","2763.42",NA,NA,NA
 2021-02-15,"30 - 39 Jahre","2301.04",NA,NA,NA
-2021-02-22,"30 - 39 Jahre","1963.77",NA,NA,NA
-2021-03-01,"30 - 39 Jahre","3361.8",NA,NA,NA
-2021-03-08,"30 - 39 Jahre","0",NA,NA,NA
+2021-02-22,"30 - 39 Jahre","1958.33",NA,NA,NA
+2021-03-01,"30 - 39 Jahre","3448.84",NA,NA,NA
+2021-03-08,"30 - 39 Jahre","3089.81",NA,NA,NA
+2021-03-15,"30 - 39 Jahre","2165.04",NA,NA,NA
 2020-05-25,"40 - 49 Jahre","221.49",NA,NA,NA
 2020-06-01,"40 - 49 Jahre","267.85",NA,NA,NA
 2020-06-08,"40 - 49 Jahre","484.19",NA,NA,NA
@@ -204,11 +208,12 @@
 2021-01-18,"40 - 49 Jahre","2132.48",NA,NA,NA
 2021-01-25,"40 - 49 Jahre","2256.1",NA,NA,NA
 2021-02-01,"40 - 49 Jahre","3136.91",NA,NA,NA
-2021-02-08,"40 - 49 Jahre","2596.06",NA,NA,NA
+2021-02-08,"40 - 49 Jahre","2601.22",NA,NA,NA
 2021-02-15,"40 - 49 Jahre","2132.48",NA,NA,NA
-2021-02-22,"40 - 49 Jahre","1967.65",NA,NA,NA
-2021-03-01,"40 - 49 Jahre","3142.06",NA,NA,NA
-2021-03-08,"40 - 49 Jahre","0",NA,NA,NA
+2021-02-22,"40 - 49 Jahre","1962.5",NA,NA,NA
+2021-03-01,"40 - 49 Jahre","3214.18",NA,NA,NA
+2021-03-08,"40 - 49 Jahre","3296.59",NA,NA,NA
+2021-03-15,"40 - 49 Jahre","2590.91",NA,NA,NA
 2020-05-25,"50 - 59 Jahre","153.8",NA,NA,NA
 2020-06-01,"50 - 59 Jahre","134.58",NA,NA,NA
 2020-06-08,"50 - 59 Jahre","297.99",NA,NA,NA
@@ -246,11 +251,12 @@
 2021-01-18,"50 - 59 Jahre","1662.98",NA,NA,NA
 2021-01-25,"50 - 59 Jahre","1739.88",NA,NA,NA
 2021-02-01,"50 - 59 Jahre","2196.48",NA,NA,NA
-2021-02-08,"50 - 59 Jahre","1932.13",NA,NA,NA
+2021-02-08,"50 - 59 Jahre","1936.94",NA,NA,NA
 2021-02-15,"50 - 59 Jahre","1744.69",NA,NA,NA
-2021-02-22,"50 - 59 Jahre","2081.13",NA,NA,NA
-2021-03-01,"50 - 59 Jahre","3143.32",NA,NA,NA
-2021-03-08,"50 - 59 Jahre","0",NA,NA,NA
+2021-02-22,"50 - 59 Jahre","2085.94",NA,NA,NA
+2021-03-01,"50 - 59 Jahre","3205.81",NA,NA,NA
+2021-03-08,"50 - 59 Jahre","3047.2",NA,NA,NA
+2021-03-15,"50 - 59 Jahre","2153.23",NA,NA,NA
 2020-05-25,"60 - 69 Jahre","188.98",NA,NA,NA
 2020-06-01,"60 - 69 Jahre","159.91",NA,NA,NA
 2020-06-08,"60 - 69 Jahre","261.67",NA,NA,NA
@@ -291,8 +297,9 @@
 2021-02-08,"60 - 69 Jahre","1526.38",NA,NA,NA
 2021-02-15,"60 - 69 Jahre","1984.3",NA,NA,NA
 2021-02-22,"60 - 69 Jahre","1584.53",NA,NA,NA
-2021-03-01,"60 - 69 Jahre","2347.72",NA,NA,NA
-2021-03-08,"60 - 69 Jahre","0",NA,NA,NA
+2021-03-01,"60 - 69 Jahre","2413.14",NA,NA,NA
+2021-03-08,"60 - 69 Jahre","2180.55",NA,NA,NA
+2021-03-15,"60 - 69 Jahre","1540.92",NA,NA,NA
 2020-05-25,"70 - 79 Jahre","98.94",NA,NA,NA
 2020-06-01,"70 - 79 Jahre","128.62",NA,NA,NA
 2020-06-08,"70 - 79 Jahre","128.62",NA,NA,NA
@@ -334,7 +341,8 @@
 2021-02-15,"70 - 79 Jahre","1078.46",NA,NA,NA
 2021-02-22,"70 - 79 Jahre","712.38",NA,NA,NA
 2021-03-01,"70 - 79 Jahre","1028.99",NA,NA,NA
-2021-03-08,"70 - 79 Jahre","0",NA,NA,NA
+2021-03-08,"70 - 79 Jahre","890.47",NA,NA,NA
+2021-03-15,"70 - 79 Jahre","801.42",NA,NA,NA
 2020-05-25,"80+ Jahre","427.57",NA,NA,NA
 2020-06-01,"80+ Jahre","136.82",NA,NA,NA
 2020-06-08,"80+ Jahre","205.23",NA,NA,NA
@@ -376,7 +384,8 @@
 2021-02-15,"80+ Jahre","1111.68",NA,NA,NA
 2021-02-22,"80+ Jahre","923.55",NA,NA,NA
 2021-03-01,"80+ Jahre","974.86",NA,NA,NA
-2021-03-08,"80+ Jahre","0",NA,NA,NA
+2021-03-08,"80+ Jahre","803.83",NA,NA,NA
+2021-03-15,"80+ Jahre","649.91",NA,NA,NA
 2020-05-25,"Unbekannt",NA,NA,NA,NA
 2020-06-01,"Unbekannt",NA,NA,NA,NA
 2020-06-08,"Unbekannt",NA,NA,NA,NA
@@ -419,8 +428,9 @@
 2021-02-22,"Unbekannt",NA,NA,NA,NA
 2021-03-01,"Unbekannt",NA,NA,NA,NA
 2021-03-08,"Unbekannt",NA,NA,NA,NA
+2021-03-15,"Unbekannt",NA,NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,float"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Alterskategorien im Zeitverlauf pro 100'000"
-NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 19.03.2021"
 NA,NA,NA,"1","description","Die Inzidenz wird jeweils pro 100'000 Personen in der entsprechenden Alterklasse ausgewiesen. Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

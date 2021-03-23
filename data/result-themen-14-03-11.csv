@@ -1,18 +1,18 @@
 "Vermutete Ansteckungsquelle","Anzahl","Meta","Type","Content"
-"Familie und Freunde","1490",NA,NA,NA
-"Reisen","67",NA,NA,NA
-"Sport","44",NA,NA,NA
-"Vereine (ohne Sport)","0",NA,NA,NA
+"Familie und Freunde","1618",NA,NA,NA
+"Reisen","69",NA,NA,NA
+"Sport","49",NA,NA,NA
+"Vereine (ohne Sport)","2",NA,NA,NA
 "Veranstaltungen","17",NA,NA,NA
-"Arbeit (ohne Gesundheits- und Bildungseinrichtungen und soziale Institutionen)","316",NA,NA,NA
-"Soziale Institutionen (inkl. Pflegeheime)","383",NA,NA,NA
-"Gesundheitseinrichungen (ohne Pflegeheime)","128",NA,NA,NA
-"Bildungseinrichtungen","229",NA,NA,NA
+"Arbeit (ohne Gesundheits- und Bildungseinrichtungen und soziale Institutionen)","335",NA,NA,NA
+"Soziale Institutionen (inkl. Pflegeheime)","384",NA,NA,NA
+"Gesundheitseinrichungen (ohne Pflegeheime)","130",NA,NA,NA
+"Bildungseinrichtungen","268",NA,NA,NA
 "Restaurationsbetriebe","17",NA,NA,NA
 "Anderes","27",NA,NA,NA
-"Keine Vermutung zur Ansteckungsquelle","1457",NA,NA,NA
+"Keine Vermutung zur Ansteckungsquelle","1561",NA,NA,NA
 NA,NA,"1","datatypes","string,integer"
 NA,NA,"1","title","Vermutete Ansteckungsquellen"
-NA,NA,"1","subtitle","Mehrfachnennungen möglich, Datenstand: 08.03.2021 00:00"
+NA,NA,"1","subtitle","Mehrfachnennungen möglich, Datenstand: 19.03.2021 00:00"
 NA,NA,"1","description","Die Ansteckungsquelle wird im Contact Tracing seit dem 23.11.2020 systematisch erhoben. Vorher erfasst Fälle wurden soweit möglich nachcodiert, Informationen vor dem 25.10.2020 wurden aus Zeitgründen noch nicht codiert. Auch nach dem 23.11.2020 liegt die Information bei einigen Fällen nicht vor, da die entsprechenden Fragen nicht in jedem Fall gestellt werden können."
 NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"

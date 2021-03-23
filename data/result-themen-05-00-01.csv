@@ -457,8 +457,9 @@
 "2020",2020-11-01,"158.2",NA,NA,NA
 "2020",2020-12-01,"158.1",NA,NA,NA
 "2021",2021-01-01,"158.2",NA,NA,NA
+"2021",2021-02-01,"158.4",NA,NA,NA
 NA,NA,NA,"1","datatypes","datemonthyear,float"
 NA,NA,NA,"1","title","Landesindex der Konsumentenpreise"
 NA,NA,NA,"1","subtitle","Totalindex Schweiz, Dezember 1982 = 100"
-NA,NA,NA,"1","description","Von Dezember 1982 bis Januar 2021"
+NA,NA,NA,"1","description","Von Dezember 1982 bis Februar 2021"
 NA,NA,NA,"1","source","Bundesamt für Statistik"

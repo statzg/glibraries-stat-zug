@@ -36,11 +36,12 @@
 2021-01-18,"männlich","1219",NA,NA,NA
 2021-01-25,"männlich","1116",NA,NA,NA
 2021-02-01,"männlich","1464",NA,NA,NA
-2021-02-08,"männlich","1401",NA,NA,NA
+2021-02-08,"männlich","1403",NA,NA,NA
 2021-02-15,"männlich","1141",NA,NA,NA
 2021-02-22,"männlich","1786",NA,NA,NA
-2021-03-01,"männlich","3874",NA,NA,NA
-2021-03-08,"männlich","0",NA,NA,NA
+2021-03-01,"männlich","4116",NA,NA,NA
+2021-03-08,"männlich","3905",NA,NA,NA
+2021-03-15,"männlich","2287",NA,NA,NA
 2020-05-25,"weiblich","105",NA,NA,NA
 2020-06-01,"weiblich","130",NA,NA,NA
 2020-06-08,"weiblich","250",NA,NA,NA
@@ -77,12 +78,13 @@
 2021-01-11,"weiblich","1066",NA,NA,NA
 2021-01-18,"weiblich","1097",NA,NA,NA
 2021-01-25,"weiblich","1148",NA,NA,NA
-2021-02-01,"weiblich","1572",NA,NA,NA
-2021-02-08,"weiblich","1211",NA,NA,NA
+2021-02-01,"weiblich","1570",NA,NA,NA
+2021-02-08,"weiblich","1210",NA,NA,NA
 2021-02-15,"weiblich","1016",NA,NA,NA
-2021-02-22,"weiblich","1749",NA,NA,NA
-2021-03-01,"weiblich","3774",NA,NA,NA
-2021-03-08,"weiblich","0",NA,NA,NA
+2021-02-22,"weiblich","1748",NA,NA,NA
+2021-03-01,"weiblich","3989",NA,NA,NA
+2021-03-08,"weiblich","3877",NA,NA,NA
+2021-03-15,"weiblich","2330",NA,NA,NA
 2020-05-25,"Unbekannt","0",NA,NA,NA
 2020-06-01,"Unbekannt","0",NA,NA,NA
 2020-06-08,"Unbekannt","0",NA,NA,NA
@@ -125,8 +127,9 @@
 2021-02-22,"Unbekannt","0",NA,NA,NA
 2021-03-01,"Unbekannt","0",NA,NA,NA
 2021-03-08,"Unbekannt","0",NA,NA,NA
+2021-03-15,"Unbekannt","0",NA,NA,NA
 NA,NA,NA,"1","datatypes","week,string,integer"
 NA,NA,NA,"1","title","Durchgeführte COVID-19-Tests nach Geschlecht im Zeitverlauf"
-NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021"
+NA,NA,NA,"1","subtitle","Datenstand: 19.03.2021"
 NA,NA,NA,"1","description","Aufgrund der kleinen Fallzahlen im Kanton Zug können starke Ausreisser innerhalb einzelner Gruppen ohne sachliche Begründung vorkommen. Die Anzahl durgeführter Tests ist erst ab dem 25.5.2020 auf kantonaler Ebene verfügbar."
 NA,NA,NA,"1","source","Bundesamt für Gesundheit"

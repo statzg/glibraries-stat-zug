@@ -74,6 +74,20 @@
 "05.03.2021","Total verimpfte Dosen","16971",NA,NA,NA
 "06.03.2021","Total verimpfte Dosen","17216",NA,NA,NA
 "07.03.2021","Total verimpfte Dosen","17453",NA,NA,NA
+"08.03.2021","Total verimpfte Dosen","17486",NA,NA,NA
+"09.03.2021","Total verimpfte Dosen","17649",NA,NA,NA
+"10.03.2021","Total verimpfte Dosen","17762",NA,NA,NA
+"11.03.2021","Total verimpfte Dosen","17906",NA,NA,NA
+"12.03.2021","Total verimpfte Dosen","18106",NA,NA,NA
+"13.03.2021","Total verimpfte Dosen","18146",NA,NA,NA
+"14.03.2021","Total verimpfte Dosen","18156",NA,NA,NA
+"15.03.2021","Total verimpfte Dosen","18511",NA,NA,NA
+"16.03.2021","Total verimpfte Dosen","18809",NA,NA,NA
+"17.03.2021","Total verimpfte Dosen","19094",NA,NA,NA
+"18.03.2021","Total verimpfte Dosen","19402",NA,NA,NA
+"19.03.2021","Total verimpfte Dosen","19717",NA,NA,NA
+"20.03.2021","Total verimpfte Dosen","19946",NA,NA,NA
+"21.03.2021","Total verimpfte Dosen","20176",NA,NA,NA
 "23.12.2020","Total 1. Impfung","250",NA,NA,NA
 "24.12.2020","Total 1. Impfung","250",NA,NA,NA
 "25.12.2020","Total 1. Impfung","250",NA,NA,NA
@@ -149,6 +163,20 @@
 "05.03.2021","Total 1. Impfung","9714",NA,NA,NA
 "06.03.2021","Total 1. Impfung","9948",NA,NA,NA
 "07.03.2021","Total 1. Impfung","10135",NA,NA,NA
+"08.03.2021","Total 1. Impfung","10168",NA,NA,NA
+"09.03.2021","Total 1. Impfung","10331",NA,NA,NA
+"10.03.2021","Total 1. Impfung","10443",NA,NA,NA
+"11.03.2021","Total 1. Impfung","10584",NA,NA,NA
+"12.03.2021","Total 1. Impfung","10614",NA,NA,NA
+"13.03.2021","Total 1. Impfung","10654",NA,NA,NA
+"14.03.2021","Total 1. Impfung","10664",NA,NA,NA
+"15.03.2021","Total 1. Impfung","10992",NA,NA,NA
+"16.03.2021","Total 1. Impfung","11204",NA,NA,NA
+"17.03.2021","Total 1. Impfung","11369",NA,NA,NA
+"18.03.2021","Total 1. Impfung","11610",NA,NA,NA
+"19.03.2021","Total 1. Impfung","11893",NA,NA,NA
+"20.03.2021","Total 1. Impfung","12106",NA,NA,NA
+"21.03.2021","Total 1. Impfung","12330",NA,NA,NA
 "23.12.2020","Total 2. Impfung","0",NA,NA,NA
 "24.12.2020","Total 2. Impfung","0",NA,NA,NA
 "25.12.2020","Total 2. Impfung","0",NA,NA,NA
@@ -224,8 +252,22 @@
 "05.03.2021","Total 2. Impfung","7257",NA,NA,NA
 "06.03.2021","Total 2. Impfung","7268",NA,NA,NA
 "07.03.2021","Total 2. Impfung","7318",NA,NA,NA
+"08.03.2021","Total 2. Impfung","7318",NA,NA,NA
+"09.03.2021","Total 2. Impfung","7318",NA,NA,NA
+"10.03.2021","Total 2. Impfung","7319",NA,NA,NA
+"11.03.2021","Total 2. Impfung","7322",NA,NA,NA
+"12.03.2021","Total 2. Impfung","7492",NA,NA,NA
+"13.03.2021","Total 2. Impfung","7492",NA,NA,NA
+"14.03.2021","Total 2. Impfung","7492",NA,NA,NA
+"15.03.2021","Total 2. Impfung","7519",NA,NA,NA
+"16.03.2021","Total 2. Impfung","7605",NA,NA,NA
+"17.03.2021","Total 2. Impfung","7725",NA,NA,NA
+"18.03.2021","Total 2. Impfung","7792",NA,NA,NA
+"19.03.2021","Total 2. Impfung","7824",NA,NA,NA
+"20.03.2021","Total 2. Impfung","7840",NA,NA,NA
+"21.03.2021","Total 2. Impfung","7846",NA,NA,NA
 NA,NA,NA,"1","datatypes","date,string,integer"
 NA,NA,NA,"1","title","Verimpfte Dosen"
-NA,NA,NA,"1","subtitle","Datenstand: 08.03.2021 08:00"
+NA,NA,NA,"1","subtitle","Datenstand: 22.03.2021 08:00"
 NA,NA,NA,"1","description","Es wird jeweils die kummulierte Anzahl verabreichter Impfungen dargestellt. Die Impfung gilt es nach zwei verabreichten Dosen als komplett."
 NA,NA,NA,"1","source","Kanton Zug, Amt für Gesundheit"
