@@ -24,7 +24,7 @@ define(['d3v4'],  function(d3v4) {
 				$("#kennzahlcontainer > h1#zahl").after( "<p id='beschreibung' class='beschreibung' style='margin-bottom: 0;'></p>" );
 			}
 
-			d3v4.csv(csv_path, function (data) {
+			d3v4.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function (data) {
 			
 				kennzahl=data.filter(function(d) { return d.Identifikator == identifikator });
 			

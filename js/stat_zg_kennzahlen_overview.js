@@ -3,7 +3,7 @@
 function loadKennzahlen(args) {
 	var csv_path = (typeof args.csv_path == 'undefined') ? "error" : args.csv_path;
 
-	d3v4.csv(csv_path, function (data) {
+	d3v4.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function (data) {
 	
 		console.log(data.length);
 

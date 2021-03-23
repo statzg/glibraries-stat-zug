@@ -96,7 +96,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 				
 				Atts[number].g = Atts[number].svg.append("g");
 				
-				d3.csv(csv_path, function (data) {
+				d3.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function (data) {
 					
 			var dataValues = d3.values(data)[0];
 			if (group == undefined | group=="") {group = Object.keys(dataValues)[1];};

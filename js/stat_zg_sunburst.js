@@ -201,7 +201,7 @@ define(['stat_zg_generals','d3v4','libs/d3v4-tip'],  function(generals,d3v4,d3v4
 				return root;
 			};
 			
-			var daten = d3.csv(csv_path, function(error, data) {
+			var daten = d3.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function(error, data) {
 				
 				data.forEach(function(x) {
 					x["Anzahl"] = +x["Anzahl"];
@@ -210,7 +210,7 @@ define(['stat_zg_generals','d3v4','libs/d3v4-tip'],  function(generals,d3v4,d3v4
 				generals.treatmetadata(number, data);
 			});
 			
-			d3v4.text(csv_path, function (text) {
+			d3v4.text(csv_path + '?' + Math.floor(Math.random() * 1000), function (text) {
 				var csv = d3v4.csvParseRows(text);
 				var json = buildHierarchy(csv);
 				callgraph(json);

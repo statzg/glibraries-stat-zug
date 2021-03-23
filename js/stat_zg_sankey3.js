@@ -56,7 +56,7 @@ define(['stat_zg_generals','dc','libs/d3-tip','libs/sankey'], function(generals,
 			}
 
 			// load the data (using the timelyportfolio csv method)
-			d3.csv(csv_path, function(error, data) {
+			d3.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function(error, data) {
 				
 			data.forEach(function(x) {
 				x['Betrag'] = +x['Betrag'];

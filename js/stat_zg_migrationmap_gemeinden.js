@@ -126,7 +126,7 @@ function redraw(number) {
 		coming = data;
 	});*/
 					
-	d3.csv(csv_path, function (data) {
+	d3.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function (data) {
 	
 	treatmetadata(number, data);
 

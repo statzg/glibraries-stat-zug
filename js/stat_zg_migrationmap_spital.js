@@ -117,7 +117,7 @@ define(['stat_zg_generals','d3geoprojections','dc','libs/d3-tip'], function(gene
 				
 				var g = svg.append("g");
 								
-				d3.csv(csv_path, function (data) {
+				d3.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function (data) {
 					
 				generals.treatmetadata(number, data);
 

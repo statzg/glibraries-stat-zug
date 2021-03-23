@@ -16,7 +16,7 @@ define(['d3v4'],  function(d3v4) {
 		load: function(showlink, csv_path) {
 			var showlink = (typeof showlink == 'undefined') ? "false" : showlink;
 			var csv_path = (typeof csv_path == 'undefined') ? "/behoerden/gesundheitsdirektion/statistikfachstelle/daten/themen/result-themen-14-03-01-e1.csv" : csv_path;
-			d3v4.csv(csv_path, function (data) {
+			d3v4.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function (data) {
 				format=d3v4.timeParse("%d.%m.%Y")
 				data.forEach(function(x) {
 					x["Datumstr"] = x["Datum"];

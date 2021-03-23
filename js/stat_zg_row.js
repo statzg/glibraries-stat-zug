@@ -54,7 +54,7 @@ define(['stat_zg_generals','dc','libs/d3-tip'], function(generals,dc,d3tip){
 			Charts[number] = dc.rowChart("#"+Atts[number].chartcontainer);
 
 			//Daten einlesen
-			var daten = d3.csv(csv_path, function(error, data) {
+			var daten = d3.csv(csv_path + '?' + Math.floor(Math.random() * 1000), function(error, data) {
 
 			var dataValues = d3.values(data)[0];
 			if (dimension == undefined | dimension=="") {dimension = Object.keys(dataValues)[0];};
